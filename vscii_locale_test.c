@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <locale.h>
 /* build: gcc -g -Wall -o vscii_locale_test vscii_locale_test.c */
-       locale_t duplocale(locale_t locobj);
 
 int main(int argc, char **argv) {
   int a = 0;
