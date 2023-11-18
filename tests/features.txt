@@ -1,0 +1,30 @@
+#video
+#muxing
+#container
+container/mkv/mkv.h
+MKV Muxing
+ works great, except for bugs
+mux()
+
+#audio
+#mixing
+#Remote Mixing
+lib/mixer/path.h
+Mixing Anything at all
+ It works
+path_mix()
+
+#audio
+#muxing
+container/ogg/ogg.h
+Ogg Muxing
+ works great, except for bugs
+mux()
+
+#image
+#encoding
+container/image/png.h
+PNG Encoding
+ works pretty good
+encode_png()
+write_png()

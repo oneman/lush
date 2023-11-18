@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Krad Radio</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="/rack/favicon.ico">
+  <link rel="stylesheet" href="/rack/style.css">
+  <script src="/rack/lib/jquery-2.1.1.min.js"></script>
+  <script src="/rack/api.js"></script>
+  <script src="/rack/interface.js"></script>
+  <style>
+    #kradradio { margin: 100px; color: #eee; }
+    #kradradio *:hover {
+      transition: outline 0.225s;
+      transition: background-color 1s;
+      outline: 1px solid rgba(22, 22, 250, 0.225);
+      background-color: rgba(250, 22, 22, 0.625);
+      cursor: crosshair;
+    }
+    .kr_list { }
+    .kr_list div { display: flex; align-items: center; }
+    .kr_list div div.label {
+      cursor: default;
+      width: 40%;
+      font-family: play_bold;
+      font-size: 32px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="kradradio">
+    <div class="kr_list" style="width: 700px;">
+      <div>
+        <div class="label">Cake</div>
+        <div class="kr_push_button"><em>Bongo</em></div>
+        <div class="kr_push_button"><em>Coconut</em></div>
+        <div class="kr_push_button"><em>monkey</em></div>
+      </div>
+      <div>
+        <div class="label">Test Item</div>
+        <div class="kr_push_button"><em>Bongo</em></div>
+        <div class="kr_push_button"><em>Coconut</em></div>
+        <div class="kr_push_button"><em>monkey</em></div>
+      </div>
+    </div>
+    <div> div0 </div>
+    <div> div0 </div>
+    <div>
+      div 0
+      <div> div1 </div>
+      <div> div1 </div>
+    </div>
+    <div> div0 </div>
+    <div> div0 </div>
+    <div style="display: flex;">
+      div0flex
+      <div> div1 </div>
+      <div> div1 </div>
+      <div> div1 </div>
+      <div> div1 </div>
+      <div> div1 </div>
+    </div>
+    <div> div0 </div>
+    <div> div0
+      <span>span1</span>
+      <span>span1</span>
+      <span>span1</span>
+      <span>span1</span>
+      <span>span1</span>
+    </div>
+  </div>
+</body>
+</html>

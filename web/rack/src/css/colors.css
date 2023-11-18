@@ -1,0 +1,26 @@
+.rrrred { background-color: #E20A16; }
+.darkgreen { background-color: #08BA15; }
+.yellowgreen { background-color: #CCE831; }
+.yelleryellow { background-color: #FBD327; }
+.orangey { background-color: #EC8037; }
+.deepblue { background-color: #2155A0; }
+.brightblue { background-color: #52AEE1; }
+.coolblue { background-color: #84AAC1; }
+.limegreen { background-color: #02DD4F; }
+.lightorange { background-color: #FFBC61; }
+.ultraviolet { background-color: #EC018D; }
+.ultrablue { background-color: #0083FE; }
+.danred { background-color: #4f3636; }
+.danbrown { background-color: #999467; }
+.streamypine { background-color: #36454F; }
+.darkblue { background-color: #2F3B4D; }
+.eq_gray {
+  background-color: #333636;
+  background: radial-gradient(ellipse at center, #828c95 0%,
+   #525c65 36%,#28343b 100%);
+}
+.eq_gray_darker {
+  background: radial-gradient(ellipse at center, rgb(47, 48, 50) 0%,
+   rgb(11, 11, 11) 100%);
+}
+.offwhite { color: #FCF8EB; }

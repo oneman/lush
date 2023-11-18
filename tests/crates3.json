@@ -1,0 +1,14 @@
+[
+    {
+        "put": "/compositor/TestWindow/Capture",
+        "compositor_path_info": {
+           "com_input": {
+             "opacity" : 0.50,
+             "pos": {"x" : 0,"y" : 0,"w" : 7680,"h" : 4320},
+             "crop": {"x" : 0,"y" : 0,"w" : 7680,"h" : 4320},
+             "view": {"top_left": {"x" : 0,"y" : 0},"top_right": {"x" : 0,"y" : 0},"bottom_left": {"x" : 0,"y" : 0},"bottom_right": {"x" : 0,"y" : 0}},
+             "z" : 0,
+             "rotation" : 5.00}
+        }
+   }
+]

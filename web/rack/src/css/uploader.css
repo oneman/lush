@@ -1,0 +1,54 @@
+#uploader {
+  color: white;
+}
+
+.upload {
+  height: 100%;
+  width: 100%;
+}
+
+.in_progress {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%
+}
+
+.log {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+}
+.activity {
+  position: relative;
+}
+
+.up_active {
+  height: 20%;
+}
+.up_active_item {
+  padding: 1em;
+}
+
+.up_queue {
+  flex-grow: 1;
+}
+
+#file_input {
+  display: none;
+}
+
+.select_button {
+  align-self: flex-start;
+}
+
+.uploader.over > .upload {
+  background-color: grey;
+}
+
+

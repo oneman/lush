@@ -1,0 +1,12 @@
+"data": {
+    "jack": {
+      "client_name": "testy",
+      "server_name": "default",
+      "state": "jack_offline",
+      "inputs": 0,"outputs": 0,
+      "sample_rate": 0,
+      "period_size": 0,
+      "xruns": 0,
+      "frames": 0
+    }
+}

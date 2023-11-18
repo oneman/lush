@@ -1,0 +1,164 @@
+#cemo_creator {
+  font-family: 'play';
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#cemo_creator div.capture {
+  width: 28em;
+  border: 1px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+}
+
+#cemo_creator div.channels {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cemo_creator div.encode {
+  width: 38em;
+  border: 1px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#cemo_creator div.mux {
+  width: 38em;
+  border: 1px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#cemo_creator div.output {
+  width: 28em;
+  border: 1px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#cemo_creator div.player {
+  width: 38em;
+  border: 1px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#cemo_creator div.encoders {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+#cemo_creator input {
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+ -webkit-box-sizing: border-box;
+  padding: 0;
+  border: 1px solid white;
+  text-align: center;
+  font-family: 'play';
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 12em;
+  height: 1.5em;
+}
+
+#cemo_creator select {
+  padding: 0;
+  border: 1px solid black;
+  text-align: center;
+  background: white;
+  width: 12em;
+  height: 1.5em;
+  font-family: 'Inconsolata';
+}
+
+#cemo_creator span.button {
+  font-weight: bold;
+  background: #618EEF;
+  display: inline-block;
+  padding: 0.4em;
+  width: 6em;
+  border: 1px solid white;
+  font-weight: bold;
+  color: #242424;
+  font-size: 1.2em;
+}
+
+#cemo_creator span.button[data-disabled="1"] {
+  background: #BFBFBF;
+}
+
+#cemo_creator span.button[data-selected="1"] {
+  background: #FF4733;
+}
+
+#cemo_creator span.button.header[data-selected="1"] {
+  background: #FF4733;
+  color: white;
+}
+
+#cemo_creator span.button.create:active {
+  background-color: #5C5C5C;
+  color: white;
+}
+
+#cemo_creator span.button.cancel:active {
+  background-color: #5C5C5C;
+  color: white;
+}
+
+#cemo_creator span.button.create {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  background: #242424;
+  color: #E3E3E3;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cemo_creator span.button.cancel {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  background: #242424;
+  color: #E3E3E3;
+}
+
+#cemo_creator div.header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 0.6em;
+}
+
+#cemo_creator div.input {
+  margin-top: 2em;
+}
+
+#cemo_creator span.button.header {
+  width: 8em;
+  background: #242424;
+  color: #E3E3E3;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  margin-right: 0.4em;
+}
+
+#cemo_creator h3 {
+  padding: 0;
+  margin: 0.4em;
+}
+

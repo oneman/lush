@@ -1,0 +1,148 @@
+.grapher {
+  position: relative;
+  color: black;
+  font-family: play;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+ /* background-color: #C2C2C2;*/
+}
+
+.grapher > div.outputs {
+  height: 10%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.grapher > div.buses {
+  height: 80%;
+  margin: 0px;
+}
+
+.grapher > div.sources {
+  height: 10%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.grapher > form.creation_form {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  color: #ffffff;
+  background-image: linear-gradient(to bottom, #383838, #323232);
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.4);
+  border: 1px solid rgb(33,33,33);
+  font-weight: bold;
+  height: 30%;
+  width: 50%;
+  z-index: 30;
+  font-size: 100%;
+}
+
+.grapher > div div.path {
+  background-color: rgba(190, 216, 18, 0.5);
+  margin: 0px;
+  padding: 0px;
+  padding-top: 0px;
+  width: 120px;
+  height: 70%;
+  text-align: center;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 0px 0px 2px 2px grey;
+  opacity: 0.75;
+}
+
+.grapher .sources > div.path,
+.grapher .outputs > div.path {
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  height: 10%;
+}
+
+.grapher .outputs > div.path {
+  background-color: #356975;
+}
+
+.grapher .sources > div.path {
+  background-color: #753569;
+}
+
+.grapher > div > div.path {
+  z-index: 10;
+  position: absolute;
+}
+
+.grapher > div div div.path_select_button {
+  cursor: default;
+  color: #999;
+  text-shadow: 0px 1px 1px black;
+  background-color: rgba(30,30,30,1);
+}
+
+.grapher > div div div.path_label {
+  cursor: pointer;
+  border: solid black 1px;
+  text-shadow: 0px 1px 1px black;
+  color: rgba(30,30,30,1);
+  background-color: rgba(215, 215, 215, 1);
+}
+
+.grapher > div div.path.ready {
+  outline: 40px double rgba(0, 128, 0, 0.7);
+}
+
+.grapher > div div.path.target {
+  outline: 10px solid rgba(256,256,0, 0.7);
+}
+
+.grapher > div div div.reticule {
+  pointer-events:none;
+  color: #ddd;
+  text-shadow: 0px 0px 4px #FFF;
+  outline: 20px double rgba(0,128,0,0.7);
+  display: none;
+  background-color: rgba(20,20,20,0.8);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.grapher > div div div.reticule.sighted {
+  display: block;
+}
+
+.grapher > div canvas.graph {
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.grapher .sources > div div.path_label {
+  cursor: default;
+}
+
+.connection_target {
+  position: absolute;
+  z-index: 20;
+  background-color: #727171;
+  box-shadow: 0px 0px 5px 3px #303030;
+}
+
+.connection .selectable {
+  background-color: green;
+  box-shadow: 0px 0px 10px 6px green;
+}
+
+.connection_target.selected {
+  background-color: rgb(60, 120, 180);
+  box-shadow: 0px 0px 10px 6px rgb(60, 120, 180);
+}

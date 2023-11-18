@@ -1,0 +1,22 @@
+[
+    {
+        "put": "/xpdr/Imaging",
+        "xpdr_path_info": {
+            "imaging": {
+              "stash_size" : 16
+            }
+        }
+    },
+    {
+        "put": "/xpdr/Imaging/TestImage",
+        "xpdr_path_info": {
+            "imaging_in": {
+              "filename": "/home/streamer45/test.jpg",
+              "img_convert" : {
+                "format": "image_png",
+                "filename": "/home/streamer45/test.png"
+              }
+            }
+        }
+    }
+]

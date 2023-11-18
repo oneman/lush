@@ -1,0 +1,63 @@
+.kr_list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kr_list div.label {
+  padding: 1em;
+}
+
+.kr_list div.controls {
+  justify-content: flex-end;
+}
+
+#pl_details pre {
+  border-left: 4px solid #debc00;
+  display: block;
+  font-family: mono;
+  padding-left: 12px;
+  margin-left: 12px;
+  font-size: 100%;
+  color: #fcf8eb;
+}
+
+#pl_details .title {
+  padding: 4%;
+  font-size: 200%;
+  color: #daef11;
+  font-family: "play_bold";
+}
+
+.path_list {
+  display: flex;
+}
+
+.path_list .kr_list div.label {
+  pointer-events: none;
+  color: #fff;
+}
+
+.path_list .kr_list {
+  margin: 0;
+  padding: 0;
+}
+
+.selectable .selecting {
+ background: #40CAFE;
+}
+
+.selectable .selected {
+  background-color: #666666;
+}
+
+.selectable {
+  margin: 0;
+  padding: 0;
+}
+
+.selectable > div {
+  background: #333333;
+  margin: 3px;
+  box-shadow: 0px 0px 0.3em rgb(0, 0, 0);
+}

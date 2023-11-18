@@ -1,0 +1,60 @@
+.pk_sent, .pk_recv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.poker > .vbox > .hbox {
+  margin-bottom: 2%;
+  height: 30%;
+  flex-direction: row-reverse;
+}
+
+.poker .big {
+  padding: 1em;
+}
+
+.poker .kr_button_group {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.pk_recv_log pre, .pk_sent_log pre {
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  margin: 0px;
+  font-size: 1.2em;
+}
+
+.pk_recv_log, .pk_sent_log {
+  flex-grow: 1;
+  padding: 1em;
+  font-family: monospace;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.pk_send {
+  align-items: flex-end;
+  margin: 8%;
+  margin-top: 12%;
+}
+
+.pk_send_text {
+  padding: 1em;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  font-size: 1.2em;
+  align-self: stretch;
+  height: 6em;
+  background-color: #000;
+  border-radius: 3px;
+  border: none;
+  color: #EEE;
+  font-family: play;
+}
+

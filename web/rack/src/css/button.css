@@ -1,0 +1,154 @@
+.kr_push_button em {
+  font-size: 1.25em;
+  font-style: normal;
+  font-family: "tradegoth_bc";
+  color: #222227;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: rgba(22, 22, 22, .3) 0 0.0625em 0.125em;
+}
+
+.kr_push_button.disabled em {
+  color: #757575;
+}
+
+.kr_push_button {
+  display: inline-table;
+  cursor: default;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  min-width: 1.25em;
+  margin-left: 0.625em;
+  margin-right: 0.625em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 0.625em;
+  padding-right: 0.625em;
+  padding-top: 0.425em;
+  padding-bottom: 0.425em;
+  border-radius: 0.125em;
+}
+
+.kr_push_button {
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0.125em;
+  border-bottom-width: 0.125em;
+  border-top-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+}
+
+.kr_push_button {
+  border-top-color: rgba(254, 182, 69, 1);
+  border-left-color: rgba(254, 182, 69, 1);
+  border-right-color: rgba(254, 182, 69, 0.1);
+  border-bottom-color: rgba(254, 182, 69, 0.1);
+  background: radial-gradient(ellipse at center, rgba(241, 231, 103, 1) 0%, rgba(254, 182, 69, 1) 100%);
+  box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(254, 182, 69, 0.85) 0 0.0625em 0.3125em;
+}
+
+.kr_push_button.red {
+  border-top-color: rgba(254, 82, 69, 1);
+  border-left-color: rgba(254, 82, 69, 1);
+  border-right-color: rgba(254, 82, 69, 0.1);
+  border-bottom-color: rgba(254, 82, 69, 0.1);
+  background: radial-gradient(ellipse at center, rgba(241, 21, 103, 1) 0%, rgba(254, 12, 69, 1) 100%);
+  box-shadow: inset rgba(0, 0, 133, 0.15) 0 -0.1em .3em, rgba(254, 82, 69, 1) 0 0.0625em 0.3125em;
+}
+
+.kr_push_button.disabled {
+  border-top-color: rgba(84, 84, 84, 1) !important;
+  border-left-color: rgba(84, 84, 84, 1) !important;
+  border-right-color: rgba(84, 84, 84, 0.1) !important;
+  border-bottom-color: rgba(84, 84, 84, 0.1) !important;
+  background: radial-gradient(ellipse at center, rgba(96, 96, 96, 1.0) 0%, rgba(91, 91, 91, 1) 100%) !important;
+  box-shadow: inset rgba(15, 15, 15, 0.15) 0 -0.1em .3em, rgba(84, 84, 84, 1) 0 0.0625em 0.3125em !important;
+}
+
+.kr_push_button.blue {
+  border-top-color: rgba(54, 82, 169, 1);
+  border-left-color: rgba(54, 82, 169, 1);
+  border-right-color: rgba(54, 82, 169, 0.1);
+  border-bottom-color: rgba(54, 82, 169, 0.1);
+  background: radial-gradient(ellipse at center center , #0E8BF5 0%, rgba(15, 105, 206, 0.96) 100%) repeat scroll 0% 0% transparent;
+  box-shadow: inset rgba(0, 0, 133, 0.15) 0 -0.1em .3em, rgba(54, 82, 169, 1) 0 0.0625em 0.3125em;
+}
+
+.kr_push_button:active .kr_push_button.pushed {
+  box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(254, 182, 69, 0.85) 0 0.0625em 0.225em;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  padding-left: 0.625em;
+  padding-right: 0.75em;
+  padding-top: 0.5em;
+  padding-bottom: 0.54em;
+}
+
+.kr_push_button.red:active, .kr_push_button.red.pushed {
+  box-shadow: inset rgba(133, 0, 0, 0.13) 0 -0.1em .3em, rgba(169, 182, 54, 0.85) 0 0.0625em 3.3125em;
+}
+
+.kr_push_button.blue:active, .kr_push_button.blue.pushed {
+  box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(54, 182, 169, 0.85) 0 0.0625em 3.3125em;
+}
+
+.kr_push_button.flashing {
+  background: radial-gradient(ellipse at center, rgba(241, 231, 103, 0) 0%, rgba(254, 182, 69, 0) 100%);
+  box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(254, 182, 69, 0.85) 0 0.0625em 0.3125em;
+  animation: kr_push_button_flashing 0.666s infinite;
+  -webkit-animation: kr_push_button_flashing 0.666s infinite;
+}
+
+.kr_vert_button_sep {
+  margin-bottom: 2em;
+}
+
+@keyframes kr_push_button_flashing {
+  0% {
+    background-color: rgba(241, 231, 103, 1);
+    box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(254, 182, 69, 0.85) 0 0.0625em 0.4125em;
+  }
+  45% {
+    background-color: rgba(225, 55, 55, 1);
+    box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(254, 66, 66, 1) 0 0.0625em 0.8em;
+  }
+  55% {
+    background-color: rgba(225, 55, 55, 1);
+    box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(254, 66, 66, 1) 0 0.0625em 0.8em;
+  }
+  100% {
+    background-color: rgba(241, 231, 103, 1);
+    box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(254, 182, 69, 0.85) 0 0.0625em 0.4125em;
+  }
+}
+
+@-webkit-keyframes kr_push_button_flashing {
+  0% {
+    background-color: rgba(241, 231, 103, 1);
+    box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(254, 182, 69, 0.85) 0 0.0625em 0.4125em;
+  }
+  45% {
+    background-color: rgba(225, 55, 55, 1);
+    box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(254, 66, 66, 1) 0 0.0625em 0.8em;
+  }
+  55% {
+    background-color: rgba(225, 55, 55, 1);
+    box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(254, 66, 66, 1) 0 0.0625em 0.8em;
+  }
+  100% {
+    background-color: rgba(241, 231, 103, 1);
+    box-shadow: inset rgba(0, 0, 133, 0.13) 0 -0.1em .3em, rgba(254, 182, 69, 0.85) 0 0.0625em 0.4125em;
+  }
+}
+
+.cover {
+  background-color: rgba(222, 0, 0, 0.6);
+  display: inline;
+  width: 100%;
+  padding: 0.5em;
+  margin-right: -0.625em;
+  margin-left: -0.625em;
+}

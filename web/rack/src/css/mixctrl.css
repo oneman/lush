@@ -1,0 +1,30 @@
+.mix_strip_container {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.mix_strip {
+  border: 5px solid;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.mix_strip > .content {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.mix_strip > .label {
+  font-size: 400%;
+}
+
+.mixctrl {
+  /*background-color: #36454F;*/
+  color: #fcf8eb;
+  font-family: "robo_light";
+}
+
+.mixer_strip {
+  padding: 20px;
+}

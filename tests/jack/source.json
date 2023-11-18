@@ -1,0 +1,9 @@
+{
+  "xpdr_path_info": {
+    "jack_in": {
+      "name": "Music",
+      "channels": 2,
+      "direction": "jack_input"
+    }
+  }
+}

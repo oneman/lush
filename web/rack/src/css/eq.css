@@ -1,0 +1,59 @@
+.eq {
+  height: 100%;
+  width: 100%;
+}
+
+.cursor_none {
+  cursor: none;
+}
+
+.cursor_auto {
+  cursor: auto;
+}
+
+.eq .kr_list div.label {
+  cursor: default;
+}
+
+.eq > div.kr_eq_list {
+  overflow-y: scroll;
+  position: absolute;
+  left: 75%;
+  width: 25%;
+  height: 100%;
+}
+
+.eq_canvas {
+  position: absolute;
+}
+
+.eq > div.eq_canvas_container {
+  position: absolute;
+  width: 75%;
+  height: 100%;
+}
+
+.eq .kr_eq_list div.controls {
+  visibility: hidden;
+}
+
+.eq .kr_eq_list div.controls.active {
+  display: flex;
+  visibility: visible;
+}
+
+.eq .small_meter_container {
+  width: 30px;
+  height: 120px;
+}
+
+.eq .canvas_container {
+  width: 30px;
+  height: 120px;
+}
+
+.eq .canvas_view_canvas {
+  width: 30px;
+  height: 120px;
+}
+

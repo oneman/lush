@@ -1,0 +1,27 @@
+#!/usr/bin/ruby
+
+f1 = ARGV.shift
+f2 = ARGV.shift
+
+if f1 == f2
+  puts "Its the same dang file of course its just like itself!"
+  exit
+end
+
+sum1 = `sha512sum "#{f1}" | head -c 128`.chomp
+sum2 = `sha512sum "#{f2}" | head -c 128`.chomp
+
+if sum1 == sum2
+  puts "BYTES IS OKAY"
+else
+  puts "OOHH YOUR SCREWED!!"
+  puts ""
+  puts "#{f1} != #{f2}"
+  puts ""
+  puts sum1
+  puts ""
+  puts sum2
+  puts ""
+  puts "GAAAAaaaaAA!"
+  exit(1)
+end

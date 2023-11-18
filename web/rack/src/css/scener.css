@@ -1,0 +1,111 @@
+.scener {
+  width: 100%;
+  height: 100%;
+}
+
+.scnr_lists {
+  position: absolute;
+  width: 25%;
+  height: 50%;
+  overflow-y: scroll;
+}
+
+.scnr_scenes {
+  position: absolute;
+  width: 75%;
+  left: 25%;
+  height: 100%;
+}
+
+#scnr_sliders.active {
+  display: flex;
+}
+
+.scene_no_input_label {
+  height: 100%;
+  font-family: "helv_b";
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.scene_no_input_label.active {
+  display: flex;
+}
+
+#scnr_sliders {
+  display: none;
+  position: absolute;
+  top: 50%;
+  font-family: "robo_light";
+}
+
+#scnr_sliders div.labelled_slider {
+/*  margin: 10px;*/
+}
+
+.input_switchable_button, .input_switch_to_button {
+  height: 1.5em;
+  width: 2.427em;
+  background-color: gray;
+  margin-right: 1em;
+}
+
+.input_switch_to_button {
+  background-color: yellow;
+  visibility: hidden;
+}
+
+.input_switchable_button.on {
+  background-color: orange;
+}
+
+.input_switch_to_button.active {
+  visibility: visible;
+}
+
+.input_switch_to_button.on {
+  background-color: red;
+  box-shadow: 0px 0px 10px 6px red;
+}
+
+#scnr_in_lists > div {
+  display: none;
+}
+
+#scnr_in_lists > div.active {
+  display: block;
+}
+
+#scnr_cropper_scene {
+  display: none;
+}
+
+.scener .sliders_container > .slider_container {
+  display: none;
+  width: 80px;
+  height: 320px;
+}
+
+.scener .sliders_container > .slider_container.active {
+  display: block;
+}
+
+.scener .slider_container > .canvas_container {
+  width: 100%;
+  height: 100%;
+}
+
+.scener .canvas_container > .canvas_view_canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.kr_list div.controls div.crop_button {
+  display: none;
+}
+
+.kr_list div.controls div.crop_button.active {
+  display: block;
+}
+

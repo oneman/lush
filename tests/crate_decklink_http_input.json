@@ -1,0 +1,12 @@
+{
+  "xpdr_path_info": {
+    "decklink_video_in": {
+      "width": 1920,
+      "height": 1080,
+      "num": 30,
+      "den": 1,
+      "video_conn": "dl_hdmi",
+      "audio_conn": "dl_audio_default"
+    }
+  }
+}

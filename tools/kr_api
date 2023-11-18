@@ -1,0 +1,67 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var exec = require('child_process').exec;
+
+function send_crate(crate) {
+  var cmd = 'curl -vX POST http://localhost:'+process.env.KRAD_WEB_PORT+'/api\
+   -d \''+crate+'\' --header "Content-Type: application/json"';
+  exec(cmd, function(error, stdout, stderr) {
+    if (error) {
+      console.log(stderr);
+      process.exit(-1);
+    }
+  });
+}
+
+function run_krad(obj) {
+  if (!obj.header) return;
+  if (!obj.header.name) return;
+  if (!obj.commands) return;
+  console.log("Running "+obj.header.name);
+  if (!obj.header.commands) return;
+  if (!obj.header.duration) return;
+  console.log(" Commands: "+obj.header.commands);
+  console.log(" Duration: "+obj.header.duration+"\n");
+  if (obj.header.commands != obj.commands.length) {
+    console.log("Commands number mismatch!");
+    return;
+  }
+  obj.commands.forEach(function(cmd, i) {
+    if (!cmd.command) return;
+    setTimeout(function() {
+      console.log("Running cmd "+i+" at timecode "+cmd.timecode);
+      send_crate(JSON.stringify(cmd.command));
+    }, cmd.timecode);
+  });
+}
+
+function usage() {
+  console.log("Run a .krad through KR API");
+  console.log("Usage: ./kr_api run.krad");
+  process.exit(1);
+}
+
+function main(args) {
+  var data;
+  var obj;
+  if (args.length != 1) usage();
+  if (!process.env.KRAD_WEB_PORT) {
+    console.log("KRAD_WEB_PORT env var not defined!");
+    process.exit(-1);
+  }
+  if (!fs.existsSync(args[0])) {
+    console.log("File "+args[0]+" does not exist!");
+    process.exit(-1);
+  }
+  data = fs.readFileSync(args[0], {encoding: "utf-8"});
+  obj = JSON.parse(data);
+  if ( !(obj.constructor === Object) ) {
+    console.log("Invalid data, not a JSON object!");
+    process.exit(-1);
+  }
+  run_krad(obj);
+}
+
+main(process.argv.splice(2));
+

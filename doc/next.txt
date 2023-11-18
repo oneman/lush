@@ -1,0 +1,57 @@
+
+
+
+
+file -> database format
+ document-> [char *data, uint8_t *]
+  type <-> spectrum - specification
+
+  'wave packets' - words - concept - kanji
+    'atomic' characters
+    'molecular' words -'valence'
+  
+words 2-13 max 26 'code points'
+
+'abstract wave packet or sentence: this this this, abstract operation or function 
+
+word1 word2 word3 word4.
+word1ctxmeaning word2ctxmeaning word3ctxmeaning = sentence transform-
+
+'written intentions' meaning = sentence(words) { merge(meaning, word1);
+
+
+'this type part here' -> name/pos/num -> val
+
+
+unique words
+now we have the expanded data and can 're-express it' - navigate it...
+we can then: 'reconstruct it' a sort of universal enc/dec comp/decomp
+primitive type group sequence trace -> retrace 
+
+
+REPEAT REPEAT
+
+Spread shit out, so we are tiled instead of stacked
+
+GOAL: be able to look and compare any kind of file, by compare we mean any part to any other.
+
+magic-hat
+ body
+ xref
+ trailer
+end-of-file
+
+
+scores single strock divide: \/| 3 connect: ,:-_ 4
+punctuate: end ;.! 3
+arrows <>^ 3
+bins `'" 3 {[( 3 )]} 3
+other dingus:  @#$%& 5 *+ 2 =~ 2
+
+? 1
+
+3  4  3  3  3  3  3  5  2  2 1
+3  7  10 13 16 18 21 26 28 30 31
+
+
+32 printable non-alphanumerical og ascii

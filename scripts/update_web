@@ -1,0 +1,9 @@
+#!/bin/bash
+
+  cd web/rack
+  rm -f interface.js
+  cat src/js/*.js > interface.js
+  ../../tools/kr_js_proto >> interface.js
+  rm -f style.css
+  cat src/css/*.css > style.css
+  cd ../..

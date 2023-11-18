@@ -1,0 +1,9 @@
+{
+  "xpdr_path_info": {
+    "jack_out": {
+      "name": "Main",
+      "channels": 2,
+      "direction": "jack_output"
+    }
+  }
+}

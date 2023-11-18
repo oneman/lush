@@ -1,0 +1,145 @@
+.cropper {
+  background-color: #C41E3A;
+}
+
+.krad_scene {
+  position: relative;
+  z-index: 1;
+}
+
+.overlay {
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  opacity: 0;
+  background-color: rgba(0, 240, 231, 0.5);
+  position:relative;
+  border-style: dotted;
+  border-width: 1px;
+  border-color: black;
+}
+
+#scener {
+  background-color: #007BA7;
+}
+
+.krad_output {
+  background-color: #333;
+  width: 1280px;
+  height: 720px;
+}
+
+.krad_input_handle {
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  position: absolute;
+  z-index: 15;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  box-shadow: 0px 0px 5px 0px white;
+  background-color: white;
+}
+
+.krad_input_handle.crop {
+  box-shadow: 0px 0px 5px 0px rgb(105, 205, 255);
+  background-color: rgb(105, 205, 255);
+}
+
+.opaque {
+  opacity: 1;
+}
+
+.overflow_auto {
+  overflow: auto
+}
+
+.krad_input_handle.north {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 20px;
+}
+
+.krad_input_handle.west {
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 100%;
+}
+
+.krad_input_handle.north.west {
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+.krad_input_handle.north.east {
+  top: 0px;
+  left: auto;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+.krad_input_handle.east {
+  top: 0px;
+  right: 0px;
+  width: 20px;
+  height: 100%;
+}
+
+.krad_input_handle.south.east {
+  top: auto;
+  left: auto;
+  bottom: 0px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+.krad_input_handle.south.west {
+  top: auto;
+  left: 0px;
+  bottom: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+.krad_input_handle.body {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.krad_input_handle.south {
+  bottom: 0px;
+  width: 100%;
+  height: 20px;
+}
+
+.krad_input.selected {
+  pointer-events: auto;
+  z-index: 5;
+  border-width: 1px;
+  background-color: rgba(130, 178, 70, 0.5);
+  border-color: rgba(130, 178, 70, 1);
+}
+
+.krad_input.opaque {
+  opacity: 1;
+}
+
+.krad_input {
+  transition: opacity 0.2s,background 0.2s ease;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+  background-color: rgba(237, 213, 0, 0.333);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(237, 213, 0, 0.4);
+  position:absolute;
+}

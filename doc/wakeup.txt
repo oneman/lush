@@ -1,0 +1,7 @@
+demo program init seq
+
+filepacket protocol
+
+whoami
+can have root? if(is root) good, but make me a user called demo
+

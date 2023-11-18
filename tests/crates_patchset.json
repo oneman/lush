@@ -1,0 +1,27 @@
+[
+    {
+        "patch": "/compositor/TestWindow/Capture",
+        "compositor_input_info": [
+            {
+                "op": "replace",
+                "path": "/crop/x",
+                "value": 0
+            },
+            {
+                "op": "replace",
+                "path": "/crop/y",
+                "value": 0
+            },
+            {
+                "op": "replace",
+                "path": "/crop/w",
+                "value": 100
+            },
+            {
+                "op": "replace",
+                "path": "/crop/h",
+                "value": 100
+            }
+        ]
+    }
+]

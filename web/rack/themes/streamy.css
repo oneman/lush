@@ -1,0 +1,56 @@
+body {
+  background-color: #36454F;
+}
+
+#pager {
+  background-color: #36454F;
+}
+
+.page.selected {
+  background-color: #36454F;
+  color: #FFD300;
+}
+
+.page {
+  color: #03C03C;
+}
+
+.RCU.uploader {
+  background-color: #007BA7;
+}
+
+.RCU.maker {
+  background-color:  #C41E3A;
+}
+
+.RCU.overflow.connector {
+  background-color:  #C41E3A;
+}
+
+.RCU.overflow_auto.path_list {
+  background-color: #007BA7;
+}
+
+#scener {
+  background-color: #007BA7;
+}
+
+.cropper {
+  background-color: #C41E3A;
+}
+
+#uploader {
+  color: white;
+}
+
+#make_what {
+  color: #fcf8eb;
+  background-color: #36454F !important;
+  border-color: black !important;
+}
+
+.creation_form input[type=text], .creation_form select, option {
+  color: #fcf8eb;
+  background-color: #36454F !important;
+  border-color: black !important;
+}

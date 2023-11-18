@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Krad Radio</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="/rack/favicon.ico">
+  <link rel="stylesheet" href="/rack/style.css">
+  <script src="/rack/lib/jquery-2.1.1.min.js"></script>
+  <script src="/rack/lib/json-patch.min.js"></script>
+  <script src="/rack/lib/t.js"></script>
+  <script src="/rack/lib/adapter.js"></script>
+  <script src="/rack/lib/stats.min.js"></script>
+  <script src="/rack/lib/xmms2/stringview.js"></script>
+  <script src="/rack/lib/xmms2/xmmsclient.js"></script>
+  <script src="/rack/lib/xmms2/ipc.js"></script>
+  <script src="/rack/lib/xmms2/copyWithin_polyfill.js"></script>
+  <script src="/rack/api.js"></script>
+  <script src="/rack/interface.js"></script>
+  <script>
+    var kr = false;
+    $(window).bind('beforeunload', function() {
+      if (kr.ws != false) { kr.ws_disconnect(); }
+    });
+    $(document).ready(function(){ kr = new Kr(); });
+    var api_url = window.location.protocol+"//"+window.location.hostname+":"+window.location.port;
+  </script>
+</head>
+<body>
+<div id="kradradio"></div>
+</body>
+</html>

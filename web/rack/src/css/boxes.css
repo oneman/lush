@@ -1,0 +1,16 @@
+.hbox, .vbox {
+  display: flex;
+  height: 100%;
+}
+
+.vbox {
+  flex-direction: column;
+}
+
+.hbox {
+  flex-direction: row;
+}
+
+.vbox > div, .hbox > div {
+  flex-grow: 1;
+}

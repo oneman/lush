@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "play";
+  src: url("/rack/fonts/play-regular-webfont.woff");
+}
+
+@font-face {
+  font-family: "play_bold";
+  src: url("/rack/fonts/play-bold-webfont.woff");
+}
+
+@font-face {
+  font-family: "robo_light";
+  src: url("/rack/fonts/roboto-light.woff");
+}
+
+@font-face {
+  font-family: "robo_bold";
+  src: url("/rack/fonts/roboto-bold.woff");
+}
+
+@font-face {
+  font-family: "helv_b";
+  src: url("/rack/fonts/HelveticaNeueW0195Black.woff");
+}
+
+@font-face {
+  font-family: "tradegoth_bc";
+  src: url("/rack/fonts/tradegothicltcom-bdcn20-webfont.woff");
+}
+
+@font-face {
+  font-family: "digital_m";
+  src: url("/rack/fonts/digital-7_mono-webfont.woff");
+}
+
+.robo, .robo_light {
+  font-family: "robo_light";
+}
+
+.robo_bold, .robo .bold, .robo_light .bold {
+  font-family: "robo_bold";
+}
+
+.play {
+  font-family: "play";
+}
+
+.play_bold {
+  font-family: "play_bold";
+}
+
+.verybig {
+  font-size: 200%;
+}
+
+.big {
+  font-size: 150%;
+}
+
+.kindabig {
+  font-size: 120%;
+}

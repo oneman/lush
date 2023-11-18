@@ -1,0 +1,78 @@
+[
+      {
+      "PUT": "/xpdr/Jack",
+      "xpdr_path_info": {
+        "jack": {
+          "client_name": "testy",
+          "server_name": "default",
+          "state": "jack_offline",
+          "inputs": 0,"outputs": 0,
+          "sample_rate": 0,
+          "period_size": 0,
+          "xruns": 0,
+          "frames": 0
+        }
+      }
+      },
+{
+  "PUT": "/xpdr/Jack/main",
+  "xpdr_path_info": {
+    "jack_out": {
+      "name": "main",
+      "channels": 2,
+      "direction": "jack_output"
+    }
+  }
+},
+{
+  "PUT": "/xpdr/Jack/supercollider",
+  "xpdr_path_info": {
+    "jack_in": {
+      "name": "supercollider",
+      "channels": 8,
+      "direction": "jack_input"
+    }
+  }
+},
+      {
+        "PUT": "/xpdr/Wayland",
+        "xpdr_path_info": {
+            "wayland": {
+                "display_name": "",
+                "state": "wl_connected"
+            }
+        }
+      },
+      {
+        "PUT": "/xpdr/Wayland/TestWindow",
+        "xpdr_path_info": {
+            "wayland_out": {
+                "width": 640,
+                "height": 360,
+                "fullscreen": 0
+            }
+        }
+      },
+      {
+        "PUT": "/xpdr/V4L2",
+        "xpdr_path_info": {
+            "v4l2": {
+                "dev": 1,
+                "priority": 0,
+                "state": "v4l2_void"
+            }
+        }
+      },
+      {
+        "PUT": "/xpdr/V4L2/Capture",
+        "xpdr_path_info": {
+            "v4l2_in": {
+                "width": 640,
+                "height": 360,
+                "num": 30,
+                "den": 1,
+                "format": 0
+            }
+        }
+    }
+]

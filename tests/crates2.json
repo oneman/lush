@@ -1,0 +1,12 @@
+[
+    {
+        "put": "/xpdr/Decklink",
+        "xpdr_path_info": {
+            "decklink": {
+                "device": "Bongo",
+                "num": "0"
+            }
+        }
+    },
+   }
+]

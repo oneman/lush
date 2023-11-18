@@ -1,0 +1,51 @@
+.absolute_center {
+  margin: auto;
+  position: absolute;
+  left: 0; right: 0;
+}
+
+.labelled_slider {
+  cursor: default;
+  display: none;
+  text-align: center;
+  width: 140px;
+  color: rgb(172, 172, 172);
+  background-color: rgb(172, 172, 172);
+}
+
+.labelled_slider.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider_value {
+  background-color: #5F5F5F;
+  padding: 5px;
+}
+
+.slider_label {
+  background-color: #5F5F5F;
+  padding: 5px;
+}
+
+.slider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.slider_trough {
+  position: relative;
+  width: 18px;
+  height: 240px;
+  background-color: rgb(114, 114, 114);
+  box-shadow: 0 -24.75px 14.25px rgb(54, 52, 52) inset;
+}
+
+.handle {
+  position: absolute;
+  left: -25px;
+  width: 68px;
+  height: 18px;
+  background-color: rgb(136, 136, 136);
+  box-shadow: 0 0.075px 3.75px rgb(24, 32, 29);
+}

@@ -1,0 +1,17 @@
+[
+    {
+        "op": "replace",
+        "path": "/analog/drive",
+        "value": 4.45
+    },
+    {
+        "op": "replace",
+        "path": "/analog/blend",
+        "value": 4.5
+    },
+    {
+        "op": "replace",
+        "path": "/eq/band/8/db",
+        "value": 0.45
+    }
+]

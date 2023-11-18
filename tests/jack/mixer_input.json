@@ -1,0 +1,26 @@
+{
+  "mixer_path_info": {
+   "type": "mxr_input",
+  "channels": "stereo",
+  "afx": {
+    "lowpass": {
+      "bw": 1.00,
+      "hz": 500.00
+    },
+    "highpass": {
+      "bw": 1.00,
+      "hz": 2000.00
+    },
+    "analog": {
+      "drive": 0.00,
+      "blend": 0.00
+    },
+    "eq": { "band": [
+      {"db": -45.00,"bw": 1.10,"hz": 2815.00},{"db": -31.00,"bw": 0.10,"hz": 16670.00},{"db": 17.00,"bw": 2.10,"hz": 4825.00}
+    ] },
+    "volume": {
+      "level": 1.00
+     }
+   }
+ }
+}

@@ -1,0 +1,28 @@
+Ok so here we are commiting to the super support project action initiative.
+
+First we introduce the notion of a conceptual abstract specification (CAS) as
+something that can be interpreted to mean something, and that is exactly the
+same thing that is meaned by a yet-to-be-defined word or and existing well
+known word or symbol or glyph or morpheme or en essense a smallest unit of
+meaning and also everything constructed with, by and through such as all of the
+written and recorded or transcribed documents inside the solar system.
+
+It is useful to compare this to the set of such documents outside the solar
+system, but why that is useful is not yet well understood. dog is like git
+cat-file for its own output, it rips blobs into bitstrings to the furthest
+extent to witch those bitstrings can be inter-related as useless or useful
+conceptually, for example a small blob maybe a single bitstream of a single
+number. However a pdf or a png image can be broken into quite a many
+bitstreams.
+
+yaddda
+
+Next:
+
+Kernel Module
+io_uring forever pro
+
+liblib - parse it all dog
+
+'pattern buffer'
+PLACE HOLDER

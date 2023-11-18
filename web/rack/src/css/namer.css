@@ -1,0 +1,43 @@
+.hbox.sysname {
+  justify-content: center;
+  align-items: center;
+  height: auto !important;
+}
+
+
+.vbox div.sysname_edit_container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.vbox div.sysname_edit_container.active {
+  display: flex;
+}
+
+.sysname_edit_container input[type=text] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #debc00;
+  font-size: 45px;
+  font-weight: bold;
+  text-shadow: 1px 0px 2px #333;
+}
+
+.vbox div.header {
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  text-shadow: 1px 0px 2px #333;
+}
+
+.vbox div.uptime {
+  text-align: center;
+  color: red;
+  font-size: 28px;
+  text-shadow: 1px 0px 2px #333;
+}
+
+.namer div.button_container {
+  align-self: center;
+}
