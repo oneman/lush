@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:02,300
+right streaming again streaming again
+
+2
+00:00:03,500 --> 00:00:05,200
+receiving stream again
+
+3
+00:00:06,300 --> 00:00:07,500
+receiving the Stream
+
+4
+00:00:09,400 --> 00:00:10,900
+so we got rounded up with someone
+
+5
+00:00:18,900 --> 00:00:19,200
+okay
+
+6
+00:00:21,400 --> 00:00:21,600
+all right
+
+7
+00:00:23,400 --> 00:00:25,600
+the stream is over for now for a sec

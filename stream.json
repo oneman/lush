@@ -1,0 +1,101 @@
+{
+  "results": [{
+    "alternatives": [{
+      "transcript": "All right, great. I was now saving file and now I can commit to fix.",
+      "confidence": 0.9385126,
+      "words": [{
+        "word": "All",
+        "confidence": 0.97219545
+      }, {
+        "word": "right,",
+        "confidence": 0.97219545
+      }, {
+        "word": "great.",
+        "confidence": 0.97219545
+      }, {
+        "word": "I",
+        "confidence": 0.97219545
+      }, {
+        "word": "was",
+        "confidence": 0.97219545
+      }, {
+        "word": "now",
+        "confidence": 0.97219545
+      }, {
+        "word": "saving",
+        "confidence": 0.87763697
+      }, {
+        "word": "file",
+        "confidence": 0.8644838
+      }, {
+        "word": "and",
+        "confidence": 0.9617806
+      }, {
+        "word": "now",
+        "confidence": 0.9441585
+      }, {
+        "word": "I",
+        "confidence": 0.922888
+      }, {
+        "word": "can",
+        "confidence": 0.97219545
+      }, {
+        "word": "commit",
+        "confidence": 0.97219545
+      }, {
+        "word": "to",
+        "confidence": 0.8588046
+      }, {
+        "word": "fix.",
+        "confidence": 0.870373
+      }]
+    }, {
+      "transcript": "All right, great. I was now saving the file and now I can commit to fix.",
+      "confidence": 0.92961174
+    }, {
+      "transcript": "All right, great. I was now save the file and now I can commit to fix.",
+      "confidence": 0.8721897
+    }, {
+      "transcript": "All right, great. I was now saving file and now I can commit the fix.",
+      "confidence": 0.90710586
+    }, {
+      "transcript": "All right, great. I was now saving the file and now I can commit the fix.",
+      "confidence": 0.8950614
+    }],
+    "languageCode": "en-us"
+  }, {
+    "alternatives": [{
+      "transcript": " I\u0027ll stop The Stream now.",
+      "confidence": 0.8682249,
+      "words": [{
+        "word": "I\u0027ll",
+        "confidence": 0.97219545
+      }, {
+        "word": "stop",
+        "confidence": 0.97219545
+      }, {
+        "word": "The",
+        "confidence": 0.8552187
+      }, {
+        "word": "Stream",
+        "confidence": 0.8552187
+      }, {
+        "word": "now.",
+        "confidence": 0.6862962
+      }]
+    }, {
+      "transcript": " I\u0027ll stop The Stream though.",
+      "confidence": 0.8316849
+    }, {
+      "transcript": " I\u0027ll stop this dream now.",
+      "confidence": 0.70091665
+    }, {
+      "transcript": " I\u0027ll stop this dream though.",
+      "confidence": 0.6798278
+    }, {
+      "transcript": " I\u0027ll stop The Stream. No.",
+      "confidence": 0.8982002
+    }],
+    "languageCode": "en-us"
+  }]
+}

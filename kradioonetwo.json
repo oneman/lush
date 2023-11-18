@@ -1,0 +1,142 @@
+{
+  "results": [{
+    "alternatives": [{
+      "transcript": "right streaming again streaming again",
+      "confidence": 0.8933152,
+      "words": [{
+        "word": "right",
+        "confidence": 0.97219545
+      }, {
+        "word": "streaming",
+        "confidence": 0.97219545
+      }, {
+        "word": "again",
+        "confidence": 0.97219545
+      }, {
+        "word": "streaming",
+        "confidence": 0.69651127
+      }, {
+        "word": "again",
+        "confidence": 0.85347843
+      }]
+    }],
+    "languageCode": "en-us"
+  }, {
+    "alternatives": [{
+      "transcript": " receiving stream again",
+      "confidence": 0.93631655,
+      "words": [{
+        "word": "receiving",
+        "confidence": 0.97219545
+      }, {
+        "word": "stream",
+        "confidence": 0.89305276
+      }, {
+        "word": "again",
+        "confidence": 0.9437015
+      }]
+    }],
+    "languageCode": "en-us"
+  }, {
+    "alternatives": [{
+      "transcript": " receiving the Stream",
+      "confidence": 0.716459,
+      "words": [{
+        "word": "receiving",
+        "confidence": 0.7308506
+      }, {
+        "word": "the",
+        "confidence": 0.70935667
+      }, {
+        "word": "Stream",
+        "confidence": 0.7091696
+      }]
+    }],
+    "languageCode": "en-us"
+  }, {
+    "alternatives": [{
+      "transcript": " so we got rounded up with someone",
+      "confidence": 0.84061617,
+      "words": [{
+        "word": "so",
+        "confidence": 0.97219545
+      }, {
+        "word": "we",
+        "confidence": 0.97219545
+      }, {
+        "word": "got",
+        "confidence": 0.97219545
+      }, {
+        "word": "rounded",
+        "confidence": 0.8607718
+      }, {
+        "word": "up",
+        "confidence": 0.80514604
+      }, {
+        "word": "with",
+        "confidence": 0.80514604
+      }, {
+        "word": "someone",
+        "confidence": 0.4966625
+      }]
+    }],
+    "languageCode": "en-us"
+  }, {
+    "alternatives": [{
+      "transcript": " okay",
+      "confidence": 0.8317187,
+      "words": [{
+        "word": "okay",
+        "confidence": 0.8317187
+      }]
+    }],
+    "languageCode": "en-us"
+  }, {
+    "alternatives": [{
+      "transcript": " all right",
+      "confidence": 0.69883406,
+      "words": [{
+        "word": "all",
+        "confidence": 0.69883406
+      }, {
+        "word": "right",
+        "confidence": 0.69883406
+      }]
+    }],
+    "languageCode": "en-us"
+  }, {
+    "alternatives": [{
+      "transcript": " the stream is over for now for a sec",
+      "confidence": 0.93449944,
+      "words": [{
+        "word": "the",
+        "confidence": 0.74796176
+      }, {
+        "word": "stream",
+        "confidence": 0.97219545
+      }, {
+        "word": "is",
+        "confidence": 0.97219545
+      }, {
+        "word": "over",
+        "confidence": 0.97219545
+      }, {
+        "word": "for",
+        "confidence": 0.97219545
+      }, {
+        "word": "now",
+        "confidence": 0.97219545
+      }, {
+        "word": "for",
+        "confidence": 0.96499014
+      }, {
+        "word": "a",
+        "confidence": 0.9182828
+      }, {
+        "word": "sec",
+        "confidence": 0.9182828
+      }]
+    }],
+    "languageCode": "en-us"
+  }]
+}
