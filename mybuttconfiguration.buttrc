@@ -1,0 +1,186 @@
+#This is a configuration file for butt (broadcast using this tool)
+
+[main]
+bg_color = 252645120
+txt_color = -256
+server = Openwrt
+srv_ent = Openwrt
+icy = 
+icy_ent = 
+num_of_srv = 1
+num_of_icy = 0
+song_path = 
+song_update = 0
+song_delay = 0
+song_prefix = 
+song_suffix = 
+read_last_line = 0
+app_update_service = 0
+app_update = 0
+app_artist_title_order = 1
+gain = 1.000000
+silence_threshold = 0
+signal_threshold = 0
+check_for_update = 1
+start_agent = 0
+minimize_to_tray = 0
+connect_at_startup = 0
+force_reconnecting = 0
+reconnect_delay = 1
+ic_charset = 
+log_file = 
+
+[audio]
+device = 1
+device2 = -1
+dev_remember = 1
+samplerate = 48000
+bitrate = 160
+channel = 2
+left_ch = 1
+right_ch = 2
+left_ch2 = 1
+right_ch2 = 2
+codec = opus
+resample_mode = 1
+silence_level = 50.000000
+signal_level = 50.000000
+disable_dithering = 0
+buffer_ms = 50
+dev_name = Built-in Microphone [Core Audio]
+dev2_name = None
+
+[record]
+bitrate = 192
+codec = opus
+start_rec = 0
+stop_rec = 0
+rec_after_launch = 1
+sync_to_hour  = 0
+split_time = 26
+filename = rec_%Y%m%d-%H%M%S.opus
+silence_threshold = 0
+signal_threshold = 0
+folder = /Users/oneman/Music/
+
+[tls]
+cert_file = 
+cert_dir = 
+
+[dsp]
+equalizer = 0
+eq_preset = Manual
+gain1 = 0.000000
+gain2 = 0.000000
+gain3 = 0.000000
+gain4 = 0.000000
+gain5 = 0.000000
+gain6 = 0.000000
+gain7 = 0.000000
+gain8 = 0.000000
+gain9 = 0.000000
+gain10 = 0.000000
+compressor = 0
+aggressive_mode = 0
+threshold = -20.000000
+ratio = 5.000000
+attack = 0.010000
+release = 1.000000
+makeup_gain = 0.000000
+
+[mixer]
+primary_device_gain = 1.000000
+primary_device_muted = 0
+secondary_device_gain = 1.000000
+secondary_device_muted = 0
+streaming_gain = 1.000000
+recording_gain = 1.000000
+cross_fader = 0.000000
+
+[gui]
+attach = 0
+ontop = 0
+hide_log_window = 0
+remember_pos = 1
+x_pos = 425
+y_pos = 203
+window_height = 395
+lcd_auto = 0
+start_minimized = 0
+disable_gain_slider = 0
+show_listeners = 1
+lang_str = system
+always_show_vu_tabs = 1
+window_title = 
+vu_mode = 1
+
+[mp3_codec_stream]
+enc_quality = 3
+stereo_mode = 0
+bitrate_mode = 0
+vbr_quality = 4
+vbr_min_bitrate = 32
+vbr_max_bitrate = 320
+
+[mp3_codec_rec]
+enc_quality = 3
+stereo_mode = 0
+bitrate_mode = 0
+vbr_quality = 4
+vbr_min_bitrate = 32
+vbr_max_bitrate = 320
+
+[vorbis_codec_stream]
+bitrate_mode = 0
+vbr_quality = 0
+vbr_min_bitrate = 0
+vbr_max_bitrate = 0
+
+[vorbis_codec_rec]
+bitrate_mode = 0
+vbr_quality = 0
+vbr_min_bitrate = 0
+vbr_max_bitrate = 0
+
+[opus_codec_stream]
+bitrate_mode = 1
+quality = 0
+audio_type = 0
+bandwidth = 0
+
+[opus_codec_rec]
+bitrate_mode = 1
+quality = 0
+audio_type = 0
+bandwidth = 0
+
+[aac_codec_stream]
+bitrate_mode = 0
+afterburner = 0
+profile = 0
+
+[aac_codec_rec]
+bitrate_mode = 0
+afterburner = 0
+profile = 0
+
+[flac_codec_stream]
+bit_depth = 16
+
+[flac_codec_rec]
+bit_depth = 16
+
+[wav_codec_rec]
+bit_depth = 16
+
+[Openwrt]
+address = 192.168.1.1
+port = 8000
+password = hackme
+type = 1
+tls = 0
+cert_hash = 
+mount = stream
+usr = source
+protocol = 0
+

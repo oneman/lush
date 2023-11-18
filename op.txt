@@ -1,0 +1,11 @@
+we define something by its characteristic in comparison to something else and
+then reduce its characteristic to a characteristic duck measuring system and
+finally to a nexted series of length measurements. this file for example is n
+ever longer than 78 ascii characters long and thus displays nicely on any
+screen. we define an a default vscii terminal size of 80x26 thats 80 columns
+by 26 rows, but for the most part we use a 28 row terminal anyway because that
+lets us view 26 lines of text and have two modelines at the bottom or 1 at the
+top or bottom or 2 at the top and we probably have 80 or more cols so we can
+have a line number of 2 digits on the left side or right side or several other
+targeting cursor like systems around the terminal like a camping sniper but for
+cybersystems runing on terminals or thru terminals at some level
