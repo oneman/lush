@@ -1,0 +1,1 @@
+Linux funhost 6.6.1-1-ck-generic-v4 #1 SMP PREEMPT_DYNAMIC Wed Nov  8 17:03:10 EST 2023 x86_64 GNU/Linux

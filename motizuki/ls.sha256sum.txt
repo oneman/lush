@@ -1,0 +1,109 @@
+de0651855c28e04c0b08dcaa8bfd4a09e19f837a2b05c683ea1bb672179bebd2  /home/demo/kode/vscii/motizuki/11.gif
+9ecb6d4f3c09e6e5152d431c5119f30634d2b2d9610766456dcd5222246a4a14  /home/demo/kode/vscii/motizuki/Absolute Anabelian Cuspidalizations (comments).pdf
+884fbae92281d634b01c393d2b26aac138bb1f3754556b599592095dce5cd18d  /home/demo/kode/vscii/motizuki/Absolute Anabelian Cuspidalizations (LaTeX version).pdf
+2fe56b1e95fb5c56e8b0b82fd6be2a31167d4b3d17c359a1815406a6ee29c57c  /home/demo/kode/vscii/motizuki/Absolute Anabelian Cuspidalizations.pdf
+7da934072c35b0bbf18546c53978c6994dc7ee27215ccabdff6c0ef6ca520e4f  /home/demo/kode/vscii/motizuki/Absolute Anabelian Geometry (comments).pdf
+49719f4a75006314fee99dd704fb347b716fe140eb2705f7e38e9b57ed3980ba  /home/demo/kode/vscii/motizuki/Absolute Anabelian Geometry.pdf
+b2510b7276ab08f9f758e283200a4fc87205d2439d6d9b75afe8df6ccb182d1e  /home/demo/kode/vscii/motizuki/Alien Copies, Gaussians, and Inter-universal Teichmuller Theory.pdf
+ce0741d7bb7013719fbfd6770b422197fd6e92a94fcc6250c1ab180da28a855d  /home/demo/kode/vscii/motizuki/Anabelian Geometry in the Hodge-Arakelov Theory of Elliptic Curves (Kokyuroku 2002).pdf
+825c7a2e333e08cc2691ddd81cbd2f088aa08fa8dc7fca5aa58805b67aa36a4f  /home/demo/kode/vscii/motizuki/An Introduction to p-adic Teichmuller Theory (comments).pdf
+8e35c9048787d1711336f908ab9a59c279ed7b04012dfc66bd0720f04a6f07ca  /home/demo/kode/vscii/motizuki/An Introduction to p-adic Teichmuller Theory.pdf
+af0389c61f9b95f53afca8c160fb69db866eccec1c39260a6a6dc32c0b363b7c  /home/demo/kode/vscii/motizuki/Arithmetic Elliptic Curves in General Position (comments).pdf
+b9dc115af61dca7fe434332ebafddf6a376a9e2926dad4e1ea2dcc0d2441f768  /home/demo/kode/vscii/motizuki/Arithmetic Elliptic Curves in General Position.pdf
+17ba8080637a948360dd1fbd8a054af3a7cc16b338d154dc01a3eab3b724fd77  /home/demo/kode/vscii/motizuki/A Survey of the Hodge-Arakelov Theory of Elliptic Curves I (comments).pdf
+be3898f44070ed0f6c2494e3d03e8026c209d9377bea20dd6e8a0ac8996169c5  /home/demo/kode/vscii/motizuki/A Survey of the Hodge-Arakelov Theory of Elliptic Curves II (comments).pdf
+a40b7ab0c471127cd4557ce70b1cb3276a0d002788d26b41989435b90e199d56  /home/demo/kode/vscii/motizuki/A Survey of the Hodge-Arakelov Theory of Elliptic Curves II.pdf
+572daa50b04ceca1bec41833b7ebcd7442172e2b60dcf20e556bdaa6b00fc70c  /home/demo/kode/vscii/motizuki/A Survey of the Hodge-Arakelov Theory of Elliptic Curves I.pdf
+0fc49ecb8c9f7515165e14a20ebed466426460bd3d2d1c9ccfe788842db5b82e  /home/demo/kode/vscii/motizuki/A Theory of Ordinary p-adic Curves (comments).pdf
+82844f858aef35acc747d47519411ac37c244ef3cf18c0af47f3b1da6b3a9cd0  /home/demo/kode/vscii/motizuki/A Theory of Ordinary p-adic Curves.pdf
+757670e59a4e9d4c69675fec91b5d6998b411d3554e721b40d445e61a867121e  /home/demo/kode/vscii/motizuki/A Version of the Grothendieck Conjecture for p-adic Local Fields.pdf
+0ca004e4a4210f701ee85586153555c18c4bd0d0095e0abd648a8472234d32c2  /home/demo/kode/vscii/motizuki/Bogomolov from the Point of View of Inter-universal Teichmuller Theory (comments).pdf
+c6055d416c11a251ea2f6d1910b0902fac7c24873e15a3c1115c75ce426c30cd  /home/demo/kode/vscii/motizuki/Bogomolov from the Point of View of Inter-universal Teichmuller Theory.pdf
+07d1fbe4fdccf9224e00bd79be2fe0debb0d94cd76b80fd7fd47fdce3978f69d  /home/demo/kode/vscii/motizuki/button21.gif
+51e391814c9d57b57a0d241e9c851ea45b986ff3adba02305e73c68a37f758df  /home/demo/kode/vscii/motizuki/Canonical Liftings (comments).pdf
+dcf986ecbb06d4e9cb49f6ff92d7417d7e63ce946fd1403b1128e416d9ac807a  /home/demo/kode/vscii/motizuki/Canonical Liftings.pdf
+9a43d22f41de0bcfee65488812e7bcdfd6418cf2b2ab637e7cfd3c5125a7c83f  /home/demo/kode/vscii/motizuki/Categorical Representation of Locally Noetherian Log Schemes (comments).pdf
+80b6ecfa8b0fe0124c660ac07389cdf186c82af85c465b1654e7915b087eade5  /home/demo/kode/vscii/motizuki/Categorical Representation of Locally Noetherian Log Schemes.pdf
+e7fb0c94959c5af7f88e8093344a091457c483c5fcc6d029b75476ed5110ead9  /home/demo/kode/vscii/motizuki/Categories of Hyperbolic Riemann Surfaces (comments).pdf
+53fc4a9b6ff6d51a45149ff56a3da723aee2ed4ab282ae08422691667bf02f6e  /home/demo/kode/vscii/motizuki/Categories of Hyperbolic Riemann Surfaces.pdf
+72d93ebf48593b2d936da03fbe41b49f446e8deac2073c756c60420a8bdf9748  /home/demo/kode/vscii/motizuki/Categories of Log Schemes with Archimedean Structures (comments).pdf
+e36170dcd50682fb0253bf968dec6a45d54d438e19e84a2f935c82fafbed349e  /home/demo/kode/vscii/motizuki/Categories of Log Schemes with Archimedean Structures (LaTeX version).pdf
+018ce4f06534b45e26c85c670e9372ee7b215279284573715601094f80466407  /home/demo/kode/vscii/motizuki/Categories of Log Schemes with Archimedean Structures.pdf
+76bffb578c67b48390c733bc75f3ffdb31ece52c34414341342b48423898d65f  /home/demo/kode/vscii/motizuki/Combinatorial absolute Galois groups.pdf
+2d84711b41d2a0ebd062194ad298c4e02f2f5c044bd85b35637c3205e5635296  /home/demo/kode/vscii/motizuki/Combinatorial Anabelian Topics I (comments).pdf
+22398edfdcb41943b9f9ef6fee779fb7fe1afb01c583ee93f7628a8b03bbe650  /home/demo/kode/vscii/motizuki/Combinatorial Anabelian Topics III.pdf
+fb303bfde45538e4456241386f9464229d4885111b699131b3b360059fb7ec75  /home/demo/kode/vscii/motizuki/Combinatorial Anabelian Topics II.pdf
+5c623fd1cf71c87b52a7386550ef9e6304ea14900ebcbc29dfced995073673af  /home/demo/kode/vscii/motizuki/Combinatorial Anabelian Topics I.pdf
+bfc9af1151472286709d7a1208e4479393dbcb7c16805778767a1e0c0868f07a  /home/demo/kode/vscii/motizuki/Combinatorial Anabelian Topics IV.pdf
+25b73c81263f2f55f61d86ed79a1f0317a978d43dce6244e660ed49ad1a30c9a  /home/demo/kode/vscii/motizuki/Combinatorial Cuspidalization (comments).pdf
+30679ba16f636666ffda7abe59f02a7bc81e5d8dc7e02594d064ec61ad3cc4ff  /home/demo/kode/vscii/motizuki/Combinatorial Cuspidalization.pdf
+08a45b35e56aa59da636b461ea62c3101d43d37514cdb87cd3a499b1c896acfd  /home/demo/kode/vscii/motizuki/Combinatorial Grothendieck Conjecture (comments).pdf
+4d2e91c13c816eabc2edc08753ed62ae99881ee355bde96066062ea4cf0bff93  /home/demo/kode/vscii/motizuki/Combinatorial Grothendieck Conjecture.pdf
+2809b091ebdc4274509343724b2c02a2a840f3c915d792fdcbe75c1f62d313b5  /home/demo/kode/vscii/motizuki/Connections and Related Structures on the Universal Extension of an Elliptic Curve.PDF
+0d289b6e0d8b6bb6a54bfadfc82ac5a8ab9c9d8860936f7f95400df34aa1a276  /home/demo/kode/vscii/motizuki/Correspondences on Hyperbolic Curves (comments).pdf
+5dc3075266d73cdce1acff41fac78594af7277d28db1d0d293aa79b96180f784  /home/demo/kode/vscii/motizuki/Correspondences on Hyperbolic Curves.pdf
+e7a011e4b7a99280761807e932126773c5f4a64cb803420bb5ef89247268eb5b  /home/demo/kode/vscii/motizuki/d012bcg.gif
+3b339e7bab883631bab57e4e66b30f779224ec13d02b6b30002cfef38705b805  /home/demo/kode/vscii/motizuki/Essential Logical Structure of Inter-universal Teichmuller Theory.pdf
+4cacce3f1085c4f58d6bf66c25f8e7c8c6344e6c3811f89ac43df1e5f31d2d64  /home/demo/kode/vscii/motizuki/Explicit estimates in IUTeich.pdf
+4e9d0fe36ee7e3a496e26eaa7155b0a244ec67d9b555ddd40ae99f25297e994d  /home/demo/kode/vscii/motizuki/Extending Families of Curves over Log Regular Schemes.pdf
+9e0a15936beb493a6b782cb7b56242aafe94547d2c4246eab8cdb060f0f64418  /home/demo/kode/vscii/motizuki/Foundations (comments).pdf
+d62a52825d2cfb8cd6143e6b98b329fb1503cc427ebfff9afaecc04dc3779db8  /home/demo/kode/vscii/motizuki/Galois Sections (comments).pdf
+9c58afaea9378b791f31ae10cdca108de71c8f971a5838e68c3e4f8051cec305  /home/demo/kode/vscii/motizuki/Galois Sections.pdf
+663c886547585bcbc926a603be992d0966a56dfc6ed8bf87d5071fea9b02c103  /home/demo/kode/vscii/motizuki/Global Solvably Closed Anabelian Geometry (LaTeX version).pdf
+a43821cedf42127f45a8837435842792345f675b2d2edbbc93625efb0b9ba189  /home/demo/kode/vscii/motizuki/Global Solvably Closed Anabelian Geometry.pdf
+9a7ee3c77b1c7717210c0613eb39b6844649d0040dc3d9e1be7d544f8f91a0b9  /home/demo/kode/vscii/motizuki/Inter-universal Teichmuller Theory III.pdf
+180bfa6aaddc4ae37af37acaad51f61e0a47b33b8255ad3169e28a970ae39b7c  /home/demo/kode/vscii/motizuki/Inter-universal Teichmuller Theory II.pdf
+7360e3ed27c235b5497a0743d3ed1646fbb97688547d16b7c784fc7f127f1f03  /home/demo/kode/vscii/motizuki/Inter-universal Teichmuller Theory I.pdf
+5bf4b1e0a8c2686562a6859e5009d301335044cfb5efec5d3a9edf764e4af87f  /home/demo/kode/vscii/motizuki/Inter-universal Teichmuller Theory IV.pdf
+4b2f534b70390aa55a0ee941f15ce8a96250d9c424a7157d18558f633dd06a30  /home/demo/kode/vscii/motizuki/IUT as an Anabelian Gateway (MFO-RIMS23 Oberwolfach Report).pdf
+49f45f89d213e67748e5bcf0bf1f323ad0694f7418b1ac698c0120eee88edeb9  /home/demo/kode/vscii/motizuki/list-of-papers.pdf
+b7af9eb337686dbc8e24c269ad5316d1cb389179ad5260a06e739537a05c772d  /home/demo/kode/vscii/motizuki/logo20.gif
+25d7a1ba02dcee9e24a404f039ac707141f040de6093dde797f77cfa7f479b52  /home/demo/kode/vscii/motizuki/ls.sha256sum.txt
+d2b1c8dd64fd53dee9e653554a4942317382b271b2fadd59efc45adf3d871b66  /home/demo/kode/vscii/motizuki/ls.sha256sum.txt.bash
+e695d40452b96ba100e1270a7d29c179eab7c26f41ca4dbc005e7f74db9c9cc8  /home/demo/kode/vscii/motizuki/Monomorphisms in Categories of Log Schemes.pdf
+5f1d1693294768c7937f554a8263d6608a175204871fa6422abe4b854bf20db9  /home/demo/kode/vscii/motizuki/Nodally Nondegenerate Outer Representations (comments).pdf
+8391b6a3d6840e1f4e21256075c90c063b2eb1437d4750870d194036e6623ef0  /home/demo/kode/vscii/motizuki/Nodally Nondegenerate Outer Representations.pdf
+8fa3ba26ee629acebc77e8e53ce08cafff29cf31a1898fc121d03b50302f8c31  /home/demo/kode/vscii/motizuki/Noncritical Belyi Maps (comments).pdf
+d59b8bf5bbed7fea124345330ad81df284747457c03d7cb07baa0f4ebd38ce2c  /home/demo/kode/vscii/motizuki/Noncritical Belyi Maps.pdf
+dc0f31d2ad00626e10bd572b476a9ae9c00b11067c612d00a1d1f53ac5888f18  /home/demo/kode/vscii/motizuki/Numerical invariants and distinguished subgroups of configuration spaces.pdf
+54d7f028c510091406232504bb1e49bcaf40e4b9bfbd68d19827721e2693ef09  /home/demo/kode/vscii/motizuki/On Semi-positivity and Filtered Frobenius Crystals.pdf
+0efc4f2f3d9705bd7ae46e039de11b63b76d136ecf89c298d010c6e576a20173  /home/demo/kode/vscii/motizuki/Panoramic Overview of Inter-universal Teichmuller Theory (comments).pdf
+eb42575f73d69d1f28e949eb9e52593dd17d1b85c15cc8b44fdfd12ae86b708b  /home/demo/kode/vscii/motizuki/Panoramic Overview of Inter-universal Teichmuller Theory.pdf
+553304da7184b638904b26ccef6f495bd2d1a13f3fbe065374a2b28b2266f5a7  /home/demo/kode/vscii/motizuki/Resolution of Nonsingularities for Arbitrary Hyperbolic Curves.pdf
+cdd2c6a2714b6e91149017e02cf08b381343be8818721ae1cac8d1f032cd26e6  /home/demo/kode/vscii/motizuki/Semi-graphs of Anabelioids (comments).pdf
+dcc05b22ff858af670c9346ca7a483d4d9b640df5561ec0e82c27314a2416892  /home/demo/kode/vscii/motizuki/Semi-graphs of Anabelioids.pdf
+3a066a2ae2ccd21d7a329edfdd7882c8d68cd52bf41d74332bf356a4c1dbec1f  /home/demo/kode/vscii/motizuki/The Algebraic and Anabelian Geometry of Configuration Spaces (comments on strongly torsion-free groups).pdf
+16d0ee5623067df90f4776c71a7361c51f16c489e3d1ec302f80b14c1c3be26c  /home/demo/kode/vscii/motizuki/The Algebraic and Anabelian Geometry of Configuration Spaces (comments).pdf
+a444035a2f4870c81f3ba7bbf25435855d625efe99ea2c007c712d421887f256  /home/demo/kode/vscii/motizuki/The Algebraic and Anabelian Geometry of Configuration Spaces.pdf
+5906b257b6125febbd13b58829332e4448a7548e167e0f17187f4b23b11d6169  /home/demo/kode/vscii/motizuki/The Etale Theta Function and its Frobenioid-theoretic Manifestations (comments).pdf
+42c5d9180c69bc9fa6596ce1a11662494315954ed74301060bf1819f955a7406  /home/demo/kode/vscii/motizuki/The Etale Theta Function and its Frobenioid-theoretic Manifestations.pdf
+b8d1d8136ec0bbdbd29ca2456e18aeb2b31e60206332f0c643c1c110e25005e3  /home/demo/kode/vscii/motizuki/The Etale Theta Function and its Frobenioid-theoretic Manifestations (related expositions).pdf
+a75549e2613746619c9652d93b751a91c344ce14be1bf2ca110d52030c4e1910  /home/demo/kode/vscii/motizuki/The Galois-Theoretic Kodaira-Spencer Morphism of an Elliptic Curve.pdf
+9f43cd2292f13cd016c305c4a61f9327f6bef190a9ab95f75dd8e9faf9d7b576  /home/demo/kode/vscii/motizuki/The Geometry of Anabelioids (comments).pdf
+78a92a9b6d9a0ab41fa6172c676b5fa5d281f16b0cf0a935712991f52ace2028  /home/demo/kode/vscii/motizuki/The Geometry of Anabelioids.pdf
+33b2bed1929e2a72ba3b814d199ab541f7b9ad64b825ca64801195a00a1323ee  /home/demo/kode/vscii/motizuki/The Geometry of Frobenioids I (comments).pdf
+206a9ae9572c9e9b46ed6bc62f2b50e733c4c4f61862ac66186d1c2fc7c31036  /home/demo/kode/vscii/motizuki/The Geometry of Frobenioids II (comments).pdf
+0185e64c4107123a20d2fd72f6e5a5ff8e5c1356d3caee69b7d5700e291ac0a9  /home/demo/kode/vscii/motizuki/The Geometry of Frobenioids II.pdf
+8e5ac14e3aadb457ee4edde81a325b64b060cefb14712d70cf2ca66b373aaf53  /home/demo/kode/vscii/motizuki/The Geometry of Frobenioids I.pdf
+6c9e2e497f996282dcf3d7fcf0e06b59e9918d4ea6c3ba8ec3fe2d7ef8973840  /home/demo/kode/vscii/motizuki/The Geometry of the Compactification of the Hurwitz Scheme (comments).pdf
+637a3fd7d18ef511c57e5a4d59b7e28aede3a08bd9518cf160ec14c344638e6e  /home/demo/kode/vscii/motizuki/The Geometry of the Compactification of the Hurwitz Scheme.pdf
+130fdd9ec19902979efd6debc59884292b21061121ded6cf7ae7ecc0622d447f  /home/demo/kode/vscii/motizuki/The Grothendieck Conjecture on the Fundamental Groups of Algebraic Curves.pdf
+17254ef5b07c71dbd32b0fae95b4e135af20f82114bfdb7dc7dc97366a2b16c8  /home/demo/kode/vscii/motizuki/The Hodge-Arakelov Theory of Elliptic Curves in Positive Characteristic.pdf
+c82e4a9d9df328896206dc9ed9003a850906b1b6d41805e9e3687003e4ca3653  /home/demo/kode/vscii/motizuki/The Hodge-Arakelov Theory of Elliptic Curves.pdf
+3b05322175f8297b78da48ed34d92e00e74049dfe1ff5b06bc2f7536fc5abf80  /home/demo/kode/vscii/motizuki/The Intrinsic Hodge Theory of Hyperbolic Curves (Seoul 1998).pdf
+7a87a2e4ab3ea7e3148058e6b24cd45f32bf4bd8a85a918d857053004791496c  /home/demo/kode/vscii/motizuki/The Intrinsic Hodge Theory of p-adic Hyperbolic Curves (ICM98).pdf
+aa4041f83015e78a771f0d5ccca40ef22951a476ec636e15c9d742528c03e268  /home/demo/kode/vscii/motizuki/The Intrinsic Hodge Theory of p-adic Hyperbolic Curves (Nara 1998).pdf
+e01d70acf57510305038d55eabaf1aea348ddf9a6b4db13798f6387d51c2b5f3  /home/demo/kode/vscii/motizuki/The Local Pro-p Anabelian Geometry of Curves (comments).pdf
+6e7ffd16f4c074068cc616a051bfcfba04a4dc412b1ee7465c732d0383b8a2cc  /home/demo/kode/vscii/motizuki/The Local Pro-p Anabelian Geometry of Curves.pdf
+b6e66e8230bab4737b2a936a6b6cbd3234233eb48ae766b8158175390f976456  /home/demo/kode/vscii/motizuki/The Profinite Grothendieck Conjecture for Closed Hyperbolic Curves over Number Fields (comments).pdf
+8a64aa9aad9df55d512e1e931c428a870bb233ce11834d0b9413ac882d72e939  /home/demo/kode/vscii/motizuki/The Profinite Grothendieck Conjecture for Closed Hyperbolic Curves over Number Fields.pdf
+c7d306f18fe4773b111d846789d5d4e1b0037aa79d8112b474f817bdeed7335c  /home/demo/kode/vscii/motizuki/The Scheme-theoretic Theta Convolution.pdf
+db1bd76e70fd616d993d7f9ba187303d1f094f8dc18f11d9fafada588ab5845e  /home/demo/kode/vscii/motizuki/top-english.html
+caa3b7848329d011eae4f366c70d66d0395f91f2d16cbadf962ec9e014b23bb2  /home/demo/kode/vscii/motizuki/Topics in Absolute Anabelian Geometry I (comments).pdf
+36f50506300ad3dbe10bc9b9bd52dabfbf88aebe0f1370a0ec56812e4ca3d54b  /home/demo/kode/vscii/motizuki/Topics in Absolute Anabelian Geometry II (comments).pdf
+dd631bdf387ad80af9f1c7d80273df082f334b9a0a4f8ea41d36afc25f0ac674  /home/demo/kode/vscii/motizuki/Topics in Absolute Anabelian Geometry III (comments).pdf
+e8115df30a86dea26e2ebf60cb333558ff28fe3e4d57017a80421787b53421a9  /home/demo/kode/vscii/motizuki/Topics in Absolute Anabelian Geometry III.pdf
+48c5f190eac3026e80ecd82207a8003267e30ce76c4a85bb6b35d1a12ee34139  /home/demo/kode/vscii/motizuki/Topics in Absolute Anabelian Geometry II.pdf
+1ecd5a709d72ab532070ec19c8ca4811d21288e8e0358b8adc11f0aa9ae0d082  /home/demo/kode/vscii/motizuki/Topics in Absolute Anabelian Geometry I.pdf
+60e4e921642a98ef8db32dee9d39469aabe26476fd784f9cb87d688e22d4aaa9  /home/demo/kode/vscii/motizuki/Topics Surrounding the Anabelian Geometry of Hyperbolic Curves.pdf
+98254c273ea83132fe0722e39918c539dfa2563d1e712e19b16b810e133c2c02  /home/demo/kode/vscii/motizuki/v5_anim090.gif
