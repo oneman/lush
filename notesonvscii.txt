@@ -1,0 +1,86 @@
+oh the joy! The joy of reconstruction
+
+https://gist.github.com/oneman/11c31828a4de75e50b64ee1a2bf5b3cd
+
+https://gpsd.gitlab.io/gpsd/AIVDM.html#_aivdmaivdo_payload_armoring
+
+[IEC-PAS] IEC-PAS 61162-100, "Maritime navigation and radiocommunication
+equipment and systems" The ASCII armoring is described on page 26 of
+Annex C, Table C-1. Communicated by Kurt Schwehr; I have not looked at it.
+
+https://gist.github.com/oneman/11c31828a4de75e50b64ee1a2bf5b3cd
+
+
+https://github.com/oneman/vscii
+
+[~/kode/vscii]% cat nscii.txt 
+a 00001 alpha
+b 00010 bravo
+c 00011 charlie
+d 00100 delta
+e 00101 echo
+f 00110 foxtrot
+g 00111 golf
+h 01000 hotel
+i 01001 india
+j 01010 juliet
+k 01011 kilo
+l 01100 lima
+m 01101 mike
+n 01110 november
+o 01111 oscar
+p 10000 papa
+q 10001 quebec
+r 10010 romeo
+s 10011 sierra
+t 10100 tango
+u 10101 uniform
+v 10110 victor
+w 10111 whiskey
+x 11000 xray
+y 11001 yankee
+z 11010 zulu
+[~/kode/vscii]% 
+
+[~/kode/vscii]% cat vscii.txt
+a 00001
+b 00010
+c 00011
+d 00100
+e 00101
+f 00110
+g 00111
+h 01000
+i 01001
+j 01010
+k 01011
+l 01100
+m 01101
+n 01110
+o 01111
+p 10000
+q 10001
+r 10010
+s 10011
+t 10100
+u 10101
+v 10110
+w 10111
+x 11000
+y 11001
+z 11010
+[~/kode/vscii]% cat vscii.txt | wc 
+     26      52     208
+[~/kode/vscii]% 
+
+
+208 byte ident file for vscii ascii bytes
+
+upon this we build a simple computer system that evolves into a rather
+lush complex computer system that is a network system and system of systems
+that process metasystematically, etc. But don't you worry, its compatible
+with the best systems and the worst systems ever built so it runs on your
+computer in 1 click and it runs real damn quick and thats all I have to
+say about it now. Have a nice day and kiss my ass.
+
+-oneman
