@@ -6,13 +6,13 @@ int main(int argc, char **argv) {
   int ret = 0;
   uint8_t c = 0;
   if ((argc == 0) || (argc > 2)) {
-    printf("n\n");
+    fprintf(stdout, "n\n");
     return 0;
   }
   if (argc == 1) {
     ret = read(1, &c, 1);
-    if (ret != 1) {
-      printf("\n");
+  if (ret != 1) {
+      fprintf(stdout, "\n");
       return 0;
     }
   }
@@ -21,9 +21,9 @@ int main(int argc, char **argv) {
   }
   ret = isvscii(c);
   if (ret == 1) {
-    printf("y\n");
+    fprintf(stdout, "y\n");
     return 1;
   }
-  printf("n\n");
+  fprintf(stdout, "n\n");
   return 0;
 }
