@@ -14,10 +14,9 @@
 typedef struct bitch {
   uint64_t bin; /* b in */
   uint64_t cnt;
-  uint64_t cnt;
 };
 
-typedef struct bytch
+/*typedef struct bytc*/
 
 int main(int argc, char *argv[]) {
   /* metahypertemplate */

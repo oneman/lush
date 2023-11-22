@@ -1,0 +1,30 @@
+hrm.
+
+
+designators pronouns? a, it, him, her, mr, she, them, they, the, this, that, us
+
+logical 'group' merge operators: and, or, not,
+
+with, include, exclude,
+
+interjection:
+  immediate local 'mode' change, 'interupt signal'
+
+noun:
+  structure or typedef
+pronoun:
+  structure pointer
+adjective:
+  structure instance tag, 'container', 'projective modifier'
+
+preposition:
+  positioning.
+  function/structure sequence/position operator "direction, location, time"
+conjunction:
+  'conditional connecting, conditional, ie control flow struc'
+  grouping operator, control flow conditition
+
+verb:
+  function "operation"
+adverb:
+  function "wrapper" ..modifier to default function traits

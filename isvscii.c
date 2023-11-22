@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
   }
   if (argc == 1) {
     ret = read(1, &c, 1);
-  if (ret != 1) {
+    if (ret != 1) {
       fprintf(stdout, "\n");
       return 0;
     }

@@ -55,10 +55,9 @@ int kr_dir_get_entry(kr_dir *dir, kr_dir_entry *entry) {
   for (;;) {
     dir->pos = telldir(dir->dh);
     if (dir->pos == -1) dir->pos = 0;
-    /*fixme*/
-    return -1;
-    //ret = readdir_r(dir->dh, &entry->entry, &res);
-    if (ret) return -1;
+    ret = readdir_r(dir->dh, &entry->entry, &res);
+    /*if (ret) return -1;*/
+    if (ret) break;
     if (res == NULL) return 0;
     if (res->d_ino) {
       if ((res->d_name[0] == '.' && res->d_name[1] == '\0')

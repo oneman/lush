@@ -15,6 +15,14 @@
 #include <string.h>
 #include <locale.h>
 
+/* a more useful include */
+#include <sys/uio.h>
+
+const char *nato_alphabet(void) {
+  static const char *alphabet = "abcdefghijklmnopqrstuvwxyz";
+  return alphabet;
+}
+
 uint8_t isvscii_nocap(uint8_t c) {
   if (c == 'a') return 1;
   if (c == 'b') return 1;
@@ -75,6 +83,8 @@ uint8_t isvscii(uint8_t c) {
 #define VSCII_WORD_LEN_MAX VWORD_LEN_MAX
 #define VSCII_WORD_LENGTH_MINIMUM VWORD_LEN_MIN
 #define VSCII_WORD_LENGTH_MAXIMUM VWORD_LEN_MAX
+
+#define VSCII_WORD_TYPE "morphonym"
 
 /* ALL vscii words are no longer than (26 * 3) 78 characters in length, because
  * we use 80 column terminals here in Virginia */

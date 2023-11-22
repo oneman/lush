@@ -1,0 +1,10 @@
+snd_filterquality
+snd_show 
+snd_show 1
+snd_show 0
+ sndspeed 
+ sndspeed 48000
+ sndspeed 
+vid_restart 
+quirt
+quit
