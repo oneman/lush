@@ -102,7 +102,7 @@ int kr_daala_encode(kr_daala_encoder *dh, kr_frame *out, kr_frame *in) {
   int i;
   int ret;
   int last;
-  od_img img;
+  daala_image img;
   daala_packet op;
   if (!dh || !out || !in) return -1;
   ret = -1;
