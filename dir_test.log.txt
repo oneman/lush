@@ -1,0 +1,128 @@
+.nvidia-settings-rc
+2410 bytes
+
+my_video-3.mkv
+771 bytes
+
+my_video-14.mkv
+531813 bytes
+
+.msf4/
+.cargo/
+LIVE ｜ Airstrikes Pummel Gaza ｜ US Urges Restraint On Israel Amid Fears Of Regional War ｜ Palestine 2023-10-20 02_10 [xXie9CeKwY8].mp4.part
+212336640 bytes
+
+download/
+my_video-17.mkv
+767025843 bytes
+
+photo/
+funstuff/
+.bash_logout
+21 bytes
+
+yayallyeah.tiled-project
+223 bytes
+
+.jssc/
+my_video-6.mkv
+772 bytes
+
+.bash_history-50894.tmp
+0 bytes
+
+Ukrainian air force shoots down Russian missile using German Cheetah anti-aircraft system [wC06BogzNy4].webm
+10875801 bytes
+
+.mame/
+mini.json
+1176 bytes
+
+.python_history
+0 bytes
+
+.arduino15/
+06/
+.dosbox/
+.var/
+my_video-7.mkv
+772 bytes
+
+reconstruction.pdf
+1745473 bytes
+
+irclogs/
+55/
+fun.elf
+15568 bytes
+
+opt/
+crackedvscii.txt.c
+3079 bytes
+
+video/
+reconstruction.svg
+765288 bytes
+
+.ICEauthority
+0 bytes
+
+.lesshst
+208 bytes
+
+my_video-5.mkv
+772 bytes
+
+my_video-18.mkv
+1165589 bytes
+
+my_video-1.mkv
+3124363 bytes
+
+my_video-2.mkv
+48955415 bytes
+
+quake00.jpg
+53066 bytes
+
+default.gpfl
+448 bytes
+
+my_video-13.mkv
+841300 bytes
+
+faceplant.jpg
+89271 bytes
+
+.viminfo
+33542 bytes
+
+my_video-12.mkv
+12540102 bytes
+
+.bash_history-00380.tmp
+0 bytes
+
+My Labels/
+FOR WHOMEVER DARPA SEZ CAN SEE CLEARLY HERE AS NATURE REVEAL HER SECRETS TO US BY EXPERIMENT [r0z6dO4Xu5Q].mkv
+53331814 bytes
+
+.gnuradio/
+.gnupg/
+music/
+.bash_history-43929.tmp
+0 bytes
+
+.gitconfig
+158 bytes
+
+.vcpkg/
+Inter-universal Teichmuller Theory I.pdfio.txt
+543726 bytes
+
+dum.odt
+21007 bytes
+
+dr.tex
+281 bytes
+
