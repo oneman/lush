@@ -1,0 +1,500 @@
+   62  ascii del
+   63  ascii -h
+   64  ascii 126
+   65  ascii 126
+   66  ascii -a 126
+   67  ascii -d 126
+   68  ascii -td 126
+   69  ascii -ad 126
+   70  ascii -h
+   71  ascii -ad 126 names
+   72  ascii -ad 126
+   73  ascii -d 126
+   74  ascii -a 126
+   75  ascii -a ~
+   76  ascii -a
+   77  ascii -t
+   78  ascii -a -t
+   79  ascii -a -t tilde
+   80  gcc -g -Wall -o vscii-ascii vscii-ascii
+   81  gcc -g -Wall -o vscii-ascii vscii-ascii.c
+   82  ./vscii-ascii 
+   83  gcc -g -Wall -o vscii-ascii vscii-ascii.c
+   84  ./vscii-ascii 
+   85  gcc -g -Wall -o vscii-ascii vscii-ascii.c && ./vscii-ascii 
+   86  man utf8
+   87  man unicode
+   88  man utf-8
+   89  man unicode\
+   90  man unicode
+   91  man utf-8
+   92  man charsets
+   93  man iconv
+   94  iconv -l
+   95  iconv -h
+   96  iconv 
+   97  man iconv 
+   98  man uconv 
+   99  uconv -l
+  100  ./vscii-ascii 
+  101  gcc -g -Wall -o vscii-ascii vscii-ascii.c && ./vscii-ascii 
+  102  date
+  103  wn test
+  104  wn -over test
+  105  wn test -over
+  106  wn -over test
+  107  wn test
+  108  wn test -over
+  109  wn and -over
+  110  wn and
+  111  wn because
+  112  wn because -over
+  113  wn until
+  114  wn so
+  115  wn so -over
+  116  wn the -over
+  117  wn there -over
+  118  date
+  119  vim doc/notes
+  120  vim doc/notes.txt
+  121  fg 1
+  122  vim
+  123  date
+  124  date
+  125  date
+  126  date
+  127  date
+  128  mkdir lush
+  129  cd lush/
+  130  cp -a ~/funstuff/cdrom/QUAKE/ .
+  131  ls
+  132  ls QUAKE/
+  133  mv QUAKE/ .q
+  134  ls
+  135  ls .q
+  136  cd .q/
+  137  ls
+  138  ls qw
+  139  ls qw/demos/
+  140  ls qw/glquake/
+  141  ls Arena/
+  142  ls Arena/maps/
+  143  cp Arena/maps/dm3ra2.bsp .
+  144  cd ..
+  145  ls -ltrh
+  146  ls -ltrha
+  147  chmod +w q
+  148  chmod +w .q/
+  149  cp .q/Arena/maps/dm3ra2.bsp .
+  150  cp .q/fortress/maps/* .
+  151  cp .q/fortress/ .
+  152  cp -a .q/fortress/ .
+  153  cd .q
+  154  cat file_id.diz 
+  155  rm file_id.diz 
+  156  ls
+  157  wine cr-acd24.exe 
+  158  cat core.nfo 
+  159  cd ..//
+  160  ls
+  161  ls ~/funstuff/cdrom/
+  162  ls ~/funstuff/cdrom/208/Setup/SETUP.
+  163  wine ~/funstuff/cdrom/208/Setup/SETUP.EXE 
+  164  wine ~/funstuff/cdrom/boot/
+  165  cd kode/wayland
+  166  ls
+  167  vim README.md 
+  168  vim README.md 
+  169  ninja -C build install
+  170  ninja -C build install
+  171  cd ../weston/
+  172  vim README.md 
+  173  meson build 
+  174  meson build/
+  175  meson build/ --prefix=
+  176  meson build/ --prefix=/
+  177  meson build/ --prefix=/usr
+  178  meson build/ --prefix=/usr/local
+  179  vim README.md 
+  180  ls
+  181  ls build/
+  182  cd build/
+  183  rm -rf *
+  184  ls -a
+  185  cd ../
+  186  meson build/
+  187  ninja -C build/
+  188  ninja -C build/ install
+  189  cd ~
+  190  sudo ldconfig
+  191  exit
+  192  /usr/local/bin/weston-
+  193  /usr/local/bin/weston
+  194  sudo /usr/local/bin/weston
+  195  sudo su
+  196  cd kode/weston/
+  197  meson build/ --prefix=/usr
+  198  cd build/
+  199  rm -rf *
+  200  cd ..
+  201  meson build/ --prefix=/usr
+  202  meson setup build/ --prefix=/usr
+  203  meson setup --wipe
+  204  meson setup --wipe build/
+  205  ninja -C build/ install
+  206  ls
+  207  ls tools/
+  208  ls clients/
+  209  ls
+  210  ls pam/
+  211  ls pipewire/
+  212  ls subprojects/
+  213  ls compositor/
+  214  ls build/
+  215  ls build/c
+  216  ls build/co
+  217  ls build/compositor/
+  218  ls build/fullscreen-shell/
+  219  ls build/data/
+  220  ls build/clients/
+  221  weston
+  222  weston -h
+  223  sudo su
+  224  weston
+  225  sudo weston
+  226  XDG_RUNTIME_DIR=. sudo weston
+  227  sudo XDG_RUNTIME_DIR=.weston
+  228  sudo XDG_RUNTIME_DIR=.
+  229  env|grep -i xd
+  230  weston
+  231  sudo systemctl
+  232  sudo systemctl seatd
+  233  sudo systemctl status seatd
+  234  sudo systemctl enable seatd
+  235  sudo systemctl start seatd
+  236  weston
+  237  exit
+  238  weston
+  239  sudo systemctl status seatd
+  240  sudo weston
+  241  weston
+  242  drmdevice 
+  243  weston-debug 
+  244  sway
+  245  sway --unsupported-gpu
+  246  sudo chown demo /run/seatd.sock 
+  247  sway --unsupported-gpu
+  248  startx
+  249  q
+  250  cat /proc/cpuinfo 
+  251  exit
+  252  cat .viminfo 
+  253  cat .vimrc 
+  254  exit
+  255  cd kode/vscii/lush/;wget http://icculus.org/twilight/darkplaces/files/rygel-dp-texturepack-ultra.pk3
+  256  uname -a
+  257  cat /proc/cpuinfo 
+  258  cd ..
+  259  exit
+  260  weston
+  261  startxfce4 
+  262  cd kode/vscii
+  263  mutool 
+  264  ls *voa*
+  265  ls *VOA*
+  266  ls
+  267  cd doc
+  268  ls
+  269  cd ..
+  270  ls
+  271  gs
+  272  git add *
+  273  gs
+  274  rm The\ Project\ Gutenberg\ eBook\ of\ The\ Modes\ of\ Ancient\ Greek\ Music\,\ by\ D.\ B.\ Monro\,\ M.A...pdf 
+  275  gs
+  276  mkdir doc/pdf
+  277  git mv *pdf doc/pdf/
+  278  gss
+  279  gs
+  280  mv *pdf doc/pdf/
+  281  ls
+  282  ls *png
+  283  mkdir doc/png
+  284  mv *png doc/png/
+  285  gs
+  286  git add doc/*
+  287  gs
+  288  cd lush/
+  289  ls
+  290  cd Quake/
+  291  ls
+  292  ls -a
+  293  rm -rf .git/
+  294  cd ..
+  295  cd ..
+  296  cd lush/
+  297  ls .q/
+  298  git add .q/
+  299  cd ../
+  300  gs
+  301  git add lush/
+  302  gs
+  303  git add lush/*bsp
+  304  gs
+  305  git add lush/history.txt 
+  306  vim lush/history.txt 
+  307  git add lush/lush.c 
+  308  gs
+  309  git add lush/fortress/
+  310  git add lush/Quake/
+  311  git add lush/pak1.pak.ls.txt 
+  312  git add lush/pak0.pak.ls.txt 
+  313  git add vscii-ascii.c 
+  314  gs
+  315  gs
+  316  gs
+  317  git commit -a -m "clean up a bit
+  318  git commit -a -m "clean up a bit"
+  319  git push
+  320  nmap
+  321  nmap 192.168.1.*
+  322  nmap 192.168.1.*
+  323  ssh demo@192.168.1.209
+  324  gs
+  325  cd doc/pdf/
+  326  mutool extract voa_english_vscii_on_page_9.pdf 
+  327  mutool extract
+  328  ls *cff
+  329  ls *jpg
+  330  mkdir ../school_supplies
+  331  mv *jpg ../school_supplies/
+  332  mv *cff ../school_supplies/
+  333  ls
+  334  mutool extract rp2040-datasheet.pdf 
+  335  mv *png ../school_supplies/; mv *tff ../school_supplies/
+  336  mv *png ../school_supplies/; mv *ttf ../school_supplies/
+  337  mv ../school_supplies/ ../ss
+  338  ls
+  339  mutool extract Military_Standard.pdf 
+  340  mutool extract
+  341  mutool -h
+  342  mutool info list-of-papers.pdf 
+  343  mutool extract list-of-papers.pdf 
+  344  mv *.ttf ../ss/; mv *.cff ../ss/
+  345  ls
+  346  mutool extract RS274NGC_3.pdf.pdf 
+  347  mutool extract whatisanumber.pdf 
+  348  mv *.ttf ../ss/; mv *.cff ../ss/; mv *.cid ../ss/; 
+  349  ls
+  350  mupdf extract SSO\ Mishap\ Classification\ Poster-Web.pdf 
+  351  mupdf extract SSO\ Mishap\ Classification\ Poster-Web.pdf'
+  352  mupdf extract SSO\ Mishap\ Classification\ Poster-Web.pdf
+  353  mutool extract SSO\ Mishap\ Classification\ Poster-Web.pdf'
+  354  mutool extract SSO\ Mishap\ Classification\ Poster-Web.pdf
+  355  mv *.ttf ../ss/; mv *.cff ../ss/; mv *.cid ../ss/; 
+  356  ls *pdf
+  357  mutool extract ina317.pdf 
+  358  mv *.ttf ../ss/; mv *.cff ../ss/; mv *.cid ../ss/; mv *png ../ss/;
+  359  ls
+  360  ls *pdf
+  361  mutool extract Essential\ Logical\ Structure\ of\ Inter-universal\ Teichmuller\ Theory.pdf 
+  362  mv *.ttf ../ss/; mv *.cff ../ss/; mv *.cid ../ss/; mv *png ../ss/;
+  363  gs
+  364  cd ../..
+  365  gs
+  366  git add doc/ss/
+  367  gs
+  368  gs
+  369  git commit -a -m "r/w training fonts"
+  370  git push
+  371  ssh demo@192.168.1.209
+  372  sudo shutdown -h now
+  373  mupdf ../doc/pdf/Essential\ Logical\ Structure\ of\ Inter-universal\ Teichmuller\ Theory.pdf 
+  374  firefox
+  375  firefox 
+  376  sudo su
+  377  firefox
+  378  exit
+  379  firefox
+  380  cd kode/vscii/lush/
+  381  ls
+  382  gs
+  383  ./vkquake 
+  384  weston
+  385  weston --xwayland --fullscreen
+  386  sudo weston --xwayland --fullscreen
+  387  cd ../..
+  388  cd wayland
+  389  ls
+  390  meson build/
+  391  meson build/ --wipe
+  392  sudo ninja -C build/ install
+  393  git pull
+  394  meson build/ --wipe --prefix=/usr
+  395  vim build/build.ninja 
+  396  git pull
+  397  ninja -C build install
+  398  meson install --no-rebuild
+  399  cd build
+  400  meson install --no-rebuild
+  401  sudo meson install --no-rebuild
+  402  cd ..
+  403  cd ..
+  404  cd weston/
+  405  git pul
+  406  git pull\
+  407  git pull
+  408  meson build/ --wipe --prefix=/usr
+  409  sudo ninja -C build/ install
+  410  sudo ldconfig
+  411  sudo sync
+  412  weston
+  413  weston --xwayland
+  414  weston --xwayland
+  415  firefox
+  416  cd kode/
+  417  gs
+  418  ls
+  419  git clone https://gitlab.freedesktop.org/pipewire/pipewire.git
+  420  io_yeaiou_vstring
+  421  mkdir io_yeaiou_vstring
+  422  cd vscii
+  423  ls
+  424  ls include/
+  425  ls lib/krad
+  426  ls lib
+  427  ls lib/io
+  428  make
+  429  ./configure --help
+  430  make clean; ./autogen.sh;./configure --enable-dev --enable-tools --disable-decklink --enable-daala --prefix=/usr && make -j1 && sudo make install
+  431  ls ../daala/
+  432  ls ../daala/include/
+  433  ls ../daala/include/daala/
+  434  vim lib/codec/video/daala/encoder.h
+  435  vim lib/codec/video/daala/encoder.c
+  436  vim lib/codec/video/daala/encoder.c
+  437  cd vscii
+  438  cd ..
+  439  exit
+  440  make
+  441  exit
+  442  mv The\ Augmented\ Knowledge\ Workshop\ -\ 1973\ \(AUGMENT\,14724\,\)\ -\ Doug\ Engelbart\ Institute.pdf ~/download/
+  443  ls
+  444  vim daala/include/daala/daalaenc.h 
+  445  exit
+  446  cd kode/
+  447  ls rad/
+  448  mv rad/ oldrad
+  449  ls
+  450  mv vscii rad
+  451  exit
+  452  date
+  453  date
+  454  alsamixer 
+  455  alsamixer 
+  456  exit
+  457  exit
+  458  cd ~/src/zsh-code/
+  459  ls
+  460  ls Scripts/
+  461  vim Scripts/newuser 
+  462  exit
+  463  chmod +x allcfftot1.zsh 
+  464  ./allcfftot1.zsh 
+  465  cat allcfftot1.zsh 
+  466  exit
+  467  ./allcfftot1.zsh 
+  468  ./allcfftot1.zsh 
+  469  ls
+  470  pwd
+  471  pwd
+  472  ./allcfftot1.zsh 
+  473  ./allcfftot1.zsh 
+  474  ls ..
+  475  ls ..
+  476  ./allcfftot1.zsh 
+  477  ls /home/demo/kode/rad/doc/ss/wtf/wtf.cff/*.cff
+  478  ls /home/demo/kode/rad/doc/ss/wtf/wtf.cff/*.cff\
+  479  ls /home/demo/kode/rad/doc/ss/wtf/wtf.cff/*.cff
+  480  ./allcfftot1.zsh 
+  481  zsh
+  482  df -h
+  483  sudo gparted
+  484  cd ../rad
+  485  ls
+  486  ls -ltrh
+  487  exit
+  488  date
+  489  exit
+  490  ascii
+  491  exit
+  492  chmod +x forcfflines.py 
+  493  ./forcfflines.py 
+  494  python ./forcfflines.py 
+  495  ls /usr/share/fonts/Type1/
+  496  ls
+  497  ./forcfflines.py 
+  498  python forcfflines.py 
+  499  exit
+  500  python forcfflines.py 
+  501  python forcfflines.py 
+  502  python forcfflines.py 
+  503  python forcfflines.py 
+  504  python forcfflines.py 
+  505  python forcfflines.py 
+  506  python forcfflines.py 
+  507  python forcfflines.py 
+  508  python forcfflines.py 
+  509  python forcfflines.py 
+  510  python forcfflines.py 
+  511  python forcfflines.py 
+  512  python forcfflines.py 
+  513  python forcfflines.py 
+  514  python forcfflines.py > forcfflines.sh
+  515  sh forcfflines.sh 
+  516  ls
+  517  cd ..
+  518  cp -a wtf.cff/ wtf.pfb
+  519  cd wtf.pfb/
+  520  sh forcfflines.sh 
+  521  ls
+  522  gs
+  523  cd ~/src/rad
+  524  gs
+  525  mv Flag_of_Virginia.svg.png Defense\ Counterintelligence\ and\ Security\ Agency_Seal\ Color_250.png doc/png/
+  526  mv special_mode.png patterns_fonts.png doc/png/
+  527  ls
+  528  gs
+  529  git add stream.5 
+  530  git add doc/png/
+  531  git add doc/pdf/
+  532  git add doc/atypi2012-afdko-hattori.pdf 
+  533  git add doc/ss/
+  534  git add doc/src
+  535  git commit -a -m "documentation update"
+  536  git push
+  537  git push https://gitlab.com/rawdod/vscii
+  538  git push https://gitlab.com/rawdod/vscii
+  539  cd motizuki/
+  540  ls
+  541  mutool extract Inter-universal\ Teichmuller\ Theory\ I.pdf 
+  542  mutool extract Inter-universal\ Teichmuller\ Theory\ II.pdf 
+  543  mutool extract Inter-universal\ Teichmuller\ Theory\ III.pdf 
+  544  mutool extract Inter-universal\ Teichmuller\ Theory\ IV.pdf 
+  545  cp ../doc/ss/wtf/wtf.pfb/forcfflines.py .
+  546  cp ../doc/ss/wtf/wtf.pfb/forcfflines.sh .
+  547  ./forcfflines.py 
+  548  python forcfflines.py 
+  549  sh forcfflines.sh 
+  550  python forcfflines.py 
+  551  sh forcfflines.sh 
+  552  ls -ltrh
+  553  ls *.cff > ls_cff.txt
+  554  python forcfflines.py 
+  555  ls *.cff > ls.cff.txt
+  556  python forcfflines.py 
+  557  python forcfflines.py > cmds.sh
+  558  sh cmds.sh 
+  559  cat ~/.bash_history
+  560  history 
+  561  history > ../history.txt
