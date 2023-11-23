@@ -8,3 +8,4 @@ snd_show 0
 vid_restart 
 quirt
 quit
+fraglimit 26

@@ -1,3 +1,4 @@
+#include <daala/codec.h>
 #include <daala/daalaenc.h>
 #include <krad/mem/mem.h>
 #include "encoder.h"
