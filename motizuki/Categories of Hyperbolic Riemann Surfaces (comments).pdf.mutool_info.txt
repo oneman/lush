@@ -1,0 +1,22 @@
+Categories of Hyperbolic Riemann Surfaces (comments).pdf:
+
+PDF-1.5
+Info object (9 0 R):
+<</Author(<905688EA>)/CreationDate(D:20151202054457+09'00')/Creator( TeX output 2015.12.02:0544)/ModDate(D:20151202054457+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(quasicon-2015-12-02.pdf)>>
+Pages: 1
+
+Retrieving info from pages 1-1...
+Mediaboxes (1):
+	1	(12 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (9):
+	1	(12 0 R):	Type1 'LJDLLF+CMBX10' (42 0 R)
+	1	(12 0 R):	Type1 'LJDLMG+CMCSC10' (45 0 R)
+	1	(12 0 R):	Type1 'LJDLMH+CMR10' (48 0 R)
+	1	(12 0 R):	Type1 'LJDLNI+CMTI10' (51 0 R)
+	1	(12 0 R):	Type1 'LJDLNJ+MSBM10' (54 0 R)
+	1	(12 0 R):	Type1 'LJDLNK+CMR7' (57 0 R)
+	1	(12 0 R):	Type1 'LJDLNL+CMSY10' (60 0 R)
+	1	(12 0 R):	Type1 'LJDLNM+CMR8' (63 0 R)
+	1	(12 0 R):	Type1 'LJDLNN+CMSY8' (66 0 R)
+

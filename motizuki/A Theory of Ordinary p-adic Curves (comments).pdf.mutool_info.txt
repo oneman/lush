@@ -1,0 +1,31 @@
+A Theory of Ordinary p-adic Curves (comments).pdf:
+
+PDF-1.5
+Info object (18 0 R):
+<</Author(<905688EA>)/CreationDate(D:20220320003233+09'00')/Creator( TeX output 2022.03.20:0029)/ModDate(D:20220320003233+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(puc-comments-2022-03-20.pdf)>>
+Pages: 2
+
+Retrieving info from pages 1-2...
+Mediaboxes (1):
+	1	(21 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (18):
+	1	(21 0 R):	Type1 'BMLDLH+CMBX10' (74 0 R)
+	1	(21 0 R):	Type1 'BMLDOP+MSBM7' (77 0 R)
+	1	(21 0 R):	Type1 'BMLEAA+CMMI5' (80 0 R)
+	1	(21 0 R):	Type1 'BMLEAB+MSBM10' (83 0 R)
+	1	(21 0 R):	Type1 'BMLEAC+EUFM10' (86 0 R)
+	1	(21 0 R):	Type1 'BMLEBC+EUFM7' (89 0 R)
+	1	(21 0 R):	Type1 'BMLEBD+CMSY7' (92 0 R)
+	1	(21 0 R):	Type1 'BMLEBE+CMR8' (95 0 R)
+	1	(21 0 R):	Type1 'BMLECF+CMSY8' (98 0 R)
+	1	(21 0 R):	Type1 'BMLDMI+CMTI10' (101 0 R)
+	1	(21 0 R):	Type1 'BMLDMJ+CMCSC10' (104 0 R)
+	1	(21 0 R):	Type1 'BMLDMK+CMR10' (107 0 R)
+	1	(21 0 R):	Type1 'BMLDNK+CMSY10' (110 0 R)
+	1	(21 0 R):	Type1 'BMLDNL+CMMI10' (113 0 R)
+	1	(21 0 R):	Type1 'BMLDOM+CMMI7' (116 0 R)
+	1	(21 0 R):	Type1 'BMLDON+CMR5' (119 0 R)
+	1	(21 0 R):	Type1 'BMLDOO+CMR7' (122 0 R)
+	2	(1 0 R):	Type1 'BMLEFF+CMEX10' (14 0 R)
+

@@ -1,0 +1,16 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+GPPJCD+CMBX10                        Type 1C           Custom           yes yes yes    128  0
+GPPJCE+CMR10                         Type 1C           Custom           yes yes yes    131  0
+GPPJCF+CMSY10                        Type 1C           Custom           yes yes yes    134  0
+GPPJDF+CMMI10                        Type 1C           Custom           yes yes yes    137  0
+GPPJDG+CMSY7                         Type 1C           Custom           yes yes yes    140  0
+GPPJDH+CMSL10                        Type 1C           Custom           yes yes yes    143  0
+GPPJEI+CMMI7                         Type 1C           Custom           yes yes yes    146  0
+GPPJEJ+CMMI5                         Type 1C           Custom           yes yes yes    149  0
+GPPJEK+CMR7                          Type 1C           Custom           yes yes yes    152  0
+GPPJIJ+CMTI10                        Type 1C           Custom           yes yes yes     76  0
+GPPJKJ+CMEX10                        Type 1C           Custom           yes yes no      77  0
+GPPJPI+CMBX7                         Type 1C           Custom           yes yes yes     79  0
+GPPKBJ+CMR5                          Type 1C           Custom           yes yes yes     81  0
+GPPKHH+CMSY5                         Type 1C           Custom           yes yes yes     82  0

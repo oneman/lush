@@ -1,0 +1,46 @@
+Absolute Anabelian Cuspidalizations (LaTeX version).pdf:
+
+PDF-1.5
+Info object (476 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111103024443+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111103024443+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(cuspidalizations-latex-personal.dvi)>>
+Pages: 94
+
+Retrieving info from pages 1-94...
+Mediaboxes (1):
+	1	(479 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (30):
+	1	(479 0 R):	Type1 'OHIBDC+CMBX12' (518 0 R)
+	1	(479 0 R):	Type1 'OHIBFK+CMMI10' (521 0 R)
+	1	(479 0 R):	Type1 'OHIBFL+CMR8' (524 0 R)
+	1	(479 0 R):	Type1 'OHIBFM+CMTI8' (527 0 R)
+	1	(479 0 R):	Type1 'OHIBGM+CMSY6' (530 0 R)
+	1	(479 0 R):	Type1 'OHIBDD+CMR10' (533 0 R)
+	1	(479 0 R):	Type1 'OHIBDE+CMSY7' (536 0 R)
+	1	(479 0 R):	Type1 'OHIBDF+CMBX8' (539 0 R)
+	1	(479 0 R):	Type1 'OHIBEF+CMR9' (542 0 R)
+	1	(479 0 R):	Type1 'OHIBEG+CMTI9' (545 0 R)
+	1	(479 0 R):	Type1 'OHIBEH+CMMI9' (548 0 R)
+	1	(479 0 R):	Type1 'OHIBEI+CMBX10' (551 0 R)
+	1	(479 0 R):	Type1 'OHIBEJ+CMSY10' (554 0 R)
+	2	(1 0 R):	Type1 'OHIBHN+CMTI10' (421 0 R)
+	2	(1 0 R):	Type1 'OHIBIO+CMMI7' (420 0 R)
+	3	(4 0 R):	Type1 'OHIBKO+CMEX10' (423 0 R)
+	3	(4 0 R):	Type1 'OHIBKP+MSBM10' (434 0 R)
+	3	(4 0 R):	Type1 'OHIBLA+EUFM10' (431 0 R)
+	3	(4 0 R):	Type1 'OHIBMA+CMR7' (428 0 R)
+	5	(10 0 R):	Type1 'OHICAP+MSBM7' (441 0 R)
+	5	(10 0 R):	Type1 'OHICBA+CMR5' (438 0 R)
+	5	(10 0 R):	Type1 'OHICBB+CMMI5' (435 0 R)
+	6	(13 0 R):	Type1 'OHICGA+MSAM10' (444 0 R)
+	7	(16 0 R):	Type1 'OHICJA+CMSY5' (451 0 R)
+	7	(16 0 R):	Type3 'T1' (447 0 R)
+	12	(31 0 R):	Type1 'OHIDEM+CMTI7' (454 0 R)
+	30	(87 0 R):	Type1 'OHIFKO+CMMIB10' (456 0 R)
+	48	(141 0 R):	Type1 'OHIHLC+CMMIB7' (458 0 R)
+	93	(278 0 R):	Type1 'OHINJM+CMSL10' (459 0 R)
+	94	(281 0 R):	Type1 'OHINLM+CMCSC10' (462 0 R)
+
+Images (1):
+	1	(479 0 R):	[ Raw ] 1x1 1bpc ImageMask (496 0 R)
+

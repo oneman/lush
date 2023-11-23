@@ -1,0 +1,14 @@
+COMMENTS ON “A SURVEY OF THE
+HODGE-ARAKELOV THEORY OF ELLIPTIC CURVES I”
+Shinichi Mochizuki
+October 2012
+
+(1.) In the commutative diagram immediately preceding the “Deﬁnition” of §1.4.2,
+the phrase “vertical morphism” in the text immediately following this commutative
+diagram should read “horizontal morphism”.
+
+Typeset by AMS-TEX
+
+1
+
+

@@ -1,0 +1,32 @@
+Foundations (comments).pdf:
+
+PDF-1.5
+Info object (42 0 R):
+<</Author(<905688EA>)/CreationDate(D:20220320003507+09'00')/Creator( TeX output 2022.03.20:0014)/ModDate(D:20220320003507+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(foundations-comments-2022-03-20.pdf)>>
+Pages: 3
+
+Retrieving info from pages 1-3...
+Mediaboxes (1):
+	1	(45 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (19):
+	1	(45 0 R):	Type1 'BPANBI+CMBX10' (92 0 R)
+	1	(45 0 R):	Type1 'BPANGP+MSBM10' (95 0 R)
+	1	(45 0 R):	Type1 'BPANHA+CMMI7' (98 0 R)
+	1	(45 0 R):	Type1 'BPANIB+EUFM10' (101 0 R)
+	1	(45 0 R):	Type1 'BPANIC+CMR8' (104 0 R)
+	1	(45 0 R):	Type1 'BPANID+CMSY8' (107 0 R)
+	1	(45 0 R):	Type1 'BPANBJ+CMCSC10' (110 0 R)
+	1	(45 0 R):	Type1 'BPANCK+CMR10' (113 0 R)
+	1	(45 0 R):	Type1 'BPANDL+CMSY10' (116 0 R)
+	1	(45 0 R):	Type1 'BPANEL+CMTI10' (119 0 R)
+	1	(45 0 R):	Type1 'BPANEM+CMMI10' (122 0 R)
+	1	(45 0 R):	Type1 'BPANFN+CMR7' (125 0 R)
+	1	(45 0 R):	Type1 'BPANFO+MSBM7' (128 0 R)
+	1	(45 0 R):	Type1 'BPANFP+CMMI5' (131 0 R)
+	2	(1 0 R):	Type1 'BPANMD+EUFM7' (36 0 R)
+	2	(1 0 R):	Type1 'BPANME+CMSY7' (35 0 R)
+	2	(1 0 R):	Type1 'BPANNE+CMEX10' (34 0 R)
+	3	(9 0 R):	Type1 'BPAOBE+CMMI8' (37 0 R)
+	3	(9 0 R):	Type1 'BPAOBF+CMSL10' (38 0 R)
+

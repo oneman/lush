@@ -1,0 +1,30 @@
+Arithmetic Elliptic Curves in General Position (comments).pdf:
+
+PDF-1.5
+Info object (23 0 R):
+<</Author(<905688EA>)/CreationDate(D:20160713021320+09'00')/Creator( TeX output 2016.07.13:0212)/ModDate(D:20160713021320+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(gen-ell-comments-2016-07-16.pdf)>>
+Pages: 2
+
+Retrieving info from pages 1-2...
+Mediaboxes (1):
+	1	(26 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (17):
+	1	(26 0 R):	Type1 'AJPMFI+CMBX10' (75 0 R)
+	1	(26 0 R):	Type1 'AJPMIA+MSAM10' (78 0 R)
+	1	(26 0 R):	Type1 'AJPMIB+CMR5' (81 0 R)
+	1	(26 0 R):	Type1 'AJPMJC+CMMI5' (84 0 R)
+	1	(26 0 R):	Type1 'AJPMJD+CMSY5' (87 0 R)
+	1	(26 0 R):	Type1 'AJPMJE+CMR8' (90 0 R)
+	1	(26 0 R):	Type1 'AJPMJF+CMSY8' (93 0 R)
+	1	(26 0 R):	Type1 'AJPMFJ+CMCSC10' (96 0 R)
+	1	(26 0 R):	Type1 'AJPMFK+CMR10' (99 0 R)
+	1	(26 0 R):	Type1 'AJPMFL+CMMI7' (102 0 R)
+	1	(26 0 R):	Type1 'AJPMGL+CMSY10' (105 0 R)
+	1	(26 0 R):	Type1 'AJPMGM+CMMI10' (108 0 R)
+	1	(26 0 R):	Type1 'AJPMGN+MSBM10' (111 0 R)
+	1	(26 0 R):	Type1 'AJPMGO+CMSY7' (114 0 R)
+	1	(26 0 R):	Type1 'AJPMGP+CMTI10' (117 0 R)
+	2	(1 0 R):	Type1 'AJPMLF+CMR7' (18 0 R)
+	2	(1 0 R):	Type1 'AJPMLG+CMEX10' (19 0 R)
+

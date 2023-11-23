@@ -1,0 +1,43 @@
+A Survey of the Hodge-Arakelov Theory of Elliptic Curves II.pdf:
+
+PDF-1.5
+Info object (252 0 R):
+<</Author(<905688EA>)/CreationDate(D:20131020041717+09'00')/Creator( TeX output 2013.10.20:0413)/ModDate(D:20131020041717+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(surveynew.pdf)>>
+Pages: 34
+
+Retrieving info from pages 1-34...
+Mediaboxes (1):
+	1	(255 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (30):
+	1	(255 0 R):	Type1 'LMEMOB+CMR9' (284 0 R)
+	1	(255 0 R):	Type1 'LMEMPC+CMBX12' (287 0 R)
+	1	(255 0 R):	Type1 'LMEMPD+CMBX10' (290 0 R)
+	1	(255 0 R):	Type1 'LMEMPE+CMR7' (293 0 R)
+	1	(255 0 R):	Type1 'LMEMPF+CMBX9' (296 0 R)
+	1	(255 0 R):	Type1 'LMENAF+CMTI9' (299 0 R)
+	1	(255 0 R):	Type1 'LMENAG+CMMI9' (302 0 R)
+	1	(255 0 R):	Type1 'LMENAH+CMR6' (305 0 R)
+	2	(1 0 R):	Type1 'LMENCJ+CMR10' (208 0 R)
+	2	(1 0 R):	Type1 'LMENCK+CMSY10' (189 0 R)
+	2	(1 0 R):	Type1 'LMENDK+CMTI10' (191 0 R)
+	2	(1 0 R):	Type1 'LMENDL+CMMI10' (192 0 R)
+	2	(1 0 R):	Type1 'LMENDM+CMMI7' (196 0 R)
+	2	(1 0 R):	Type1 'LMENDN+CMMI5' (199 0 R)
+	2	(1 0 R):	Type1 'LMENDO+CMSY7' (188 0 R)
+	2	(1 0 R):	Type1 'LMENCI+CMCSC10' (203 0 R)
+	3	(6 0 R):	Type1 'LMENEP+CMR5' (211 0 R)
+	4	(9 0 R):	Type1 'LMENGP+CMSY5' (215 0 R)
+	5	(12 0 R):	Type1 'LMENIP+MSBM10' (219 0 R)
+	5	(12 0 R):	Type1 'LMENJA+MSBM5' (216 0 R)
+	6	(15 0 R):	Type1 'LMENKB+MSBM7' (223 0 R)
+	6	(15 0 R):	Type1 'LMENKC+CMBX7' (222 0 R)
+	7	(20 0 R):	Type1 'LMENMC+CMEX10' (226 0 R)
+	8	(23 0 R):	Type1 'LMENND+CMEX7' (229 0 R)
+	9	(26 0 R):	Type1 'LMENPD+CMMIB7' (234 0 R)
+	9	(26 0 R):	Type1 'LMENPE+CMMIB10' (232 0 R)
+	19	(56 0 R):	Type1 'LMEOLB+MSAM10' (237 0 R)
+	21	(62 0 R):	Type1 'LMEOPA+EUFM10' (240 0 R)
+	29	(86 0 R):	Type1 'LMEPJN+CMTI7' (243 0 R)
+	34	(103 0 R):	Type1 'LMEPPM+CMSL9' (244 0 R)
+

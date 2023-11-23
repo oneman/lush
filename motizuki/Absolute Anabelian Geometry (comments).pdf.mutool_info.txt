@@ -1,0 +1,27 @@
+Absolute Anabelian Geometry (comments).pdf:
+
+PDF-1.5
+Info object (9 0 R):
+<</Author(<905688EA>)/CreationDate(D:20160611215719+09'00')/Creator( TeX output 2016.06.11:2156)/ModDate(D:20160611215719+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(absanab-comments-2016-06-21.pdf)>>
+Pages: 1
+
+Retrieving info from pages 1-1...
+Mediaboxes (1):
+	1	(12 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (14):
+	1	(12 0 R):	Type1 'GJEEMD+CMBX10' (58 0 R)
+	1	(12 0 R):	Type1 'GJEEPL+MSBM7' (61 0 R)
+	1	(12 0 R):	Type1 'GJEEPM+CMMI7' (64 0 R)
+	1	(12 0 R):	Type1 'GJEEPN+CMMI5' (67 0 R)
+	1	(12 0 R):	Type1 'GJEEPO+CMR8' (70 0 R)
+	1	(12 0 R):	Type1 'GJEFAO+CMSY8' (73 0 R)
+	1	(12 0 R):	Type1 'GJEENE+CMCSC10' (76 0 R)
+	1	(12 0 R):	Type1 'GJEENF+CMR10' (79 0 R)
+	1	(12 0 R):	Type1 'GJEEOF+CMTI10' (82 0 R)
+	1	(12 0 R):	Type1 'GJEEOG+CMMI10' (85 0 R)
+	1	(12 0 R):	Type1 'GJEEOH+CMR7' (88 0 R)
+	1	(12 0 R):	Type1 'GJEEOI+CMEX10' (91 0 R)
+	1	(12 0 R):	Type1 'GJEEPJ+MSBM10' (94 0 R)
+	1	(12 0 R):	Type1 'GJEEPK+CMSY10' (97 0 R)
+

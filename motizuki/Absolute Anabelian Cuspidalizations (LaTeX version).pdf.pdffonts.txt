@@ -1,0 +1,32 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+OHIBDC+CMBX12                        Type 1C           Custom           yes yes yes    518  0
+OHIBFK+CMMI10                        Type 1C           Custom           yes yes yes    521  0
+OHIBFL+CMR8                          Type 1C           Custom           yes yes yes    524  0
+OHIBFM+CMTI8                         Type 1C           Custom           yes yes yes    527  0
+OHIBGM+CMSY6                         Type 1C           Custom           yes yes yes    530  0
+OHIBDD+CMR10                         Type 1C           Custom           yes yes yes    533  0
+OHIBDE+CMSY7                         Type 1C           Custom           yes yes yes    536  0
+OHIBDF+CMBX8                         Type 1C           Custom           yes yes yes    539  0
+OHIBEF+CMR9                          Type 1C           Custom           yes yes yes    542  0
+OHIBEG+CMTI9                         Type 1C           Custom           yes yes yes    545  0
+OHIBEH+CMMI9                         Type 1C           Custom           yes yes yes    548  0
+OHIBEI+CMBX10                        Type 1C           Custom           yes yes yes    551  0
+OHIBEJ+CMSY10                        Type 1C           Custom           yes yes yes    554  0
+OHIBHN+CMTI10                        Type 1C           Custom           yes yes yes    421  0
+OHIBIO+CMMI7                         Type 1C           Custom           yes yes yes    420  0
+OHIBKO+CMEX10                        Type 1C           Custom           yes yes yes    423  0
+OHIBKP+MSBM10                        Type 1C           Custom           yes yes yes    434  0
+OHIBLA+EUFM10                        Type 1C           Custom           yes yes yes    431  0
+OHIBMA+CMR7                          Type 1C           Custom           yes yes yes    428  0
+OHICAP+MSBM7                         Type 1C           Custom           yes yes yes    441  0
+OHICBA+CMR5                          Type 1C           Custom           yes yes yes    438  0
+OHICBB+CMMI5                         Type 1C           Custom           yes yes yes    435  0
+OHICGA+MSAM10                        Type 1C           Custom           yes yes no     444  0
+OHICJA+CMSY5                         Type 1C           Custom           yes yes yes    451  0
+T1                                   Type 3            Custom           yes no  no     447  0
+OHIDEM+CMTI7                         Type 1C           Custom           yes yes yes    454  0
+OHIFKO+CMMIB10                       Type 1C           Custom           yes yes yes    456  0
+OHIHLC+CMMIB7                        Type 1C           Custom           yes yes yes    458  0
+OHINJM+CMSL10                        Type 1C           Custom           yes yes yes    459  0
+OHINLM+CMCSC10                       Type 1C           Custom           yes yes yes    462  0

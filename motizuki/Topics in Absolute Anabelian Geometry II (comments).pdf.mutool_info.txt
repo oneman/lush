@@ -1,0 +1,23 @@
+Topics in Absolute Anabelian Geometry II (comments).pdf:
+
+PDF-1.5
+Info object (13 0 R):
+<</Author(<905688EA>)/CreationDate(D:20160621060103+09'00')/Creator( TeX output 2016.06.21:0600)/ModDate(D:20160621060103+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(abs-anab-topics-2-comments-2016-06-21.pdf)>>
+Pages: 2
+
+Retrieving info from pages 1-2...
+Mediaboxes (1):
+	1	(16 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (10):
+	1	(16 0 R):	Type1 'HNEIOP+CMBX10' (54 0 R)
+	1	(16 0 R):	Type1 'HNEJCH+CMSY8' (57 0 R)
+	1	(16 0 R):	Type1 'HNEIPA+CMCSC10' (60 0 R)
+	1	(16 0 R):	Type1 'HNEJAB+CMR10' (63 0 R)
+	1	(16 0 R):	Type1 'HNEJAC+CMMI10' (66 0 R)
+	1	(16 0 R):	Type1 'HNEJAD+CMTI10' (69 0 R)
+	1	(16 0 R):	Type1 'HNEJBD+CMMI7' (72 0 R)
+	1	(16 0 R):	Type1 'HNEJBE+CMSY10' (75 0 R)
+	1	(16 0 R):	Type1 'HNEJCF+MSAM10' (78 0 R)
+	1	(16 0 R):	Type1 'HNEJCG+CMR8' (81 0 R)
+

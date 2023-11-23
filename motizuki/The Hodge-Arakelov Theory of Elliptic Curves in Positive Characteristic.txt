@@ -1,0 +1,1778 @@
+The Hodge-Arakelov Theory of Elliptic Curves
+in Positive Characteristic
+Shinichi Mochizuki
+October 2000
+
+Contents:
+§0. Introduction
+§1. The Verschiebung Morphism in Positive Characteristic
+§2. The Comparison Isomorphism in Positive Characteristic
+§3. Lagrangian Galois Actions in the 2-adic Case
+§3.1. Deﬁnition and Construction
+§3.2. Crystalline Properties
+
+Section 0: Introduction
+The purpose of this paper is to study the Hodge-Arakelov theory of elliptic
+curves (cf. [Mzk1-4]) in positive characteristic. The ﬁrst two §’s (§1,2) are devoted
+to studying the relationship of the Frobenius and Verschiebung morphisms of an
+elliptic curve in positive characteristic to the Hodge-Arakelov theory of elliptic
+curves. We begin by deriving a “Verschiebung-Theoretic Analogue of the HodgeArakelov Comparison Isomorphism” (Theorem 1.1) which underlies our analysis in
+§1,2. From this result, we derive, in particular, an explicit description of the étale
+integral structure of an elliptic curve in positive characteristic (Corollary 1.3). This
+result may be regarded as a characteristic p version of [Mzk3], Theorem 2.2, which
+(unlike loc. cit., which holds only for ordinary elliptic curves) is valid even for
+supersingular elliptic curves.
+Next, in §2, we apply the theory of §1 to obtain a new proof using positive characteristic methods (Theorem 2.3) of the scheme-theoretic portion of the
+Hodge-Arakelov Comparison Isomorphism of [Mzk1]. In some sense, this new proof
+is more elegant than the proof of [Mzk1], which involves the veriﬁcation of various complicated combinatorial identities (cf. the Remarks following Theorem 2.3).
+This situation is rather reminiscent of the computation of the degree of the hyperbolically ordinary locus in p-adic Teichmüller theory ([Mzk5], Chapter V — cf.,
+especially, the second Remark following Corollary 1.3). Indeed, in that case, as
+well, characteristic p methods (involving Frobenius and Verschiebung) give rise to
+various nontrivial combinatorial identities. It would be interesting if this sort of
+Typeset by AMS-TEX
+1
+
+2
+
+SHINICHI MOCHIZUKI
+
+phenomenon could be understood more clearly at a conceptual level. Another interesting feature of the proof of Theorem 2.3 is the crucial use of a certain subgroup
+scheme of an elliptic curve in positive characteristic which may be regarded as an
+analogue of the “global multiplicative subspace” of [Mzk4], §3. That is to say, the
+crucial role of this subgroup scheme is reminiscent of the observation (cf. [Mzk4],
+§3,4) that such a global multiplicative subspace in the context of elliptic curves over
+number ﬁelds seems to be crucial to the application of Hodge-Arakelov theory to
+diophantine geometry.
+Also, we remark that in the course of proving Theorem 2.3, we correct several
+misprints (cf. the Remark immediately following the proof of Proposition 2.2) in
+[Mzk3].
+Finally, in §3, we work out the theory of [Mzk4], §2, in the case of p = 2.
+In loc. cit., this theory was only worked out in the case of odd p (for the sake of
+simplicity). The case of p = 2 involves dealing with various technical complications
+modulo 2. Unlike the case of odd p, where the theory of [Mzk4], §2, allows one to
+relate the Lagrangian arithmetic Kodaira-Spencer morphism to the usual geometric
+Kodaira-Spencer morphism of a family of elliptic curves, in the case of p = 2, one
+obtains the result (Corollary 3.7) that the Lagrangian arithmetic Kodaira-Spencer
+morphism is naturally related to the usual geometric Kodaira-Spencer morphism of
+the ample line bundle under consideration.
+Notation and Conventions:
+log
+
+We will denote by (Mell )Z the log moduli stack of log elliptic curves over Z (cf.
+[Mzk1], Chapter III, Deﬁnition 1.1), where the log structure is that deﬁned by the
+divisor at inﬁnity. (In [Mzk1-4], Mell was denoted by “M1,0 .” This change of notation was adopted in response to the criticism voiced by a number of mathematicians
+with respect to the notation M1,0 .) The open substack of (Mell )Z parametrizing
+(smooth) elliptic curves will be denoted by (Mell )Z ⊆ (Mell )Z .
+Acknowledgements: The author would like to thank A. Tamagawa for stimulating
+discussions of the various topics presented in this manuscript.
+
+Section 1: The Verschiebung Morphism in Positive Characteristic
+Fix a prime number p. Let S log be a ﬁne noetherian log scheme over Fp , and
+C log → S log
+a log elliptic curve (cf. [Mzk1], Chapter III, Deﬁnition 1.1) over S log . Write D ⊆ S
+for the pull-back to S of the divisor at inﬁnity of the moduli stack of log elliptic
+curves, and E ⊆ C for the one-dimensional semi-abelian scheme which forms an
+open subscheme of the semi-stable compactiﬁcation C. Also, let us assume that
+D ⊆ S forms a Cartier divisor in S, and that on the open dense subscheme
+
+POSITIVE CHARACTERISTIC
+
+3
+
+def
+
+US = S\D ⊆ S
+of S, the log structure of S log is trivial.
+Since S is an Fp -scheme, it is equipped with a Frobenius morphism
+ΦS : S → S
+If n is a nonnegative integer, then we shall denote the result of base-change with
+respect to the n-th power of ΦS by means of a superscript F n . Note that the n-th
+power of the Verschiebung morphism
+n
+
+VEn : E F → E
+for the group scheme E → S extends uniquely to a morphism
+VGn : Gn → C
+satisfying the properties: (i) VGn |US = VEn |US ; (ii) in a neighborhood of the divisor
+at inﬁnity D, VGn is a ﬁnite étale covering of degree pn .
+If the q-parameter of the log elliptic curve C log → S log admits a pn -th root at
+all points of D, then let us write
+Hn → S
+for the semi-stable genus 1 curve over S which is equal to E → S over US , and, near
+D, is the unique minimal semi-stable model of E|US for which the closure of the
+pn -torsion points of E|US lie in the smooth locus of Hn → S. Then the morphism
+[pn ]E : E → E given by multiplication by pn extends to a morphism
+[pn ]H : Hn → C
+which factors
+Φn
+
+Vn
+
+H
+G
+Hn −→
+Gn −→
+C
+
+Moreover, this ﬁrst morphism ΦnH : Hn → Gn may be identiﬁed with the n-th
+n
+iterate of the relative (over S) Frobenius morphism Hn → HnF of Hn . Thus, in
+n
+particular, Gn may be identiﬁed with HnF . Also, over US , this factorization is
+the usual factorization of [pn ]E : E → E as the composite of the n-th iterate of
+Frobenius with the n-th iterate of the Verschiebung morphism.
+Next, let us recall the universal extension of E
+
+4
+
+SHINICHI MOCHIZUKI
+
+E† → E
+(cf. [Mzk1], Chapter III, Deﬁnition 1.2), which extends naturally to an object
+†
+EC
+→ C over C (cf. [Mzk1], Chapter III, Corollary 4.3). In [Mzk3], §1, we
+†
+→ C, i.e.,
+constructed (in the case of a base which is ﬂat over Z) an object EC,et
+the “universal extension equipped with the étale integral structure.” By reducing
+this object (in the case of a Z-ﬂat base) modulo p, we may thus also speak of
+†
+→ S in the present context of a base S over Fp . Moreover, in addition to
+EC,et
+this “full étale integral structure,” we also constructed “intermediate étale integral
+†;{N }
+†
+†
+and EC
+structures EC,et (where N ≥ 0 is an integer) which “lie between EC,et
+†
+and coincide with EC,et
+in relative degrees ≤ N ” — cf. the discussion at the end of
+†;{N }
+
+†
+[Mzk3], §4, for more details. Just as in the case of EC,et
+, even though the EC,et
+were deﬁned over Z-ﬂat bases, by reducing modulo p, it makes sense to speak of
+†;{N }
+the EC,et in the present context of a base S over Fp .
+
+Now let us ﬁx an integer n ≥ 0. Then it follows from the construction of the
+étale integral structure in [Mzk3], §1, that for some suﬃciently large integer m ≥ n
+(depending on n), we have a canonical section
+†;{pn −1}
+
+κHm : Hm → EC,et
+†;{pn −1}
+
+of EC,et
+→ C over the “covering” [pm ]H : Hm → C. (Here, we assume, for the
+moment that the q-parameter of our log elliptic curve admits a pm -th root at all
+points of D. In fact, we shall see shortly that if suﬃces to take m equal to n.)
+Thus, if we think of the structure sheaves of the various objects which are aﬃne
+over C as OC -algebras, then pulling back functions by κHm deﬁnes a morphism
+O <p†
+
+n
+
+EC,et
+
+n
+
+= O <p†;{pn −1} → OHm
+EC,et
+
+Here the superscript “< pn ” denotes the functions of “relative (or ‘torsorial’) degree
+< pn ” (cf. [Mzk3], §1, for more details). We are now ready to state and prove the
+main result of this §, which is a sort of “Verschiebung-theoretic analogue” of the
+“Hodge-Arakelov Comparison Isomorphism” of [Mzk1]:
+Theorem 1.1. (Verschiebung-Theoretic Analogue of the Hodge-Arakelov
+Comparison Isomorphism) Assume that the q-parameter of the log elliptic curve
+C log → S log admits a pn -th root at all points of D. Then the morphism just deﬁned
+in fact factors through OGn ⊆ OGm ⊆ OHm and induces an isomorphism
+O <p†
+
+n
+
+EC,et
+
+n
+
+∼
+
+= O <p†;{pn −1} → OGn
+EC,et
+
+POSITIVE CHARACTERISTIC
+
+5
+†;{pn −1}
+
+of rank pn vector bundles on C. In particular, the morphism κHm : Hm → EC,et
+factors as the triple composite of the morphism Φm
+H : Hm → Gm , the natural
+projection Gm → Gn , and a morphism
+†;{pn −1}
+
+κGn : Gn → EC,et
+(which is necessarily unique).
+
+Remark. In particular, in the simplest (nontrivial) case n = 1, we obtain an isomorphism
+O <p† = O <p†
+EC
+
+EC,et
+
+∼
+
+→ O G1
+
+i.e., in this case, one can deﬁne the isomorphism without ever mentioning “étale
+integral structures.” Moreover, (as was pointed out to the author by M. Emerton)
+in this case, (if we assume, for simplicity, that S = US , then) the morphism
+κ G1 : G 1 = E F → E †
+is the morphism deﬁned by associating to a point of E F (which may be thought of
+as a line bundle L of degree 0 on E F ) the line bundle (of degree 0) with connection
+on E (i.e., point of E † ) given by Φ∗E L equipped with the unique connection for
+which sections of L are horizontal. Of course, one expects that a similar explicit
+description can be given for n ≥ 1. We leave the (routine) details of working out
+such a description to the enthusiastic reader.
+Proof. Let us ﬁrst show that the morphism factors through OGn , as asserted.
+First, note that by working in the universal case (where, say, S is isomorphic to a
+copy of (Mell )Fp , and the classifying morphism S → (Mell )Fp is given by a power
+of the Frobenius morphism), it suﬃces to show that this factorization holds in a
+neighborhood of the divisor at inﬁnity. But in a neighborhood of inﬁnity (where the
+Frobenius and Verschiebung lift naturally to mixed characteristic), the section κHm
+factors through Gm (cf. [Mzk3], §1). Thus, we see immediately that the morphism
+in question maps into OGm ⊆ OHm .
+Next, let us observe that (cf. the discussion of [Mzk3], §2) if we apply the basechange Gm → C, it follows that the morphism in question
+T  amounts to the mapngiven
+by evaluating linear combinations of the polynomials j (where j = 0, . . . , p − 1)
+on the points given by mapping T to an element of Z/pm Z. Thus, these polynomials
+deﬁne functions on the ﬁnite set Z/pm Z. But, by Lemma 1.2 below, these functions
+in fact arise from functions on the quotient Z/pm Z  Z/pn Z. Since this quotient
+corresponds to the intermediate covering Gm → Gn → C (of Gm → C), it thus
+follows that the morphism in question maps into OGn ⊆ OGm , as desired.
+Note that the analysis of the preceding paragraph (cf. [Mzk3], §2) shows also
+that the morphism in question
+
+6
+
+SHINICHI MOCHIZUKI
+
+O <p†
+
+n
+
+EC,et
+
+→ OGn
+
+is injective, at least in a neighborhood of inﬁnity. Indeed, this follows from the
+fact that the left- (respectively, right-) hand side of this morphism injects into the
+reduction modulo p of the sheaf of functions on the right- (respectively, left-) hand
+side of the isomorphism
+F
+κ∞
+et : E
+
+∞
+
+∼
+
+† ∧
+→ (Eet
+)
+
+of [Mzk3], Theorem 2.2 (in such a way that the morphism in question is compatible
+∼
+with the isomorphism “→” of loc. cit.).
+Thus, in summary, we have a morphism
+O <p†
+
+n
+
+EC,et
+
+→ OGn
+
+between two vector bundles of rank pn on C which is generically an isomorphism
+(since it is injective near inﬁnity, and the ranks are the same). Now if we work in the
+universal case (i.e., where S is isomorphic to a copy of (Mell )Fp , and the classifying
+morphism S → (Mell )Fp is given by a power of the Frobenius morphism), then
+in order to conclude that this morphism is an isomorphism, it suﬃces to observe
+n
+(since C is proper and integral over Fp ) that the determinant bundles of O <p† and
+EC,et
+
+def
+
+OGn deﬁne the same class in PicQ (C) = Pic(C) ⊗Z Q. But it is clear from the
+†
+construction of EC,et
+(cf. [Mzk3], §1) that
+n
+[det(O<p† )] = −
+EC,et
+
+pn −1
+
+
+
+j · [ωE ]
+
+j=0
+
+— where [−] denotes the class of a line bundle in PicQ (C) (thought of as an additive
+group), and ωE denotes the line bundle on S given by the relative cotangent bundle
+of E over S restricted to the zero section 0E : S → E.
+On the other hand, let us observe that the inverse image Gn ×C 0C ⊆ Gn of
+the zero section 0C : S → C of C forms a ﬁnite ﬂat group scheme over S, which we
+shall denote by Gn [VGn ]. Since the covering Gn → C is clearly a Gn [VGn ]-torsor, we
+have
+Gn ×C Gn ∼
+= Gn ×S Gn [VGn ]
+i.e.,
+[det(OGn )]|Gn = [det(OGn [VGn ] )]|Gn
+
+POSITIVE CHARACTERISTIC
+
+7
+
+hence (by applying the morphism PicQ (Gn ) → PicQ (C) given by taking norms of
+line bundles) we have that:
+[det(OGn )] = [det(OGn [VGn ] )]|C
+def
+
+On the other hand, if we write Hn [ΦnH ] = Hn ×Gn 0Gn ⊆ Hn for the kernel of the nth iterate of Frobenius (which is clearly a ﬁnite ﬂat group scheme over S), then it is
+well-known from the elementary theory of abelian varieties (cf., e.g., [Mumf4], §14,
+15) that the group schemes Hn [ΦnH ] and Gn [VGn ] are Cartier dual to one another,
+hence that (as vector bundles over C) we have:
+OHn [ΦnH ] ∼
+= (OGn [VGn ] )∨
+Moreover, since the Frobenius morphism is totally inseparable (so its ﬁbers are all
+geometrically connected) it follows immediately that
+
+[det(OHn [ΦnH ] )] =
+
+n
+p
+−1
+
+j · [ωE ]
+
+j=0
+
+hence that
+
+[det(OGn [VGn ] )] = −[det(OHn [ΦnH ] )] = −
+
+n
+p
+−1
+
+j=0
+
+n
+
+j · [ωE ] = [det(O<p† )]
+EC,et
+
+as desired. This completes the proof. 
+Lemma 1.2.
+Let T be an indeterminate, and N a nonnegative integer < pn .
+Write Poly(Z, Zp ) for the ring of Zp -valued polynomial functions on Z. Then (inside
+Poly(Z, Zp )) we have:
+
+  
+T + pn · φ
+T
+≡
+(mod p)
+N
+N
+for all φ ∈ Poly(Z, Zp ).
+Proof. Write
+ 
+T
+Ψ(T ) =
+p
+def
+
+and (for a ≥ 0 an integer) Ψa (T ) for the result of iterating T → Ψ(T ) a total of
+a-times (cf. [Mzk3], §8.2). Thus, Ψa (T ) is a polynomial of degree pa whose leading
+
+8
+
+SHINICHI MOCHIZUKI
+
+coeﬃcient has the same p-adic absolute value as (p1a )! . Then it is well-known and
+T 
+(for N < pn ) may be written as polynomials
+easy to verify that the polynomials N
+with Zp coeﬃcients in the Ψa (T ), for a < n. Thus, it suﬃces to verify that
+Ψa (T + pn · φ) ≡ Ψa (T )
+
+(mod pn−a )
+
+for all φ ∈ Poly(Z, Zp ), a < n.
+We use induction on a. The assertion is clear for a = 0. If the assertion is true
+for φ, a, then we have
+Ψa (T + pn · φ) = Ψa (T ) + pn−a · ψ
+for some ψ ∈ Poly(Z, Zp ). Thus, it suﬃces to verify that
+Ψ(Ψa (T ) + pn−a · ψ) ≡ Ψa+1 (T )
+
+(mod pn−a−1 )
+
+On the other hand, we have
+
+
+a
+
+n−a
+
+Ψ(Ψ (T ) + p
+
+
+Ψa (T ) + pn−a · ψ
+· ψ) =
+p
+
+  n−a 
+p
+
+·ψ
+Ψa (T )
+p
+=
+·
+p−j
+j
+j=0
+ 
+  n−a 
+ a
+p  a
+p
+·ψ
+Ψ (T )
+Ψ (T )
++
+·
+=
+p
+p−j
+j
+j=1
+≡ Ψa+1 (T ) (mod pn−a−1 )
+
+(where we note that
+pletes the proof. 
+
+pm−a ·ψ
+j
+
+≡ 0 (mod pm−a−1 ) for all j = 1, . . . , p). This com-
+
+In particular, if, in Theorem 1.1, we assume S = US (for simplicity) and let
+n → ∞, then we obtain a characteristic p version of [Mzk3], Theorem 2.2, which is
+valid even for supersingular elliptic curves:
+Corollary 1.3. (Explicit Description of the Étale Integral Structure of
+an Elliptic Curve in Positive Characteristic) Assume that S = US . Then the
+isomorphisms of Theorem 1.1 for n → ∞ deﬁne an isomorphism:
+∼
+
+†
+G∞ = lim Gn → Eet
+←−
+def
+
+n
+
+POSITIVE CHARACTERISTIC
+
+9
+
+which, for ordinary elliptic curves, may be identiﬁed with the reduction modulo p
+of the isomorphism of [Mzk3], Theorem 2.2.
+Finally, we also have the following consequence of Theorem 1.1 (obtained by
+restricting the isomorphism of Theorem 1.1 to the zero section 0C of C → S):
+Corollary 1.4.
+(Explicit Description of the Structure Sheaf of the
+Kernel of an Iterate of the Verschiebung Morphism) Write Gn [VGn ] ⊆ Gn
+for the ﬁnite ﬂat group scheme Gn ×C 0C ⊆ Gn . Then the morphism κGn of
+Theorem 1.1 deﬁnes an isomorphism
+n
+
+n
+
+EC,et
+
+EC,et
+
+∼
+
+O <p† |0C = O <p†;{pn −1} |0C → OGn [VGn ]
+such that the ﬁltration on the left-hand side given by relative degree over C deﬁnes
+a ﬁltration on the right-hand side which is dual to the ﬁltration on OHn [ΦnH ] (where
+def
+
+Hn [ΦnH ] = Hn ×Gn 0Gn ⊆ Hn ) given by considering j-th inﬁnitesimal neighborhoods
+of 0Hn , for varying j.
+Proof. It remains only to observe the asserted coincidence of ﬁltrations. But this
+follows from the fact that the successive subquotients of both ﬁltrations are of the
+⊗−j
+form ωE
+(for some integer j ≥ 0). Thus, any nonzero discrepancy between these
+two ﬁltrations would imply the existence of a nonzero global section of a negative
+power of the line bundle ωE over C. By working in the universal case (i.e., where
+S is isomorphic to a copy of (Mell )Fp , and the classifying morphism S → (Mell )Fp
+is given by a power of the Frobenius morphism), we thus see that this would imply
+the existence of a nonzero section of a negative power of ωE over (Mell )Fp , which
+is absurd since ωE is ample on (Mell )Fp . 
+
+Section 2: The Comparison Isomorphism in Positive Characteristic
+The purpose of the present § is to present a new approach to the Hodge-Arakelov
+Comparison Isomorphism of [Mzk1], based on the characteristic p methods of §1
+— cf. especially Theorem 1.1.
+In this §, we maintain the notation of §1. In addition, we introduce the following notation:
+
+†;{pn −1}
+
+C † = EC,et
+def
+
+;
+
+Gn† = C † ×C,VGn Gn ;
+def
+
+Hn† = Gn† ×Gn ,ΦnH Hn = C † ×C,[pn ]H Hn
+def
+
+Thus, we have a natural commutative diagram:
+
+10
+
+SHINICHI MOCHIZUKI
+
+Hn†
+⏐
+⏐
+
+
+−→
+
+Hn
+
+H
+−→
+
+Φn
+
+Gn†
+⏐
+⏐
+
+
+−→ C †
+⏐
+⏐
+
+
+Gn
+
+H
+−→
+
+Vn
+
+C
+
+(where both squares are cartesian, and we observe that the composite of the two
+lower horizontal arrows is the morphism [pn ]H : Hn → C arising from multiplication
+†;{pn −1}
+of Theorem 1.1 deﬁnes sections
+by pn ). Moreover, the section κGn : Gn → EC,et
+κGn† : Gn → Gn† ;
+
+κH†n : Hn → Hn†
+
+that are compatible with each other and with the above commutative diagram.
+Next, let us assume that we are given a torsion point
+ηH ∈ Hn (S)
+of order m, where (m, p) = 1. Write ηG ∈ Gn (S) for the image of ηH in Gn (S).
+These torsion points deﬁne sheaves
+def
+
+LH = OHn (pn · [ηH ]);
+
+def
+
+LG = OGn ([ηG ])
+
+on Hn and Gn , respectively, which are (ample) line bundles over US . Near inﬁnity,
+these sheaves are only coherent, but, in fact, may in most cases be treated as
+ample line bundles, by working (in a neighborhood of inﬁnity) with appropriate
+μm -coverings
+Hn → Hn ;
+
+Gn → Gn
+
+(i.e., coverings which induce bijections on the various irreducible components of the
+special ﬁbers at inﬁnity, and which induce the “raising to the m-th power maps”
+on each of the copies of Gm in the special ﬁbers at inﬁnity). These coverings have
+the property that the divisors [ηH ], [ηG ] become Cartier when pulled back via these
+coverings. Thus, one may think of sections of the sheaves LH , LG over Hn , Gn ,
+as μm -invariant sections of the resulting (ample) line bundles over Hn , Gn . Note,
+moreover, that since μm is a group scheme of multiplicative type, the operation of
+taking μm -invariants is exact.
+In particular, it follows that (if, by abuse of notation, we denote all structure
+morphisms to S by f ) the push-forward sheaves
+f∗ (LH |H†n );
+
+f∗ (LG |Gn† )
+
+admit natural ﬁltrations F r (−) (of ranks r · pn , r, respectively, for r = 1, . . . , pn )
+whose successive subquotients F r+1 /F r (−) may be identiﬁed with
+
+POSITIVE CHARACTERISTIC
+
+τE⊗r ⊗OS f∗ (LH );
+
+11
+
+τE⊗r ⊗OS f∗ (LG )
+
+def
+
+∨
+(where τE = ωE
+), respectively. Moreover, since ΦnH is purely inseparable of degree
+n
+p , it follows that the divisor (ΦnH )−1 ([ηG ]) is linearly equivalent to the divisor
+pn [ηH ]. This gives rise to a natural Hn [ΦnH ]-action on LH (compatible with the
+evident Hn [ΦnH ]-action on Hn itself). Relative to this action, we have
+n
+
+f∗ (LG |Gn† ) = f∗ (LH |H†n )Hn [ΦH ]
+(where the superscript Hn [ΦnH ] denotes “Hn [ΦnH ]-invariants”).
+We are now ready to deﬁne the evaluation maps that will appear in the comparison isomorphisms. First, we observe that by using the sections κH†n , κGn† , we
+may regard the group schemes
+Hn [pn ] ⊆ Hn ;
+
+Gn [VGn ] ⊆ Gn
+
+(i.e., the kernels of the morphisms [pn ]H : Hn → C; VGn : Gn → C, respectively)
+as being contained in Hn† , Gn† , respectively. Thus, restriction to these subschemes
+yields morphisms
+ΞH : f∗ (LH |H†n ) → LH |Hn [pn ]
+ΞG : f∗ (LG |Gn† ) → LG |Gn [VGn ]
+with the property that the latter morphism is the result of applying the operation
+of taking Hn [ΦnH ]-invariants to the former.
+Before proving the comparison isomorphisms involving these evaluation maps,
+we would like to discuss some technical points, as follows: First, let us note that
+the tautological inclusion OGn → OGn ([ηG ]) = LG deﬁnes a morphism
+OS → f∗ (LG )
+whose composite with the restriction morphism f∗ (LG ) → LG |0G = OS (where we
+use the fact that since the order m of ηG is prime to p, we have 0G ηG = ∅) is the
+identity. In fact, it is easy to see that here, 0G may be replayed by any pn -torsion
+point, and hence that (by elementary algebraic geometry) we have the following:
+Lemma 2.1.
+
+These two morphisms are isomorphisms, i.e., we have:
+∼
+
+∼
+
+OS → f∗ (LG ) → LG |σ = OS
+
+12
+
+SHINICHI MOCHIZUKI
+
+(where σ ∈ Gn (S) is any pn -torsion point). In particular, f∗ (LG ) is a line bundle
+on S of degree zero.
+Next, we would like to relate the evaluation maps constructed above to those
+that appear in the theory of [Mzk1]. To do this, we would like ﬁrst to make the
+following observation concerning concerning integral structures over Z (or Z[ 12 ]):
+def
+
+def
+
+Proposition 2.2. Let R = Z if p = 2, R = Z[ 12 ] if p > 2. Assume (just for the
+remainder of this Proposition and its proof ) that S is a an R-ﬂat scheme, and that
+E → S is a family of elliptic curves over S. Notation:
+†
+†
+n
+(1) Write E[p
+n ] = E ×E,[pn ]E E (where [p ]E : E → E is multiplication by pn ) — cf. [Mzk3], §9. This object also has an “étale
+def
+
+†
+†
+integral structure version” E[p
+n ],et = Eet ×E,[pn ]E E.
+def
+
+def
+
+∗
+(2) Write ∗ = OE ([0E ]); E[p
+n ] → E for the Hodge torsor associated to the line bundle OE (pn · [0E ]) (cf. [Mzk3], §3) — i.e.,
+the ωE -torsor of connections on this line bundle. Note that this
+is compatible with the notation of [Mzk3], §9. Moreover, there is
+∗
+∗
+an “étale integral structure version” E[p
+n ],et of E[pn ] (cf. [Mzk3],
+§9, for details).
+†
+†
+∗
+∗
+Then, if we think of these objects E[p
+n ] , E[pn ],et , E[pn ] , E[pn ],et as being various
+“R-integral structures” on the object E † ⊗Z Q, then the following coincidences of
+†
+†
+∗
+∗
+R-integral structures hold: E[p
+n ] = E[pn ] ; E[pn ],et = E[pn ],et .
+
+Proof. Indeed, by working in the universal case (i.e., over (Mell )Z ), one sees that
+coincidences of integral structures may be veriﬁed in a formal neighborhood of
+inﬁnity, i.e., in the case where
+1
+
+S = Spec(R[[q 2pn ]][q −1 ])
+def
+
+and E → S is the Tate curve with q-parameter equal to q. Write E  → S for the
+1
+Tate curve with q-parameter equal to q pn . Then, if we think of E (respectively, E  )
+1
+as the quotient “Gm /q Z ” (respectively, “Gm /q pn ·Z ” ), then the natural inclusion
+Z → p1n · Z induces an étale isogeny
+ψ : E → E
+1
+
+of degree pn (i.e., the morphism Gm /q Z → Gm /q pn ·Z covered by the identity morphism Gm → Gm on Gm ).
+
+POSITIVE CHARACTERISTIC
+
+13
+
+Next, let us denote by ∈ E  (S) the origin 0E (respectively, the 2-torsion point
+1
+deﬁned by q 2pn ) if p > 2 (respectively, if p = 2). Then it follows easily from an
+elementary computation — namely, the fact that the sum of the fractions di (for
+1
+· d(d − 1) = 12 (d − 1) (which is ∈ Z if d is odd, and
+i = 0, . . . , d − 1) is equal to 2d
+∈ 12 Z\Z if d is even) — that
+ψ −1 ([ ]) = pn · [0E ]
+(where “[−]” denotes the divisor class deﬁned by the divisor inside the brackets).
+Let us denote the Hodge torsor associated to by (E  ) → E  . Then we have:
+∗
+(E  ) ×E  E = E[p
+n]
+
+(by “functoriality of formation of Hodge torsors”) and
+†
+(E  )† ×E  E = E[p
+n]
+
+(cf. the discussion of [Mzk3], §9). Also, similar statements hold for “étale integral
+structure versions.”
+Now we are ready to compare integral structures. First, let us write ∞ ∈ Q
+for the invariant (associated to and) denoted by “iχ /2m” in [Mzk3], §9. Sorting
+through the deﬁnitions, one veriﬁes easily that if p = 2 (respectively, p > 2):
+∞ =0
+
+(respectively,
+
+∞ =
+
+1
+)
+2
+
+— i.e., in either case, we obtain the key fact that ∞ ∈ R. If we split (E  )† → E 
+via its canonical q-adic formal splitting, and write T for the usual coordinate on
+the aﬃne portion of (E  )† determined by the trivialization dU/U of ωE  (cf. the
+notation of [Mzk3], §9), then the integral structure of (E  ) (respectively, (E  )† ) is
+given by polynomials in:
+T− ∞
+
+(respectively, T )
+
+But since ∞ ∈ R, it follows that these two integral structures coincide.
+ TThe
+ étale
+T −∞
+, r instead
+integral structure versions are handled similarly by considering
+r
+of (T − ∞ )r , T r (for r ≥ 0). 
+Remark. We would like to take this opportunity to correct two misprints in [Mzk3],
+§9, p. 78:
+(i) The equation on the upper half of the page following the
+†
+=
+phrase “This makes it natural to deﬁne” should read E[d],et
+
+def
+
+†
+Eet
+×E,[d] E.
+
+14
+
+SHINICHI MOCHIZUKI
+
+(ii) In the ﬁrst line of Deﬁnition 9.1, the phrase “is to be” should
+read “to be.”
+Remark. Proposition 2.2 applies to the characteristic p discussion of the present
+§ as follows: First of all, since the order m of ηH is prime to p, it follows that
+(at least over US ) the Hodge torsor associated to LH is naturally isomorphic (cf.
+∗
+[Mzk3], Proposition 3.4) to (the reduction modulo p of) the object E[p
+n ] appearing
+†
+in Proposition 2.2. Thus, (since the object Hn |US of the present discussion is clearly
+†
+the same as the reduction modulo p of the object E[p
+n ] appearing in Proposition
+2.2) Proposition 2.2 implies that:
+The Hodge torsor associated to LH is naturally isomorphic to
+Hn† |US .
+A similar statement holds for étale integral structure versions. Thus, in particular,
+it follows that:
+The evaluation morphism ΞH constructed above may be identiﬁed with the reduction modulo p of the evaluation morphism of
+[Mzk1], Introduction, Theorem A.
+(cf. [Mzk3], §9, especially Theorem 9.2).
+We are now ready to discuss the “characteristic p approach to the HodgeArakelov Comparison Isomorphism of [Mzk1]”:
+Theorem 2.3. (Positive Characteristic Approach to the Hodge-Arakelov
+Comparison Isomorphism) Let p be a prime number; n ≥ 1 an integer; and
+C log → S log
+a log elliptic curve over a ﬁne noetherian log scheme S log in characteristic p.
+Write
+n
+Φn
+VG
+H
+Hn −→
+Gn −→
+C
+for the factorization of the compactiﬁcation [pn ]H : Hn → C of the morphism
+“multiplication by pn on E” into the n-th iterate of Frobenius, composed with the
+n-th iterate of the Verschiebung morphism. Also, we introduce the notation:
+†;{pn −1}
+
+C † = EC,et
+def
+
+;
+
+Gn† = C † ×C,VGn Gn ;
+def
+
+Hn† = Gn† ×Gn ,ΦnH Hn = C † ×C,[pn ]H Hn
+def
+
+Moreover, let us assume that we are given a torsion point
+ηH ∈ Hn (S)
+
+POSITIVE CHARACTERISTIC
+
+15
+
+of order m, where (m, p) = 1. Write ηG ∈ Gn (S) for the image of ηH in Gn (S),
+and
+def
+def
+LH = OHn (pn · [ηH ]); LG = OGn ([ηG ])
+†;{pn −1}
+
+for the resulting sheaves on Hn , Gn . Then the section κGn : Gn → EC,et
+Theorem 1.1 determines evaluation morphisms
+
+of
+
+ΞH : f∗ (LH |H†n ) → LH |Hn [pn ]
+
+ΞG : f∗ (LG |Gn† ) → LG |Gn [VGn ]
+with the following properties:
+(1) ΞG is an isomorphism over S.
+def
+
+(2) ΞH is an isomorphism over US = S\D.
+Here, D ⊆ S is the pull-back to S of the divisor at inﬁnity of the moduli stack
+(Mell )Fp .
+Proof. First, I claim that over US , ΞG is an isomorphism if and only if ΞH is.
+Indeed, to simplify notation, let us assume (just for the remainder of this paragraph)
+that US = S. Then it follows that the theta group (cf. [Mumf1,2,3]; [Mumf4], §23;
+or, alternatively, [Mzk1], Chapter IV, §1, for an exposition of the theory of theta
+groups) GLH of LH acts on the line bundle LH . Since LH has relative degree pn
+over S, this theta group ﬁts into an exact sequence
+1 → Gm → GLH → E[pn ] → 1
+and the fact that (ΦnG )∗ LG = LH implies that LG determines a section sG :
+E[ΦnE ] → GLH of this exact sequence over E[ΦnE ] ⊆ E[pn ] ⊆ E. In the terminology of theta groups, the image of sG is a Lagrangian subgroup of the theta group
+(cf. [MB], Chapitre V, Déﬁnition 2.5.1). It thus follows from the theory of GLH modules that the GLH -linear morphism ΞH is an isomorphism if and only if the
+morphism ΞG — which is obtained from ΞH by taking E[ΦnE ]-invariants — is an
+isomorphism. This completes the proof of the claim.
+The fact that ΞG is an isomorphism may be proven by arguing as follows:
+First, we observe that it suﬃces to work in the universal case, where, say, S is
+proper, connected, and smooth of dimension 1 over Fp , and the classifying morphism
+S → (Mell )Fp is ﬁnite. Then ΞG is a morphism between two vector bundles of rank
+pn on S, hence it will be an isomorphism as soon as we verify the following two
+facts:
+(1) ΞG is an isomorphism over the generic point of S.
+
+16
+
+SHINICHI MOCHIZUKI
+
+(2) The degrees of the domain and range of ΞG coincide.
+Fact (1) follows from the second Remark following Proposition 2.2, together with
+the analysis in a neighborhood of inﬁnity given, for instance, in [Mzk1], Chapter
+V, Theorem 6.2 (cf. also [Mzk3], §6). Fact (2) follows from the fact that (in light
+of Lemma 2.1) the domain (respectively, range) of ΞG has the same degree as the
+domain (respectively, range) of the isomorphism of Corollary 1.4. This completes
+the proof that ΞG is an isomorphism. 
+Remark. Thus, in particular, the above argument gives a new proof of the (schemetheoretic) characteristic zero portion of [Mzk1], Theorem A — at least in the case
+when d is a power of a prime number, and m is prime to d. More precisely, although
+we used the computation at inﬁnity of [Mzk1], the characteristic p argument given
+above may be used to replace the complicated degree computations (especially when
+d is even!) of [Mzk1], Chapter VI, proof of Theorem 3.1. (Note that although
+here we are working in characteristic p, we obtain characteristic zero consequences,
+since any morphism between vector bundles on a ﬂat, proper Z-scheme which is
+an isomorphism modulo p is necessarily an isomorphism over Q.) Also, we observe
+that, in fact:
+The above argument furnishes a new proof of the scheme-theoretic,
+characteristic zero portion of the Hodge-Arakelov Comparison
+Isomorphism (i.e., [Mzk1], Theorem A) for arbitrary d, m (as
+in the statement of this Theorem).
+Indeed, this follows from the fact that the essential point of this characteristic
+zero portion of the theorem is a certain coincidence of degrees (cf. the degree
+computations of [Mzk1], Chapter VI, proof of Theorem 3.1). On the other hand,
+it is relatively easy to see (without computing the degrees precisely!) that the two
+degrees in question are both polynomials in d. Thus, their diﬀerence is a polynomial
+in d which vanishes (by the above characteristic p argument) for all d equal to a
+power of (suﬃciently large) p. But this implies that this diﬀerence is identically
+zero (for all d).
+Remark. One way to interpret the preceding Remark is the following:
+The characteristic p methods (involving the Frobenius and Verschiebung morphisms) of the present paper yield a new proof of
+the various combinatorial identities inherent in the computation
+of degrees in [Mzk1], Chapter VI, proof of Theorem 3.1.
+This situation is rather reminiscent of the situation of [Mzk5], Chapter V — cf.,
+especially, the second Remark following Corollary 1.3. Namely, in that case, as
+well, characteristic p methods (involving Frobenius and Verschiebung) give rise to
+various nontrivial combinatorial identities. It would be interesting if this sort of
+phenomenon could be understood more clearly at a conceptual level.
+
+POSITIVE CHARACTERISTIC
+
+17
+
+Remark. One interesting feature of the above proof is the crucial use of the isogeny
+ΦnH : Hn → Gn , i.e., (over US ) the (n-th iterate of the) Frobenius morphism ΦnE :
+n
+E → E F . Put another way, this amounts to the use of the subgroup scheme
+E[ΦnE ] ⊆ E (i.e., the kernel of ΦnE ), which, of course, does not exist in characteristic
+zero. Note that this subgroup scheme is essentially the same as the “multiplicative
+subspace” that played an essential role in [Mzk4], §2. That is to say, it is interesting
+to note that just as in the context of [Mzk4] (cf., especially, §3, 4) the crucial
+arithmetic object that one wants over a number ﬁeld is a “global multiplicative
+subspace,” in the above proof, the crucial arithmetic object that makes the proof
+work (in positive! characteristic) is the “global multiplicative subspace” E[ΦnE ] ⊆ E
+(which is deﬁned over all of (Mell )Fp ).
+Remark. Another interesting and key point in the above proof is the fact that,
+unlike the case in characteristic zero (where the structure sheaf of a ﬁnite ﬂat
+group scheme on a proper curve always has degree zero):
+In positive characteristic, the structure sheaf of a ﬁnite ﬂat group
+scheme on a proper curve can have nonzero degree.
+In fact, it is precisely because of this phenomenon that in order to make the comparison isomorphism hold in characteristic zero over the proper object (Mell )Q , it
+is necessary to introduce Gaussian poles (cf., e.g., [Mzk1], Introduction, §1).
+
+Section 3: Lagrangian Galois Actions in the 2-adic Case
+In [Mzk4], §2, we assumed (for the sake of simplicity) that the prime of interest
+p was odd. In the present, §2, we would like to work out the theory of [Mzk4], §2,
+in the case p = 2. This involves dealing with various subtle technical issues modulo
+2.
+§3.1. Deﬁnition and Construction
+Let p = 2. Let d > 1 be a power of 2. Let A be a complete discrete valuation
+ring of mixed characteristic (0, p), with perfect residue ﬁeld, which contains all the
+2d-th roots of unity. Write K (respectively, k) for the quotient ﬁeld (respectively,
+residue ﬁeld) of A.
+Set
+def
+
+1
+
+S = Spec(A[[q N ]])
+for some odd positive integer N . Endow S with the log structure deﬁned by the
+1
+divisor V (q N ) ⊆ S, and denote the open subscheme of S where the log structure
+is trivial by US ⊆ S. Write
+
+18
+
+SHINICHI MOCHIZUKI
+
+def
+
+ΠS = π1 (US ⊗ Q)
+(for some choice of basepoint), and
+C log → S log
+for the log elliptic curve determined by the “Tate curve,” i.e., the degenerating
+elliptic curve E → S (more precisely: one-dimensional semi-abelian scheme) with
+“q-parameter” equal to q ∈ OS .
+Set
+1
+
+def
+
+Z = Spec(A[[q 2N ·d ]])
+1
+
+Endow Z with the log structure deﬁned by the divisor V (q 2N ·d ) ⊆ Z. Thus, we
+obtain a morphism Z log → S log of log schemes.
+Next, let us write
+Ed,Z → Z
+def
+
+for the object which is equal to the one-dimensional semi-abelian scheme EZ =
+def
+E ×S Z over UZ = US ×S Z, and, “near inﬁnity,” is the pull-back to Z of the
+object “Ed ” (cf. [Mzk1], Chapter IV, §4, where we take “N ” of loc. cit. to be
+d). In words, this object “Ed ” is the result of removing the nodes from the unique
+regular semi-stable model of the Tate curve (with q-parameter “q”) over the base
+1
+∗
+Z[[q d ]]. Then the object “E[d],et
+→ E” of [Mzk3], §9, deﬁnes an object
+∗
+E[d],et,Z
+→ Ed,Z
+
+(which, over (UZ )Q , may be identiﬁed with the universal extension E † → E of E)
+over Ed,Z . Indeed, the discussion of [Mzk3], §9, applies literally over UZ ; “near
+inﬁnity,” the fact that we get an object over Ed,Z follows from the fact that the
+
+
+integral structure in question, i.e., “ d·(T −(irχ /2m)) ” (in the notation of [Mzk3], §9)
+is invariant with respect to the transformations T → T + dj , ∀j ∈ Z.
+Next, let us observe EZ has a unique ﬁnite ﬂat subgroup scheme GμZ annihilated
+by d. This subgroup scheme is naturally isomorphic to μd . Thus, we have:
+μ
+μd ∼
+= GZ ⊆ EZ [d] ⊆ Ed,Z
+
+(where EZ [d] ⊆ Ed,Z denotes the closed subscheme which is the kernel of multiplication by d on Ed,Z ). Note, moreover, that, in fact, GμZ descends to a subscheme
+GμS ⊆ E[d] ⊆ E over S.
+
+POSITIVE CHARACTERISTIC
+
+19
+
+Since the quotient (EZ [d])/GμZ is naturally isomorphic to the constant group
+scheme (Z/dZ)Z , it is easy to see that, over Z, there exists a ﬁnite étale group
+scheme HZ ⊆ EZ [d] such that the natural morphism
+GμZ ×Z HZ → EZ [d]
+def
+
+is an isomorphism of group schemes. Thus, if we write EHZ = Ed,Z /HZ , then we
+see that EHZ → Z is a one-dimensional semi-abelian group scheme (i.e., its ﬁbers
+are all geometrically connected), and that the natural quotient morphism
+(EZ ⊆) Ed,Z  EHZ
+(over Z) has kernel equal to HZ , hence is ﬁnite étale of degree d. Moreover, we
+note that the q-parameter of EHZ is a d-th root of q. In particular, (unlike GμZ )
+HZ is not deﬁned over S.
+Next, let us assume that we have been given an odd integer m > 1, together
+with a torsion point
+η ∈ E∞,S (S∞ )
+of order precisely m which deﬁnes a metrized line bundle
+def
+
+L = Lst,η
+on E∞,S (cf. [Mzk1], Chapter V, §1, for a discussion of the construction of the
+object “Lst,η ”). Thus, in particular, over US :
+L|US = OE (d · [η])|US
+Here, we recall that S∞ is the stack (in the ﬁnite, ﬂat topology) obtained from S by
+gluing together US (“away from inﬁnity”) to the proﬁnite covering of S (“near inﬁnity”) deﬁned by “adjoining a compatible system of M -th roots of the q-parameter”
+(as M ranges multiplicatively over the positive integers). Over S∞ , we have the
+group object
+E∞,S → S∞
+which is equal to E → S over US (“away from inﬁnity”), and whose “special ﬁber”
+consists of connected components indexed by Q/Z, each of which is isomorphic to
+a copy of Gm — cf. the discussion of [Mzk1], Chapter V, §2, for more details.
+Note that L has an associated theta group (cf. [Mzk1], Chapter IV, §1, §5, for
+a discussion of theta groups) GZ over Z which ﬁts into an exact sequence:
+
+20
+
+SHINICHI MOCHIZUKI
+
+1 → (Gm )Z → GZ → EZ [d] → 1
+Also, let us assume that we are given a lifting
+HZ ⊆ GZ
+∼
+
+of HZ (i.e., HZ →HZ via GZ → EZ [d]). Thus, HZ is a “Lagrangian subgroup” (cf.
+[MB], Chapitre V, Déﬁnition 2.5.1) of the theta group GZ . In particular, we get a
+natural action of HZ ∼
+= HZ on L.
+Remark. To see that such a lifting HZ ⊆ GZ exists, one may, for instance, apply the
+canonical section of [Mzk1], Chapter IV, Theorem 1.6, (1), over a double covering
+
+
+→ Ed,Z (so L|Ed,Z
+will be a (metrized) line bundle of degree 2d) with the
+Ed,Z
+∼
+
+
+property that HZ ⊆ Ed,Z lifts to a subgroup scheme HZ ⊆ Ed,Z
+such that HZ →HZ .
+
+Note that since the q-parameter of Ed,Z
+will then necessarily be a square root of q,
+
+it follows that in order to ensure that HZ exist, we need to know the existence of a
+2d-th root of q in OZ . This is why we deﬁned “Z” as we did (i.e., rather than with
+the “2N · d” replaced by “N · d,” as was done in the case of odd p).
+
+In the following discussion, we will always denote (by abuse of notation) structure morphisms to S, Z, E∞,S by f (cf. the conventions of [Mzk1]). We would like
+to consider the push-forward
+def
+
+∗
+)
+VL = f∗ (LE[d],et,Z
+
+∗
+∗
+of the metrized line bundle L to E[d],et,Z
+. Here, we take the
+of the pull-back LE[d],et,Z
+integral structure of this push-forward “near inﬁnity” to be the unique GZ -stable
+integral structure determined by the “ζrCG ” — cf. [Mzk1], Chapter V, Theorem
+4.8; the discussion of [Mzk3], §4.1, 4.2. Thus, VL is a quasi-coherent sheaf on Z,
+equipped with a ﬁltration F r (VL ) ⊆ VL , i.e., the subsheaf consisting of sections
+whose “torsorial degree” is < r. (Here, by “torsorial degree,” we mean the relative
+degree with respect to the structure of “relative polynomial algebra” on OE † over
+OE (arising from the fact that E † → E is an aﬃne torsor). Since E † may be
+∗
+over (UZ )Q , this deﬁnition also applies to sections of VL .)
+identiﬁed with E[d],et,Z
+In particular, we shall write
+def
+
+HDR = F d (VL )
+for the object which appears in [Mzk1], Introduction, Theorem A (cf. also [Mzk3],
+Theorem 9.2). Thus, HDR is a vector bundle of rank d on Z. Finally, observe that
+the theta group GZ acts naturally on VL , F r (VL ), HDR .
+Now we come to the portion of the discussion involving phenomena unique to
+the prime p = 2.
+
+POSITIVE CHARACTERISTIC
+
+21
+
+Proposition 3.1. The objects introduced above satisfy the following properties:
+†
+∗
+(i) The integral structure of E[d],et,Z
+is equal to that of E[d],et,Z
+=
+
+def
+
+†
+E[d],et
+|Z (i.e., the pull-back via the multiplication by d morphism
+
+†
+Ed,Z → EZ of the universal extension Eet
+|Z over Z equipped
+with the étale integral structure — cf. the notation of [Mzk3],
+§9). In particular, the d-torsion subgroup scheme EZ [d] ⊆ Ed,Z
+∗
+lifts naturally to a subgroup scheme EZ∗ [d] ⊆ E[d],et,Z
+.
+
+(ii) The canonical section
+(EZ [d] ⊇ GμZ ⊇) 2 · GμZ → GZ
+(cf. [Mzk1], Chapter IV, Theorem 1.6, (1)) extends to all of GμZ .
+In particular, (despite the fact that d is even!) we obtain a theta
+trivialization
+L|GμZ ∼
+= L|0EZ ⊗OZ OGμZ
+def
+
+Here, 0EZ ∈ EZ (Z) is the zero section of EZ = E ×S Z → Z.
+Proof. Assertion (i) follows from the fact that the integral structure used to deﬁne
+
+
+∗
+is given by “ d·(T −(irχ /2m)) ” (in the notation of [Mzk3], §9), an expression
+E[d],et,Z
+ 
+which gives the same integral structure as “ d·T
+r .” Note that here we use the
+assumptions that (a.) m is odd; (b.) d > 1 is even.
+Assertion (ii) is proven by observing that, if we descend L to some LH (via
+the lifting HZ ⊆ GZ discussed above) on EHZ , the resulting degree 1 (metrized)
+line bundle is (up to translation by an odd order torsion point) that deﬁned by a
+nonmultiplicative (i.e., lying outside the image of GμZ in EHZ ) order 2 torsion point.
+In particular, the invariant “iχ /2m” associated to this LH is ∈ Z2 (cf. the theory
+of [Mzk1], Chapter V, §4; as well as [Mzk1], Chapter IV, Lemma 5.4; the discussion
+of [Mzk3], §4.3). Put another way, the essential phenomenon at work here is the
+elementary numerical fact that (for D ≥ 1 an integer)
+1 
+1
+j = (D − 1)
+D j=0
+2
+D−1
+
+lies ∈ Z if D is odd, and ∈ 12 Z\Z if D is even.
+On the other hand, (as one may recall from the discussion of [Mzk3], §4.3 —
+cf., especially, the proof of Lemma 4.1):
+The class of this invariant “iχ /2m” associated to LH in 12 Z2 /Z2
+is precisely the obstruction to the existence of the desired section
+GμZ → GZ .
+
+22
+
+SHINICHI MOCHIZUKI
+
+Thus, the fact that this invariant is ∈ Z2 implies that this obstruction is 0, as
+desired. 
+Remark. The description of LH given in the above proof shows that in fact, this (a
+priori) metrized line bundle is deﬁned as an ordinary line bundle over some semistable model of EHZ = Ed,Z /HZ over Z. (More precisely, the semi-stable model
+with the property that the group of irreducible components of its special ﬁber is
+1
+Z/Z is suﬃcient.) In particular, it follows that L (respectively, VL ) is
+equal to 2N
+deﬁned as an “ordinary line bundle” (respectively, “ordinary vector bundle”) over
+some semi-stable model of EZ → Z (respectively, over Z).
+Next, let us note that since L is deﬁned over E∞,S (i.e., without base-changing
+to Z), it follows that L|0EZ is, in fact, deﬁned over S∞ (i.e., in other words, it is
+deﬁned over S, except that “near inﬁnity,” one may need to adjoin roots of the
+q-parameter). In particular, it follows that there is a natural action of Gal(Z/S)
+— hence of ΠS (via the surjection ΠS  Gal(Z/S)) — on L0EZ .
+Let us denote HZ -invariants by means of a superscript HZ . Then recall that
+HZ
+VL admits the following interpretation: Since HZ ∼
+= HZ acts on Ed,Z ; E∞,S ;
+∗
+E[d],et,Z ; L, we may form the quotients of these objects by this action. This yields
+∗
+objects (Ed,Z )H (i.e., EHZ ), (E∞,S )H , (E[d],et,Z
+)H , LH (a metrized line bundle on
+(E∞,S )H ). Then we have:
+∗
+VLHZ = f∗ {LH |(E[d],et,Z
+)H }
+
+(where f as usual denotes the structure morphism to Z) — cf., e.g., [Mzk1], Chapter
+IV, Theorem 1.4.
+∗
+— i.e., sections
+Thus, by restricting HZ -invariant sections of L over E[d],et,Z
+μ
+∗
+∗
+∗
+of LH over (E[d],et,Z )H — to GZ ⊆ EZ [d] ∼
+= EZ [d] ⊆ E[d],et,Z , and composing with
+the theta trivialization of Proposition 3.1, (ii), we obtain a morphism:
+HZ
+Z
+ΞH
+→ L|0EZ ⊗OZ OGμZ
+V : VL
+
+Similarly, if we introduce Gaussian poles (cf. [Mzk1], Introduction, Theorem A,
+(3); [Mzk3], Theorem 6.2), we get a morphism:
+GP,HZ
+Z
+: HDR
+→ L|0EZ ⊗OZ OGμZ
+ΞGP,H
+H
+
+Then the main result of [Mzk1] may be summarized as follows:
+Corollary 3.2.
+(Lagrangian Version of the Main Result of [Mzk1])
+Assume that d is a power of p = 2, and that m is odd. Then restriction of HZ invariant sections of VL to GμZ gives rise to a morphism
+HZ
+Z
+→ L|0EZ ⊗OZ OGμZ
+ΞH
+V : VL
+
+POSITIVE CHARACTERISTIC
+
+23
+
+whose restriction
+HZ
+Z
+μ
+ΞH
+H : HDR → L|0EZ ⊗OZ OGZ
+def
+
+HZ
+Z
+to HDR
+= F d (VLHZ ) ⊆ VLHZ satisﬁes: (i) ΞH
+H is an isomorphism over UZ ; (ii) if
+one introduces Gaussian poles, i.e., if one considers
+GP,HZ
+Z
+ΞGP,H
+: HDR
+→ L|0EZ ⊗OZ OGμZ
+H
+Z
+then ΞGP,H
+is an isomorphism over Z.
+H
+
+Proof. This Corollary is a special case of [Mzk1], Introduction, Theorem A, (2),
+(3). Note that the “zero locus of the determinant” is empty because of our assumption that m is odd (hence invertible on S). 
+Deﬁnition 3.3. The natural action of ΠS on GμZ , together with the isomorphism
+Z
+ΞGP,H
+of Corollary 2.2, and the natural action of ΠS on L|0EZ , deﬁne a natural
+H
+GP,HZ
+action of ΠS on HDR
+, which we shall refer to as the Lagrangian Galois action
+GP,HZ
+on HDR .
+Remark. Just as in [Mzk4], §2.1, (unlike the “naive” Galois action) the Lagrangian
+Galois action depends on the choice of the additional data GμZ , HZ . Also, just as in
+[Mzk4], §2.1, although a priori, the Lagrangian Galois action appears to require the
+HZ
+Gaussian poles (i.e., it appears that it is not necessarily integrally deﬁned on HDR
+),
+in fact, however, we shall see in §3.2 below that the Lagrangian Galois action has
+the remarkable property that it is deﬁned without introducing the Gaussian poles.
+
+§3.2. Crystalline Properties
+We maintain the notation of §3.1.
+The ﬁrst portion of [Mzk4], §2.2, now goes through with little change: As in loc.
+cit., we ﬁrst would like to relate the present discussion to the theory of connections
+in [Mzk3]. Thus, recall that L|0EZ is a line bundle on Z equipped with a natural
+ΠS -action derived from a trivialization
+τ : L|0EZ ∼
+= q − 2N ·d · OZ
+a
+
+(where a is a nonnegative integer < 2N d) — which, in the terminology of the
+discussion of [Mzk3], §5, determines a ΠS -equivariant rigidiﬁcation τ of L at 0EZ .
+In particular, τ deﬁnes a ΠS -invariant logarithmic connection on the line bundle
+L|0EZ . Thus, by the theory of [Mzk3], §5, this rigidiﬁcation gives rise to a ΠS invariant (logarithmic) connection
+∇V H Z
+L
+
+24
+
+SHINICHI MOCHIZUKI
+
+on VLHZ (cf. [Mzk3], Theorems 5.2, 8.1). Here, the logarithmic connections are
+relative to the log structure of Z log , and all connections, diﬀerentials, etc., are to
+be understood as being continuous with respect to the (p, q)-adic topology on OZ .
+Just as in [Mzk4], §2.2, since all higher p-curvatures of these connections vanish
+(cf. [Mzk3], §7.1, for a discussion of the general theory of higher p-curvatures;
+[Mzk3], Corollary 7.6, for the vanishing result just quoted), we thus conclude that
+the pair
+(VLHZ , ∇V HZ )
+L
+
+deﬁnes a crystal on the site
+Inf(Z log ⊗ k/A)
+of (all — i.e., not just PD-) inﬁnitesimal thickenings over A of open sub-log schemes
+of Z log ⊗ k = Z log ⊗ (A/mA ).
+One veriﬁes immediately (using the simple explicit structures of S, Z) that the
+action of ΠS on OZ satisﬁes:
+σ(φ) ≡ φ
+
+(mod mA · OZ )
+
+∀σ ∈ ΠS , φ ∈ OZ , and that the correspondence
+1
+
+1
+
+ΠS  σ → σ(q 2N ·d )/q 2N ·d
+deﬁnes morphisms:
+∼
+
+ΠS  Gal(Z/S) → (Z/2dZ)(1)
+(where the ﬁrst (respectively, second) arrow is a surjection (respectively, isomorphism)).
+Next, let us observe that the property just discussed concerning the action of
+ΠS on OZ implies that every σ ∈ ΠS deﬁnes an A-linear isomorphism
+∼
+
+σ : Z log → Z log
+which is the identity on Z log ⊗ k. It thus follows from:
+(i) the fact that Z log deﬁnes a(n) (inductive system of) thickening(s) in the
+category Inf(Z log ⊗ k/A); and
+(ii) the fact that (VLHZ , ∇V HZ ) forms a crystal on Inf(Z log ⊗ k/A)
+L
+
+POSITIVE CHARACTERISTIC
+
+25
+
+that σ induces a σ-semi-linear isomorphism
+
+σ
+
+: VLHZ → VLHZ
+
+(where “σ-semi-linear” means semi-linear with respect to the action of σ on OZ ,
+and the “hat” denotes p-adic completion).
+As in [Mzk4], §2.2, the justiﬁcation for the notation “ σ ” is that this isomorphism is the analogue of the isomorphism obtained in diﬀerential geometry by
+“parallel transporting” — i.e., “integrating” — sections of VLHZ along the “path”
+σ (where we think of σ as an “element of the (algebraic) fundamental group” ΠS ).
+That is to say, we obtain a natural ΠS -semi-linear action of ΠS on VLHZ .
+Theorem 3.4.
+(Crystalline Nature of the Lagrangian Galois Action)
+Z
+The action of ΠS on VLHZ is compatible with ΞH
+(cf. Corollary 3.2; here the “hat”
+V
+denotes p-adic completion) and the natural action of ΠS on GμZ in the following
+sense: For σ ∈ ΠS , the following diagram commutes:
+HZ
+
+VLHZ
+
+⏐
+⏐
+σ
+
+VLHZ
+
+Ξ
+
+V
+−→
+
+HZ
+
+Ξ
+
+V
+−→
+
+L|0EZ ⊗OZ OGμZ
+⏐
+⏐σ
+
+L|0EZ ⊗OZ OGμZ
+
+(where the σ on the right denotes the result of applying σ to OGμZ via the natural
+action of ΠS on OGμZ ).
+Proof. As in [Mzk4], §2.2, this follows from the naturality of all the morphisms
+involved, together with the compatibility (cf. [Mzk3], Theorem 6.1) over GμZ of the
+connection ∇V HZ with the “theta trivialization” of Proposition 3.1, (ii). 
+L
+
+Corollary 3.5.
+(Absence of Gaussian Poles in the Lagrangian Galois
+Action) Relative to the objects of the present discussion, the Lagrangian Galois
+GP,HZ
+action of ΠS on HDR
+(cf. Deﬁnition 3.3) is deﬁned without Gaussian poles,
+HZ
+.
+i.e., it arises from an action of ΠS on HDR
+Proof. As in [Mzk4], §2.2, this follows formally from the commutative diagram of
+Theorem 3.4, together with Lemma 3.6 below. 
+Lemma 3.6.
+
+Z
+(cf. Corollary 3.2) is the same
+The image of the morphism ΞH
+V
+
+HZ
+HZ
+Z
+as the image of its restriction ΞH
+H to HDR ⊆ VL .
+
+Proof. The proof is entirely similar to that of [Mzk4], §2.2, Lemma 2.6. 
+
+26
+
+SHINICHI MOCHIZUKI
+
+Finally, just as in [Mzk4], §2.2, we observe that:
+Theorem 3.4 allows us to relate the “arithmetic Kodaira-Spencer
+morphism” arising from the Lagrangian Galois action to the classical geometric Kodaira-Spencer morphism.
+The argument in the case p = 2, however, diﬀers somewhat from the case of odd p.
+We begin as in [Mzk4], §2.2. Let
+Γ ⊆ Gal(Z/S)
+def
+
+be a subgroup of order > 1. Write dΓ = |Γ| for the order of Γ. Thus, dΓ = 1 divides
+2d, and we have a natural isomorphism Γ ∼
+= (Z/dΓ Z)(1). Write
+(p · A ⊆) mΓ  A
+for the ideal generated by elements of the form 1 − ζ, where ζ is a dΓ -th root of
+unity. Note that Γ acts trivially on Z ⊗ (A/mΓ ) (mod mΓ ). Moreover, we have a
+homomorphism
+λΓ : μdΓ (A) → mΓ /m2Γ
+given by ζ → ζ − 1 (mod m2Γ ). Thus, if we think of μdΓ (A) as “(Z/dΓ Z)(1)” (which
+is naturally isomorphic to Γ), then we see that λΓ deﬁnes a homomorphism
+δΓ : Γ → mΓ /m2Γ
+which is easily seen (by the deﬁnition of the ideal mΓ ) to induce an injection Γ ⊗
+(Z/pZ) → mΓ /m2Γ .
+Next, as in [Mzk4], §2.2, we would like to consider a “certain crucial portion”
+of the “arithmetic Kodaira-Spencer morphism” associated to the Lagrangian Galois
+action. Ultimately, however, this crucial portion in the case of p = 2 will diﬀer
+somewhat from the crucial portion in the case of p odd.
+HZ
+via the Lagrangian Galois action
+Let γ ∈ Γ. Then since γ acts on HDR
+HZ
+HZ
+→ HDR
+. If
+(Deﬁnition 3.3, Corollary 3.5), we see that γ deﬁnes a morphism HDR
+HZ
+HZ
+1
+we restrict this morphism to F (HDR ), and compose with the surjection HDR 
+HZ
+HZ
+/F 2 (HDR
+)} ⊗A (A/m2Γ ), we thus obtain a morphism
+{HDR
+HZ
+HZ
+HZ
+F 1 (HDR
+) → {HDR
+/F 2 (HDR
+)} ⊗A (A/m2Γ )
+
+which, as in [Mzk4], §2.2, deﬁnes a morphism
+
+POSITIVE CHARACTERISTIC
+
+HZ
+HZ
+F 1 (HDR
+) ⊗ k → {(F 3 /F 2 )(HDR
+)} ⊗A mΓ /m2Γ =
+
+27
+
+1
+· F 1 (VLHZ ) ⊗ τE⊗2
+⊗A mΓ /m2Γ
+HZ
+2
+
+i.e., we get a section ∈ 12 · τE⊗2
+⊗A mΓ /m2Γ . Just as in [Mzk4], §2.2, this section
+HZ
+describes how the moduli of EHZ are aﬀected modulo m2Γ by the action of γ —
+i.e., (up to the factor of 12 ) it is the usual Kodaira-Spencer morphism (cf. [Mzk3],
+Theorem 8.1) of the family EHZ → Z. On the other hand, since the q-parameter
+of EHZ is equal (up to multiplication by a 2d-root of unity) to
+1
+
+1
+
+q d = (q 2N ·d )2N
+if follows that the eﬀect of γ on the moduli of EHZ may be computed as follows:
+1
+
+1
+
+1
+
+γ(q 2N ·d ) ≡ q 2N ·d + δΓ (γ) · q 2N ·d
+
+(mod m2Γ )
+
+hence
+1
+
+1
+
+1
+
+1
+
+γ(q d ) ≡ q d + 2N · δΓ (γ) · q d ≡ q d
+
+(mod m2Γ )
+
+i.e., the moduli of EHZ are unaﬀected by γ. In particular, we see that the morphism
+HZ
+HZ
+HZ
+F 1 (HDR
+) → {HDR
+/F 2 (HDR
+)} ⊗A (A/m2Γ ) considered above is identically zero.
+Thus, in summary, we see that, in the present context, the action of γ determines a morphism
+
+HZ
+HZ
+HZ
+κγ : F 1 (HDR
+) ⊗ k → {(F 2 /F 1 )(HDR
+)} ⊗A mΓ /m2Γ = F 1 (HDR
+) ⊗ τEHZ ⊗A mΓ /m2Γ
+
+i.e., by letting γ vary (as in [Mzk4], §2.2), we obtain a homomorphism:
+
+HZ
+HZ
+κΓ : Γ → HomOZ (F 1 (HDR
+) ⊗ k, (F 2 /F 1 )(HDR
+) ⊗ mΓ /m2Γ ) = τEHZ ⊗ mΓ /m2Γ
+
+arising from the Lagrangian Galois action, taken modulo m2Γ . If we regard κΓ as an
+element
+κΓ ∈ Hom(Γ, τEHZ ⊗ mΓ /m2Γ ) = Hom(Γ, mΓ /m2Γ ) ⊗ τEHZ
+then it follows immediately from the discussion (in terms of deformations) of Grifﬁths semi-transversality in [Mzk3], §8.1 (specialized to the case where the moduli of
+the elliptic curve do not vary) that κΓ may be identiﬁed with the result of evaluating
+the “geometric Kodaira-Spencer morphism of the line bundle LH ”
+
+28
+
+SHINICHI MOCHIZUKI
+
+κLH : (ΩZ log /A )∨ → τEHZ
+(i.e., the morphism that describes the variation in the moduli of this line bundle)
+∂
+∈ (ΩZ log /A )∨ and (as in [Mzk4], §2.2) multiplying the result by δΓ .
+on
+1
+∂log(q 2N ·d )
+
+Moreover, since the line bundle LH is deﬁned by some torsion point (cf. the
+proof of Proposition 3.1, together with the Remark following this proposition), i.e.,
+1
+if we think of EHZ as “Gm /q d Z ,” the point deﬁned by some
+a1
+
+ζ · q 2a2 ·d
+(where a1 , a2 ∈ Z are relatively prime and odd), we conclude that the eﬀect of the
+action of γ on the moduli of LH is given by
+
+α
+
+α
+
+α
+
+α
+
+γ(q 2·d ) ≡ q 2·d + (α · N ) · δΓ (γ) · q 2·d ≡ q 2·d · {1 + δΓ (γ)}
+
+(mod m2Γ )
+
+def
+
+(where α = a1 /a2 , and, in the second congruence, we use the fact that a1 , a2 , and
+N are odd).
+We summarize this discussion as follows:
+Corollary 3.7.
+Morphism) Let
+
+(Relation to the Classical Geometric Kodaira-Spencer
+Γ ⊆ Gal(Z/S)
+
+be a subgroup of order > 1. This subgroup Γ gives rise to a natural ideal mΓ ⊆
+A (minimal among ideals modulo which Γ acts trivially on Z log ) and a natural
+morphism
+δΓ : Γ → mΓ /m2Γ
+1
+
+(deﬁned by considering the action of Γ on q 2N ·d modulo m2Γ ). Then the morphism
+HZ
+HZ
+κΓ : Γ → HomOZ (F 1 (HDR
+) ⊗ k, (F 2 /F 1 )(HDR
+) ⊗ mΓ /m2Γ ) = τEHZ ⊗ mΓ /m2Γ
+HZ
+obtained purely from the Lagrangian Galois action of Γ on HDR
+(cf. Deﬁnition
+HZ
+1
+3.3, Corollary 3.5) by restricting this action to F (HDR ) and then reducing modulo
+m2Γ coincides with the morphism obtained by evaluating the “geometric KodairaSpencer morphism of the line bundle LH on EHZ ”
+
+κLH : (ΩZ log /A )∨ → τEHZ
+in the logarithmic tangent direction
+result by δΓ .
+
+∂
+
+1
+
+∂log(q 2N ·d )
+
+∈ (ΩZ log /A )∨ and multiplying the
+
+POSITIVE CHARACTERISTIC
+
+29
+
+Moreover, if we trivialize (ΩZ log /A )∨ via this logarithmic tangent direction and
+∂
+(where U is the standard multiplicaτEHZ via the logarithmic tangent direction ∂U
+tive coordinate on the copy of Gm that naturally uniformizes EHZ ), then κLH is the
+identity morphism modulo mΓ .
+Thus, in summary, the arithmetic Kodaira-Spencer morphism associated
+to the Lagrangian Galois action in the case p = 2 coincides modulo m2Γ with the
+usual geometric Kodaira-Spencer morphism of the ample line bundle
+under consideration.
+Remark. Just as in [Mzk4], §2.2, the correspondence between the logarithmic tan∂
+gent direction
+∈ (ΩZ log /A )∨ and the morphism δΓ is essentially the same
+1
+∂log(q 2N ·d )
+
+as the correspondence arising from Faltings’ theory of almost étale extensions between the logarithmic tangent bundle of Z log and a certain Galois cohomology
+group (cf., e.g., [Mzk1], Chapter IX, §2, especially Theorem 2.6, for more details).
+
+Bibliography
+
+[MB] L. Moret-Bailly, Pinceaux de variétés abéliennes, Astérisque 129, Soc. Math.
+France (1985).
+[Mumf1,2,3] D. Mumford, On the equations deﬁning abelian varieties I, II, III, Invent. Math.
+1 (1966), pp. 287-354; 2 (1967), pp. 71-135; 3 (1967), pp. 215-244.
+[Mumf4] D. Mumford, Abelian Varieties, Oxford Univ. Press (1974).
+[Mzk1] S. Mochizuki, The Hodge-Arakelov Theory of Elliptic Curves: Global Discretization of Local Hodge Theories, RIMS Preprint Nos. 1255, 1256 (October 1999).
+[Mzk2] S. Mochizuki, The Scheme-Theoretic Theta Convolution, RIMS Preprint No.
+1257 (October 1999).
+[Mzk3] S. Mochizuki, Connections and Related Integral Structures on the Universal
+Extension of an Elliptic Curve, RIMS Preprint No. 1279 (May 2000).
+[Mzk4] S. Mochizuki, The Galois-Theoretic Kodaira-Spencer Morphism of an Elliptic
+Curve, RIMS Preprint No. 1287 (July 2000).
+[Mzk5] S. Mochizuki, Foundations of p-adic Teichmüller Theory, AMS/IP Studies
+in Advanced Mathematics 11, American Mathematical Society/International
+Press (1999).
+
+

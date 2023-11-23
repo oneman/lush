@@ -1,0 +1,25 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+HHINNE+CMBX10                        Type 1C           Custom           yes yes yes    307  0
+HHIOBL+CMSY8                         Type 1C           Custom           yes yes yes    310  0
+HHINNF+CMCSC10                       Type 1C           Custom           yes yes yes    313  0
+HHINOG+CMR10                         Type 1C           Custom           yes yes yes    316  0
+HHINPG+CMR8                          Type 1C           Custom           yes yes yes    319  0
+HHINPH+CMTI8                         Type 1C           Custom           yes yes yes    322  0
+HHIOAI+CMSY10                        Type 1C           Custom           yes yes yes    325  0
+HHIOAJ+CMMI10                        Type 1C           Custom           yes yes yes    328  0
+HHIOAK+CMTI10                        Type 1C           Custom           yes yes yes    331  0
+HHIOBK+CMMI7                         Type 1C           Custom           yes yes yes    334  0
+T1                                   Type 3            Custom           yes no  no     338  0
+HHIODM+CMSY7                         Type 1C           Custom           yes yes yes    233  0
+HHIODN+CMR7                          Type 1C           Custom           yes yes yes    231  0
+HHIODO+MSAM10                        Type 1C           Custom           yes yes no     224  0
+HHIOEO+CMEX10                        Type 1C           Custom           yes yes yes    222  0
+HHIOGO+MSBM10                        Type 1C           Custom           yes yes yes    236  0
+HHIOJO+CMSY5                         Type 1C           Custom           yes yes no     237  0
+HHIONO+MSBM7                         Type 1C           Custom           yes yes yes    243  0
+HHIONP+CMMI5                         Type 1C           Custom           yes yes yes    240  0
+HHIPPI+EUFM10                        Type 1C           Custom           yes yes yes    246  0
+HHJAME+MSAM7                         Type 1C           Custom           yes yes no     247  0
+HHJCOH+CMR5                          Type 1C           Custom           yes yes yes    249  0
+HHJEIN+CMSL10                        Type 1C           Custom           yes yes yes    252  0

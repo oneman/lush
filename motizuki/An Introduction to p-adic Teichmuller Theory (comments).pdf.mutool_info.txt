@@ -1,0 +1,30 @@
+An Introduction to p-adic Teichmuller Theory (comments).pdf:
+
+PDF-1.5
+Info object (18 0 R):
+<</Author(<905688EA>)/CreationDate(D:20220320003400+09'00')/Creator( TeX output 2022.03.20:0010)/ModDate(D:20220320003400+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(introduction-to-p-teich-comments-2022-03-20.pdf)>>
+Pages: 2
+
+Retrieving info from pages 1-2...
+Mediaboxes (1):
+	1	(21 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (17):
+	1	(21 0 R):	Type1 'BOAGME+CMBX10' (72 0 R)
+	1	(21 0 R):	Type1 'BOAHAM+MSBM7' (75 0 R)
+	1	(21 0 R):	Type1 'BOAHAN+MSBM10' (78 0 R)
+	1	(21 0 R):	Type1 'BOAHAO+EUFM10' (81 0 R)
+	1	(21 0 R):	Type1 'BOAHBO+CMTI10' (84 0 R)
+	1	(21 0 R):	Type1 'BOAHBP+EUFM7' (87 0 R)
+	1	(21 0 R):	Type1 'BOAHDA+CMR8' (90 0 R)
+	1	(21 0 R):	Type1 'BOAHDB+CMSY8' (93 0 R)
+	1	(21 0 R):	Type1 'BOAGNF+CMCSC10' (96 0 R)
+	1	(21 0 R):	Type1 'BOAGNG+CMR10' (99 0 R)
+	1	(21 0 R):	Type1 'BOAGOG+CMSY10' (102 0 R)
+	1	(21 0 R):	Type1 'BOAGOH+CMSY7' (105 0 R)
+	1	(21 0 R):	Type1 'BOAGPI+CMMI5' (108 0 R)
+	1	(21 0 R):	Type1 'BOAGPJ+CMMI10' (111 0 R)
+	1	(21 0 R):	Type1 'BOAGPK+CMMI7' (114 0 R)
+	1	(21 0 R):	Type1 'BOAHAL+CMR7' (117 0 R)
+	2	(1 0 R):	Type1 'BOAHGB+CMEX10' (14 0 R)
+

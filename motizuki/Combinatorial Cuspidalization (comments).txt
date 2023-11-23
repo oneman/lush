@@ -1,0 +1,38 @@
+COMMENTS ON “ON THE COMBINATORIAL
+CUSPIDALIZATION OF HYPERBOLIC CURVES”
+Shinichi Mochizuki
+July 2019
+
+(1.) In lines 4–5 of the third paragraph of the discussion entitled “The Étale Fundamental Group of a Log Scheme” in §0, the phrase “unramiﬁed over R◦ ” should
+read “unramiﬁed over US◦ ”.
+(2.) In Fig. 1, the subscripts “b”, “c” in the notation “Fb ”, “Fc ” should be reversed.
+(3.) In the statement of Proposition 1.3, (i), the phrase “the set of divisors Dnver
+which” should read “the set of divisors which”; the notation “δ ∈ Dnhor ” should
+read “δ ∈ Dnver ”.
+(4.) In the statement of Proposition 1.3, (iv), the notation “Dnhor ” should read
+“Dnver ”.
+(5.) In the ﬁrst paragraph of the proof of Corollary 1.14, the text “First, let us . . .
+Now let” should read as follows:
+∼
+
+log
+
+First, let us observe that relative to the natural isomorphism Xnlog → (M0,n+3 )k
+[cf. Deﬁnition 1.1, (vi)], the divisors of Xn that belong to Dn are prelog
+cisely the divisors at inﬁnity of (M0,n+3 )k . [Indeed, this follows imlog
+
+mediately from the well-known geometry of (M0,n+3 )k .] In particular,
+log
+
+the automorphisms of (M0,n+3 )k arising from the permutations of the
+ordering of the cusps permute the divisors that belong to Dn . Thus,
+we conclude that the outer modular symmetries ∈ Out(Πn ) normalize
+OutQS (Πn ) = OutFC (Πn )cusp [cf. Proposition 1.3, (vi), (vii)]. Now let
+
+(6.) In Deﬁnition 5.2, (ii), the phrase “of x in U” should read “of x in N ”.
+
+Typeset by AMS-TEX
+
+1
+
+

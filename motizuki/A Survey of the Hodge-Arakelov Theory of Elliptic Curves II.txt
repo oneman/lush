@@ -1,0 +1,1717 @@
+Advanced Studies in Pure Mathematics 2*, 2000
+Analysis on Homogeneous Spaces and Representations of Lie Groups
+pp. 1–34
+
+A Survey of the Hodge-Arakelov Theory of
+Elliptic Curves II
+Shinichi Mochizuki 1
+Abstract.
+The purpose of the present manuscript is to continue the survey
+of the Hodge-Arakelov theory of elliptic curves (cf. [7, 8, 9, 10, 11])
+that was begun in [12]. This theory is a sort of “Hodge theory of elliptic curves” analogous to the classical complex and p-adic Hodge theories, but which exists in the global arithmetic framework of Arakelov
+theory. In particular, in the present manuscript, we focus on the aspects of the theory (cf. [9, 10, 11]) developed subsequent to those
+discussed in [12], but prior to the conference “Algebraic Geometry
+2000” held in Nagano, Japan, in July 2000. These developments
+center around the natural connection that exists on the pair consisting of the universal extension of an elliptic curve, equipped with
+an ample line bundle. This connection gives rise to a natural object — which we call the crystalline theta object — which exhibits
+many interesting and unexpected properties. These properties allow one, in particular, to understand at a rigorous mathematical
+level the (hitherto purely “philosophical”) relationship between the
+classical Kodaira-Spencer morphism and the Galois-theoretic “arithmetic Kodaira-Spencer morphism” of Hodge-Arakelov theory. They
+also provide a method (under certain conditions) for “eliminating the
+Gaussian poles,” which are the main obstruction to applying HodgeArakelov theory to diophantine geometry. Finally, these techniques
+allow one to give a new proof of the main result of [7] using characteristic p methods. It is the hope of the author to survey more recent
+developments (i.e., developments that occurred subsequent to “Algebraic Geometry 2000”) concerning the relationship between HodgeArakelov theory and anabelian geometry (cf. [16]) in a sequel to the
+present manuscript.
+
+Received January 31, 2001.
+Revised January 31, 2001.
+1
+Part of the research discussed in this manuscript was carried out while
+the author was visiting the University of Tokyo during the Spring of 2000 as
+a “Clay Prize Fellow” supported by the Clay Mathematical Institute.
+
+2
+
+S. Mochizuki
+
+Contents
+1.
+2.
+3.
+4.
+
+§1.
+
+General Introduction
+The Crystalline Theta Object
+Lagrangian Galois Actions
+Hodge-Arakelov Theory in Positive Characteristic
+
+2
+5
+20
+28
+
+General Introduction
+
+We begin our general introduction to the topics presented in the
+present manuscript by reviewing the fundamental argument from algebraic geometry whose arithmetic analogue is the central goal of the
+Hodge-Arakelov theory of elliptic curves.
+Let S be a smooth, proper, geometrically connected algebraic curve
+over an algebraically closed ﬁeld of characteristic zero k. Let
+E→S
+be a family of one-dimensional semi-abelian varieties whose generic ﬁber
+is proper. Thus, (except for a ﬁnite number of exceptions) the ﬁbers of
+E → S are elliptic curves. Let us write
+Σ⊆S
+for the ﬁnite set of points over which the ﬁber of E → S fails to be an
+elliptic curve, and
+def
+
+ωE = ΩE/S |0E
+for the restriction of the sheaf of relative diﬀerentials to the zero section
+of E → S. Then the height of the family E → S is deﬁned to be:
+⊗2
+htE = degS (ωE
+)
+def
+
+(i.e., the degree on S of the line bundle in parentheses). The height is a
+measure of the arithmetic complexity of the family E → S. For instance,
+the family is isotrivial (i.e., becomes trivial upon applying some ﬁnite
+ﬂat base extension T → S) if and only if htE = 0.
+In some sense, the most important property of the height in this
+context is the fact that (in the nonisotrivial case) it is universally bounded
+by invariants depending only on the pair (S, Σ). This bound — “Szpiro’s
+conjecture for function ﬁelds” — is as follows:
+
+Survey of Hodge-Arakelov Theory II
+
+(1)
+
+3
+
+htE ≤ 2gS − 2 + |Σ|
+
+(where gS is the genus of S, and |Σ| is the cardinality of Σ). The proof, in
+the present geometric context, is the following simple argument: Write
+Mell for the compactiﬁed moduli stack of elliptic curves over k, and
+∞ ⊆ Mell for the divisor at inﬁnity of this stack. Thus, E → S deﬁnes
+a classifying morphism
+κ : S → Mell
+whose (logarithmic) derivative
+⊗2 ∼ ∗
+dκ : ωE
+= κ ΩMell /k (∞) → ΩS (Σ)
+
+is nonzero (so long as we assume that the family E → S is nonisotrivial).
+Thus, since dκ is a generically nonzero morphism between line bundles
+on the curve S, the degree of its domain (i.e., htE ) is ≤ the degree of its
+range (i.e., 2gS − 2 + |Σ|), so we obtain the desired inequality.
+Note that in the above argument, the most essential ingredient is
+the Kodaira-Spencer morphism, i.e., the derivative dκ. Until recently,
+no analogue of such a derivative existed in the “arithmetic case” (i.e., of
+elliptic curves over number ﬁelds). On the other hand:
+The Hodge-Arakelov theory of elliptic curves gives rise
+to a natural analogue of the Kodaira-Spencer morphism
+in the arithmetic context of an elliptic curve over a
+number ﬁeld.
+A survey of the basic theory of this arithmetic Kodaira-Spencer morphism, together with a detailed explanation of the sense in which it
+may be regarded as being analogous to the classical geometric KodairaSpencer morphism, may be found in [12].
+At a more technical level, in some sense the most fundamental result
+of Hodge-Arakelov theory is the following: Let E be an elliptic curve
+over a ﬁeld K of characteristic zero. Let d be a positive integer, and
+η ∈ E(K) a torsion point of order not dividing d. Write
+def
+
+L = OE (d · [η])
+for the line bundle on E corresponding to the divisor of multiplicity d
+with support at the point η. Write
+E† → E
+
+4
+
+S. Mochizuki
+
+for the universal extension of the elliptic curve, i.e., the moduli space of
+pairs (M, ∇M ) consisting of a degree zero line bundle M on E, equipped
+with a connection ∇M . Thus, E † is an aﬃne torsor on E under the
+module ωE of invariant diﬀerentials on E. In particular, since E † is
+(Zariski locally over E) the spectrum of a polynomial algebra in one
+variable with coeﬃcients in the sheaf of functions on E, it makes sense
+to speak of the “relative degree over E” – which we refer to in this paper
+as the torsorial degree – of a function on E † . Note that (since we are in
+characteristic zero) the subscheme E † [d] ⊆ E † of d-torsion points of E †
+maps isomorphically to the subscheme E[d] ⊆ E of d-torsion points of E.
+Then in its simplest form, the main theorem of [7] states the following:
+Theorem 1.1. (Simple Version of the Hodge-Arakelov Comparison Isomorphism) Let E be an elliptic curve over a ﬁeld K of
+characteristic zero. Write E † → E for its universal extension. Let d be
+a positive integer, and η ∈ E(K) a torsion point whose order does not
+def
+
+divide d. Write L = OE (d · [η]). Then the natural map
+Γ(E † , L)<d → L|E † [d]
+given by restricting sections of L over E † whose torsorial degree is < d
+to the d-torsion points E † [d] ⊆ E † is a bijection between K-vector
+spaces of dimension d2 .
+The remainder of the main theorem essentially consists of specifying
+precisely how one must modify the integral structure of Γ(E † , L)<d over
+more general bases in order to obtain an isomorphism at the ﬁnite and
+inﬁnite primes of a number ﬁeld, as well as for degenerating elliptic
+curves.
+The relationship between Theorem 1.1 and the classical KodairaSpencer morphism is discussed in detail — albeit at a rather philosophical level — in [12], §1.3, 1.4. The analogue in the arithmetic case of the
+geometric argument used above to prove (1) is discussed in [12], §1.5.1.
+The upshot of this argument in the arithmetic case is that in order to
+derive diophantine equalities analogous to (1) in the arithmetic case —
+i.e., Szpiro’s conjecture — it is necessary to eliminate certain unwanted
+poles — called Gaussian poles — that occur in the construction of the
+arithmetic Kodaira-Spencer morphism.
+In the present manuscript, we discuss the following further developments in the theory (cf. §3, 4):
+
+Survey of Hodge-Arakelov Theory II
+
+5
+
+(i) a method for eliminating the Gaussian poles under certain conditions (cf. Corollary 3.5);
+(ii) an argument which shows that (under certain conditions) the
+reduction in positive characteristic of the arithmetic KodairaSpencer morphism coincides with the classical geometric KodairaSpencer morphism (cf. Corollary 3.6);
+(iii) a alternative proof of Theorem 1.1 using characteristic p methods (cf. Theorem 4.3).
+Thus, development (i) brings us closer to the goal of applying HodgeArakelov theory to proving Szpiro’s conjecture (for elliptic curves over
+number ﬁelds). Unfortunately, the conditions under which the argument of (i) may be carried out do not hold (at least in the naive sense)
+for elliptic curves over number ﬁelds. Nevertheless, there is substantial hope that certain new constructions will allow us to realize these
+conditions even for elliptic curves over number ﬁelds (cf. §3 for more
+on this issue). Development (ii) is signiﬁcant in that it shows that the
+analogy between the arithmetic and classical geometric Kodaira-Spencer
+morphisms is not just philosophy, but rigorous mathematics! Finally,
+the signiﬁcance of development (iii) is that it provides a much more conceptual, as well as technically simpler proof of the “fundamental theorem
+of Hodge-Arakelov theory” (i.e., Theorem 1.1).
+Underlying all of these new developments (especially (i), (ii)) is the
+theory of the crystalline theta object, to be discussed in §2. This object
+is a locally free sheaf equipped with a connection and a Hodge ﬁltration,
+hence is reminiscent of the “MF ∇ -objects” of [2], §2. On the other
+hand, many of its properties, such as “Griﬃths semi-transversality” and
+the vanishing of the (higher) p-curvatures, are somewhat diﬀerent from
+(and indeed, somewhat surprising from the point of view of the theory of)
+MF ∇ -objects. Nevertheless, these properties are of crucial importance
+in the arguments that underly developments (i), (ii).
+§2.
+
+The Crystalline Theta Object
+
+2.1. The Complex Analogue.
+We begin the discussion of this § by motivating our construction in
+the abstract algebraic case by ﬁrst examining the complex analogue of
+the abstract algebraic theory.
+Let E be an elliptic curve over C (the ﬁeld of complex numbers). In
+this discussion of the complex analogue, we shall regard E as a complex
+manifold (rather than an algebraic variety). Let us write OE (respectively, OER ) for the sheaf of complex analytic (respectively, real analytic)
+
+6
+
+S. Mochizuki
+
+complex-valued functions on E. In both the complex and real analytic
+categories, we have exponential exact sequences:
+exp
+
+×
+0 −−−−→ 2πi · Z −−−−→ OE −−−−→ OE
+−−−−→ 0
+exp
+
+×
+0 −−−−→ 2πi · Z −−−−→ OER −−−−→ OE
+−−−−→ 0
+R
+
+Since (as is well-known from analysis) H 1 (E, OER ) = H 2 (E, OER ) =
+H 2 (E, OE ) = 0, taking cohomology thus gives rise to the following exact
+sequences:
+0 −−−−→ H 1 (E, 2πi · Z) −−−−→
+
+H 1 (E, OE )
+
+×
+−−−−→ H 1 (E, OE
+)
+
+deg
+
+−−−−→ H 2 (E, 2πi · Z) = Z −−−−→
+
+0
+
+deg
+
+×
+0 −−−−→ H 1 (E, OE
+) −−−−→ H 2 (E, 2πi · Z) = Z −−−−→ 0
+R
+
+In other words, (as is well-known) the isomorphism class of a holomorphic line bundle on E is not determined just by its degree (which is
+a topological invariant), but also has continuous holomorphic moduli
+(given by H 1 (E, OE ) = 0), while the isomorphism class of a real analytic
+line bundle is completely determined by its degree. Thus, in particular,
+the complex analytic pair (E, L) (i.e., a “polarized elliptic curve”) has
+nontrivial moduli, and in fact, even if the moduli of E are held ﬁxed,
+L itself has nontrivial moduli. (Here, by “nontrivial moduli,” we mean
+that there exist continuous families of such objects which are not locally isomorphic to the trivial family.) On the other hand, (if we write
+def
+
+LR = L ⊗OE OER , then) the real analytic pair (ER , LR ) has trivial moduli, i.e., continuous families of such objects are always locally isomorphic
+to the trivial family. Put another way,
+The real analytic pair (ER , LR ) is a topological invariant of the polarized elliptic curve (E, L).
+Note that once one admits that ER itself is a “topological invariant” of E (a fact which may be seen immediately by thinking of ER as
+H 1 (E, S1 ), where S1 ⊆ C× is the unit circle), (one checks easily that)
+the fact that LR is also a topological invariant follows essentially from
+the fact that H 1 (E, OER ) = 0. Note that if one thinks of the universal
+extension E † as the algebraic analogue of ER , then the analogue of this
+fact in the algebraic context is given precisely by the (easily veriﬁed)
+fact:
+
+Survey of Hodge-Arakelov Theory II
+
+7
+
+H 1 (E † , OE † ) = 0
+(that is, the ﬁrst cohomology module of the algebraic coherent sheaf
+OE † vanishes). In §2.3 below, we would like to exploit this fact to show
+that the pair (E † , L|E † ) has a natural structure of crystal (valued in the
+category of “polarized varieties,” or varieties equipped with an ample
+line bundle), and that — by placing an appropriate integral structure
+on E † — one may show that this crystal exists naturally not only in
+characteristic 0, but also in mixed characteristic. Thus, in summary, the
+analogy that we wish to assert here is the following:
+topological invariance of (ER , LR ) ←→ (E † , L|†E ) is a crystal
+In fact, it is useful here to recall that in some sense:
+The essential spirit of the “Hodge-Arakelov Theory of
+Elliptic Curves” may be summarized as being the Hodge
+theory of the pairs (ER , LR ) (at archimedean primes),
+(E † , L|†E ) (with appropriate integral structures — to be
+discussed in §2.3 below — at non-archimedean primes),
+as opposed to the “usual Hodge theory of an elliptic
+curve” which may be thought of as the Hodge theory of
+ER (at archimedean primes) or E † (at non-archimedean
+primes).
+In this connection, we note that the “Hodge-Arakelov theory of an elliptic curve at an archimedean prime” is discussed/reviewed in detail in
+[7], Chapter VII, §4.
+2.2. The Case of Ordinary p-adic Elliptic Curves.
+Central to the theory of the mixed characteristic analogue of the
+ideas presented in §2.1 is the theory of the étale integral structure on
+the universal extension of an elliptic curve. In the present §, we would
+like to review the deﬁnition of the étale integral structure and discuss
+its structure in the case of an ordinary p-adic elliptic curve.
+Let us work over a formal neighborhood of the point at inﬁnity on
+the moduli stack of elliptic curves — i.e., say, the spectrum of a ring of
+power series of the form
+def
+
+S = Spec(O[[q]])
+where O is a Dedekind domain of mixed characteristic and q an indeterminate. Write S for the completion of S with respect to the q-adic topology, and E → S for the tautological degenerating elliptic curve (more
+
+8
+
+S. Mochizuki
+
+precisely: one-dimensional semi-abelian scheme), with “q-parameter”
+equal to q. Then we have natural isomorphisms
+E|S ∼
+= Gm ;
+
+ωE = OS · d log(U );
+
+E † |S ∼
+= Gm × A1
+
+where we write U for the usual multiplicative coordinate on Gm (cf.
+[7], Chapter III, Theorem 2.1; the discussion of [7], Chapter III, §6, for
+more details). If we write “T ” for the standard coordinate on this aﬃne
+line, then near inﬁnity, the standard integral structure on E † may be
+described as that given by
+
+OGm · T r
+r≥0
+
+On the other hand:
+Deﬁnition 2.1. The étale integral structure on E † (near inﬁnity) is
+given by
+ 
+
+T
+OGm ·
+r
+r≥0
+
+  def 1
+where Tr = r!
+T (T − 1) · . . . · (T − (r − 1))).
+Moreover, although the above deﬁnition of this integral structure is
+only valid near inﬁnity, this integral structure extends uniquely over the
+entire (compactiﬁed) moduli stack of elliptic curves Mell (over Z) — cf.
+[9], §1. (Note that this uniqueness is a consequence of the fact that Mell
+is a regular scheme of dimension 2.)
+Thus, given a family of elliptic curves E → S over an arbitrary Zﬂat base S, we obtain a naturally deﬁned “étale integral structure” on
+the universal extension E † , i.e., a group scheme
+†
+→S
+Eet
+
+(which is not of ﬁnite type over S).
+Next, we would like to examine this étale integral structure in more
+detail in the case of a family of ordinary p-adic elliptic curves. Thus,
+let S be a p-adic formal scheme which is formally smooth over Zp , and
+assume also that we are given a family of ordinary elliptic curves
+E→S
+such that the associated classifying morphism S → (Mell )Zp is formally
+(i.e., relative to the p-adic topology) étale. (Here, by “ordinary,” we
+
+Survey of Hodge-Arakelov Theory II
+
+9
+
+mean that the ﬁbers of E → S over all the points of SFp have nonzero
+Hasse invariant.) For n ≥ 1, write
+def
+
+E[pn ] = Ker([pn ] : E → E)
+for the kernel of multiplication by pn on E. Then, as is well-known (cf.,
+e.g., [6], p. 150), there is a unique exact sequence
+0 → E[pn ]μ → E[pn ] → E[pn ]et → 0
+of ﬁnite ﬂat group schemes over E such that E[pn ]μ (respectively, E[pn ]et )
+is étale locally isomorphic to μpn (respectively, Z/pn Z).
+Let us write:
+n
+
+E F = E/E[pn ]μ
+def
+
+n
+
+Then since E F → S is a family of elliptic curves, and the classifying
+n
+morphism associated to E → S is étale, it follows that E F → S deﬁnes
+a morphism:
+ΦnS : S → S
+def
+
+One checks easily that ΦS = Φ1S is a lifting of the Frobenius morphism
+in characteristic p, and that ΦnS is the result of iterating ΦS a total of n
+times (as the notation suggests). The morphism
+V : EF → E
+given by forming the quotient of E F by the image in E F of E[p] will be
+referred to as the the Verschiebung morphism associated to E. For any
+n ≥ 1, the morphism
+n
+
+V n : EF → E
+n
+
+n
+
+given by forming the quotient of E F by the image in E F of E[pn ] is
+easily seen to be equal (as the notation suggests) to the “n-th iterate”
+(i.e., up to various appropriate base changes by iterates of ΦS ) of V.
+Note that the kernel of V n may be identiﬁed with E[pn ]et . In particular,
+it follows that V n is étale of degree pn .
+Thus, we obtain a tower
+n
+
+n−1
+
+. . . → EF → EF
+
+→ . . . → EF → E
+
+of étale isogenies of degree p. Let us denote the p-adic completion of the
+∞
+inverse limit of this system of isogenies by E F . Thus, in particular, we
+have a natural morphism
+
+10
+
+S. Mochizuki
+
+EF
+
+∞
+
+→E
+
+In [9], §2.2, a certain canonical section
+n
+
+κ[pn ] : E F ⊗ Z/pn Z → E † ⊗ Z/pn Z
+n
+
+is constructed of the universal extension of E over E F . This section is
+the “ordinary analogue” of the section near inﬁnity (cf. the discussion
+at the beginning of the present §2.2) given by sending T → 0. Letting
+n → ∞, we thus obtain a morphism
+κ[p∞ ] : E F
+
+∞
+
+→ (E † )∧
+
+(where “∧” denotes p-adic completion). Finally, by computing near
+inﬁnity, one shows that this morphism in fact factors uniquely through
+the étale integral structure, i.e., determines a morphism:
+∞
+
+F
+κ∞
+et : E
+
+† ∧
+→ (Eet
+)
+
+Theorem 2.2. (Explicit Description of the Étale Integral Structure of an Ordinary Elliptic Curve) The natural morphism
+∞
+
+F
+κ∞
+et : E
+
+† ∧
+→ (Eet
+)
+
+from the p-adic completion of the “Verschiebung tower” of E to the padic completion of the universal extension of E equipped with the étale
+integral structure is an isomorphism.
+We refer to [9], §2.2, for more details. The essential idea of the proof
+is to apply the following well-known bijection (due to Mahler — cf., e.g.,
+[5], §3.2):
+∼
+
+Comb(Zp )∧ → Cont(Zp , Zp )
+from the p-adic
+completion of the free Zp -module Comb(Zp ) on the gen
+erators Tr to the space of continuous functions Zp → Zp (given by
+evaluating the indeterminate T on elements of Zp ).
+Remark 2.3. One way to think of the content of Theorem 2.2 is as the
+assertion that:
+The étale integral structure on E † is very closely related
+to the p-adic Hodge theory of E.
+
+Survey of Hodge-Arakelov Theory II
+
+11
+
+†
+Since Eet
+is deﬁned globally over Z whenever E is deﬁned globally over Z,
+†
+enjoys the following
+Theorem 2.2 may also be taken as asserting that Eet
+remarkable interpretation:
+
+The universal extension of an elliptic curve equipped
+with the étale integral structure is a natural globalization
+over Z of the (very local!) p-adic Hodge theory of the
+elliptic curve.
+This interpretation is very much in line with the general philosophy of
+Hodge-Arakelov theory (cf., e.g., [12], §1.3).
+2.3.
+Let
+
+Integral Structures and Connections.
+
+f :E→S
+be a family of elliptic curves over a scheme S. In order to formulate
+the various versions of the comparison isomorphism of Hodge-Arakelov
+theory (cf., e.g., Theorem 1.1) properly in mixed characteristic, it is necessary to consider not only the universal extension E † , but also certain
+E † -torsors — which we shall refer to as Hodge torsors — as follows. Let
+L be a line bundle on E. For simplicity, we assume that the (relative)
+degree (over S) of L is one. Then we deﬁne
+EL → E
+to be the ωE -torsor over E parametrizing (over an open U ⊆ E) the
+(OS -linear) connections ∇L on the line bundle L. Often to simplify the
+notation (as well as to emphasize the analogy with E † ), we will denote
+E L by
+E∗
+(where we think of the “∗” as being set equal to L).
+Then E ∗ admits a natural E † -action, deﬁned as follows. If ∇L is the
+connection corresponding to a section of E ∗ → E over some open U ⊆ E,
+and ∇α is a connection on the degree zero line bundle OE ([0E ] − [α])
+for some point α ∈ E(S), then we let the point (α, ∇α ) of E † (S) act on
+E ∗ by
+∇L → (Tα∗ ∇L ) ⊗ ∇α
+— where we denote by Tα : E → E the morphism “translation by α,”
+and we observe that
+
+12
+
+S. Mochizuki
+
+∼
+
+(Tα∗ L) ⊗ OE ([0E ] − [α]) → L
+(by the elementary theory of line bundles on elliptic curves), so (Tα∗ ∇L )⊗
+∇α deﬁnes a connection on L over Tα∗ U , i.e., a section of E ∗ → E
+over Tα∗ U , as desired. Thus, we obtain an action of E † on E ∗ which
+is compatible (via the projections E † → E, E ∗ → E) with the usual
+translation action of E on itself. Moreover, it is an easy exercise to show
+that the action of E † on E ∗ deﬁnes a structure of E † -torsor on E ∗ .
+When S is Z-ﬂat, and L is the degree one line bundle deﬁned by a
+torsion point η ∈ E(S), then there is also a natural analogue of the étale
+integral structure on E † (cf. §2.2) for E ∗ . For simplicity, we restrict
+ourselves here to the case where ∗ = OE ([0E ]). Then (since (Mell )Z
+is connected and regular of dimension two) the étale integral structure
+on E ∗ is uniquely determined over arbitrary S once it is determined
+“near inﬁnity,” i.e., in the case S = Spec(Z[[q]]). Now, as we saw at the
+beginning of §2.2, the standard integral structure on E † is given (near
+inﬁnity) by:
+
+OGm · T r
+r≥0
+
+Relative to this notation, the standard integral structure on E ∗ is given
+by:
+
+r≥0
+
+1
+OGm · (T − )r
+2
+
+Thus, just as the étale integral structure on E † is given by:
+ 
+
+T
+OGm ·
+r
+r≥0
+
+it should not surprise the reader that the étale integral structure on E ∗
+is given by:
+
+
+
+T − 12
+OGm ·
+r
+r≥0
+
+Here, we note that in the case of a more general torsion point η ∈
+E(O[[q 1/N ]]) (where O is the ring of integers of some number ﬁeld), the
+“ 12 ” is replaced by a rational number of the form β − 12 , where β ∈ Q is
+any representative of the unique class in Q/Z such that — if we think of
+E(O[[q 1/N ]]) as Gm (O[[q 1/N ]][q −1 ])/q Z via the Schottky uniformization
+
+Survey of Hodge-Arakelov Theory II
+
+13
+
+of the Tate curve E — then η is equal to the point determined by ζ · q β
+for some root of unity ζ.
+Just as in the case of E † , the étale integral structure on E ∗ extends
+over all of (Mell )Z . At primes other than 2, this follows immediately
+from the case of E † . On the other hand, at the prime 2, this extension
+result is much more diﬃcult to prove (cf. [9], §8.2, 8.3) and requires
+various complicated 2-adic computations involving higher p-curvatures
+(where p = 2). At any rate, once this extension is made, one obtains an
+S-scheme (which is not of ﬁnite type over S)
+∗
+Eet
+†
+equipped with a natural structure of Eet
+-torsor.
+Next, let us assume that S is smooth of ﬁnite type over Z. In this
+situation, it is proven in [9], Lemma 5.1, that the well-known connection
+†
+∗
+on E † determines natural connections on Eet
+and Eet
+. Moreover, by
+using the fact (cf. [9], Theorem 4.3) that
+∗ ) = OS ;
+f∗ (OEet
+
+∗ ) = 0
+R1 f∗ (OEet
+
+(where, by abuse of notation, we denote all structure morphisms to S by
+“f ”) one derives (cf. [9], Theorem 5.2) the following fundamental (i.e.,
+relative to the theory of [9]) result (cf. the discussion of §2.1):
+∗
+∗
+Theorem 2.4. Let ∈ Eet
+(S) be a horizontal point of Eet
+. Then restriction to deﬁnes a natural bijection between connections (over Z) on
+∗
+∗ ) and connections on the line bundle L| on S.
+the pair (Eet
+, L|Eet
+
+Remark 2.5. Typically, in the situations that we are interested in, there
+will be a natural choice of connection on L| , so we shall not discuss
+this technical issue further in this survey. Thus, (once one chooses a
+∗
+∗ ).
+connection on L| ) there is a natural choice of connection on (Eet
+, L|Eet
+In particular, we thus obtain a natural crystal valued in the category of
+schemes equipped with an ample line bundle on the crystalline site of
+PD-thickenings of S over Z.
+Before proceeding, we observe that the crucial fact
+∗ ) = OS ;
+f∗ (OEet
+
+∗ ) = 0
+R1 f∗ (OEet
+
+— which is immediate in characteristic 0 — holds in mixed characteristic
+only for the étale integral structure, not for the standard integral structure on E ∗ . This is the technical reason for the appearance of the étale
+integral structure in Theorem 2.4. It is an interesting coincidence that
+this integral structure just happens to be the same integral structure as
+
+14
+
+S. Mochizuki
+
+the integral structure that was applied in [7] to make the comparison
+isomorphism (cf. Theorem 1.1) valid in mixed characteristic.
+∗
+∗ ), the next natural
+Once one has a connection on the pair (Eet
+, L|Eet
+step is to consider the resulting connection ∇V on the locally free (albeit
+of inﬁnite rank!) sheaf
+def
+
+∗ )
+V = f∗ (L|Eet
+
+on S. Note that by considering the “torsorial degree” of sections of L
+∗
+(i.e., relative degree over E), one obtains a natural “Hodge
+over Eet
+ﬁltration”
+F r (V) ⊆ V
+whose subquotients are given by:
+1
+· τ ⊗r ⊗OS f∗ (L)
+r! E
+(where f∗ (L) is the push-forward of the original line bundle L on E).
+The triple
+(F r+1 /F r )(V) =
+
+(V, F r (V), ∇V )
+is referred to as the crystalline theta object (cf. [9], Theorem 8.1) and is
+the main object of study in [9].
+2.4. Comparison Isomorphism at Inﬁnity.
+In this §, we would like to take a closer look at the crystalline theta
+object introduced in §2.3 in a neighborhood of inﬁnity, i.e., over the base
+S = Spec(Z[[q]]). In this case, if we think of the tautological elliptic
+def
+
+curve over US = S[q −1 ], i.e., the Tate curve, as the quotient
+Gm /q Z
+and write U for the standard multiplicative coordinate on Gm , then
+def
+∗ ) may be thought of as linear combinations of
+sections of V = f∗ (L|Eet
+the theta function
+def
+
+Θ =
+
+
+
+1
+
+2
+
+1
+
+1
+
+(−1)k · q 2 k − 2 k · U k− 2 · θ
+
+k∈Z
+− 12
+
+(where “U · θ” is a certain natural trivialization of L over Gm , and we
+note that the exponent of q is always integral) and its derivatives (i.e.,
+the result of applying polynomials (with OS -coeﬃcients) in (U · ∂/∂U )).
+
+Survey of Hodge-Arakelov Theory II
+
+15
+
+In fact, in the present context, it is natural to consider certain speciﬁc derivatives (i.e., “congruence canonical Schottky-Weierstrass zeta
+functions” — cf. [9], §6) of the theta function, as follows. For integers
+r ≥ 0, let
+def
+
+λr =
+
+1
+r
+−
+2 2
+
+(i.e., the greatest integer ≤ the number inside the “−”);
+def
+
+F r (Z) = {0 − λr , 1 − λr , . . . , r − 1 − λr } ⊆ Z
+Thus, F r+1 (Z) ⊇ F r (Z) is obtained from F r (Z) by appending one more
+integer “k[r]” directly to the left/right of F r (Z) (where “left/right” depends only on the parity of r). In particular, the map Z≥0 → Z given
+by
+r → k[r]
+is a bijection. Also, let us write:
+def 1 2
+
+Ψ(k) =
+
+1
+k − k
+2
+2
+
+Then a topological (with respect to the q-adic topology) OS-basis of V
+is given by ζ0CG , ζ1CG , . . . , ζrCG , . . . ∈ V, where we deﬁne:
+ k + λ r 
+1 2
+1
+1
+CG
+ζr =
+· (−1)k · q 2 k − 2 k · U k− 2 · θ
+r
+k∈Z
+
+(cf. [7], Chapter V, Theorem 4.8).
+∗
+Next, let us recall that the integral structure on Eet
+was deﬁned by:
+
+r≥0
+
+OGm ·
+
+
+
+T − 12
+r
+
+hence that sending T → 0 deﬁnes a q-adic section
+∗
+κGm : (Gm )S → Eet
+|S
+
+(at least after one inverts 2). Then pulling back via κGm and applying
+1
+the trivialization of L|Gm given by “U − 2 · θ” yields a natural evaluation
+morphism:
+∼
+
+Ξ : V → L|(Gm )S → O(Gm )S
+
+16
+
+S. Mochizuki
+
+which is, in fact, integral over Z (cf. [9], Theorem 6.1). Moreover,
+the connection ∇V is projectively compatible — that is, compatible up
+to a possible “error term” consisting of a scalar-valued (logarithmic)
+diﬀerential on S (cf. [9], Theorem 6.1, for more details) — with the
+natural connection on O(Gm )S (regarded as a quasi-coherent OS-module)
+arising from the fact that (Gm )S arises by pulling back to S the Z-scheme
+Gm (i.e., put another way, the unique connection for which integral
+powers of U are horizontal).
+Next, let us observe (cf. [7], Chapter V, Theorem 4.8) that the
+sections ζrCG introduced above have the following congruence property:
+Ξ(ζrCG ) ≡ 0 (mod q Ψ(k[r]) )
+Thus, it is natural to consider the sections
+ζrCG = q −Ψ(k[r]) · ζrCG ∈ q −∞ · V
+def
+
+which deﬁne a new integral structure on V, which we denote by
+V GP
+— where the “GP” stands for “Gaussian poles,” i.e., the poles arising
+from the q −Ψ(k[r]) — cf. [7], Chapter VI, Theorem 4.1 and the Remarks
+following that theorem. In particular, the ζrCG form a topological OSbasis for V GP , and Ξ factors through V GP to form a morphism:
+ΞGP : V GP → O(Gm )S
+Now we have the following Schottky-theoretic analogue (i.e., d-torsion
+points are replaced by “Gm ”) of the original Hodge-Arakelov comparison
+isomorphism (cf., Theorem 1.1):
+Theorem 2.6. (Schottky-Theoretic Hodge-Arakelov Comparison Isomorphism) The evaluation map introduced above is an isomorphism:
+∼
+ΞGP : V GP → O(Gm )S
+which is projectively horizontal with respect to the natural (logarithmic) connection ∇V (cf. Theorem 2.4) on the left and the trivial
+connection (i.e., for which the integral powers of U are horizontal) on
+the right.
+Proof. This is essentially a combination of [9], Theorems 6.1, 6.2.
+The main idea is that, since the integral powers of U form a topological
+OS-basis of O(Gm )S , it suﬃces to prove the result modulo q, in which case
+
+Survey of Hodge-Arakelov Theory II
+
+17
+
+it essentially follows from the fact that the binomial coeﬃcient functions
+form a Z-basis of the space of integer-valued polynomial functions on
+Z.
+Q.E.D.
+A number of interesting corollaries may be read oﬀ of Theorem 2.6,
+as follows. The ﬁrst such corollary is the computation of the monodromy
+of (V, ∇V ) at the point at inﬁnity, i.e., V (q) ⊆ S (cf. [9], Corollary 6.3).
+More important from the point of view of the further development of the
+theory is the vanishing of the p-curvature (cf. [3], §5,6, for a discussion
+of the notion of “p-curvature”) — cf. [9], Corollary 6.4.
+In fact, in the present context, in addition to the p-curvature, the
+higher p-curvatures of the pair (V, ∇V ) may also be deﬁned (cf. [9],
+§7.1). Then one has the following result (cf. [9], Corollary 7.6):
+Corollary 2.7. All of the higher p-curvatures of the crystalline theta
+object vanish (over an arbitrary Z-smooth base S).
+Proof. Note that since these higher p-curvatures all form sections
+of locally free sheaves (at least in, say, the universal case S = (Mell )Z )
+it suﬃces to check that they are zero in a neighborhood of inﬁnity, i.e.,
+for the present S = Spec(Z[[q]]). Thus, we may apply the isomorphism
+of Theorem 2.6, so Corollary 2.7 follows from the fact that O(Gm )S is
+(topologically) generated by its horizontal sections.
+Q.E.D.
+In more down-to-earth terms, Corollary 2.7 may be interpreted as
+follows. It follows from the general theory of integrable connections that
+in any PD formal neighborhood (where, “PD” stands for “puissances
+divisées,” i.e., divided powers) of a point of S, sections of V may be PD
+formally integrated to form horizontal sections of (V, ∇V ) in the given PD
+formal neighborhood. In general, such horizontal sections are not deﬁned
+on a formal neighborhood of the given point of S, i.e., (if, for instance,
+t is a local coordinate on a relatively one-dimensional smooth S over Z,
+then) such horizontal sections are only deﬁned once one introduces the
+divided powers:
+tn
+n!
+(where n ≥ 0 is an integer). To state then that “all the higher pcurvatures vanish” means that such horizontal sections exist as formal
+power series in t with integral coeﬃcients.
+The above discussion motivates the following point of view. Near
+inﬁnity, the horizontal sections of the above discussion are simply the
+integral powers of U . Thus, the classical theta expansion
+
+18
+
+S. Mochizuki
+
+def
+
+Θ =
+
+
+
+1
+
+2
+
+1
+
+1
+
+(−1)k · q 2 k − 2 k · U k− 2 · θ
+
+k∈Z
+
+may be thought of (in the present context) as the “expansion of a generator of F 1 (V) in terms of local horizontal sections of (V, ∇V ).” In
+particular, if one takes this point of view, then it is natural to consider
+the expansion of a generator of F 1 (V) in terms of local horizontal sections of (V, ∇V ) at points of (Mell )Z other than the point at inﬁnity.
+These crystalline theta expansions are discussion in more detail in [9],
+§7.2.
+2.5.
+Let
+
+The Associated Kodaira-Spencer Morphism.
+
+f :E→S
+be a family of elliptic curves over a smooth Z-scheme S. We shall write
+(V, F r (V), ∇V ) for the associated crystalline theta object (cf. §2.3).
+In this §, we would like to consider the relationship between ∇V and
+F r (V). The ﬁrst, most fundamental property of this relationship is that,
+unlike the MF ∇ -objects of [2], §2, which satisfy Griﬃths transversality,
+i.e., the connection maps F r into F r+1 , the crystalline theta object only
+satisﬁes the following weaker property (cf. [9], Theorem 8.1):
+Theorem 2.8. (Griﬃths Semi-transversality) The crystalline theta
+object satisﬁes “Griﬃths semi-transversality,” i.e., ∇V maps F r (V) into
+F r+2 (V) for all integers r ≥ 0.
+Remark 2.9. The reason that the crystalline theta object is only “semitransversal” is the following: The connection of Theorem 2.4 is deﬁned
+in two steps. If one thinks in terms of isomorphisms between pull-backs
+to “nearby points” that diﬀer by a square nilpotent ideal, ﬁrst one must
+∗
+establish the isomorphism between the two pull-backs of Eet
+. This causes
+the Hodge ﬁltration to jump once. Then (once one has an isomorphism
+∗
+between the underlying schemes, i.e., between the two pull-backs of Eet
+)
+one must establish an isomorphism between the two pull-backs of L.
+This causes the Hodge ﬁltration to jump once more. We refer to the
+discussion of [9], §8.1, for more details.
+Thus, by analogy to the usual Kodaira-Spencer morphism in the
+Griﬃths-transversal case (which measures the extent to which the connection fails to preserve the Hodge ﬁltration, i.e., map F r into F r ), it is
+natural to deﬁne the Kodaira-Spencer morphism of the crystalline theta
+object as follows: By Theorem 2.8, ∇V deﬁnes a morphism:
+
+Survey of Hodge-Arakelov Theory II
+
+19
+
+F 1 (V) → F 3 (V) ⊗OS ΩS/Z
+If we then compose with the projection F 3  F 3 /F 2 , then we obtain
+an OS -linear morphism:
+∼
+
+κV : F 1 (V) → (F 3 /F 2 )(V) ⊗OS ΩS/Z →
+
+1 ⊗2
+· τ ⊗OS F 1 (V) ⊗OS ΩS/Z
+2 E
+
+Moreover, since F 1 (V) = f∗ OE ([0E ]) is a line bundle, it follows that we
+may regard κV as an OS -linear morphism:
+1
+· ΩS/Z
+2
+On the other hand, we recall that the “classical Kodaira-Spencer morphism” of the family E → S is deﬁned as follows: If we write
+⊗2
+ωE
+→
+
+def
+
+E = R1 fDR,∗ OE
+for the ﬁrst relative de Rham cohomology module of E → S, and
+F 1 (E) ⊆ E (respectively, ∇E ) for its Hodge ﬁltration (respectively, GaussManin connection), then ∇E deﬁnes a morphism
+F 1 (E) → E ⊗OS ΩS/Z
+∼
+
+which may be composed with the projection E  E/F 1 (E) → F 1 (E)⊗OS
+τE⊗2 to obtain a morphism:
+κE : F 1 (E) → F 1 (E) ⊗OS τE⊗2 ⊗OS ΩS/Z
+Since F 1 (E) = ωE is a line bundle, κE may thus be regarded as a morphism:
+⊗2
+ωE
+→ ΩS/Z
+
+Then we have the following result (cf. [9], Theorem 8.1):
+Theorem 2.10. (The Kodaira-Spencer Morphism of the Crystalline Theta Object) The Kodaira-Spencer morphism
+⊗2
+κV : ω E
+→
+
+1
+· ΩS/Z
+2
+
+associated to the crystalline theta object (V, F r (V), ∇V ) is equal to 12
+times the classical Kodaira-Spencer morphism
+⊗2
+κE : ω E
+→ ΩS/Z
+
+20
+
+S. Mochizuki
+
+associated to the relative ﬁrst de Rham cohomology module of the family
+E → S.
+Proof. It suﬃces to prove this result in the universal case, i.e., when
+S = (Mell )Z . Moreover, the asserted equality clearly holds over all of
+(Mell )Z if and only if it holds in a neighborhood of inﬁnity. Thus, we
+may assume that S = Spec(Z[[q]]). Now the main idea is to consider the
+theta expansion:
+def
+
+Θ =
+
+
+
+1
+
+2
+
+1
+
+1
+
+(−1)k · q 2 k − 2 k · U k · (U − 2 · θ)
+
+k∈Z
+
+By Theorem 2.6, the connection ∇V amounts (in the context of such
+expansions) to the (logarithmic) partial derivative q · ∂/∂q. On the
+other hand, generators of F r (V) for r > 1 are obtained by taking various derivatives of Θ with respect to U . Since applying q · ∂/∂q to the
+k-th term of the expansion amounts to multiplying the k-th term by
+1 2
+1
+− 12
+· θ),”
+2 k − 2 k, it follows that (if we ignore the trivialization “(U
+then) applying q · ∂/∂q to the k-th term of the expansion gives the same
+result as applying 12 (U · ∂/∂U )2 − 12 (U · ∂/∂U ) to this term. That is to
+say, we have:
+q · ∂/∂q · Θ =
+
+1
+1
+(U · ∂/∂U )2 − (U · ∂/∂U ) · Θ
+2
+2
+
+On the other hand, near inﬁnity, the classical Kodaira-Spencer morphism amounts to the identiﬁcation of “q · ∂/∂q” with “(U · ∂/∂U )2 .”
+This completes the proof of the asserted equality.
+Q.E.D.
+Remark 2.11. The vanishing of the p-curvatures (cf. Corollary 2.7) in
+the presence of a Kodaira-Spencer morphism which is an isomorphism
+(cf. Theorem 2.10) is somewhat surprising from the point of view of
+the classical theory of MF ∇ -objects arising from families of varieties, in
+which vanishing of the p-curvature is related to vanishing of the KodairaSpencer morphism (cf. [4]).
+§3.
+
+Lagrangian Galois Actions
+In this §, we apply the theory of §2 to
+(i) show how to eliminate the Gaussian poles from (a certain version of) the arithmetic Kodaira-Spencer morphism under certain conditions (cf. Corollary 3.5);
+
+Survey of Hodge-Arakelov Theory II
+
+21
+
+(ii) show that the reduction in positive characteristic of (a certain version of) the arithmetic Kodaira-Spencer morphism coincides with the classical geometric Kodaira-Spencer morphism
+(cf. Corollary 3.6).
+The ideas surveyed in this § are discussed in more detail in [10], §2 (in
+the case of odd p); [11], §3 (in the case of p = 2). The key idea here
+is that the theory of the crystalline theta object allows one to study the
+(globally deﬁned) discrete arithmetic Kodaira-Spencer morphism from
+a (local p-adic) continuous point of view.
+def
+
+Let p be an odd prime. Let K = Qp (ζp ), where ζp is a primitive
+p-th root of unity. Write OK (respectively, m; k) for the ring of integers
+of K (respectively, maximal ideal of OK ; residue ﬁeld of OK );
+def
+
+def
+
+US = S\V (q) ⊆ S = Spec(OK [[q]])
+and
+E→S
+for the tautological degenerating elliptic curve (more precisely: onedimensional semi-abelian scheme) with “q-parameter” equal to q over
+S. Also, let us write:
+1
+
+def
+
+Z = Spec(OK [[q p ]])
+Thus, over Q, ZQ → SQ is ﬁnite, étale over (US )Q , and Galois, with
+Galois group
+G = Fp (1)
+(where the “(1)” denotes a Tate twist). As is well-known, over US , the
+p-torsion points of E → S ﬁt into a natural exact sequence:
+0 → μp |US → E[p]|US → Fp |US → 0
+def
+
+which splits over UZ = US ×S Z. In the following discussion, we consider
+the particular splitting
+H|UZ ⊆ E[p]|UZ
+(i.e., subgroup scheme H|UZ that projects isomorphically onto Fp |UZ ) of
+1
+this exact sequence deﬁned by the p-th root of q given by q p .
+Next, let us write C → S for the unique semi-stable model compactifying E → S. Thus, C is regular, and the complement of its unique
+
+22
+
+S. Mochizuki
+def
+
+node is equal to E. On the other hand, CZ = C ×S Z is no longer
+regular. Let us denote by
+CZ → Z
+the unique regular semi-stable model over Z compactifying E|UZ . Thus,
+the complement
+EZ → Z
+of the nodes of CZ has a natural group scheme structure whose special
+1
+ﬁber (i.e., ﬁber over V (q p )) is a disjoint union of p copies of Gm .
+Next, let us observe that H|UZ determines (by taking the closure in
+EZ ) a closed subgroup scheme
+H ⊆ EZ
+of EZ . We may then form the quotient:
+def
+
+EZ ⊆ EZ  EH = EZ /H
+Thus, EH → Z is a one-dimensional semi-abelian scheme with “q1
+parameter” equal to q p . Let us write
+def
+
+LH = OEH ([0EH ])
+def
+
+def
+
+and LZ = LH |EZ ; LZ = LZ |EZ . Moreover, it may be shown (cf. [10],
+§2.1, for more details) that, if we denote by ∈ EZ (Z) the unique section
+of order 2, then although a priori,
+def
+
+L = LZ | 
+appears only to be deﬁned over Z, in fact, it admits a natural G-action
+(compatible with the G-action on OZ ), as if it arose as the pull-back to
+Z of a line bundle on S.
+On the other hand, note (cf. the exact sequence discussed above)
+that μp may be regarded as a closed subgroup scheme:
+(μp )Z ⊆ EH
+In addition, one has a natural closed subgroup scheme
+{±1} → EH
+so we shall write “(−μp )Z ⊆ EH ” for the translate of (μp )Z by the
+element “−1.”
+
+Survey of Hodge-Arakelov Theory II
+
+23
+
+If we now substitute the pair (EH , LH ) into the theory of §2.3, 2.4,
+we obtain the corresponding crystalline theta object
+(VH , F r (VH ), ∇VH )
+over Z by considering sections of LH over the Hodge torsor equipped
+∗
+with its étale integral structure EH,et
+associated to this pair. Moreover,
+it follows immediately from the deﬁnition of the integral structure on
+∗
+that the subgroup schemes (μp )Z , {±1} ⊆ EH lift naturally to
+EH,et
+closed subschemes
+∗
+(μp )Z , {±1} ⊆ EH,et
+
+hence that we obtain a natural lifting
+∗
+(−μp )Z ⊆ EH,et
+
+of (−μp )Z ⊆ EH . On the other hand, by the theory of theta groups (cf.,
+e.g., [7], Chapter IV, §1), we have a natural theta trivialization
+∼
+
+LH |(−μp )Z → L ⊗OZ O(μp )Z
+of the restriction of LH to (−μp )Z .
+∗
+to (−μp )Z and
+In particular, if we restrict sections of LH over EH,et
+then apply the theta trivialization, we obtain a morphism
+ΞVH : VH → L ⊗OZ O(μp )Z
+whose restriction
+ΞHDR : HDR → L ⊗OZ O(μp )Z
+def
+
+to HDR = F p (VH ) ⊆ VH is “essentially” (i.e., up to taking H-invariants)
+the restriction morphism appearing in the original Hodge-Arakelov Comparison Isomorphism (cf. Theorem 1.1). That is to say, it follows from
+the main theorem of [7] that:
+ΞHDR |UZ is an isomorphism.
+(In order to make it an isomorphism over Z, one must introduce the
+“Gaussian poles” on HDR .) In particular, since the Galois group G acts
+naturally on the range of ΞHDR , we get a natural action of G on the
+domain of ΞHDR , at least over UZ .
+Deﬁnition 3.1. This action of G on HDR |UZ will be referred to as the
+Lagrangian Galois action on HDR .
+
+24
+
+S. Mochizuki
+
+Remark 3.2. Note, in particular, that, unlike the Galois actions considered in [7], Chapter IX, §3; [10], §1 (cf. [12], §1.4.1, for a survey of
+this theory), the Lagrangian Galois action depends on the choice of the
+subgroup H. In fact, however, the choice of diﬀerent splittings H does
+not aﬀect the present theory very much. What is, however, essential
+here, is the existence of the natural multiplicative subgroup scheme:
+μp |US ⊆ E[p]|US
+Indeed, this is the essential element of the present discussion in a “neighborhood of inﬁnity” that does not exist in the number ﬁeld case. We will
+say more on this later (cf. Remark 3.7 below).
+Remark 3.3. Just as was done in [12], §1.4.1, for the usual Galois action,
+once one has deﬁned the Lagrangian Galois action, one may consider
+the corresponding Lagrangian arithmetic Kodaira-Spencer morphism by
+looking at the extent to which the Hodge ﬁltration F r (HDR ) is preserved
+by the action of G. We leave it to the reader to make the routine details
+(entirely similar to [12], §1.4.1) explicit. For more on this Lagrangian
+arithmetic Kodaira-Spencer morphism, we refer to Corollary 3.6 below.
+Next, let us write
+Z log ;
+
+S log
+
+for the log schemes obtained by equipping Z (respectively, S) with the
+1
+log structure deﬁned by the divisor V (q p ) ⊆ Z (respectively, V (q) ⊆ S)
+and
+Inf(Z log ⊗ k/OK )
+for the site of inﬁnitesimal thickenings of Z log ⊗ k over OK . Note that
+here, we do not assume that we are given a divided power structure
+on the ideal deﬁning a thickening. Since, however, all the higher pcurvatures of (VH , ∇VH ) vanish (cf. Corollary 2.7), it follows that the
+H , ∇  ) of (VH , ∇V ) deﬁnes a crystal on the site
+p-adic completion (V
+H
+VH
+log
+Inf(Z ⊗ k/OK ).
+In particular, since elements σ ∈ G are all congruent to the identity morphism on Z log modulo m, it follows from the general theory of
+crystals on sites of thickenings that σ deﬁnes an automorphism
+
+∼ 
+H →
+:V
+VH
+σ
+
+which we denote by σ , by analogy to “integration/parallel transport
+along the (closed) path σ” in the classical complex case. Now, taking
+
+Survey of Hodge-Arakelov Theory II
+
+25
+
+into account the functoriality/naturality of all the deﬁnitions involved,
+we obtain the following fundamental result (cf. [10], Theorem 2.4):
+Theorem 3.4. (The Crystalline Nature of the Lagrangian Galois
+Action) For any σ ∈ G, the following diagram commutes:
+Ξ
+
+VH
+H −−−
+V
+−→ L ⊗OZ O(μp )Z
+⏐
+ ⏐
+
+σ
+σ
+
+Ξ
+
+VH
+H −−−
+−→ L ⊗OZ O(μp )Z
+V
+
+(where the “hats” denote p-adic completion, and the vertical morphisms
+are the natural morphisms associated to σ).
+Put another way, Theorem 3.4 asserts that the Lagrangian Galois
+action can be computed via “crystalline methods.” Thus, if one restricts
+H and then applies
+the commutative diagram of Theorem 3.4 to HDR ⊆ V
+a certain lemma (cf. [10], Lemma 2.6) derived from the theory of the
+theta convolution (cf. [8]; [12], §2) to the eﬀect that ΞVH and ΞHDR have
+the same image in L ⊗OZ O(μp )Z , one obtains the following result (cf.
+[10], Corollary 2.5):
+Corollary 3.5. (Elimination of Gaussian Poles) The Lagrangian
+Galois action on HDR |UZ is, in fact, deﬁned on HDR (i.e., without
+Gaussian poles).
+Finally, we would like to apply Theorem 3.4 to relate the Lagrangian
+arithmetic Kodaira-Spencer morphism to the classical Kodaira-Spencer
+morphism. To do this, we must consider the Lagrangian Galois action
+modulo m2 . First, we observe that it follows immediately from Theorems
+2.8, 3.4 that for any σ ∈ G, the Lagrangian Galois action of σ on HDR
+maps
+F 1 (HDR ) → F 3 (HDR ) ⊗OK (OK /m2 )
+in such a way that modulo m, F 1 (HDR ) maps into F 1 (HDR ). In particular, if we compose this map with the projection F 3  F 3 /F 2 (cf. the
+discussion of §2.5), then we obtain an OZ -linear morphism
+F 1 (HDR ) ⊗OK k → (F 3 /F 2 )(HDR ) ⊗OK (m/m2 )
+∼
+
+→ (τE⊗2
+⊗OZ F 1 (HDR )) ⊗OK (m/m2 )
+H
+
+26
+
+S. Mochizuki
+
+— i.e., if we let σ ∈ G vary, we obtain a homomorphism
+κG : G = Fp (1)
+→ HomOZ (F 1 (HDR ) ⊗OK k, (τE⊗2
+⊗OZ F 1 (HDR )) ⊗OK (m/m2 ))
+H
+= τE⊗2
+⊗OK (m/m2 )
+H
+On the other hand, if we forget about families of elliptic curves and
+form the natural exact sequence of diﬀerentials associated to the triple
+Z log → S log → Spec(OK ), we obtain an extension of G-modules:
+0 → ΩOK /Zp ⊗OK OZ = (p−1 · m · OZ ) ⊗OK (OK /mp−2 ) → ΩZ log /Zp
+→ ΩZ log /S log = ΩZ log /OK ⊗ Fp → 0
+(where all diﬀerentials involving S log , Z log are understood to be qadically continuous). By considering the extent to which sections of
+ΩZ log /OK ⊗ Fp lift to G-invariant sections of ΩZ log /Zp , we thus obtain a
+homomorphism
+G ⊗Fp (ΩZ log /OK ⊗ Fp ) → (p−1 · m · OZ ) ⊗OK (OK /mp−2 )
+whose composite with the morphism induced by the projection m 
+m/m2 is easily veriﬁed to be an isomorphism
+∼
+
+δ : G ⊗Fp OZ⊗k → ΘZ log /OK ⊗OK m/m2
+(cf. the theory of [1], I., §4) relating the Galois group G to the (logdef
+
+arithmic) tangent bundle ΘZ log /OK = HomOZ (ΩZ log /OK , OZ ) modulo
+m.
+Thus, if we combine δ with κG , we obtain a morphism:
+⊗OK k
+κδG : ΘZ log /OK ⊗OK k → τE⊗2
+H
+On the other hand, if we compute κδG by means of Theorems 2.10, 3.4,
+it follows that:
+Corollary 3.6. (Relation to the Classical Kodaira-Spencer Morphism) The morphism
+κδG : ΘZ log /OK ⊗OK k → τE⊗2
+⊗OK k
+H
+
+Survey of Hodge-Arakelov Theory II
+
+27
+
+constructed by considering the Lagrangian Galois action modulo m2 and
+applying the natural isomorphism
+∼
+
+δ : G ⊗Fp OZ⊗k → ΘZ log /OK ⊗OK m/m2
+between the Galois group G and the (logarithmic) tangent bundle modulo
+m is equal to 12 the classical Kodaira-Spencer morphism associated to the
+family EH → Z.
+Remark 3.7. From the point of view of applications to diophantine geometry (cf. [12], §1.5.1), one would like to develop an analogue of the
+theory of the present § over number ﬁelds — i.e., as opposed to over
+def
+“formal neighborhoods of inﬁnity” (cf. the base S = Spec(OK [[q]])), as
+in the present discussion. Indeed, as discussed in [12], §1.5.1, the main
+essential “missing link” necessary to apply Hodge-Arakelov theory to
+diophantine geometry is the elimination of the Gaussian poles — i.e.,
+the number ﬁeld analogue of Corollary 3.5. As discussed above (cf. Remark 3.2), the main ingredient that one needs in order to realize such
+a theory over number ﬁelds is an analogue over number ﬁelds of the
+multiplicative subgroup scheme:
+μp |US ⊆ E[p]|US
+— i.e., a “global multiplicative subspace” of the Tate module (of an elliptic curve over a number ﬁeld). A ﬁrst step towards realizing such a global
+multiplicative subspace is taken in [10], §3, where a global multiplicative
+subspace is constructed over the base:
+(Mell )Q
+It is then proposed in loc. cit. that perhaps by restricting this subspace
+over (Mell )Q to a Q-valued point, one may achieve the goal of constructing a global multiplicative subspace for elliptic curves over Q. Unfortunately, this operation of restriction is not so straightforward, since it
+involves numerous intricacies related to the issue of keeping track of basepoints (of the various fundamental groups involved). Moreover, this issue
+of keeping track of basepoints appears to be related to Grothendieck’s
+anabelian geometry. At the time of writing, the author is optimistic
+that by applying the anabelian theory of [15]; [16]; and [18], Chapter
+XII, §2, these technical problems may be resolved and hence that a natural global multiplicative subspace for elliptic curves over number ﬁelds
+may be constructed. It is the hope of the author to expose these ideas
+(cf. [17]) in a future sequel to the present manuscript.
+
+28
+
+S. Mochizuki
+
+§4.
+
+Hodge-Arakelov Theory in Positive Characteristic
+
+In this §, we explain how a certain extension of the theory of §2.2
+for ordinary elliptic curves to supersingular elliptic curves in positive
+characteristic can be used to give an alternate proof of Theorem 1.1.
+More details on the theory discussed here may be found in [11], §1, 2.
+Let
+E→S
+be a family of elliptic curves over an Fp -scheme S such that the associated classifying morphism
+S → (Mell )Fp
+is étale. In the following discussion, we will write ΦS : S → S for the
+Frobenius morphism on S, and denote the result of base-changing objects
+over S via ΦS by means of a superscript F. Thus, the morphism
+[p] : E → E
+(multiplication by p) factors as a composite of morphisms:
+V
+
+Φ
+
+E −−−E−→ E F −−−−→ E
+where ΦE is the relative Frobenius morphism of E → S, and V is the
+Verschiebung morphism. As is well-known, the kernels of ΦE and V are
+Cartier dual to one another:
+∼
+
+E[ΦE ] → E F [V]∗
+Next, let us observe that the pull-back
+V ∗E† → EF
+of the universal extension E † → E via V admits a canonical section:
+κ : EF → V ∗E†
+Indeed, if we can show that the ωE -torsor V ∗ E † → E F is trivial locally
+on S, then κ may be deﬁned as the unique section that takes the origin
+0E F of E F to the origin of V ∗ E † (which is determined by the origin 0E †
+of E † ). Thus, it suﬃces to show that the ωE -torsor in question is trivial
+locally on S. Since R1 f∗ (ωE ) (where, by abuse of notation, we denote
+all structure morphisms to S by f ) is a line bundle on S, it suﬃces to
+prove this local triviality in the case that E → S is ordinary. But then,
+
+Survey of Hodge-Arakelov Theory II
+
+29
+
+∼
+
+V ∗ induces an isomorphism ωE → ωE F , so it follows that the morphism
+(again induced by V ∗ )
+OS ∼
+= R1 f∗ (ωE |E ) → R1 f∗ (ωE F |E F ) ∼
+= OS
+(where the isomorphisms on the two ends are the “trace maps” of the
+“residues and duality theory” of E, E F ) is given by multiplication by
+p = deg(V). Since we are working in characteristic p, this completes the
+proof that the ωE -torsor V ∗ E † → E F is trivial (locally on S).
+†
+as a quasiNext, let us consider structure sheaves. Let us regard OE
+coherent sheaf of OE -algebras (via the projection E † → E). Similarly,
+V : E F → E allows us to regard OE F as a coherent sheaf of OE -algebras.
+Thus, the morphism κ : E F → V ∗ E † induces a morphism of quasicoherent OE -modules:
+†
+→ OE F
+κ ∗ : OE
+<p
+†
+Let us write OE
+† ⊆ OE for the coherent subsheaf consisting of sections
+whose torsorial degree (i.e., relative degree over E) is < p. Thus, if we
+<p
+restrict κ∗ to OE
+† , we obtain a morphism
+<p
+OE
+† → OE F
+
+between locally free OE -modules of rank p. Now one has the following
+positive characteristic, degree < p version of Theorem 2.2:
+Theorem 4.1. (Verschiebung-Theoretic Analogue of the HodgeArakelov Comparison Isomorphism) The morphism
+<p
+OE
+† → OE F
+
+is an isomorphism.
+Proof. First, we remark that the above discussion extends naturally to degenerating elliptic curves and hence is compatible with all
+natural integral structures in a neighborhood of inﬁnity. For more details on this issue, we refer the reader to [11], §1.
+Next, we observe that it essentially follows from Theorem 2.2 that
+the morphism in question is an isomorphism over the ordinary locus in
+S. Indeed, this is a consequence of the fact that the Fp -vector space of
+all (set-theoretic) functions on Fp is spanned by the polynomial function
+on Fp of degree < p. Thus, in particular, the morphism in question is
+an isomorphism over a dense open substack of (Mell )Fp .
+
+30
+
+S. Mochizuki
+
+Thus, (by working over the proper stack (Mell )Fp ) it suﬃces to consider determinants. That is to say, it suﬃces to show (strictly speaking,
+not just over (Mell )Fp , but also over (Mell )Fp ) that:
+def
+
+<p
+det(OE
+† ) = det(OE F ) ∈ Pic(E)Q = Pic(E) ⊗Z Q
+
+Since E † → E is an ωE -torsor, it follows immediately that
+<p
+det(OE
+†) =
+
+p−1
+
+
+1
+j · [τE ] = − p(p − 1) · [ωE ]
+2
+j=0
+
+(where we think of Pic(E)Q as an additive group). On the other hand,
+∼
+since E F [V] → E[ΦE ]∗ , we have:
+∼
+
+OE F [V] → HomOE (OE[ΦE ] , OE )
+(as coherent OE -modules). Thus, since E F → E is a E F [V]-torsor, we
+conclude that:
+
+det(OE F ) = det(OE F [V] ) = −det(OE[ΦE ] ) = −
+
+p−1
+
+
+1
+j·[ωE ] = − p(p−1)·[ωE ]
+2
+j=0
+
+(since E[ΦE ] ⊆ E is just an inﬁnitesimal neighborhood of the origin 0E ).
+This completes the proof.
+Q.E.D.
+Remark 4.2. A version of Theorem 4.1 where “< p” is replaced by “<
+pn ” (where n ≥ 1 is an integer) is given in [11], Theorem 1.1.
+Next, we consider line bundles. Let
+η ∈ E(S)
+def
+
+be a torsion point of order prime to p. Write η F = ΦE (η) ∈ E F (S) and
+set:
+def
+
+LF = OE F ([η F ]);
+
+M = Φ∗E (LF )
+def
+
+Thus, LF (respectively, M) is a line bundle of degree 1 (respectively,
+degree p) on E F (respectively, E). Since the order of η is prime to
+p, it follows that η F does not intersect 0E F , hence that we have an
+isomorphism
+∼
+
+f∗ (LF ) → LF |0EF
+
+Survey of Hodge-Arakelov Theory II
+
+31
+
+given by restricting sections over E F to 0E F . Now we are ready to
+apply the method of the above discussion to prove the following positive
+characteristic version of Theorem 1.1:
+Theorem 4.3. (Positive Characteristic Version of the HodgeArakelov Comparison Isomorphism) The natural restriction morphisms
+ΞE F : f∗ (LF |V ∗ E † )<p → LF |E F [V]
+and
+ΞE : f∗ (M|[p]∗ E † )<p → M|E[p]
+(where the superscripted “< p’s” denote the subsheaves of sections of
+torsorial degree < p) induced by κ are isomorphisms.
+Proof. First, we observe that by the theory of theta groups (applied
+to descent via the Frobenius morphism ΦE : E → E F ) the bijectivity of
+ΞE F is equivalent to that of ΞE . We refer to [11], §2, for more details.
+Next, we observe that this discussion extends to the case of degenerating elliptic curves (cf. [11], §2, for more details). Thus, we may work
+over the proper stack (Mell )Fp , so (just as in the proof of Theorem 4.1)
+it suﬃces to show that ΞE F is generically an isomorphism and that the
+determinant bundles associated to its domain and range deﬁne the same
+element of Pic((Mell )Fp )Q .
+The fact that ΞE F (or, equivalently, ΞE ) is an isomorphism over an
+open dense substack of (Mell )Fp follows from the theory of the comparison isomorphism near inﬁnity developed in [7], Chapter V (cf. [11], §2,
+for more details).
+On the other hand, the isomorphism
+∼
+
+f∗ (LF ) → LF |0EF
+implies that (just as in the proof of Theorem 4.1) the determinants of
+the domain and range of ΞE F are both equal to:
+−
+
+p−1
+
+
+1
+j · [ωE ] = − p(p − 1) · [ωE ]
+2
+j=0
+
+This completes the proof.
+
+Q.E.D.
+
+Remark 4.4. Thus, although in the above proof of Theorem 4.3, we use
+the (relatively easy) portion of the theory of [7] concerning the comparison isomorphism near inﬁnity, the intricate degree computations of
+[7], Chapter VI, §3, are not used in the proof of Theorem 4.3. Also,
+we observe that although Theorem 4.3 is a positive characteristic result,
+
+32
+
+S. Mochizuki
+
+reduction modulo p implies Theorem 1.1, at least in the case d = p.
+Moreover, since the truth of the characteristic zero result Theorem 1.1
+for arbitrary d is equivalent to the equality of the degrees of two speciﬁc
+line bundles, both of which are polynomials in d (cf. the complicated
+degree computations of [7], Chapter VI), the fact that these two polynomials are equal whenever d is a prime number implies that they are equal
+for all d. Thus, in summary, the above technique yields a simple proof of
+Theorem 1.1 for arbitrary d. We refer to [11], §2, for more details.
+Remark 4.5. One way to interpret the preceding Remark 4.4 is the following:
+The characteristic p methods (involving the Frobenius
+and Verschiebung morphisms) of the above discussion
+yield a new proof of the various combinatorial identities
+inherent in the computation of degrees in [7], Chapter
+VI, proof of Theorem 3.1.
+This situation is rather reminiscent of the situation of [14], Chapter V
+— cf., especially, the second Remark following Corollary 1.3. Namely,
+in that case, as well, characteristic p methods (involving Frobenius and
+Verschiebung) give rise to various nontrivial combinatorial identities. It
+would be interesting if this sort of phenomenon could be understood
+more clearly at a conceptual level.
+Remark 4.6. One interesting feature of the above proof is the crucial
+use of the Frobenius morphism ΦE : E → E F . Put another way, this
+amounts to the use of the subgroup scheme E[ΦE ] ⊆ E (i.e., the kernel of ΦE ), which, of course, does not exist in characteristic zero. Note
+that this subgroup scheme is essentially the same as the “multiplicative
+subspace” that played an essential role in the theory surveyed in §3.
+That is to say, it is interesting to note that just as in the context of
+§3, the crucial arithmetic object that one wants over a number ﬁeld is
+a “global multiplicative subspace,” in the above proof, the crucial arithmetic object that makes the proof work (in positive! characteristic) is
+the “global multiplicative subspace” E[ΦE ] ⊆ E (which is deﬁned over
+all of (Mell )Fp ).
+Remark 4.7. Another interesting and key point in the above proof is
+the fact that, unlike the case in characteristic zero (where the structure
+sheaf of a ﬁnite ﬂat group scheme on a proper curve always has degree
+zero):
+In positive characteristic, the structure sheaf of a ﬁnite
+ﬂat group scheme on a proper curve can have nonzero
+degree.
+
+Survey of Hodge-Arakelov Theory II
+
+33
+
+In fact, it is precisely because of this phenomenon that in order to make
+the comparison isomorphism hold in characteristic zero over the proper
+object (Mell )Q , it is necessary to introduce the Gaussian poles (cf., e.g.,
+[7], Introduction, §1).
+
+References
+
+[ 1 ] G. Faltings, p-adic Hodge Theory, Journal of the Amer. Math. Soc. 1
+(1988), pp. 255-299.
+[ 2 ] G. Faltings, Crystalline Cohomology and p-adic Galois Representations,
+Proceedings of the First JAMI Conference, Johns-Hopkins University
+Press (1990), pp. 25-79.
+[ 3 ] N. Katz, Nilpotent Connections and the Monodromy Theorem: Applications of a Result of Turritin, Publ. Math. IHES 39 (1970), pp. 355-412.
+[ 4 ] N. Katz, Algebraic solutions of diﬀerential equations (p-curvature and the
+Hodge ﬁltration), Invent. Math. 18 (1972), pp. 1-118.
+[ 5 ] N. Katz, The Eisenstein Measure and p-adic Interpolation, Amer. Journ.
+of Math. 99, No. 2 (1977), pp. 238-311.
+[ 6 ] N. Katz, Serre-Tate Local Moduli, in Surfaces algébriques, Séminaire de
+Géométrie Algébrique, 1976–78, edited by Jean Giraud, Luc Illusie and
+Michel Raynaud, Lecture Notes in Mathematics 868, Springer-Verlag
+(1981).
+[ 7 ] S. Mochizuki, The Hodge-Arakelov Theory of Elliptic Curves: Global Discretization of Local Hodge Theories, RIMS Preprint Nos. 1255, 1256
+(October 1999).
+[ 8 ] S. Mochizuki, The Scheme-Theoretic Theta Convolution, RIMS Preprint
+No. 1257 (October 1999).
+[ 9 ] S. Mochizuki, Connections and Related Integral Structures on the Universal Extension of an Elliptic Curve, RIMS Preprint No. 1279 (May
+2000).
+[10] S. Mochizuki, The Galois-Theoretic Kodaira-Spencer Morphism of an Elliptic Curve, RIMS Preprint No. 1287 (July 2000).
+[11] S. Mochizuki, The Hodge-Arakelov Theory of Elliptic Curves in Positive
+Characteristic, RIMS Preprint No. 1298 (October 2000).
+[12] S. Mochizuki, A Survey of the Hodge-Arakelov Theory of Elliptic Curves
+I, to appear in Moduli of Proﬁnite Aspects of Arithmetic Covers (M.
+Fried, editor), AMS Publications.
+[13] S. Mochizuki, A Theory of Ordinary p-adic Curves, Publ. of RIMS 32
+(1996), pp. 957-1151.
+[14] S. Mochizuki, Foundations of p-adic Teichmüller Theory, AMS/IP
+Studies in Advanced Mathematics 11, American Mathematical Society/International Press (1999).
+
+34
+
+S. Mochizuki
+
+[15] S. Mochizuki, The Proﬁnite Grothendieck Conjecture for Closed Hyperbolic Curves over Number Fields, J. Math. Sci., Univ. Tokyo 3 (1996),
+pp. 571-627.
+[16] S. Mochizuki, The Local Pro-p Anabelian Geometry of Curves, Inv. Math.
+138 (1999), pp. 319-423.
+[17] S. Mochizuki, Global Anabelian Geometry in the Hodge-Arakelov Theory
+of Elliptic Curves, manuscript in preparation.
+[18] J. Neukirch, A. Schmidt, K. Wingberg, Cohomology of number ﬁelds,
+Grundlehren der Mathematischen Wissenschaften 323, Springer-Verlag
+(2000).
+Research Institute for Mathematical Sciences
+Kyoto University
+Kyoto 606-8502
+JAPAN
+
+

@@ -1,0 +1,158 @@
+COMMENTS ON “A COMBINATORIAL VERSION
+OF THE GROTHENDIECK CONJECTURE”
+
+Shinichi Mochizuki
+May 2020
+
+(1.) In the ﬁnal sentence of Deﬁnition 1.1, (ii), the phrase “rank ≥ 2” should read
+“rank > 2”.
+(2.) In Example 2.5, the set of primes Σ should be assumed to be nonempty.
+(3.) In the second sentence of Proposition 1.2, the phrase “a vertex vi (respectively,
+an edge ei ) of ΠG ” should read “a vertex vi (respectively, an edge ei ) of G”.
+(4.) The arguments applied in Deﬁnition 1.4, (v), (vi), and Remarks 1.4.2, 1.4.3,
+and 1.4.4 to prove Theorem 1.6 are formulated in a somewhat confusing way and
+should be modiﬁed as follows:
+(i) First of all, we remark that throughout the paper, as well as in the following
+discussion, a “Galois” ﬁnite étale covering is to be understood as being connected.
+(ii) In the second sentence of Deﬁnition 1.4, (v), the cuspidal and nodal cases of
+the notion of a purely totally ramiﬁed covering are in fact unnecessary and may be
+deleted. Also, the terminology introduced in Deﬁnition 1.4, (vi), concerning ﬁnite
+étale coverings that descend is unnecessary and may be deleted.
+(iii) The text of Remark 1.4.2 should be replaced by the following text:
+Let G  → G be a Galois ﬁnite étale covering of degree a positive power of
+l, where G is of pro-Σ PSC-type, Σ = {l}. Then one veriﬁes immediately
+that, if we assume further that the covering G  → G is cyclic, then G  → G
+is cuspidally totally ramiﬁed if and only if the inequality
+r(G  ) < l · r(G)
+— where we write G  → G  → G for the unique [up to isomorphism]
+factorization of the ﬁnite étale covering G  → G as a composite of ﬁnite
+étale coverings such that G  → G is of degree l — is satisﬁed. Suppose
+
+further that G  → G is a [not necessarily cyclic!] Πunr
+G -covering [so n(G ) =
+Typeset by AMS-TEX
+
+1
+
+2
+
+SHINICHI MOCHIZUKI
+
+deg(G  /G) · n(G)]. Then one veriﬁes immediately that G  → G is verticially
+purely totally ramiﬁed if and only if the equality
+i(G  ) = deg(G  /G) · (i(G) − 1) + 1
+is satisﬁed. Also, we observe that this last inequality is equivalent to the
+following equality involving the expression “i(. . . ) − n(. . . )” [cf. Remark
+1.1.3]:
+i(G  ) − n(G  ) = deg(G  /G) · (i(G) − n(G) − 1) + 1
+(iv) The text of Remark 1.4.3 should be replaced by the following text:
+Suppose that G is of pro-Σ PSC-type, Σ = {l}. Then one veriﬁes immediately that the cuspidal edge-like subgroups of ΠG may be characterized as
+the maximal [cf. Proposition 1.2, (i)] closed subgroups A ⊆ ΠG isomorphic
+to Zl which satisfy the following condition:
+for every characteristic open subgroup ΠG  ⊆ ΠG , if we write
+G  → G  → G for the ﬁnite étale coverings corresponding to
+def
+ΠG  ⊆ ΠG  = A · ΠG  ⊆ ΠG , then the cyclic ﬁnite étale covering
+G  → G  is cuspidally totally ramiﬁed.
+[Indeed, the necessity of this characterization is immediate from the definitions; the suﬃciency of this characterization follows by observing that
+since the set of cusps of a ﬁnite étale covering of G is always ﬁnite, the
+above condition implies that there exists a compatible system of cusps of
+the various G  that arise, each of which is stabilized by the action of A.] On
+the other hand, in order to characterize the unramiﬁed verticial subgroups
+of Πunr
+G , it suﬃces — by considering stabilizers of vertices of underlying
+semi-graphs of ﬁnite étale Πunr
+G -coverings of G — to give a functorial characterization of the set of vertices of G [i.e., which may also be applied
+to ﬁnite étale Πunr
+G -coverings of G]. This may be done, for sturdy G, as
+follows. Write MGunr for the abelianization of Πunr
+G . For each vertex v of
+unr
+the underlying semi-graph G of G, write MG [v] ⊆ MGunr for the image of
+unr
+associthe Πunr
+G -conjugacy class of unramiﬁed verticial subgroups of ΠG
+ated to v. Then one veriﬁes immediately, by constructing suitable abelian
+Πunr
+G -coverings of G via suitable gluing operations [i.e., as in the proof of
+Proposition 1.2], that the inclusions MGunr [v] ⊆ MGunr determine a split
+injection
+
+MGunr [v] → MGunr
+v
+
+[where v ranges over the vertices of G], whose image we denote by MGunr-vert ⊆
+MGunr . Now we consider elementary abelian quotients
+φ : MGunr  Q
+— i.e., where Q is an elementary abelian group. We identify such quotients
+whenever their kernels coincide and order such quotients by means of the
+
+COMMENTS ON “COMBINATORIAL GROTHENDIECK”
+
+3
+
+relation of “domination” [i.e., inclusion of kernels]. Then one veriﬁes immediately that such a quotient φ : MGunr  Q corresponds to a verticially
+purely totally ramiﬁed covering of G if and only if there exists a vertex v
+of G such that φ(MGunr [v]) = Q, φ(MGunr [v  ]) = 0 for all vertices v  = v of
+G. In particular, one concludes immediately that
+the elementary abelian quotients φ : MGunr  Q whose restriction to MGunr-vert surjects onto Q and has the same kernel as the
+quotient
+MGunr-vert  MGunr [v]  MGunr [v] ⊗ Fl
+— where the ﬁrst “” is the natural projection; the second “”
+is given by reduction modulo l — may be characterized as the
+maximal quotients [i.e., relative to the relation of domination]
+among those elementary abelian quotients of MGunr that correspond to verticially purely totally ramiﬁed coverings of G.
+Thus, since G is sturdy, the set of vertices of G may be characterized as
+the set of [nontrivial!] quotients MGunr-vert  MGunr [v] ⊗ Fl .
+(v) The text of Remark 1.4.4 should be replaced by the following text:
+Suppose that G is of pro-Σ PSC-type, where Σ = {l}, and that G is
+noncuspidal. Then, in the spirit of the cuspidal portion of Remark 1.4.3,
+we observe the following: One veriﬁes immediately that the nodal edge-like
+subgroups of ΠG may be characterized as the maximal [cf. Proposition 1.2,
+(i)] closed subgroups A ⊆ ΠG isomorphic to Zl which satisfy the following
+condition:
+for every characteristic open subgroup ΠG  ⊆ ΠG , if we write
+G  → G  → G for the ﬁnite étale coverings corresponding to
+def
+ΠG  ⊆ ΠG  = A · ΠG  ⊆ ΠG , then the cyclic ﬁnite étale covering
+G  → G  is nodally totally ramiﬁed.
+Here, we note further that [one veriﬁes immediately that] the ﬁnite étale
+covering G  → G  is nodally totally ramiﬁed if and only if it is module-wise
+nodal.
+(vi) The text of the second paragraph of the proof of Theorem 1.6 should be
+replaced by the following text [which may be thought as being appended to the end
+of the ﬁrst paragraph of the proof of Theorem 1.6]:
+Then the fact that α is group-theoretically cuspidal follows formally from
+the characterization of cuspidal edge-like subgroups given in Remark 1.4.3
+and the characterization of cuspidally totally ramiﬁed cyclic ﬁnite étale
+coverings given in Remark 1.4.2.
+(vii) The text of the ﬁnal paragraph of the proof of Theorem 1.6 should be
+replaced by the following text [which may be thought of as a sort of “easy version”
+
+4
+
+SHINICHI MOCHIZUKI
+
+of the argument given in the proof of the implication “(iii) =⇒ (i)” of [CbTpII],
+Proposition 1.5]:
+Finally, we consider assertion (iii). Suﬃciency is immediate. On the other
+hand, necessity follows formally from the characterization of unramiﬁed
+verticial subgroups given in Remark 1.4.3 and the characterization of verticially purely totally ramiﬁed cyclic ﬁnite étale coverings given in Remark
+1.4.2.
+
+(5.) In Remarks 2.8.1, 2.8.2, one works “in the situation of Corollary 2.8”, despite
+the fact that the assumption “p ∈ Σ” in the statement of Corollary 2.8 is not
+satisﬁed in the situations considered in Remarks 2.8.1, 2.8.2. At ﬁrst glance, this
+state of aﬀairs may strike the reader as self-contradictory. The point, however,
+is that one thinks of Corollary 2.8 as being applied to the various maximal pro-l
+quotients of open subgroups of the geometric fundamental groups that appear in
+Remark 2.8.1, 2.8.2, i.e., that one takes the “Σ” of Corollary 2.8 to be {l} for a
+suitable prime number l such that the assumptions in the statement of Corollary
+2.8 are indeed satisﬁed.
+(6.) In the ﬁrst sentence of the fourth paragraph of the discussion entitled “Curves”
+in §0, the notation “Dg,r ⊆ Mg,r ” should read “Dg,r ⊆ C g,r ”.
+Bibliography
+[CbTpII] Y. Hoshi, S. Mochizuki, Topics Surrounding the Combinatorial Anabelian Geometry of Hyperbolic Curves II: Tripods and Combinatorial Cuspidalization,
+RIMS Preprint 1762 (November 2012).
+
+

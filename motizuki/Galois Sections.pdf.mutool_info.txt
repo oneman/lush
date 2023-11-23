@@ -1,0 +1,38 @@
+Galois Sections.pdf:
+
+PDF-1.5
+Info object (164 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107160315+09'00')/Creator(PScript5.dll Version 5.2.2)/ModDate(D:20111107160315+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(Galois Sections.pdf)>>
+Pages: 25
+
+Retrieving info from pages 1-25...
+Mediaboxes (1):
+	1	(167 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (22):
+	1	(167 0 R):	Type1 'FLOPDO+CMR10' (208 0 R)
+	1	(167 0 R):	Type1 'FLOPGH+CMR8' (211 0 R)
+	1	(167 0 R):	Type1 'FLOPGI+CMSY8' (214 0 R)
+	1	(167 0 R):	Type1 'FLOPDP+CMCSC10' (217 0 R)
+	1	(167 0 R):	Type1 'FLOPEA+CMBX10' (220 0 R)
+	1	(167 0 R):	Type1 'FLOPFB+CMTI10' (223 0 R)
+	1	(167 0 R):	Type1 'FLOPFC+CMMI10' (226 0 R)
+	1	(167 0 R):	Type1 'FLOPFD+CMMI7' (229 0 R)
+	1	(167 0 R):	Type1 'FLOPFE+CMMI5' (232 0 R)
+	1	(167 0 R):	Type1 'FLOPFF+MSBM10' (235 0 R)
+	1	(167 0 R):	Type1 'FLOPGG+CMSY10' (238 0 R)
+	2	(1 0 R):	Type1 'FLOPII+CMR7' (133 0 R)
+	2	(1 0 R):	Type1 'FLOPIJ+CMSY7' (126 0 R)
+	2	(1 0 R):	Type1 'FLOPJJ+CMEX10' (130 0 R)
+	3	(4 0 R):	Type1 'FLOPKK+CMR5' (135 0 R)
+	4	(7 0 R):	Type1 'FLOPOJ+MSBM7' (140 0 R)
+	8	(19 0 R):	Type1 'FLPAHH+MSAM10' (141 0 R)
+	10	(25 0 R):	Type1 'FLPALG+CMSY5' (144 0 R)
+	15	(40 0 R):	Type1 'FLPBIC+EUFM10' (147 0 R)
+	17	(48 0 R):	Type1 'FLPCAA+CMMIB10' (152 0 R)
+	17	(48 0 R):	Type3 'T1' (148 0 R)
+	24	(69 0 R):	Type1 'FLPDEI+CMSL10' (155 0 R)
+
+Images (1):
+	3	(4 0 R):	[ Raw ] 1x1 1bpc ImageMask (83 0 R)
+

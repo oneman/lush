@@ -1,0 +1,35 @@
+The Hodge-Arakelov Theory of Elliptic Curves in Positive Characteristic.pdf:
+
+PDF-1.5
+Info object (195 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107212348+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111107212348+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(poschar.dvi)>>
+Pages: 29
+
+Retrieving info from pages 1-29...
+Mediaboxes (1):
+	1	(198 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (22):
+	1	(198 0 R):	Type1 'IBGHAA+CMR10' (226 0 R)
+	1	(198 0 R):	Type1 'IBGHAB+CMCSC10' (229 0 R)
+	1	(198 0 R):	Type1 'IBGHBB+CMBX10' (232 0 R)
+	1	(198 0 R):	Type1 'IBGHBC+CMSY10' (235 0 R)
+	1	(198 0 R):	Type1 'IBGHBD+CMTI10' (238 0 R)
+	1	(198 0 R):	Type1 'IBGHBE+CMMI10' (241 0 R)
+	1	(198 0 R):	Type1 'IBGHCF+CMR8' (244 0 R)
+	1	(198 0 R):	Type1 'IBGHCG+CMSY8' (247 0 R)
+	2	(1 0 R):	Type1 'IBGHEH+MSBM7' (153 0 R)
+	2	(1 0 R):	Type1 'IBGHEI+MSBM10' (151 0 R)
+	2	(1 0 R):	Type1 'IBGHFJ+CMMI7' (159 0 R)
+	2	(1 0 R):	Type1 'IBGHEG+CMR7' (158 0 R)
+	3	(4 0 R):	Type1 'IBGHHJ+CMMI5' (164 0 R)
+	4	(7 0 R):	Type1 'IBGHJJ+CMSY7' (168 0 R)
+	4	(7 0 R):	Type1 'IBGHKK+CMSY5' (171 0 R)
+	4	(7 0 R):	Type1 'IBGHKL+CMR5' (172 0 R)
+	5	(10 0 R):	Type1 'IBGHML+CMEX10' (176 0 R)
+	5	(10 0 R):	Type1 'IBGHNL+MSAM10' (179 0 R)
+	10	(25 0 R):	Type1 'IBGIHI+CMMIB10' (181 0 R)
+	24	(67 0 R):	Type1 'IBGJOA+EUFM10' (184 0 R)
+	25	(70 0 R):	Type3 'T1' (187 0 R)
+	29	(84 0 R):	Type1 'IBGKIN+CMSL10' (188 0 R)
+

@@ -1,0 +1,31 @@
+COMMENTS ON “CATEGORIES OF LOG SCHEMES WITH
+ARCHIMEDEAN STRUCTURES” (LATEX VERSION)
+
+Shinichi Mochizuki
+October 2014
+
+(1.) The content of
+· Theorem 3.1;
+· Proposition 4.3;
+· Proposition 4.4
+of the present paper depend on the portions of the theory of [LgSch], §2, that
+are in error [cf. [MnLgSch], Example 0.3; [MnLgSch], Remark 1.4.1, for more
+details]. In particular, these errors in [LgSch], §2, aﬀect the proof — although
+not the validity! — of the main theorem of the present paper [i.e., Theorem 5.1].
+This result Theorem 5.1 is given a correct proof in [MnLgSch], §4 [cf. [MnLgSch],
+Theorem 4.8, (iv)]. Finally, we remark that, at the level of main results of papers
+of the author subsequent to [LgSch], the only place where the errors in the theory of
+[LgSch], §2, have an aﬀect is in the present paper, as discussed above. More details
+on the aﬀected portions of the present paper, as well as of [LgSch], may be found
+in the Appendix to [MnLgSch].
+Bibliography
+
+[LgSch] S. Mochizuki, Categorical representation of locally noetherian log schemes,
+Adv. Math. 188 (2004), pp. 222-246.
+[MnLgSch] S. Mochizuki, Monomorphisms in Categories of Log Schemes, preprint.
+
+Typeset by AMS-TEX
+
+1
+
+

@@ -1,0 +1,48 @@
+Resolution of Nonsingularities for Arbitrary Hyperbolic Curves.pdf:
+
+PDF-1.6
+Info object (557 0 R):
+<</Author(shini)/CreationDate(D:20230617233522+09'00')/Creator( TeX output 2023.06.16:0052)/ModDate(D:20230617233522+09'00')/Producer(Acrobat Distiller 23.0 \(Windows\))/Title(2023-06-16 Resolution of Nonsingularities for Arbitrary Hyperbolic Curves.pdf)>>
+Pages: 107
+
+Retrieving info from pages 1-107...
+Mediaboxes (1):
+	1	(560 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (35):
+	1	(560 0 R):	Type1 'HJIEJF+CMR17' (595 0 R)
+	1	(560 0 R):	Type1 'HJIELO+CMBX10' (598 0 R)
+	1	(560 0 R):	Type1 'HJIELP+CMR8' (601 0 R)
+	1	(560 0 R):	Type1 'HJIEMA+CMR10' (604 0 R)
+	1	(560 0 R):	Type1 'HJIEKG+CMMI12' (607 0 R)
+	1	(560 0 R):	Type1 'HJIEKH+CMR12' (610 0 R)
+	1	(560 0 R):	Type1 'HJIEKI+CMBX9' (613 0 R)
+	1	(560 0 R):	Type1 'HJIEKJ+CMR9' (616 0 R)
+	1	(560 0 R):	Type1 'HJIEKK+CMMI9' (619 0 R)
+	1	(560 0 R):	Type1 'HJIEKL+CMTI9' (622 0 R)
+	1	(560 0 R):	Type1 'HJIEKM+CMSY9' (625 0 R)
+	1	(560 0 R):	Type1 'HJIEKN+CMBX12' (628 0 R)
+	2	(1 0 R):	Type1 'HJIEOA+CMMIB10' (477 0 R)
+	2	(1 0 R):	Type1 'HJIEOB+CMMI10' (501 0 R)
+	2	(1 0 R):	Type1 'HJIEOC+EUFM10' (502 0 R)
+	2	(1 0 R):	Type1 'HJIEOD+CMMI7' (504 0 R)
+	2	(1 0 R):	Type1 'HJIEPE+CMTI10' (483 0 R)
+	2	(1 0 R):	Type1 'HJIEPF+CMSY10' (486 0 R)
+	2	(1 0 R):	Type1 'HJIEPG+CMR7' (497 0 R)
+	2	(1 0 R):	Type1 'HJIEPH+CMMI5' (493 0 R)
+	2	(1 0 R):	Type1 'HJIEPI+MSAM10' (489 0 R)
+	2	(1 0 R):	Type1 'HJIFAI+MSBM10' (482 0 R)
+	5	(10 0 R):	Type1 'HJIFEI+CMSY7' (521 0 R)
+	5	(10 0 R):	Type1 'HJIFFI+CMEX10' (516 0 R)
+	5	(10 0 R):	Type1 'HJIFFJ+CMSY5' (515 0 R)
+	5	(10 0 R):	Type1 'HJIFFK+MSBM7' (517 0 R)
+	5	(10 0 R):	Type1 'HJIFFL+CMEX7' (507 0 R)
+	8	(19 0 R):	Type1 'HJIFLK+CMBXTI10' (522 0 R)
+	14	(37 0 R):	Type1 'HJIGGH+MSAM7' (527 0 R)
+	14	(37 0 R):	Type1 'HJIGGI+CMR5' (528 0 R)
+	36	(103 0 R):	Type1 'HJIJAJ+EUFM7' (532 0 R)
+	89	(262 0 R):	Type1 'HJIPIC+MSAM5' (534 0 R)
+	99	(292 0 R):	Type1 'HJJAJM+CMTI7' (537 0 R)
+	103	(306 0 R):	Type1 'HJJAPL+CMSL10' (540 0 R)
+	107	(318 0 R):	Type1 'HJJBFK+CMTT10' (541 0 R)
+

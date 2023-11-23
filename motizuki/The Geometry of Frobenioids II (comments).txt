@@ -1,0 +1,110 @@
+COMMENTS ON “THE GEOMETRY OF FROBENIOIDS II”
+
+Shinichi Mochizuki
+February 2019
+
+(1.) In the second line of the ﬁnal display of Example 1.1, (ii), the notation
+“ord(K × ) ⊆ Φ(K)” should read “ord(K × ) ⊆ Φ(K)gp ”.
+(2.) In the proof of Theorem 2.4, (ii), the notation “B(Gi , G◦i )” should read
+“B temp (Gi , G◦i )”.
+(3.) In the display following the phrase “the assignment” in Example 3.3, (i), the
+notation “ord(K) ∼
+= R≥0 ” should read
+= R>0 ∼
+“ord(O ) ∼
+= R≥0 ”.
+K
+
+Also, in the explanation following this display, the phrase “[where the isomorphism
+∼
+R>0 → R≥0 is given by the natural logarithm], then” should read
+
+“[where OK
+⊆ K × denotes the multiplicative submonoid of elements of
+ ∼
+) = R≥0 is given by minus the
+norm ≤ 1, and the isomorphism ord(OK
+natural logarithm], then”.
+
+(4.) The observation “Observe that all real objects of N0 are isomorphic.” at the
+beginning of Example 3.3, (iv), is correct as stated, but may be replaced by the
+stronger observation
+“Observe that all real objects of N0 are isomorphic, and all morphisms
+between such objects are isomorphisms.”.
+(5.) The following sentence should be added to the end of Deﬁnition 3.3, (iv):
+Finally, we shall refer to as the angular region of an object of C, A, N , or
+R the angular region of the object obtained by projecting the given object
+to C0 .
+(6.) In the proof of Proposition 3.5, (iii), the notation “C F” should read “C G[C]”.
+Typeset by AMS-TEX
+
+1
+
+2
+
+SHINICHI MOCHIZUKI
+
+(7.) In the ﬁrst displayed diagram of the proof of Theorem 5.5, the notation “Ψ ”
+should read “(Ψpf )birat ”.
+(8.) In Example 5.6, (iii), (b), the phrase “for some group-like functor Dv → Mon”
+: Dv → Mon”.
+should read “for some group-like functor Φcnst
+v
+def
+
+def
+
+(9.) In Example 1.1, (i), (ii), it is to be understood that ΦZ0 = Φ0 , BZ0 = B0 .
+(10.) In the two lines of the ﬁnal display of Example 1.1, (ii), the notation “Φ(K)”
+should be replaced by “Φ(A)”; the phrase “for every Spec(K) ∈ Ob(D0 ), then”
+should be replaced by the phrase “for every A ∈ Ob(D), where we denote the
+image of A in D0 by Spec(K) ∈ Ob(D0 ), then”.
+(11.) In the notation “AutFA (B)” that appears in Deﬁnition 3.1, (v), the “B” is
+to be understood as the object of FA determined by the morphism B → A of F.
+(12.) All tempered groups [hence also proﬁnite groups that are regarded as tempered groups] (respectively, all [quasi-]temperoids) that appear in the present paper
+should be assumed to be equipped with a topology that admits a countable basis
+(respectively, assumed to be connected [quasi-]temperoids associated to such tempered groups). This assumption is necessary in order to ensure that the index sets
+of “universal covering pro-objects” implicit in the deﬁnition of the tempered fundamental group associated to a connected temperoid [cf. [Mzk2], Remark 3.2.1] may
+to be taken to be countable. This countability of the index sets involved implies
+that the various objects that constitute such a universal covering pro-object admit
+a compatible system of basepoints, i.e., that the obstruction to the existence of such
+a compatible system — which may be thought of as an element of a sort of “nonabelian R1 lim
+←−” — vanishes. In order to deﬁne the tempered fundamental group in
+an intrinsically meaningful fashion, it is necessary to know the existence of such a
+compatible system of basepoints.
+(13.) In Remark 3.5.1, the phrase “since, for instance in the case of” should read
+“since, for instance, in the case of”.
+(14.) The following [essentially formal] modiﬁcations should be made to the proof
+of Proposition 3.4, (viii):
+(i) In the fourth paragraph of this proof: “On the other hand, β” should read
+“On the other hand, if β is not an isomorphism, then β”; “we conclude
+that φ” should read “we conclude that if φ is not an isomorphism, then
+φ”.
+(ii) In the ﬁfth paragraph of this proof: “of FSMI-morphisms φ1 , . . . , φn such
+that the domain of φ is equal to A” should read “of a morphism φ1 whose
+domain is equal to A with FSMI-morphisms φ2 , . . . , φn ”; “If φj projects”
+should read “If, for j ≥ 2, φj projects”.
+
+COMMENTS ON “THE GEOMETRY OF FROBENIOIDS II”
+
+3
+
+(iii) In the sixth paragraph of this proof: all instances of the term “FSMImorphisms” should be replaced by the phrase “FSMI-morphisms/isomorphisms [i.e., morphisms which are either FSMI-morphisms or isomorphisms]”.
+
+(15.) The following [essentially formal] modiﬁcations should be made to Defnition
+5.3, (v); Proposition 5.4; the statement and proof of Theorem 5.5, (iv):
+(i) In Deﬁnition 5.3, (v), the text “[where “pf” is deﬁned whenever C is of
+Frobenius-isotropic type]” should read as follows: “[where “pf” is deﬁned
+whenever C is of Frobenius-isotropic type; “birat” is deﬁned whenever C
+is of birationally Frobenius-normalized type]”.
+(ii) In the statement and proof of Proposition 5.4, the term “Frobeniusnormalized” should be replaced by the term “birationally Frobenius-normalized” (2 instances).
+(iii) In the statement of Theorem 5.5, (iv), the phrase “of poly-non-grouplike type” should read “of poly-non-group-like and poly-birationally
+Frobenius-normalized type”. In the proof of Theorem 5.5, the text
+“of standard, perfect” should read “of standard, birationally Frobeniusnormalized [cf. [Mzk5], Proposition 3.2, (ii)], perfect”.
+
+Bibliography
+
+[FrdI] S. Mochizuki, The Geometry of Frobenioids I: The General Theory, Kyushu J.
+Math. 62 (2008), pp. 293-400.
+
+

@@ -1,0 +1,3127 @@
+The Proﬁnite Grothendieck Conjecture for Closed
+Hyperbolic Curves over Number Fields
+by Shinichi Mochizuki
+
+Section 0: Introduction
+In [Tama], a proof of the Grothendieck Conjecture (reviewed below) was given for
+smooth aﬃne hyperbolic curves over ﬁnite ﬁelds (and over number ﬁelds). The purpose
+of this paper is to show how one can derive the Grothendieck Conjecture for arbitrary
+(i.e., not necessarily aﬃne) smooth hyperbolic curves over number ﬁelds from the results
+of [Tama] for aﬃne hyperbolic curves over ﬁnite ﬁelds.
+We obtain three types of results: one over number ﬁelds, one over ﬁnite ﬁelds, and
+one over local ﬁelds. We remark here that when this paper was ﬁrst written (October
+1995), Theorems A and C below were the strongest known results of their respective kinds.
+Since then, the author wrote [Mzk2] (November 1995), which gives rise to much stronger
+results than Theorems A or C of the present paper. Moreover, the proofs of [Mzk2] are
+completely diﬀerent from (and, in particular, do not rely on) the proofs of the present
+paper. Nevertheless, it seems to the author that the present paper still has some marginal
+interest, partly because most of the present paper is devoted to the proof of Theorem B
+below (which is not implied by any result of [Mzk2]), and partly because it is in some sense
+of interest to see how Theorems A or C can be derived within the context of the theory of
+[Tama].
+Our main result over number ﬁelds (Theorem 10.2 in the text) is as follows:
+Theorem A: Let K be a ﬁnite extension of Q; let K be an algebraic closure of K. Let
+
+XK → Spec(K) and XK
+→ Spec(K) be smooth, geometrically connected, proper curves
+ ) be the geometric fundamental group
+over K, of genus ≥ 2. Let ΔXK (respectively, ΔXK
+
+of XK (respectively, XK ). Then the natural map
+
+ )
+) → Outρ (ΔXK , ΔXK
+IsomK (XK , XK
+
+is bijective. Here, “Outρ ” refers to outer isomorphisms that respect the natural outer
+ .
+representations of Gal(K/K) on ΔXK and ΔXK
+The statement of this Theorem is commonly referred to as “the Grothendieck Conjecture.”
+In [Tama], a theorem similar to Theorem A, except that X is replaced by a hyperbolic
+aﬃne curve, is proven. It is a simple exercise to derive the aﬃne case from the proper
+1
+
+case. On the other hand, to derive the proper case from the aﬃne case is by no means
+straightforward; in this paper, we derive the proper case over number ﬁelds from the aﬃne
+case over ﬁnite ﬁelds.
+In fact, to be more precise, we shall derive the proper case over number ﬁelds from
+a certain “logarithmic Grothendieck Conjecture” for singular (proper) stable curves over
+ﬁnite ﬁelds. This “logarithmic Grothendieck conjecture,” which is our main result over
+ﬁnite ﬁelds (Theorem 7.4), is as follows:
+Theorem B: Let S log be a log scheme such that S is the spectrum of a ﬁnite ﬁeld k,
+and the log structure is isomorphic to the one associated to the chart N → k given by
+the zero map. Let X log → S log and (X  )log → S log be stable log-curves such that at least
+one of X or X  is not smooth over k. Let ΔX log (respectively, Δ(X )log ) be the geometric
+fundamental group of X log (respectively, (X  )log ) obtained by considering log admissible
+coverings of X log (respectively, (X  )log ) (as in [Mzk], §3). Then the natural map
+IsomS log (X log , (X  )log ) → OutD
+ρ (ΔX log , Δ(X )log )
+is bijective. Here, the “D” stands for “degree one (outer isomorphisms).”
+This Theorem is derived directly from Tamagawa’s results on aﬃne hyperbolic curves over
+ﬁnite ﬁelds. Its proof occupies the bulk of the present paper.
+Finally, by supplementing Theorem B with various arguments concerning the fundamental groups of curves over local ﬁelds, we obtain the following local result (Theorem
+9.8):
+Theorem C: Let K be a ﬁnite extension of Qp ; let A ⊆ K be its ring of integers; and let
+k be its residue ﬁeld. Let XK be a smooth, geometrically connected, proper curve of genus
+g ≥ 2 over K. Assume that XK admits a stable extension X → Spec(A) such that the
+abelian variety portion of P ic0 (Xk ) (where Xk = X ⊗A k) is ordinary. Then the natural
+outer representation
+ρX : ΓK → Out(ΔXK )
+of the absolute Galois group of K on the geometric fundamental group of XK completely
+determines the isomorphism class of XK .
+Even though this is a rather weak version of the Grothendieck Conjecture (compared to
+the results we obtain over ﬁnite and global ﬁelds), this sort of result is interesting in the
+sense that it shows that curves behave somewhat diﬀerently from abelian varieties (cf. the
+Remark following Theorem 9.8).
+2
+
+Now we discuss the contents of the paper in more detail. Sections 1 through 7 are
+devoted to deriving Theorem B from the results of [Tama]. In Section 1, we show how to
+recover the set of irreducible components of a stable curve from its fundamental group. In
+Section 2, we review various facts from [Mzk] concerning log admissible coverings, and show
+how one can deﬁne an “admissible fundamental group” of a stable log-curve. In Section
+3, we show how one can group-theoretically characterize the quotient of the admissible
+fundamental group corresponding to étale coverings. In Section 4, we show that the tame
+fundamental group of each connected component of the smooth locus of a stable log-curve
+is contained inside the admissible fundamental group of the stable log-curve. In Section
+5, we show how to recover the set of nodes (including the information of which irreducible
+components each node sits on) of a stable log-curve from its admissible fundamental group.
+In Section 6, we show how the log structure at a node of a stable log-curve can be recovered
+from the admissible fundamental group of the stable log-curve. In Section 7, we put all
+of this information together and show how one can derive Theorem B from the results of
+[Tama].
+In Sections 8 and 9, we shift from studying curves over ﬁnite ﬁelds to studying curves
+over local ﬁelds. In order to do this, it is necessary ﬁrst to characterize (group-theoretically)
+the quotient of the (characteristic zero) geometric fundamental group of a curve over a local
+ﬁeld which corresponds to admissible coverings. This is done in Section 8. In Section 9,
+we ﬁrst show (Lemma 9.1) that the degree of an isomorphism between the arithmetic
+fundamental groups of two curves over a local ﬁeld is necessarily one. This is important
+because one cannot apply Theorem 7.4 to an arbitrary isomorphism of fundamental groups:
+one needs to know ﬁrst that the degree is equal to one. Then, by means of a certain trick
+which allows one to reduce the study of curves over local ﬁelds with smooth reduction to
+the study of curves over local ﬁelds with singular reduction, we show (Theorem 9.2) that
+one can recover the reduction (over the residue ﬁeld) of a given smooth, proper, hyperbolic
+curve over a local ﬁeld group-theoretically. The rest of Section 9 is devoted to curves with
+ordinary reduction, culminating in the proof of Theorem C. Finally, in Section 10, we
+observe that Theorem A follows formally from Theorem 9.2.
+The author would like to thank A. Tamagawa for numerous fruitful discussions concerning the contents of [Tama], as well as the present paper. In some sense, the present
+paper is something of a long appendix to [Tama]: That is to say, several months after the
+author learned of the results of [Tama], it dawned upon the author that by using admissible
+coverings, Theorem A follows “trivially” from the results of [Tama]. On the other hand,
+since many people around the author were not so familiar with admissible coverings or log
+structures, it seemed to the author that it might be useful to write out a detailed version
+of this “trivial argument.” The result is the present paper.
+Finally, the author would also like to thank Prof. Y. Ihara for his encouragement and
+advice during the preparation of this paper.
+
+3
+
+Section 1: The Set of Irreducible Components
+Let k be the ﬁnite ﬁeld of q = pf . Fix an algebraic closure k of k. Let Γ be the
+absolute Galois group of k. Let X → Spec(k) be a morphism of schemes.
+Deﬁnition 1.1:
+
+We shall call X a multi-stable curve of genus g if dimk (H 1 (X, OX )) = g,
+
+def
+
+and Xk = X ⊗k k is a ﬁnite disjoint union of stable curves over k of genus ≥ 2. If X is
+multi-stable, then we shall call X sturdy if every irreducible component of the normalization
+of Xk has genus ≥ 2.
+Thus, in particular, a curve is stable if and only if it is geometrically connected and multistable. Moreover, a ﬁnite étale covering of a multi-stable (respectively, sturdy) curve is
+multi-stable (respectively, sturdy).
+Suppose that X is stable of genus g ≥ 2. Fix a base-point x ∈ X(k). Then we
+def
+def
+may form the (algebraic) fundamental group Π = π1 (X, xk ) of X. Let Xk = X ⊗k k;
+def
+
+Δ = π1 (Xk , xk ). Then we have a natural exact sequence of groups
+1→Δ→Π→Γ→1
+induced by the structure morphism X → Spec(k).
+The purpose of this Section is to show how the set of irreducible components of X
+can be canonically recovered from the morphism Π → Γ. Fix a prime l diﬀerent from p.
+def
+1
+ → X be the
+Let us consider the étale cohomology group H e = Hét
+(Xk , Zl ). Let ψ : X
+def
+1 
+normalization of X. Then we can also consider H n = Hét
+(Xk , Zl ). By considering the
+long exact cohomology sequence in étale cohomology associated to
+0 → Zl → ψ∗ ψ ∗ Zl → (ψ∗ ψ ∗ Zl )/Zl → 0
+we obtain a surjection H e → H n . Let us write H c for the kernel of this surjection. (Here,
+“e” (respectively, “n”; “c”) stands for étale (respectively, normalization; combinatorial).)
+Note that H c is a free Zl -module of rank NX − IX + 1, where NX (respectively, IX ) is
+the number nodes (respectively, irreducible components) of Xk . Moreover, H n is a free
+Zl -module of rank equal to twice the sum of the genera of the connected components of
+ .
+X
+k
+Thus, we obtain a natural exact sequence of Γ-modules
+0 → Hc → He → Hn → 0
+Let φ ∈ Γ be the automorphism of k given by raising to the q th power. Then one sees
+easily that some ﬁnite power of φ acts trivially on H c . On the other hand, by the Weil
+4
+
+ no power of φ
+conjectures (applied to the various geometric connected components of X),
+n
+acts with eigenvalue 1 on H . We thus obtain the following
+Proposition 1.2:
+The natural exact sequence 0 → H c → H e → H n → 0 can be
+recovered entirely from Π → Γ.
+Proof: Indeed, H e = Hom(Δ, Zl ), while H c can be recovered by looking at the maximal
+Zl -submodule of H e on which some power of φ ∈ Γ acts trivially. 
+1
+(Xk , Fl ), and we
+Let Le = H e ⊗ Fl ; Lc = H c ⊗ Fl ; Ln = H n ⊗ Fl . Thus, Le = Hét
+have an exact sequence of Γ-modules
+
+0 → Lc → Le → Ln → 0
+Moreover, elements of Le correspond to étale, abelian coverings of Xk of degree l. Let
+L∗ ⊆ Le be the subset of elements whose image in Ln is nonzero.
+Suppose that α ∈ L∗ . Let Yα → Xk be the corresponding covering. Then NYα = l·NX .
+Thus, we obtain a morphism  : L∗ → Z that maps α → IYα . Since L∗ is a ﬁnite set,
+the image of  is ﬁnite. Let M ⊆ L∗ be the subset of elements α on which  attains its
+maximum. Let us deﬁne a pre-equivalence relation “∼” on M as follows:
+If α, β ∈ M, then we write α ∼ β if, for every λ, μ ∈ F×
+l for which
+λ · α + μ · β ∈ L∗ , we have λ · α + μ · β ∈ M.
+Now we have the following result:
+Proposition 1.3:
+Suppose that X is stable and sturdy. Then “∼” is, in fact, an
+def
+equivalence relation, and moreover, CX = M/ ∼ is naturally isomorphic to the set of
+irreducible components of Xk .
+Proof: First, let us observe, that IYα is maximal (equal to l(IX − 1) + 1) if and only if
+ over which the covering Yα → X is
+there exists a unique irreducible component Zα of X
+k
+k
+def
+1
+
+nontrivial. Now, if Z is a connected component of X , let LZ = H (Z, Fl ). Thus,
+k
+
+Ln =
+
+
+
+ét
+
+LZ
+
+Z
+
+ . Then it follows immediately
+where the direct sum is over the connected components of X
+k
+from the deﬁnitions that M consists precisely of those elements α ∈ L∗ whose image in
+Ln has (relative to the above direct sum decomposition) exactly one nonzero component
+5
+
+(namely, in LZα ). Moreover, α ∼ β is equivalent to Zα = Zβ . Finally, that every Z
+appears as a Zα follows from the sturdiness assumption. This completes the proof. 
+Remark: Note that although at ﬁrst glance the set CX = M/ ∼ appears to depend on the
+choice of prime l, it is not diﬃcult to see that in fact, if one chooses another prime l, and
+
+
+hence obtains a resulting CX
+= M  / ∼ , one obtains a natural isomorphism CX ∼
+= CX
+
+(compatible with the isomorphisms just obtained of CX and CX
+to the set of irreducible
+
+
+components of Xk ) as follows: If α ∈ M and α ∈ M , let us consider the product
+Yαα = Yα ×X Yα . Thus, we have a cyclic étale covering Yαα → X of degree l · l . Then
+one checks easily that α and α correspond to the same irreducible component if and only
+if (Yαα )k has precisely l · l (IX − 1) + 1 irreducible components.
+Proposition 1.4:
+Suppose that X is stable and sturdy. Then the set of irreducible
+components of Xk (together with its natural Γ-action) can be recovered entirely from
+Π → Γ.
+Proof: Indeed, it follows from Proposition 1.2 that L∗ can be recovered from Π → Γ.
+Moreover, we claim that M can be recovered, as well. Indeed, the maximality of IYα is
+equivalent to the minimality of NYα − IYα + 1 = l · NX − IYα + 1, which is equal to the
+dimension over Fl of the “Lc ” of Y . Once one has M, it follows that one can also recover
+“∼,” hence by Proposition 1.3, one can recover the set of irreducible components of Xk .
+Finally, by the above Remark, the set that one recovers is independent of the choice of l.
+
+Corollary 1.5: Suppose that X is stable and sturdy. Let H ⊆ Π be an open subgroup.
+Let YH → X be the corresponding étale covering. Then the set of irreducible components
+of YH can be recovered from Π → Γ and H.
+Proof: Let k  be the (ﬁnite) extension of k which is the subﬁeld of k stabilized by the
+image of H in Γ. Then YH is geometrically connected, hence stable and sturdy over k  .
+Thus, we reduce to the case H = Π, YH = X. But then the set of irreducible components
+of X is the set of Γ-orbits of the set of irreducible components of Xk . Thus, the Corollary
+follows from Proposition 1.4. 
+Looking back over what we have done, one sees that in fact, we have proven a stronger
+result that what is stated in Corollary 1.5. Indeed, ﬁx an irreducible component I ⊆ X.
+Then let Jl (I) be the set of k-valued l-torsion points of the Jacobian of the normalization
+of Ik . Then not only have we recovered set of all irreducible components I, we have also
+recovered, for each I, the set Jl (I) (with its natural Frobenius action). We state this as a
+Corollary:
+6
+
+Corollary 1.6: Suppose that X is stable and sturdy, and l is a prime number diﬀerent
+from p. Then for each irreducible component I of X, the set Jl (I) (with its natural
+Frobenius action) can be recovered naturally from Π → Γ.
+Section 2: The Admissible Fundamental Group
+Let r and g be nonnegative integers such that 2g −2+r ≥ 1. If (C → Mg,r ; σ1 , . . . , σr :
+Mg,r → C) is the universal r-pointed stable curve of genus g over the moduli stack, then C
+and Mg,r have natural log structures deﬁned by the respective divisors at inﬁnity and the
+log
+
+images of the σi . Denote the resulting log morphism by C log → Mg,r . Let X → S be the
+underlying curve associated to an r-pointed stable curve of genus g over a scheme S (where
+S is the underlying scheme of some log scheme S log ). Suppose that X is equipped with the
+log
+log structure (call the resulting log scheme X log ) obtained by pulling back C log → Mg,r
+log
+
+via some log morphism S log → Mg,r whose underlying non-log morphism S → Mg,r is
+the classifying morphism of X (equipped with its marked points). In this case, we shall
+call X log → S log an r-pointed stable log-curve of genus g. Similarly, we have r-pointed
+multistable log-curves of genus g: that is, X log → S log such that over some ﬁnite étale
+covering S  → S, X log ×S S  becomes a ﬁnite union of stable pointed log-curves.
+Let k be as in the preceding section. Let S log be a log scheme whose underlying scheme
+is Spec(k) and whose log structure is (noncanonically!) isomorphic to the log structure
+associated to the morphism N → k, where 1 ∈ N → 0 ∈ k. Let X log → S log be a stable
+log-curve of genus g ≥ 2.
+Next, we would like to consider liftings of X log → S log . Let A be a complete discrete
+valuation ring which is ﬁnite over Zp and has residue ﬁeld equal to k. Let T log be a log
+scheme whose underlying scheme is Spec(A) and whose log structure is that deﬁned by the
+special point S = Spec(k) ⊆ T . Also, let us assume that S log is equal to the restriction of
+the log structure of T log to S = Spec(k) ⊆ T . Let Y log → T log be a stable log-curve of
+genus g whose restriction to S log is X log → S log . In this case, we shall say that Y log → T log
+lifts X log → S log . It is well-known (from the log-smoothness of the moduli stack of stable
+curves equipped with its natural log structure) that such log-curves Y log → T log always
+exist.
+Next, we would like to consider log admissible coverings
+Z log → Y log
+of Y log . We refer to [Mzk], §3.5, for the rather lengthy and technical deﬁnition and ﬁrst
+properties of such coverings. It follows in particular from the deﬁnition that Z is a stable
+curve over T . In fact, (as is shown in [Mzk], Proposition 3.11), one can deﬁne such coverings
+without referring to log structures. That is, there is a notion of an admissible covering
+([Mzk]. §3.9) Z → Y (which can be deﬁned without using log structures). Moreover,
+Z → Y is admissible if and only if Z admits a log structure such that Z log → Y log is log
+7
+
+admissible. In [Mzk], we dealt strictly with the case where Z is geometrically connected
+over T . Here, we shall call Z → Y multi-admissible if Z is a disjoint union of connected
+components Zi such that each Zi → Y is admissible.
+Let η be the generic point of T . Let Yη = Y ×T η. If Z → Y is multi-admissible, then
+it will always be the case that the restriction Zη → Yη of this covering to the generic ﬁber
+is ﬁnite étale. Now suppose that ψη : Zη → Yη is a ﬁnite étale covering. If ψη extends to
+an multi-admissible covering Z → Y , then this extension is unique ([Mzk], §3.13).
+Deﬁnition 2.1:
+We shall call ψη pre-admissible if it extends to an multi-admissible
+covering ψ : Z → Y . We shall call ψη potentially pre-admissible if it becomes pre-admissible
+after a tamely ramiﬁed base-change (i.e., replacing A by a tamely ramiﬁed extension of
+A).
+Thus, in particular, if A is a tamely ramiﬁed extension of A, then Yη ⊗A A → Yη is
+potentially pre-admissible. If ψη is potentially pre-admissible and Zη is geometrically
+connected over η, then it is pre-admissible if and only if Zη has stable reduction over A.
+def
+
+Lemma 2.2 :
+Suppose that Zη → Yη and Zη → Yη are pre-admissible. Let Zη =
+Zη ×Yη Zη . Then Zη → Yη is pre-admissible.
+
+Proof: Let Z → Y and Z  → Y be the respective multi-admissible extensions. Let Z 
+be the normalization of Y in Zη . Thus, we have a natural morphism Z  → Z ×Y Z  which
+is an isomorphism at height one primes. In particular, Z  is étale over Y at all height one
+primes. It thus follows from Lemma 3.12 of [Mzk] that Z  → Y is multi-admissible. 
+Lemma 2.3 :
+Suppose that Zη → Yη is pre-admissible, and that Zη → Yη factors
+through ﬁnite étale surjections Zη → Zη and Zη → Yη . Then Zη → Yη is pre-admissible.
+Proof: Similar to that of Lemma 2.2. 
+Let K be the quotient ﬁeld of A. Fix an algebraic closure K of K. Suppose that Y
+is equipped with a base-point y ∈ Y (A) such that the corresponding morphism T → Y
+avoids the nodes of the special ﬁber of Y . Write ΠY for π1 (YK , yK ). Thus, we have a
+natural surjection ΠY → Gal(K/K), whose kernel is a group ΔY ⊆ ΠY .
+Deﬁnition 2.4:
+We shall call an open subgroup H ⊆ ΠY co-admissible if the correadm
+sponding ﬁnite étale covering Zη →
+be the
+ Yη is potentially pre-admissible. Let ΠY
+quotient of ΠY by the intersection
+H of all co-admissible H ⊆ ΠY .
+8
+
+Remark: The admissible fundamental group Πadm
+has already been deﬁned and studied
+Y
+(as well as about
+by K. Fujiwara ([Fuji]). Moreover, the author learned much about Πadm
+Y
+the theory of log structures in general) by means of oral communication with K. Fujiwara.
+
+It is easy to see that the intersection
+H of Deﬁnition 2.4 is a normal subgroup of
+adm
+ΠY . Thus, ΠY
+is a group. Moreover, by Lemmas 2.2 and 2.3, it follows that an open
+subgroup H ⊆ ΠY is co-admissible if and only if Ker(ΠY → Πadm
+) ⊆ H. Finally,
+Y
+ it is
+immediate from the deﬁnitions that the subﬁeld of K stabilized by the image of
+H in
+Gal(K/K) is the maximal tamely ramiﬁed extension K∞ of K. Thus, we have a surjection
+Πadm
+→ Gal(K∞ /K)
+Y
+⊆ Πadm
+is a quotient of ΔY .
+whose kernel Δadm
+Y
+Y
+Deﬁnition 2.5:
+We shall refer to as orderly coverings of Yη those coverings Zη → Yη
+which are Galois and factor as Zη → Yη ×T U → Yη , where the ﬁrst morphism is preadmissible; the second morphism is the natural projection; U = Spec(B); and B is a
+tamely ramiﬁed ﬁnite extension of A. We shall refer to as orderly quotients of Πadm
+those
+Y
+quotients of Πadm
+that
+give
+rise
+to
+orderly
+coverings
+of
+Y
+.
+η
+Y
+It is easy to see that orderly quotients of Πadm
+are coﬁnal among all quotients of Πadm
+.
+Y
+Y
+Let A∞ ⊆ K∞ be the normalization of A in K∞ . Let k∞ (respectively, m∞ ) be the
+residue ﬁeld (respectively, maximal ideal) of A∞ . Let T∞ = Spec(A∞ ), and let us endow
+T∞ with the log structure given by the multiplicative monoid OT∞ − {0} (equipped with
+log
+log
+the natural morphism into OT∞ ). We call the resulting log scheme T∞
+. Let S∞
+be
+the log scheme whose underlying scheme is Spec(k∞ ) and whose log structure is pulled
+log
+log
+back from T∞
+. Thus, the log structure on S∞
+is (noncanonically!) isomorphic to the log
+structure deﬁned by the zero morphism (Z(p) )≥0 → k∞ . (Here “(Z(p) )≥0 ” denotes the set of
+nonnegative rational numbers whose denominators are prime to p.) Note that Gal(K∞ /K)
+log
+induces S log -automorphisms of S∞
+. In fact, it is easy to see that this correspondence
+deﬁnes a natural isomorphism
+log
+Gal(K∞ /K) ∼
+)
+= AutS log (S∞
+
+Now we have the following important
+Lemma 2.6 :
+
+Suppose that we are given:
+
+(1) another lifting (Y  )log → (T  )log (where T  = Spec(A )) of X log → S log
+
+
+
+
+
+(2) an algebraic closure K of K  = Q(A ) (hence a resulting K∞
+⊆K;
+ log
+(S )∞ );
+
+9
+
+log ∼
+(3) an S log -isomorphism γ : S∞
+= (S  )log
+∞ ;
+
+(4) a base-point y  ∈ Y  (A ) such that y|S = y  |S in X(k).
+Then there is a natural isomorphism between the surjections Πadm
+→ Gal(K∞ /K) and
+Y
+
+
+Πadm
+→
+Gal(K
+/K
+).
+∞
+Y
+Proof: Let us ﬁrst consider coverings of Yη obtained by pulling back tamely ramiﬁed
+Galois coverings of K. Thus, if U = Spec(B) → T is ﬁnite, Galois, and tamely ramiﬁed
+(obtained from some ﬁeld extension K ⊆ L), let U log be the log scheme obtained by
+equipping U with the log structure deﬁned by the special point u of U. Thus, we obtain a
+ﬁnite, log étale morphism U log → T log . By base-changing to S log , we then obtain a ﬁnite,
+log étale morphism V log → S log . On the other hand, by the deﬁnition of “log étaleness,”
+this morphism then necessarily lifts to a ﬁnite, log étale morphism (U  )log → (T  )log ,
+whose underlying morphism U  → T  is a Galois, tamely ramiﬁed ﬁnite extension. Thus,
+if we pass to the limit, and apply this construction to the extension L = K∞ of K, we
+end up with some maximal tamely ramiﬁed extension L of K  . By the functoriality of
+this construction, we have a natural isomorphism Gal(L/K) ∼
+= Gal(L /K  ). Now observe
+
+ ∼
+
+that there is a unique K -isomorphism L = K∞ which (relative to this construction) is
+
+compatible with γ. Thus, we get an isomorphism Gal(L /K  ) = Gal(K∞
+/K  ), hence an
+
+
+isomorphism Gal(K∞ /K) ∼
+= Gal(K∞ /K ), as desired.
+Now let us consider orderly coverings Zη → Yη . Thus, we have a factorization
+Zη → Yη ×T U → Yη . Let Z be the normalization of Yη in Z. Then Z → Y ×T U is
+multi-admissible. Thus, Z admits a log structure such that we have a log multi-admissible
+covering Z log → Y log ×T log U log . Base-changing, we obtain a log multi-admissible covering Z log |S log → X log ×S log V log . But since log multi-admissible coverings are log
+étale, it thus follows that this covering lifts uniquely to a log multi-admissible covering
+(Z  )log → (Y  )log ×(T )log (U  )log . Similarly, we obtain a bijective correspondence between
+Yη -automorphisms of Zη and Yη -automorphisms of Zη  . Now observe further that K∞ valued points of Zη over yK∞ deﬁne A∞ -valued points of Z over y (since Z is proper over
+log
+A). Moreover, these points deﬁne T∞
+-valued points of Z log over yT∞
+log , hence (by reduclog
+ing modulo m∞ ) S∞
+-valued points of Z log |S log over yS log , hence (using γ) (S  )log
+∞ -valued
+log
+-valued
+points of
+points of Z |S log over yS log = yS log , hence (by log étaleness) (T  )log
+∞
+ log
+
+
+
+
+(Z ) over yT log , which, ﬁnally, give rise to K∞ -valued points of Zη over yK∞
+ .
+Thus, in summary, we have deﬁned a natural equivalence of categories between orderly
+coverings of Yη and orderly coverings of Yη . Moreover, this equivalence is compatible
+
+with the ﬁber functors deﬁned by the base-points yK∞ and yK
+Thus, we obtain an
+ .
+∞
+adm
+adm
+
+isomorphism between the surjections ΠY → Gal(K∞ /K) and ΠY  → Gal(K∞
+/K  ), as
+desired. 
+Now let us interpret Lemma 2.6. In summary, what Lemma 2.6 says is the following:
+Suppose we start with the following data:
+10
+
+(1) a log scheme S log , where S = Spec(k), and the log structure is (noncanonically!) isomorphic to the log structure associated to the zero
+morphism N → k;
+log
+(2) a log scheme S∞
+over S log which is (noncanonically!) k-isomorphic to
+Spec(k) equipped with the log structure associated to the zero morphism
+(Z(p) )≥0 → k (where the N ⊆ (Z(p) )≥0 is pulled back from a chart for
+S log as in (1));
+
+(3) a stable log-curve X log → S log of genus g;
+(4) a base-point x ∈ X(k) which is not a node.
+Then, to this data, we can naturally associate an “admissible fundamental group” Πadm
+X
+def
+
+log
+with augmentation Πadm
+→ ΠS log = AutS log (S∞
+). That is to say, by choosing a lifting
+X
+adm
+of the above data, we may take Πadm
+=
+Π
+,
+and
+the augmentation to be Πadm
+→
+X
+Y
+Y
+adm
+Gal(K∞ /K). Then Lemma 2.6 says that, up to canonical isomorphism, ΠX and its
+augmentation do not depend on the choice of lifting.
+
+Deﬁnition 2.7:
+We shall refer to the data (1) through (4) above as admissible data
+adm
+of genus g. Given admissible data as above, we shall write π1 (X log , xS∞
+log ) for Π
+and
+X
+log
+π1 (S log , S∞
+) for ΠS log . We shall refer to Πadm
+as the admissible fundamental group of X.
+X
+Write ΔX log ⊆ Πadm
+for
+the
+kernel
+of
+the
+augmentation.
+We shall refer to ΔX log as the
+X
+geometric admissible fundamental group of X.
+def
+
+Next, let us observe that ΠS log admits a natural surjection onto ΠS = Gal(k/k). We
+shall denote the kernel of this surjection by IS ⊆ ΠS log , and refer to IS as the inertia
+subgroup of ΠS log . Note that IS is isomorphic to the inverse limit of the various (k  )× (for
+ﬁnite extensions k  ⊆ k of k), where the transition morphisms in the inverse limit are given
+  (1), where Z
+  is the inverse limit of the
+by taking the norm. Or, in other words, IS = Z
+quotients of Z of order prime to p, and the “(1)” is a Tate twist. Thus, we have a natural
+exact sequence
+  (1) → ΠS log → ΠS = Gal(k/k) → 1
+1 → IS = Z
+Suppose that we are given a continuous action of ΠS log on a ﬁnite set Σ. Then we can
+associate a geometric object to Σ as follows. Without loss of generality, we can assume
+that the action on Σ is transitive. If we choose a lifting T log of S log (where T = Spec(A)),
+then Σ corresponds to some ﬁnite, tamely ramiﬁed extension L of K. Let B be the
+def
+normalization of A in L. Equip U = Spec(B) with the log structure deﬁned by the special
+point u of U. Thus, we obtain U log . Equip Spec(k(u)) with the log structure induced by
+that of U log . Then the geometric object associated to Σ is the ﬁnite, log étale morphism
+11
+
+Spec(k(u))log → S log . We shall call such morphisms ﬁnite, tamely ramiﬁed coverings of
+S log .
+that surjects onto ΠS log . Let
+Now suppose that we have an open subgroup H ⊆ Πadm
+X
+
+def
+ΔH = H ΔX log . In terms of liftings, H corresponds to a ﬁnite étale covering Zη → Yη ,
+where Zη is geometrically connected over η. Note that by a well-known criterion ([SGA7]),
+Zη has stable reduction over A if and only if IS acts unipotently on Hom(ΔH , Zl ) (for some
+prime l distinct from p). But, as noted above, in this situation, Zη has stable reduction if
+and only if Zη → Yη is pre-admissible. If Zη → Yη is pre-admissible, it extends to some
+Z log → Y log , which we can base-change via S log → T log to obtain a log admissible covering
+Z log |S log → X log . Conversely, every log admissible covering of X log can be obtained in
+this manner. Thus, in summary, we have the following result:
+Corollary 2.8: The open subgroups of Πadm
+that correspond to orderly coverings can be
+X
+characterized entirely group-theoretically by means of Πadm
+→ ΠS log (and ΠS log → ΠS ).
+X
+Moreover, these subgroups can be interpreted in terms of geometric coverings of X log
+(namely, base-change via a ﬁnite, tamely ramiﬁed covering of S log , followed by a log
+admissible covering).
+Remark: Note that this Corollary thus allows us to speak of “orderly coverings of X log ,”
+i.e., coverings that arise from orderly quotients (Deﬁnition 2.5) of Πadm
+= Πadm
+.
+X
+Y
+Before continuing, let us make the following useful technical observation:
+Lemma 2.9 :
+Given any stable X over k, there always exists an admissible covering
+Z → X such that Z is (multi-stable and) sturdy.
+Indeed, this follows from the deﬁnition of an admissible covering, plus elementary combinatorial considerations. Moreover, an admissible covering of a sturdy curve is always
+sturdy. Thus, if one wishes to work only with sturdy curves, one can always pass to such
+a situation by replacing our original X by some suitable admissible covering of X.
+Finally, although most of this paper deals with the case of nonpointed stable curves,
+it turns out that we will need to deal with pointed stable curves a bit later on. In fact, it
+will suﬃce to consider pointed smooth curves. Thus, let g and r be nonnegative integers
+log
+such that 2g − 2 + r ≥ 1. Let S∞
+→ S log be as above, and let X log → S log be an r-pointed
+stable log-curve of genus g such that X is k-smooth. Also, let x ∈ X(k) be a nonmarked
+point. Then it is easy to see that, just as above, we can deﬁne (by considering various
+liftings to some A, then showing that what we have done does not depend on the lifting)
+an admissible fundamental group Πadm
+(with base-point xS∞
+log ), together with a natural
+X
+surjection
+→ ΠS log
+Πadm
+X
+12
+
+Moreover, the kernel ΔX log ⊆ Πadm
+of this surjection is naturally isomorphic to the tame
+X
+fundamental group of Xk (with base-point xk ). Unlike the singular case, we don’t particular gain anything new by doing this, but what will be important is that we still nonetheless
+obtain a natural surjection Πadm
+→ ΠS log which arises functorially from the same frameX
+adm
+work as the nontrivial ΠX → ΠS log that appears in the case of singular curves.
+Section 3: Characterization of the Étale Fundamental Group
+We maintain the notation of the preceding Section. Thus, in particular, we have a
+log
+stable log-curve X log → S log , together with a choice of S∞
+, and a base-point x ∈ X(k)
+(which is not a node). Then note that we have a natural morphism of exact sequences:
+1
+
+−→ ΔX log
+⏐
+⏐
+
+
+−→
+
+Πadm
+X
+⏐
+⏐
+
+
+−→ ΠS log
+⏐
+⏐
+
+
+−→
+
+1
+
+1
+
+−→
+
+−→
+
+ΠX
+
+−→
+
+−→
+
+1
+
+ΔX
+
+ΠS
+
+Here the vertical arrows are all surjections. The goal of this Section is to show how one
+→ ΠX group-theoretically from Πadm
+→ ΠS log .
+can recover the quotient Πadm
+X
+X
+Let Y log → X log be a log admissible covering which is abelian, with Galois group
+equal to Fl , where l is a prime number (which is not necessarily distinct from p). Let us
+consider the following condition on this covering:
+(*) Over k, there is an inﬁnite log admissible covering Z log → X log which
+k
+is abelian with Galois group Zl such that the intermediate covering
+corresponding to Zl → Fl is Y log → X log .
+k
+
+k
+
+Here, by “inﬁnite log admissible covering,” we mean an inverse limit of log admissible
+coverings in the usual ﬁnite sense. Suppose that Y log → X log satisﬁes (*). Then we claim
+that Y → X is, in fact, étale. Indeed, if p = l, then every abelian log admissible covering
+of degree l is automatically étale, so there is nothing to prove. If p = l, then we can ﬁx a
+node ν ∈ X, and consider the ramiﬁcation over the two branches of X at ν. Considering
+this ramiﬁcation gives rise to an inertia subgroup H ⊆ Zl . If Y log → X log is ramiﬁed
+at ν, then H surjects onto Fl , so H = Zl . On the other hand, by the deﬁnition of a
+log admissible covering, in order to have inﬁnite ramiﬁcation occuring over the geometric
+branches of X at ν, we must also have inﬁnite ramiﬁcation over the base S log . But, by
+(*), Z log → X log is already log admissible over S log ⊗k k (which is, of course, étale over
+S log ). This contradiction shows that Z log , and hence Y log , are unramiﬁed over X log at ν.
+Thus, we see that (*) implies that Y → X is étale, as claimed. Note that conversely, if we
+know that Y → X is étale to begin with, then it is easy to see that (*) is satisﬁed. Thus,
+for an abelian log admissible covering Y log → X log of prime degree l, (*) is equivalent to
+the étaleness of Y → X.
+13
+
+Now observe that the kernel of ΔX log → ΔX is normal not just in ΔX log , but also in
+
+adm
+
+
+Πadm
+X . Let ΠX = ΠX /Ker(ΔX log → ΔX ). Let ΔX be the kernel of ΠX → ΠS . Thus,
+ΔX ⊆ ΔX ⊆ ΠX . Then we have the following result:
+Proposition 3.1: The quotient Πadm
+→ ΠX can be recovered entirely group theoretiX
+adm
+cally from ΠX → ΠS log .
+Proof: It suﬃces to characterize subgroups H ⊆ Πadm
+of ﬁnite index that contain
+X
+Ker(ΔX log → ΔX ). Without loss of generality, we may assume that H is normal in
+and (by Corollary 2.8) corresponds to an orderly covering. Since an orderly covering
+Πadm
+X
+may be factored as a composite of a log multi-admissible covering followed by a tamely
+ramiﬁed covering of S log , one sees immediately that we may reduce to the case where
+log
+H corresponds to a log admissible covering. Let G = Πadm
+→ X log be
+X /H. Let Y
+the corresponding covering. For every subgroup N ⊆ G, denote by Y log → YNlog the
+corresponding intermediate covering. By considering ramiﬁcation at the nodes, one sees
+immediately that Y → X is étale if and only for every cyclic N ⊆ G of prime order,
+Y → YN is étale. But for such N , the étaleness of Y → YN is equivalent to the condition
+(*) discussed above. Moreover, it is clear that (*) can be phrased in entirely group theoretic
+→ ΠS log (and ΠS log → ΠS ). This completes the proof. 
+terms, using only Πadm
+X
+Now suppose that Y log → X log is an abelian orderly covering of prime order l obtained
+from a quotient of ΠX such that Y is geometrically connected. Assume l = p. Consider
+the following condition on Y log → X log :
+(†) There do not exist any inﬁnite abelian orderly coverings Z log → X log
+k
+with Galois group Zl that satisfy both of the following two conditions:
+(i) the intermediate covering corresponding to Zl → Fl is Y log → X log ;
+k
+k
+(ii) some ﬁnite power φM of the Frobenius morphism φ ∈ Γ = ΠS
+stabilizes Z log → X log and acts on the Galois group Zl with eigenvalue
+k
+qM .
+Because Y log → X log is abelian of prime order, it follows that one of the following holds:
+(1) Y log → X log is obtained from an étale covering Y → X (where Y is
+geometrically connected) base-changed by S log → S.
+(2) Y log → X log is obtained by base-change via X log → S log from some
+totally (tamely) ramiﬁed covering of S log .
+Suppose that (†) is satisﬁed. Then we claim that (1) holds. Indeed, if this were false, then
+(2) would hold, but it is clear that if (2) holds, then one can easily construct Z log → X log
+k
+that contradict (†) (by pulling back via X log → S log an inﬁnite ramiﬁed covering of S log ).
+14
+
+This proves the claim. Now suppose that (1) holds. Then we claim that (†) is satisﬁed.
+To prove this, suppose that there exists an oﬀending Z log → X log . This oﬀending covering
+k
+1
+deﬁnes an injection Zl → Hom(ΔX , Zl ) → Hom(ΔX , Zl ) = Hét
+(Xk , Zl ). On the other
+M
+hand, as we saw in Section 1, by the Weil conjectures, no power φ of φ acts with eigenvalue
+1
+(Xk , Zl ). This contradiction completes the proof of the claim. Thus, in summary,
+q M on Hét
+(1) is equivalent to (†). In other words, we have essentially proven the following result:
+Proposition 3.2: The quotient Πadm
+→ ΠX can be recovered entirely group theoretiX
+adm
+cally from ΠX → ΠS log .
+Proof: It suﬃces to characterize ﬁnite index subgroups H ⊆ ΠX that contain Ker(ΠX →
+ΠX ). Without loss of generality, we may assume that H is normal in ΠX and (by Corollary 2.8) corresponds to an orderly covering. Let G = ΠX /H. Let Y log → X log be the
+corresponding covering. Again, without loss of generality, we may assume that Y is geometrically connected over k. For every normal subgroup N ⊆ G, denote by YNlog → X log
+the corresponding intermediate covering. Next, we observe the following: Y log → X log
+arises from an étale covering of X if and only if, for every normal subgroup N ⊆ G such
+that YNlog → X log is orderly and G/N is cyclic of prime order, YN → X arises from an
+étale covering of X. (This equivalence follows immediately from the deﬁnitions and the
+fact that ΔX /ΔX is abelian.) But for such YNlog → X log , we can apply the criterion (†)
+discussed above. Moreover, it is clear that (†) can be phrased in entirely group theoretic
+terms, using only ΠX → ΠS log (and ΠS log → ΠS ). This completes the proof. 
+Section 4: The Decomposition Group of an Irreducible Component
+We maintain the notation of the preceding Section. Fix an irreducible component
+I ⊆ X. Then, corresponding to I, there is a unique (up to conjugacy) decomposition
+subgroup
+⊆ Πadm
+Δadm
+I
+X
+which may be deﬁned as follows. Let Z log → X log be the log scheme obtained by taking
+the inverse limit of the various YHlog → X log corresponding to open orderly subgroups
+H ⊆ Πadm
+X . Choose an “irreducible component” J ⊆ Z that maps down to I ⊆ X. Here,
+by “irreducible component of Z,” we mean a compatible system of irreducible components
+IH ⊆ YH . Then Δadm
+⊆ Πadm
+is the subgroup of elements that take the irreducible
+I
+X
+component J to itself. We can also deﬁne an inertia subgroup
+adm
+Δin
+I ⊆ ΔI
+adm
+as follows: Namely, we let Δin
+that act trivially on
+I be the subgroup of elements of ΔI
+in
+J . (That is to say, elements of ΔI will, in general, act nontrivially on the log structure of
+
+15
+
+J , but trivially on the underlying scheme J .) By Proposition 3.2 and Corollaries 1.5 and
+1.6, we thus obtain the following:
+Proposition 4.1:
+Suppose that X is stable and sturdy. Then one can recover the
+set of irreducible components of X from Πadm
+→ ΠS log . Moreover, for each irreducible
+X
+component I of X, one can recover the corresponding inertia and decomposition subgroups
+adm
+⊆ Πadm
+entirely from Πadm
+→ ΠS log .
+Δin
+I ⊆ ΔI
+X
+X
+follows formally from Proposition 3.2 and Corollary
+Proof: That one can recover Δadm
+I
+1.5. Now observe that (as is well known – see, e.g., [DM]) any automorphism of I that acts
+trivially on Jl (I) (where l ≥ 5) is the identity. This observation, coupled with Corollary
+1.6, allows one to recover Δin
+I . 
+Now let us suppose that the base-point x ∈ X(k) is contained in I. Let I be the
+as follows. Let I˘ ⊆ I be the open
+normalization of I. Then one can also deﬁne Δadm
+I
+subset which is the complement of the nodes. We give I˘ a log structure by restricting to I˘
+the log structure of X log . Denote the resulting log scheme by I˘log . Now let us regard the
+ This gives I the structure of a
+points of I that map to nodes of I as marked points of I.
+smooth, pointed curve over k. Because I → Spec(k) is smooth, it follows that there exists
+a unique multistable pointed log-curve Ilog → S log whose underlying curve is I and whose
+log
+
+marked points are as just speciﬁed. Since x ∈ I(k),
+by using S∞
+→ S log , we can deﬁne
+(as in the discussion as the end of Section 2) the admissible fundamental group Πadm
+of
+I
+log
+I . Moreover, we have natural log morphisms
+I˘log
+⏐
+⏐
+
+
+−→ X log
+
+Ilog
+where the vertical morphism is an open immersion. Now observe that if we restrict (say,
+orderly) coverings of X log to I˘log , such a covering extends naturally to an orderly covering
+of Ilog . Thus, we obtain a natural morphism
+→ Πadm
+ζI : Πadm
+I
+X
+It is immediate from the deﬁnitions that the subgroup ζI (Πadm
+) ⊆ Πadm
+is a “Δadm
+.”
+I
+X
+I
+Proposition 4.2:
+injective.
+
+Suppose that X is stable and sturdy. Then the morphism ζI is
+
+Proof: Let ΠIS log be the image of Πadm
+in ΠS log . Then let us note that we have a
+I
+commutative diagram of exact sequences:
+16
+
+1
+
+−→
+
+ΔIlog
+⏐
+⏐
+
+
+−→
+
+Πadm
+I
+⏐
+⏐
+
+
+−→ ΠIS log
+⏐
+⏐
+
+
+−→
+
+1
+
+1
+
+−→ ΔX log
+
+−→
+
+Πadm
+X
+
+−→ ΠS log
+
+−→
+
+1
+
+where the vertical arrow on the right is the natural inclusion. Thus, it suﬃces to prove
+that ΔIlog → ΔX log is injective. In particular, we are always free to replace S log by a
+ﬁnite, tamely ramiﬁed covering of S log .
+Now it suﬃces to show that (up to base-changing, when necessary, by ﬁnite, tamely
+ramiﬁed coverings of S log ) we can obtain every log admissible covering of Ilog by pulling
+back a log admissible covering of X log . Let us call X untangled at I if every node of X
+that lies on I also lies on an irreducible component of X distinct from I.In general, we
+can form a (“combinatorial”) étale covering of X as follows: Write X = I J , where J is
+the union of the irreducible components of X other than I. Let I1 and I2 (respectively,
+J1 and J2 ) be copies of I (respectively, J ). For i = 1, 2, let us glue Ii to Ji at every node
+of I that also lies on J . If ν is a node of I that only lies on I, let α and β be the points
+
+
+
+
+of I that lie over ν.
+ Then
+ glue
+ α1 ∈ I1 to β2 ∈ I2 , and β1 ∈ I1 to α2 ∈ I2 . With these
+
+
+various gluings, I1 I2 J1 J2 forms a curve Y which is ﬁnite étale over X. Moreover,
+= Πadm
+(for i = 1, 2). Thus, it suﬃces to prove the
+Y is untangled at I1 and I2 , and Πadm
+I
+Ii
+Proposition under the assumption that X is untangled at I. Therefore, for the remainder
+of the proof, we shall assume that X is untangled at I.
+Now we would like to construct another double étale covering of X. For convenience,
+we will assume
+ that p ≥ 3. (The case p = 2 is only combinatorially a bit more diﬃcult.)
+Write X = I J , as above. Since X is sturdy, it follows that (after possibly enlarging k),
+there exists an étale covering J → J of degree two such that for any irreducible component
+C ⊆ J , the restriction of J → J to C is nontrivial. Let I1 and I2 be copies of I. If ν is
+a node on I and J , let α (respectively, β) be the corresponding point on I (respectively,
+J ). (After possibly enlarging k) we may assume that J has two k-rational points β1 and
+
+β2 over β ∈ J . Now,
+ for i = 1, 2, glue αi ∈ Ii to βi ∈ J . We thus obtain a double étale
+covering Y = I1 I2 J → X. Endow Y with the log structure obtained by pulling back
+the log structure of X log . One can then deﬁne various log structures on the irreducible
+components of Y , analogously to the way in which various log structures were deﬁned on
+an irreducible component I of X above. We will then use similar notation for the log
+structures thus obtained on irreducible components of Y .
+def
+Now let Llog → I log be a Galois log admissible covering of I log = Ilog (recall that
+ of degree d. Let M log → Jlog be an abelian log multi-admissible covering of degree
+I = I)
+d with the following property:
+
+(*) For each node ν on I and J , suppose that over the corresponding
+α ∈ I, L has n geometric points, each ramiﬁed with index e over I.
+17
+
+Then, we stipulate that for i = 1, 2, over βi ∈ J, M has n geometric
+points, each ramiﬁed with index e over I.
+Note that such an M log → Jlog exists precisely because the β’s on J come in pairs. Now
+let Llog
+and Llog
+be copies of Llog . Then, for each i = 1, 2, let us glue the geometric
+1
+2
+points of Li |αi to those of M|βi . This gives us (after possibly replacing S log bya tamely
+
+ramiﬁed covering of S log ) a log admissible covering Z log → Y log , where Z = L1 L2 M.
+Moreover, the restriction of Z log → Y log to Iilog (for i = 1, 2) is Llog → I log . This completes
+the proof of the Proposition. 
+Section 5: The Set of Nodes
+We continue with the notation of the preceding Section. Thus, X log → S log is a stable
+log-curve of genus g. Let us also assume that X is sturdy. In this Section, we would like
+to show how (by a technique similar to, but slightly more complicated than that employed
+in Section 1) we can recover the set of nodes of X. This, in turn, will allow us to recover
+the decomposition group of a node. In the following Section, we shall then show how the
+log structure at a node can be reconstructed from the decomposition group at the node.
+Let l and n be prime numbers distinct from each other and from p. We assume
+moreover that l ≡ 1 (mod n). This means that all nth roots of unity are contained in Fl .
+th
+roots of unity. Next, let us ﬁx a Gn -torsor
+Let us write Gn ⊆ F×
+l for the subgroup of n
+over Xk
+Y →X
+which is nontrivial over the generic point of every irreducible component of Xk . (Here,
+by Gn -torsor, we mean a cyclic étale covering of X of degree n whose Galois group
+is equipped with an isomorphism with Gn .) Equip Y with the log structure pulled
+back from that of X log . Let us consider the admissible fundamental group Πadm
+of
+Y
+def
+
+1
+Y log . Let Hadm
+(Y log , Fl ) = Hom(ΔY log , Fl ). Note that we have a natural injection
+k
+
+def
+
+def
+
+1
+1
+(Yk , Fl ) → La = Hadm
+(Y log , Fl ). Let us write Lr for the cokernel of this inLe = Hét
+k
+jection. (Here, “e” (respectively, “a”; “r”) stands for “étale” (respectively, “admissible”;
+“ramiﬁcation”). Thus, we have an exact sequence
+
+0 → Le → La → Lr → 0
+→ ΠS log and the subgroup of
+which may (by Proposition 3.2) be recovered from Πadm
+X
+that
+deﬁnes
+Y
+→
+X.
+Note,
+moreover,
+that
+G
+acts
+on the above exact sequence.
+Πadm
+n
+X
+r
+r
+Let LG ⊆ L be the subset of elements on which Gn acts via the character Gn → F×
+l . Let
+∗
+a
+r
+L ⊆ L be the subset of elements that map to nonzero elements of LG .
+18
+
+We would like to analyze LrG . First of all, let us consider Lr . For each node ν ∈ Y (k),
+write Yν for the completion of Y at ν, and let γν and δν be the two irreducible components
+of Yν . Let DY (respectively, EY ) be the free Fl -module which is the direct sum of copies of
+Fl (−1) (where the “(−1)” is a Tate twist) generated by the symbols γν , δν (respectively, I),
+as ν (respectively, I) ranges over all the nodes of Yν (respectively, irreducible components
+of Yk ). Let DY ⊆ DY be the submodule generated by (γν − δν ) · Fl (−1) (where ν ranges
+over all the nodes of Yν ). Note that we have a natural morphism DY → EY given by
+assigning to the symbol γν (respectively, δν ) the unique irreducible component I in which
+γν (respectively, δν ) is contained. In particular, restricting to DY , we obtain a morphism
+DY → EY
+Let KY ⊆ DY be the kernel of this morphism. Now let us note that we have a natural
+morphism
+λ : Lr → DY
+given by restricting an admissible covering of Yk to the various γν and δν . It follows
+immediately from the deﬁnition of an admissible covering that Im(λ) ⊆ DY . Moreover,
+by considering the Leray-Serre spectral sequence in étale cohomology for the morphism
+I˘ → I (where I ⊆ Yk is the normalization of an irreducible component of Yk , and I˘ is the
+complement of the points that map to nodes), plus the deﬁnition of an admissible covering,
+one sees easily that, in fact, λ(Lr ) = KY . Finally, by counting dimensions, we see that
+λ is injective. Thus, we see that λ deﬁnes a natural isomorphism of Lr with KY . In the
+following, we shall identify Lr and KY by means of λ.
+Now let us consider the subset LrG ⊆ Lr . Let μ ∈ X(k) be a node. For each such μ,
+let us ﬁx a node ν ∈ Y (k) over μ. If σ ∈ Gn (regarded as the Galois group of Y → X), we
+×
+shall write aσ ∈ F×
+l for σ regarded as an element of Fl . Fix a generator ω ∈ Fl (−1). Let
+(a−1
+σ · ω)(σ(γν ) − σ(δν )) ∈ DY
+
+def
+
+ωμ =
+
+σ∈Gn
+
+One checks easily that ωμ is, in fact, an element of KY = Lr . Moreover, by calculating
+τ (ωμ ) (for τ ∈ Gn ), one sees that ωμ is manifestly an element of LrG ⊆ Lr . Finally, it is
+routine to check that, in fact, LrG is freely generated by the ωμ (as μ ranges over the nodes
+of X(k) – but ω is ﬁxed). This completes our analysis of LrG .
+Suppose that α ∈ L∗ . Let Zα → Yk be the corresponding covering. Let  : L∗ → Z
+be the morphism that maps α to NZα (i.e., the number of nodes of Zα ). Let M ⊆ L∗ be
+the subset of elements α on which  attains its maximum. Let us deﬁne a pre-equivalence
+relation “∼” on M as follows:
+If α, β ∈ M, then we write α ∼ β if, for every λ, μ ∈ F×
+l for which
+∗
+λ · α + μ · β ∈ L , we have λ · α + μ · β ∈ M.
+19
+
+Now we have the following result:
+Proposition 5.1:
+Suppose that X is stable and sturdy. Then “∼” is, in fact, an
+equivalence relation, and moreover, M/ ∼ is naturally isomorphic to the set of nodes of
+Xk .
+Proof: Suppose that α ∈ L∗ maps to a linear combination (with nonzero coeﬃcients) of
+precisely c ≥ 1 of the elements ωμ ∈ LrG . Then one calculates easily that Zα has precisely
+(α) = l(NY − cn) + cn = l · NY + cn(1 − l) nodes. Thus, (α) attains its maximum precisely
+when c = 1. Thus, M ⊆ L∗ consists of those α which map to a nonzero multiple of one of
+the ωμ ’s. It is thus easy to see (as in the proof of Proposition 1.3) that M/ ∼ is naturally
+isomorphic to the set of nodes μ ∈ X(k). 
+Remark: Note that at ﬁrst glance the set M/ ∼ appears to depend on the choice of n, l,
+and Y → X. However, it is not diﬃcult to see that in fact, if one chooses diﬀerent data
+n = n, l = l, and Y  → X, and hence obtains a resulting M  / ∼ , then there is a natural
+isomorphism (M/ ∼) ∼
+= (M  / ∼ ) (compatible with the isomorphisms just obtained of
+
+
+M/ ∼ and M / ∼ to the set of nodes of Xk ) as follows: If α ∈ M and α ∈ M  , let us
+consider the product Zαα = Zα ×X Zα . Thus, we have an admissible covering Zαα → X
+of degree (ln)(l n ). Then one checks easily that α and α correspond to the same node if
+and only if (Zαα )k has precisely nn {l · l (NX − 1) + 1} nodes.
+Proposition 5.2:
+Suppose that X is stable and sturdy. Then the set of nodes of Xk
+(together with its natural ΠS -action) can be recovered entirely from Πadm
+→ ΠS log . MoreX
+over, (relative to Proposition 1.4) for each node μ of Xk , the set of irreducible components
+of Xk containing μ can also be recovered entirely from Πadm
+→ ΠS log .
+X
+Proof: Indeed, (after possibly replacing k by a ﬁnite extension of k) one can always
+choose l, n, and Y → X as above. Then one can recover Le and La from Πadm
+→ ΠS log
+X
+r
+and the subgroup of Πadm
+deﬁned
+by
+Y
+→
+X.
+Thus,
+one
+can
+also
+recover
+L
+.
+We
+saw in
+X
+Section 1 that for any Zα , NZα − IZα , as well as IZα , may be recovered group-theoretically.
+In particular, NZα can also be recovered group-theoretically. Thus, M and ∼ can also be
+recovered group-theoretically. Moreover, by the above Remark, M/ ∼ is independent of
+the choice of n, l, and Y → X. (That is to say, the isomorphism (M/ ∼) ∼
+= (M  / ∼ ) of
+the above Remark can clearly be recovered group-theoretically.) This completes the proof
+that the nodes can be recovered group-theoretically.
+Now let us consider the issue of determining which irreducible components of Xk (relative to the reconstruction of the set of irreducible components of Xk given in Proposition
+1.4) μ lies on. To this end, note ﬁrst that (by Corollary 1.6) the genus gI of each irreducible
+component I of Xk can also be recovered group-theoretically. (Indeed, Jl(I) has precisely
+l2gI elements.) Thus, if α ∈ M corresponds to the node μ, the irreducible components I
+20
+
+of Xk containing μ are precisely those that are the image of irreducible components J of
+Zα such that (gJ − 1) > l · n · (gI − 1). 
+Corollary 5.3: Suppose that X is stable and sturdy. Let H ⊆ Πadm
+be an open orderly
+X
+log
+log
+subgroup. Let YH → X
+be the corresponding covering. Then the sets of nodes NYH
+and NX of YH and X, respectively, as well as the natural morphism NYH → NX can be
+→ ΠS log and H. Moreover, the set of irreducible components of
+recovered from Πadm
+X
+(YH )k on which each node of NYH lies can also be recovered from Πadm
+→ ΠS log and H.
+X
+Proof: In this case, in order to obtain the morphism NYH → NX it is useful to choose l
+and n prime to the index of H in Πadm
+X , and to choose the Gn -torsor “Y ” over YH to be
+the pull-back of a Gn -torsor on XH . The rest of the proof is straightforward. 
+Now let μ be a node of X. Let I ⊆ X be an irreducible component of X on which μ
+sits. Then there is a unique (up to conjugacy) decomposition subgroup
+Δadm
+⊆ Πadm
+μ
+X
+which may be deﬁned as follows. Let Z log → X log be the log scheme obtained by taking
+the inverse limit of the various YHlog → X log corresponding to open orderly subgroups
+H ⊆ Πadm
+X . Choose a “node” ν ∈ Z that maps down to μ ∈ X. Here, by “node of Z,”
+⊆ Πadm
+is the subgroup of
+we mean a compatible system of nodes νH ∈ YH . Then Δadm
+μ
+X
+elements that take the node ν to itself. If ν sits on an irreducible component J of Z which
+ adm
+adm
+adm def
+adm
+lies over I, then we can also form Δadm
+Δμ , and
+, Δin
+I
+I ⊆ ΠX , hence Δμ,I = ΔI
+
+def
+in
+in
+Δadm
+Δin
+. Up to conjugacy, Δadm
+μ
+μ,I = ΔI
+μ,I and Δμ,I are independent of all the choices
+made. Now, it follows formally from Corollary 5.3 that
+in
+adm
+Corollary 5.4:
+Given μ and I as above, one can recover Δadm
+; Δadm
+μ
+μ,I ; Δμ,I ⊆ ΠX
+entirely from Πadm
+→ ΠS log .
+X
+
+Section 6: The Log Structure at a Node
+We maintain the notation of the preceding Section. In addition to assuming that X
+is stable and sturdy, let us assume that it is untangled (i.e., every node lies on two distinct
+irreducible components). Let μ ∈ X(k) be a node of X. Let I, I  be the two irreducible
+components of X on which μ lies. Let Z log → X log be the covering corresponding to the
+
+trivial subgroup of Πadm
+X . Let ν be a node of Z lying over μ. Let J (respectively, J ) be the
+irreducible component of Z that touches ν and lies over I (respectively, I  ). Thus, as in the
+preceding Section, we have various subgroups, such as Δadm
+, Δadm
+, Δadm
+⊆ Πadm
+μ
+I
+I
+X . Note
+adm
+
+adm
+adm
+that (since X is untangled) elements of Δμ ﬁx J and J . Thus, Δμ ⊆ ΔI , Δadm
+I .
+21
+
+Next, consider the natural morphism Δadm
+⊆ Πadm
+→ ΠS . Since μ is k-rational, this
+μ
+X
+morphism is surjective. Let us denote the kernel of this morphism by Δin
+μ . Thus, we have
+an exact sequence
+adm
+→ ΠS → 1
+1 → Δin
+μ → Δμ
+in
+in
+Moreover, by sorting through the deﬁnitions, it is clear that Δin
+I , ΔI  ⊆ Δμ .
+adm
+Next, let us consider the natural morphism Δin
+→ ΠS log . It is clear that the
+I ⊆ ΠX
+image of this morphism is contained in the inertia subgroup IS ⊆ ΠS log . Thus, we obtain
+a natural morphism Δin
+I → IS . By using the fact that the restriction of the log structure
+of X log to the generic point of I is the pull-back (to the generic point of I) of the log
+structure of S log , it is then easy to see that this morphism Δin
+I → IS is an isomorphism.
+Thus, we see that we obtain a natural isomorphism
+
+∼
+
+Δin
+I = IS = Z (1)
+
+In the sequel, we shall identify Δin
+I with Z (1) via this isomorphism. Similarly, we have
+∼ 
+Δin
+I  = Z (1).
+In order to understand these various groups better, it is helpful to think in terms of a
+def
+def
+local model, as follows: If e ≥ 1 is an integer, let R = k[[x, y, t]]/(xy − te ), A = k[[t]] ⊆ R.
+def
+
+def
+
+Let X = Spec(R), T = Spec(A). Endow T with the log structure deﬁned by the divisor
+t = 0. Let Nnode be the monoid given by taking the quotient of the free monoid on the
+symbols log(x), log(y), log(t) by the relation log(x) + log(y) ∼ e · log(t). Map Nnode → R
+by letting log(?) →?, for ? = x, y, t. Endow X with the log structure associated to
+Nnode → R. Thus, we obtain a morphism of log schemes X log → T log . Let us denote
+by τ : Spec(k) → T the special point of T . Moreover, there is a unique e such that the
+completion of Xk at μk is equal to X log |τ . We shall call this e the order of the node μ.
+Let I = V (y, t) = Spec(k[[x]]); I  = V (x, t) = Spec(k[[y]]); Xτ = X ×T τ . Let
+the quotient of the fundamental group of U
+U = X − I − I  . Let us denote by Πadm
+X
+which is tamely ramiﬁed over the divisors I and I  . Note that Πadm
+is abelian (thus
+X
+eliminating the need to choose a base point). Indeed, thisfollows by noting that Πadm
+X
+
+for e ≥ 1 injects into Πadm
+for
+e
+=
+1;
+but
+when
+e
+=
+1,
+I
+I
+is
+a
+divisor
+with
+normal
+X
+∼
+  (1) × Z
+  (1). Let us denote by Πadm the tame fundamental group
+crossings, so Πadm
+Z
+=
+X
+T
+  (1). Note (for instance, by reducing to the case e = 1) that
+of T − τ . Thus, Πadm
+=
+Z
+T
+. Let us denote
+the decomposition groups of the divisors I and I  are both equal to Πadm
+X
+in
+adm
+
+by Δin
+,
+Δ
+⊆
+Π
+the
+inertia
+groups
+of
+the
+divisors
+I
+and
+I
+.
+As
+above,
+it is easy
+I
+I
+X
+in
+adm
+adm
+→ ΠT
+is an isomorphism. Thus, we have
+to see that the natural map ΔI ⊆ ΠX
+in ∼  
+in ∼  
+isomorphisms ΔI = Z (1);
+I  = Z (1). Observe, moreover, (for instance, by reducing to
+ Δin
+in
+the case e = 1) that ΔI
+ΔI  = {1}.
+22
+
+def
+
+Let ξ = V (x, y, t) ∈ X. Let us denote by Πadm
+the tame fundamental group of I − ξ.
+I
+adm
+
+adm
+
+
+
+= Z (1). Similarly, we have ΠI  = Z (1). Note, moreover, that we have a
+Thus, ΠI
+adm
+natural morphism Πadm
+/Δin
+. Thus, we obtain a morphism
+X
+I → ΠI
+  (1) = Δin → Πadm /Δin → Πadm = Z
+  (1)
+Z
+I
+X
+I
+I
+  . We claim that  = e.
+This morphism corresponds to multiplication by some element  ∈ Z
+Indeed, this follows from the fact that taking roots of the function x|I on I corresponds
+to taking roots of te = y −1 · x over I  − ξ (since y is invertible on I  − ξ). Thus, we see
+that we have injections
+  (1) × Z
+  (1) = Δin × Δin → Πadm ⊆ Πadm
+  (1) × Z
+  (1)
+× Πadm
+=Z
+Z
+I
+I
+X
+I
+I
+  (1) → Z
+  (1) × Z
+  (1) is given by multiplication by e.
+  (1) × Z
+Here the composite Z
+Now let us translate what we have learned locally back into information concerning our
+in
+original X. First of all, let us observe that Πadm
+(respectively, Δin
+X
+I ; Δ
+I  ) corresponds to
+
+in
+in
+in
+in
+Δμ (respectively, ΔI ; ΔI  ). Thus, in particular, we obtain that ΔI
+Δin
+I  = {1}. Next,
+adm
+in
+adm
+let us observe that ΔI /ΔI may be identiﬁed with ΠI˘ , i.e., the tame fundamental
+˘ Let us denote by Δin [I] ⊆ Πadm = Δadm /Δin the subgroup of elements that
+group of I.
+μ
+
+I˘
+
+I
+
+I
+
+ﬁx ν and act trivially on the residue ﬁeld of ν. That is to say, Δin
+μ [I] is the inertia group
+adm
+of μ in ΠI˘ . In particular, we have a natural isomorphism
+∼ 
+Δin
+μ [I] = Z (1)
+ ∼ 
+in
+in 
+Similarly, we have an isomorphism Δin
+μ [I ] = Z (1). Then Δμ [I] (respectively, Δμ [I ])
+corresponds to Πadm
+(respectively, Πadm
+I
+I  ).
+
+Now let us observe that, by the theory developed thus far, all the subgroups and isomorphisms of the above discussion may be recovered from Πadm
+→ ΠS log , except (possibly)
+X
+the injections
+adm
+  (1) ∼
+;
+ιμ : Z
+= Δin
+μ [I] → ΠI˘
+
+
+adm
+  (1) ∼
+ιμ : Z
+= Δin
+μ [I ] → ΠI˘
+
+∼ in 
+  (1) ∼
+
+(or, equivalently, except (possibly) the isomorphisms Z
+= Δin
+μ [I], Z (1) = Δμ [I ]).
+Thus, we have the following result
+Proposition 6.1: Suppose that X is stable, sturdy, and untangled, and that μ ∈ X(k)
+is a node. Then the order e of the node μ may be recovered entirely from Πadm
+→ ΠS log ,
+X
+
+ιμ , and ιμ .
+23
+
+Next we would like to consider the issue of reconstructing the log structure of X at μ
+group-theoretically. Let Sμlog be the log scheme whose underlying scheme is S = Spec(k),
+and whose log structure is that obtained by pulling back the log structure of X log via μ :
+S → X. Thus, we have a natural structure morphism Sμlog → S log . Let MS (respectively,
+Mμ ) be the monoid deﬁning the log structure of S log (respectively, Sμlog ). Thus, we have
+k × ⊆ MS ; k × ⊆ Mμ . Moreover, MS /k × = N; Mμ /k × = Nnode (where Nnode is the monoid
+introduced above). The structure morphism Sμlog → S log deﬁnes a morphism MS → Mμ
+(which is the identity on k × ), hence an inclusion N → Nnode . Let us denote by  ∈ Nnode
+the image of e ∈ N in Nnode . Let us denote by Le ⊆ MS (respectively, L ⊆ Mμ ) the
+inverse image of e ∈ N (respectively,  ∈ Nnode ) in MS (respectively, Mμ ). Thus, we obtain
+an isomorphism of k × -torsors
+ζμ : Le → L
+We would like to reconstruct ζμ group-theoretically.
+  (1). Now it follows
+First, recall that we may naturally regard k × as a quotient of Z
+from Kummer theory that
+Lemma 6.2 : There is a natural one-to-one correspondence between elements of L and
+  (1) × Z
+  (1) = Δin × Δin ⊆ Δadm is the
+morphisms ψ : Δadm
+→ k × whose restriction to Z
+μ
+μ
+I
+I
+
+
+
+
+
+
+composite of the morphism (e, e) : Z (1) × Z (1) → Z (1) (i.e., multiplication by e on both
+  (1) → k × .
+factors) with the natural quotient Z
+Note that here, the k × -torsor structure on the set of such ψ is given by observing that the
+diﬀerence between two such ψ is a morphism Hom(ΠS , k × ), which may be identiﬁed with
+k × by means of the Frobenius element φ ∈ Γ = ΠS .
+Similarly, we have
+Lemma 6.3 :
+There is a natural one-to-one correspondence between elements of Le
+  (1) = IS ⊆ ΠS log is the composite
+and morphisms ψ : ΠS log → k × whose restriction to Z
+  (1) (i.e., multiplication by e) with the natural quotient
+  (1) → Z
+of the morphism e· : Z
+  (1) → k × .
+Z
+Moreover, the correspondence induced by ζμ : Le ∼
+= L between the ψ of Lemma 6.2
+and the ψ of Lemma 6.3 is the correspondence obtained by composing ΠS log → k × with
+Δadm
+→ Πadm
+→ ΠS log .
+μ
+X
+We thus conclude the following
+Proposition 6.4: Suppose that X is stable, sturdy, and untangled, and that μ ∈ X(k)
+is a node. Then the morphism ζμ : Le ∼
+→ ΠS log ,
+= L may be recovered entirely from Πadm
+X
+
+ιμ , and ιμ .
+24
+
+Section 7: The Main Result over Finite Fields
+We are now ready to put everything together and prove the main result over ﬁnite
+ﬁelds. The point is that the theory developed thus far in this paper will allow us to
+reduce the Grothendieck conjecture for singular stable log-curves over ﬁnite ﬁelds to the
+Grothendieck conjecture for smooth, aﬃne, hyperbolic curves over ﬁnite ﬁelds (which is
+already proven in [Tama]).
+log
+Let S∞
+→ S log be as in Deﬁnition 2.7. Let X log → S log and (X  )log → S log be
+stable log-curves of genus g (equipped with base-points x ∈ X(k) and x ∈ X  (k)), such
+that neither X nor X  is smooth over k. Let us assume that we are given a commutative
+diagram of continuous group homomorphisms:
+αΠ
+
+Πadm
+X
+⏐
+⏐
+
+
+−→
+
+Πadm
+X
+⏐
+⏐
+
+
+ΠS log
+
+−→
+
+id
+
+ΠS log
+
+where the vertical morphisms are the natural ones, and the horizontal morphisms are isomorphisms. The goal of this Section is to show that (under a certain technical assumption
+on the “RT-degree”) αΠ arises (up to conjugation by an element of ΔX log ) from a geometric
+S log -isomorphism of X log with (X  )log .
+X :
+
+We begin by proving the result under the following simplifying assumption on X and
+
+(*) X and X  are sturdy and untangled, and their nodes are rational
+over k.
+By Proposition 4.1, αΠ induces a natural isomorphism between the sets of irreducible
+components of X and X  . Let I ⊆ X be an irreducible component. Then there is a
+corresponding irreducible component I  ⊆ X  . Moreover, by Proposition 4.1, αΠ necessarily maps decomposition (respectively, inertia) subgroups of Πadm
+to similar subgroups of
+X
+adm
+adm
+Π
+adm
+.
+Thus,
+we
+may
+choose
+Δ
+⊆
+Π
+such
+that
+α
+maps
+Δ
+onto Δadm
+⊆ Πadm
+Πadm
+X
+I
+X
+I
+I
+X .
+def
+
+in
+adm
+Moreover, we also have αΠ (Δin
+= Δadm
+/Δin
+I ) = ΔI  . Thus, since ΠI˘
+I
+I , we get a natural
+isomorphism
+
+∼
+: Πadm
+αΠ
+= Πadm
+I˘
+I˘
+I˘
+Now as we saw at the beginning of Section 6, the natural morphism Δin
+I → IS is an
+adm
+isomorphism. Hence, the quotient of Πadm
+induced
+by
+Π
+→
+Π
+log
+is
+simply
+Πadm
+→
+S
+X
+I˘
+I˘
+Π
+ΠS . Thus, we see that αI˘ ﬁts into a diagram:
+25
+
+αΠ
+
+Πadm
+I˘
+⏐
+⏐
+
+
+Ĭ
+−→
+
+ΠS
+
+−→
+
+id
+
+Πadm
+I˘
+⏐
+⏐
+
+ΠS
+
+Let ΔI˘ = Ker(Πadm
+→ ΠS ). Since I˘ is a smooth aﬃne hyperbolic curve over k, we are
+I˘
+now in a position to apply the theory of [Tama]. The only two consequences of the theory
+of [Tama] that we will use in this paper are the following:
+(1) αΠ
+induces a commutative diagram
+I˘
+αĬ
+I˘ −→
+⏐
+⏐
+
+
+S
+
+γI
+
+−→
+
+I˘
+⏐
+⏐
+
+S
+
+of morphisms of schemes. Here the vertical morphisms are the natural
+ones, and the horizontal morphisms are isomorphisms. The morphism
+γI , however, need not be the identity.
+  (1) → Πadm
+(2) For each node μ of X lying on I, the morphisms ιμ : Z
+I˘
+(well-deﬁned up to conjugation by an element of ΔI˘) of Proposition
+6.1 are taken to each other by αΠ , up to multiplication by some unit
+  )× . Here, the automorphism induced by θI on the quotient
+θI ∈ (Z
+  (1) → k × is equal to the automorphism of k × induced by γI .
+Z
+It follows, in particular, that θI ∈ pZ ⊆ Q (i.e., θI is a rational number which is a power
+of p). In fact, as we shall see below (Lemma 7.1), θI is independent of I. Thus, we shall
+write
+def
+
+degRT (αΠ ) = θI ∈ pZ ∈ Q
+and we shall refer to this number as the RT-degree of αΠ on I (where “RT” stands for
+“ramiﬁcation-theoretic,” as opposed to another type of degree that will be discussed in
+Section 9).
+Lemma 7.1 :
+
+The rational number θI is independent of the irreducible component I.
+
+Proof: Suppose that there is another irreducible component J of X that touches I. Let
+J  ⊆ X  be the corresponding component of X  . Let us focus our attention at a node
+μ lying on I and J . By Corollary 5.3, there is a corresponding node μ ∈ X  (k). Let e
+26
+
+(respectively, e ) be the order of the node μ (respectively, μ ). Now we have a commutative
+diagram:
+  (1) = Δin [I] × Δin [J ]
+  (1) × Z
+Z
+μ
+μ
+⏐
+⏐θ ×θ
+I J
+
+(e,e)
+
+←−
+
+  (1) × Z
+  (1) = Δin × Δin
+Z
+J
+I
+⏐
+⏐
+
+
+(1,1)
+
+−→
+
+  (1) = IS
+Z
+⏐
+⏐
+id
+
+  (1) × Z
+  (1) = Δin [I  ] × Δin [J  ]
+Z
+μ
+μ
+
+(e ,e )
+
+  (1) × Z
+  (1) = Δin × Δin
+Z
+J
+I
+
+(1,1)
+
+  (1) = IS
+Z
+
+←−
+
+−→
+
+where the vertical map in the middle is that induced by αΠ , and θI and θJ are the
+morphisms obtained from the theory of [Tama] (cf., item (2) in the list given above). It
+follows immediately from the commutativity of this diagram that θI = e ·e−1 = θJ . (Thus,
+we also obtain a new proof of the rationality of θI .) This completes the proof. 
+Let us assume henceforth that
+(†) degRT (αΠ ) = 1
+Thus, αI˘ is an S-isomorphism, and the ιμ are taken to each other precisely (not just
+up to some multiple) by αΠ . By the theory of [Tama], this means that αI˘ induces an
+S-isomorphism I ∼
+= I  that respects nodes. We thus obtain an S-isomorphism
+αX : X ∼
+= X
+ → X be the normalization of X. Let
+Thus, it remains to consider log structures. Let X
+ with the log structure deﬁned by the divisor consisting of the points of X
+ that
+us equip X
+log
+
+map to nodes of X. Thus, we obtain a log scheme X
+whose log structure is generically
+  )log . Note that αX already induces an S-isomorphism
+trivial. Similarly, we have (X
+ log ∼   log
+αX
+log : X = (X )
+Now let us concentrate on a single node μ ∈ X(k) (which corresponds to μ ∈ X  (k)). It
+ log , in order to recover the S log -log scheme X log in a
+is not diﬃcult to see that given X
+neighborhood of μ, it suﬃces to know the isomorphism
+ζμ : Le ∼
+=L
+But by Proposition 6.4, this morphism may be recovered from Πadm
+→ ΠS log , plus item
+X
+(2) of the above review of the theory of [Tama] (now that we know/are assuming that all
+the θI = 1). Thus, we see that αX extends naturally to a morphism
+αX log : X log ∼
+= (X  )log
+27
+
+as desired.
+adm
+The next step is to check that the morphism induced by αlog
+and
+X between ΠX
+adm
+Π
+ΠX  agrees (up to conjugation by an element of ΔX log ) with the original α . But this
+follows by using a similar argument to that of [Tama]: Namely, ﬁrst we observe that
+it is clear from the construction of αX log that if we start with an αΠ that arises from
+some β : X log ∼
+= (X  )log , then β = αX log . Then we note that for each orderly covering
+Y log → X log , there is a corresponding orderly covering (Y  )log → (X  )log , together with
+∼
+an isomorphism Πadm
+induced by αΠ . Moreover, this isomorphism gives rise to
+= Πadm
+Y
+Y
+an isomorphism αY log that is compatible with αX log . It thus follows formally from the
+general theory of the algebraic fundamental group that the isomorphism of Πadm
+with
+X
+adm
+Π
+adm
+ΠX  induced by αX log diﬀers from α by conjugation by some element η ∈ ΠX . On
+the other hand, since the automorphism of Πadm
+given by conjugation by η must induce
+X
+the identity on ΠS log , and ΠS log clearly has trivial center, it thus follows that the image
+of η in ΠS log is trivial. Thus, η ∈ ΔX log , as desired.
+
+Now let us denote by IsomS log (X log , (X  )log ) the set of S log -isomorphisms of log
+adm
+schemes between X log and (X  )log . Next, let us consider the set IsomΠSlog (Πadm
+X , ΠX  )
+∼
+of isomorphisms Πadm
+= Πadm
+X
+X  that preserve and induce the identity on the quotient ΠS log .
+
+adm
+
+Then given α, α ∈ IsomΠSlog (Πadm
+X , ΠX  ), we regard α ∼ α if and only if there exists
+an η ∈ ΔX log such that
+α(η · π · η −1 ) = α (π)
+for all π ∈ Πadm
+X . The resulting set of equivalence classes will be denoted
+adm
+adm
+IsomGO
+Π log (ΠX , ΠX  )
+S
+
+Here, “GO” stands for “geometrically outer.” Now observe that it is clear that inner
+automorphisms induced by elements of ΔX log do not aﬀect the RT-degree. Thus, it makes
+sense to consider
+adm
+adm
+GO
+adm
+adm
+IsomGORT
+Π log (ΠX , ΠX  ) ⊆ IsomΠ log (ΠX , ΠX  )
+S
+
+S
+
+that is, the classes of isomorphisms α whose RT-degree is equal to 1.
+Thus, in summary, we have proven (at least under the assumption (*)) the following
+result:
+log
+→ S log be as in Deﬁnition 2.7. Let X log → S log and (X  )log →
+Theorem 7.2: Let S∞
+S log be stable log-curves (equipped with base-points x ∈ X(k) and x ∈ X  (k)), such that
+at least one of X or X  is not smooth over k. Then the natural map
+adm
+adm
+IsomS log (X log , (X  )log ) → IsomGORT
+Π log (ΠX , ΠX  )
+S
+
+28
+
+is bijective.
+Proof: It remains to deal with the case where the simplifying assumption (*) is not
+satisﬁed. But let us note that given an arbitrary X log as in the statement of the Theorem,
+there is always a ﬁnite orderly covering Y log → X log such that Y satisﬁes (*). Moreover,
+any admissible covering (with rational nodes) of Y will clearly still satisfy (*). Thus, it is
+∼
+clear that we may take Y log → X log such that the corresponding (via αΠ : Πadm
+= Πadm
+X
+X )
+ log
+ log
+
+(Y ) → (X ) is such that Y also satisﬁes (*). Then one concludes the Theorem by
+descent. 
+Just as in [Tama], if ΔX log is center-free, then one can rewrite Theorem 7.2 in terms
+of outer automorphisms. For this, we need the following
+Lemma 7.3 :
+
+The group ΔX log is center-free.
+
+Proof: The proof is formally the same as that given in [Tama], §1, for the case where X
+is smooth over k. The only facts that one needs to check are:
+(1) The pro-p-quotient ΔpX log of ΔX log is free.
+(2) There exists an open subgroup H ⊆ ΔX log for which H p is nonabelian.
+2
+(Xk , Fp ) = 0. Indeed, this follows immediWe begin by checking (1). First note that Hét
+ately from writing out the long exact sequence associated to
+
+0
+
+−→
+
+Fp
+
+−→
+
+Ga
+
+1−F
+
+−→
+
+Ga
+
+−→
+
+0
+
+(where “F ” is the Frobenius morphism). Thus, for all ﬁnite étale coverings Y → Xk ,
+p
+2
+we also have Hét
+(Y, Fp ) = 0. It thus follows that H 2 (ΔpX log , Fp ) ∼
+= H 2 (ΔX , Fp ) =
+2
+(Xk , Fp ) = 0. (Here we use the elementary fact that the natural surjection ΔpX log →
+Hét
+ΔpX is an isomorphism.) On the other hand, it is a well-known fact from group-theory
+([Shatz], Chapter III, §3, Proposition 2.3) that this implies that ΔpX log is free. This completes the veriﬁcation of (1). As for (2), since the smooth case is already discussed in
+[Tama], §1, we shall concentrate here on the case when X is singular. Then it suﬃces
+to note the existence of an orderly covering of X log whose dual graph has a nonabelian
+k
+fundamental group. But the existence of such a covering follows immediately from simple
+combinatorial considerations. 
+If G1 and G2 are two topological groups, let us denote by Isom(G1 , G2 ) the set of
+continuous isomorphisms G1 ∼
+= G2 . Let us denote by Out(G1 , G2 ) the set of equivalence
+classes of Isom(G1 , G2 ), where we consider two isomorphisms equivalent if they diﬀer by
+an inner automorphism. If G1 = G2 , then we shall denote Out(G1 , G2 ) by Out(G1 ).
+29
+
+If α ∈ Isom(G1 , G2 ), then α induces an isomorphism Out(α) : Out(G1 ) ∼
+= Out(G2 ).
+Moreover, Out(α) depends only the class [α] ∈ Out(G1 , G2 ) deﬁned by α.
+Suppose that X log and (X  )log are as in Theorem 7.2. Let
+ρX : ΠS log → Out(ΔX log )
+→ ΠS log → 1. Note
+be the representation arising from the extension 1 → ΔX log → Πadm
+X
+that ρX is independent of the choice of base point x. Similarly, we have ρX  . Let us denote
+by
+Outρ (ΔX log , Δ(X )log )
+the set of [α] ∈ Out(ΔX log , Δ(X )log ) such that Out(α) ◦ ρX = ρX  . Now note that we have
+a natural map
+adm
+adm
+IsomGO
+Π log (ΠX , ΠX  ) → Outρ (ΔX log , Δ(X )log )
+S
+
+Then it follows group-theoretically (cf. [Tama]) from the fact that ΔX log has trivial center
+that this map is a bijection. Let us denote by
+OutD
+ρ (ΔX log , Δ(X )log )
+the image under this bijection of
+adm
+adm
+GO
+adm
+adm
+IsomGORT
+Π log (ΠX , ΠX  ) ⊆ IsomΠ log (ΠX , ΠX  )
+S
+
+S
+
+(Here, the “D” stands for “degree one.”) Thus, one can rephrase Theorem 7.2 in the
+following (seemingly weaker) form:
+log
+Theorem 7.4: Let S∞
+→ S log be as in Deﬁnition 2.7. Let X log → S log and (X  )log →
+S log be stable log-curves such that at least one of X or X  is not smooth over k. Then
+the natural map
+
+IsomS log (X log , (X  )log ) → OutD
+ρ (ΔX log , Δ(X )log )
+is bijective.
+
+30
+
+Section 8: Characterization of Admissible Coverings
+So far, we have been working with stable curves over a ﬁnite ﬁeld. In this Section
+and the next, we shift gears and consider stable curves over local ﬁelds. The purpose of
+this Section is to show that given such a curve, one can characterize the quotient of the
+fundamental group (of the generic curve) corresponding to admissible coverings in entirely
+group-theoretic terms. The technique of proof is similar to that of Proposition 3.1, where
+we characterized étale coverings among all admissible coverings.
+def
+
+Let K be a ﬁnite extension of Qp . Let K be an algebraic closure of K; let ΓK =
+Gal(K/K). Let K unr ⊆ K be the maximal unramiﬁed extension of K in K; let Γunr
+K ⊆ ΓK
+unr
+unr
+be the corresponding closed subgroup. Let A ⊆ K (respectively, A
+⊆ K ) be the
+ring of integers; k be the residue ﬁeld of A; S = Spec(A). Let us endow S with the log
+structure deﬁned by the closed point. Let X log → S log be a stable log-curve of genus g
+which is generically smooth. Thus, XK → Spec(K) is a smooth curve of genus g. Choose
+def
+
+a base-point x ∈ X(K). Let ΠXK = π1 (XK , xK ) be the resulting fundamental group.
+Thus, we have an exact sequence
+1 → ΔXK → ΠXK → ΓK → 1
+def
+
+adm
+where ΔXK = π1 (XK , x
+be the quotient (as in Deﬁnition 2.4) of
+K ). Let ΠXK → ΠX
+ΠXK by the intersection
+H of all the co-admissible open subgroups H ⊆ ΠXK .
+
+Let YK → XK be an abelian étale covering of degree p. Let us assume that YK is
+geometrically connected over K. Now let us consider the following condition on YK → XK :
+(*) Over K unr , there is an inﬁnite abelian étale covering ZK unr →
+XK unr = XK ⊗K K unr with Galois group Zp such that the intermediate covering corresponding to Zp → Fp is YK unr → XK unr .
+In the next few paragraphs, we would like to show that condition (*) is equivalent to the
+statement that YK → XK extends to a ﬁnite abelian étale covering Y → X. Indeed, the
+necessity of condition (*) follows easily from well-known facts concerning the fundamental
+group of Xk = X ⊗A k. Thus, it remains to show that condition (*) is suﬃcient.
+To prove the suﬃciency of (*), we will need to review certain basic facts from [FC]
+concerning the p-adic Tate module of a semi-abelian scheme over S. Let JK → Spec(K)
+be the Jacobian of XK . We shall always regard JK as equipped with its usual principal
+polarization. By [FC], Chapter I, Theorem 2.6 and Proposition 2.7, it follows that JK
+def
+
+extends uniquely to a semi-abelian scheme J → S over S. Let VJ = Hom(Qp /Zp, J (K))
+be the p-adic Tate module of JK . Thus, VJ is a free Zp -module of rank 2g, equipped
+with a natural ΓK -action. In Chapter III of [FC], one ﬁnds a theory of degenerations of
+semi-abelian varieties. According to this theory (more precisely: the equivalence “Mpol ”
+of Corollary 7.2 of [FC], Chapter III), there exists an abelian scheme G → S, together
+with a torus T → S, and an extension
+31
+
+0 → T → J → G → 0
+over S, such that “roughly speaking,” J is obtained as a rigid analytic quotient of J by an
+def
+étale sheaf P of free abelian groups of rank r = dim(T /S) on S. (Caution: Our choice
+def
+of notation diﬀers somewhat from that of [FC].) Let VJ = Hom(Qp /Zp , J(K)) be the
+p-adic Tate module of JK . Thus, if d = dim(G/S), then VJ is a free Zp -module of rank
+r + 2d. Note that the étale sheaf P may also be regarded as a free abelian group of rank
+def
+r equipped with a ΓK -action. Let PZp = P ⊗Z Zp . Then, according to Corollary 7.3 of
+[FC], Chapter III, we have an exact sequence of ΓK -modules:
+0 → VJ → VJ → PZp → 0
+def
+
+def
+
+Let VG = Hom(Qp /Zp , G(K)) (respectively, VT = Hom(Qp /Zp , T (K))) be the p-adic
+Tate module of GK (respectively, TK ). Then VJ itself ﬁts into another exact sequence of
+ΓK -modules:
+0 → VT → VJ → VG → 0
+Next let us consider the ΓK -module VG . Let a be the p-rank of the abelian variety
+Gk = G ⊗A k over k. Then, as is well-known, there is a free Zp -module VGord of rank a
+equipped with an unramiﬁed ΓK -action such that we have exact sequences of ΓK -modules:
+def
+
+0 → VG → VG → VGord → 0
+and
+0 → VG∨ord (1) → VG → VGss → 0
+Here, the “(1)” is a Tate twist, and by “unramiﬁed action” we mean that Γunr
+K acts trivially.
+ss
+Thus, VG is the “supersingular part” of the representation VG . Let us denote by VJ et
+the quotient of VJ by Ker(VJ → VGord ) ⊆ VJ ⊆ VJ . Thus, VJ et is a free Zp -module of
+rank r + a, equipped with a natural unramiﬁed ΓK -action. Let VJ mt ⊆ VJ ⊆ VJ be the
+inverse image of VG∨ord (1) (⊆ VG ) under the projection VJ → VG . Note that the submodule
+VJ mt ⊆ VJ is dual to the quotient VJ → VJ et under the bilinear form on VJ arising from
+the canonical polarization of J .
+Now we would like to take a closer look at the ΓK -module VGss . First, recall that the
+ΓK -module VG is crystalline. This fact is well-known from the general theory of Galois
+representations arising from p-adic étale cohomology groups of varieties (see, e.g., [FC],
+Chapter VI, §6, for a brief review of this theory, as well as a list of further references). Let
+32
+
+K0 ⊆ K be the maximal unramiﬁed extension of Qp in K. Then VG is (say, covariantly)
+“associated” to a ﬁltered module with Frobenius action (M, F · (M), ΦM ), where M is a
+K0 -vector space, ΦM : M → M is a semilinear automorphism, and F · (M) is a ﬁltration
+of M ⊗K0 K. It then follows from the above exact sequences that VGss is also crystalline,
+and is associated to a ﬁltered module with Frobenius action (M ss , F · (M ss ), ΦM ss ) which
+is a subquotient of (M, F · (M), ΦM ). Moreover, since VGss was constructed as the “supersingular part of VG ,” it follows that the Frobenius action ΦM ss on M ss is topologically
+nilpotent. Now we have the following crucial
+Lemma 8.1 :
+Any Γunr
+K -equivariant Zp -linear morphism ψ : VJ → Zp (where Zp is
+equipped with the trivial Γunr
+K -action) factors through the quotient VJ → VGord .
+Proof: First, note that since T is a torus, and K unr contains only ﬁnitely many pth power
+roots of unity, the restriction of ψ to VT must be zero. Thus, ψ factors through VG . Denote
+the resulting morphism VG → Zp by ψ  . By the same argument, the restriction of ψ  to
+VG∨ord (1) must be zero. Thus, we obtain a Γunr
+K -equivariant morphism ψGss : VGss → Zp .
+But since VGss is crystalline, it follows from the basic theory of crystalline representations
+that ψGss deﬁnes a Frobenius-equivariant, K unr -linear morphism ψM ss : M ss ⊗K0 K unr →
+K unr . (Here, K unr is equipped with the trivial Frobenius action.) On the other hand, it
+follows from the topological nilpotence of ΦM ss that ψM ss must be zero. Thus, ψGss is
+also zero. This completes the proof. 
+Now let us return to the abelian covering YK → XK of degree p discussed above.
+Suppose that this covering satisﬁes condition (*). Then there exists a covering ZK unr →
+XK unr as in (*). Moreover, since VJ = Hom(ΔXK , Zp (1)), it follows that ZK unr → XK unr
+deﬁnes a Zp -linear morphism κ : Zp (1) → VJ which is Γunr
+K -equivariant. By taking the
+dual to κ (and using the fact that the polarization of J gives an isomorphism of VJ with
+∨
+its Cartier dual), we obtain a Γunr
+K -equivariant morphism κ : VJ → Zp . Thus, by Lemma
+∨
+8.1, it follows that κ factors through VJ et . In particular, κ factors through VJ mt . On the
+other hand, it is clear that Zp -coverings arising from morphisms Zp (1) → VJ mt extend to
+étale coverings of XAunr . Thus, in particular, it follows that YK → XK extends to a ﬁnite
+étale covering Y → X. Thus, we have proven the following result:
+Lemma 8.2 : Let YK → XK be an abelian étale covering of degree p. Let us assume
+that YK is geometrically connected over K. Then YK → XK extends to a ﬁnite étale
+covering Y → X if and only if YK → XK satisﬁes condition (*) above.
+Next, we would like to consider more general coverings YK → XK . We begin with the
+following
+Lemma 8.3 : Let ψK : YK → XK be a ﬁnite étale covering such that YK is geometrically
+connected over K. Suppose, moreover, that YK arises from a stable curve Y → S over S.
+Then ψK extends to a proper surjective morphism ψ : Y → X.
+33
+
+Proof: Note that if ψ ⊗A K = ψK , then ψ will automatically be proper and dominant, hence surjective. Thus, it suﬃces to show the existence of such a ψ. Let us ﬁrst
+show the existence of such a ψ under the additional assumption that Xk is sturdy. Now
+it follows from the general theory of stable curves that there exists a semi-stable curve
+Y  → S equipped with a birational (blow-up) morphism Y  → Y such that Y  is regular. Moreover, it follows from the general theory of “elimination of indeterminacy” for
+regular two-dimensional schemes ([Lipman], Lemma 3.1) that the rational map from Y  to
+X deﬁned by ψK becomes a morphism over some Y  , where Y  is obtained from Y  by
+blowing up points. Denote the resulting morphism by ψ  : Y  → X. On the other hand,
+for E ⊆ Yk ⊆ Y  such that E ∼
+= P1k , it follows from the sturdiness assumption on Xk that
+
+ψ |E is constant. It thus follows that ψ  factors through Y , as desired.
+Now let us prove the result in general (without the assumption that Xk is sturdy).
+First, observe that by descent, it suﬃces to prove the result after replacing K by a ﬁnite
+extension of K. Thus, we may assume that there exists a Galois admissible covering
+θX : X  → X (over S) such that Xk is sturdy. Pulling back (θX )K to YK , one sees that
+one obtains a ﬁnite étale covering YK → YK which extends to a Galois multi-admissible
+covering θY : Y  → Y . On the other hand, if we pull-back ψK to X  , we obtain a morphism
+
+
+: YK → XK
+. Moreover, since Xk is sturdy, it follows from the ﬁrst paragraph of this
+ψK
+
+proof that ψK
+extends to a morphism ψ  : Y  → X  . Thus, by composing ψ  with θX , we
+obtain a morphism φ : Y  → X whose restriction to YK is given by taking the composing
+of (θY )K : YK → YK with ψK . Now, let us note that since θY : Y  → Y is an admissible
+covering, it is, in particular, ﬁnite. Thus, if G is the Galois group of YK over YK , it follows
+(from Zariski’s main theorem) that OY is obtained from OY  by taking G-invariants.
+Hence, φ : Y  → X factors through a morphism Y → X which extends ψK , as desired. 
+Remark: As pointed out by the referee, one can also prove this Lemma (without reducing
+to the sturdy case) by considering the number of points at which a (−1)-curve in Y 
+(notation of the above proof) intersects other irreducible components of the special ﬁber
+of Y  . The author ﬁnds the proof involving sturdiness to be more transparent, but this is
+a matter of taste.
+Let ψK : YK → XK be a ﬁnite Galois étale covering (with Galois group G) such that
+YK is geometrically connected over K, and YK has a stable extension Y → S over S. Let
+us also assume that ψK satisﬁes the following condition:
+(†) Let H ⊆ G be any subgroup with H ∼
+= Z/pZ, and let YK → ZK be
+the subcovering corresponding to H. Then ZK has a stable extension
+Z → S over S, and, moreover, YK → ZK extends to a ﬁnite étale
+covering Y → Z over S.
+Let ℘ ∈ Y be a height one prime arising from an irreducible component of the special
+ﬁber Yk . Then we claim that the inertia subgroup I℘ ⊆ G is trivial. (Here, by the inertia
+subgroup, we mean the subgroup of elements of G that ﬁx ℘ and act trivially on k(℘).)
+34
+
+Indeed, ﬁrst note that since Y is smooth over S at ℘, there cannot be any tame ramiﬁcation,
+so I℘ must be a p-group. If I℘ is nontrivial, then it contains a subgroup H ⊆ I℘ such
+that H ∼
+= Z/pZ. But then the statement that H acts trivially on k(℘) clearly contradicts
+condition (†). Thus, I℘ must be trivial, as claimed.
+Now let ℘ ∈ X be a height one prime arising from an irreducible component of the
+special ﬁber Xk . It follows from the preceding paragraph that ℘ is unramiﬁed in K(Y )
+(the function ﬁeld of Y ). Thus, if we let Y  be the normalization of X in YK , it follows
+that Y  → X is ﬁnite over all of X, and étale over the complement of the nodes of X (by
+purity). Then it follows by the same argument as that used in the proof of Lemma 3.12
+of [Mzk] that Y  → X must be an admissible covering. In particular, Y  is a stable curve
+over S, so Y = Y  . Thus, it follows from Lemma 8.2 and the above discussion that we
+have proven the following:
+can be recovered entirely
+Proposition 8.4:
+The admissible quotient ΠXK → Πadm
+X
+group-theoretically from ΠXK → ΓK .
+Proof: Indeed, clearly (by replacing K by a ﬁnite, tamely ramiﬁed extension of K) it
+suﬃces to show that given an open normal subgroup H ⊆ ΠXK that surjects onto ΓK , the
+issue of whether or not the resulting covering YK → XK is pre-admissible can be settled
+group-theoretically. But, by the above discussion, YK → XK is pre-admissible if and only
+if YK and XK admit stable extensions over S (which is well-known, by the criterion of
+Serre-Tate, to be a group-theoretic condition), and, moreover, (†) is satisﬁed. On the other
+hand, by Lemma 8.2, (†) is also a group-theoretic condition. This completes the proof. 
+Section 9: Consequences for Curves over Local Fields
+We retain the notation of the preceding Section. Thus, in particular, we have a
+stable log-curve X log → S log . Let K∞ ⊆ K be the maximal tamely ramiﬁed extension
+def
+= Gal(K∞ /K). Thus, we have a natural surjection ΓK → Γtm
+of K; let Γtm
+K
+K . We
+adm
+saw in Proposition 8.4 that one can recover the admissible quotient ΠXK → ΠX (hence
+→ Γtm
+also the surjection Πadm
+X
+K ) group-theoretically from ΠXK → ΓK . Suppose that
+ log
+log
+(X ) → S
+is also a stable log-curve over S log . Let us denote (as in Theorem 7.2) by
+ )
+IsomGO
+ΓK (ΠXK , ΠXK
+
+that are compatible with the
+the set of equivalence classes of isomorphisms ΠXK → ΠXK
+surjections to ΓK , modulo inner automorphisms arising from elements of the geometric
+fundamental group ΔXK ⊆ ΠXK . Finally, let us denote by slog the special point Spec(k) ⊆
+S equipped with the log structure pulled back from S log . We would like to use Proposition
+8.4 and Theorem 7.2 to obtain information on the special ﬁber of X log , but before we can
+do this, we need to clear up some technical issues concerning the notion of “degree.”
+
+35
+
+
+Thus, suppose that we are given an isomorphism α : ΠXK → ΠXK
+over ΓK . By
+adm
+adm
+: ΠX → Πadm
+over
+Proposition 8.4, this isomorphism induces an isomorphism α
+X
+adm
+Πslog . Let us denote the RT-degree of α
+(as discussed in Section 7) by dRT . We would
+like to show that in this case (i.e., when αadm arises from α), dRT is automatically equal
+to 1. In order to do this, we will have to look at several other notions of “degree” and
+show that they all coincide. From this, it will follow that dRT = 1.
+
+First, let us consider the p-adic fundamental class of XK :
+ηX,p ∈ H 2 (ΔXK , Zp (1))
+(i.e., the ﬁrst Chern class of a line bundle of degree one on XK ). We also have the l-adic
+fundamental class of XK :
+ηX,l ∈ H 2 (ΔXK , Zl (1))
+for primes l diﬀerent from p. Also, we have similar classes ηX ,p and ηX ,l for X  . Let us
+denote by
+dp ∈ Zp ×
+
+(respectively, dl ∈ Zl × )
+
+the unique unit such that ηX,p (respectively, ηX,l ) is taken to dp · ηX  ,p (respectively,
+dl · ηX  ,l ). Now we propose to prove that
+dp = dRT = dl ∈ Q
+Since dRT ∈ pZ , and dp ∈ Zp × , it will follow immediately that dRT = 1.
+Note that from the point of view of showing dp = dRT = dl , we may always replace
+XK by some ﬁnite étale covering of XK , since we know how the fundamental class behaves
+with respect to coverings (namely, it simply gets multiplied by the degree of the covering).
+We shall see below in the proof of Theorem 9.2 that by replacing XK by such a covering,
+we may assume that Xk is singular, and, moreover, that its graph is not a tree. We shall
+assume this until the end of the following proof and statement of Lemma 9.1.
+Let us ﬁrst consider the l-adic theory. Let HZ be the ﬁrst singular cohomology group
+of the dual graph of Xk . (Recall that the dual graph is the graph whose vertices (respectively, edges) are the irreducible components (respectively, nodes) of Xk .) Note that HZ is
+def
+
+equipped with a natural Gal(k/k)-action, hence a natural ΓK -action. Let HZl = HZ ⊗Z Zl .
+Now in Section 8, we considered the p-adic Tate module of JK , but since the theory of
+[FC] applies to the l-adic Tate modules as well, we can deﬁne similar exact sequences to
+those discussed in Section 8 in the l-adic case. Thus, we let VJl be the l-adic Tate module
+def
+
+of JK . Moreover, we obtain a ΓK -equivariant quotient VJl → PZl = P ⊗Z Zl , as well
+36
+
+as a submodule VTl ⊆ VJl . Here, we shall not regard PZl as the tensor product of some
+Z-module P with Zl , but rather solely in its capacity as a quotient of VJl . By the theory
+of [FC], Chapter III, it follows that as ΓK -modules, we have a natural isomorphism
+ζl : HZl (1) ∼
+= VTl
+We shall identify these two modules via ζl . This identiﬁcation is justiﬁed by the following
+observation: From our theory of irreducible components and nodes (Sections 1 and 5), it
+follows that α (or, more precisely, αadm ) induces a natural isomorphism αHZ : HZ ∼
+= HZ
+(where HZ is the object obtained from X  that corresponds to HZ ). Moreover, if we use
+primes to denote objects obtained from X  that correspond to various objects obtained
+from X, then we have a commutative diagram
+ζl
+
+HZl (1) −→
+⏐
+⏐α ⊗Z (1)
+ HZ l
+ζ
+
+l
+HZ l (1) −→
+
+VTl
+⏐
+⏐
+
+(VTl )
+
+where the vertical arrows are those naturally induced by α. It is the commutativity of this
+diagram that justiﬁes the identiﬁcation (based on ζl ) proposed above.
+Now we have an exact sequence 0 → V l → VJl → PZl → 0 (analogous to the pJ
+adic version of this exact sequence which was reviewed in Section 8). Clearly, it may
+be recovered group-theoretically from ΠXK → ΓK . In particular, PZl may be recovered
+group-theoretically from ΠXK → ΓK . Next recall from the theory of [FC], Chapter III,
+that there is a Z-bilinear pairing B : HZ × HomZ (P, Z) → K × /A× = Z which induces an
+injection of modules HZ → P , which becomes an isomorphism over Q. By Corollary 7.3
+of [FC], Chapter III, by considering the various extension classes involved and applying
+Kummer theory, the pairing
+def
+
+Bl = B ⊗ Zl : HZl × PZ∨l → Zl
+may be recovered from the extension 0 → V l → VJl → PZl → 0. This pairing determines
+J
+an injection HZl → PZl , which becomes an isomorphism over Ql . Thus, we may recover
+(group-theoretically from ΠXK → ΓK ) the injection HZ → PZl .
+1
+Now, let us note that VJl = Hom(ΔXK , Zl (1)) = Hét
+(ΔXK , Zl (1)). Thus, to summarize, we have an injection
+
+1
+(ΔXK , Zl (1))
+HZl (1) → Hét
+
+as well as a surjection (obtained by using the isomorphism HQl ∼
+= PQl derived above from
+B)
+37
+
+1
+Hét
+(ΔXK , Ql ) → HQl (−1)
+
+Now, by using the cup product operation in group cohomology, we obtain
+2
+(ΔXK , Ql (1))
+HQl ⊗Ql HQl → Hét
+
+Composing this with the natural inclusion HQ ⊗ HQ → HQl ⊗Ql HQl , we thus obtain
+2
+μl : HQ ⊗ HQ → Hét
+(ΔXK , Ql (1))
+
+Moreover, it follows from the theory of [FC], Chapter III, that there exists a nondegenerate bilinear form < −, − >: HQ × HQ → Q such that for all h1 , h2 ∈ HQ , we have
+μl (h1 , h2 ) =< h1 , h2 > ηX,l . Here, the bilinear form < −, − > is independent of l.
+Let us denote analogous objects associated to X  by means of primes. Thus, it follows
+immediately that we have a commutative diagram
+μl
+
+·ηX,l
+
+μ
+
+·ηX  ,l
+
+2
+(ΔXK , Ql (1))
+HQ ⊗ HQ −→ Hét
+⏐
+⏐
+⏐αH ⊗αH
+⏐ 2
+Q
+ Q
+Hét (α)
+
+
+HQ
+⊗ HQ
+
+l
+2
+ , Ql (1))
+−→
+Hét
+(ΔXK
+
+←−
+
+←−
+
+Zl
+⏐
+⏐d
+ l
+Zl
+
+whose vertical morphisms are those naturally induced by α. In particular, we obtain that
+
+(up to identifying HQ with HQ
+via αHQ ) dl · < −, − >=< −, − > . Moreover, the l-adic
+theory of the last few paragraphs goes through entirely without change in the p-adic case,
+as well. Thus, we obtain dp · < −, − >=< −, − > . In particular, (since the graph of Xk
+is not a tree, HZ = 0, so) dp = dl ∈ Q for every prime l diﬀerent from p. Since dl ∈ Zl ×
+and dp ∈ Zp × , we thus obtain that dp = dl = ±1.
+On the other hand, the relationship between dl and dRT can be established as follows.
+First note that, as we saw in Section 5, there is a natural combinatorial (perfect) duality
+(unrelated to the duality deﬁned by the form B) between HZl and PZl . (Indeed, in Section
+5, the discussion concerning “Lr ” and “KY ” shows that PZl is the ﬁrst homology group
+of the dual graph of Xk (with Zl -coeﬃcients), whereas HZl is – by deﬁnition – the ﬁrst
+cohomology group of the dual graph of Xk (with Zl -coeﬃcients).) Let us denote this
+duality by Dlcom : HZl ⊗Zl PZl → Zl . Moreover, relative to the natural combinatorial
+isomorphisms HZl ∼
+= HZ l and PZl ∼
+= PZ l (obtained from considering the isomorphisms
+between the graphs of Xk and Xk induced by αadm ), we have Dlcom = (Dlcom ) (since
+“everything is combinatorial”). Thus, we shall identify HZl , PZl and Dlcom with their
+primed counterparts in what follows.
+Now recall the natural inclusion HZl (1) ⊆ H 1 (ΔXK , Zl (1)), and the natural surjection
+H 1 (ΔXK , Zl ) → PZl (−1). Using the cup product in group cohomology, we thus obtain a
+38
+
+pairing HZl (1) ⊗ PZl (−1) = HZl ⊗ PZl → Zl · ηX,l . It is tautological that this pairing is
+simply Dlcom (−, −)· ηX,l . On the other hand, by recalling the deﬁnition of dRT (in terms of
+inertia groups) and the fact that the quotient VJl → PZl pertains to the inertia, it follows
+immediately that we have a commutative diagram
+∪
+
+2
+HZl (1) ⊗ PZl (−1) −→ Hét
+(ΔXK , Ql (1))
+⏐
+⏐
+⏐idH ⊗(dRT ·idP )
+⏐ 2
+ Zl
+Hét (α)
+Zl
+∪
+
+HZl (1) ⊗ PZl (−1) −→
+
+2
+ , Ql (1))
+Hét
+(ΔXK
+
+·ηX,l
+
+←−
+
+·ηX ,l
+
+←−
+
+Zl
+⏐
+⏐
+ dl
+Zl
+
+It thus follows that dl = dRT . Since dRT is positive, we thus obtain the following
+Lemma 9.1 :
+We have dp = dl = dRT = 1. In particular, ηX,p (respectively, ηX,l ) is
+taken to ηX  ,p (respectively, ηX  ,l ) by α.
+We are now ready to prove the following result:
+Theorem 9.2:
+Let K be a ﬁnite extension of Qp ; let A ⊆ K be its ring of integers;
+log
+and let S
+be Spec(A) equipped with the log structure deﬁned by the closed point. Let
+X log → S log and (X  )log → S log be stable log-curves (equipped with base-points x ∈ X(K)
+and x ∈ X  (K)). Then there exists a morphism
+log
+ log
+ ) → Isom log (X
+ξk : IsomGO
+s
+ΓK (ΠXK , ΠXK
+k , (X )k )
+
+that makes the following diagram commute
+ )
+IsomGO
+ΓK (ΠXK , ΠXK
+⏐
+⏐ξ
+k
+
+adm
+−→ IsomGO
+(Πadm
+X , ΠX  )
+Γtm
+K
+⏐
+⏐
+id
+
+GO
+adm
+adm
+Isomslog (Xklog , (X  )log
+k ) −→ IsomΓtm (ΠX , ΠX  )
+K
+
+(where the horizontal morphisms are the natural ones).
+Proof: This Theorem follows immediately from Theorem 7.2 (together with Proposition
+8.4 and Lemma 9.1) if it is the case that at least one of Xk or Xk is not smooth over k.
+Thus, it remains to consider the case when both Xk and Xk are smooth over k. In this
+case, let us (after possibly replacing K by a ﬁnite extension of K, which won’t aﬀect the
+ﬁnal result) assume that there exists a ﬁnite, abelian, étale covering YK → XK of degree p
+such that YK extends to a stable curve over S. Let G be the Galois group of YK over XK .
+By Lemma 8.3, YK → XK extends to a morphism Y → X. Moreover, by the review of the
+structure of VJ given in Section 8, it is easy to see that one can always choose YK → XK
+so that Y → X is not étale.
+39
+
+Then I claim that Yk is singular. Indeed, suppose that Yk is smooth over k. Let
+℘ ∈ X be the prime deﬁned by the special ﬁber. Then ℘ must be ramiﬁed in K(Y ) (the
+function ﬁeld of Y ), for if it were not ramiﬁed, it is easy to see that Y → X would be
+étale. On the other hand, since X and Y are both smooth over A, the statement that ℘ is
+ramiﬁed in K(Y ) means that K(Yk ) is an inseparable extension of K(Xk ) (of degree p).
+But this means that the genus of Yk (and hence of YK ) is the same as that of Xk . But
+since YK → XK is étale of degree p, this is absurd. This completes the proof of the claim.
+
+that respects the
+Now suppose that we are given an isomorphism φΠ : ΠXK → ΠXK
+surjections to ΓK . Then the covering YK → XK corresponds, via φ, to some covering
+
+YK → XK
+. Now we can apply the part of the Theorem that has already been established
+log
+log
+to Y
+and (Y  )log . We thus obtain an isomorphism φY : Yklog ∼
+= (Y  )k (over slog ). Now
+it is easy to see that the irreducible component C of Yklog that maps ﬁnitely to Xklog can be
+characterized group-theoretically as the unique component such that abelian étale coverings
+of Xklog of degree l (where l is prime to p) pull back to nontrivial coverings of C. Moreover,
+note that nonsplit admissible coverings of Xklog pull-back to nonsplit admissible coverings
+log
+of Yklog . Thus, one sees that φY induces a unique isomorphism φX : Xklog ∼
+= (X  )k such
+that the morphism induced by φX on Πadm ’s is compatible with the morphism induced on
+Πadm ’s by φΠ . This completes the proof of the Theorem. 
+
+Once Theorem 9.2 is in hand, the next natural step is to try to show that the isomorlog
+
+phism of Xklog ∼
+lifts to an isomorphism
+= (X  )k obtained from some φΠ : ΠXK → ΠXK
+log ∼
+ log
+log
+X
+= (X ) over S . Unfortunately, we do not succeed in doing this in general. The
+problem is as follows: Let GK be the p-divisible group over K deﬁned by the ΓK -module
+Hom(Qp /Zp , VJ ). Then the exact sequence 0 → VJ → VJ → P ⊗ (Qp /Zp ) → 0 of ΓK
+modules gives rise to an exact sequence of p-divisible groups over K:
+P
+0 → GK → GK → GK
+→0
+P
+extend, respecMoreover, it follows from the theory of [FC], Chapter III, that GK and GK
+P
+
+
+tively, to p-divisible groups G and G over S. (Here, G is the p-divisible group obtained
+ For readers used to this language, we note that it also
+from the semi-abelian scheme J.)
+follows from the theory of [FC], Chapter III, that GK extends to a log p-divisible group
+G log over S log . Finally, we also have primed objects G , (G P ) , etc. arising from (X  )log .
+ that respects the surjecNow let us observe that any isomorphism φΠ : ΠXK → ΠXK
+
+∼
+tions to ΓK deﬁnes an isomorphism φGK : GK = GK of p-divisible groups over K. Note
+
+
+that φGK maps GK into GK
+, hence induces an isomorphism φG : GK ∼
+. Moreover,
+= GK
+K
+it follows from a theorem of Tate ([Tate]) that φG extends uniquely to an isomorphism
+φG : G ∼
+= G . If we tensor this isomorphism with k, we thus obtain an isomorphism
+
+φG : Gk ∼
+= Gk
+k
+
+40
+
+On the other hand, note that Gk is the p-divisible group associated to Jk . Moreover,
+since Jk is the identity component of the Picard scheme of Xk , the isomorphism φX :
+log
+Xklog ∼
+= (X  )k thus induces an isomorphism P ic0 (Xk ) = Jk ∼
+= P ic0 (Xk ) = Jk , hence an
+isomorphism
+φP ic0 (X ) : Gk ∼
+= Gk
+Then the following fundamental question arises:
+Question 9.3:
+
+Is φG equal to φP ic0 (X )?
+k
+
+Remark: If one can prove that the answer to Question 9.3 is aﬃrmative, then it follows
+formally from the techniques discussed in this paper that one can prove a version of the
+Grothendieck Conjecture for hyperbolic curves over local ﬁelds. Unfortunately, however,
+because we are only able to settle Question 9.3 in the aﬃrmative under the additional
+assumption that the abelian variety Gk is ordinary (see Lemma 9.4 below), we are only
+able to prove (in the context of this paper) a relatively weak version of the Grothendieck
+Conjecture for hyperbolic curves over local ﬁelds (see Theorem 9.7 below). In fact, a very
+strong local version of the Grothendieck Conjecture is proven in [Mzk2]. The existence of
+such a local result implies a posteriori that the answer to Question 9.3 is always aﬃrmative.
+Nevertheless, it is still of interest to what extent Question 9.3 can be settled within the
+context of the present paper, and so we proceed to do this below.
+Now we would like to settle Question 9.3 in the aﬃrmative under the assumption that
+Gk is an ordinary abelian variety.
+Lemma 9.4 :
+Suppose that in the exact sequence of groups 0 → T → J → G → 0
+associated to the Jacobian J of X, the abelian variety Gk is ordinary. Then we have
+φG = φP ic0 (X ).
+k
+
+Proof: Indeed, in this case, the p-divisible group Gk admits a canonical splitting
+Gk = Gkmt ⊕ Gket
+into multiplicative and étale parts. Since both φG and φP ic0 (X ) clearly respect this splitk
+ting, it suﬃces to show that they agree on each of the direct summands. Note, moreover,
+ Also, the submodthat Gkmt lifts naturally to a multiplicative p-divisible group Gmt ⊆ G.
+mt
+is simply VJ mt . But VJ mt ⊆ VJ = H 1 (ΔXK , Zp (1)) is the
+ule of VJ ⊆ VJ deﬁned by GK
+portion of H 1 (ΔXK , Zp (1)) that arises from étale coverings of X (or, equivalently, Xk ).
+Thus, the fact that φG = φP ic0 (X ) on Gkmt follows from the commutativity of the diagram
+k
+in the statement of Theorem 9.2.
+41
+
+Let G be the p-divisible group over S arising from the abelian scheme G → S. Thus,
+we have a surjection G → G. Moreover, φG and φP ic0 (X ) induce isomorphisms Gk ∼
+= Gk .
+k
+Let us refer to an isomorphism of an object with its Cartier as dual as a polarization
+of the object. Now observe that we have two polarizations of Gk , one arising from the
+polarization of VJ , and the other arising from regarding Jk as P ic0 (Xk ). By the general
+theory of semi-abelian schemes (as discussed in [FC]), it follows that these polarizations
+of Gk coincide. Moreover, by Lemma 9.1, φG is compatible with the ﬁrst of the two
+K
+(coinciding) polarizations of Gk , while, by deﬁnition, φP ic0 (X ) is compatible with the second
+of the two (coinciding) polarizations of Gk . In particular, the fact that φG = φP ic0 (X ) on
+k
+Gkmt implies that φG = φP ic0 (X ) on Gket , hence on all of Gk . This completes the proof of
+k
+the Lemma. 
+Now let us suppose that we are in a situation where φG = φP ic0 (X ). Thus, it follows
+k
+Jk such that the resulting isomorphism on pthat we have an isomorphism φJ : Jk ∼
+=
+k
+divisible groups lifts to an isomorphism φG : G ∼
+= G over S. By “Grothendieck-Messing
+theory” (see, e.g., [FC], Chapter I, §3, for a review), it thus follows that φJ extends to a
+k
+
+∼
+
+
+unique isomorphism φJ : J = J compatible with φG. Moreover, one checks easily that the
+rest of the “semi-abelian degeneration data” for J (as in [FC], Chapter III, §2) is determined
+by the extension 0 → VJ → VJ → PZp → 0 (and its l-adic counterparts, for l = p), as well
+as other data that we have already seen to be group-theoretically characterizable. Thus,
+we conclude (by the natural categorical equivalences of [FC], Chapter III, Corollary 7.2)
+that we have an isomorphism
+φJ : J ∼
+= J
+which is uniquely determined by the condition that it is compatible with φGK . Moreover,
+φJ is compatible (by Lemma 9.1) with the canonical polarizations on J and J  . Thus, by
+Torelli’s theorem ([Milne], Theorem 12.1), we conclude that there is an isomorphism
+ψ:X ∼
+= X
+such that the isomorphism induced by ψ on Jacobians is ±φJ . Note that ψ always extends
+to a unique log-isomorphism ψ log : X log ∼
+= (X  )log .
+Deﬁnition 9.5:
+Let us call X ordinary if Gk is an ordinary abelian variety. Let us
+call X equi-hyperelliptic if either (i) XK is hyperelliptic; or (ii) Xklog does not admit an
+slog -automorphism that induces −1 on Jk .
+Note that if p is odd, then (ii) is equivalent to the condition that Xklog not arise as a
+logarithmic degeneration of a smooth hyperelliptic curve. (Here, by “logarithmic degeneration,” we mean that it arises as the special ﬁber of some generically smooth, generically
+42
+
+hyperelliptic log-curve over a trait equipped with the log structure deﬁned by the special
+point.) Indeed, that (ii) implies this condition is clear. On the other hand, suppose that
+this condition is satisﬁed, but that there exists an automorphism α of Xklog that induces
+−1 on Jk . Thus, α2 = id. But then it is easy to see that by forming the quotient of Xklog by
+the group < 1, α >, we can exhibit Xklog (up to adding some more marked points to Xklog
+and modifying the log structure accordingly) as an admissible double covering of a stable
+log-curve curve of genus 0. In particular, Xklog will then be a logarithmic degeneration of
+a smooth hyperelliptic curve, as desired.
+Moreover, we have the following
+Lemma 9.6 :
+φJ .
+
+If X is equi-hyperelliptic, then we can choose ψ to be compatible with
+
+Proof: Indeed, this is clear in case (i) (of the deﬁnition of “equi-hyperelliptic”) since
+then the hyperelliptic involution of XK (which induces −1 on the Jacobian) extends to an
+automorphism of X, so we can always adjust ψ accordingly. On the other hand, suppose
+that we are in case (ii), and that ψ is compatible with −φJ . Then ψk diﬀers from the
+log
+log
+isomorphism φX : Xklog ∼
+= (X  )k by an automorphism α of Xk that induces −1 on Jk ,
+thus violating the assumption that X is equi-hyperelliptic. This completes the proof. 
+If Xklog does not satisfy condition (ii) of Deﬁnition 9.5, let α be the (necessarily
+adm
+adm
+unique) oﬀending automorphism. Let ι ∈ IsomGO
+Γtm (ΠX , ΠX ) be the (equivalence class
+K
+
+adm
+(Πadm
+of) isomorphism(s) induced by α. Note that by Theorem 7.2, if IsomΓtm
+X , ΠX  ) is
+K
+
+nonempty, then Xklog has an oﬀending automorphism if and only if (X  )log
+k does. Now let
+us deﬁne
+adm
+adm
+IsomGOH
+Γtm (ΠX , ΠX  )
+K
+
+adm
+to be the set of equivalence classes of elements of IsomGO
+(Πadm
+X , ΠX  ), where two classes
+Γtm
+K
+are considered equivalent
+of isomorphisms Πadm ∼
+= Πadm
+
+X
+
+X
+
+(1) if they are equal or diﬀer at most by composition with ι (when α exists);
+(2) if they are equal (when α does not exist).
+It is easy to show that this equivalence relation is well-deﬁned, and compatible with the
+equivalence relation used to deﬁne IsomGO from Isom.
+Now we are ready to state the strongest version of the Grothendieck Conjecture that
+we are able to prove (in the context of the present paper) in the local case.
+43
+
+Theorem 9.7:
+Let K be a ﬁnite extension of Qp ; let A ⊆ K be its ring of integers;
+and let S log be Spec(A) equipped with the log structure deﬁned by the closed point. Let
+X log → S log and (X  )log → S log be stable log-curves (equipped with base-points x ∈ X(K)
+and x ∈ X  (K)). Suppose that at least one of X and X  is ordinary. Then there exists a
+(not necessarily unique) morphism
+log
+ ) → Isom log (X
+ξS : IsomGO
+, (X  )log )
+S
+ΓK (ΠXK , ΠXK
+
+that makes the following diagram commute
+−→
+
+adm
+IsomGO
+(Πadm
+X , ΠX  )
+Γtm
+K
+⏐
+⏐
+
+
+IsomS log (X log , (X  )log ) −→
+
+adm
+adm
+IsomGOH
+Γtm (ΠX , ΠX  )
+
+ )
+IsomGO
+ΓK (ΠXK , ΠXK
+⏐
+⏐ξ
+S
+
+K
+
+(where the morphisms other than ξS are the natural ones).
+Moreover, if either X or X  is equi-hyperelliptic, then one can choose ξS uniquely such
+that the above diagram commutes when the projection on the right is replaced by the
+adm
+adm
+identity on IsomGO
+Γtm (ΠX , ΠX  ).
+K
+
+Finally, just as we derived Theorem 7.4 from Theorem 7.2, we have the following
+“outer automorphism version” of Theorem 9.7: First, let us denote by
+ρX : ΓK → Out(ΔXK )
+the representation derived from the extension 1 → ΔXK → ΠXK → ΓK → 1. Then we
+have the following
+Theorem 9.8:
+Let K be a ﬁnite extension of Qp ; let A ⊆ K be its ring of integers;
+and let S log be Spec(A) equipped with the log structure deﬁned by the closed point. Let
+X log → S log be an ordinary stable log-curve of genus g. Then the isomorphism class of
+X log is completely determined by the isomorphism class of the representation
+ρX : ΓK → Out(ΔXK )
+
+Remark: Note that Theorem 9.8 shows that ordinary hyperbolic curves over local ﬁelds
+behave quite diﬀerently from ordinary abelian varieties over local ﬁelds. Indeed, given an
+ordinary elliptic curve Ek → Spec(k), it is easy to see (using the Serre-Tate theory of
+liftings of ordinary abelian varieties) that there exist many mutually nonisogenous liftings
+E → Spec(A) (where A = W (k)) of Ek to A, for which the representations
+44
+
+ρE : ΓK → Out(π1 (EK )) = AutZ
+ (π1 (EK ))
+are isomorphic.
+Section 10: The Main Result over Number Fields
+In this Section, we prove the Grothendieck Conjecture for closed hyperbolic curves
+over number ﬁelds. The only result from Section 9 (the local theory) that we will use is
+Theorem 9.2; the rest of Section 9 is unnecessary. We will concentrate here on the closed
+case, since the open case has already been proven in [Tama].
+Let K be a ﬁnite extension of Q. Choose an algebraic closure K of K, and write ΓK
+for Gal(K/K). Let XK → Spec(K) be a smooth hyperbolic (i.e., of genus ≥ 2) curve. (By
+this, we shall always mean that XK is geometrically connected over K.) Suppose that we
+def
+
+def
+
+are given a base-point x ∈ X(K). Let ΠXK = π1 (XK , xK ); ΔXK = π1 (XK , xK ). Thus,
+we have a natural exact sequence
+1 → ΔXK → ΠXK → ΓK → 1
+Then we have the following result
+
+Theorem 10.1:
+Let K be a ﬁnite extension of Q. Let XK → Spec(K) and XK
+→
+Spec(K) be smooth hyperbolic curves over K, equipped with base-points x ∈ X(K) and
+x ∈ X  (K)). Then the natural map
+
+ )
+IsomK (XK , XK
+) → IsomGO
+ΓK (ΠXK , ΠXK
+
+is bijective.
+ compatible with the surjections to ΓK . Let
+Proof: Pick an isomorphism α : ΠXK ∼
+= ΠXK
+
+A be a localization of the ring of integers of K over which XK and XK
+extend to smooth
+
+curves X → S, X → S (where S = Spec(A)). Let I → S be the scheme IsomS (X, X  ) of
+isomorphisms of X with X  over S. It is well-known that I is ﬁnite and unramiﬁed over
+S. By localizing A further, we may assume that I is étale over S. Fix a prime number
+l. By localizing A further, we may assume that l ∈ A× . Let ℘ be a ﬁnite prime of A;
+let A℘ be the completion of A at ℘. By base-changing to A℘ and applying Theorem 9.2,
+we conclude that there exists a unique β ∈ I(A℘ ) such that the isomorphism deﬁned by
+β induces the same isomorphism as α on the ﬁrst l-adic cohomology groups of X and
+X  . Note that β is, in fact, deﬁned over some ﬁnite Galois extension L of K. Denote the
+resulting point of I(L) by γ. To see that γ descends to K, it suﬃces to note that γ is
+the unique point of I(L) that induces the right isomorphism on the H 1 (−, Zl )’s. Thus, γ
+
+45
+
+
+descends to K. Thus, we obtain a K-isomorphism ψ : XK ∼
+corresponding to γ. To
+= XK
+see that the isomorphism ΠXK ∼
+= ΠX induced by ψ coincides with the original α (up to
+an inner automorphism induced by an element of ΔXK ), we apply the same argument as
+that given in [Tama] or the discussion preceding Theorem 7.2. (Note that here, we also
+use the well-known fact that ΓK has trivial center.) 
+
+Now, as usual, we denote by
+ρX : ΓK → Out(ΔXK )
+the representation derived from the extension 1 → ΔXK → ΠXK → ΓK → 1. Just as in
+ ). Then we have the
+the discussion preceding Theorem 7.4, we may form Outρ (ΔXK , ΔXK
+following
+
+Theorem 10.2:
+Let K be a ﬁnite extension of Q. Let XK → Spec(K) and XK
+→
+Spec(K) be smooth hyperbolic curves over K. Then the natural map
+
+
+ )
+) → Outρ (ΔXK , ΔXK
+IsomK (XK , XK
+
+is bijective.
+
+Bibliography
+
+[DM] P. Deligne and D. Mumford, The irreducibility of the space of curves of a given genus,
+Publ. Math. IHES 36 (1969), pp. 75-110.
+[FC] G. Faltings and C.-L. Chai, Degenerations of Abelian Varieties, Springer-Verlag, 1990.
+[Fuji] K. Fujiwara, Étale topology to log no tetsugaku (in Japanese), Proceedings of the
+Algebraic Geometry Symposium in Kinosaki, 1990.
+[Lipman] J. Lipman, Desingularization of two-dimensional schemes, Ann. Math. 107 (1978),
+pp. 151-207.
+[Milne] J. S. Milne, Jacobian Varieties in Arithmetic Geometry by G. Cornell and J. H.
+Silverman, Springer-Verlag, 1986.
+[Mzk] S. Mochizuki, The Geometry of the Compactiﬁcation of the Hurwitz Scheme, Publ. of
+RIMS. 31, No. 3 (1995), pp. 355-441.
+[Mzk2] S. Mochizuki, The Local Pro-p Grothendieck Conjecture for Hyperbolic Curves, RIMS
+(Kyoto University) Preprint 1045 (1995).
+46
+
+[SGA7] A. Grothendieck et al., Groupes de Monodromie en Géometrie Algébrique, Lecture
+Notes in Math. 288, Springer Verlag, 1972.
+[Shatz] S. S. Shatz, Proﬁnite Groups, Arithmetic, and Geometry, Ann. of Math. Studies 67,
+Princeton University Press, 1972.
+[Tama] A. Tamagawa, The Grothendieck Conjecture for Aﬃne Curves, RIMS (Kyoto University) Preprint 1064 (1996); also, to appear in Compositio Math..
+[Tate] J. Tate, p-Divisible Groups, Proceedings of a Conference on Local Fields, Driebergen,
+Springer-Verlag, 1967, pp. 158-183.
+[Uchi] K. Uchida, Isomorphisms of Galois groups of solvably closed Galois extensions, Ann.
+of Math. 106 (1977), pp. 589-598.
+
+47
+
+

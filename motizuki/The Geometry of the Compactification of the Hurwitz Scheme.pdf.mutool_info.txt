@@ -1,0 +1,30 @@
+The Geometry of the Compactification of the Hurwitz Scheme.pdf:
+
+PDF-1.5
+Info object (381 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107212053+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111107212053+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(Text.dvi)>>
+Pages: 77
+
+Retrieving info from pages 1-77...
+Mediaboxes (1):
+	1	(384 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (17):
+	1	(384 0 R):	Type1 'HOLMBH+CMBX10' (404 0 R)
+	1	(384 0 R):	Type1 'HOLMCI+CMR10' (407 0 R)
+	1	(384 0 R):	Type1 'HOLMCJ+CMSY10' (410 0 R)
+	1	(384 0 R):	Type1 'HOLMCK+CMMI10' (413 0 R)
+	2	(1 0 R):	Type1 'HOLMEK+CMBX7' (343 0 R)
+	2	(1 0 R):	Type1 'HOLMEL+CMSL10' (349 0 R)
+	2	(1 0 R):	Type1 'HOLMFM+CMR7' (340 0 R)
+	2	(1 0 R):	Type1 'HOLMFN+CMMI7' (345 0 R)
+	2	(1 0 R):	Type1 'HOLMFO+CMTI10' (336 0 R)
+	3	(4 0 R):	Type1 'HOLMHO+CMSY7' (350 0 R)
+	6	(13 0 R):	Type1 'HOLMPM+CMEX10' (354 0 R)
+	9	(22 0 R):	Type1 'HOLNFK+CMR5' (357 0 R)
+	13	(34 0 R):	Type1 'HOLNMJ+CMMI5' (359 0 R)
+	21	(58 0 R):	Type1 'HOLOMD+CMSY5' (362 0 R)
+	40	(115 0 R):	TrueType 'TimesNewRomanPSMT' WinAnsiEncoding (365 0 R)
+	44	(127 0 R):	TrueType 'TimesNewRomanPS-BoldMT' WinAnsiEncoding (367 0 R)
+	47	(136 0 R):	Type1 'HOMCDC+Symbol' (369 0 R)
+

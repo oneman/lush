@@ -1,0 +1,28 @@
+The Intrinsic Hodge Theory of Hyperbolic Curves (Seoul 1998).pdf:
+
+PDF-1.5
+Info object (109 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107212458+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111107212458+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(MANU.DVI)>>
+Pages: 18
+
+Retrieving info from pages 1-18...
+Mediaboxes (1):
+	1	(112 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (15):
+	1	(112 0 R):	Type1 'ICHKFG+CMR10' (149 0 R)
+	1	(112 0 R):	Type1 'ICHKFH+CMCSC10' (152 0 R)
+	1	(112 0 R):	Type1 'ICHKFI+CMBX10' (155 0 R)
+	1	(112 0 R):	Type1 'ICHKGJ+CMTI10' (158 0 R)
+	1	(112 0 R):	Type1 'ICHKGK+CMR7' (161 0 R)
+	1	(112 0 R):	Type1 'ICHKGL+CMMI10' (164 0 R)
+	1	(112 0 R):	Type1 'ICHKGM+CMSY10' (167 0 R)
+	1	(112 0 R):	Type1 'ICHKGN+CMMI7' (170 0 R)
+	1	(112 0 R):	Type1 'ICHKHN+CMSY7' (173 0 R)
+	3	(4 0 R):	Type1 'ICHKLN+CMBX7' (95 0 R)
+	3	(4 0 R):	Type1 'ICHKLO+CMMI5' (93 0 R)
+	3	(4 0 R):	Type1 'ICHKLP+CMR5' (92 0 R)
+	3	(4 0 R):	Type1 'ICHKMA+CMBX5' (89 0 R)
+	6	(15 0 R):	Type1 'ICHLBO+EUFM10' (100 0 R)
+	7	(18 0 R):	Type1 'ICHLEO+CMEX10' (101 0 R)
+

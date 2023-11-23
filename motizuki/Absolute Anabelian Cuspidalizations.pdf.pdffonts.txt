@@ -1,0 +1,28 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+OGNCPD+CMBX10                        Type 1C           Custom           yes yes yes    485  0
+OGNDDK+CMMI7                         Type 1C           Custom           yes yes yes    488  0
+OGNDDL+CMSY8                         Type 1C           Custom           yes yes yes    491  0
+OGNDAE+CMCSC10                       Type 1C           Custom           yes yes yes    494  0
+OGNDAF+CMR10                         Type 1C           Custom           yes yes yes    497  0
+OGNDCF+CMR8                          Type 1C           Custom           yes yes yes    500  0
+OGNDCG+CMTI8                         Type 1C           Custom           yes yes yes    503  0
+OGNDCH+CMMI8                         Type 1C           Custom           yes yes yes    506  0
+OGNDCI+CMSY10                        Type 1C           Custom           yes yes yes    509  0
+OGNDDI+CMMI10                        Type 1C           Custom           yes yes yes    512  0
+OGNDDJ+CMTI10                        Type 1C           Custom           yes yes yes    515  0
+T1                                   Type 3            Custom           yes no  no     519  0
+OGNDHL+CMEX10                        Type 1C           Custom           yes yes yes    385  0
+OGNDIL+MSBM10                        Type 1C           Custom           yes yes yes    384  0
+OGNDIM+EUFM10                        Type 1C           Custom           yes yes yes    393  0
+OGNDJN+CMR7                          Type 1C           Custom           yes yes yes    390  0
+OGNDJO+CMSY7                         Type 1C           Custom           yes yes yes    387  0
+OGNDNN+MSBM7                         Type 1C           Custom           yes yes yes    401  0
+OGNDNO+CMR5                          Type 1C           Custom           yes yes yes    398  0
+OGNDNP+CMMI5                         Type 1C           Custom           yes yes yes    395  0
+OGNECO+MSAM10                        Type 1C           Custom           yes yes no     404  0
+OGNEGO+CMSY5                         Type 1C           Custom           yes yes yes    411  0
+T2                                   Type 3            Custom           yes no  no     407  0
+OGNHFM+CMMIB10                       Type 1C           Custom           yes yes yes    414  0
+OGNJDB+CMMIB7                        Type 1C           Custom           yes yes yes    417  0
+OGNONM+CMSL10                        Type 1C           Custom           yes yes yes    418  0

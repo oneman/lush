@@ -1,0 +1,19 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+HOLMBH+CMBX10                        Type 1C           Custom           yes yes yes    404  0
+HOLMCI+CMR10                         Type 1C           Custom           yes yes yes    407  0
+HOLMCJ+CMSY10                        Type 1C           Custom           yes yes yes    410  0
+HOLMCK+CMMI10                        Type 1C           Custom           yes yes yes    413  0
+HOLMEK+CMBX7                         Type 1C           Custom           yes yes yes    343  0
+HOLMEL+CMSL10                        Type 1C           Custom           yes yes yes    349  0
+HOLMFM+CMR7                          Type 1C           Custom           yes yes yes    340  0
+HOLMFN+CMMI7                         Type 1C           Custom           yes yes yes    345  0
+HOLMFO+CMTI10                        Type 1C           Custom           yes yes yes    336  0
+HOLMHO+CMSY7                         Type 1C           Custom           yes yes yes    350  0
+HOLMPM+CMEX10                        Type 1C           Custom           yes yes yes    354  0
+HOLNFK+CMR5                          Type 1C           Custom           yes yes yes    357  0
+HOLNMJ+CMMI5                         Type 1C           Custom           yes yes yes    359  0
+HOLOMD+CMSY5                         Type 1C           Custom           yes yes yes    362  0
+TimesNewRomanPSMT                    TrueType          WinAnsi          no  no  no     365  0
+TimesNewRomanPS-BoldMT               TrueType          WinAnsi          no  no  no     367  0
+HOMCDC+Symbol                        Type 1C           Custom           yes yes yes    369  0

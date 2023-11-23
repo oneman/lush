@@ -1,0 +1,1502 @@
+A COMBINATORIAL VERSION OF
+THE GROTHENDIECK CONJECTURE
+
+Shinichi Mochizuki
+April 2007
+
+
+
+We study the “combinatorial anabelian geometry” that governs the relationship between the dual semi-graph of a pointed stable curve and various associated
+proﬁnite fundamental groups of the pointed stable curve. Although many results of
+this type have been obtained previously in various particular situations of interest
+under unnecessarily strong hypotheses, the goal of the present paper is to step back
+from such “typical situations of interest” and instead to consider this topic in the
+abstract — a point of view which allows one to prove results of this type in much
+greater generality under very weak hypotheses.
+
+Introduction
+In this paper, we apply the language of anabelioids [cf. [Mzk5], [Mzk7]] to study
+the “proﬁnite combinatorial group theory” arising from the relationship between
+the semi-graph of anabelioids associated to a pointed stable curve [i.e., a “semigraph of anabelioids of PSC-type” — cf. Deﬁnition 1.1, (i), below for more details]
+and a certain associated proﬁnite fundamental group [cf. Deﬁnition 1.1, (ii)]. In
+particular, we show that:
+(i) The cuspidal portion of the semi-graph may be recovered group-theoretically from the associated proﬁnite fundamental group, together with certain
+numerical information [roughly speaking, the number of cusps of the various ﬁnite étale coverings of the given semi-graph of anabelioids] — cf.
+Theorem 1.6, (i).
+(ii) The entire “semi-graph of anabelioids structure” may be recovered grouptheoretically from the associated proﬁnite fundamental group, together
+with a certain ﬁltration [arising from this “semi-graph of anabelioids structure”] of the abelianizations of the various ﬁnite étale coverings of the given
+semi-graph of anabelioids — cf. Theorem 1.6, (ii).
+2000 Mathematical Subject Classiﬁcation. Primary 14H30; Secondary 14H25.
+Partly supported by the Grant-in-Aid for Young Scientists (B), The Ministry of Education,
+Culture, Sports, Science and Technology, Japan.
+Typeset by AMS-TEX
+1
+
+2
+
+SHINICHI MOCHIZUKI
+
+Moreover, we show that from the point of view of “weights” [i.e., logarithms of
+absolute values of eigenvalues of the action of the Frobenius element of the Galois
+group of a ﬁnite ﬁeld], the data necessary for (i) (respectively, (ii)) above may be
+recovered from very weak assumptions concerning the “weights” — cf. Corollary
+2.7, (i), (ii). In particular, [unlike the techniques of [Mzk4], Lemmas 1.3.9, 2.3,
+for example] these very weak assumptions do not even require the existence of a
+particular Frobenius element. Alternatively, when there are no cusps, the data
+necessary for (ii) may be recovered from very weak assumptions concerning the ladic inertia action [cf. Corollary 2.7, (iii)] — i.e., one does not even need to consider
+weights. This sort of result may be regarded as a strengthening of various results
+to the eﬀect that a curve has good reduction if and only if the l-adic inertia action
+is trivial [cf., e.g., [Tama1], Theorem 0.8].
+One consequence of this theory is the result [cf. Corollary 2.7, (iv)] that the
+subgroup of the group of outer automorphisms of the associated fundamental group
+consisting of the graphic outer automorphisms [i.e., the automorphisms that are
+compatible with the “semi-graph of anabelioids structure”] is equal to its own commensurator within the entire group of outer automorphisms. This result may be
+regarded as a sort of “anabelian analogue” of a well-known “linear algebra fact”
+concerning the general linear group [cf. Remark 2.7.1].
+The original motivation for the development of the theory of the present paper
+is as follows: Frequently, in discussions of the anabelian geometry of hyperbolic
+curves, one ﬁnds it necessary to reconstruct the cusps [cf., e.g., [Naka1], Theorem
+3.4; [Mzk4], Lemma 1.3.9; [Tama2], Lemma 2.3, Proposition 2.4] or the entire dual
+semi-graph associated to a pointed stable curve [cf., e.g., [Mzk2], §1 – 5; [Mzk4],
+Lemma 2.3] group-theoretically from some associated proﬁnite fundamental group.
+Moreover, although the techniques for doing this in various diverse situations are
+quite similar and only require much weaker assumptions than the assumptions that
+often hold in particular situations of interest, up till now, there was no uniﬁed
+presentation or general results concerning this topic — only a collection of papers
+covering various “particular situations of interest”. Thus, the goal of the present
+paper is to prove results concerning this topic in maximum possible generality, in
+the hope that this may prove useful in applications to situations not covered in
+previous papers [cf., e.g., Corollaries 2.8, 2.9, 2.10; Remarks 2.8.1, 2.8.2].
+The author would like to thank Akio Tamagawa for various helpful comments
+concerning the material presented in this paper.
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+3
+
+Section 0: Notation and Conventions
+Numbers:
+The notation Q will be used to denote the ﬁeld of rational numbers. The
+notation Z ⊆ Q will be used to denote the set, group, or ring of rational integers.
+The notation N ⊆ Z will be used to denote the submonoid of integers ≥ 0. If l is
+a prime number, then the notation Ql (respectively, Zl ) will be used to denote the
+l-adic completion of Q (respectively, Z).
+Topological Groups:
+Let G be a Hausdorﬀ topological group, and H ⊆ G a closed subgroup. Let us
+write
+def
+ZG (H) = {g ∈ G | g · h = h · g for any h ∈ H}
+for the centralizer of H in G;
+NG (H) = {g ∈ G | g · H · g −1 = H}
+def
+
+for the normalizer of H in G; and
+CG (H) = {g ∈ G | (g · H · g −1 )
+def
+
+
+
+H has ﬁnite index in H, g · H · g −1 }
+
+for the commensurator of H in G. Note that: (i) ZG (H), NG (H) and CG (H) are
+subgroups of G; (ii) we have inclusions
+H, ZG (H) ⊆ NG (H) ⊆ CG (H)
+and (iii) H is normal in NG (H). We shall say that H is centrally (respectively,
+normally; commensurably) terminal in G if ZG (H) = H (respectively, NG (H) = H;
+CG (H) = H).
+We shall denote the group of automorphisms of G by Aut(G). Conjugation by
+elements of G determines a homomorphism G → Aut(G) whose image consists of
+the inner automorphisms of G. We shall denote by Out(G) the quotient of Aut(G)
+by the [normal] subgroup consisting of the inner automorphisms.
+Curves:
+Suppose that g ≥ 0 is an integer. Then if S is a scheme, a family of curves of
+genus g
+X→S
+is deﬁned to be a smooth, proper, geometrically connected morphism of schemes
+X → S whose geometric ﬁbers are curves of genus g.
+
+4
+
+SHINICHI MOCHIZUKI
+
+Suppose that g, r ≥ 0 are integers such that 2g − 2 + r > 0. We shall denote
+the moduli stack of r-pointed stable curves of genus g (where we assume the points
+to be unordered) by Mg,r [cf. [DM], [Knud] for an exposition of the theory of such
+curves; strictly speaking, [Knud] treats the ﬁnite étale covering of Mg,r determined
+by ordering the marked points]. The open substack Mg,r ⊆ Mg,r of smooth curves
+will be referred to as the moduli stack of smooth r-pointed stable curves of genus g
+or, alternatively, as the moduli stack of hyperbolic curves of type (g, r). The divisor
+at inﬁnity Mg,r \Mg,r of Mg,r determines a log structure on Mg,r ; denote the
+log
+
+resulting log stack by Mg,r .
+A family of hyperbolic curves of type (g, r)
+X→S
+is deﬁned to be a morphism which factors X → Y → S as the composite of an
+open immersion X → Y onto the complement Y \D of a relative divisor D ⊆ Y
+which is ﬁnite étale over S of relative degree r, and a family Y → S of curves of
+genus g. One checks easily that, if S is normal, then the pair (Y, D) is unique up
+to canonical isomorphism. (Indeed, when S is the spectrum of a ﬁeld, this fact is
+well-known from the elementary theory of algebraic curves. Next, we consider an
+arbitrary connected normal S on which a prime l is invertible (which, by Zariski
+localization, we may assume without loss of generality). Denote by S  → S the ﬁnite
+étale covering parametrizing orderings of the marked points and trivializations of
+the l-torsion points of the Jacobian of Y . Note that S  → S is independent of
+the choice of (Y, D), since (by the normality of S), S  may be constructed as the
+normalization of S in the function ﬁeld of S  (which is independent of the choice
+of (Y, D), since the restriction of (Y, D) to the generic point of S has already been
+shown to be unique). Thus, the uniqueness of (Y, D) follows by considering the
+classifying morphism (associated to (Y, D)) from S  to the ﬁnite étale covering
+of (Mg,r )Z[1/l] parametrizing orderings of the marked points and trivializations
+of the l-torsion points of the Jacobian [since this covering is well-known to be a
+scheme, for l suﬃciently large].) We shall refer to Y (respectively, D; D; D) as the
+compactiﬁcation (respectively, divisor at inﬁnity; divisor of cusps; divisor of marked
+points) of X. A family of hyperbolic curves X → S is deﬁned to be a morphism
+X → S such that the restriction of this morphism to each connected component of
+S is a family of hyperbolic curves of type (g, r) for some integers (g, r) as above.
+Write
+C g,r → Mg,r
+for the tautological curve over Mg,r ; Dg,r ⊆ Mg,r for the corresponding tautological
+divisor of marked points. The divisor given by the union of D g,r with the inverse
+image in C g,r of the divisor at inﬁnity of Mg,r determines a log structure on C g,r ;
+log
+
+denote the resulting log stack by C g,r . Thus, we obtain a morphism of log stacks
+log
+
+log
+
+C g,r → Mg,r
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+5
+
+log
+
+which we refer to as the tautological log curve over Mg,r . If S log is any log scheme,
+then we shall refer to a morphism
+C log → S log
+which is obtained as the pull-back of the tautological log curve via some [necessarily
+log
+uniquely determined — cf., e.g., [Mzk1], §3] classifying morphism S log → Mg,r as a
+stable log curve. If C has no nodes, then we shall refer to C log → S log as a smooth
+log curve.
+If XK (respectively, YL ) is a hyperbolic curve over a ﬁeld K (respectively, L),
+then we shall say that XK is isogenous to YL if there exists a hyperbolic curve ZM
+over a ﬁeld M together with ﬁnite étale morphisms ZM → XK , ZM → YL .
+
+6
+
+SHINICHI MOCHIZUKI
+
+Section 1: Criterion for Graphicity
+In the present §1, we state and prove a criterion for an isomorphism between the
+proﬁnite fundamental groups of pointed stable curves to arise from an isomorphism
+of [semi-]graphs of groups. To do this, we shall ﬁnd it convenient to use the language
+of anabelioids [cf. [Mzk5]], together with the theory of semi-graphs of anabelioids
+of [Mzk7].
+Let Σ be a nonempty set of prime numbers. Denote by
+Σ
+Z
+the pro-Σ completion of Z. Let G be a semi-graph of anabelioids [cf. [Mzk7],
+Deﬁnition 2.1], whose underlying semi-graph we denote by G. Thus, for each vertex
+v (respectively, edge e) of G, we are given a connected anabelioid [i.e., a Galois
+category] Gv (respectively, Ge ), and for each branch b of an edge e abutting to a
+vertex v, we are given a morphism of anabelioids Ge → Gv .
+Deﬁnition 1.1.
+(i) We shall refer to G as being of pro-Σ PSC-type [i.e., “pointed stable curve
+type”] if it arises as the pro-Σ completion [cf. [Mzk7], Deﬁnition 2.9, (ii)] of the semigraph of anabelioids determined by the “dual semi-graph of proﬁnite groups with
+c
+compact structure” [i.e., the object denoted “GX
+” in the discussion of pointed stable
+curves in [Mzk4], Appendix] of a pointed stable curve over an algebraically closed
+ﬁeld whose characteristic ∈ Σ. [Thus, the vertices (respectively, closed edges; open
+edges) of G correspond to the irreducible components (respectively, nodes; cusps [i.e.,
+marked points]) of the pointed stable curve.] We shall refer to G as being of PSCtype if it is of pro-Σ PSC-type for some nonempty set of prime numbers Σ. If G is a
+semi-graph of anabelioids of PSC-type, then we shall refer to the open (respectively,
+closed) edges of the underlying semi-graph G of G as the cusps (respectively, nodes)
+of G [or G] and write r(G) (respectively, n(G)) for the cardinality of the set of cusps
+(respectively, nodes) of G; if r(G) = 0 (respectively, n(G) = 0), then we shall say
+that G is noncuspidal (respectively, nonnodal). Also, we shall write i(G) for the
+cardinality of the set of vertices of G.
+(ii) Suppose that G is of pro-Σ PSC-type. Then we shall denote by
+ΠG
+and refer to as the PSC-fundamental group of G the maximal pro-Σ quotient of the
+proﬁnite fundamental group of G [cf. [Mzk7], the discussion following Deﬁnition
+2.2]; we shall refer to a ﬁnite étale covering of G that arises from an open subgroup of
+ΠG as a [ﬁnite étale] ΠG -covering of G. A vertex (respectively, edge) of G determines,
+up to conjugation, a closed subgroup of ΠG ; we shall refer to such subgroups as
+verticial (respectively, edge-like). An edge-like subgroup that arises from a closed
+edge will be referred to as nodal; an edge-like subgroup that arises from an open
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+7
+
+edge will be referred to as cuspidal. Write MG for the abelianization of ΠG . Then
+the cuspidal, edge-like, and verticial subgroups of ΠG determine submodules
+MGcusp ⊆ MGedge ⊆ MGvert ⊆ MG
+of MG , which we shall refer to as cuspidal, edge-like, and verticial, respectively. We
+shall refer to any cyclic ﬁnite étale covering of G which arises from a ﬁnite quotient
+MG  Q that factors through MG /MGcusp and induces a surjection MGedge /MGcusp 
+Q as module-wise nodal. If one forms the quotient of ΠG by the closed normal
+subgroup generated by the cuspidal [cf. the ﬁrst “” in the following display],
+edge-like [cf. the composite of the ﬁrst two “’s” in the following display], or
+verticial [cf. the composite of the three “’s” in the following display] subgroups,
+then one obtains arrows as follows:
+grph
+unr
+ΠG  Πcpt
+G  ΠG  ΠG
+grph
+unr
+We shall refer to Πcpt
+) as the compactiﬁed (respectively,
+G (respectively, ΠG ; ΠG
+unramiﬁed; graph-theoretic) quotient of ΠG . We shall refer to a ΠG -covering of G
+grph
+(respectively, Πunr
+) as a Πcpt
+that arises from an open subgroup of Πcpt
+G ; ΠG
+G
+G grph
+unr
+(respectively, ΠG -; ΠG -) covering of G. We shall refer to the images of the verunr
+ticial (respectively, verticial; edge-like) subgroups of ΠG in Πcpt
+G (respectively, ΠG ;
+Πcpt
+G ) as the compactiﬁed verticial (respectively, unramiﬁed verticial; compactiﬁed
+edge-like) subgroups. If the abelianization of every unramiﬁed verticial subgroup
+ Σ , then we shall say that G is sturdy.
+is free of rank ≥ 2 over Z
+of Πunr
+G
+
+Remark 1.1.1. It is immediate from the deﬁnitions that any connected ﬁnite
+étale covering of a semi-graph of anabelioids of PSC-type is again a semi-graph of
+anabelioids of PSC-type.
+Remark 1.1.2. Note that if G is a semi-graph of anabelioids of pro-Σ PSC-type,
+with associated PSC-fundamental group ΠG , then Σ may be recovered either from
+ΠG or from any verticial or edge-like subgroup of ΠG as the set of prime numbers
+that occur as factors of orders of ﬁnite quotients of ΠG or a verticial or edge-like
+subgroup of ΠG .
+Remark 1.1.3. It is immediate [cf. the discussion in [Mzk4], Appendix] that ΠG
+is the pro-Σ fundamental group of some hyperbolic curve over an algebraically closed
+ﬁeld of characteristic ∈ Σ [or, alternatively, of some hyperbolic Riemann surface of
+ﬁnite type], and that every open subgroup of an edge-like (respectively, verticial)
+ Σ (respectively, nonabelian). In particular, [by
+subgroup of ΠG is isomorphic to Z
+[Naka2], Corollary 1.3.4] ΠG is center-free [cf. also [Mzk4], Lemma 1.3.1, for the
+case where Σ is the set of all prime numbers; the case of arbitrary Σ may be proven
+similarly]. Moreover, G has cusps if and only if ΠG is a ﬁnitely generated, free pro-Σ
+is naturally isomorphic to the pro-Σ fundamental
+group. On the other hand, Πgrph
+G
+
+8
+
+SHINICHI MOCHIZUKI
+
+group of the underlying semi-graph G. In particular, Πgrph
+is a ﬁnitely generated,
+G
+free pro-Σ group of rank n(G) − i(G) + 1.
+Remark 1.1.4.
+It is immediate from the well-known structure of fundamental groups of Riemann surfaces that, in the notation of Deﬁnition 1.1, (ii), the
+ Σ -modules MG , MG /M cusp [i.e., the abelianization of Πcpt ], MG /M vert [i.e., the
+Z
+G
+G
+G
+grph
+edge
+vert
+[i.e., the direct sum, over the set of vertices
+abelianization of ΠG ], MG /MG
+of G, of the abelianizations of the corresponding unramiﬁed verticial subgroups of
+Σ
+Πunr
+G ] are all free and ﬁnitely generated over Z . That is to say, all of the subquoΣ:
+tients of the following ﬁltration are free and ﬁnitely generated over Z
+MGcusp ⊆ MGedge ⊆ MGvert ⊆ MG
+Remark 1.1.5. From the point of view of Deﬁnition 1.1, (i), the condition that
+a semi-graph of anabelioids G of PSC-type be sturdy corresponds to the condition
+that every irreducible component of the pointed stable curve that gives rise to G be
+of genus ≥ 2. [Indeed, this follows immediately from the well-known structure of
+fundamental groups of Riemann surfaces.] In particular, one veriﬁes immediately
+that, even if G is not sturdy, there always exists a characteristic open subgroup
+H ⊆ ΠG which satisﬁes the following property: Every G  which arises as a ΠG covering G  → G such that ΠG  ⊆ H ⊆ ΠG is sturdy. In fact, [it is a routine exercise
+to show that] one may even bound the index [ΠG : H] explicitly in terms of say, the
+ Σ ] of MG .
+rank [over Z
+Remark 1.1.6.
+Suppose that G is sturdy. Then observe that the quotient
+determines
+a new semi-graph of anabelioids G  of PSC-type, which we
+ΠG  Πcpt
+G
+shall refer to as the compactiﬁcation of G. That is to say, the underlying semi-graph
+G of G  is obtained from the underlying semi-graph G of G by omitting the cusps.
+The anabelioids at the vertices and edges of G  are then obtained from G as the
+subcategories of the corresponding anabelioids of G determined by the quotients of
+the corresponding verticial and edge-like subgroups of ΠG induced by the quotient
+ΠG  Πcpt
+G . Thus, it follows immediately that we obtain a natural isomorphism
+cpt ∼
+ΠG → ΠG  .
+Proposition 1.2. (Commensurable Terminality) Suppose that G is of PSCtype, with associated PSC-fundamental group ΠG . For i = 1, 2, let Ai ⊆ ΠG be a
+verticial (respectively, edge-like) subgroup of ΠG arising from a vertex vi (respectively, an edge ei ) of ΠG ; write Bi for the image of Ai in Πunr
+G . Then the following
+hold.
+
+e2 ). In the non(i) If A1 A2 is open in A1 , then v1 = v2 (respectively, e1 =
+resp’d case, under the further assumption that G is sturdy, if B1 B2 is open in
+B1 , then v1 = v2 .
+(ii) The Ai are commensurably terminal [cf. §0] in ΠG . In the non-resp’d
+case, under the further assumption that G is sturdy, the Bi are commensurably
+terminal in Πunr
+G .
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+9
+
+Proof. First, we observe that assertion (ii) follows formally from assertion (i) [cf.
+the derivation of [Mzk7], Corollary 2.7, (i), from [Mzk7], Proposition 2.6]. Now the
+proof of assertion (i) is entirely similar to the proof of [Mzk7], Proposition 2.6: That
+is to say, upon translating the group-theory of ΠG into the language of ﬁnite étale
+coverings of G and possibly replacing G by some ﬁnite étale covering of G [which
+allows us, in particular, to replace the words “open in” in assertion (i) by the words
+“equal to”], one sees that to prove assertions (i), (ii), it suﬃces to prove, under the
+further assumption that G is sturdy [cf. Remark 1.1.5], that if v1 = v2 (respectively,
+
+e1 = e2 ), then there exists a ﬁnite étale Πunr
+G - (respectively, ΠG -) covering G → G
+whose restriction to the anabelioid Gv2 (respectively, Ge2 ) is trivial [i.e., isomorphic
+to a disjoint union of copies of Gv2 (respectively, Ge2 )], but whose restriction to
+the anabelioid Gv1 (respectively, Ge1 ) is nontrivial. But, in light of our assumption
+that G is sturdy, one veriﬁes immediately that by gluing together appropriate ﬁnite
+étale coverings of the anabelioids Gv , Ge , one may construct a ﬁnite étale covering
+G  → G with the desired properties. 
+Proposition 1.3. (Duality) Let G be a noncuspidal semi-graph of anabelioids
+of PSC-type. Then the cup product in group cohomology
+ Σ ) × H 1 (ΠG , Z
+ Σ ) → H 2 (ΠG , Z
+ Σ) ∼
+Σ
+H 1 (ΠG , Z
+=Z
+ Σ ), Z
+ Σ ), well-deﬁned up to
+determines a perfect pairing on MG ∼
+= Hom(H 1 (ΠG , Z
+ Σ . Moreover, relative to this perfect pairing, the submultiplication by a unit of Z
+edge
+vert
+modules MG , MG of MG are mutual annihilators.
+Proof. Since G is noncuspidal, it follows [cf. Remark 1.1.3] that ΠG is the pro-Σ
+fundamental group of some compact Riemann surface, so the existence of a perfect
+pairing as asserted follows from the well-known Poincaré duality of such a compact
+Riemann surface. To see that the submodules MGedge , MGvert of MG are mutual
+annihilators, we reason as follows: Since the isomorphism class of G is manifestly
+determined by purely combinatorial data, we may assume without loss of generality
+[by possibly replacing G by the “pro-Σ completion” of G, for some subset Σ ⊆ Σ]
+that G arises from a stable curve over a ﬁnite ﬁeld k whose characteristic ∈ Σ. Write
+q for the cardinality of k; Gk for the absolute Galois group of k. We shall say that an
+ Σ -module is of weight w if the eigenvalues
+action of Gk on a ﬁnitely generated, free Z
+of the Frobenius element ∈ Gk are algebraic integers all of whose complex absolute
+values are equal to q w/2 . Now one has a natural action of Gk on G [cf. Remark
+2.5.1 below for a more detailed description of this action], and hence a natural
+action on MG which preserves MGedge , MGvert . By replacing k by a ﬁnite extension
+of k, we may assume that Gk acts trivially on the underlying semi-graph G. Thus,
+the action of Gk on MG /MGvert (respectively, MGedge ) is trivial [cf. Remark 1.1.3]
+(respectively, of weight 2). On the other hand, by the “Riemann hypothesis” for
+abelian varieties over ﬁnite ﬁelds [cf., e.g., [Mumf], p. 206], it follows [cf. Remark
+1.1.4] that the action of Gk on MGvert /MGedge is of weight 1. Note, moreover, that the
+ Σ ) is of weight −2. [Indeed, this follows by considering
+action of Gk on H 2 (ΠG , Z
+
+10
+
+SHINICHI MOCHIZUKI
+
+the ﬁrst Chern class [cf., e.g., [FK], Chapter II, Deﬁnition 1.2] of a line bundle
+of degree one on some irreducible component of the given stable curve over k —
+cf., e.g., [Mzk4], the proof of Lemma 2.6.] Thus, since the subquotients of the
+ Σ , the fact that M edge and M vert
+ﬁltration MGedge ⊆ MGvert ⊆ MG are all free over Z
+G
+G
+are mutual annihilators follows immediately by consideration of the weights of the
+modules involved. 
+Remark 1.3.1. By Proposition 1.3 [applied to the semi-graph of anabelioids of
+PSC-type G  obtained by “compactifying” G — cf. Remark 1.1.6], it follows that
+if G is a [not necessarily noncuspidal!] sturdy semi-graph of anabelioids of PSC Σ ] of M edge /M cusp , MG /M vert coincide. This implies
+type, then the ranks [over Z
+G
+G
+G
+cusp
+Σ
+
+may be computed as the diﬀerence between the
+that the rank [over Z ] of MG
+edge
+Σ
+vert
+
+ranks [over Z ] of MG , MG /MG . Moreover, it follows immediately from the
+deﬁnitions that if G has cusps, then the rank of MGcusp is equal to r(G) − 1. Also,
+[again it follows immediately from the deﬁnitions that] G is noncuspidal if and only
+if MGcusp
+= 0 for all ﬁnite étale ΠG -coverings G  → G. Thus, in summary, it follows
+
+that one may compute r(G) as soon as one knows the diﬀerence between the ranks
+vert
+ Σ ] of M edge
+[over Z
+for all ﬁnite étale ΠG -coverings G  → G.
+G  , MG  /MG 
+Deﬁnition 1.4.
+Suppose that G, H are of PSC-type; denote the respective
+associated PSC-fundamental groups by ΠG , ΠH and the respective underlying semigraphs by G, H. Let
+∼
+
+α : ΠG → ΠH ;
+
+∼
+
+β : Πunr
+→ Πunr
+G
+H
+
+be isomorphisms of proﬁnite groups.
+(i) We shall say that α is graphic if it arises from an isomorphism of semi-graphs
+∼
+of anabelioids G → H.
+(ii) We shall say that α is numerically cuspidal if, for any pair of ﬁnite étale
+coverings G  → G, H → H which correspond via α, we have r(G  ) = r(H ).
+(iii) We shall say that α is graphically ﬁltration-preserving (respectively, verticially ﬁltration-preserving; edge-wise ﬁltration-preserving) if, for any pair of ﬁnite
+étale coverings G  → G, H → H which correspond via α, the isomorphism
+∼
+
+MG  → MH
+induced by α induces an isomorphism between the respective verticial and edgelike (respectively, verticial; edge-like) submodules. We shall say that β is verticially
+ﬁltration-preserving if, for any pair of ﬁnite étale coverings G  → G, H → H which
+correspond via β, the isomorphism
+∼
+
+edge
+MG  /MGedge
+→ MH /MH
+
+
+∼
+
+edge
+vert
+induced by β induces an isomorphism MGvert
+/MGedge
+→ MH
+.
+
+ /MH
+
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+11
+
+(iv) We shall say that α is group-theoretically cuspidal (respectively, grouptheoretically edge-like; group-theoretically verticial) if and only if it maps each cuspidal (respectively, edge-like; verticial) subgroup of ΠG isomorphically onto a cuspidal
+(respectively, edge-like; verticial) subgroup of ΠH , and, moreover, every cuspidal
+(respectively, edge-like; verticial) subgroup of ΠH arises in this fashion. We shall
+say that β is group-theoretically verticial if and only if it maps each unramiﬁed
+verticial subgroup of Πunr
+isomorphically onto an unramiﬁed verticial subgroup of
+G
+unr
+ΠH , and, moreover, every verticial subgroup of Πunr
+H arises in this fashion.
+(v) Let G  → G be a Galois ﬁnite étale covering. Then we shall say that G  → G
+is cuspidally (respectively, nodally; verticially) purely totally ramiﬁed if there exists
+a cusp e (respectively, node e; vertex v) of G such that G  → G restricts to a trivial
+covering over Ge (respectively, Ge ; Gv  ) for all cusps e = e (respectively, nodes
+e = e; vertices v  = v) of G and to a connected covering over Ge (respectively,
+Ge ; Gv ). We shall say that G  → G is cuspidally (respectively, nodally; verticially)
+totally ramiﬁed if there exists a cusp e (respectively, node e; vertex v) of G such
+that G  → G restricts to a connected covering over Ge (respectively, Ge ; Gv ).
+(vi) If A ⊆ ΠG is a closed subgroup, and A ⊆ A is an open subgroup of A, then
+we shall say that the inclusion A ⊆ A descends to a ﬁnite étale covering G  → G 
+if the arrow G  → G  is a morphism of ﬁnite étale ΠG -coverings of G such
+ that the
+corresponding open subgroups ΠG  ⊆ ΠG  ⊆ ΠG satisfy A ⊆ ΠG  , A ΠG  = A ,
+[A : A ] = [ΠG  : ΠG  ]. We shall use similar terminology when, in the preceding
+sentence, “Π” is replaced by “Πunr ”.
+Remark 1.4.1. Thus, by Proposition 1.3, it follows that, if, in the notation of
+Deﬁnition 1.4, G, H are noncuspidal, then the following three conditions on α are
+equivalent: (a) α is graphically ﬁltration-preserving; (b) α is verticially ﬁltrationpreserving; (c) α is edge-wise ﬁltration-preserving.
+Remark 1.4.2. Let G  → G be a Galois ﬁnite étale covering of degree a power
+of l, where G is of pro-Σ PSC-type, Σ = {l}. Then one veriﬁes immediately that
+G  → G is cuspidally purely totally ramiﬁed if and only if the equality
+r(G  ) = deg(G  /G) · (r(G) − 1) + 1
+
+is satisﬁed. Similarly, if G  → G is a ﬁnite étale Πunr
+G -covering [so n(G ) = n(G) ·
+deg(G  /G)], then one veriﬁes immediately that G  → G is verticially purely totally
+ramiﬁed if and only if the equality
+
+i(G  ) = deg(G  /G) · (i(G) − 1) + 1
+is satisﬁed. Also, we observe that this last equality is equivalent to the following
+equality involving the expression “i(. . . ) − n(. . . )” [cf. Remark 1.1.3]:
+i(G  ) − n(G  ) = deg(G  /G) · (i(G) − n(G) − 1) + 1
+
+12
+
+SHINICHI MOCHIZUKI
+
+Remark 1.4.3. Let G  → G be as in Remark 1.4.2; assume further that this
+covering is a cuspidally (respectively, nodally; verticially) totally ramiﬁed ΠG - (respectively, ΠG -; Πunr
+G -) covering, and that G is arbitrary (respectively, arbitrary;
+sturdy). Let e (respectively, e; v) be a cusp (respectively, node; vertex) of G such
+that G  → G restricts to a connected covering of Ge (respectively, Ge ; Gv ). Then
+observe that:
+
+There exists a ﬁnite étale ΠG - (respectively, ΠG -; Πunr
+G -) covering G → G
+such that: (a) G  → G is trivial over Ge (respectively, Ge ; Gv ); (b) the
+subcovering G  → G  of the composite covering G  → G of the coverings
+G  → G and G  → G is cuspidally (respectively, nodally; verticially) purely
+totally ramiﬁed.
+
+Indeed, the construction of such a covering is immediate [cf. the proof of Proposition
+1.2].
+Remark 1.4.4. Let G  → G be as in Remark 1.4.2; assume further that this
+covering is cyclic, and that G is noncuspidal. Then it is immediate that G  → G
+is module-wise nodal if and only if it is nodally totally ramiﬁed. In particular, it
+follows that:
+(i) Any closed subgroup B ⊆ ΠG is contained in some nodal edge-like subgroup if and only if, for every open normal subgroup B  ⊆ B, the inclusion
+B  ⊆ B descends to a module-wise nodal ﬁnite étale covering.
+(ii) A closed subgroup A ⊆ ΠG is a nodal edge-like subgroup of ΠG if and only
+if it satisﬁes the condition of (i) above [i.e., where one takes “B” to be A],
+and, moreover, is maximal among closed subgroups B ⊆ ΠG satisfying the
+condition of (i).
+Indeed, the necessity of (i) is immediate. The suﬃciency of (i) follows by observing
+that since the set of nodes of a ﬁnite étale covering of G is always ﬁnite, an exhaustive
+collection of open normal subgroups of B thus determines — by considering the
+nodes at which the “total ramiﬁcation” occurs — [at least one] compatible system
+of nodes of the ﬁnite étale ΠG -coverings of G; but this implies that B is contained
+in some nodal edge-like subgroup. In light of (i), the necessity of (ii) is immediate
+from the deﬁnitions and Proposition 1.2, (i) [which implies maximality], while the
+suﬃciency of (ii) follows immediately from the assumption of maximality.
+Proposition 1.5.
+(Incidence Relations) We maintain the notation of Deﬁnition 1.4. Then the following hold.
+(i) An edge-like subgroup of ΠG is cuspidal (respectively, not cuspidal) if
+and only if it is contained in precisely one (respectively, precisely two) verticial
+subgroup(s).
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+13
+
+(ii) α is graphic if and only if it is group-theoretically edge-like and
+group-theoretically verticial. Moreover, in this case, α arises from a unique
+∼
+isomorphism of semi-graphs of anabelioids G → H.
+Proof. First, we consider assertion (i). Observe that it is immediate from the
+deﬁnitions that a cuspidal (respectively, noncuspidal) edge-like subgroup of ΠG is
+contained in at least one (respectively, at least two) verticial subgroup(s). To prove
+that these lower bounds also serve as upper bounds, it suﬃces [by possibly replacing
+G by a ﬁnite étale covering of G] to show that if e is a cuspidal (respectively, nodal)
+edge of G that does not abut to a vertex v, then there exists a ﬁnite étale ΠG -covering
+G  → G which is trivial over Gv , but nontrivial over Ge . But this is immediate [cf.
+the proof of Proposition 1.2, (i)].
+Next, we consider assertion (ii). Necessity is immediate. To prove suﬃciency,
+we reason as follows: The assumption that α is group-theoretically edge-like and
+group-theoretically verticial implies, by considering conjugacy classes of verticial and
+edge-like subgroups [and applying Proposition 1.2, (i)], that α induces a bijection
+between the vertices (respectively, edges) of the underlying semi-graphs G, H. By
+assertion (i), this bijection maps cuspidal (respectively, nodal) edges to cuspidal
+(respectively, nodal) edges and is compatible with the various “incidence relations”
+that deﬁne the semi-graph structure [i.e., the data of which vertices an edge abuts
+∼
+to]. Thus, α induces an isomorphism of semi-graphs G → H. Finally, by Proposition
+∼
+1.2, (ii), one concludes that α arises from a unique isomorphism G → H, as desired.
+
+Theorem 1.6.
+(Criterion for Graphicity) We maintain the notation of
+Deﬁnition 1.4. Then the following hold.
+(i) α is numerically cuspidal if and only if it is group-theoretically cuspidal.
+(ii) α is graphic if and only if it is graphically ﬁltration-preserving.
+(iii) Assume that G, H are sturdy. Then β is verticially ﬁltration-preserving if and only if it is group-theoretically verticial.
+Proof. First, we consider assertion (i). Suﬃciency is immediate [cf. Proposition
+1.2, (i)]. The proof of necessity is entirely similar to the latter half of the proof of
+[Mzk4], Lemma 1.3.9: Let l ∈ Σ [where G, H are of pro-Σ PSC-type]. Since the
+cuspidal edge-like subgroups may be recovered as the stabilizers of cusps of ﬁnite
+étale coverings of G, H, it suﬃces to show that α induces a functorial bijection
+between the sets of cusps of G, H. In particular, we may assume, without loss of
+generality, that Σ = {l}.
+Then given pairs of ﬁnite étale ΠG - or ΠH -coverings that correspond via α
+G  → G  → G;
+
+H → H → H
+
+14
+
+SHINICHI MOCHIZUKI
+
+such that G  is Galois over G  , and H is Galois over H , it follows from the
+assumption that α is numerically cuspidal that G  → G  is cuspidally purely totally
+ramiﬁed if and only if H → H is [cf. Remark 1.4.2]. Now observe that the
+cuspidal edge-like subgroups of ΠG (respectively, ΠH ) are precisely the maximal
+closed subgroups A such that, for every open normal subgroup A ⊆ A, the inclusion
+A ⊆ A descends to a cuspidally purely totally ramiﬁed Galois ﬁnite étale covering.
+Indeed, in light of Remark 1.4.3 [which implies that, in the preceding sentence,
+one may remove the word “purely” without aﬀecting the validity of the assertion
+contained in this sentence], this follows by a similar argument to the argument
+applied in the case of nodes in Remark 1.4.4. Thus, we thus conclude that α is
+group-theoretically cuspidal, as desired.
+Next, we consider assertion (ii). Necessity is immediate. To prove suﬃciency,
+let us ﬁrst observe that by functoriality; Proposition 1.2, (ii); Proposition 1.5, (ii),
+it follows that we may always replace G, H by ﬁnite étale ΠG - or ΠH -coverings that
+correspond via α. In particular, by Remark 1.1.5, we may assume without loss
+of generality that G, H are sturdy. Next, let us observe that by Proposition 1.3
+[cf. Remark 1.3.1], the assumption that α is graphically ﬁltration-preserving implies
+that α is numerically cuspidal, hence [by assertion (i)] that α is group-theoretically
+cuspidal. Thus, by replacing G, H by their respective compactiﬁcations [cf. Remark
+1.1.6], and replacing α by the isomorphism induced by α between the respective
+cpt
+quotients ΠG  Πcpt
+G , ΠH  ΠH , we may assume, without loss of generality, that
+G, H are noncuspidal and sturdy. Also, as in the proof of assertion (i), we may
+assume that Σ = {l}. Now by Proposition 1.5, (ii), it suﬃces to prove that α is
+group-theoretically edge-like and group-theoretically verticial. But by Remark 1.4.4,
+the assumption that α is edge-wise ﬁltration-preserving implies that α is grouptheoretically edge-like. In particular, α induces a verticially ﬁltration-preserving
+∼
+isomorphism Πunr
+→ Πunr
+G
+H . Now to prove that α is group-theoretically verticial, it
+suﬃces to prove [cf. the proof of assertion (i)] that α induces a functorial bijection
+between the sets of vertices of G, H. Thus, to complete the proof of assertion (ii),
+it suﬃces to prove that β is group-theoretically verticial, that is to say, it suﬃces to
+verify assertion (iii).
+Finally, we consider assertion (iii). Suﬃciency is immediate. On the other
+hand, necessity follows from Remark 1.4.2, by observing that the unramiﬁed verticial subgroups are precisely the maximal closed subgroups A of Πunr
+or Πunr
+G
+H such
+
+
+that, for every open normal subgroup A ⊆ A, the inclusion A ⊆ A descends to
+a verticially purely totally ramiﬁed Galois ﬁnite étale covering. Indeed, in light
+of Remark 1.4.3 [which implies that, in the preceding sentence, one may remove
+the word “purely” without aﬀecting the validity of the assertion contained in this
+sentence], this follows by a similar argument to the argument applied in the case of
+nodes in Remark 1.4.4. This completes the proof of assertion (ii). 
+Remark 1.6.1. The essential content of Theorem 1.6, (i), is, in many respects,
+similar to the essential content of [Tama2], Lemma 2.3 [cf. the use of this lemma
+in [Tama2], Proposition 2.4].
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+15
+
+Section 2: The Group of Graphic Outer Automorphisms
+In this §, we study the consequences of the theory of §1 for the group of
+automorphisms of a semi-graph of anabelioids of PSC-type.
+Let G be a semi-graph of anabelioids of pro-Σ PSC-type [with underlying semigraph G]. In the following discussion, G, G will remain ﬁxed until further notice to
+the contrary [in Corollary 2.7].
+Denote by Aut(G) the group of automorphisms of the semi-graph of anabelioids
+G. Here, we recall that an automorphism of a semi-graph of anabelioids consists of
+an automorphism of the underlying semi-graph, together with a compatible system
+of isomorphisms between the various anabelioids at each of the vertices and edges
+of the underlying semi-graph, which are compatible with the various morphisms of
+anabelioids associated to the branches of the underlying semi-graph — cf. [Mzk7],
+Deﬁnition 2.1; [Mzk7], Remark 2.4.2. Then, by Proposition 1.5, (ii), we obtain an
+injective homomorphism
+Aut(G) → Out(ΠG )
+whose image we shall denote by
+Outgrph (ΠG ) ⊆ Out(ΠG )
+and refer to as the group of graphic outer automorphisms of ΠG . Since ΠG is topologically ﬁnitely generated [cf. Remark 1.1.3], it follows that Out(ΠG ) is equipped
+with a natural proﬁnite topology, which thus induces a natural topology on the subgroup Outgrph (ΠG ) ⊆ Out(ΠG ), which is manifestly closed, by Proposition 1.5, (ii).
+In particular, Aut(G) ∼
+= Outgrph (ΠG ) is equipped with a natural proﬁnite topology.
+Since ΠG is center-free [cf. Remark 1.1.3], we have a natural exact sequence
+1 → ΠG → Aut(ΠG ) → Out(ΠG ) → 1, which we may pull-back via Aut(G) →
+Out(ΠG ) to obtain an exact sequence as follows:
+1 → ΠG → ΠAut
+→ Aut(G) → 1
+G
+If G  → G is a sturdy [i.e., G  is sturdy] ﬁnite étale ΠG -covering which arises from a
+on
+characteristic open subgroup ΠG  ⊆ ΠG , then there is a natural action of ΠAut
+G
+
+Aut
+G . In particular, we obtain, for every l ∈ Σ, a natural action of ΠG on the free
+Zl -module of rank one [i.e., since G  is sturdy] H 2 (Πcpt
+G  , Zl ).
+Lemma 2.1.
+(Construction of the Cyclotomic Character) This accpt
+2
+Aut
+tion of ΠAut
+on
+H
+(Π
+ Aut(G), hence
+G
+G  , Zl ) factors through the quotient ΠG
+×
+determines a continuous homomorphism Aut(G) → Zl , whose inverse
+χl : Aut(G) → Z×
+l
+we shall refer to as the pro-l cyclotomic character of Aut(G). Moreover, this
+character is independent of the choice of sturdy ΠG -covering G  → G.
+
+16
+
+SHINICHI MOCHIZUKI
+
+Proof. To verify the asserted independence of covering, it suﬃces to observe that
+any two sturdy ΠG -coverings G  → G, G  → G may be dominated by a third sturdy
+ΠG -covering G  → G, which induce isomorphisms of free Ql -modules of rank one
+cpt
+2
+H 2 (Πcpt
+G  , Zl ) ⊗ Q → H (ΠG  , Zl ) ⊗ Q;
+
+cpt
+2
+H 2 (Πcpt
+G  , Zl ) ⊗ Q → H (ΠG  , Zl ) ⊗ Q
+
+which are compatible with the various actions by ΠAut
+G .
+To show that the action of ΠAut
+factors through Aut(G), we may assume
+G
+without loss of generality that Σ is the set of all primes. On the other hand, by
+the independence of covering already veriﬁed, it follows that we may compute the
+
+ΠAut
+G -action in question by using a covering G → G of degree prime to l(l−1). Since
+the action in question amounts to a continuous homomorphism ΠAut
+→ Z×
+G
+l which
+Aut
+
+clearly factors through ΠG /ΠG , the desired factorization follows from the fact
+that [consideration of orders implies that] every homomorphism Gal(G  /G) → Z×
+l
+is trivial. 
+Proposition 2.2. (The Double of a Semi-Graph of Anabelioids of PSCtype) Suppose that r(G) = 0. Let H be the semi-graph of anabelioids deﬁned
+as follows: The underlying semi-graph H is obtained by taking the disjoint union
+of two copies of G and, for each cusp e of G abutting to a vertex v of G, replacing
+the corresponding pairs of cusps lying in these two copies of G by a node [i.e., a
+closed edge] that joins the pairs of vertices corresponding to v in these two copies.
+We shall refer to the newly appended nodes as bridges. Away from the bridges,
+we take the semi-graph of anabelioids structure of H to be the structure induced
+by G, and, at each branch of a bridge of H, we take the semi-graph of anabelioids
+structure of H to be the structure induced by G at the corresponding cusp e of G, by
+gluing the two copies of Ge in question by means of the inversion automorphism
+Ge → Ge [induced by “multiplication by −1” on the abelian fundamental group of
+Ge ]. We shall refer to H as the double of G. Then the following hold.
+(i) H is a noncuspidal semi-graph of anabelioids of PSC-type.
+(ii) Restriction of ﬁnite étale coverings of H to each of the copies of G used to
+construct H determines a natural injective continuous outer homomorphism
+ΠG → ΠH .
+(iii) The homomorphism of (ii) maps verticial (respectively, edge-like) subgroups of ΠG isomorphically onto verticial (respectively, edge-like) subgroups of ΠH .
+(iv) The homomorphism of (ii) induces an injection
+MG → MH
+edge
+vert
+that maps MGedge (respectively, MGvert ) into MH
+(respectively, MH
+).
+
+Proof. Assertion (i) is immediate from the deﬁnitions. Note, relative to Deﬁnition
+1.1, (i), that there is a corresponding construction of a “double” of a pointed stable
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+17
+
+curve. This explains the need for “gluing by means of the inversion automorphism”
+in the deﬁnition of H: Over, say, a complete discrete valuation ring A with algebraically closed residue ﬁeld, the completion of a generically smooth pointed stable
+curve at a node is isomorphic to the formal spectrum of the complete local ring
+A[[x, y]]/(xy − s), where x, y are indeterminates and s lies in the maximal ideal
+of A. Then the action of the local tame Galois group at each of the branches of
+the node considered independently is of the form x → ζ · x, y → ζ · y, where ζ
+is some root of unity. On the other hand, since the Galois action on coverings of
+the entire formal spectrum of A[[x, y]]/(xy − s) [i.e., where one does not treat the
+branches of the node independently] necessarily ﬁxes elements of the base ring [i.e.,
+the normalization of A in some ﬁnite extension of its quotient ﬁeld], it follows that
+this action must be of the form x → ζ · x, y → ζ −1 · y.
+As for assertion (ii), it is immediate that we obtain a natural homomorphism
+ΠG → ΠH . The asserted injectivity may be veriﬁed as follows [cf. also the proof
+of injectivity in [Mzk7], Proposition 2.5, (i)]: Given any ﬁnite étale ΠG -covering
+G  → G, one may construct a ﬁnite étale ΠH -covering H → H which induces
+G  → G via the “restriction procedure” of (ii) by gluing together two copies of G 
+over the two copies of G used to construct H. Note that to carry out this gluing,
+one must choose a [noncanonical!] isomorphism, at each cusp e of G, between the
+restriction of G  → G to Ge and the pull-back via the inversion automorphism of
+this restriction. [Note that it is immediate that such an isomorphism always exists.]
+Assertion (iii) is immediate from the construction of the double.
+Finally, we consider assertion (iv). To verify that the homomorphism MG →
+MH induced by the homomorphism of (ii) is an injection, it suﬃces to observe that
+the gluing procedure discussed in the proof of the injectivity of (ii) determines a
+splitting of the homomorphism MG → MH . Indeed, if the ﬁnite étale ΠG -covering
+G  → G in question is abelian, with Galois group A, then the resulting H → H
+admits a natural action by A, by letting A act via the identity A → A on one
+copy of G  and via “multiplication by −1” A → A on the other copy of G  . [Put
+another way, if we think of the covering G  → G as corresponding to the A-set A,
+then we glue the set A to the set A at the bridges by means of the automorphism
+“multiplication by −1”.] This completes the proof of injectivity. The fact that this
+edge
+vert
+injection maps MGedge (respectively, MGvert ) into MH
+(respectively, MH
+) follows
+immediately from assertion (iii). 
+Remark 2.2.1.
+[Asada].
+
+Certain aspects of Proposition 2.2 are related to the results of
+
+Remark 2.2.2. It is quite possible that various aspects of Proposition 2.2 may
+be generalized from the case of “two copies of G” treated in Proposition 2.2 to the
+case of gluing together arbitrary ﬁnite collections of semi-graphs of anabelioids of
+PSC-type. This topic, however, lies beyond the scope of the present paper.
+Deﬁnition 2.3.
+
+Let J be a proﬁnite group which acts continuously on G [i.e.,
+
+18
+
+SHINICHI MOCHIZUKI
+
+we are given a continuous homomorphism J → Aut(G)]. Set:
+def
+
+ΠJG = ΠAut
+×Aut(G) J
+G
+Let M be a continuous Zl [J ]-module [i.e., a topological module equipped with
+continuous actions by Zl , J], where l ∈ Σ.
+(i) We shall refer to a [continuous] character ψ : J → Z×
+l as quasi-cyclotomic
+(respectively, Q-cyclotomic) if ψ (respectively, some positive power of ψ) coincides
+with the restriction to J of the character χl (respectively, some integer power of
+the character χl ) of Lemma 2.1 on some open subgroup J  ⊆ J of J. If ψ : J → Z×
+l
+is a [continuous] character, then we shall denote by
+M (ψ)
+the ψ-twist of M . That is to say, the underlying topological Zl -modules of M ,
+M (ψ) are identical; if the action of γ ∈ J on M maps m ∈ M to γ · m ∈ M , then
+the action of γ ∈ J on M (ψ) maps m → ψ(γ) · (γ · m) ∈ M = M (ψ). If n ∈ Z,
+def
+
+then we shall write M (n) = M ((χl |J )n ), where χl |J denotes the restriction of the
+cyclotomic character χl of Lemma 2.1 to J. We shall say that M is quasi-trivial if
+some open subgroup J  ⊆ J acts trivially on M . We shall say that M is quasi-toral
+if M (−1) is quasi-trivial. If, for some open subgroup J  ⊆ J, there exists a ﬁnite
+ﬁltration of Zl [J  ]-submodules
+M n ⊆ M n−1 ⊆ . . . ⊆ M j ⊆ . . . ⊆ M 1 ⊆ M 0 = M
+such that each M j /M j+1 is torsion-free and, moreover, either is quasi-trivial [over
+J  ] or has no quasi-trivial J  -subquotients for any open subgroup J  ⊆ J  , then we
+shall refer to the [possibly inﬁnite] sum
+
+
+dimQl (M j /M j+1 ⊗ Ql )
+
+M j /M j+1 quasi-trivial
+
+[which is easily veriﬁed to be independent of the choice of a subgroup J  ⊆ J and
+a ﬁltration {M j } satisfying the above properties] as the quasi-trivial rank of M .
+(ii) We shall say that [the action of] J is l-cyclotomically full if the image of
+the homomorphism χl |J : J → Z×
+l is open. Suppose that J is l-cyclotomically
+full. Then it makes sense to speak of the weight w of a Q-cyclotomic character
+ψ : J → Z×
+l : i.e., w is the unique rational number that may be written in the form
+2a/b, where a, b are integers such that b = 0, ψ b = (χl |J )a . If w > 0 (respectively,
+w = 0; w < 0), then we shall say that ψ is positive (respectively, null; negative).
+If w ∈ Q, and ψ : J → Z×
+l is a Q-cyclotomic character of weight w, then we shall
+refer to the quasi-trivial rank of M (ψ −1 ) as the l-weight w rank of M . [One veriﬁes
+immediately that the l-weight w rank is independent of the choice of ψ.] If the
+l-weight w rank of M is nonzero, then we shall say that w is an associated l-weight
+of M . Write
+wl (M ) ⊆ Q
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+19
+
+for the set of associated l-weights of M .
+(iii) Suppose that J is l-cyclotomically full. Observe that if ΠG  ⊆ ΠG is any
+characteristic open subgroup, then ΠJG acts naturally on ΠG  , hence also on MG  ⊗Zl .
+Set
+
+def
+wl (J ) =
+wl (MG  ⊗ Zl )
+G
+
+[where the union ranges over characteristic open subgroups ΠG  ⊆ ΠG ]. We shall
+refer to wl (J ) as the set of associated l-weights of [the action of] J. If every w ∈
+wl (J) satisﬁes 0 ≤ w ≤ 2, then we shall say that [the action of] J is weakly lgraphically full. If, for every characteristic open subgroup ΠG  ⊆ ΠG , it holds that
+def
+
+/MGedge
+) ⊗ Zl ) ⊆ (0, 2)Q = {w ∈ Q | 0 < w < 2}
+wl ((MGvert
+
+
+then we shall say that [the action of] J is l-graphically full. [Thus, “J l-graphically
+full” implies “J weakly l-graphically full” — cf. Proposition 2.4, (i), (ii), below.]
+Remark 2.3.1. The purpose of the introduction of the notion “l-cyclotomically
+full” is to allow us to describe, in compact form, that situation in which it makes
+sense to speak of “weights” in a fashion similar to the case where the action of
+J arises from scheme theory. Once it makes sense to speak of “weights”, one
+may introduce the notion of “l-graphically full” (respectively, “weakly l-graphically
+full”), which asserts, in essence, that the weights behave as one would expect in the
+case of precisely one (respectively, at least one, i.e., possibly two nested, as in the
+situations of Corollaries 2.8, 2.10 below) degeneration(s) of the hypothetical family
+of hyperbolic curves under consideration.
+Proposition 2.4.
+(Quasi-triviality and Quasi-torality) Let J be as in
+ Σ ] of the ﬁnitely generated,
+Deﬁnition 2.3; l ∈ Σ. Write m(G) for the rank [over Z
+ Σ -module MG . Then the following hold.
+free Z
+(i) (MG /MGvert ) ⊗ Zl is quasi-trivial.
+(ii) MGcusp ⊗Zl , MGedge ⊗Zl are quasi-toral. In particular, if J is l-cyclotomically full, and 2 ∈ w l (J ), then the submodule MGedge ⊗ Zl ⊆ MG ⊗ Zl is zero.
+(iii) Assume that G is sturdy. Then there exists a positive integer m ≤ 2m(G)
+such that det(MG ⊗ Zl )⊗2 (−m) is quasi-trivial.
+(iv) Assume that G is sturdy. Then a character ψ : J → Z×
+l is Q-cyclotomic
+if and only if it admits a positive power that coincides with the aψ -th power of
+the character obtained by the natural action of J on det(MG ⊗ Zl )⊗2 , for some
+aψ ∈ Z. Suppose further that J is l-cyclotomically full. Then a Q-cyclotomic
+ψ is positive (respectively, null; negative) if and only if aψ may be taken to
+be positive (respectively, zero; negative). Finally, any two Q-cyclotomic characters
+
+J → Z×
+l of the same weight necessarily coincide on some open subgroup J ⊆ J.
+
+20
+
+SHINICHI MOCHIZUKI
+
+(v) Assume that the image of J in Aut(G) is open. Then J is l-graphically
+full.
+(vi) Assume that J is l-cyclotomically full. Then 2 = w ∈ wl (J ) implies
+2 − w ∈ wl (J ). If, moreover, G is noncuspidal, then w ∈ wl (J ) implies 2 − w ∈
+wl (J).
+(vii) Assume that J is l-cyclotomically full, and that G has cusps [i.e., that
+ΠG is free — cf. Remark 1.1.3]. Then for every suﬃciently small open subgroup
+ΠG  ⊆ ΠG , the subset
+
+{0} wl (MG  ⊗ Zl ) ⊆ Q
+is invariant with respect to the automorphism λ → 2 − λ of Q; in particular, the
+sum of the maximum and minimum elements of this [ﬁnite] subset is equal to
+2.
+(viii) Assume that J is l-graphically full. Then MGedge ⊗ Zl ⊆ MG ⊗ Zl is
+the maximal quasi-toral Zl [J ]-submodule of MG ⊗ Zl .
+(ix) Assume that J is l-graphically full. Then MG ⊗ Zl  (MG /MGvert ) ⊗ Zl
+is the maximal torsion-free quasi-trivial Zl [J ]-quotient module of MG ⊗Zl .
+Proof. Assertion (i) follows immediately from Remarks 1.1.3, 1.1.4. Now when G is
+noncuspidal, assertion (ii) follows from assertion (i); Proposition 1.3. For arbitrary
+G, assertion (ii) follows from assertion (ii) in the noncuspidal case, together with
+Proposition 2.2, (iv). Assertion (iii) follows immediately from assertion (ii) [applied
+to MGcusp ⊗Zl ]; Proposition 1.3 [applied to (MG /MGcusp )⊗Zl , which is possible in light
+of the sturdiness assumption — cf. Remark 1.1.6]. Assertion (iv) follows formally
+from assertion (iii); the deﬁnitions; the fact that Z×
+l contains a torsion-free open
+subgroup.
+To verify assertion (v), it suﬃces to consider the case where G arises from a
+pointed stable curve over a ﬁnite ﬁeld k [cf. the proof of Proposition 1.3], and J
+is equal to an open subgroup of Aut(G). Then assertion (v) follows from the fact
+that [in the notation and terminology of loc. cit.] the action of Gk on MGvert /MGedge
+is of weight 1. Assertion (vi) follows from assertion (ii); Proposition 1.3, applied to
+the compactiﬁcation [cf. Remark 1.1.6] of a sturdy ﬁnite étale ΠG -covering of G.
+Next, we consider assertion (vii). Suppose that ΠG  ⊆ ΠG is an open subgroup
+= 0 [cf. Remark 1.3.1], so [by assertion (ii)]
+such that r(G  ) ≥ 2. Thus, MGcusp
+
+
+def
+def
+/MGedge
+⊗ Zl ),
+0, 2 ∈ EG  = {0} wl (MG  ⊗ Zl ). Thus, if we set EG  = wl (MGvert
+
+
+
+then [by assertions, (i), (ii)], it follows that EG  = {0, 2} EG  . Moreover, by
+Proposition 1.3 [applied to the compactiﬁcation [cf. Remark 1.1.6] of G], EG  is
+invariant with respect to the automorphism λ → 2 − λ of Q. But this implies the
+desired invariance of EG  with respect to this automorphism of Q. This completes
+the proof of assertion (vii). Finally, assertions (viii), (ix) follow immediately from
+assertions (i), (ii); the deﬁnitions. 
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+21
+
+Example 2.5.
+Stable Log Curves over a Logarithmic Point. Let S log
+def
+be a log scheme, with underlying scheme S = Spec(k), where k is a ﬁeld, and log
+structure given by a chart N 1 → 0 ∈ k [cf. the theory of [Kato]]. Let
+X log → S log
+be a stable log curve over S log [cf. §0]. Let T log → S log be a “separable closure”
+of S log , i.e., the underlying scheme T of T log is of the form T = Spec(k), where k
+is a separable closure of k; the log structure of T log is given by a chart M 1 →
+0 ∈ k, where M ⊆ Q is the monoid of positive rational numbers with denominators
+invertible in k; the morphism T log → S log arises from the natural maps k → k,
+def
+N → M. Thus, if we write Gklog = Aut(T log /S log ), then we have a natural exact
+sequence
+1 → Iklog → Gklog → Gk → 1
+def
+
+def
+
+×
+
+where Gk = Gal(k/k); Iklog = Hom(Q/Z, k ). Now the admissible coverings of
+X log [with tame ramiﬁcation at the cusps] determine an admissible fundamental
+group ΠX log which ﬁts into a natural exact sequence:
+1 → ΔX log → ΠX log → Gklog → 1
+[The theory of admissible coverings is discussed in detail in [Mzk1], §3; [Mzk2], §2;
+[Mzk4], §2; [Mzk4], Appendix. It follows, in particular, from this theory that, if
+one chooses a lifting of X log → S log to some generically smooth stable log curve
+log
+log
+→ Slift
+Xlift
+
+— where Slift is the spectrum of a complete discrete valuation ring with residue
+log
+ﬁeld k; the log structure on Slift
+is the log structure determined by the monoid
+of generically invertible functions — then the coverings arising from ΠX log may
+log
+that satisfy certain
+be realized as coverings of the generically smooth curve Xlift
+properties.] Moreover, if Σ is a set of primes that does not contain the residue
+characteristic of k, and we denote by G the semi-graph of anabelioids of pro-Σ
+PSC-type arising from the pointed stable curve over k determined by X log , then
+the maximal pro-Σ quotient of ΔX log may be naturally identiﬁed with the PSCfundamental group ΠG . In particular, one obtains a natural outer action of Gklog
+on ΠG , the automorphisms of which are easily seen [by the functoriality of the
+various fundamental groups involved!] to be graphic. That is to say, we obtain
+continuous homomorphisms as follows:
+Gklog → Aut(G) ∼
+= Outgrph (ΠG ) ⊆ Out(ΠG )
+Now suppose that H ⊆ Gklog is a closed subgroup such that the restriction to H of
+the homomorphism Gklog → Aut(G) factors through some quotient H  J:
+H  J → Aut(G)
+For l ∈ Σ, we shall refer to the image in J of the intersection of H with the pro-l
+component of Iklog as the l-inertia subgroup of J; we shall say that [the action
+
+22
+
+SHINICHI MOCHIZUKI
+
+on G of] J is l-logarithmically full if the l-inertia subgroup of J is inﬁnite [hence
+isomorphic to Zl (1)]. If H is an open subgroup Gklog , then we shall say that [the
+action on G of] J is arithmetically full and refer to k as the base ﬁeld.
+Remark 2.5.1. Note that from the point of view of Example 2.5, one may think
+of the action of Gk on G appearing in the proof of Proposition 1.3 as the restriction
+of the action of Gklog on G discussed in Example 2.5 to some section of Gklog  Gk .
+Proposition 2.6.
+(The Logarithmic Inertia Action) In the notation of
+Example 2.5, Iklog acts quasi-unipotently [i.e., an open subgroup of Iklog acts
+unipotently] on MG ⊗ Zl , and, moreover, the submodule
+MGvert ⊗ Zl ⊆ MG ⊗ Zl
+is the maximal quasi-trivial Zl [Iklog ]-submodule of MG ⊗ Zl [i.e., the maximal
+submodule on which some open subgroup of Iklog acts trivially].
+Proof. Let us ﬁrst observe that if G is noncuspidal, then the asserted quasiunipotency (respectively, quasi-triviality) of the action of Iklog on MG ⊗ Zl (respectively, MGvert ⊗ Zl ) follows immediately from the well-known theory of Galois
+actions on torsion points of degenerating abelian varieties [cf., e.g., [FC], Chapter
+III, Corollary 7.3; here, we note that, in the terminology of loc. cit., the submodule
+MGvert ⊗ Zl corresponds to the submodule determined by the “Raynaud extension”].
+Thus, one obtains the asserted quasi-unipotency/quasi-triviality in the case of not
+necessarily noncuspidal G by applying the theory of the “double” [cf. Proposition
+2.2, (iv)]. Now it remains to prove the asserted maximality. But this follows again
+from [FC], Chapter III, Corollary 7.3 [i.e., the fact that the period matrix of a
+degenerating abelian variety is always nondegenerate]. 
+Now, by combining Theorem 1.6 with the theory of the present §2 [cf., in
+particular, Proposition 2.4], we obtain the following result.
+Corollary 2.7.
+(Graphicity) Let G, H be semi-graphs of anabelioids of
+pro-Σ PSC-type; JG → Aut(G), JH → Aut(H) continuous homomorphisms.
+Suppose, moreover, that we have been given isomorphisms of proﬁnite groups
+∼
+
+α : ΠG → ΠH ;
+
+∼
+
+ι : JG → JH
+
+which are compatible, with respect to the respective outer actions of JG , JH on
+ΠG , ΠH . Then, for l ∈ Σ:
+(i) Suppose that the respective actions of JG , JH on G, H are l-cyclotomically
+full. Then α is group-theoretically cuspidal.
+(ii) Suppose that the respective actions of JG , JH on G, H are l-graphically
+full [cf., e.g., Proposition 2.4, (v)]. Then α is graphic.
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+23
+
+(iii) Suppose that the respective actions of JG , JH on G, H arise from data
+as in Example 2.5; that G, H are noncuspidal; and that, in the terminology of
+Example 2.5, these actions are l-logarithmically full, and, moreover, ι maps the
+l-inertia subgroup of JG isomorphically onto that of JH . Then α is graphic.
+(iv) Outgrph (ΠG ) is commensurably terminal in Out(ΠG ).
+Proof. First, we consider assertion (i). By Theorem 1.6, (i), it suﬃces to prove that
+α is numerically cuspidal, under the further assumption that G, H have cusps [i.e.,
+that ΠG , ΠH are free — cf. Remark 1.1.3]. By passing to sturdy ﬁnite étale coverings
+of G, H that correspond via α [cf. Remark 1.1.5], it follows from Proposition 2.4,
+(iv), that ι preserves positive and null Q-cyclotomic characters to Z×
+l . Thus, by
+Proposition 2.4, (vii), it follows that ι preserves the Q-cyclotomic characters to Z×
+l
+of weight 2. Now, by applying Proposition 1.3 to the compactiﬁcations [cf. Remark
+1.1.6] of sturdy ﬁnite étale coverings G  → G, H → H that correspond via α [cf.
+cusp
+(respectively, MH
+) may be
+Remark 1.1.5], we conclude that the rank of MGcusp
+
+
+computed as the diﬀerence between the l-weight 2 and l-weight 0 ranks of MG 
+(respectively, MH ) [cf. Proposition 2.4, (ii); Remark 1.3.1]; moreover, [cf. Remark
+1.3.1] this data allows one to compute r(G  ) (respectively, r(H )). This completes
+the proof of assertion (i).
+Next, we consider assertion (ii). By assertion (i), it follows that α is grouptheoretically cuspidal. Thus, by replacing G, H by the compactiﬁcations [cf. Remark
+1.1.6] of sturdy ﬁnite étale coverings of G, H that correspond via α [cf. Remark
+1.1.5], we may assume without loss of generality that G, H are noncuspidal. Thus,
+by Theorem 1.6, (ii); Remark 1.4.1, it suﬃces to prove that α is verticially ﬁltrationpreserving. But this follows from Proposition 2.4, (ix). This completes the proof of
+def
+
+assertion (ii). Assertion (iv) follows formally from assertion (ii) [by taking H = G;
+JG , JH to be open subgroups of Outgrph (ΠG ) — cf. Proposition 2.4, (v)].
+Finally, we consider assertion (iii). By Theorem 1.6, (ii); Remark 1.4.1, it
+suﬃces to prove that α is verticially ﬁltration-preserving. But this follows from
+Proposition 2.6 and the assumptions concerning the l-inertia subgroups. This completes the proof of assertion (iii). 
+Remark 2.7.1.
+Corollary 2.7, (iv), may be regarded as a sort of anabelian
+analogue of the well-known linear algebra fact that, if k is an algebraically closed
+ﬁeld, then parabolic subgroups of the general linear group GLn (k), where n ≥ 2 —
+e.g., the subgroups that preserve some ﬁltration of a k-vector space of dimension n
+— are normally terminal in GLn (k) [cf., e.g., [Hum], p. 179].
+Remark 2.7.2. Note that the group-theoretic cuspidality of [Mzk4], Lemma 1.3.9
+(respectively, the graphicity of [Mzk4], Lemma 2.3) may be regarded as a [rather
+weak] special case of Corollary 2.7, (i) (respectively, Corollary 2.7, (ii)) — cf. the
+proof of Proposition 2.4, (v), above.
+Corollary 2.8. (Graphicity over an Arithmetic Logarithmic Point) Let
+G, H be semi-graphs of anabelioids of pro-Σ PSC-type; JG → Aut(G), JH →
+
+24
+
+SHINICHI MOCHIZUKI
+
+Aut(H) continuous homomorphisms that arise from data as in Example 2.5 such
+that [in the terminology of Example 2.5] the resulting actions are l-logarithmically
+full, for some l ∈ Σ, and arithmetically full, with base ﬁeld isomorphic to
+a subﬁeld of a ﬁnitely generated extension of Fp or Qp , for some prime p ∈ Σ
+[where we allow p to diﬀer for G, H]. Suppose, moreover, that we have been given
+isomorphisms of proﬁnite groups
+∼
+
+α : ΠG → ΠH ;
+
+∼
+
+ι : JG → JH
+
+which are compatible, with respect to the respective outer actions of JG , JH on
+ΠG , ΠH , and satisfy the property that ι maps the l-inertia subgroup of JG isomorphically onto that of JH . Then the respective actions of JG , JH on G, H are
+weakly l-graphically full, and α is graphic.
+Proof. Indeed, by using the Frobenius elements of the Galois group of a ﬁnitely
+generated extension of Fp or Qp containing the base ﬁeld in question [cf. the proof
+of Proposition 2.4, (v)], one obtains that JG , JH are weakly l-graphically full. [Note
+that, unlike the situation in the proof of Proposition 2.4, (v), the pointed stable
+curve over a ﬁnite ﬁeld that one uses here to conclude weak l-graphic fullness will,
+in general, be a degeneration of the original pointed stable curve over the base
+ﬁeld appearing in Example 2.5. This is the reason why [unlike the situation in
+the proof of Proposition 2.4, (v)] in the present context, one may only conclude
+weak l-graphic fullness.] By Corollary 2.7, (i), we thus conclude that α is grouptheoretically cuspidal. Moreover, this allows us [by passing to compactiﬁcations of
+sturdy ﬁnite étale coverings] to reduce to the noncuspidal case, hence to conclude
+that α is graphic by Corollary 2.7, (iii). 
+Remark 2.8.1. In the situation of Corollary 2.8, suppose further that the base
+ﬁeld in question is sub-p-adic [i.e., isomorphic to a subﬁeld of a ﬁnitely generated
+extension of Qp ], and that ι lies over an isomorphism between the absolute Galois
+groups of the respective base ﬁelds that arises from an isomorphism between the
+respective base ﬁelds. Then one may apply the main result of [Mzk3] — just as the
+main result of [Tama1] was applied in [Mzk2], §7 — to the various verticial subgroups
+to obtain a version of the Grothendieck conjecture for pointed stable curves over a
+sub-p-adic ﬁeld. Note that in this situation, when Σ is the set of all primes, one may
+also reconstruct the log structures at the nodes by considering the decomposition
+groups at the nodes [cf. the theory of [Mzk2], §6]. We leave the routine details to
+the interested reader.
+Remark 2.8.2. In the situation of Corollary 2.8, suppose further that the base
+ﬁeld in question is a ﬁnite extension of Qp [which may diﬀer for G, H], and that
+Σ is the set of all primes. Then observe that it follows from [Mzk4], Lemma 1.1.4,
+(ii), that ι lies over an isomorphism between the absolute Galois groups of the respective base ﬁelds [that does not necessarily arise from an isomorphism between
+the respective base ﬁelds!]. Now suppose further that the hyperbolic curve constituted by [the complement of the nodes and cusps in] each irreducible component
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+25
+
+of the pointed stable curves over the respective base ﬁelds that give rise to the
+data in question is isogenous [cf. §0] to a hyperbolic curve of genus zero. Then
+it follows from the theory of [Mzk6], §4 — more precisely, the “rigidity” of the
+cuspidal edge-like subgroups implied by [Mzk6], Theorem 4.3, together with the
+integral absoluteness of [Mzk6], Corollary 4.11 — that one may reconstruct the log
+structures at the nodes by considering the decomposition groups at the nodes [cf.
+the theory of [Mzk2], §6]. We leave the routine details to the interested reader.
+Corollary 2.9. (Unramiﬁed Graphicity) Let G, H be sturdy semi-graphs
+of anabelioids of pro-Σ PSC-type; JG → Aut(G), JH → Aut(H) continuous homomorphisms which determine l-graphically full actions, for some l ∈ Σ.
+Suppose, moreover, that we have been given factorizations
+JG  JG → Out(Πunr
+G );
+
+
+JH  JH
+→ Out(Πunr
+H )
+
+[where the composite homomorphisms are the natural homomorphisms; the ﬁrst arrow of each factorization is a surjection], together with isomorphisms of proﬁnite
+groups
+∼
+∼
+
+→ Πunr
+ι : JG → JH
+β : Πunr
+G
+H ;
+
+which are compatible, with respect to the respective outer actions of JG , JH
+on
+unr
+unr
+ΠG , ΠH . Then β is group-theoretically verticial.
+
+Proof. By Theorem 1.6, (iii), it suﬃces to prove that α is verticially ﬁltrationpreserving. But this follows from Proposition 2.4, (ix). 
+Remark 2.9.1. Note that the group-theoretic verticiality of [Mzk2], Proposition
+1.4 may be regarded as a [rather weak] special case of Corollary 2.9 — cf. the proof
+of Proposition 2.4, (v), above.
+Finally, we observe the following consequence of the theory of the present paper
+concerning anabelian geometry over ﬁnite extensions of the quotient ﬁeld of the ring
+of Witt vectors of an algebraic closure of a ﬁnite ﬁeld.
+Corollary 2.10. (Inertia Action in the Case of Two Primes) For i = 1, 2,
+let Ki be a ﬁnite extension of the quotient ﬁeld of the ring of Witt vectors W (Fpi )
+with coeﬃcients in an algebraic closure Fpi of the ﬁnite ﬁeld of cardinality pi , where
+def
+
+pi is a prime number; K i an algebraic closure of Ki ; Gi = Gal(K i /Ki ); Xi a hyperbolic curve over Ki whose corresponding stable log curve extends to a stable
+log curve Xilog over the spectrum of the ring of integers OKi of Ki [equipped with
+the log structure determined by the closed point of Spec(OKi )]; Σ a set of prime
+numbers such that pi ∈ Σ; Δi the maximal pro-Σ quotient of the étale fundamental group of (Xi ) ×Ki K i [so Δi may be regarded as the proﬁnite fundamental
+
+26
+
+SHINICHI MOCHIZUKI
+
+group of a semi-graph of anabelioids Gi of pro-Σ PSC-type with precisely one vertex
+and no closed edges];
+∼
+
+αG : G1 → G2 ;
+
+∼
+
+αΔ : Δ1 → Δ2
+
+a pair of isomorphisms of proﬁnite groups that are compatible with the natural outer action of Gi on Δi . Then the following hold.
+def
+
+(i) We have p1 = p2 [so we shall write p = p1 = p2 ]; for i = 1, 2, the action of
+Gi on Gi is weakly p-graphically full; αΔ is group-theoretically cuspidal.
+(ii) Suppose that the cardinality of Σ is ≥ 2. Then αΔ induces a functorial
+[i.e., with respect to the pair (αG , αΔ )] isomorphism of the “dual semi-graphs
+with compact structure” [cf. [Mzk4], Appendix] of the special ﬁbers of the Xilog .
+(iii) Suppose that the cardinality of Σ is ≥ 2. Write π1temp ((Xi ) ×Ki K i )
+for the tempered fundamental group of [André], §4 [cf. also [Mzk7], Examples
+3.10, 5.6];
+def
+
+temp
+Δtemp
+= ←
+lim
+i
+− π1 ((Xi ) ×Ki K i )/N
+N
+
+for the “Σ-tempered fundamental group” — i.e., the inverse limit where N
+varies over the open normal subgroups of π1temp ((Xi ) ×Ki K i ) such that the quotient
+π1temp ((Xi ) ×Ki K i )/N is an extension of a ﬁnite group whose order is a product
+of primes ∈ Σ by a discrete free group. [Here, we recall that such a discrete
+free group corresponds to a “combinatorial covering” determined by the graph of the
+special ﬁber of some stable reduction of a covering of Xi — cf. [André], Proposition
+4.3.1; [André], the proof of Lemma 6.1.1.] Thus, we have a natural continuous outer
+action of Gi on Δtemp
+; Δi is the pro-Σ completion of Δtemp
+. Then the operation
+i
+i
+of pro-Σ completion determines a surjection from the set of compatible pairs
+of isomorphisms of topological groups
+∼
+
+βG : G1 → G2 ;
+
+∼
+
+βΔtemp : Δtemp
+→ Δtemp
+1
+2
+
+considered up to inner automorphisms of the Δtemp
+to the set of compatible pairs
+i
+of isomorphisms of topological groups
+∼
+
+γG : G1 → G2 ;
+
+∼
+
+γΔ : Δ1 → Δ2
+
+considered up to inner automorphisms of the Δi .
+Proof. First, we consider assertion (i). Since [as is well-known] Gi is an extension
+of an abelian proﬁnite group by a nonabelian pro-pi group, it follows that pi may
+be characterized as the unique prime number p such that Gi contains a nonabelian
+pro-p closed subgroup. Thus, the existence of αG implies that p1 = p2 ; write
+def
+p = p1 = p2 . Now since the tensor product with Qp of the abelianization of
+any open subgroup of Δi admits a ﬁltration [cf., e.g., [FC], Chapter III, Corollary
+7.3] each of whose subquotients is Hodge-Tate [relative to the action of some open
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+27
+
+subgroup of Gi ], with Hodge-Tate decomposition only involving “Tate twists” by
+the zero-th or ﬁrst power of the cyclotomic character [cf. [Tate], §4, Corollary 2],
+it follows that Gi is [relative to its outer action on Δi ] weakly p-graphically full.
+Thus, the remainder of assertion (i) follows from Corollary 2.7, (i).
+def
+
+Next, we consider assertion (ii). Let l ∈ Σ be distinct from p = p1 = p2 . Write
+(l)
+(l)
+Δi  Δi for the maximal pro-l quotient of Δi . Since the subgroup of Out(Δi )
+(l)
+that induces the identity on the tensor product with Fl of the abelianization of Δi
+is [easily seen to be] a pro-l group, it follows that by replacing Gi by an open sub(l)
+group of Gi , we may assume that the natural map Gi → Out(Δi ) factors through
+(l)
+the maximal pro-l quotient Gi  Gi of Gi . Thus, the data given by the outer
+(l)
+(l)
+action of Gi on Δi is l-logarithmically full data of the type considered in Example 2.5. In particular, in the noncuspidal case, assertion (ii) follows immediately
+from Corollary 2.7, (iii). On the other hand, even if we are not in the noncuspidal
+case, by passing to compactiﬁcations of sturdy ﬁnite étale coverings of the Xi and
+applying the fact that a cuspidal edge-like subgroup belongs to a unique verticial
+subgroup [cf. Proposition 1.5, (i)], we reduce immediately [via assertion (i)] to the
+noncuspidal case. This completes the proof of assertion (ii).
+Finally, we observe that assertion (iii) follows formally from assertion (ii) via
+the same argument applied [in the case where Σ is the set of all primes, and the
+base ﬁelds are ﬁnite extensions of Qp ] in the proof of [Mzk7], Theorem 6.6, to derive
+the “surjectivity portion” of [Mzk7], Theorem 6.6, from [Mzk4], Lemma 2.3. 
+Remark 2.10.1. Since free discrete groups inject into their pro-Σ completions
+[cf. [RZ], Proposition 3.3.15], the natural map Δtemp
+→ Δi is injective [cf. the
+i
+proof of [Mzk7], Corollary 3.11]. On the other hand, unlike the situation of [Mzk7],
+Theorem 6.6, we are unable to conclude that the surjection of Corollary 2.10, (iii),
+is a bijection since [unlike the proﬁnite case — cf. [André], Corollary 6.2.2] it is not
+is equal to its own normalizer in Δi .
+clear that the [image in Δi of] Δtemp
+i
+
+28
+
+SHINICHI MOCHIZUKI
+
+Bibliography
+
+[André] Y. André, On a geometric description of Gal(Qp /Qp ) and a p-adic avatar of
+ , Duke Math. J. 119 (2003), 1–39.
+GT
+[Asada] M. Asada, The compatibility of the ﬁltration of mapping class groups of two
+surfaces pasted along the boundaries, Topology and its Applications 108 (2000)
+217–232.
+[DM] P. Deligne and D. Mumford, The irreducibility of the moduli space of curves
+of given genus, IHES Publ. Math. 36 (1969), 75–109.
+[FC] G. Faltings and C.-L. Chai, Degenerations of abelian varieties, Springer-Verlag
+(1990).
+[FK] E. Freitag and R. Kiehl, Étale cohomology and the Weil conjecture, Springer
+Verlag (1988).
+[Hum] J. E. Humphreys, Linear algebraic groups, Graduate Texts in Mathematics 21,
+Springer-Verlag (1975).
+[Kato] K. Kato, Logarithmic structures of Fontaine-Illusie, Proceedings of the First
+JAMI Conference, Johns Hopkins Univ. Press (1990), 191–224.
+[Knud] F. F. Knudsen, The projectivity of the moduli space of stable curves, II, Math.
+Scand. 52 (1983), 161–199.
+[Mzk1] S. Mochizuki, The Geometry of the compactiﬁcation of the Hurwitz scheme,
+Publ. Res. Inst. Math. Sci. 31 (1995), 355–441.
+[Mzk2] S. Mochizuki, The proﬁnite Grothendieck conjecture for closed hyperbolic
+curves over number ﬁelds, J. Math. Sci., Univ. Tokyo 3 (1996), 571–627.
+[Mzk3] S. Mochizuki, The local pro-p anabelian geometry of curves, Invent. Math. 138
+(1999), 319–423.
+[Mzk4] S. Mochizuki, The absolute anabelian geometry of hyperbolic curves, Galois
+theory and modular forms, Kluwer Academic Publishers (2003), 77–122.
+[Mzk5] S. Mochizuki, The geometry of anabelioids, Publ. Res. Inst. Math. Sci. 40
+(2004), 819–881.
+[Mzk6] S. Mochizuki, Galois sections in absolute anabelian geometry, Nagoya Math.
+J. 179 (2005), 17–45.
+[Mzk7] S. Mochizuki, Semi-graphs of anabelioids, Publ. Res. Inst. Math. Sci. 42 (2006),
+221–322.
+[Mumf] D. Mumford, Abelian varieties, Oxford Univ. Press (1974).
+[Naka1] H. Nakamura, Galois rigidity of the étale fundamental groups of punctured
+projective lines, J. reine angew. Math. 411 (1990), 205–216.
+[Naka2] H. Nakamura, Galois rigidity of pure sphere braid groups and proﬁnite calculus,
+J. Math. Sci. Univ. Tokyo 1 (1994), 71–136.
+
+A COMBINATORIAL VERSION OF THE GROTHENDIECK CONJECTURE
+
+29
+
+[RZ] Ribes and Zaleskii, Proﬁnite groups, Ergeb. Math. Grenzgeb. 3, SpringerVerlag (2000).
+[Tama1] A. Tamagawa, The Grothendieck conjecture for aﬃne curves, Compositio Math.
+109 (1997), 135–194.
+[Tama2] A. Tamagawa, On the fundamental groups of curves over algebraically closed
+Fields of characteristic > 0, Internat. Math. Res. Notices 16 (1999), 853–873.
+[Tate] J. Tate, p-divisible groups, Proceedings of a Conference on Local Fields, Driebergen, Springer-Verlag (1967), 158–183.
+
+Research Institute for Mathematical Sciences
+Kyoto University
+Kyoto 606-8502
+Japan
+motizuki@kurims.kyoto-u.ac.jp
+
+

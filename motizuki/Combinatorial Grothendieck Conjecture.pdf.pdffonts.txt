@@ -1,0 +1,25 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+FELPPA+CMBX10                        Type 1C           Custom           yes yes yes    235  0
+FELPPB+CMCSC10                       Type 1C           Custom           yes yes yes    238  0
+FEMAAC+CMR10                         Type 1C           Custom           yes yes yes    241  0
+FEMABD+CMR8                          Type 1C           Custom           yes yes yes    244  0
+FEMABE+CMTI8                         Type 1C           Custom           yes yes yes    247  0
+FEMACE+CMTI10                        Type 1C           Custom           yes yes yes    250  0
+FEMACF+CMSY8                         Type 1C           Custom           yes yes yes    253  0
+T1                                   Type 3            Custom           yes no  no     257  0
+FEMAEF+CMMI10                        Type 1C           Custom           yes yes yes    148  0
+FEMAEG+CMSY10                        Type 1C           Custom           yes yes yes    153  0
+FEMAGH+MSBM10                        Type 1C           Custom           yes yes yes    166  0
+FEMAHH+CMMI7                         Type 1C           Custom           yes yes yes    163  0
+FEMAHI+CMR7                          Type 1C           Custom           yes yes yes    164  0
+FEMAHJ+CMSY7                         Type 1C           Custom           yes yes yes    168  0
+FEMAHK+CMEX10                        Type 1C           Custom           yes yes no     160  0
+FEMALK+MSBM7                         Type 1C           Custom           yes yes yes    171  0
+FEMBCI+MSAM10                        Type 1C           Custom           yes yes no     172  0
+FEMBEI+CMSY5                         Type 1C           Custom           yes yes no     175  0
+FEMBGI+CMR5                          Type 1C           Custom           yes yes yes    178  0
+FEMCDE+CMMIB10                       Type 1C           Custom           yes yes yes    181  0
+FEMCID+CMMI5                         Type 1C           Custom           yes yes yes    184  0
+FEMDNL+CMSL10                        Type 1C           Custom           yes yes yes    187  0
+FEMDOM+CMTT10                        Type 1C           Custom           yes yes yes    190  0

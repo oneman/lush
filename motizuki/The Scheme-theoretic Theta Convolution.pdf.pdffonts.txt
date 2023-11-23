@@ -1,0 +1,18 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+IELNLO+CMR10                         Type 1C           Custom           yes yes yes    300  0
+IELNLP+CMCSC10                       Type 1C           Custom           yes yes yes    303  0
+IELNMP+CMBX10                        Type 1C           Custom           yes yes yes    306  0
+IELNNA+CMSY10                        Type 1C           Custom           yes yes yes    309  0
+IELNNB+CMTI10                        Type 1C           Custom           yes yes yes    312  0
+IELNPC+CMMI10                        Type 1C           Custom           yes yes yes    236  0
+IELNPD+CMSY7                         Type 1C           Custom           yes yes yes    233  0
+IELNPE+CMMI7                         Type 1C           Custom           yes yes yes    237  0
+IELNPF+CMR5                          Type 1C           Custom           yes yes yes    244  0
+IELOCE+CMBX7                         Type 1C           Custom           yes yes yes    246  0
+IELOCF+CMMIB10                       Type 1C           Custom           yes yes yes    250  0
+IELOFF+CMR7                          Type 1C           Custom           yes yes yes    253  0
+IELOHF+CMEX10                        Type 1C           Custom           yes yes no     260  0
+IELOHG+CMMI5                         Type 1C           Custom           yes yes yes    255  0
+IELOHH+CMSY5                         Type 1C           Custom           yes yes yes    256  0
+IEMBPC+CMBX5                         Type 1C           Custom           yes yes yes    263  0

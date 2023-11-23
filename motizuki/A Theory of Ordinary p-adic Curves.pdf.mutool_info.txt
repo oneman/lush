@@ -1,0 +1,30 @@
+A Theory of Ordinary p-adic Curves.pdf:
+
+PDF-1.5
+Info object (811 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111103024234+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111103024234+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(Contents.dvi)>>
+Pages: 180
+
+Retrieving info from pages 1-180...
+Mediaboxes (1):
+	1	(814 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (17):
+	1	(814 0 R):	Type1 'OFIHJI+CMBX10' (834 0 R)
+	1	(814 0 R):	Type1 'OFIHJJ+CMR10' (837 0 R)
+	1	(814 0 R):	Type1 'OFIHJK+CMR9' (840 0 R)
+	1	(814 0 R):	Type1 'OFIHKK+CMSY10' (843 0 R)
+	2	(1 0 R):	Type1 'OFIHMK+CMR7' (753 0 R)
+	2	(1 0 R):	Type1 'OFIHML+CMMI10' (749 0 R)
+	3	(4 0 R):	Type1 'OFIHNM+CMMI7' (755 0 R)
+	4	(7 0 R):	Type1 'OFIHON+CMSY7' (760 0 R)
+	5	(10 0 R):	Type1 'OFIIBM+CMTI10' (763 0 R)
+	7	(16 0 R):	Type1 'OFIIHL+CMR5' (766 0 R)
+	7	(16 0 R):	Type1 'OFIIHM+CMBX7' (767 0 R)
+	7	(16 0 R):	Type1 'OFIIHN+CMMI5' (770 0 R)
+	11	(28 0 R):	Type1 'OFIIOL+CMEX10' (773 0 R)
+	34	(97 0 R):	Type1 'OFILEN+CMSY5' (776 0 R)
+	100	(295 0 R):	Type1 'OFJDHI+EUFM10' (779 0 R)
+	127	(376 0 R):	Type1 'OFJGND+CMBX5' (782 0 R)
+	171	(508 0 R):	Type1 'OFJLND+CMSL10' (785 0 R)
+

@@ -1,0 +1,38 @@
+Canonical Liftings.pdf:
+
+PDF-1.5
+Info object (202 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111103024946+09'00')/Creator(PScript5.dll Version 5.2.2)/ModDate(D:20111103024946+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(Canonical Liftings.pdf)>>
+Pages: 34
+
+Retrieving info from pages 1-34...
+Mediaboxes (1):
+	1	(205 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (22):
+	1	(205 0 R):	Type1 'OMCADE+CMCSC10' (238 0 R)
+	1	(205 0 R):	Type1 'OMCAGL+CMR8' (241 0 R)
+	1	(205 0 R):	Type1 'OMCAGM+CMSY8' (244 0 R)
+	1	(205 0 R):	Type1 'OMCAEE+CMR10' (247 0 R)
+	1	(205 0 R):	Type1 'OMCAEF+CMTI10' (250 0 R)
+	1	(205 0 R):	Type1 'OMCAFG+CMMI10' (253 0 R)
+	1	(205 0 R):	Type1 'OMCAFH+CMBX10' (256 0 R)
+	1	(205 0 R):	Type1 'OMCAFI+CMSY10' (259 0 R)
+	1	(205 0 R):	Type1 'OMCAFJ+CMMI7' (262 0 R)
+	1	(205 0 R):	Type1 'OMCAFK+CMMI5' (265 0 R)
+	1	(205 0 R):	Type1 'OMCAGK+MSAM10' (268 0 R)
+	2	(1 0 R):	Type1 'OMCAIN+MSBM10' (164 0 R)
+	4	(7 0 R):	Type1 'OMCALN+CMSY7' (174 0 R)
+	4	(7 0 R):	Type1 'OMCAMN+MSBM7' (176 0 R)
+	4	(7 0 R):	Type1 'OMCAMO+CMR7' (172 0 R)
+	4	(7 0 R):	Type1 'OMCAMP+CMR5' (166 0 R)
+	6	(13 0 R):	Type1 'OMCAPP+CMEX10' (179 0 R)
+	10	(25 0 R):	Type1 'OMCBIM+CMSY5' (181 0 R)
+	16	(43 0 R):	Type1 'OMCCLG+CMMIB10' (184 0 R)
+	19	(52 0 R):	Type3 'T1' (187 0 R)
+	33	(94 0 R):	Type1 'OMCEKK+CMTT10' (194 0 R)
+	33	(94 0 R):	Type1 'OMCEKL+CMSL10' (191 0 R)
+
+Images (1):
+	4	(7 0 R):	[ Raw ] 1x1 1bpc ImageMask (110 0 R)
+

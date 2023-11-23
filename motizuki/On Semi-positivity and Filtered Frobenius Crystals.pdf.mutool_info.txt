@@ -1,0 +1,27 @@
+On Semi-positivity and Filtered Frobenius Crystals.pdf:
+
+PDF-1.5
+Info object (88 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107162509+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111107162509+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(Semipos.dvi)>>
+Pages: 14
+
+Retrieving info from pages 1-14...
+Mediaboxes (1):
+	1	(91 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (14):
+	1	(91 0 R):	Type1 'GPPJCD+CMBX10' (128 0 R)
+	1	(91 0 R):	Type1 'GPPJCE+CMR10' (131 0 R)
+	1	(91 0 R):	Type1 'GPPJCF+CMSY10' (134 0 R)
+	1	(91 0 R):	Type1 'GPPJDF+CMMI10' (137 0 R)
+	1	(91 0 R):	Type1 'GPPJDG+CMSY7' (140 0 R)
+	1	(91 0 R):	Type1 'GPPJDH+CMSL10' (143 0 R)
+	1	(91 0 R):	Type1 'GPPJEI+CMMI7' (146 0 R)
+	1	(91 0 R):	Type1 'GPPJEJ+CMMI5' (149 0 R)
+	1	(91 0 R):	Type1 'GPPJEK+CMR7' (152 0 R)
+	3	(4 0 R):	Type1 'GPPJIJ+CMTI10' (76 0 R)
+	4	(7 0 R):	Type1 'GPPJKJ+CMEX10' (77 0 R)
+	6	(14 0 R):	Type1 'GPPJPI+CMBX7' (79 0 R)
+	7	(17 0 R):	Type1 'GPPKBJ+CMR5' (81 0 R)
+	10	(28 0 R):	Type1 'GPPKHH+CMSY5' (82 0 R)
+

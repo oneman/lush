@@ -1,0 +1,32 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+OBBOKM+CMBX12                        Type 1C           Custom           yes yes yes    790  0
+OBBOKN+CMBX10                        Type 1C           Custom           yes yes yes    793  0
+OBBOLO+CMR10                         Type 1C           Custom           yes yes yes    796  0
+OBBOLP+CMTI10                        Type 1C           Custom           yes yes yes    799  0
+OBBONA+CMCSC10                       Type 1C           Custom           yes yes yes    675  0
+OBBOOA+CMSY10                        Type 1C           Custom           yes yes yes    680  0
+OBBOOB+EUFM10                        Type 1C           Custom           yes yes yes    683  0
+OBBOPC+CMMI10                        Type 1C           Custom           yes yes yes    676  0
+OBBPBD+CMR7                          Type 1C           Custom           yes yes yes    687  0
+OBBPBE+MSAM10                        Type 1C           Custom           yes yes no     693  0
+OBBPAC+CMMI7                         Type 1C           Custom           yes yes yes    688  0
+OBBPDE+MSBM10                        Type 1C           Custom           yes yes yes    697  0
+OBBPDF+CMEX10                        Type 1C           Custom           yes yes yes    694  0
+OBBPFF+CMSY7                         Type 1C           Custom           yes yes yes    710  0
+OBBPFG+CMMI5                         Type 1C           Custom           yes yes yes    707  0
+OBBPFH+MSBM7                         Type 1C           Custom           yes yes yes    704  0
+OBBPFI+CMR5                          Type 1C           Custom           yes yes yes    701  0
+OBBPGJ+CMBX7                         Type 1C           Custom           yes yes yes    721  0
+OBBPHK+CMBSY10                       Type 1C           Custom           yes yes yes    718  0
+OBBPHL+CMMIB7                        Type 1C           Custom           yes yes no     715  0
+OBBPHM+CMSY5                         Type 1C           Custom           yes yes yes    712  0
+OBCAEH+CMMIB10                       Type 1C           Custom           yes yes yes    724  0
+OBCAMF+MSAM7                         Type 1C           Custom           yes yes no     727  0
+OBCAOF+MSAM5                         Type 1C           Custom           yes yes no     730  0
+OBCCCO+CMMI12                        Type 1C           Custom           yes yes yes    733  0
+OBCCPK+CMR6                          Type 1C           Custom           yes yes yes    736  0
+OBCDKG+MSBM5                         Type 1C           Custom           yes yes yes    737  0
+OBCHOL+EUFM7                         Type 1C           Custom           yes yes yes    740  0
+OBDAOC+CMMI6                         Type 1C           Custom           yes yes yes    743  0
+OBDAPC+CMTT9                         Type 1C           Custom           yes yes yes    744  0

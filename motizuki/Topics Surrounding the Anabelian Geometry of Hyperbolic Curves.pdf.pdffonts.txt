@@ -1,0 +1,23 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+IGMBNK+CMR10                         Type 1C           Custom           yes yes yes    307  0
+IGMBOL+CMCSC10                       Type 1C           Custom           yes yes yes    310  0
+IGMBOM+CMBX10                        Type 1C           Custom           yes yes yes    313  0
+IGMBON+CMSY10                        Type 1C           Custom           yes yes yes    316  0
+IGMBOO+CMMI10                        Type 1C           Custom           yes yes yes    319  0
+IGMBPP+CMTI10                        Type 1C           Custom           yes yes yes    322  0
+IGMCAA+CMR8                          Type 1C           Custom           yes yes yes    325  0
+IGMCAB+CMSY8                         Type 1C           Custom           yes yes yes    328  0
+IGMCEB+CMR7                          Type 1C           Custom           yes yes yes    239  0
+IGMCGB+MSBM10                        Type 1C           Custom           yes yes yes    236  0
+IGMCGC+CMMI5                         Type 1C           Custom           yes yes yes    232  0
+IGMCEA+CMMI7                         Type 1C           Custom           yes yes yes    237  0
+IGMCJC+CMSY7                         Type 1C           Custom           yes yes yes    245  0
+IGMCMC+CMSY5                         Type 1C           Custom           yes yes yes    251  0
+IGMCMD+MSBM7                         Type 1C           Custom           yes yes yes    248  0
+IGMCOD+MSAM10                        Type 1C           Custom           yes yes no     250  0
+IGMDBD+EUFM10                        Type 1C           Custom           yes yes yes    255  0
+IGMDIB+CMR5                          Type 1C           Custom           yes yes yes    261  0
+IGMDIC+CMEX10                        Type 1C           Custom           yes yes yes    258  0
+T1                                   Type 3            Custom           yes no  no     264  0
+IGMIEE+CMSL10                        Type 1C           Custom           yes yes yes    265  0

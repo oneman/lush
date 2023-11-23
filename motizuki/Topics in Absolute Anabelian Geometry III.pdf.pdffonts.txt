@@ -1,0 +1,35 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+GKMFAK+CMBX10                        Type 1C           Custom           yes yes yes    830  0
+GKMFEB+CMTI8                         Type 1C           Custom           yes yes yes    833  0
+GKMFEC+CMSY10                        Type 1C           Custom           yes yes yes    836  0
+GKMFED+CMSY8                         Type 1C           Custom           yes yes yes    839  0
+GKMFAL+CMCSC10                       Type 1C           Custom           yes yes yes    842  0
+GKMFBL+CMR10                         Type 1C           Custom           yes yes yes    845  0
+GKMFBM+CMCSC8                        Type 1C           Custom           yes yes yes    848  0
+GKMFBN+CMR8                          Type 1C           Custom           yes yes yes    851  0
+GKMFCO+CMBX8                         Type 1C           Custom           yes yes yes    854  0
+GKMFCP+CMMI8                         Type 1C           Custom           yes yes yes    857  0
+GKMFDA+CMR6                          Type 1C           Custom           yes yes yes    860  0
+GKMFDB+MSBM8                         Type 1C           Custom           yes yes yes    863  0
+GKMFGE+CMMI10                        Type 1C           Custom           yes yes yes    703  0
+GKMFGF+MSBM10                        Type 1C           Custom           yes yes yes    702  0
+GKMFGG+CMMI7                         Type 1C           Custom           yes yes yes    704  0
+GKMFHG+CMR7                          Type 1C           Custom           yes yes yes    718  0
+GKMFHH+CMTI10                        Type 1C           Custom           yes yes yes    715  0
+GKMFHI+CMMIB10                       Type 1C           Custom           yes yes yes    712  0
+GKMFIJ+CMSY7                         Type 1C           Custom           yes yes yes    709  0
+GKMFKJ+MSAM10                        Type 1C           Custom           yes yes no     721  0
+GKMFNJ+EUFM10                        Type 1C           Custom           yes yes yes    724  0
+GKMGCI+CMEX10                        Type 1C           Custom           yes yes yes    727  0
+GKMGMF+EUFM7                         Type 1C           Custom           yes yes yes    736  0
+GKMGMG+MSAM7                         Type 1C           Custom           yes yes no     733  0
+GKMGMH+MSAM5                         Type 1C           Custom           yes yes no     730  0
+GKMHNC+CMR5                          Type 1C           Custom           yes yes yes    739  0
+GKMIAC+CMSY5                         Type 1C           Custom           yes yes yes    742  0
+GKMIEB+CMMI5                         Type 1C           Custom           yes yes yes    745  0
+GKMINP+MSBM7                         Type 1C           Custom           yes yes yes    748  0
+GKMLJP+MSBM5                         Type 1C           Custom           yes yes yes    751  0
+GKMMAN+EUFM5                         Type 1C           Custom           yes yes yes    754  0
+GKNGCA+CMSL10                        Type 1C           Custom           yes yes yes    758  0
+GKNGDB+CMTT10                        Type 1C           Custom           yes yes yes    757  0

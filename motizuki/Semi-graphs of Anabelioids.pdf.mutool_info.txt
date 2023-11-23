@@ -1,0 +1,46 @@
+Semi-graphs of Anabelioids.pdf:
+
+PDF-1.5
+Info object (477 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20120306131817+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20120306131817+09'00')/Producer(Acrobat Distiller 10.0.0 \(Windows\))/Title(semianab-RZP-rev2.dvi)>>
+Pages: 92
+
+Retrieving info from pages 1-92...
+Mediaboxes (1):
+	1	(480 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (30):
+	1	(480 0 R):	Type1 'KJMEND+CMBX10' (519 0 R)
+	1	(480 0 R):	Type1 'KJMEOD+CMCSC10' (522 0 R)
+	1	(480 0 R):	Type1 'KJMEPE+CMR10' (525 0 R)
+	1	(480 0 R):	Type1 'KJMFAF+CMR8' (528 0 R)
+	1	(480 0 R):	Type1 'KJMFAG+CMTI8' (531 0 R)
+	1	(480 0 R):	Type1 'KJMFBG+CMMI8' (534 0 R)
+	1	(480 0 R):	Type1 'KJMFBH+CMSY10' (537 0 R)
+	1	(480 0 R):	Type1 'KJMFCI+CMTI10' (540 0 R)
+	1	(480 0 R):	Type1 'KJMFCJ+CMSY8' (543 0 R)
+	1	(480 0 R):	Type3 'T1' (547 0 R)
+	2	(1 0 R):	Type1 'KJMFEJ+CMMI10' (409 0 R)
+	5	(10 0 R):	Type1 'KJMFKI+CMMI7' (412 0 R)
+	5	(10 0 R):	Type1 'KJMFKJ+CMR7' (415 0 R)
+	5	(10 0 R):	Type1 'KJMFKK+CMSY7' (417 0 R)
+	5	(10 0 R):	Type1 'KJMFKL+CMEX10' (424 0 R)
+	5	(10 0 R):	Type1 'KJMFLL+MSBM10' (421 0 R)
+	7	(16 0 R):	Type1 'KJMFPL+CMR5' (426 0 R)
+	10	(25 0 R):	Type1 'KJMGGJ+MSBM7' (432 0 R)
+	10	(25 0 R):	Type1 'KJMGGK+CMMI5' (429 0 R)
+	12	(31 0 R):	TrueType 'TimesNewRomanPS-BoldMT' WinAnsiEncoding (435 0 R)
+	13	(34 0 R):	Type1 'KJMHBI+CMSY5' (436 0 R)
+	30	(85 0 R):	Type1 'KJMJCM+MSBM5' (439 0 R)
+	39	(112 0 R):	Type1 'KJMKFF+MSAM10' (442 0 R)
+	43	(124 0 R):	Type1 'KJMKOD+CMMIB10' (445 0 R)
+	45	(130 0 R):	Type1 'KJMLFB+MSAM7' (450 0 R)
+	45	(130 0 R):	Type1 'KJMLFC+MSAM5' (448 0 R)
+	51	(148 0 R):	Type1 'KJMMBO+EUFM10' (453 0 R)
+	69	(202 0 R):	Type3 'T2' (456 0 R)
+	91	(268 0 R):	Type1 'KJNCCH+CMSL10' (460 0 R)
+	92	(271 0 R):	Type1 'KJNCEH+CMTT10' (463 0 R)
+
+Images (1):
+	1	(480 0 R):	[ Raw ] 1x1 1bpc ImageMask (493 0 R)
+

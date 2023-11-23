@@ -1,0 +1,2261 @@
+An Introduction to
+p-adic Teichmüller Theory
+by Shinichi Mochizuki
+The goal of the present manuscript is to provide an introduction to the theory of
+uniformization of p-adic hyperbolic curves and their moduli of [Mzk1,2]. On the one hand,
+this theory generalizes the Fuchsian and Bers uniformizations of complex hyperbolic curves
+and their moduli to nonarchimedean places. It is for this reason that we shall often refer to
+this theory as p-adic Teichmüller theory, for short. On the other hand, the theory under
+discussion may be regarded as a fairly precise hyperbolic analogue of the Serre-Tate theory
+of ordinary abelian varieties and their moduli.
+
+§1. From the Complex Theory to the “Classical Ordinary” p-adic Theory
+In this §, we attempt to bridge the gap for the reader between the classical uniformization of a hyperbolic Riemann surface that one studies in an undergraduate complex analysis
+course and the point of view espoused in [Mzk1,2].
+§1.1. The Fuchsian Uniformization
+Let X be a hyperbolic algebraic curve over C, the ﬁeld of complex numbers. By
+this, we mean that X is obtained by removing r points from a smooth, proper, connected
+algebraic curve of genus g (over C), where 2g − 2 + r > 0. We shall refer to (g, r) as the
+type of X. Then it is well-known that to X, one can associate in a natural way a Riemann
+surface X whose underlying point set is X(C). We shall refer to Riemann surfaces X
+obtained in this way as “hyperbolic of ﬁnite type.”
+Now perhaps the most fundamental arithmetic – read “arithmetic at the inﬁnite
+prime” – fact known about the algebraic curve X is that X admits a uniformization by
+the upper half plane H:
+H→X
+For convenience, we shall refer to this uniformization of X in the following as the Fuchsian uniformization of X. Put another way, the uniformization theorem quoted above
+ of X (which itself has the natural structure
+asserts that the universal covering space X
+of a Riemann surface) is holomorphically isomorphic to the upper half plane H = {z ∈
+C | Im(z) > 0}. This fact was “familiar” to many mathematicians as early as the midnineteenth century, but was only proven rigorously much later by Köbe.
+1
+
+The fundamental thrust of [Mzk1,2] is to generalize the Fuchsian uniformization
+to the p-adic context.
+
+Riemann Surface
+
+Upper Half Plane
+
+Fig. 1: The Fuchsian Uniformization
+
+At this point, the reader might be moved to interject: But hasn’t this already been
+achieved decades ago by Mumford in [Mumf]? In fact, however, Mumford’s construction
+gives rise to a p-adic analogue not of the Fuchsian uniformization, but rather of the Schottky uniformization of a complex hyperbolic curve. Even in the complex case, the Schottky
+uniformization is an entirely diﬀerent sort of uniformization – both geometrically and arithmetically – from the Fuchsian uniformization: for instance, its periods are holomorphic,
+whereas the periods that occur for the Fuchsian uniformization are only real analytic. This
+phenomenon manifests itself in the nonarchimedean context in the fact that the construction of [Mumf] really has nothing to do with a ﬁxed prime number “p,” and in fact, takes
+place entirely in the formal analytic category. In particular, the theory of [Mumf] has
+nothing to do with “Frobenius.” By contrast, the theory of [Mzk1,2] depends very much
+on the choice of a prime “p,” and makes essential use of the “action of Frobenius.” Another
+diﬀerence between the theory of [Mumf] and the theory of [Mzk1,2] is that [Mumf] only
+addresses the case of curves whose “reduction modulo p” is totally degenerate, whereas
+the theory of [Mzk1,2] applies to curves whose reduction modulo p is only assumed to be
+“suﬃciently generic.” Thus, at any rate, the theory of [Mzk1,2] is entirely diﬀerent from
+and has little directly to do with the theory of [Mumf].
+§1.2. Reformulation in Terms of Metrics
+Unfortunately, if one sets about trying to generalize the Fuchsian uniformization H →
+X to the p-adic case in any sort of naive, literal sense, one immediately sees that one runs
+2
+
+into a multitude of apparently insurmountable diﬃculties. Thus, it is natural to attempt
+to recast the Fuchsian uniformization in a more universal form, a form more amenable to
+relocation from the archimedean to the nonarchimedean world.
+One natural candidate that arises in this context is the notion of a metric – more
+precisely, the notion of a real analytic Kähler metric. For instance, the upper half plane
+admits a natural such metric, namely, the metric given by
+dx2 + dy 2
+y2
+(where z = x + iy is the standard coordinate on H). Since this metric is invariant with
+ ∼
+respect to all holomorphic automorphisms of H, it induces a natural metric on X
+= H
+∼
+
+which is independent of the choice of isomorphism X = H and which descends to a metric
+μX on X.
+Having constructed the canonical metric μX on X, we ﬁrst make the following observation:
+There is a general theory of canonical coordinates associated to a real analytic
+Kähler metric on a complex manifold.
+(See, e.g., [Mzk1], Introduction, §2, for more technical details.) Moreover, the canonical
+coordinate associated to the metric μX is precisely the coordinate obtained by pulling
+back the standard coordinate “z” on the unit disc via any holomorphic isomorphism of
+ to μX is a “faithful
+ ∼
+X
+= H with the unit disc. Thus, in other words, passing from H → X
+operation,” i.e., one doesn’t really lose any information.
+Next, let us make the following observation: Let Mg,r denote the moduli stack of
+smooth r-pointed algebraic curves of genus g over C. If we order the points that were
+removed from the compactiﬁcation of X to form X, then we see that X deﬁnes a point
+[X] ∈ Mg,r (C). Moreover, it is elementary and well-known that the cotangent space to
+Mg,r at [X] can be written in terms of square diﬀerentials on X. Indeed, if, for simplicity,
+we restrict ourselves to the case r = 0, then this cotangent space is naturally isomorphic
+def
+⊗2
+) (where ωX/C is the algebraic coherent sheaf of diﬀerentials on X).
+to Q = H 0 (X, ωX/C
+Then the observation we would like to make is the following: Reformulating the Fuchsian
+uniformization in terms of the metric μX allows us to “push-forward” μX to obtain a
+canonical real analytic Kähler metric μM on the complex analytic stack Mg,r associated
+to Mg,r by the following formula: if θ, ψ ∈ Q, then
+def
+
+
+
+< θ, ψ > =
+
+X
+
+θ·ψ
+μX
+
+(Here, ψ is the complex conjugate diﬀerential to ψ, and the integral is well-deﬁned because
+the integrand is the quotient of a (2, 2)-form by a (1, 1)-form, i.e., the integrand is itself a
+(1, 1)-form.)
+3
+
+This metric on Mg,r is called the Weil-Petersson metric. It is known that
+The canonical coordinates associated to the Weil-Petersson metric coincide with
+ g,r (the universal covering space of Mg,r ).
+the so-called Bers coordinates on M
+ g,r into the complex
+The Bers coordinates deﬁne an anti-holomorphic embedding of M
+aﬃne space associated to Q. We refer to the Introduction of [Mzk1] for more details on
+this circle of ideas.
+At any rate, in summary, we see that much that is useful can be obtained from
+this reformulation in terms of metrics. However, although we shall see later that the
+reformulation in terms of metrics is not entirely irrelevant to the theory that one ultimately
+obtains in the p-adic case, nevertheless this reformulation is still not suﬃcient to allow one
+to eﬀect the desired translation of the Fuchsian uniformization into an analogous p-adic
+theory.
+§1.3. Reformulation in Terms of Indigenous Bundles
+It turns out that the “missing link” necessary to translate the Fuchsian uniformization
+into an analogous p-adic theory was provided by Gunning ([Gunning]) in the form of the
+notion of an indigenous bundle. The basic idea is as follows: First recall that the group
+Aut(H) of holomorphic automorphisms of the upper half plane may be identiﬁed (by
+thinking about linear fractional transformations) with PSL2 (R)0 (where the superscripted
+“0” denotes the connected component of the identity). Moreover, PSL2 (R)0 is naturally
+contained inside PGL2 (C) = Aut(P1C ). Let ΠX denote the (topological) fundamental
+group of X (where we ignore the issue of choosing a base-point since this will be irrelevant
+ ∼
+for what we do). Then since ΠX acts naturally on X
+= H, we get a natural representation
+ρX : ΠX → PGL2 (C) = Aut(P1C )
+which is well-deﬁned up to conjugation by an element of Aut(H) ⊆ Aut(P1C ). We shall
+henceforth refer to ρX as the canonical representation associated to X. Thus, ρX gives us
+ × P1 . If we form the quotient of
+an action of ΠX on P1C , hence a diagonal action on X
+C
+1
+1
+
+
+this action of ΠX on X × PC , we obtain a P -bundle over X/ΠX = X which automatically
+algebraizes to an algebraic P1 -bundle P → X over X. (For simplicity, think of the case
+r = 0!)
+In fact, P → X comes equipped with more structure. First of all, note that the
+ × P1 → X
+ is equipped with the trivial connection. (Note: here we
+trivial P1 -bundle X
+C
+use the “Grothendieck deﬁnition” of the notion of a connection on a P1 -bundle: i.e., an
+isomorphism of the two pull-backs of the P1 -bundle to the ﬁrst inﬁnitesimal neighborhood
+ ×X
+ which restricts to the identity on the diagonal X
+ ⊆ X
+ × X.)
+
+of the diagonal in X
+Moreover, this trivial connection is clearly ﬁxed by the action of ΠX , hence descends and
+algebraizes to a connection ∇P on P → X. Finally, let us observe that we also have a
+4
+
+ →X
+ × P1 whose
+section σ : X → P given by descending and algebraizing the section X
+C
+1
+∼
+
+projection to the second factor is given by X = H ⊆ PC . This section is referred to as
+the Hodge section. If we diﬀerentiate σ by means of ∇P , we obtain a Kodaira-Spencer
+morphism τX/C → σ ∗ τP/X (where “τA/B ” denotes the relative tangent bundle of A over
+B). It is easy to see that this Kodaira-Spencer morphism is necessarily an isomorphism.
+
+Upper Half Plane
+
+Riemann Sphere
+
+Upper Half Plane
+
+(identity,
+natural inclusion)
+
+Quotient by the Action
+of the Fundamental Group
+
+The Resulting Indigenous Bundle
+
+The
+Hodge
+Section
+
+Fig. 2: The Construction of the Canonical Indigenous Bundle
+
+This triple of data (P → X, ∇P , σ) is the prototype of what Gunning refers to as an
+indigenous bundle. We shall refer to this speciﬁc (P → X, ∇P ) (one doesn’t need to specify
+σ since σ is uniquely determined by the property that its Kodaira-Spencer morphism is an
+isomorphism) as the canonical indigenous bundle. More generally, an indigenous bundle
+on X (at least in the case r = 0) is any P1 -bundle P → X with connection ∇P such
+that P → X admits a section (necessarily unique) whose Kodaira-Spencer morphism is an
+isomorphism. (In the case r > 0, it is natural to introduce log structures in order to make
+a precise deﬁnition.)
+5
+
+Note that the notion of an indigenous bundle has the virtue of being entirely algebraic
+in the sense that at least as an object, the canonical indigenous bundle (P → X, ∇P ) exists
+in the algebraic category. In fact, the space of indigenous bundles forms a torsor over the
+vector space Q of quadratic diﬀerentials on X (at least for r = 0). Thus,
+The issue of which point in this aﬃne space of indigenous bundles on X corresponds to the canonical indigenous bundle is a deep arithmetic issue, but the
+aﬃne space itself can be deﬁned entirely algebraically.
+One aspect of the fact that the notion of an indigenous bundle is entirely algebraic is
+that indigenous bundles can, in fact, be deﬁned over Z[ 12 ], and in particular, over Zp (for
+p odd). In [Mzk1], Chapter I, a fairly complete theory of indigenous bundles in the padic case (analogous to the complex theory of [Gunning]) is worked out. To summarize,
+indigenous bundles are closely related to projective structures and Schwarzian derivatives
+on X. Moreover, the underlying P1 -bundle P → X is always the same (for all indigenous
+bundles on X), i.e., the choice of connection ∇P determines the isomorphism class of the
+indigenous bundle. We refer the reader to [Mzk1], Chapter I, for more details. (Note:
+Although the detailed theory of [Mzk1], Chapter I, is philosophically very relevant to the
+theory of [Mzk2], most of this theory is technically and logically unnecessary for reading
+[Mzk2].)
+At any rate, to summarize, the introduction of indigenous bundles allows one to
+consider the Fuchsian uniformization as being embodied by an object – the canonical
+indigenous bundle – which exists in the algebraic category, but which, compared to other
+indigenous bundles, is somehow “special.” In the following, we would like to analyze the
+sense in which the canonical indigenous bundle is special, and to show how this sense can
+be translated immediately into the p-adic context. Thus, we see that
+The search for a p-adic theory analogous to the theory of the Fuchsian uniformization can be reinterpreted as the search for a notion of “canonical p-adic indigenous
+bundle” which is special in a sense precisely analogous to the sense in which the
+canonical indigenous bundle arising from the Fuchsian uniformization is special.
+§1.4. Frobenius Invariance and Integrality
+In this subsection, we explore in greater detail the issue of what precisely makes the
+canonical indigenous bundle (in the complex case) so special, and note in particular that
+a properly phrased characterization of the canonical indigenous bundle (in the complex
+case) translates very naturally into the p-adic case.
+First, let us observe that in global discussions of motives over a number ﬁeld, it is
+natural to think of the operation of complex conjugation as a sort of “Frobenius at the
+inﬁnite prime.” In fact, in such discussions, complex conjugation is often denoted by
+“F r∞ .” Next, let us observe that one special property of the canonical indigenous bundle
+6
+
+is that its monodromy representation (i.e., the “canonical representation” ρX : ΠX →
+PGL2 (C)) is real-valued, i.e., takes its values in PGL2 (R). Another way to put this is to
+say that the canonical indigenous bundle is F r∞ -invariant, i.e.,
+The canonical indigenous bundle on a hyperbolic curve is invariant with respect
+to the Frobenius at the inﬁnite prime.
+Unfortunately, as is observed in [Falt2], this property of having real monodromy is not
+suﬃcient to characterize the canonical indigenous bundle completely. That is to say, the
+indigenous bundles with real monodromy form a discrete subset of the space of indigenous
+bundles on the given curve X, but this discrete subset consists (in general) of more than
+one element.
+Let us introduce some notation. Let Mg,r be the stack of r-pointed smooth curves
+of genus g over C. Let Sg,r be the stack of such curves equipped with an indigenous
+bundle. Then there is a natural projection morphism Sg,r → Mg,r (given by forgetting
+the indigenous bundle) which exhibits Sg,r as an aﬃne torsor on Mg,r over the vector
+bundle ΩMg,r /C of diﬀerentials on Mg,r . We shall refer to this torsor Sg,r → Mg,r as the
+Schwarz torsor.
+Let us write SX for the restriction of the Schwarz torsor Sg,r → Mg,r to the point
+[X] ∈ Mg,r (C) deﬁned by X. Thus, SX is an aﬃne complex space of dimension 3g − 3 + r.
+Let RX ⊆ SX be the set of indigenous bundles with real monodromy. As observed in
+
+⊆ SX be the subset of indigenous
+[Falt2], RX is a discrete subset of SX . Now let SX
+bundles (P → X, ∇P ) with the following property:
+(*) The associated monodromy representation ρ : ΠX → PGL2 (C) is injective
+and its image Γ is a quasi-Fuchsian group. Moreover, if Ω ⊆ P1 (C) is the domain
+of discontinuity of Γ, then Ω/Γ is a disjoint union of two Riemann surfaces of
+type (g, r).
+(Roughly speaking, a “quasi-Fuchsian group” is a discrete subgroup of PGL2 (C) whose
+domain of discontinuity Ω (i.e., the set of points of P1 (C) at which Γ acts discontinuously)
+is a disjoint union of two topological open discs, separated by a topological circle. We refer
+to [Gard], [Thurs] for more details on the theory of quasi-Fuchsian groups.)
+
+is a bounded ([Gard], p. 99, Lemma 6), open (cf. the discussion
+It is known that SX
+of §5 of [Thur]) subset of SX (in the complex analytic topology). Moreover, since a quasiFuchsian group with real monodromy acts discretely on the upper half plane (see, e.g.,
+[Shi], Chapter I, Proposition 1.8), it follows immediately that such a quasi-Fuchsian group
+is Fuchsian. Put another way, we have that:
+
+ 
+⊆ SX is the set consisting of the single point correThe intersection RX SX
+sponding to the canonical indigenous bundle.
+It is this characterization of the canonical indigenous bundle that we will seek to translate
+into the p-adic case.
+7
+
+To translate the above characterization, let us ﬁrst recall the point of view of Arakelov
+theory which states, in eﬀect, that Zp -integral structures (on say, an aﬃne space over Qp )
+correspond to closures of bounded open subsets (of, say, an aﬃne space over C). Thus,
+
+from this point of view, one may think of SX
+as deﬁning a natural integral structure (in
+the sense of Arakelov theory) on the complex aﬃne space SX . Thus, from this point of
+view, one arrives at the following characterization of the canonical indigenous bundle:
+The canonical indigenous bundle is the unique indigenous bundle which is integral
+(in the Arakelov sense) and Frobenius invariant (i.e., has monodromy which is
+invariant with respect to complex conjugation).
+This gives us at last an answer to the question posed earlier: How can one characterize the
+canonical indigenous bundle in the complex case in such a way that the characterization
+carries over word for word to the p-adic context? In particular, it gives rise to the following
+conclusion:
+The proper p-adic analogue of the theory of the Fuchsian and Bers uniformizations
+should be a theory of Zp -integral indigenous bundles that are invariant with respect
+to some natural action of the Frobenius at the prime p.
+This conclusion constitutes the fundamental philosophical basis underlying the theory of
+[Mzk2]. In [Mzk1], this philosophy was partially realized in the sense that certain Zp integral Frobenius indigenous bundles were constructed. The theory of [Mzk1] will be
+reviewed later (in §1.6). The goal of [Mzk2], by contrast, is to lay the foundations for a
+general theory of all Zp -integral Frobenius indigenous bundles and to say as much as is
+possible in as much generality as is possible concerning such bundles.
+§1.5. The Canonical Real Analytic Trivialization of the Schwarz Torsor
+In this subsection, we would like to take a closer look at the Schwarz torsor Sg,r →
+Mg,r . For general g and r, this aﬃne torsor Sg,r → Mg,r does not admit any algebraic
+or holomorphic sections. Indeed, this aﬃne torsor deﬁnes a class in H 1 (Mg,r , ΩMg,r /C )
+which is the Hodge-theoretic ﬁrst Chern class of a certain ample line bundle L on Mg,r .
+(See [Mzk1], Chapter I, §3, especially Theorem 3.4, for more details on this Hodge-theoretic
+Chern class and Chapter III, Proposition 2.2, of [Mzk2] for a proof of ampleness.) Put
+another way, Sg,r → Mg,r is the torsor of (algebraic) connections on the line bundle L.
+However, the map that assigns to X the canonical indigenous bundle on X deﬁnes a real
+analytic section
+sH : Mg,r (C) → Sg,r (C)
+of this torsor.
+The ﬁrst and most important goal of the present subsection is to remark that
+8
+
+The single object sH essentially embodies the entire uniformization theory of complex hyperbolic curves and their moduli.
+Indeed, sH by its very deﬁnition contains the data of “which indigenous bundle is canonical,” hence already may be said to embody the Fuchsian uniformization. Next, we observe
+that ∂sH is equal to the Weil-Petersson metric on Mg,r (see [Mzk1], Introduction, Theorem 2.3 for more details). Moreover, (as is remarked in Example 2 following Deﬁnition
+2.1 in [Mzk1], Introduction, §2) since the canonical coordinates associated to a real analytic Kähler metric are obtained by essentially integrating (in the “sense of anti-∂-ing”)
+the metric, it follows that (a certain appropriate restriction of) sH “is” essentially the
+Bers uniformization of Teichmüller space. Thus, as advertised above, the single object sH
+stands at the very center of the uniformization theory of complex hyperbolic curves and
+their moduli.
+In particular, it follows that we can once again reinterpret the fundamental issue of
+trying to ﬁnd a p-adic analogue of the Fuchsian uniformization as the issue of trying to
+ﬁnd a p-adic analogue of the section sH . That is to say, the torsor Sg,r → Mg,r is, in
+fact, deﬁned over Z[ 12 ], hence over Zp (for p odd). Thus, forgetting for the moment that
+it is not clear precisely what p-adic category of functions corresponds to the real analytic
+category at the inﬁnite prime, one sees that
+One way to regard the search for a p-adic Fuchsian uniformization is to regard
+it as the search for some sort of canonical p-adic analytic section of the torsor
+Sg,r → Mg,r .
+In this context, it is thus natural to refer to sH as the canonical arithmetic trivialization
+of the torsor Sg,r → Mg,r at the inﬁnite prime.
+Finally, let us observe that this situation of a torsor corresponding to the Hodgetheoretic ﬁrst Chern class of an ample line bundle, equipped with a canonical real analytic
+section occurs not only over Mg,r , but over any individual hyperbolic curve X (say, over
+C), as well. Indeed, let (P → X, ∇P ) be the canonical indigenous bundle on X. Let
+σ : X → P be its Hodge section. Then by [Mzk1], Chapter I, Proposition 2.5, it follows
+def
+
+that the T = P − σ(X) has the structure of an ωX/C -torsor over X. In fact, one can
+say more: namely, this torsor is the Hodge-theoretic ﬁrst Chern class corresponding to the
+ ∼
+ample line bundle ωX/C . Moreover, if we compose the morphism X
+= H ⊆ P1C used to
+deﬁne σ with the standard complex conjugation morphism on P1C , we obtain a new ΠX  → P1 which descends to a real analytic section sX : X(C) → T (C). Just
+equivariant X
+C
+as in the case of Mg,r , it is easy to compute (cf. the argument of [Mzk1], Introduction,
+Theorem 2.3) that ∂sX is equal to the canonical hyperbolic metric μX . Thus, just as in
+the case of the real analytic section sH of the Scharz torsor over Mg,r , sX essentially “is”
+the Fuchsian uniformization of X.
+
+9
+
+§1.6. The Classical Ordinary Theory
+As stated earlier, the purpose of [Mzk2] is to study all integral Frobenius invariant
+indigenous bundles. On the other hand, in [Mzk1], a very important special type of
+Frobenius invariant indigenous bundle was constructed. This type of bundle will henceforth
+be referred to as classical ordinary. (Such bundles were called “ordinary” in [Mzk1]. Here
+we use the term “classical ordinary” to refer to objects called “ordinary” in [Mzk1] in
+order to avoid confusion with the more general notions of ordinariness discussed in [Mzk2].)
+Before discussing the theory of the [Mzk2] (which is the goal of §1), it is thus natural to
+review the classical ordinary theory. In this subsection, we let p be an odd prime.
+If one is to construct p-adic Frobenius invariant indigenous bundles for arbitrary hyperbolic curves, the ﬁrst order of business is to make precise the notion of Frobenius
+invariance that one is to use. For this, it is useful to have a prototype. The prototype that
+gave rise to the classical ordinary theory is the following:
+def
+
+Let M = (M1,0 )Zp be the moduli stack of elliptic curves over Zp . Let G → M
+be the universal elliptic curve. Let E be its ﬁrst de Rham cohomology module.
+Thus, E is a rank two vector bundle on M, equipped with a Hodge subbundle
+F ⊆ E, and a connection ∇E (i.e., the “Gauss-Manin connection”). Taking the
+projectivization of E deﬁnes a P1 -bundle with connection (P → M, ∇P ), together
+with a Hodge section σ : M → P . It turns out that (the natural extension over the
+compactiﬁcation of M obtained by using log structures of) the bundle (P, ∇P )
+is an indigenous bundle on M. In particular, (P, ∇P ) deﬁnes a crystal in P1 bundles on Crys(M ⊗ Fp /Zp ). Thus, one can form the pull-back Φ∗ (P, ∇P ) via
+the Frobenius morphism of this crystal. If one then adjusts the integral structure
+of Φ∗ (P, ∇P ) (cf. Deﬁnition 1.18 of Chapter VI of [Mzk2]; [Mzk1], Chapter
+III, Deﬁnition 2.4), one obtains the renormalized Frobenius pull-back F∗ (P, ∇P ).
+Then (P, ∇P ) is Frobenius invariant in the sense that (P, ∇P ) ∼
+= F∗ (P, ∇P ).
+Thus, the basic idea behind [Mzk1] was to consider to what extent one could construct
+indigenous bundles on arbitrary hyperbolic curves that are equal to their own renormalized
+Frobenius pull-backs, i.e., satisfying
+F∗ (P, ∇P ) ∼
+= (P, ∇P )
+In particular, it is natural to try to consider moduli of indigenous bundles satisfying this
+condition. Since it is not at all obvious how to do this over Zp , a natural ﬁrst step was to
+make the following key observation:
+If (P, ∇P ) is an indigenous bundle over Zp preserved by F∗ , then the reduction
+modulo p of (P, ∇P ) has square nilpotent p-curvature.
+(The “p-curvature” of an indigenous bundle in characteristic p is a natural invariant of
+such a bundle. We refer to [Mzk1], Chapter II, as well as §1 of Chapter II of [Mzk2] for
+10
+
+more details.) Thus, if (Mg,r )Fp is the stack of r-pointed stable curves of genus g (as in
+[DM], [Knud]) in characteristic p, one can deﬁne the stack N g,r of such curves equipped
+with a “nilpotent” indigenous bundle. (Here, “nilpotent” means that its p-curvature is
+square nilpotent.) In the following, we shall often ﬁnd it convenient to refer to pointed
+stable curves equipped with nilpotent indigenous bundles as nilcurves, for short. Thus,
+N g,r is the moduli stack of nilcurves. We would like to emphasize that
+The above observation – which led to the notion of “nilcurves” – is the key technical breakthrough that led to the development of the “p-adic Teichmüller theory”
+of [Mzk1,2].
+The ﬁrst major result of [Mzk1] is the following (cf. [Mzk2], Chapter II, Proposition 1.7;
+[Mzk1], Chapter II, Theorem 2.3):
+Theorem 1.1. (Stack of Nilcurves) The natural morphism N g,r → (Mg,r )Fp is a
+ﬁnite, ﬂat, local complete intersection morphism of degree p3g−3+r .
+In particular, up to “isogeny” (i.e., up to the fact that p3g−3+r = 1), the stack of
+nilcurves N g,r ⊆ S g,r deﬁnes a canonical section of the Schwarz torsor S g,r →
+Mg,r in characteristic p.
+Thus, relative to our discussion of complex Teichmüller theory – which we saw could be
+regarded as the study of a certain canonical real analytic section of the Schwarz torsor –
+it is natural that “p-adic Teichmüller theory” should revolve around the study of N g,r .
+Although the structure of N g,r is now been much better understood, at the time of
+writing of [Mzk1] (Spring of 1994), it was not so well understood, and so it was natural to
+ord
+do the following: Let N g,r ⊆ N g,r be the open substack where N g,r is étale over (Mg,r )Fp .
+This open substack will be referred to as the (classical) ordinary locus of N g,r . If one sets
+up the theory (as is done in [Mzk1,2]) using stable curves (as we do here), rather than just
+smooth curves, and applies the theory of log structures (as in [Kato]), then it is easy to
+show that the ordinary locus of N g,r is nonempty.
+It is worth pausing here to note the following: The reason for the use of the term
+“ordinary” is that it is standard general practice to refer to as “ordinary” situations where
+Frobenius acts on a linear space equipped with a “Hodge subspace” in such a way that it
+acts with slope zero on a subspace of the same rank as the rank of the Hodge subspace.
+Thus, we use the term “ordinary” here because the Frobenius action on the cohomology
+of an ordinary nilcurve satisﬁes just such a condition. In other words, ordinary nilcurves
+are ordinary in their capacity as nilcurves. However, it is important to remember that:
+The issue of whether or not a nilcurve is ordinary is entirely diﬀerent from the
+issue of whether or not the Jacobian of the underlying curve is ordinary (in the
+usual sense). That is to say, there exist examples of ordinary nilcurves whose
+11
+
+underlying curves have nonordinary Jacobians as well as examples of nonordinary
+nilcurves whose underlying curves have ordinary Jacobians.
+Later, we shall comment further on the issue of the incompatibility of the theory of [Mzk1]
+with Serre-Tate theory relative to the operation of passing to the Jacobian.
+ord
+
+At any rate, since N g,r is étale over (Mg,r )Fp , it lifts naturally to a p-adic formal
+stack N which is étale over (Mg,r )Zp . Let C → N denote the tautological stable curve
+over N . Then the main result (Theorem 0.1 of the Introduction of [Mzk1]) of the theory
+of [Mzk1] is the following:
+Theorem 1.2. (Canonical Frobenius Lifting) There exists a unique pair (ΦN : N →
+N ; (P, ∇P )) satisfying the following:
+(1) The reduction modulo p of the morphism ΦN is the Frobenius morphism on N ,
+i.e., ΦN is a Frobenius lifting.
+(2) (P, ∇P ) is an indigenous bundle on C such that the renormalized Frobenius pullback of Φ∗N (P, ∇P ) is isomorphic to (P, ∇P ), i.e., (P, ∇P ) is Frobenius invariant
+with respect to ΦN .
+Moreover, this pair also gives rise in a natural way to a Frobenius lifting ΦC : C ord → C ord
+on a certain formal p-adic open substack C ord of C (which will be referred to as the ordinary
+locus of C).
+Thus, this Theorem is a partial realization of the goal of constructing a canonical integral
+Frobenius invariant bundle on the universal stable curve.
+Again, we observe that
+This canonical Frobenius lifting ΦN is by no means compatible (relative to the
+operation of passing to the Jacobian) with the canonical Frobenius lifting ΦA (on
+the p-adic stack of ordinary principally polarized abelian varieties) arising from
+Serre-Tate theory (cf., e.g., [Mzk2], §0.7, for more details).
+At ﬁrst glance, the reader may ﬁnd this fact to be extremely disappointing and unnatural.
+In fact, however, when understood properly, this incompatibility is something which is to be
+expected. Indeed, relative to the analogy between Frobenius liftings and Kähler metrics
+implicit in the discussion of §1.1 ∼ 1.5 (cf., e.g., [Mzk2], §0.8, for more details) such a
+compatibility would be the p-adic analogue of a compatibility between the Weil-Petersson
+metric on (Mg,r )C and the Siegel upper half plane metric on (Ag )C . On the other hand, it
+is easy to see in the complex case that these two metrics are far from compatible. (Indeed,
+12
+
+if they were compatible, then the Torelli map (Mg )C → (Ag )C would be unramiﬁed, but
+one knows that it is ramiﬁed at hyperelliptic curves of high genus.)
+Another important diﬀerence between ΦN and ΦA is that in the case of ΦA , by taking
+the union of ΦA and its transpose, one can compactify ΦA into an entirely algebraic (i.e.,
+not just p-adic analytic) object, namely a Hecke correspondence on Ag . In the case of ΦN ,
+however, such a compactiﬁcation into a correspondence is impossible. We refer to [Mzk3]
+for a detailed discussion of this phenomenon.
+
+The Intregral Portion
+of the Schwarz Torsor
+p
+p
+
+p
+
+p
+
+p
+
+p
+
+p
+
+p
+p
+
+p
+p
+
+p
+
+p
+p
+p
+
+p
+
+p
+
+p p
+p
+
+p
+
+p
+
+p
+
+p
+p
+
+p
+p
+
+The
+Canonical
+p-Adic
+Section
+
+p
+p
+
+The Frobenius Action
+is a sort of p-adic flow
+towards the canonical section
+The Moduli
+Stack of Curves
+
+Fig. 3: The Canonical Frobenius Action Underlying Theorem 1.2
+So far, we have been discussing the diﬀerences between ΦN and ΦA . In fact, however,
+in one very important respect, they are very similar objects. Namely, they are both
+(classical) ordinary Frobenius liftings. A (classical) ordinary Frobenius lifting is deﬁned as
+def
+
+follows: Let k be a perfect ﬁeld of characteristic p. Let A = W (k) (the Witt vectors over
+k). Let S be a formal p-adic scheme which is formally smooth over A. Let ΦS : S → S be
+a morphism whose reduction modulo p is the Frobenius morphism. Then diﬀerentiating
+13
+
+ΦS deﬁnes a morphism dΦS : Φ∗S ΩS/A → ΩS/A which is zero in characteristic p. Thus, we
+may form a morphism
+ΩΦ : Φ∗S ΩS/A → ΩS/A
+by dividing dΦS by p. Then ΦS is called a (classical) ordinary Frobenius lifting if ΩΦ is
+an isomorphism. Just as there is a general theory of canonical coordinates associated to
+real analytic Kähler metrics, there is a general theory of canonical coordinates associated
+to ordinary Frobenius liftings. This theory is discussed in detail in §1 of Chapter III of
+[Mzk1]. The main result is as follows (cf. §1 of [Mzk1], Chapter III):
+Theorem 1.3. (Ordinary Frobenius Liftings) Let ΦS : S → S be a (classical)
+ordinary Frobenius lifting. Then taking the invariants of ΩS/A with respect to ΩΦ gives
+rise to an étale local system Ωet
+Φ on S of free Zp -modules of rank equal to dimA (S).
+def
+
+Let z ∈ S(k) be a point valued in the algebraic closure of k. Then Ωz = Ωet
+Φ |z may be
+thought of as a free Zp -module of rank dimA (S); write Θz for the Zp -dual of Ωz . Let Sz
+ m be the completion of the multiplicative group scheme
+be the completion of S at z. Let G
+Gm over W (k) at 1. Then there is a unique isomorphism
+ m ⊗gp Θz
+Γz : Sz ∼
+=G
+Zp
+such that:
+(i) the derivative of Γz induces the natural inclusion Ωz → ΩS/A |Sz ;
+ m ⊗gp Θz .
+(ii) the action of ΦS on Sz corresponds to multiplication by p on G
+Zp
+ m ⊗gp Θz ,” we mean the tensor product in the sense of (formal) group schemes.
+Here, by “G
+Zp
+ m ⊗gp Θz is noncanonically isomorphic to the product of dimA (S) = rankZ (Θz )
+Thus, G
+Zp
+
+p
+
+ m.
+copies of G
+
+Thus, we obtain canonical multiplicative parameters on N and C ord (from ΦN and ΦC ,
+respectively). If we apply Theorem 1.3 to the canonical lifting ΦA of Serre-Tate theory (cf.,
+e.g., [Mzk2], §0.7), we obtain the Serre-Tate parameters. Moreover, note that in Theorem
+ m ⊗Z Ωz corresponds under
+1.3, the identity element “1” of the formal group scheme G
+p
+Γz to some point αz ∈ S(W (k)) that lifts z. That is to say,
+Theorem 1.3 also gives rise to a notion of canonical liftings of points in characteristic p.
+14
+
+In the case of ΦA , this notion coincides with the well-known notion of the Serre-Tate
+canonical lifting of an ordinary abelian variety. In the case of ΦN , the theory of canonically
+lifted curves is discussed in detail in Chapter IV of [Mzk1]. In [Mzk2], however, the theory
+of canonical curves in the style of Chapter IV of [Mzk1] does not play a very important
+role.
+Remark. Certain special cases of Theorem 1.3 already appear in the work of Ihara ([Ih14]). In fact, more generally, the work of Ihara ([Ih1-4]) on the Schwarzian equations of
+Shimura curves and the possibility of constructing an analogue of Serre-Tate theory for
+more general hyperbolic curves anticipates, at least at a philosophical level, many aspects
+of the theory of [Mzk1,2].
+Thus, in summary, although the classical ordinary theory of [Mzk1] is not compatible
+with Serre-Tate theory relative to the Torelli map, it is in many respects deeply structurally
+analogous to Serre-Tate theory. Moreover, this close structural aﬃnity arises from the fact
+that in both cases,
+The ordinary locus with which the theory deals is deﬁned by the condition that
+some canonical Frobenius action have slope zero.
+Thus, although some readers may feel unhappy about the use of the term “ordinary” to
+describe the theory of [Mzk1] (i.e., despite the fact that this theory is incompatible with
+Serre-Tate theory), we feel that this close structural aﬃnity arising from the common
+condition of a slope zero Frobenius action justiﬁes and even renders natural the use of this
+terminology.
+Finally, just as in the complex case, where the various indigenous bundles involved
+gave rise to monodromy representations of the fundamental group of the hyperbolic curve
+involved, in the p-adic case as well, the canonical indigenous bundle of Theorem 1.2 gives
+rise to a canonical Galois representation, as follows. We continue with the notation of
+Theorem 1.2. Let N  → N be the morphism ΦN , which we think of as a covering of N ;
+def
+let C  = C ⊗N N  . Note that C and N have natural log structures (obtained by pulling
+back the natural log structures on Mg,r and its tautological curve, respectively). Thus,
+we obtain C log , N log . Let
+def
+
+ΠN = π1 (N log ⊗Zp Qp );
+
+def
+
+ΠC = π1 (C log ⊗Zp Qp )
+
+Similarly, we have ΠN  ; ΠC  . Then the main result is the following (Theorem 0.4 of [Mzk1],
+Introduction):
+Theorem 1.4. (Canonical Galois Representation) There is a natural Zp -ﬂat, pGal
+adically complete “ring of additive periods” DN
+on which ΠN  (hence also ΠC  via the
+natural projection ΠC  → ΠN  ) acts continuously, together with a twisted homomorphism
+15
+
+Gal
+ρ : ΠC  → PGL2 (DN
+)
+Gal
+. This representation
+where “twisted” means with respect to the action of ΠC  on DN
+is obtained by taking Frobenius invariants of (P, ∇P ), using a technical tool known as
+crystalline induction.
+
+Thus, in summary, the theory of [Mzk1] gives one a fairly good understanding of
+ord
+what happens over the ordinary locus N g,r , complete with analogues of various objects
+(monodromy representations, canonical modular coordinates, etc.) that appeared in the
+complex case. On the other hand, it begs the following questions:
+(1) What does the nonordinary part of N g,r look like? What sorts of nonordinary
+nilcurves can occur? In particular, what does the p-curvature of such nonordinary
+nilcurves look like?
+(2) Does this “classical ordinary theory” admit any sort of compactiﬁcation? One
+sees from [Mzk3] that it does not admit any sort of compactiﬁcation via correspondences. Still, since the condition of being ordinary is an “open condition,”
+it is natural to ask what happens to this classical ordinary theory as one goes to
+the boundary.
+The theory of [Mzk2] answers these two questions to a large extent, not by adding on a
+few new pieces to [Mzk1], but by starting afresh and developing from new foundations a
+general theory of integral Frobenius invariant indigenous bundles. The theory of [Mzk2]
+will be discussed in §2.
+
+§2. Beyond the “Classical Ordinary” Theory
+The purpose of §1 was to set forth as much evidence as the author could assemble in
+support of the claim that:
+The proper p-adic analogue of the theory of the Fuchsian and Bers uniformizations
+should be a theory of integral Frobenius invariant indigenous bundles.
+Thus, [Mzk2] – which purports to lay the foundations of a “p-adic Teichmüller theory” – is
+devoted precisely to the study of (integral) Frobenius invariant indigenous bundles. In this
+§, we would like to discuss the contents of [Mzk2], always bearing in mind the fundamental
+goal of understanding and cataloguing all integral Frobenius invariant indigenous bundles.
+
+16
+
+§2.1. Atoms, Molecules, and Nilcurves
+Let p be an odd prime. Let g and r be nonnegative integers such that 2g − 2 + r ≥ 1.
+Let N g,r be the stack of nilcurves in characteristic p. We denote by Ng,r ⊆ N g,r the open
+substack consisting of smooth nilcurves, i.e., nilcurves whose underlying curve is smooth.
+Then the ﬁrst step in our analysis of N g,r is the introduction of the following notions (cf.
+Deﬁnitions 1.1 and 3.1 of [Mzk2], Chapter II):
+Deﬁnition 2.1. We shall call a nilcurve dormant if its p-curvature (i.e., the p-curvature
+of its underlying indigenous bundle) is identically zero. Let d be a nonnegative integer.
+Then we shall call a smooth nilcurve spiked of strength d if the zero locus of its p-curvature
+forms a divisor of degree d.
+If d is a nonnegative integer (respectively, the symbol ∞), then we shall denote by
+Ng,r [d] ⊆ Ng,r
+the locally closed substack of nilcurves that are spiked of strength d (respectively, dormant).
+It is immediate that there does indeed exist such a locally closed substack, and that if k
+is an algebraically closed ﬁeld of characteristic p, then
+
+Ng,r (k) =
+
+∞
+
+
+Ng,r [d] (k)
+
+d=0
+
+Moreover, we have the following result (cf. [Mzk2], Chapter II, Theorems 1.12, 2.8, and
+3.9):
+Theorem 2.2. (Stratiﬁcation of Ng,r ) Any two irreducible components of N g,r intersect. Moreover, for d = 0, 1, . . . , ∞, the stack Ng,r [d] is smooth over Fp of dimension
+3g − 3 + r (if it is nonempty). Finally, Ng,r [∞] is irreducible, and its closure in N g,r is
+smooth over Fp .
+Thus, in summary, we see that
+The classiﬁcation of nilcurves by the size of the zero locus of their p-curvatures
+induces a natural decomposition of Ng,r into smooth (locally closed) strata.
+Unfortunately, however, Theorem 2.2 still only gives us a very rough idea of the structure
+of Ng,r . For instance, it tells us nothing of the degree of each Ng,r [d] over Mg,r .
+17
+
+Remark. Some people may object to the use of the term “stratiﬁcation” here for the reason
+that in certain contexts (e.g., the Ekedahl-Oort stratiﬁcation of the moduli stack of principally polarized abelian varieties – cf. [Geer], §2), this term is only used for decompositions
+into locally closed subschemes whose closures satisfy certain (rather stringent) axioms.
+Here, we do not mean to imply that we can prove any nontrivial results concerning the
+closures of the Ng,r [d]’s. That is to say, in [Mzk2], we use the term “stratiﬁcation” only
+in the weak sense (i.e., that Ng,r is the union of the Ng,r [d]). This usage conforms to the
+usage of Lecture 8 of [Surf], where “ﬂattening stratiﬁcations” are discussed.
+In order to understand things more explicitly, it is natural to attempt to do the
+following:
+(1) Understand the structure – especially, what the p-curvature looks like – of all
+molecules (i.e., nilcurves whose underlying curve is totally degenerate).
+(2) Understand how each molecule deforms, i.e., given a molecule, one can consider
+its 
+formal neighborhood N in N g,r . Then one wants to know the degree of each
+N Ng,r [d] (for all d) over the corresponding formal neighborhood M in Mg,r .
+Obtaining a complete answer to these two questions is the topic of [Mzk2], Chapters IV
+and V.
+First, we consider the problem of understanding the structure of molecules. Since the
+underlying curve of a molecule is a totally degenerate curve – i.e., a stable curve obtained
+by gluing together P1 ’s with three nodal/marked points – it is natural to restrict the given
+nilpotent indigenous bundle on the whole curve to each of these P1 ’s with three marked
+points. Thus, for each irreducible component of the original curve, we obtain a P1 with
+three marked points equipped with something very close to a nilpotent indigenous bundle.
+The only diﬀerence between this bundle and an indigenous bundle is that its monodromy
+at some of the marked points (i.e., those marked points that correspond to nodes on the
+original curve) might not be nilpotent. In general, a bundle (with connection) satisfying
+all the conditions that an indigenous bundle satisﬁes except that its monodromy at the
+marked points might not be nilpotent is called a torally indigenous bundle (cf. [Mzk2],
+Chapter I, Deﬁnition 4.1). (When there is fear of confusion, indigenous bundles in the
+strict sense (as in [Mzk1], Chapter I) will be called classical indigenous.) For simplicity,
+we shall refer to any pointed stable curve (respectively, totally degenerate pointed stable
+curve) equipped with a nilpotent torally indigenous bundle as a nilcurve (respectively,
+molecule) (cf. §0 of [Mzk2], Chapter V). Thus, when it is necessary to avoid confusion
+with the toral case, we shall say that “N g,r is the stack of classical nilcurves.” Finally, we
+shall refer to a (possibly toral) nilcurve whose underlying curve is P1 with three marked
+points as an atom.
+At any rate, to summarize, a molecule may be regarded as being made of atoms. It
+turns out that the monodromy at each marked point of an atom (or, in fact, more generally
+any nilcurve) has an invariant called the radius. The radius is, strictly speaking, an element
+18
+
+of Fp /{±} (cf. Proposition 1.5 of [Mzk2], Chapter II) – i.e., the quotient set of Fp by the
+action of ±1 – but, by abuse of notation, we shall often speak of the radius ρ as an element
+of Fp . Then we have the following answer to (1) above (cf. §1 of [Mzk2], Chapter V):
+
+Classical
+Ordinary
+
+Spiked
+The Moduli Stack of Nilcurves has
+(in general) many different irreducible components corresponding to
+the degree of vanishing of the
+p-curvature of the nilcurves parametrized. Darker components are
+farther from being reduced.
+
+Dormant
+
+Molecule
+The Generic Structure of the Moduli
+Stack of Nilcurves can be analyzed by
+looking at how Molecules Deform.
+
+Fig. 4: The Structure of N g,r
+
+Theorem 2.3. (The Structure of Atoms and Molecules) The structure theory of
+atoms (over any ﬁeld of characteristic p) may be summarized as follows:
+(1) The three radii of an atom deﬁne a bijection of the set of isomorphism classes
+of atoms with the set of ordered triples of elements of Fp /{±1}.
+(2) For any triple of elements ρα , ρβ , ργ ∈ Fp , there exist integers a, b, c ∈ [0, p − 1]
+such that (i) a ≡ ±2ρα , b ≡ ±2ρβ , c ≡ ±2ργ ; (ii) a + b + c is odd and < 2p.
+Moreover, the atom of radii ρα , ρβ , ργ is dormant if and only if the following three
+inequalities are satisﬁed simultaneously: a + b > c, a + c > b, b + c > a.
+19
+
+(3) Suppose that the atom of radii ρα , ρβ , ργ is nondormant. Let vα , vβ , vγ be the
+degrees of the zero loci of the p-curvature at the three marked points. Then the
+nonnegative integers vα , vβ , vγ are uniquely determined by the following two conditions: (i) vα + vβ + vγ is odd and < p; (ii) vα ≡ ±2ρα , vβ ≡ ±2ρβ , vγ ≡ ±2ργ .
+Molecules are obtained precisely by gluing together atoms at their marked points in such
+a way that the radii at marked points that are glued together coincide (as elements of
+Fp /{±1}).
+In the last sentence of the theorem, we use the phrase “obtained precisely” to mean that
+all molecules are obtained in that way, and, moreover, any result of gluing together atoms
+in that fashion forms a molecule. Thus,
+Theorem 2.3 reduces the structure theory of atoms and molecules to a matter of
+combinatorics.
+Theorem 2.3 follows from the theory of [Mzk2], Chapter IV.
+Before proceeding, we would like to note the analogy with the theory of “pants” (see
+[Abik] for an exposition) in the complex case. In the complex case, the term “pants” is
+used to describe a Riemann surface which is topologically isomorphic to a Riemann sphere
+minus three points. The holomorphic isomorphism class of such a Riemann surface is given
+precisely by specifying three radii, i.e., the size of its three holes. Moreover, any hyperbolic
+Riemann surface can be analyzed by decomposing it into a union of pants, glued together
+at the boundaries. Thus, there is a certain analogy between the theory of pants and the
+structure theory of atoms and molecules given in Theorem 2.3.
+Next, we turn to the issue of understanding how molecules deform. Let M be a
+nondormant classical molecule (i.e., it has nilpotent monodromy at all the marked points).
+Let us write ntor for the number of “toral nodes” (i.e., nodes at which the monodromy
+is not nilpotent) of M . Let us write ndor for the number of dormant atoms in M . To
+describe the deformation theory of M , it is useful to choose a plot Π for M . A plot is
+an ordering satisfying certain conditions) of a certain subset of the nodes of M (see §1
+of [Mzk2], Chapter V for more details). This ordering describes the order in which one
+deforms the nodes of M . (Despite the similarity in notation, plots have nothing to do
+with the “VF-patterns” discussed below.) Once the plot is ﬁxed, one can contemplate the
+various scenarios that may occur. Roughly speaking, a scenario is an assignment (satisfying
+certain conditions) of one of the three symbols {0, +, −} to each of the branches of each
+of the nodes of M (see §1 of [Mzk2], Chapter V for more details). There are 2ndor possible
+scenarios. The point of all this terminology is the following:
+One wants to deform the nodes of M in a such a way that one can always keep
+track of how the p-curvature deforms as one deforms the nilcurve.
+20
+
+If one deforms the nodes in the fashion stipulated by the plot and scenario, then each
+deformation that occurs is one the following four types: classical ordinary, grafted, philial,
+aphilial.
+
+Nilcurve in a Neighborhood
+of a Molecule
+
+The Corresponding Molecule
+
+The Deformation
+Theory of
+Nilcurves
+
+ρ
+
+ρ
+
+α
+ρ
+
+Molecules
+Can Be
+Analyzed by
+Looking at
+Their ComPonent Atoms
+
+γ
+
+β
+
+The Molecule Decomposed
+into Atoms (the p-adic
+Analogue of Pants)
+
+Atoms Can Be Completely
+Analyzed in Terms of Their Radii
+
+Fig. 5: The Step Used to Analyze the Structure of N g,r
+
+The classical ordinary case is the case where the monodromy (at the node in question)
+is nilpotent. It is also by far the most technically simple and is already discussed implicitly
+in [Mzk1]. The grafted case is the case where a dormant atom is grafted on to (what
+after previous deformations is) a nondormant smooth nilcurve. This case is where the
+consequent deformation of the p-curvature is the most technically diﬃcult to analyze and
+is the reason for the introduction of “plots” and “scenarios.” In order to understand how
+the p-curvature deforms in this case, one must introduce a certain technical tool called
+the virtual p-curvature. The theory of virtual p-curvatures is discussed in §2.2 of [Mzk2],
+Chapter V. The philial case (respectively, aphilial case) is the case where one glues on a
+nondormant atom to (what after previous deformations is) a nondormant smooth nilcurve,
+and the parities (i.e., whether the number is even or odd) of the vanishing orders of the
+21
+
+p-curvature at the two branches of the node are opposite to one another (respectively, the
+same). In the philial case (respectively, aphilial case), deformation gives rise to a spike
+(respectively, no spike). An illustration of these four fundamental types of deformation
+is given in Fig. 6. The signs in this illustration are the signs that are assigned to the
+branches of the nodes by the “scenario.” When the p-curvature is not identically zero
+(i.e., on the light-colored areas), this sign is the parity (i.e., plus for even, minus for odd)
+of the vanishing order of the p-curvature. For a given scenario Σ, we denote by nphl (Σ)
+(respectively, naph (Σ)) the number of philial (respectively, aphilial) nodes that occur when
+the molecule is deformed according to that scenario.
+
+deforms to
+
+Classical
+Ordinary Node
+
+0 0
+
++
++
+
+Grafted
+Node
+
+deforms to
+
++ _
++
+
+Philial
+Node
+
++ _
+
+Aphilial
+Node
+
++ +
+
++
+
+deforms to
+
+resulting spike
+
+deforms to
+
+Fig. 6: The Four Types of Nodal Deformation
+
+If U = Spec(A) is a connected noetherian scheme of dimension 0, then we shall refer to
+the length of the artinian ring A as the padding degree of U . Then the theory just discussed
+gives rise to the following answer to (2) above (cf. Theorem 1.1 of [Mzk2], Chapter V):
+22
+
+Theorem 2.4. (Deformation Theory of Molecules) Let M be a classical molecule
+over an algebraically closed ﬁeld k of characteristic p. Let N be the completion of N g,r at
+M . Let M be the completion of (Mg,r )Fp at the point deﬁned by the curve underlying M .
+Let η be the strict henselization of the generic point of M. Then the natural morphism
+N → M is ﬁnite and ﬂat of degree 2ntor . Moreover:
+(1) If M is dormant, then Nred ∼
+= M, and Nη has padding degree 23g−3+r .
+(2) If M is nondormant, ﬁx a plot Π for M . Then for each of the 2ndor scenarios
+def
+
+associated to Π, there exists a natural open substack NΣ ⊆ Nη = N ×M η
+such that: (i.) Nη is the disjoint union of the NΣ (as Σ ranges over all the
+scenarios); (ii.) every residue ﬁeld of NΣ is separable over (hence equal to) k(η);
+(iii) the degree of (NΣ )red over η is 2naph (Σ) ; (iv) each connected component of
+NΣ has padding degree 2nphl (Σ) ; (v) the smooth nilcurve represented by any point
+of (NΣ )red is spiked of strength p · nphl (Σ).
+In particular, this Theorem reduces the computation of the degree of any Ng,r [d] over
+(Mg,r )Fp to a matter of combinatorics.
+ord
+For instance, let us denote by nord
+g,r,p the degree of Ng,r (which – as a consequence of
+Theorem 2.4! (cf. Corollary 1.2 of [Mzk2], Chapter V) – is open and dense in Ng,r [0])
+over (Mg,r )Fp . Then following the algorithm implicit in Theorem 2.4, nord
+g,r,p is computed
+ord
+explicitly for low g and r in Corollary 1.3 of [Mzk2], Chapter V (e.g., n1,1,p = nord
+0,4,p = p;
+1 2
+ord
+n0,5,p = 2 (p + 1); etc.). Moreover, we note the following two interesting phenomena:
+
+(1) Degrees such as nord
+g,r,p tend to be well-behaved – even polynomial, with coeﬃcients
+equal to various integrals over Euclidean space – as functions of p. Thus, for
+r−3
+instance, the limit, as p goes to inﬁnity, of nord
+exists and is equal to
+0,r,p /p
+the volume of a certain polyhedron in (r − 3)-dimensional Euclidean space. See
+Corollary 1.3 of [Mzk2], Chapter V for more details.
+(2) Theorem 2.4 gives, for every choice of totally degenerate r-pointed stable curve
+ord
+of genus g, an (a priori) distinct algorithm for computing nord
+g,r,p . Since ng,r,p , of
+course, does not depend on the choice of underlying totally degenerate curve, we
+thus obtain equalities between the various sums that occur (to compute nord
+g,r,p ) in
+each case. If one writes out these equalities, one thus obtains various combinatorial identities. Although the author has yet to achieve a systematic understanding
+of these combinatorial identities, already in the cases that have been computed
+(for low g and r), these identities reduce to such nontrivial combinatorial facts as
+Lemmas 3.5 and 3.6 of [Mzk2], Chapter V.
+Although the author does not have even a conjectural theoretical understanding of these two
+phenomena, he nonetheless feels that they are very interesting and deserve further study.
+23
+
+§2.2. The MF ∇ -Object Point of View
+Before discussing the general theory of canonical liftings of nilpotent indigenous bundles, it is worth stopping to examine the general conceptual context in which this theory
+will be developed. To do this, let us ﬁrst recall the theory of MF ∇ -objects developed in §2
+of [Falt1]. Let p be a prime number, and let S be a smooth Zp -scheme. Then in loc. cit.,
+a certain category MF ∇ (S) is deﬁned. Objects of this category MF ∇ (S) consist of: (1)
+a vector bundle E on S equipped with an integrable connection ∇E (one may equivalently
+regard the pair (E, ∇E ) as a crystal on the crystalline site Crys(S ⊗Zp Fp /Zp ) valued in
+the category of vector bundles); (2) a ﬁltration F · (E) ⊆ E (called the Hodge ﬁltration) of
+subbundles of E; (3) a Frobenius action ΦE on the crystal (E, ∇E ). Moreover, these objects
+satisfy certain conditions, which we omit here.
+Let ΠS be the fundamental group of S ⊗Zp Qp (for some choice of base-point). In
+loc. cit., for each MF ∇ (S)-object (E, ∇E , F · (E), ΦE ), a certain natural ΠS -module V is
+constructed by taking invariants of (E, ∇E ) with respect to its Frobenius action ΦE . If
+E is of rank r, then V is a free Zp -module of rank r. On typical example of such an
+MF ∇ (S)-object is the following:
+If X → S is the tautological abelian variety over the moduli stack of principally
+polarized abelian varieties, then the relative ﬁrst de Rham cohomology module
+of X → S forms an MF ∇ (S)-module whose restriction to the ordinary locus of
+S is (by Serre-Tate theory) intimately connected to the “p-adic uniformization
+theory” of S.
+In the context of [Mzk2], we would like to consider the case where S = (Mg,r )Zp . Moreover,
+just as the ﬁrst de Rham cohomology module of the universal abelian variety gives rise
+to a “fundamental uniformizing MF ∇ (S)-module” on the moduli stack of principally
+polarized abelian varieties, we would like to deﬁne and study a corresponding “fundamental
+uniformizing MF ∇ -object” on (Mg,r )Zp . Unfortunately, as long as one sticks to the
+conventional deﬁnition of MF ∇ -object given in [Falt1], it appears that such a natural
+“fundamental uniformizing MF ∇ -object” simply does not exist on (Mg,r )Zp . This is not
+so surprising in view of the nonlinear nature of the Teichmüller group (i.e., the fundamental
+group of (Mg,r )C ). In order to obtain a natural “fundamental uniformizing MF ∇ -object”
+on (Mg,r )Zp , one must generalize the the “classical” linear notion of [Falt1] as follows:
+Instead of considering crystals (equipped with ﬁltrations and Frobenius actions) valued in
+the category of vector bundles, one must consider crystals (still equipped with ﬁltrations
+and Frobenius actions in some appropriate sense) valued in the category of schemes (or
+more generally, algebraic spaces). Thus,
+One philosophical point of view from which to view [Mzk2] is that it is devoted to
+the study of a certain canonical uniformizing MF ∇ -object on (Mg,r )Zp valued
+in the category of algebraic spaces.
+24
+
+Just as in the case of abelian varieties, this canonical uniformizing MF ∇ -object will be
+obtained by taking some sort of de Rham cohomology of the universal curve over (Mg,r )Zp .
+The rest of this subsection is devoted to describing this MF ∇ -object in more detail.
+Now let S be the spectrum of an algebraically closed ﬁeld (of characteristic not equal
+to 2), and let X be a smooth, proper, geometrically curve over S of genus ≥ 2. Let
+P → X be a P1 -bundle equipped with a connection ∇P . If σ : X → P is a section
+of this P1 -bundle, then we shall refer to the number 12 deg(σ ∗ τP/X ) (where τP/X is the
+relative tangent bundle of P over X) as the canonical height of σ. Moreover, note that by
+diﬀerentiating σ by means of ∇P , one obtains a morphism τX/S → σ ∗ τP/X . We shall say
+that σ is horizontal if this morphism is identically zero.
+(Roughly speaking) we shall call (P, ∇P ) crys-stable if it does not admit any horizontal
+sections of canonical height ≤ 0 (see Deﬁnition 1.2 of [Mzk2], Chapter I for a precise
+deﬁnition). (Roughly speaking) we shall call (P, ∇P ) crys-stable of level 0 (or just stable)
+if it does not admit any sections of canonical height ≤ 0 (see Deﬁnition 3.2 of [Mzk2],
+Chapter I for a precise deﬁnition). Let l be a positive half-integer (i.e., a positive element
+of 12 Z). We shall call (P, ∇P ) crys-stable of level l if it admits a section of canonical height
+−l. If it does admit such a section, then this section is the unique section of P → X
+of negative canonical height. This section will be referred to as the Hodge section (see
+Deﬁnition 3.2 of [Mzk2], Chapter I for more details). For instance, if E is a vector bundle
+of rank two on X such that Ad(E) is a stable vector bundle on X (of rank three), and
+P → X is the projective bundle associated to E, then (P, ∇P ) will be crys-stable of level
+0 (regardless of the choice of ∇P ). On the other hand, an indigenous bundle on X will be
+crys-stable of level g − 1. More generally, these deﬁnitions generalize to the case when X
+is a family of pointed stable curves over an arbitrary base (on which 2 is invertible).
+Then the nonlinear MF ∇ -object on (Mg,r )Zp (where p is odd) that is the topic of
+[Mzk2] is (roughly speaking) the crystal in algebraic spaces given by the considering the
+ﬁne moduli space Y → (Mg,r )Zp of crys-stable bundles on the universal curve (cf. Theorem
+2.7, Proposition 3.1 of [Mzk2], Chapter I for more details). Put another way, this crystal
+is a sort of de Rham-theoretic H 1 with coeﬃcients in PGL2 of the universal curve over
+Mg,r . The nonlinear analogue of the Hodge ﬁltration on an MF ∇ -object is the collection
+of subspaces given by the ﬁne moduli spaces Y l of crys-stable bundles of level l (for various
+l) – cf. [Mzk2], Chapter I, Proposition 3.3, Lemmas 3.4 and 3.8, and Theorem 3.10 for
+more details.
+
+Remark. This collection of subspaces is reminiscent of the stratiﬁcation (on the moduli
+stack of smooth nilcurves) of §2.2. This is by no means a mere coincidence. In fact, in
+some sense, the stratiﬁcation of Ng,r which was discussed in §2.1 is the Frobenius conjugate
+of the Hodge structure mentioned above. That is to say, the relationship between these
+two collections of subspaces is the nonlinear analogue of the relationship between the
+ﬁltration on the de Rham cohomology of a variety in positive characteristic induced by
+the “conjugate spectral sequence” and the Hodge ﬁltration on the cohomology. (That is
+to say, the former ﬁltration is the Frobenius conjugate of the latter ﬁltration.)
+25
+
+Thus, to summarize, relative to the analogy between the nonlinear objects dealt with
+in this paper and the “classical” MF ∇ -objects of [Falt1], the only other piece of data
+that we need is a Frobenius action. It is this issue of deﬁning this Frobenius action which
+occupies the bulk of [Mzk2].
+
+§2.3. The Generalized Notion of a Frobenius Invariant Indigenous Bundle
+In this subsection, we would like to take up the task of describing the Frobenius
+action on crys-stable bundles. Just as in the case of the linear MF ∇ -objects of [Falt1],
+and as motivated by comparison with the complex case (see the discussion of §1), we
+are interested in Frobenius invariant sections of the MF ∇ -object, i.e., Frobenius invariant
+bundles. Moreover, since ultimately we are interested in uniformization theory, instead of
+studying general Frobenius invariant crys-stable bundles, we will only consider Frobenius
+invariant indigenous bundles. The reason that we must nonetheless introduce crys-stable
+bundles is that in order to obtain canonical lifting theories that are valid at generic points
+of Ng,r parametrizing dormant or spiked nilcurves, it is necessary to consider indigenous
+bundles that are ﬁxed not (necessarily) after one application of Frobenius, but after several
+applications of Frobenius. As one applies Frobenius over and over again, the bundles that
+appear at intermediate stages need not be indigenous. They will, however, be crys-stable.
+This is why we must introduce crys-stable bundles.
+In order to keep track of how the bundle transforms after various applications of
+Frobenius, it is necessary to introduce a certain combinatorial device called a VF-pattern
+(where “VF” stands for “Verschiebung/Frobenius”). VF-patterns may be described as
+def
+
+follows. Fix nonnegative integers g, r such that 2g − 2 + r > 0. Let χ = 12 (2g − 2 + r). Let
+Lev be the set of l ∈ 12 Z satisfying 0 ≤ l ≤ χ. We shall call Lev the set of levels. (That
+is, Lev is the set of possible levels of crys-stable bundles.) Let Π : Z → Lev be a map of
+sets, and let  be a positive integer. Then we make the following deﬁnitions:
+(i) We shall call (Π, ) a VF-pattern if Π(n + ) = Π(n) for all n ∈ Z; Π(0) = χ;
+Π(i) − Π(j) ∈ Z for all i, j ∈ Z (cf. Deﬁnition 1.1 of [Mzk2], Chapter III).
+(ii) A VF-pattern (Π, ) will be called pre-home if Π(Z) = {χ}. A VF-pattern (Π, )
+will be called the home VF-pattern if it is pre-home and  = 1.
+(iii) A VF-pattern (Π, ) will be called binary if Π(Z) ⊆ {0, χ}. A VF-pattern (Π, ) will
+be called the VF-pattern of pure tone  if Π(n) = 0 for all n ∈ Z not divisible by .
+(iv) Let (Π, ) be a VF-pattern. Then i ∈ Z will be called indigenous (respectively, active;
+dormant) for this VF-pattern if Π(i) = χ (respectively, Π(i) = 0; Π(i) = 0). If i, j ∈ Z,
+and i < j, then (i, j) will be called ind-adjacent for this VF-pattern if Π(i) = Π(j) = χ
+and Π(n) = χ for all n ∈ Z such that i < n < j.
+26
+
+At the present time, all of this terminology may seem rather abstruse, but eventually, we
+shall see that it corresponds in a natural and evident way to the p-adic geometry deﬁned
+by indigenous bundles that are Frobenius invariant in the fashion described by the VFpattern in question. Finally, we remark that often, in order to simplify notation, we shall
+just write Π for the VF-pattern (even though, strictly speaking, a VF-pattern is a pair
+(Π, )).
+Now ﬁx an odd prime p. Let (Π, ) be a VF-pattern. Let S be a perfect scheme
+of characteristic p. Let X → S be a smooth, proper, geometrically connected curve of
+genus g ≥ 2. (Naturally, the theory goes through for arbitrary pointed stable curves, but
+for simplicity, we assume in the present discussion that the curve is smooth and without
+marked points.) Write W (S) for the (ind-)scheme of Witt vectors with coeﬃcients in S.
+Let P be a crystal on Crys(X/W (S)) valued in the category of P1 -bundles. Thus, the
+restriction P|X of P to Crys(X/S) may be thought of as a P1 -bundle with connection on
+the curve X → S. Let us assume that P|X deﬁnes an indigenous bundle on X. Now we
+consider the following procedure (cf. Fig. 7):
+Using the Hodge section of P|X , one can form the renormalized Frobenius pulldef
+
+back P1 = F∗ (P) of P. Thus, F∗ (P) will be a crystal valued in the category
+of P1 -bundles on Crys(X/W (S)). Assume that P1 |X is crys-stable of level Π(1).
+Then there are two possibilities: either Π(1) is zero or nonzero. If Π(1) = 0,
+then let P2 be the usual (i.e., non-renormalized) Frobenius pull-back Φ∗ P1 of
+the crystal P1 . If Π(1) = 0, then P1 |X is crys-stable of positive level, hence
+admits a Hodge section; thus, using the Hodge section of P1 |X , we may form the
+def
+
+renormalized Frobenius pull-back P2 = F∗ (P1 ) of P1 . Continuing inductively
+in this fashion – i.e., always assuming Pi |X to be crys-stable of level Π(i), and
+forming Pi+1 by taking the renormalized (respectively, usual) Frobenius pull-back
+of Pi if Π(i) = 0 (respectively, Π(i) = 0), we obtain a sequence Pi of crystals on
+Crys(X/W (S)) valued in the category of P1 -bundles.
+Then we make the following
+Deﬁnition 2.5. We shall refer to P as Π-indigenous (on X) if all the assumptions (on
+the Pi ) necessary to carry out the above procedure are satisﬁed, and, moreover, P ∼
+= P.
+Thus, to say that P is Π-indigenous (more properly, (Π, )-indigenous) is to say that it is
+Frobenius invariant in the fashion speciﬁed by the combinatorial data (Π, ).
+Now we are ready to deﬁne a certain stack that is of central importance in [Mzk2].
+The stack QΠ – also called the stack of quasi-analytic self-isogenies of type (Π, ) – is
+deﬁned as follows:
+To a perfect scheme S, QΠ (S) assigns the category of pairs (X → S, P), where
+X → S is a curve as above and P is a Π-indigenous bundle on X.
+27
+
+Thus, QΠ is may be regarded as the moduli stack of indigenous bundles that are Frobenius
+invariant in the fashion speciﬁed by the VF-pattern Π.
+
+P
+2
+Stable
+
+F*
+
+P
+1
+Crys-Stable
+of Positive Level
+F*
+
+Φ*
+
+P
+3
+Stable
+
+P4
+Indigenous
+The Sense in which
+The Indigenous Bundle
+P is Frobenius Invariant
+0
+
+P
+0
+Indigenous
+
+Φ*
+
+Φ*
+
+P7
+Stable
+
+F*
+
+P
+6
+Indigenous
+
+F*
+P5
+Crys-Stable
+of Positive Level
+
+F*
+
+A Typical Corresponding VF-Pattern (of Period 8):
+..., χ, χ−1, 0, 0, χ, χ−2, χ, 0, ...
+
+Fig. 7: The Sense of Frobenius Invariance Speciﬁed by a VF-Pattern
+
+We remark that in fact, more generally, one can deﬁne QΠ on the category of epiperfect
+schemes S. (Whereas a perfect scheme is a scheme on which the Frobenius morphism is
+an isomorphism, an epiperfect scheme is one on which the Frobenius morphism is a closed
+immersion.) Then instead of using W (S), one works over B(S) – i.e., the “universal
+P D-thickening of S.” For instance, the well-known ring Bcrys introduced by Fontaine
+(and generalized to the higher-dimensional case in [Falt1]) is a special case of B(S). The
+point is that one needs the base spaces that one works with to be Zp -ﬂat and equipped with a
+natural Frobenius action. The advantage of working with arbitrary B(S) (for S epiperfect)
+is that the theory of crystalline representations (and the fact that Bcrys is a special case
+of B(S)) suggest that B(S) is likely to be the most general natural type of space having
+these two properties – i.e., Zp -ﬂatness and being equipped with a natural Frobenius action.
+The disadvantage of working with arbitrary B(S) (as opposed to just W (S) for perfect
+28
+
+S) is that many properties of QΠ are technically more diﬃcult or (at the present time
+impossible) to prove in the epiperfect case. For the sake of simplicity, in this Introduction,
+we shall only consider the perfect case. For more details, we refer to [Mzk2], Chapter VI.
+
+p p p pp
+p
+p p pp p p p p
+p p
+p
+p p p
+p
+p ppppppp p pp
+ppppp p
+ppp
+p p p pp p p
+p
+p
+p pp p p p p p p p p p
+p
+In the Case of a Pre-Home VF-Pattern,
+the Stack of Quasi-Analytic SelfIsogenies is Crystalline Contractible
+(perfect and affine). This implies the
+connectedness of the moduli stack of curves.
+
+The Moduli Stack of Curves
+
+Fig. 8: Crystalline Contractibility in the Pre-Home Case
+
+Now, we are ready to discuss the main results concerning QΠ . The general theory of
+QΠ is the topic of [Mzk2], Chapter VI. We begin with the following result (cf. Theorem
+2.2 of [Mzk2], Chapter VI):
+Theorem 2.6. (Representability and Aﬃneness) The stack QΠ is representable
+by a perfect algebraic stack whose associated coarse moduli space (as in [FC], Chapter 1,
+Theorem 4.10) is quasi-aﬃne. If Π is pre-home, then this coarse moduli space is even
+aﬃne.
+Thus, in the pre-home case, QΠ is perfect and aﬃne. In particular, any sort of de
+Rham/crystalline-type cohomology on QΠ must vanish. It is for this reason that we say
+(in the pre-home case) that QΠ is crystalline contractible (cf. Fig. 8). Moreover, (cf.
+Theorem 2.12 of [Mzk2], Chapter III),
+Corollary 2.7. (Irreducibility of Moduli) (The fact that QΠ is crystalline contractible
+for the home VF-pattern is intimately connected with the fact that) Mg,r is irreducible.
+29
+
+The basic idea here is the following: By induction on g, it suﬃces to prove that Mg,r does
+not admit any proper connected components. But if it did admit such a component J, then
+def
+one can apply the following analysis to NJ = Ng,r ×Mg,r J: First of all, by Theorem 1.1,
+NJ is ﬁnite and ﬂat of degree p3g−3+r over J. Now let I be an irreducible component of
+NJ for which the vanishing locus of the p-curvature of the nilcurve parametrized by the
+generic point of I is maximal (in other words, the irreducible component whose generic
+point lies in Ng,r [d], for d maximal). It is then a formal consequence of Theorems 1.1 and
+2.2 that I is smooth and proper over Fp , and that the whole of I (i.e., not just the generic
+point) lies in some Ng,r [d]. Now we apply the fact that Ng,r [0] is aﬃne (a fact which
+belongs to the same circle of ideas as Theorem 2.6). This implies (since I is proper and of
+positive dimension) that the d such that I ⊆ Ng,r [d] is nonzero. Thus, since (by [Mzk1],
+Chapter II, Corollary 2.16) Ng,r is nonreduced at the generic point of Ng,r [d], it follows
+that the degree of I over J is < p3g−3+r . On the other hand, by using the fact that the
+Schwarz torsor may also be interpreted as the Hodge-theoretic ﬁrst Chern class of a certain
+ample line bundle (cf. [Mzk1], Chapter I, §3), it is a formal consequence (of basic facts
+concerning Chern classes in crystalline cohomology) that deg(I/J) (which is a positive
+integer) is divisible by p3g−3+r . This contradiction (i.e., that deg(I/J) is a positive integer
+< p3g−3+r which is nevertheless divisible by p3g−3+r ) concludes the proof.
+As remarked earlier, this derivation of the irreducibility of the moduli of Mg,r from the
+basic theorems of p-adic Teichmüller theory is reminiscent of the proof of the irreducibility
+of Mg,r given by using complex Teichmüller theory to show that Teichmüller space is
+contractible (cf., e.g., [Bers], [DM]). Moreover, it is also interesting in that it suggests that
+perhaps at some future date the theory (or some extension of the theory) of [Mzk2] may
+be used to compute other cohomology groups of Mg,r . Other proofs of the irreducibility
+of Mg,r include those of [Fulton], [FM], but (at least as far the author knows) the proof
+given here is the ﬁrst that relies on essentially characteristic p methods (i.e., “Frobenius”).
+Before proceeding, we must introduce some more notation. If Z is a smooth stack
+over Zp , let us write ZW for the stack on the category of perfect schemes of characteristic
+p that assigns to a perfect S the category Z(W (S)). We shall refer to ZW as the inﬁnite
+Weil restriction of Z. It is easy to see that ZW is representable by a perfect stack (Proposition 1.13 of [Mzk2], Chapter VI). Moreover, this construction generalizes immediately
+log
+to the logarithmic category. Write MW (respectively, SW ) for ((Mg,r )Zp )W (respectively,
+log
+
+((S g,r )Zp )W ). (Here S g,r → Mg,r is the Schwarz torsor over Mg,r ; we equip it with the log
+log
+
+structure obtained by pulling back the log structure of Mg,r .) Now if P is Π-indigenous
+on X, it follows immediately from the elementary theory of indigenous bundles that there
+exists a unique curve XW → W (S) whose restriction to S ⊆ W (S) is X → S and such
+that the restriction of the crystal P to XW deﬁnes an indigenous bundle on XW . The
+assignment P → (XW → W (S), P|XW ) (respectively, P → {XW → W (S)}) thus deﬁnes
+a natural morphism QΠ → SW (respectively, QΠ → MW ). Now we have the following
+results (cf. Propositions 2.3, 2.9; Corollaries 2.6 and 2.13 of [Mzk2], Chapter VI):
+Theorem 2.8.
+
+(Immersions) The natural morphism QΠ → SW is an immersion in
+30
+
+general, and a closed immersion if the VF-pattern is pre-home or of pure tone. The
+morphism QΠ → MW is a closed immersion if the VF-pattern is the home VF-pattern.
+Theorem 2.9. (Isolatedness in the Pre-Home Case) In the pre-home case, QΠ is
+
+closed inside SW and disjoint from the closure of any non-pre-home QΠ ’s.
+We remark that in both of these cases, much more general theorems are proved in [Mzk2].
+Here, for the sake of simplicity, we just selected representative special cases of the main
+theorems in [Mzk2] so as to give the reader a general sense of the sorts of results proved
+in [Mzk2].
+The reason that Theorem 2.9 is interesting (or perhaps a bit surprising) is the following: The reduction modulo p of a Π-indigenous bundle (in the pre-home case) is an
+admissible nilpotent indigenous bundle. (Here, the term “admissible” means that the padm
+curvature has no zeroes.) Moreover, the admissible locus N g,r of N g,r is by no means
+closed in N g,r , nor is its closure disjoint (in general) from the closure of the dormant or
+spiked loci of N g,r . On the other hand, the reductions modulo p of Π -indigenous bundles
+(for non-pre-home Π ) may, in general, be dormant or spiked nilpotent indigenous bundles.
+Thus,
+Theorem 2.9 states that considering Zp -ﬂat Frobenius invariant liftings of indigenous bundles (as opposed to just nilpotent indigenous bundles in characteristic p) has the eﬀect of “blowing up” N g,r in such a way that the genericization/specialization relations that hold in N g,r do not imply such relations among
+the various Q’s.
+We shall come back to this phenomenon again in the following subsection (cf. Fig. 9).
+
+§2.4. The Generalized Ordinary Theory
+In this subsection, we maintain the notations of the preceding subsection. Unfortunately, it is diﬃcult to say much more about the explicit structure of the stacks QΠ
+without making more assumptions. Thus, just as in the classical ordinary case (reviewed
+in §1.6), it is natural to deﬁne an open substack – the ordinary locus of QΠ – and to see
+if more explicit things can be said concerning this open substack. This is the topic of
+[Mzk2], Chapter VII. We shall see below that in fact much that is interesting can be said
+concerning this ordinary locus.
+We begin with the deﬁnition of the ordinary locus. First of all, we observe that there
+is a natural algebraic stack
+Π,s
+
+N g,r
+31
+
+(of ﬁnite type over Fp ) that parametrizes “data modulo p for QΠ ” (Deﬁnition 1.11 of
+Π,s
+
+[Mzk2], Chapter III). That is to say, roughly speaking, N g,r parametrizes the reductions
+modulo p of the Pi appearing in the discussion preceding Deﬁnition 2.5. We refer to
+[Mzk2], Chapter III for a precise deﬁnition of this stack. At any rate, by reducing modulo
+p the data parametrized by QΠ , we obtain a natural morphism of stacks
+Π,s
+
+QΠ → N g,r
+Π,s
+
+On the other hand, since N g,r parametrizes curves equipped with certain bundles, there is
+Π,s
+
+Π,s
+
+a natural morphism N g,r → (Mg,r )Fp . Let N ord ⊆ N g,r denote the open substack over
+Π,s
+
+which the morphism N g,r → (Mg,r )Fp is étale. Let Qord ⊆ QΠ denote the open substack
+Π,s
+
+which is the inverse image of N ord ⊆ N g,r .
+Deﬁnition 2.10.
+
+We shall refer to Qord as the (Π-) ordinary locus of QΠ .
+
+Just as in the classical ordinary case, there is an equivalent deﬁnition of Π-ordinariness
+given by looking at the action of Frobenius on the ﬁrst de Rham cohomology modules of
+the Pi (cf. Lemma 1.4 of [Mzk2], Chapter VII). Incidentally, the classical ordinary theory
+corresponds to the Π-ordinary theory in the case of the home VF-pattern. (In particular,
+ord
+N ord is simply the ordinary locus N g,r of N g,r .) Thus, in some sense, the theory of [Mzk1]
+is a special case of the generalized ordinary theory.
+Our ﬁrst result is the following (cf. Theorem 1.6 of [Mzk2], Chapter VII):
+Theorem 2.11. (Basic Structure of the Ordinary Locus) Qord is naturally isomorphic to the perfection of N ord .
+Thus, already one has a much more explicit understanding of the structure of Qord than of
+the whole of QΠ . That is to say, Theorem 2.11 already tells us that Qord is the perfection
+of a smooth algebraic stack of ﬁnite type over Fp .
+Our next result – which is somewhat deeper than Theorem 2.11, and is, in fact, one
+of the main results of [Mzk2] – is the following (cf. Theorem 2.11 of [Mzk2], Chapter VII):
+Theorem 2.12. (ω-Closedness of the Ordinary Locus) If Π is binary, then Qord is
+ω-closed (roughly speaking, “closed as far as the diﬀerentials are concerned” – cf. [Mzk2],
+Chapter VII, §0, §2.3 for more details) in QΠ . In particular,
+(1) If 3g − 3 + r = 1, then Qord is actually closed in QΠ .
+32
+
+(2) If R ⊆ QΠ is a subobject containing Qord and which is “pro” (cf. [Mzk2], Chapter
+VI, Deﬁnition 1.9) of a ﬁne algebraic log stack which is locally of ﬁnite type over
+Fp , then Qord is closed in R.
+In other words, at least among perfections of ﬁne algebraic log stacks which are locally of
+ﬁnite type over Fp , Qord is already “complete” inside QΠ .
+Thus, if Π is pre-home or of pure tone, then Qord is an ω-closed substack of SW . If
+the VF-pattern in question is the home pattern, then Qord is an ω-closed substack of MW .
+
+Ordinary Locus
+of the Home VFPattern
+
+Nonordinary
+Portion of the
+Home VF-Pattern
+
+ω
+
+Non-Pre-Home
+VF-Patterns
+
+The Schwarz Torsor
+in Characteristic p
+
+The Infinite Weil Restriction
+of the Schwarz Torsor
+
+Fig. 9: The ω-Closedness and Isolatedness of the Classical Ordinary Theory
+
+This is a rather surprising result in that the deﬁnition of Qord was such that Qord is
+naturally an open substack of QΠ which has no a priori reason to be closed (in any sense!)
+ord
+inside QΠ . Moreover, N g,r is most deﬁnitely not closed in N g,r . Indeed, one of the
+original motivations for trying to generalize the theory of [Mzk1] was to try to compactify it.
+Thus, Theorem 2.12 states that if, instead of just considering ordinary nilpotent indigenous
+33
+
+bundles modulo p, one considers Zp -ﬂat Frobenius invariant indigenous bundles, the theory
+of [Mzk1] is, in some sense, already compact! Put another way, if one thinks in terms of
+the Witt vectors parametrizing such Zp -ﬂat Frobenius invariant indigenous bundles, then
+although the scheme deﬁned by the ﬁrst component of the Witt vector is not “compact,”
+if one considers all the components of the Witt vector, the resulting scheme is, in some
+sense, “compact” (i.e., ω-closed in the space SW of all indigenous bundles over the Witt
+vectors). This phenomenon is similar to the phenomenon observed in Theorem 2.9. In
+fact, if one combines Theorem 2.9 with Theorem 2.12, one obtains that:
+
+In the home (i.e., classical ordinary) case, the stack Qord is ω-closed in SW and
+
+disjoint from the closures of all QΠ for all non-pre-home Π . Moreover, Qord is
+
+naturally an ω-closed substack of QΠ for all pre-home Π .
+This fact is rendered in pictorial form in Fig. 9; cf. also the discussion of §3 below.
+The next main result of the generalized ordinary theory is the generalized ordinary
+version of Theorem 1.2. First, let us observe that since the natural morphism N ord →
+(Mg,r )Fp is étale, it admits a unique lifting to an étale morphism
+
+NZord
+→ (Mg,r )Zp
+p
+of smooth p-adic formal stacks over Zp . Unlike in the classical ordinary case, however,
+where one obtains a single canonical modular Frobenius lifting, in the generalized case,
+one obtains a whole system of Frobenius liftings (cf. Theorem 1.8 of [Mzk2], Chapter VII)
+:
+on NZord
+p
+
+, there is a
+Theorem 2.13. (Canonical System of Frobenius Liftings) Over NZord
+p
+canonical system of Frobenius liftings and indigenous bundles: i.e., for each indigenous i
+(i.e., such that Π(i) = χ), a lifting
+
+: NZord
+→ NZord
+Φlog
+i
+p
+p
+
+of a certain power of the Frobenius morphism, together with a collection of indigenous
+. Moreover,
+bundles Pi on the tautological curve (pulled back from (Mg,r )Zp ) over NZord
+p
+these Frobenius liftings and bundles are compatible, in a natural sense (Deﬁnition 1.7 of
+[Mzk2], Chapter VII).
+34
+
+A Lifting of
+Φ4
+
+The Corresponding
+Frobenius Liftings in the
+Generalized Ordinary Case
+
+The Space on which the
+Frobenius Liftings Live
+
+A Lifting of
+Φ2
+
+A Lifting of
+Φ2
+
+A Typical Corresponding VF-Pattern (of Period 8):
+..., χ, χ−1, 0, 0, χ, χ−2, χ, 0, ...
+
+Fig. 10: The Canonical System of Modular Frobenius Liftings
+
+See Fig. 10 for an illustration of the system of Frobenius liftings obtained for the VFpattern illustrated in Fig. 7.
+At this point, one very important question arises:
+To what extent are the stacks N ord nonempty?
+Needless to say, this is a very important issue, for if the N ord are empty most of the time,
+then the above theory is meaningless. In the classical ordinary case, it was rather trivial
+ord
+to show the nonemptiness of N g,r . In the present generalized ordinary setting, however,
+it is much more diﬃcult to show the nonemptiness of N ord . In particular, one needs to
+make use of the extensive theory of [Mzk2], Chapters II and IV. Fortunately, however, one
+can show the nonemptiness of N ord in a fairly wide variety of cases (Theorems 3.1 and 3.7
+of [Mzk2], Chapter VII):
+35
+
+Theorem 2.14. (Binary Existence Result) Suppose that g ≥ 2; r = 0; and p > 43g−3 .
+Then for any binary VF-pattern (i.e., VF-pattern such that Π(Z) ⊆ {0, χ}), the stack N ord
+is nonempty.
+Theorem 2.15. (Spiked Existence Result) Suppose that 2g − 2 + r ≥ 3 and p ≥ 5.
+Then there exists a “spiked VF-pattern” of period 2 (i.e.,  = 2 and 0 < Π(1) < χ) for
+which N ord is nonempty.
+In fact, there is an open substack of N ord called the very ordinary locus (deﬁned by
+more stringent conditions than ordinariness); moreover, one can choose the spiked VFpattern so that not only N ord , but also the “very ordinary locus of N ord ” is nonempty.
+These cases are “fairly representative” in the following sense: In general, in the binary
+case, the reduction modulo p of a Π-indigenous bundle will be dormant. In the spiked case
+(of Theorem 2.15), the reduction modulo p of a Π-indigenous bundle will be spiked. Thus,
+in other words,
+Roughly speaking, these two existence results show that for each type (admissible,
+dormant, spiked) of nilcurve, there exists a theory (in fact, many theories) of
+canonical liftings involving that type of nilcurve.
+Showing the existence of such a theory of canonical liftings for each generic point of N g,r
+was one of the original motivations for the development of the theory of [Mzk2].
+Next, we observe that just as in Theorem 1.2 (the classical ordinary case),
+In the cases discussed in Theorems 2.14 and 2.15, one can also construct canonical
+systems of Frobenius liftings on certain “ordinary loci” of the universal curve over
+. Moreover, these systems of canonical Frobenius lifting lie over the canonical
+NZord
+p
+system of modular Frobenius liftings of Theorem 2.13.
+We refer to Theorem 3.2 of [Mzk2], Chapter VIII and Theorem 3.4 of [Mzk2], Chapter IX
+for more details.
+We end this subsection with a certain philosophical observation. In [Mzk2], Chapter
+VI,
+The stack QΠ is referred to as the stack of quasi-analytic self-isogenies.
+That is to say, in some sense it is natural to regard the Frobenius invariant indigenous
+bundles parametrized by QΠ as isogenies of the curve (on which the bundles are deﬁned)
+onto itself. Indeed, this is suggested by the fact that over the ordinary locus (i.e., relative
+to the Frobenius invariant indigenous bundle in question) of the curve, the bundle actually
+does deﬁne a literal morphism, i.e., a Frobenius lifting (as discussed in the preceding paragraph). Thus, one may regard a Frobenius invariant indigenous bundle as the appropriate
+36
+
+way of compactifying such a self-isogeny to an object deﬁned over the whole curve. This is
+why we use the adjective “quasi-analytic” in describing the self-isogenies. (Of course, such
+self-isogenies can never be p-adic analytic over the whole curve, for if they were, they would
+be algebraic, which, by the Riemann-Hurwitz formula, is absurd.) Note that this point of
+view is in harmony with the situation in the parabolic case (g = 1, r = 0), where there
+is an algebraically deﬁned canonical choice of indigenous bundle, and having a Frobenius
+invariant indigenous bundle really does correspond to having a lifting of Frobenius (hence
+a self-isogeny of the curve in question).
+Moreover, note that in the case where the VF-pattern has several χ = 12 (2g − 2 + r)’s
+in a period, so that there are various indigenous Pi ’s in addition to the original Frobenius
+invariant indigenous bundle P, one may regard the situation as follows. Suppose that P
+is indigenous over a curve X → W (S), whereas Pi is indigenous over Xi → W (S). Then
+one can regard the “quasi-analytic self-isogeny” P : X → X as the composite of various
+quasi-analytic isogenies Pi : Xi → Xj (where i and j are “ind-adjacent” integers). Note
+that this point of view is consistent with what literally occurs over the ordinary locus (cf.
+Theorem 3.2 of [Mzk2], Chapter VIII). Finally, we observe that
+The idea that QΠ is a moduli space of some sort of p-adic self-isogeny which is
+“quasi-analytic” is also compatible with the analogy between QΠ and Teichmüller
+space (cf. the discussion of Corollary 2.7) in that Teichmüller space may be
+regarded as a moduli space of quasiconformal maps (cf., e.g., [Bers]).
+
+§2.5. Geometrization
+In the classical ordinary case, once one knows the existence of the canonical modular
+Frobenius lifting (Theorem 1.2), one can apply a general result on ordinary Frobenius
+liftings (Theorem 1.3) to conclude the existence of canonical multiplicative coordinates on
+. We shall refer to this process of passing (as in Theorem 1.3) from a certain type
+NZord
+p
+of Frobenius lifting to a local uniformization/canonical local coordinates associated to the
+Frobenius lifting as the geometrization of the Frobenius lifting. In the generalized ordinary
+context, Theorem 2.13 shows the existence of a canonical system of Frobenius liftings on
+the NZord
+associated to a VF-pattern (Π, ). Thus, the following question naturally arises:
+p
+Can one geometrize the sort of system of Frobenius liftings that one obtains in
+Theorem 2.13 in a fashion analogous to the way in which ordinary Frobenius
+liftings were geometrized in Theorem 1.3?
+Unfortunately, we are not able to answer this question in general. Nevertheless, in the
+cases discussed in Theorems 2.14 and 2.15, i.e., the binary and very ordinary spiked cases,
+we succeed (in [Mzk2], Chapters VIII and IX) in geometrizing the canonical system of
+m
+modular Frobenius liftings. The result is uniformizations/geometries based not on G
+as in the classical ordinary case, but rather on more general types of Lubin-Tate groups,
+37
+
+twisted products of Lubin-Tate groups, and ﬁbrations whose bases are Lubin-Tate groups
+and whose ﬁbers are such twisted products. In the rest of this subsection, we would like to
+try to give the reader an idea of what sorts of geometries occur in the two cases studied.
+In the following, we let k be a perfect ﬁeld of characteristic p, A its ring of Witt vectors
+W (k), and S a smooth p-adic formal scheme over A. Let λ be a positive integer, and let
+def
+
+Oλ = W (Fpλ ). For simplicity, we assume that Oλ ⊆ A. Let Gλ be the Lubin-Tate formal
+group associated to Oλ . (See [CF] for a discussion of Lubin-Tate formal groups.) Then Gλ
+is a formal group over Oλ , equipped with a natural action by Oλ (i.e., a ring morphism
+Oλ → EndOλ (Gλ )). Moreover, it is known that the space of invariant diﬀerentials on Gλ
+is canonically isomorphic to Oλ . Thus, in the following, we shall identify this space of
+diﬀerentials with Oλ .
+We begin with the simplest case, namely, that of a Lubin-Tate Frobenius lifting. Let
+Φ : S → S be a morphism whose reduction modulo p is the λth power of the Frobenius
+morphism. Then diﬀerentiating ΦS deﬁnes a morphism dΦS : Φ∗S ΩS/A → ΩS/A which is
+zero in characteristic p. Thus, we may form a morphism
+ΩΦ : Φ∗S ΩS/A → ΩS/A
+by dividing dΦS by p. Then ΦS is called a Lubin-Tate Frobenius lifting (of order λ) if ΩΦ
+is an isomorphism. If ΦS is a Lubin-Tate Frobenius lifting, then it induces a “Lubin-Tate
+geometry” – i.e., a geometry based on Gλ – on S. That is to say, one has the following
+analogue of Theorem 1.3 (cf. Theorem 2.17 of [Mzk2], Chapter VIII):
+Theorem 2.16. (Lubin-Tate Frobenius Liftings) Let ΦS : S → S be a Lubin-Tate
+Frobenius lifting of order λ. Then taking the invariants of ΩS/A with respect to ΩΦ gives
+rise to an étale local system Ωet
+Φ on S of free Oλ -modules of rank equal to dimA (S).
+def
+
+Let z ∈ S(k) be a point valued in the algebraic closure of k. Then Ωz = Ωet
+Φ |z may be
+thought of as a free Oλ -module of rank dimA (S); write Θz for the Oλ -dual of Ωz . Let Sz
+be the completion of S at z. Then there is a unique isomorphism
+gp
+Γz : Sz ∼
+= Gλ ⊗Oλ Θz
+
+such that:
+(i) the derivative of Γz induces the natural inclusion Ωz → ΩS/A |Sz ;
+(ii) the action of ΦS on Sz corresponds to multiplication by p on Gλ ⊗gp
+Oλ Θz .
+Here, by “Gλ ⊗gp
+Oλ Θz ,” we mean the tensor product over Oλ of (formal) group schemes with
+Oλ -action. Thus, Gλ ⊗gp
+Oλ Θz is noncanonically isomorphic to the product of dimA (S) =
+rankOλ (Θz ) copies of Gλ .
+38
+
+Of course, this result has nothing to do with the moduli of curves. In terms of VF-patterns,
+Theorem 2.13 gives rise to a Lubin-Tate Frobenius lifting of order  when the VF-pattern
+is of pure tone .
+The next simplest case is the case of an anabelian system of Frobenius liftings. Let n
+be a positive integer. Then an anabelian system of Frobenius liftings of length n and order
+λ is a collection of n Lubin-Tate Frobenius liftings
+Φ1 , . . . , Φn : S → S
+each of order λ. Of course, in general such Frobenius liftings will not commute with one
+another. In fact, it can be shown that two Lubin-Tate Frobenius liftings of order λ commute
+with each other if and only if they are equal (Lemma 2.24 of [Mzk2], Chapter VIII). This
+is the reason for the term “anabelian.” Historically, this term has been used mainly
+in connection with Grothendieck’s Conjecture of Anabelian Geometry ([Groth]). The
+reason why we thought it appropriate to use the term here (despite the fact that anabelian
+geometries as discussed here have nothing to do with the Grothendieck Conjecture) is
+the following: (Just as for the noncommutative fundamental groups of Grothendieck’s
+anabelian geometry) the sort of noncommutativity that occurs among the Φi ’s (at least in
+the modular case – cf. Theorem 2.13) arises precisely as a result of the hyperbolicity of the
+curves on whose moduli the Φi ’s act.
+def
+
+def
+
+Let δi = p1 dΦi . Let Δ = δn ◦ . . . ◦ δ1 . Then taking invariants of ΩS/A with respect to
+Δ gives rise to an étale local system Ωet
+Φ on S in free Onλ -modules of rank dimA (S). Next
+let SPD denote the p-adic completion of the P D-envelope of the diagonal in the product
+(over A) of n copies of S; let SFM denote the p-adic completion of the completion at the
+diagonal of the product (over A) of n copies of S. Thus, we have a natural morphism
+SPD → SFM
+Moreover, one may think of SPD as a sort of localization of SFM . Write ΦPD : SPD → SPD
+for the morphism induced by sending
+(s1 , . . . , sn ) → (Φ1 (s2 ), Φ2 (s3 ), . . . , Φn (s1 ))
+(where (s1 , . . . , sn ) represents a point in the product of n copies of S). Then we have the
+following result (cf. Theorem 2.17 of [Mzk2], Chapter VIII):
+Theorem 2.17. (Anabelian System of Frobenius Liftings) Let Φ1 , . . . , Φn : S → S
+be a system of anabelian Frobenius liftings of length n and order λ. Let z ∈ S(k) be a point
+def
+
+valued in the algebraic closure of k. Then Ωz = Ωet
+Φ |z may be thought of as a free Onλ module of rank dimA (S); write Θz for the Onλ -dual of Ωz . Let (SPD )z be the completion
+of SPD at z. Then there is a unique morphism
+39
+
+Γz : (SPD )z → Gλ ⊗gp
+Oλ Θz
+such that:
+(i) the derivative of Γz induces a certain (see Theorem 2.15 of [Mzk2], Chapter VIII
+for
+more details) natural inclusion of Ωz into the restriction to (SPD )|z of the diﬀerentials
+n
+of i=1 S over A;
+(ii) the action of ΦPD on (SPD )z is compatible with multiplication by p on Gλ ⊗gp
+Oλ Θz .
+Here, by “Gλ ⊗gp
+Oλ Θz ,” we mean the tensor product over Oλ of (formal) group schemes with
+Oλ -action. Thus, Gλ ⊗gp
+Oλ Θz is noncanonically isomorphic to the product of n · dimA (S) =
+rankOλ (Θz ) copies of Gλ .
+Moreover, in general, Γz does not descend to (SFM )z (cf. [Mzk2], Chapter VIII, §2.6, 3.1).
+One way to envision anabelian geometries is as follows: The various Φi ’s induce various
+linear Lubin-Tate geometries on the space S that (in general) do not commute with one
+another. Thus, the anabelian geometry consists of various linear geometries on S all tangled
+up inside each other. If one localizes in a suﬃciently drastic fashion – i.e., all the way to
+(SPD )z – then one can untangle these tangled up linear geometries into a single Onλ -linear
+geometry (via Γz ). However, the order λ Lubin-Tate geometries are so tangled up that
+even localization to a relatively localized object such as (SFM )z is not suﬃcient to untangle
+these geometries.
+Finally, to make the connection with Theorem 2.13, we remark that the system of
+Theorem 2.13 gives rise to an anabelian system of length n and order λ in the case of a
+VF-pattern (Π, ) for which  = n · λ, and Π(i) = χ (respectively, Π(i) = 0) if and only
+if i is divisible (respectively, not divisible) by λ.
+In fact, both Lubin-Tate geometries and anabelian geometries are special cases of
+binary ordinary geometries (the sorts of geometries that occur for binary VF-patterns, i.e.,
+Π whose image ⊆ {0, χ}). A general geometrization result for binary ordinary geometries
+is given in Theorem 2.17 of [Mzk2], Chapter VIII. Here, we chose to concentrate on the
+Lubin-Tate and anabelian cases (in fact, of course, Lubin-Tate geometries are a special
+case of anabelian geometries) since they are relatively representative and relatively easy
+to envision.
+The other main type of geometry that is studied in [Mzk2] is the geometry associated to
+a very ordinary spiked Frobenius lifting Φ : S → S. Such a Frobenius lifting reduces modulo
+p to the square of the Frobenius morphism and satisﬁes various other properties which we
+omit here (see Deﬁnition 1.1 of [Mzk2], Chapter IX for more details). In particular, such
+a Frobenius lifting comes equipped with an invariant called the colevel. The colevel is a
+nonnegative integer c. Roughly speaking,
+A very ordinary spiked Frobenius lifting is a Frobenius lifting which is “part LubinTate of order 2” and “part anabelian of length 2 and order 1.”
+40
+
+The colevel c is the number of dimensions of S on which Φ is Lubin-Tate of order 2. The
+main geometrization theorem (roughly stated) on this sort of Frobenius lifting is as follows
+(cf. Theorems 1.5 and 2.3 of [Mzk2], Chapter IX):
+
+Major Types of Geometries
+Lubin-Tate Geometry on
+the Strong Coordinates
+(which form the base)
+
+Classical
+Ordinary
+
+Pure Tone
+
+The Fibers Get
+an Anabelian Geometry
+
+Anabelian
+(regarded as
+a geometry on
+the diagonal)
+
+The Spiked Case
+
+VF-Pattern:
+..., χ, ...
+
+VF-Pattern:
+..., χ, 0, χ, ...
+
+VF-Pattern:
+..., χ, χ, ...
+
+VF-Pattern:
+..., χ, χ−1, χ, ...
+
+(period 1)
+
+(period 2)
+
+(period 2)
+
+(period 2)
+
+Fig. 11: Major Types of p-adic Geometries
+
+Theorem 2.18. (Very Ordinary Spiked Frobenius Liftings) Let Φ : S → S be a
+very ordinary spiked Frobenius lifting of colevel c. Then Φ deﬁnes an étale local system
+st
+Ωst
+Φ on S of free O2 -modules of rank c equipped with a natural inclusion ΩΦ → ΩS/A .
+def
+
+st
+Let z ∈ S(k) be a point valued in the algebraic closure of k. Then Ωst
+z = ΩΦ |z may
+st
+be thought of as a free O2 -module of rank c; write Θst
+z for the O2 -dual of Ωz . Let Sz be
+the completion of S at z. Then there is a unique morphism
+
+st
+Γz : Sz → G2 ⊗gp
+O2 Θz
+
+such that:
+(i) the derivative of Γz induces the natural inclusion of Ωst
+z into ΩS/A ;
+41
+
+st
+(ii) the action of Φ on Sz is compatible with multiplication by p on G2 ⊗gp
+O2 Θz .
+
+Here, the variables on Sz obtained by pull-back via Γz carry a Lubin-Tate geometry of
+order 2, and are called the strong variables on Sz . Finally, the ﬁber of Γz over the identity
+st
+element of the group object G2 ⊗gp
+O2 Θz admits an anabelian geometry of length 2 and order
+1 determined by Φ (plus a “Hodge subspace” for Φ – cf. [Mzk2], Chapter IX, §1.5, for
+more details). The variables in these ﬁbers are called the weak variables.
+Thus, in summary, Φ deﬁnes a virtual ﬁbration on S to a base space (of dimension c)
+naturally equipped with a Lubin-Tate geometry of order 2; moreover, (roughly speaking)
+the ﬁbers of this ﬁbration are naturally equipped with an anabelian geometry of length
+2 and order 1. In terms of VF-patterns, this sort of Frobenius lifting occurs in the case
+ = 2, Π(1) = 0 (cf. Theorem 2.15). The colevel is then given by 2(χ − Π(1)).
+Next, we note that as remarked toward the end of §2.4, in the binary ordinary and
+very ordinary spiked cases one obtains geometrizable systems of Frobenius liftings not only
+(which is étale over (Mg,r )Zp ) but also on the ordinary locus of the universal
+over NZord
+p
+. (More precisely, in the very ordinary spiked case, one must replace NZord
+curve over NZord
+p
+p
+by the formal open substack deﬁned by the very ordinary locus.) Thus, in particular,
+In the binary ordinary and very ordinary spiked cases, one obtains geometries as
+discussed in the above theorems not only on the moduli of the curves in question,
+but also on the ordinary loci of the universal curves themselves.
+See Fig. 11 for a pictorial representation of the major types of geometries discussed.
+Finally, we observe that one way to understand these generalized ordinary geometries
+is the following:
+The “Lubin-Tate-ness” of the resulting geometry on the moduli stack is a reﬂection of the extent to which the p-curvature (of the indigenous bundles that the
+moduli stack parametrizes) vanishes.
+That is to say, the more the p-curvature vanishes, the more Lubin-Tate the resulting
+geometry becomes. For instance, in the case of a Lubin-Tate geometry, the order of the
+Lubin-Tate geometry (cf. Theorem 2.16) corresponds precisely to the number of dormant
+crys-stable bundles in a period (minus one). In the case of a spiked geometry, the number of
+“Lubin-Tate dimensions” is measured by the colevel. Moreover, this colevel is proportional
+to the degree of vanishing of the p-curvature of the indigenous bundle in question.
+
+§2.6. The Canonical Galois Representation
+Finally, since we have been considering Frobenius invariant indigenous bundles,
+42
+
+We would like to construct representations of the fundamental group of the curve
+in question into PGL2 by looking at the Frobenius invariant sections of these
+indigenous bundles.
+Such representations will then be the p-adic analogue of the canonical representation in the
+complex case of the topological fundamental group of a hyperbolic Riemann surface into
+PSL2 (R) ⊆ PGL2 (C) (cf. the discussion at the beginning of §1.3). Unfortunately, things
+are not so easy in the p-adic (generalized ordinary) case because a priori the canonical
+indigenous bundles constructed in Theorem 2.13 only have connections and Frobenius
+actions with respect to the relative coordinates of the tautological curve over NZord
+. This
+p
+means, in particular, that we cannot immediately apply the theory of [Falt1], §2, to pass to
+representations of the fundamental group. To overcome this diﬃculty, we must employ the
+technique of crystalline induction developed in [Mzk1]. Unfortunately, in order to carry
+out crystalline induction, one needs to introduce an object called the Galois mantle which
+can only be constructed when the system of Frobenius liftings on NZord
+is geometrizable.
+p
+Thus, in particular, we succeed (in [Mzk2], Chapter X) in constructing representations of
+the sort desired only in the binary ordinary and very ordinary spiked cases.
+First, we sketch what we mean by the Galois mantle. The Galois mantle can be constructed for any geometrizable system of Frobenius liftings (e.g., any of the types discussed
+in §2.5). In particular, the notion of the Galois mantle has nothing to do with curves or
+their moduli. For simplicity, we describe the Galois mantle in the classical ordinary case.
+Thus, let S and A be as in §2.5. Let ΠS be the fundamental group of S ⊗Zp Qp (for
+some choice of base-point). Let Φ be a classical ordinary Frobenius lifting (in other words,
+Lubin-Tate of order 1) on S. Then by taking Frobenius invariant sections of the tangent
+bundle, one obtains an étale local system Θet
+Φ on S of free Zp -modules of rank dimA (S).
+Moreover, Φ deﬁnes a natural exact sequence of continuous ΠS -modules
+0 → Θet
+Φ (1) → EΦ → Zp → 0
+where the “(1)” denotes a Tate twist, and “Zp ” is equipped with the trivial ΠS -action.
+Roughly speaking, this extension of ΠS -modules is given by taking the pth power roots of
+the canonical multiplicative coordinates of Theorem 1.3 (cf. §2.2 of [Mzk2], Chapter VIII
+for a detailed discussion of the p-divisible group whose Tate module may be identiﬁed with
+EΦ ). Let B  be the aﬃne space of dimension dimA (S) over Zp parametrizing splittings of
+the above exact sequence. Then the action of ΠS on the above exact sequence induces a
+natural action of ΠS on B  . Roughly speaking, the Galois mantle B associated to Φ is the
+p-adic completion of a certain kind of p-adic localization of B.
+More generally, to any geometrizable system of Frobenius liftings (as in §2.5) on
+S, one can associate a natural p-adic space B – the Galois mantle associated to the
+system of Frobenius liftings – with a continuous ΠS -action. In the binary ordinary
+case, B will have a natural aﬃne structure over some ﬁnite étale extension of Zp .
+In the very ordinary spiked case, B will be ﬁbred over an aﬃne space over O2
+with ﬁbers that are also equipped with an aﬃne structure over O2 .
+43
+
+In fact, to be more precise, B is only equipped with an action by a certain open subgroup
+of ΠS , but we shall ignore this issue here since it is rather technical and not so important.
+We refer to §2.3 and §2.5 of [Mzk2], Chapter IX for more details on the Galois mantle. So
+far, for simplicity, we have been ignoring the logarithmic case, but everything is compatible
+with log structures.
+We are now ready to state the main result on the canonical Galois representation in
+the generalized ordinary case, i.e., the generalized ordinary analogue of Theorem 1.4 (cf.
+Theorems 1.2 and 2.2 of [Mzk2], Chapter X). See Fig. 12 for a graphic depiction of this
+theorem.
+
+Action of
+Arithmetic
+Fundamental
+Group of Total
+Space of Family
+of Curves
+
+Actions are
+Compatible
+
+The Canonical Projective Bundle
+over the Galois Mantle
+
+p-adic spaces
+
+P 1 -bundle
+
+Action of
+Arithmetic
+Fundamental
+Group of
+Base Space
+The Galois Mantle
+
+Fig. 12: The Canonical Galois Representation
+
+Theorem 2.19. (Canonical Galois Representation) Let p be an odd prime. Let g
+and r be nonnegative integers such that 2g − 2 + r ≥ 1. Fix a VF-pattern (Π, ) which
+def
+
+in the binary ordinary case,
+is either binary ordinary or spiked of order 2. Let S = NZord
+p
+ord
+and let S be the very ordinary locus of NZp in the spiked case. Let Z → S be a certain
+44
+
+appropriate ﬁnite covering which is log étale in characteristic zero (cf. the discussion
+preceding Theorems 1.2 and 2.2 of [Mzk2], Chapter X for more details). Let XZlog → Z log
+be the tautological log-curve over Z log . Let ΠXZ (respectively, ΠZ ) be the fundamental
+group of XZlog ⊗Zp Qp (respectively, Z log ⊗Zp Qp ) for some choice of base-point. (Of
+course, despite the similarity in notation, these fundamental groups have no direct relation
+to the VF-pattern “Π.”) Thus, there is a natural morphism ΠXZ → ΠZ . Let B be the
+Galois mantle associated to the canonical system of Frobenius liftings of Theorem 2.13.
+The morphism ΠXZ → ΠZ allows us to regard B as being equipped with a ΠXZ -action.
+Let P be the tautological Π-indigenous bundle on X. Then by taking Frobenius invariants of P, one obtains a P1 -bundle
+PB → B
+equipped with a natural continuous ΠXZ -action compatible with the above-mentioned action
+of ΠXZ on the Galois mantle B.
+Put another way, one obtains a twisted homomorphism of ΠXZ into PGL2 of the functions
+on B. (Here, “twisted” refers to the fact that the multiplication rule obeyed by the homomorphism takes into account the action of ΠXZ on the functions on B.) Finally, note that
+for any point of Z ⊗Zp Qp (at which the log structure is trivial), one also obtains similar
+representations by restriction. This gives one canonical Galois representations even in the
+non-universal case.
+Finally, in [Mzk2], Chapter X, §1.4, 2.3, we show that:
+The Galois representation of Theorem 2.19 allows one to relate the various padic analytic structures constructed throughout [Mzk2] (i.e., canonical Frobenius
+liftings, canonical Frobenius invariant indigenous bundles, etc.) to the algebraic/arithmetic Galois action on the proﬁnite Teichmüller group (cf. [Mzk2],
+Chapter X, Theorems 1.4, 2.3).
+def
+
+, we obtain a
+More precisely: By iterating the canonical Frobenius liftings on N = NZord
+p
+certain natural inﬁnite covering
+N [∞] → N
+(i.e., projective limit of ﬁnite coverings which are log étale in characteristic zero). On the
+other hand, if we denote by
+def
+
+log
+
+CZp → MZp = (Mg,r )Zp
+45
+
+the universal log-curve over the moduli stack, and by Cη the geometric generic ﬁber of this
+morphism, then the natural outer action π1 (MQp ) (i.e., action on a group deﬁned modulo
+inner automorphisms of the group) on π1 (Cη ) deﬁnes an action of π1 (MQp ) on
+def
+
+RepQp = Rep(π1top (X ), P GL2 (O ))
+(where O is deﬁned to be the ring of Witt vectors with coeﬃcients in the ﬁnite ﬁeld
+of p elements, and “Rep” denotes the set of isomorphism classes of homomorphisms
+π1top (X ) → P GL2 (O ); two such homomorphisms are regarded as isomorphic if they
+diﬀer by composition with an inner automorphism of P GL2 (O )). Moreover, this action
+deﬁnes (by the “deﬁnition of π1 ”) an inﬁnite étale covering RQp → MQp . We denote
+the normalization of MZp in RQp by RZp . Let M be the p-adic completion of MZp ,
+ def
+= RZp ×MZp MZp . Then the main results on this topic (i.e., [Mzk2], Chapter
+and R
+X, Theorems 1.4, 2.3) state that the Galois of representation of Theorem 2.19 induces a
+commutative diagram
+N [∞]
+⏐
+⏐
+N
+
+κ
+
+−→
+
+
+R
+⏐
+⏐
+
+−→
+
+M
+
+in which the horizontal morphism (which is denoted κ
+ in [Mzk2], Chapter X) on top is an
+open immersion.
+The proof that κ
+ is an open immersion divides naturally into three parts, corresponding
+to the three “layers” of the morphism N [∞] → M. The ﬁrst layer is the quasi-ﬁnite (but
+not necessarily ﬁnite) étale morphism N → M. Because the morphism N → M is
+étale even in characteristic p, this layer is rather easy to understand. The second layer
+corresponds to the ﬁnite covering Z → S of Theorem 2.19. Together the ﬁrst and second
+layers correspond to the “mod p portion” of the Galois representation of Theorem 2.19 – i.e.,
+the ﬁrst layer corresponds to the “slope zero portion” of this representation modulo p, while
+the second layer corresponds to the “positive slope portion” of this representation modulo
+p. From the point of view of the “MF ∇ -objects” over B(N ) (cf. the discussion following
+Deﬁnition 2.5 in §2.3) corresponding to the representation of Theorem 2.19, this slope zero
+portion (i.e., the ﬁrst layer) parametrizes the isomorphism class of these MF ∇ -objects
+over (B(N )Fp )red , while the positive slope portion (i.e., the second layer) parametrizes the
+isomorphism class of the deformations of these MF ∇ -objects from bundles on curves over
+(B(N )Fp )red to bundles on curves over B(N )Fp .
+Finally, the third layer of the covering is what remains between N [∞] and the “Z” of
+Theorem 2.19. This portion is the analytic portion of the covering (i.e., the portion of the
+covering equipped with a natural “analytic structure”). Put another way, this portion is
+the portion of the covering which is dealt with by the technique of crystalline induction
+(which is concerned precisely with equipping this portion of the covering with a natural
+46
+
+“crystalline” analytic structure – cf. [Mzk2], Chapter IX, §2.3 – especially the Remark
+following Theorem 2.11 – for more details).
+Thus, the fact that the morphism κ
+ “does not omit any information” at all three
+layers is essentially a tautological consequence of the various aspects of the extensive theory
+developed throughout [Mzk2]. From another point of view, by analyzing this morphism κ
+,
+we obtain a rather detailed understanding of a certain portion of the canonical tower of
+log
+def
+coverings of MQp = (Mg,r )Qp given by
+RQp → MQp
+analogous to the analysis given in [KM] of coverings of the moduli stack of elliptic curves
+over Zp obtained by considering p-power torsion points (cf. the Remark following [Mzk2],
+Chapter X, Theorem 1.4, for more details).
+Thus, in summary, Theorem 2.19 concludes our discussion of “p-adic Teichmüller theory” as exposed in [Mzk2] by constructing a p-adic analogue of the canonical representation
+discussed at the beginning of §1.3, that is to say, a p-adic analogue of something very close
+to the Fuchsian uniformization itself – which was where our discussion began (§1.1).
+
+§3. Conclusion
+Finally, we pause to take a look at what we have achieved. Just as in §1, we would like
+to describe the p-adic theory by comparing it to the classical theory at the inﬁnite prime.
+Thus, let us write
+def
+
+log
+
+CC → MC = (Mg,r )C
+log
+
+for the universal log-curve over the moduli stack (Mg,r )C of r-pointed stable log-curves of
+genus g over the complex numbers. Let us ﬁx a “base-point” (say, in the interior – i.e.,
+the open substack parametrizing smooth curves – of MC ) [X] ∈ MC (C) corresponding to
+def
+
+some hyperbolic algebraic curve X over C. Let us write X = X(C) for the corresponding
+hyperbolic Riemann surface. Next, let us consider the space
+def
+
+RepC = Rep(π1top (X ), P GL2 (C))
+of isomorphism classes of representations of the topological fundamental group π1top (X )
+into P GL2 (C). This space has the structure of an algebraic variety over C, induced by
+the algebraic structure of P GL2 (C) by choosing generators of π1top (X ). Note, moreover,
+that as [X] varies, the resulting spaces Rep(π1 (X ), P GL2 (C)) form a local system on MC
+(valued in the category of algebraic varieties over C) which we denote by
+47
+
+RC → MC
+One can also think of RC as the local system deﬁned by the natural action of π1top (MC (C))
+def
+
+on RepC = Rep(π1top (X ), P GL2 (C)) which is induced by the natural outer action of
+π1top (MC (C)) on π1top (X ) – cf. the discussion of the p-adic case at the end of §2.6 above
+(for more details, see [Mzk2], Chapter X, §1.4, 2.3).
+Next, let us denote by
+
+QF ⊆ RC
+
+the subspace whose ﬁber over a point [Y ] ∈ MC (C) is given by the representations
+π1top (Y) → P GL2 (C) that deﬁne quasi-Fuchsian groups (cf. §1.4), i.e., simultaneous uniformizations of pairs of Riemann surfaces (of the same type (g, r)), for which one (say, the
+“ﬁrst” one) of the pair of Riemann surfaces uniformized is the Riemann surface Y corresponding to [Y ]. Thus, whereas the ﬁbers of RC → MC are of dimension 2(3g − 3 + r)
+over C, the ﬁbers of QF → MC are of dimension 3g − 3 + r over C.
+Then, relative to the notation of [Mzk2], Chapter X, §1.4, 2.3, the analogy between
+the complex and p-adic cases may be summarized by the following diagram:
+
+QF
+
+
+⇐⇒
+
+N [∞]
+
+
+(RC → MC )
+
+⇐⇒
+
+ → M)
+(R
+
+(where the vertical inclusion on the left is the natural one; and the vertical inclusion on
+the right is the morphism κ
+ of [Mzk2], Chapter X, Theorems 1.4, 2.3). We also give an
+illustration (Fig. 13) of this sort of situation. Relative to this illustration, the “integral (or
+bounded) subspaces” of the local system are QF and N [∞] (cf. §1.4 for an explanation
+of the term “integral”). Note that just as in the complex case, the ﬁbers of the covering
+N [∞] → M have, so to speak, “Galois dimension” 3g − 3 + r over O (cf. the crystalline
+induction portion of the proof of [Mzk2], Chapter X, Theorem 1.4), whereas the ﬁbers of
+ → M are of “Galois dimension” 2(3g − 3 + r) over O . In the p-adic case,
+the covering R
+ –
+N [∞] denotes the “crystalline” or “Frobenius invariant indigenous bundle” locus of R
+cf. the discussion of §1.4.
+48
+
+Local System of
+Representations
+into PGL
+2
+
+Integral Subspaces
+of Fibers of Local
+System
+
+Moduli Stack of
+Hyperbolic Curves
+
+Fig. 13: Integral Subspaces of the Local System of Representations
+
+In the complex case, the “Frobenius” (i.e., complex conjugation) invariant portion of
+QF is the space of Fuchsian groups, hence deﬁnes the Bers uniformization of Teichmüller
+space (cf. §1.5). On the other hand, in the p-adic case, the covering N [∞] → M is
+“made up of” composites of Frobenius liftings, by forgetting that these Frobenius liftings
+are morphisms from a single space to itself, and just thinking of them as coverings. If one
+then invokes the structure of Frobenius liftings as morphisms from a single space to itself,
+one so-to-speak recovers the original Frobenius liftings, which (by the theory of [Mzk2],
+log
+Chapters VIII and IX) deﬁne p-adic uniformizations of (Mg,r )Zp .
+In the complex case, the space of quasi-Fuchsian groups QF may also be interpreted
+in terms of quasi-conformal maps. Similarly, in the p-adic case, one may interpret integral
+Frobenius invariant indigenous bundles as quasi-analytic self-isogenies of hyperbolic curves
+(cf. the end of §2.4).
+Finally, in the complex case, although QF is not closed in RC , the space QF (when
+regarded as a space of representations) is complete relative to the condition that the representations always deﬁne indigenous bundles for some conformal structures on the two
+49
+
+surfaces being uniformized. Note that one may think of these two surfaces as reﬂections
+of another, i.e., translates of one another by some action of Frobenius at the inﬁnite prime
+ it is complete
+(i.e., complex conjugation). Similarly, although N [∞] is not closed in R,
+(at least for binary VF-patterns Π) in the sense discussed at the end of [Mzk2], Chapter
+X, §1.4, i.e., relative to the condition that the representation always deﬁnes an indigenous
+bundle on the universal thickening B + (−) of the base. Note that this thickening B + (−)
+is in some sense the minimal thickening of (the normalization of the maximal log étale in
+characteristic zero extension of) “(−)” that admits an action of Frobenius (cf. the theory
+of [Mzk2], Chapter VI, §1; B + (−) is the PD-completion of the rings B(−) discussed in
+[Mzk2], Chapter VI, §1; in fact, instead of using B + (−) here, it would also be quite sufﬁcient to use the rings B(−) of [Mzk2], Chapter VI, §1). In other words, just as in the
+complex case,
+N [∞] is already complete relative to the condition that the representations it
+parametrizes always deﬁne indigenous bundles on the given curve and all of its
+Frobenius conjugates.
+
+Bibliography
+
+[Abik] W. Abikoﬀ, The Real Analytic Theory of Teichmüller Space, Lecture Notes in Mathematics 820, Springer (1980).
+[Bers] L. Bers, Quasiconformal Mappings and Teichmüller’s Theorem, in Analytic Functions,
+Princeton Univ. Press (1960), pp. 89-119.
+[CF] J. W. S. Cassels and A. Froehlich, Algebraic Number Theory, Academic Press (1967).
+[DM] P. Deligne and D. Mumford, The Irreducibility of the Moduli Space of Curves of
+Given Genus, IHES Publ. Math. 36, pp. 75-109 (1969).
+[Falt1] G. Faltings, Crystalline Cohomology and p-adic Galois Representations, Proceedings
+of the First JAMI Conference, Johns Hopkins Univ. Press (1990), pp. 25-79.
+[Falt2] G. Faltings, Real Projective Structures on Riemann Surfaces, Compositio Math. 48,
+Fasc. 2, pp. 223-269 (1983).
+[FC] G. Faltings and C.-L. Chai, Degenerations of Abelian Varieties, Springer (1990).
+[FM] W. Fulton and D. Mumford, On the Irreducibility of the Moduli Space of Curves,
+Invent. Math. 67, pp. 87-88 (1982).
+[Fulton] W. Fulton, Hurwitz Schemes and the Irreducibility of Moduli of Algebraic Curves,
+Ann. Math. 90, pp. 542-575 (1969).
+[Gard] F. Gardiner, Teichmüller Theory and Quadratic Diﬀerentials, John Wiley and Sons
+(1987).
+50
+
+[Geer] G. van der Geer, Cycles on the Moduli Space of Abelian Varieties, preprint of the
+Department of Mathematics, Kyoto Univ. 96-10 (June 1996).
+[Groth] A. Grothendieck, letter to G. Faltings (June 1983) in Lochak, L. Schneps, Geometric
+Galois Actions; 1. Around Grothendieck’s Esquisse d’un Programme, London Math.
+Soc. Lect. Note Ser. 242, Cambridge Univ. Press (1997).
+[Gunning] R. C. Gunning, Special Coordinate Coverings of Riemann Surfaces, Math. Annalen
+170, pp. 67-86 (1967).
+[Ih1] Y. Ihara, Schwarzian Equations, Jour. Fac. Sci. Univ. Tokyo, Sect IA Math. 21, pp.
+97-118 (1974).
+[Ih2] Y. Ihara, On the Diﬀerentials Associated to Congruence Relations and the Schwarzian
+Equations Deﬁning Uniformizations, Jour. Fac. Sci. Univ. Tokyo, Sect. IA Math. 21,
+pp. 309-332 (1974).
+[Ih3] Y. Ihara, On the Frobenius Correspondences of Algebraic Curves, in Algebraic Number
+Theory, papers contributed for the International Symposium, Kyoto, 1976, Japan Soc.
+Prom. Sci. (1977).
+[Ih4] Y. Ihara, Lifting Curves over Finite Fields Together with the Characteristic Correspondence Π + Π , Jour. of Algebra 75, No. 2, pp. 452-483 (1982).
+[Kato] K. Kato, Logarithmic Structures of Fontaine-Illusie, Proceedings of the First JAMI
+Conference, Johns Hopkins Univ. Press (1990), pp. 191-224.
+[KM] N. Katz and B. Mazur, Arithmetic Moduli of Elliptic Curves, Annals of Mathematics
+Studies 108, Princeton Univ. Press (1985).
+[Knud] F. F. Knudsen, The Projectivity of the Moduli Space of Stable Curves, III, Math.
+Scand. 52, pp. 200-212 (1983).
+[Mumf] D. Mumford, An Analytic Construction of Degenerating Curves over Complete Local
+Rings, Compositio Math. 24, pp. 129-174 (1972).
+[Mzk1] S. Mochizuki, A Theory of Ordinary p-adic Curves, Publ. RIMS, Kyoto Univ. 32, No.
+6, pp. 957-1151 (1996).
+[Mzk2] S. Mochizuki, Foundations of p-adic Teichmüller Theory, to be published by International Press.
+[Mzk3] S. Mochizuki, Correspondences on Hyperbolic Curves, Jour. Pure Appl. Algebra 131,
+No. 3, pp. 227-244 (1998).
+[Shi] G. Shimura, Introduction to the Arithmetic Theory of Automorphic Forms, Publ.
+Math. Soc. of Japan 11, Iwanami Shoten and Princeton Univ. Press (1971).
+[Surf] D. Mumford, Lectures on Curves on an Algebraic Surface, Annals of Mathematics
+Studies 59, Princeton Univ. Press (1966).
+[Thur] W. P. Thurston, Three Dimensional Manifolds, Kleinian Groups and Hyperbolic Geometry, Bull of the Amer. Math. Soc. 6, No. 3, pp. 357-381 (1982).
+51
+
+

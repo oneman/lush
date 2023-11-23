@@ -1,0 +1,1262 @@
+Galois Sections in Absolute
+Anabelian Geometry
+Shinichi Mochizuki
+Introduction
+In this paper, we continue our study of the absolute anabelian geometry of
+hyperbolic curves over p-adic local ﬁelds [i.e., ﬁnite extensions of the ﬁeld of p-adic
+numbers, for some prime number p], begun in [Mzk2], [Mzk3]. In [Mzk3], Theorem
+2.4, it was shown, as a consequence of the main theorem of [Mzk1], that certain
+categories of ﬁnite étale correspondences associated to a hyperbolic curve XK over a
+p-adic local ﬁeld K may be recovered from the proﬁnite group structure of the étale
+fundamental group ΠXK of XK . In the present paper, we generalize this result to
+show [again as a consequence of the main theorem of [Mzk1]] that certain categories
+of arbitrary dominant [i.e., not necessarily ﬁnite étale] correspondences associated
+to XK may be recovered from the proﬁnite group structure of ΠXK [cf. Theorem
+2.3]. We then apply this result to study the extent to which the decomposition
+groups associated to closed points of XK may be recovered from the proﬁnite group
+structure of ΠXK [cf. Corollaries 2.5, 2.6, 3.2]. One result that is representative of
+these techniques is the following special case of Corollary 3.2:
+Theorem A. Let K be a ﬁnite extension of Qp ; XK a hyperbolic curve of
+genus zero over K which is, in fact, deﬁned over a number ﬁeld. Write ΠXK
+for the étale fundamental group of XK . Then any automorphism of the proﬁnite
+group ΠXK preserves the decomposition groups ⊆ ΠXK associated to the
+closed points of XK .
+This result may be regarded as a sort of [very] weak version of the “Section Conjecture” [cf., e.g., [Mzk1], §19 for more on the “Section Conjecture”]. Finally, in
+§4, we show, in the notation of Theorem A, that various canonical auxiliary structures associated to the decomposition groups of cusps of XK are also preserved by
+arbitrary automorphisms of ΠXK [cf. Corollary 4.11].
+Acknowledgements:
+I would like to thank Akio Tamagawa for various useful comments, especially
+concerning the statement of Theorem A; Corollaries 2.8, 3.2 and the proof of Lemma
+4.6.
+
+Typeset by AMS-TEX
+1
+
+2
+
+SHINICHI MOCHIZUKI
+
+Section 0: Notations and Conventions
+Numbers:
+If p is a prime number, then we shall denote by Qp the ﬁeld of p-adic numbers,
+i.e., the completion of the ﬁeld of rational numbers Q with respect to the p-adic
+valuation of Q. We shall refer to a ﬁeld which is isomorphic to a ﬁnite extension
+of Qp for some p as a local ﬁeld. [In particular, in this paper, all “local ﬁelds” are
+nonarchimedean.] A number ﬁeld is deﬁned to be a ﬁnite extension of the ﬁeld of
+rational numbers Q.
+Topological Groups:
+Let G be a Hausdorﬀ topological group, and H ⊆ G a closed subgroup. Let us
+write
+def
+ZG (H) = {g ∈ G | g · h = h · g, ∀ h ∈ H}
+for the centralizer of H in G;
+NG (H) = {g ∈ G | g · H · g −1 = H}
+def
+
+for the normalizer of H in G; and
+CG (H) = {g ∈ G | (g · H · g −1 )
+def
+
+
+
+H has ﬁnite index in H, g · H · g −1 }
+
+for the commensurator of H in G. Note that: (i) ZG (H), NG (H) and CG (H) are
+subgroups of G; (ii) we have inclusions
+H, ZG (H) ⊆ NG (H) ⊆ CG (H)
+and (iii) H is normal in NG (H). If H = CG (H), then we shall say that H is
+commensurably terminal in G. Note that ZG (H), NG (H) are always closed in G,
+while CG (H) is not necessarily closed in G.
+If G1 , G2 are Hausdorﬀ topological groups, then an outer homomorphism
+G1 → G2 is deﬁned to be an equivalence class of continuous homomorphisms
+G1 → G2 , where two such homomorphisms are considered equivalent if they diﬀer
+by composition with an inner automorphism of G2 .
+Categories:
+Let C be a category. We shall denote the collections of objects and arrows of C
+by
+Ob(C);
+
+Arr(C)
+
+respectively. If A ∈ Ob(C) is an object of C, then we shall denote by
+CA
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+
+3
+
+the category whose objects are morphisms B → A of C and whose morphisms (from
+an object B1 → A to an object B2 → A) are A-morphisms B1 → B2 in C.
+We shall refer to a natural transformation between functors [from one category
+to another] all of whose component morphisms are isomorphisms as an isomorphism
+between the functors in question. A functor φ : C1 → C2 between categories C1 , C2
+will be called rigid if φ has no nontrivial automorphisms. A category C will be
+called slim if the natural functor CA → C is rigid, for every A ∈ Ob(C).
+Given two arrows fi : Ai → Bi (where i = 1, 2) in a category C, we shall refer
+to a commutative diagram
+∼
+A1 → A2
+⏐
+⏐
+⏐f
+⏐f
+1
+2
+B1
+
+∼
+
+→
+
+B2
+
+— where the horizontal arrows are isomorphisms in C — as an abstract equivalence
+from f1 to f2 . If there exists an abstract equivalence from f1 to f2 , then we shall
+abs
+
+say that f1 , f2 are abstractly equivalent and write f1 ≈ f2 .
+Let G be a proﬁnite group. Then we recall that the category B(G) of ﬁnite sets
+with continuous G-action and morphisms of G-sets is slim if and only if ZG (H) =
+{1} for all open subgroups H ⊆ G.
+Curves:
+Suppose that g ≥ 0 is an integer. Then if S is a scheme, a family of curves of
+genus g
+X→S
+is deﬁned to be a smooth, proper, geometrically connected morphism of schemes
+X → S whose geometric ﬁbers are curves of genus g.
+Suppose that g, r ≥ 0 are integers such that 2g − 2 + r > 0. We shall denote
+the moduli stack of r-pointed stable curves of genus g (where we assume the points
+to be unordered) by Mg,r [cf. [DM], [Knud] for an exposition of the theory of such
+curves; strictly speaking, [Knud] treats the ﬁnite étale covering of Mg,r determined
+by ordering the marked points]. The open substack Mg,r ⊆ Mg,r of smooth curves
+will be referred to as the moduli stack of smooth r-pointed stable curves of genus g
+or, alternatively, as the moduli stack of hyperbolic curves of type (g, r). The divisor
+at inﬁnity Mg,r \Mg,r of Mg,r determines a log structure on Mg,r ; denote the
+log
+
+resulting log stack by Mg,r .
+A family of hyperbolic curves of type (g, r)
+X→S
+is deﬁned to be a morphism which factors X → Y → S as the composite of an
+open immersion X → Y onto the complement Y \D of a relative divisor D ⊆ Y
+
+4
+
+SHINICHI MOCHIZUKI
+
+which is ﬁnite étale over S of relative degree r, and a family Y → S of curves of
+genus g. One checks easily that, if S is normal, then the pair (Y, D) is unique up
+to canonical isomorphism. (Indeed, when S is the spectrum of a ﬁeld, this fact is
+well-known from the elementary theory of algebraic curves. Next, we consider an
+arbitrary connected normal S on which a prime l is invertible (which, by Zariski
+localization, we may assume without loss of generality). Denote by S  → S the ﬁnite étale covering parametrizing orderings of the marked points and trivializations
+of the l-torsion points of the Jacobian of Y . Note that S  → S is independent of
+the choice of (Y, D), since (by the normality of S), S  may be constructed as the
+normalization of S in the function ﬁeld of S  (which is independent of the choice
+of (Y, D) since the restriction of (Y, D) to the generic point of S has already been
+shown to be unique). Thus, the uniqueness of (Y, D) follows by considering the
+classifying morphism (associated to (Y, D)) from S  to the ﬁnite étale covering of
+(Mg,r )Z[ 1l ] parametrizing orderings of the marked points and trivializations of the
+l-torsion points of the Jacobian [since this covering is well-known to be a scheme,
+for l suﬃciently large].) We shall refer to Y (respectively, D; D; D) as the compactiﬁcation (respectively, divisor at inﬁnity; divisor of cusps; divisor of marked points)
+of X. A family of hyperbolic curves X → S is deﬁned to be a morphism X → S
+such that the restriction of this morphism to each connected component of S is a
+family of hyperbolic curves of type (g, r) for some integers (g, r) as above. If the
+divisor of cusps of a family of hyperbolic curves X → S forms a split ﬁnite étale
+covering over S, then we shall say that this family of hyperbolic curves is cuspidally
+split. A family of hyperbolic curves X → S of type (0, 3) (respectively, (1, 1)) will
+be referred to as a tripod (respectively, once-punctured elliptic curve).
+If XK (respectively, YL ) is a hyperbolic curve over a ﬁeld K (respectively, L),
+then we shall say that XK is isogenous to YL if there exists a hyperbolic curve ZM
+over a ﬁeld M together with ﬁnite étale morphisms ZM → XK , ZM → YL .
+
+Section 1: Brief Review of Anabelian Geometry
+Let K, L be local ﬁelds [cf. §0]; XK (respectively, YL ) a hyperbolic curve [cf. §0]
+over K (respectively, L). Any choice of basepoint for XK determines, up to inner
+def
+
+automorphism, the étale fundamental group ΠXK = π1 (XK ) of XK . Moreover,
+ΠXK ﬁts into a natural exact sequence
+1 → ΔX → ΠXK → GK → 1
+where GK is the absolute Galois group of K; ΔX , which is often referred to as the
+geometric fundamental group of XK , is deﬁned so as to make the sequence exact.
+Any choice of basepoint for YL determines a similar exact sequence for YL .
+Proposition 1.1.
+
+(First Properties)
+
+(i) ΠXK is slim [cf. §0].
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+
+5
+
+∼
+
+(ii) Every isomorphism of proﬁnite groups α : ΠXK → ΠYL ﬁts into a unique
+commutative diagram
+α
+ΠXK −→ ΠYL
+⏐
+⏐
+⏐
+⏐
+
+
+GK
+
+−→
+
+GL
+
+where the vertical arrows are the surjections of the natural exact sequence(s) discussed above; the horizontal arrows are isomorphisms.
+Proof. Assertion (i) (respectively, (ii)) follows from [Mzk2], Lemma 1.3.1 (respectively, [Mzk2], Lemma 1.3.8). 
+Theorem 1.2.
+(Anabelian Theorem for Hyperbolic Curves over Local
+Fields) The étale fundamental group functor determines a bijection between the set
+of dominant morphisms of schemes
+X K → YL
+and the set of open outer homomorphisms φ : ΠXK → ΠYL that ﬁt into a
+commutative diagram
+φ
+ΠXK −→ ΠYL
+⏐
+⏐
+⏐
+⏐
+
+
+GK
+
+−→
+
+GL
+
+for which the induced morphism GK → GL is an open immersion [i.e., an isomorphism onto an open subgroup of GL ] which arises from an embedding of ﬁelds
+L → K.
+Proof. Recall that given a local ﬁeld M , the topology of M may be always be
+recovered solely from the ﬁeld structure of M by observing that the ring of integers
+×
+×
+, and that OM
+⊆ M is equal to the
+OM of M is additively generated by OM
+×
+subgroup of elements of M that are inﬁnitely divisible by powers of some prime
+number. In particular, the Qp -algebra structure of M [for some suitable prime
+number p], as well as the prime number p itself [i.e., the unique prime number l
+such that OM is not inﬁnitely divisible by powers of l], may be recovered from the
+ﬁeld structure of M . In a similar vein, given a function ﬁeld in one variable M 
+over M , consideration of the discrete valuations on M  with trivial restriction to
+M reveals that the subﬁeld M ⊆ M  may be recovered — solely from the ﬁeld
+structure of M  — as the subﬁeld generated by the elements of (M  )× that are
+inﬁnitely divisible by powers of some prime number. In light of these remarks,
+Theorem 1.2 follows formally from [Mzk1], Theorem A. 
+Next, let us write XK → X K for the compactiﬁcation [cf. §0] of XK . Let
+x ∈ XK
+
+6
+
+SHINICHI MOCHIZUKI
+
+be a closed point. Thus, x determines, up to conjugation by an element of ΠXK , a
+decomposition group:
+Dx ⊆ ΠXK
+We shall refer to a closed subgroup of ΠXK which arises in this way as a decomposition group of ΠXK . If x is a cusp, then we shall refer to the decomposition
+group Dx as cuspidal. Note that Dx always surjects onto an open subgroup of GK .
+Moreover, the subgroup
+
+def
+Ix = Dx
+ΔX
+
+is isomorphic to Z(1)
+[i.e., the proﬁnite completion of Z, Tate twisted once] (respectively, {1}) if x is (respectively, is not) a cusp. We shall refer to a closed subgroup of
+ΠXK which is equal to “Ix ” for some cusp x as a cuspidal geometric decomposition
+group.
+Theorem 1.3.
+
+(Decomposition Groups)
+
+(i) (Determination of the Point) The closed point x is completely determined by the conjugacy class of the closed subgroup Dx ⊆ ΠXK . If x is a cusp, then
+x is completely determined by the conjugacy class of the closed subgroup Ix ⊆ ΠXK .
+(ii) (Commensurable Terminality) The subgroup Dx is commensurably terminal in ΠXK . If x is a cusp, then Dx = CΠXK (H) for any open subgroup H ⊆ Ix .
+(iii) (Absoluteness of Cuspidal Decomposition Groups) Every isomorphism of proﬁnite groups
+∼
+α : ΠXK → ΠYL
+preserves cuspidal decomposition groups and cuspidal geometric decomposition groups.
+(iv) (Cuspidal and Noncuspidal Decomposition Groups) No noncuspidal decomposition group of ΠXK is contained in a cuspidal decomposition group of
+ΠXK .
+Proof. The ﬁrst half of assertion (i) follows, for instance, formally from [Mzk1],
+Theorem C; the second half of assertion (i) follows from elementary facts about
+fundamental groups of topological surfaces. Assertion (ii) follows formally from
+assertion (i) and the deﬁnition of a “decomposition group”. Assertion (iii) follows
+from assertion (ii) and [Mzk2], Lemma 1.3.9. As for assertion (iv), we may assume,
+by passing to a ﬁnite étale covering of XK , that XK is of genus ≥ 2, so that X K is
+still hyperbolic. Then assertion (iv) follows from assertion (i). 
+
+Section 2: Categories of Dominant Morphisms
+Let XK be a hyperbolic curve over a ﬁeld K. Write XK → X K for the
+compactiﬁcation of XK .
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+
+7
+
+Deﬁnition 2.1.
+(i) We shall refer to an open immersion
+XK → YK
+as a partial compactiﬁcation, or PC, for short, of XK if the natural open immersion
+XK → X K factors as the composite of the given morphism XK → YK with some
+open immersion YK → X K . By abuse of notation, we shall also often speak of
+“YK ” as a PC of XK .
+(ii) If XK → YK is a PC such that YK is a hyperbolic curve, then we shall say
+that XK → YK [or YK ] is a hyperbolic partial compactiﬁcation, or HPC, of XK .
+(iii) If XK → YK is a PC such that the arrow “→” is an isomorphism, then
+we shall say that XK → YK [or YK ] is a trivial partial compactiﬁcation of XK .
+Now we deﬁne a “category of dominant localizations”
+DLoc(XK )
+associated to the hyperbolic curve XK as follows: The objects of this category are
+the hyperbolic partial compactiﬁcations
+Y → Z
+where Y is a hyperbolic curve over some ﬁeld [which is necessarily a ﬁnite separable
+extension of K] that arises as a ﬁnite étale covering Y → XK . The morphisms of
+this category from an object Y → Z to an object Y  → Z  are diagrams of the
+form
+Y
+Y
+⏐
+⏐
+⏐
+⏐
+
+
+Z
+
+−→
+
+Z
+
+where the vertical morphisms are the given morphisms, and the horizontal morphism is a dominant morphism of schemes. By abuse of notation, we shall often
+simply refer to the horizontal arrow Z → Z  as being a morphism of DLoc(XK ).
+Similarly, by stipulating that all schemes appearing in the deﬁnition of the category DLoc(XK ) given in the preceding paragraph be equipped with K-structures
+[where we take the K-structure on XK to be the given K-structure] and that all
+morphisms be K-morphisms, we obtain a category
+DLocK (XK )
+together with a natural faithful functor DLocK (XK ) → DLoc(XK ).
+
+8
+
+SHINICHI MOCHIZUKI
+
+Remark 2.2.0. Thus, the category DLoc(XK ) is reminiscent of the category
+“Loc(XK )” of [Mzk3], §2. Indeed, there is a natural faithful functor
+Loc(XK ) → DLoc(XK )
+whose essential image consists of the objects Y → Z which are trivial partial
+compactiﬁcations and the dominant morphisms Z → Z  which are ﬁnite étale. In
+particular, if we denote by Ét(XK ) the category of ﬁnite étale coverings of XK and
+morphisms over XK , then we have natural faithful functors:
+Ét(XK ) → Loc(XK ) → DLoc(XK )
+Similarly, we have natural faithful functors: Ét(XK ) → LocK (XK ) → DLocK (XK ).
+Proposition 2.2. (Slimness of the Category of Dominant Localizations)
+Suppose that K is a local ﬁeld. Then the categories DLoc(XK ), DLocK (XK ) are
+slim.
+Proof. Indeed, by using the various copies of “Ét(Z)” [where, say, Y → Z is an
+object of DLoc(XK )] lying inside DLoc(XK ), DLocK (XK ) [cf. Remark 2.2.0], the
+slimness of the categories DLoc(XK ), DLocK (XK ) follows formally from Proposition 1.1, (i) [cf. also the discussion of slimness in §0]. 
+Next, let us consider the category DLocGK (ΠXK ) deﬁned as follows: An object
+of this category is a surjection of proﬁnite groups
+H J
+where H ⊆ ΠXK is an open subgroup; J is the quotient of H by the closed normal
+subgroup generated by some collection of cuspidal geometric decomposition 
+groups;
+and we assume that J is “hyperbolic”, in the sense that the image of ΔX H in
+J is nonabelian. Given two objects Hi  Ji , where i = 1, 2, of this category, a
+morphism in this category is deﬁned to be a diagram of the form
+H1
+⏐
+⏐
+
+J1
+
+H2
+⏐
+⏐
+
+−→
+
+J2
+
+where the vertical morphisms are the given morphisms, and the horizontal morphism is an open outer homomorphism that is compatible with the various natural
+[open] outer homomorphisms from the Hi , Ji to GK .
+Now we have the following analogue of [Mzk3], Theorem 2.4:
+Theorem 2.3. (Group-theoreticity of the Category of Dominant Localizations) Let K, L be local ﬁelds; XK (respectively, YL ) a hyperbolic curve
+over K (respectively, L). Then:
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+
+9
+
+(i) The étale fundamental group functor determines equivalences of categories
+∼
+
+∼
+
+DLocK (XK ) → DLocGK (ΠXK );
+
+DLocL (YL ) → DLocGL (ΠYL )
+
+(ii) Every isomorphism of proﬁnite groups
+∼
+
+α : ΠXK → ΠYL
+induces an equivalence of categories
+∼
+
+DLocGK (ΠXK ) → DLocGL (ΠYL )
+hence also [by applying the equivalences of (i)] an equivalence of categories
+∼
+
+DLocK (XK ) → DLocL (YL )
+in a fashion that is functorial, up to unique isomorphisms of equivalences of categories, with respect to α.
+Proof. Indeed, assertion (i) follows formally from Theorem 1.2, while assertion
+(ii) follows, in light of Proposition 1.1, (ii); Theorem 1.3, (iii), formally from the
+deﬁnition of the categories “DLocGK (ΠXK )”, “DLocGL (ΠYL )”. [Here, we note that
+the uniqueness of the isomorphisms of equivalences of categories involved follows
+from Proposition 2.2.] 
+Next, let
+Dx ⊆ ΠXK
+be a decomposition group associated to some closed point x ∈ X K .
+Deﬁnition 2.4.
+We shall say that x or Dx is of DLoc-type if Dx admits an
+open subgroup that arises as the image via a morphism Z → XK of DLocK (XK )
+of some cuspidal decomposition group of ΠZ .
+Corollary 2.5. (Group-theoreticity of Decomposition Groups of DLoctype) In the notation of Theorem 2.3, the isomorphism
+∼
+
+α : ΠXK → ΠYL
+preserves the decomposition groups of DLoc-type.
+Proof. This follows immediately from the deﬁnitions; Theorem 2.3 [and its proof];
+Theorem 1.3, (ii), (iii). 
+
+10
+
+SHINICHI MOCHIZUKI
+
+Corollary 2.6.
+(The Case of Once-punctured Elliptic Curves) In the
+notation of Theorem 2.3, let us suppose further that XK , YL are once-punctured
+elliptic curves. Then the isomorphism
+∼
+
+α : ΠXK → ΠYL
+preserves the decomposition groups of the “torsion closed points” — i.e., the closed
+points that arise from torsion points of the underlying elliptic curve. Moreover,
+the resulting bijection between torsion closed points of XK , YL is compatible with
+∼
+ab
+the isomorphism on abelianizations of geometric fundamental groups Δab
+X → ΔY
+— i.e., “Tate modules” — induced by α.
+Proof. Indeed, if n ≥ 1 is an integer, write
+φ : ZK → XK
+for the ﬁnite étale covering determined by “multiplication by n”. Note that this
+covering may also be described more group-theoretically as the covering associated
+to the open subgroup H ⊆ ΠXK [which is easily veriﬁed to be unique, up to
+conjugation 
+in ΠXK ] such that: (i) H contains a cuspidal decomposition group of
+ab
+ΠXK ; (ii) H ΔX is equal to the inverse image in ΔX of the subgroup n·Δab
+X ⊆ ΔX .
+Observe that ZK admits XK as an HPC, by “ﬁlling in” all of the cusps other
+that the “origin”. Thus, we obtain an open immersion
+ψ : ZK → XK
+— i.e., an object of DLocK (XK ), which exhibits the closed points of XK that arise
+from n-torsion points of the underlying elliptic curve as closed points of DLoc-type
+type. Thus, by transporting φ, ψ via the equivalences of Theorem 2.3, (i), and
+applying Theorem 1.3, (ii), (iii) [as in the proof of Corollary 2.5], we conclude that
+α preserves the decomposition groups of the torsion closed points. Finally, the
+compatibility with the induced morphism on Tate modules follows by considering
+the automorphisms of ZK over [i.e., relative to φ] XK , after possibly enlarging K.
+
+Deﬁnition 2.7.
+We shall say that a closed point x ∈ X K is algebraic if, for
+some ﬁnite extension L of K, some hyperbolic curve YF over a number ﬁeld F ⊆ L,
+∼
+def
+def
+and some L-isomorphism XL → YL [where XL = XK ×K L, YL = YF ×F L], x
+lies under a closed point xL ∈ X L which maps to a closed point of Y F under the
+∼
+composite X L → Y L → Y F .
+Remark 2.7.1.
+One veriﬁes immediately that if a closed point x ∈ X K is
+algebraic, then given any L -isomorphism
+∼
+
+XL → YL 
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+def
+
+11
+
+def
+
+[where XL = XK ×K L ; YL  = YF  ×F  L ; L is a ﬁnite extension of K; YF  is a
+hyperbolic curve over a number ﬁeld F  ⊆ L ], it holds that any point xL ∈ X L
+
+
+
+∼
+lying over x maps to a closed point of Y F  under the composite X L → Y L → Y F  .
+Corollary 2.8. (The Case of Genus Zero) In the notation of Theorem 2.3, let
+us suppose further that XK (respectively, YL ) is isogenous [cf. §0] to a hyperbolic
+curve of genus zero. Then the isomorphism
+∼
+
+α : ΠXK → ΠYL
+preserves the decomposition groups of the algebraic closed points. In particular,
+XK is deﬁned over a number ﬁeld [or, equivalently: XK has at least one algebraic point] if and only if YL is.
+Proof. By Theorem 1.3, (ii), and [the “LocK (−) portion” — already contained
+in [Mzk3], Theorem 2.4 — of] Theorem 2.3, (ii), one reduces immediately to the
+case where both XK and YL are of genus zero. Also, by Theorem 1.3, (ii), we may
+always enlarge K, L without loss of generality; in particular, we may assume that
+XK , YL are cuspidally split, so that both curves admit a [cuspidally split] tripod as
+an HPC. Then we argue as in the proof of Corollary 2.6: That is to say, given any
+algebraic x ∈ X K , we observe that [after possibly enlarging K] there exists, by the
+deﬁnition of “algebraic” and the famous main result of [Belyi], a “Belyi map”
+β : XK → X K
+that maps x, as well as all of the cusps of XK , to cusps of X K , and, moreover, is
+unramiﬁed over the open subscheme of X K determined by the tripod that forms an
+HPC for XK . In particular, β is unramiﬁed over the open subscheme XK ⊆ X K .
+Put another way, there exists an open immersion φ : ZK → XK [i.e., an HPC]
+such that the composite β ◦ φ factors through XK ⊆ X K in such a way that the
+resulting morphism βZ : ZK → XK is ﬁnite étale. In particular, βZ exhibits φ as an
+object of DLocK (XK ), and so φ exhibits x as a closed point of DLoc-type. Thus, by
+transporting φ, βZ via the equivalences of Theorem 2.3, (i), and applying Theorem
+1.3, (ii), (iii) [as in the proof of Corollary 2.5], we conclude that α preserves the
+decomposition groups of algebraic closed points, as desired. 
+Remark 2.8.1. In fact, tracing through the proofs of Corollaries 2.6, 2.8 shows
+that in these proofs, we did not actually need to use the full “Hom” version of
+Theorem 1.2. That is to say, for these proofs, in fact the “isomorphism version”
+∼
+of Theorem 1.2 [i.e., the bijection between isomorphisms “XK → YL ” and certain
+∼
+isomorphisms “ΠXK → ΠYL ”], applied in combination with Theorem 1.3, (iii), is
+suﬃcient. Indeed, if we use the natural faithful functor discussed in Remark 2.2.0
+to think of LocK (XK ) as a [not necessarily full!] subcategory of DLocK (XK ), then
+let us denote by
+Arr(LocK (XK )) ⊆ OFLocK (XK ) ⊆ Arr(DLocK (XK ))
+
+12
+
+SHINICHI MOCHIZUKI
+
+the collection of arrows Z → Z  of DLocK (XK ) which factor as the composite of an
+arrow Z → Z  [of DLocK (XK )] which is an open immersion [i.e., an HPC] with an
+arrow Z  → Z  [of DLocK (XK )] which is ﬁnite étale. We shall refer to the arrows
+of OFLocK (XK ) as arrows of OF-type [i.e., “open immersion + ﬁnite étale” type].
+Similarly, we deﬁne
+OFLocK (ΠXK ) ⊆ Arr(DLocGK (ΠXK ))
+to be the collection of arrows J1 → J2 of DLocGK (ΠXK ) that factor as the composite
+of a surjection J1  J3 [in DLocGK (ΠXK )] whose kernel is normally topologically
+generated by some collection of cuspidal geometric decomposition groups, with an
+open immersion J3 → J2 [in DLocGK (ΠXK )]. Then [cf. Theorem 2.3, (ii), and its
+proof] we obtain an equivalence of categories
+∼
+
+DLocGK (ΠXK ) → DLocGL (ΠYL )
+whose induced map on “Arr(−)’s” maps OFLocK (ΠXK ) into OFLocL (ΠYL ) by
+applying Proposition 1.1, (ii); Theorem 1.3, (iii) [i.e., without using Theorem 1.2
+at all!]. Moreover, the isomorphism portion of Theorem 1.2 implies that the étale
+fundamental group functor induces a natural commutative diagram
+OFLocK (XK )
+⏐
+⏐
+
+
+⊆
+
+Arr(DLocK (XK ))
+⏐
+⏐
+
+
+OFLocK (ΠXK ) ⊆ Arr(DLocGK (ΠXK ))
+such that the vertical arrow on the left is “essentially surjective” — i.e., more
+precisely: induces a bijection on abstract equivalence [cf. §0] classes [deﬁned relative
+to the category structures of DLocK (XK ), DLocGK (ΠXK )] lying in OFLocK (XK ),
+OFLocK (ΠXK ). Since the proofs of Corollaries 2.6, 2.8 only make use of arrows
+of OF-type, the bijection of abstract equivalence classes just observed, together
+∼
+with the equivalence DLocGK (ΠXK ) → DLocGL (ΠYL ) — all of which involves only
+the isomorphism portion of Theorem 1.2 — are suﬃcient for the proofs of these
+categories, as claimed.
+
+Section 3: Limits of Galois Sections
+Let XK be a hyperbolic curve over a local ﬁeld K. As in §1, 2, we have an
+exact sequence:
+1 → ΔX → ΠXK → GK → 1
+Since ΔX is topologically ﬁnitely generated, it follows that there exists a sequence
+of characteristic open subgroups
+. . . ⊆ ΔX [j + 1] ⊆ ΔX [j] ⊆ . . . ⊆ ΔX
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+
+[where j ranges over the positive integers] of ΔX such that
+particular, given any section
+σ : GK → ΠXK
+
+
+j
+
+13
+
+ΔX [j] = {1}. In
+
+we obtain open subgroups
+def
+
+ΠXK [j,σ] = Im(σ) · ΔX [j] ⊆ ΠXK
+[where Im(σ) denotes the image of σ in ΠXK ] corresponding to a tower of ﬁnite
+étale coverings
+. . . → XK [j + 1, σ] → XK [j, σ] → . . . → XK
+of XK by hyperbolic curves over K.
+The following lemma is reminiscent of the techniques of [Tama], [Mzk1]:
+Lemma 3.1.
+(Criterion for Galois Sections Associated to Rational
+Points) Suppose that XK is deﬁned over a number ﬁeld, i.e., there exists a
+hyperbolic curve XK over a number ﬁeld F ⊆ K such that XK = XF ×F K. Let
+σ : GK → ΠXK be a section such that Im(σ) is not contained in any cuspidal
+decomposition group of ΠXK . Then the following conditions on σ are equivalent:
+(i) σ arises from a point x ∈ XK (K) [i.e., “Im(σ) = Dx ”].
+(ii) For every integer j ≥ 1, XK [j, σ](K) = ∅.
+(iii) For every integer j ≥ 1, XK [j, σ](K)alg = ∅ [where the superscript “alg”
+denotes the subset of algebraic [K-rational] closed points].
+(iv) For every integer j ≥ 1, ΠXK [j,σ] contains a decomposition group [i.e.,
+relative to ΠXK ] of an algebraic closed point of XK that surjects onto GK .
+Proof. (i) =⇒ (ii): It follows from the deﬁnitions that x ∈ XK (K) lifts to a point
+of ∈ XK [j, σ](K), for all j ≥ 1, which implies (ii).
+(iii) =⇒ (ii), (iv); (iv) =⇒ (iii): Immediate from the deﬁnitions.
+(ii) =⇒ (i): For j ≥ 1, choose points xj ∈ XK [j, σ](K). Since the topological
+space
+
+X K [j, σ](K)
+j≥1
+
+is compact, it follows that there exists some inﬁnite set of positive integers J  such
+that for any j ≥ 1, the images of the xj  , where j  ≥ j, in
+X K [j, σ](K)
+converge to a point yj ∈ X K [j, σ](K). Moreover, note that, by the deﬁnition of yj ,
+it follows that if j1 > j2 , then yj1 maps to yj2 in X K [j2 , σ](K). In particular, if we
+write y ∈ X K (K) for the image of the yj in X K (K), then it follows formally from
+
+14
+
+SHINICHI MOCHIZUKI
+
+the fact that the yj form a compatible sequence of points of the sets X K [j, σ](K)
+that Im(σ) is contained in the decomposition group [well-deﬁned up to conjugation]
+Dy . On the other hand, by our assumption that Im(σ) is not contained in any
+cuspidal decomposition group of ΠXK , we conclude that y is not a cusp, hence that
+“Im(σ) = Dy ”, as desired.
+(ii) =⇒ (iii): Given a point xj ∈ XK [j, σ](K) with image x ∈ XK (K) =
+XF (K), it follows from “Krasner’s lemma” [cf., e.g., [Kobl], p. 69-70] that one may
+approximate x by a point x ∈ XF (F  ) ⊆ XF (K) = XK (K), where F  ⊆ K is a
+ﬁnite extension of F , which is suﬃciently close to x that [just like x] it lifts to a
+point xj ∈ XK [j, σ](K), which is necessarily algebraic, as desired. 
+Corollary 3.2. (Absoluteness of Decomposition Groups for Genus Zero)
+Let K, L be local ﬁelds; XK (respectively, YL ) a hyperbolic curve over K
+(respectively, L), which is, in fact, deﬁned over a number ﬁeld. Suppose,
+moreover, that XK (respectively, YL ) is isogenous [cf. §0] to a hyperbolic curve of
+genus zero. Then every isomorphism of proﬁnite groups
+∼
+
+α : ΠXK → ΠYL
+preserves the decomposition groups of the closed points.
+Proof. Indeed, Corollary 3.2 follows formally from Corollary 2.8; Theorem 1.3,
+(iii), (iv); and the equivalence (i) ⇐⇒ (iv) of Lemma 3.1. 
+Remark 3.2.1.
+Since any once-punctured elliptic curve is isogenous to a hyperbolic curve of genus zero, one might think, at ﬁrst glance, that Corollary 2.6 is
+[essentially] a “special case” of Corollary 3.2. In fact, however, this is false, since
+Corollary 2.6 applies even to curves which are not necessarily deﬁned over a number
+ﬁeld.
+
+Section 4: Discrete and Integral Structures at Cusps
+Let XK be a hyperbolic curve over a local ﬁeld K; write XK → X K for the
+compactiﬁcation of XK . Also, if p is the residue characteristic of K, then we shall
+ p . Let
+  def
+= Z/Z
+write Z
+Dx ⊆ ΠXK
+be a decomposition group associated to some cusp x ∈ X K (K). Then we have an
+exact sequence
+
+1 → Ix ( ∼
+→ Dx → GK → 1
+= Z(1))
+whose splittings form a torsor over
+∼
+
+H 1 (GK , Z(1))
+= (K × )∧
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+
+15
+
+[where the “∧” denotes the proﬁnite completion]. If ωx denotes the cotangent space
+to X K at x, then any choice of a nonzero θ ∈ ωx determines a splitting of this
+
+torsor by considering the Z(1)-torsor
+over the formal completion (X K )x [i.e., of
+X K at x] given by taking N -th roots [as N ranges over the positive integers] of any
+local coordinate t ∈ mX K ,x such that dt|x = θ. In particular, if the pointed stable
+curve associated to XK has stable reduction over OK , then the cotangent module to
+this stable reduction at the OK -valued point determined by x determines a natural
+integral structure on ωx [i.e., a rank one free OK -submodule of the one-dimensional
+K-vector space ωx ]. In particular, this integral structure determines a reduction of
+×
+the structure group of the torsor of splittings considered above from (K × )∧ to OK
+.
+Deﬁnition 4.1.
+(i) If (K × )∧ → A is a continuous homomorphism of topological groups, then
+the torsor obtained from the torsor of splittings considered above by changing the
+structure group via this homomorphism will be referred to as the A-torsor at x. If,
+moreover, B ⊆ A is a closed subgroup, then any reduction of the structure group
+of the A-torsor at x from A to B will be referred to as a B-torsor structure at x.
+×
+- (respectively, K × -) torsor structure on the (K × )∧ -torsor at x will
+(ii) A OK
+be referred to as a(n) integral (respectively, discrete) structure on the cuspidal
+  as a quotient of (K × )∧ ;
+decomposition group Dx . Let us think of (K × )∧ ⊗ Z
+× 
+×
+  . Then
+) , (K × ) for the images of OK
+, K × , respectively, in (K × )∧ ⊗ Z
+write (OK
+× 
+  -torsor at x will
+a (OK
+) - (respectively, (K × ) -) torsor structure on the (K × )∧ ⊗ Z
+be referred to as a(n) tame integral (respectively, tame discrete) structure on the
+cuspidal decomposition group Dx .
+
+(iii) If XK has stable reduction over OK (respectively, XK is arbitrary), then
+the particular integral (respectively, discrete) structure on Dx arising [as discussed
+above] from a generator of the rank one free OK -submodule of ωx determined
+by the stable reduction of XK (respectively, any nonzero element of ωx ) will be
+referred to as the canonical integral (respectively, discrete) structure on the cuspidal
+decomposition group Dx . The canonical integral (respectively, discrete) structure
+on Dx induces a tame integral (respectively, tame discrete) structure on Dx which
+we shall also refer to as canonical.
+(iv) An arbitrary closed point x of X K will be referred to as absolute if, for
+every YL , α as in Theorem 2.3, there exists a closed point y  of Y L such that
+×
+α(Dx ) = Dy . A nonconstant unit U ∈ Γ(XK , OX
+) on XK will be called coabK
+solute if X K admits an absolute point at which U is invertible. The hyperbolic
+curve XK will be called coabsolute if it admits a coabsolute unit. The hyperbolic
+curve XK will be called quasi-coabsolute if it is isogenous to a coabsolute hyperbolic
+curve. If XK has stable reduction over OK (respectively, XK is arbitrary), then the
+cusp x will be called integrally absolute (respectively, discretely absolute) if, for ev∼
+ery YL , α as in Theorem 2.3, the isomorphism Dx → Dy [where y is a cusp of YL
+— cf. Theorem 1.3, (iii)] induced by α is compatible with the canonical integral
+
+16
+
+SHINICHI MOCHIZUKI
+
+(respectively, discrete) structures on Dx , Dy . Similarly, one has a notion of tamely
+integrally absolute and tamely discretely absolute cusps.
+(v) The cusp x will be called subprincipal if it is contained in the support of a
+cuspidal principal divisor on [i.e., principal divisor supported in the cusps of] X K .
+The hyperbolic curve XK will be called subprincipally ample if every cusp of XK
+is subprincipal. The hyperbolic curve XK will be called subprincipally quasi-ample
+if it is isogenous to a subprincipally ample hyperbolic curve.
+Remark 4.1.1. By Theorem 1.3, (iii), cusps are always absolute. By Corollaries
+2.6, 3.2, once-punctured elliptic curves, as well as hyperbolic curves that are isogenous to a hyperbolic curve of genus zero which is deﬁned over a number ﬁeld, have
+inﬁnitely many absolute points.
+Next, let us write
+def
+
+L = OX K (x)
+for the line bundle determined by the cusp x;
+L → XK
+for the geometric line bundle determined by L; and
+(L ⊇) L× → X K
+for the complement of the zero section in L. Thus, the natural inclusion OX K →
+OX K (x) determines a section
+XK → L
+whose restriction to XK determines a section XK → L× , hence a morphism of
+fundmental groups:
+def
+ΠXK → ΠL× = π1 (L× )
+
+Lemma 4.2.
+(The Line Bundle Associated to a Cusp) Suppose that XK
+is of type (g, r), where g ≥ 2, r = 1. Then:
+(i) ΠL× ﬁts into a short exact sequence:
+
+1 → Z(1)
+→ ΠL× → ΠX K → 1
+
+is the ﬁrst Chern class of
+Moreover, the resulting extension class ∈ H 2 (ΠX K , Z(1))
+the line bundle L.
+(ii) The morphism of fundmental groups ΠXK → ΠL× induces an isomorphism
+Ix → Ker(ΠL× → ΠX K ). In particular, the morphism ΠXK → ΠL× is surjective.
+∼
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+
+17
+
+def
+
+(iii) Write ΔX/X = Ker(ΠXK  ΠX K ). Then the quotient of ΔX/X by
+Ker(ΠXK → ΠL× ) ⊆ ΔX/X
+is the maximal quotient of ΔX/X on which the conjugation action by ΔX is
+trivial.
+Proof. Assertion (i) follows from [Mzk4], Lemmas 4.3, 4.4, 4.5. Assertion (ii)
+is immediate from the discussion preceding Deﬁnition 4.1 involving roots of local
+def
+coordinates. As for assertion (iii), write Q1 = ΔX/X /Ker(ΠXK → ΠL× ); Q2 for
+the maximal quotient of ΔX/X on which the conjugation action by ΔX is trivial.
+Thus, we have a natural surjection Q2  Q1 . Now assertion (iii) follows from
+assetion (ii) and the well-known fact that ΔX/X is topologically generated by the
+ΔX -conjugates of Ix . 
+Next, let us recall the notation of [Mzk2], §1.2: By local class ﬁeld theory, we
+have a natural isomorphism
+∼
+(K × )∧ → Gab
+K
+which we may use to think of the group of roots of unity of (K × )∧ as a subgroup:
+μQ/Z (K) ⊆ Gab
+K
+Also, we recall [cf. [Mzk2], Proposition 1.2.1, (iv)] that the subgroup K × ⊆
+∼
+(K × )∧ → GK may be recovered group-theoretically from the proﬁnite group structure of GK . Allowing “K” to vary among the various ﬁnite extensions of a given
+K inside an algebraic closure K of K, we obtain groups:
+μQ/Z (K);
+
+def
+
+μZ (K) = Hom(Q/Z, μQ/Z (K));
+
+def
+
+μZ (K) = μZ (K) ⊗ Z
+
+In particular, by considering roots of local coordinates as in the discussion preceding
+∼
+Deﬁnition 4.1, we obtain a natural isomorphism μZ (K) → Ix .
+Theorem 4.3. (Rigidity of Cuspidal Geometric Decomposition Groups)
+In the notation of Theorem 2.3, suppose that α induces isomorphisms
+∼
+
+Ix → Iy ;
+
+∼
+
+μZ (K) → μZ (L)
+
+where x ∈ X K (K) (respectively, y ∈ Y L (L)) is a cusp. Then these isomorphisms
+∼
+∼
+are compatible with the natural isomorphisms μZ (K) → Ix ; μZ (L) → Iy .
+Proof. Indeed, by replacing XK , YL by ﬁnite étale coverings, one reduces immediately to the case where both curves are of genus ≥ 2. By “ﬁlling in” [cf. Theorem
+1.3, (iii)] all of the cusps other than those of interest [i.e., x, y], we may assume,
+
+18
+
+SHINICHI MOCHIZUKI
+
+moreover, that XK , YL satisfy the hypotheses of Lemma 4.2. Thus, by Lemma 4.2,
+we conclude that the morphism
+∼
+
+H 2 (ΔX , Ix ) → H 2 (ΔY , Iy )
+induced by α is compatible with the extension classes of Lemma 4.2. On the other
+hand, by [Mzk2], Lemma 2.5, (ii), the morphism
+∼
+
+H 2 (ΔX , μZ (K)) → H 2 (ΔY , μZ (L))
+induced by α is compatible with the elements determined by the Chern class of a
+ we thus obtain
+point on either side. Since all of these “H 2 ’s” are isomorphic to Z,
+the compatibility asserted in the statement of Theorem 4.3. 
+Proposition 4.4.
+(Tame Integral Absoluteness) Suppose that XK has
+stable reduction over OK . Then:
+(i) Every cusp of XK is tamely integrally absolute.
+(ii) A cusp of XK is discretely absolute if and only if it is integrally
+absolute.
+Proof. Assertion (ii) follows formally from assertion (i) and the fact that the
+ is injective. Now we consider
+  Z
+  to Z ⊆ Z
+restriction of the projection Z
+assertion (i). First, let us observe that it is immediate from the deﬁnitions that it
+suﬃces to prove assertion (i) after replacing XK by a ﬁnite étale covering of XK
+that extends to an admissible covering of the stable model of XK . In particular,
+we may assume without loss of generality that every irreducible component of the
+normalization of the geometric special ﬁber of this stable model has genus ≥ 1.
+Next, let us recall the “étale quotient”
+ΠXK  Πet
+XK
+of [Mzk2], §2. Thus, the ﬁnite quotients of Πet
+XK correspond to the coverings of
+XK that arise from ﬁnite étale coverings of the stable model of XK that are tamely
+ramiﬁed at the cusps. In particular, the quotient of GK determined by Πet
+XK is
+the natural quotient GK  Gk , where k is the residue ﬁeld of K. If x is a cusp
+of XK , then [in light of our assumption that every irreducible component of the
+normalization of the geometric special ﬁber of the stable model has genus ≥ 1] the
+quotient
+Dx  Dx
+determined by Πet
+XK ﬁts into an exact sequence:
+1 → Ix → Dx → Gk → 1
+def
+  ]. In particular, the splittings of this exact sequence form a
+[where Ix = Ix ⊗ Z
+torsor over H 1 (Gk , Ix ) ∼
+= k × . These splittings may be thought of as elements of
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+
+19
+
+H 1 (Dx , Ix ) whose restriction to Ix is equal to the identity element of H 1 (Ix , Ix ) =
+Hom(Ix , Ix ). Thus, unraveling the deﬁnitions, one veriﬁes immediately that the
+pull-back to Dx of any such element of H 1 (Dx , Ix ) forms an element of H 1 (Dx , Ix )
+which determines the canonical tame integral structure on Dx . Since the étale
+quotient is compatible with isomorphisms α as in Theorem 2.3 [cf. [Mzk2], Lemma
+2.2, (ii)], we thus conclude that x is tamely integrally absolute, as desired. 
+Proposition 4.5.
+(Absoluteness and Coverings) Let Z → XK be a ﬁnite
+étale covering. Let z be a closed point of the compactiﬁcation Z of Z that maps
+to a closed point x of X K . Then:
+(i) z is absolute (respectively, a discretely absolute cusp) if and only if x
+is.
+(ii) Suppose that XK , Z have stable reduction [over the rings of integers of
+their respective ﬁelds of constants]. Then z is an integrally absolute cusp if and
+only if x is.
+Proof. Assertion (i) is immediate from the deﬁnitions; [the “LocK (−) portion” —
+already contained in [Mzk3], Theorem 2.4 — of] Theorem 2.3, (ii) [cf. the proof
+
+of Corollary 2.8]; Theorem 1.3, (ii); the fact that Z/Z
+is divisible. Assertion (ii) is
+immediate from assertion (i) and Proposition 4.4, (ii). 
+Before proceeding, we recall the following well-known result:
+Lemma 4.6.
+(Vanishing of Galois Invariants of the Tate Module) We
+0
+1
+have: H (GK , H (ΔX , μZ (K))) = 0.
+def
+
+, i.e., the Tate module of the Jacobian JX of X K , is
+Proof. Since TX = Δab
+X
+isomorphic to its Cartier dual, it suﬃces to show that H 0 (GK , TX ) = 0, i.e., that
+the torsion subgroup of JX (K) is ﬁnite. Since JX is a proper group scheme over
+K, it follows that the p-adic topology on K determines a p-adic topology on JX (K)
+with respect to which JX (K) forms a compact p-adic Lie group. As is well-known
+[cf., e.g., [Serre], Chapter V, §7], the exponential map for this p-adic Lie group
+determines an isomorphism of a certain open neighborhood of the identity of JX (K)
+with a free Zp -module of ﬁnite rank. Thus, the desired ﬁniteness follows formally
+from this isomorphism, together with the compactness of JX (K). 
+Remark 4.6.1. The author wishes to thank A. Tamagawa for informing him of
+the simple proof of Lemma 4.6 given above.
+Next, let us observe that for any integer N ≥ 1, the Kummer exact sequence
+1 → μN → Gm → Gm → 1
+
+20
+
+SHINICHI MOCHIZUKI
+
+[where Gm → Gm denotes the N -th power map on Gm ; μN is deﬁned so as to make
+the sequence exact] on the étale site of XK determines a long exact sequence in
+cohomology, hence, in particular, by letting N vary, an injection
+×
+∧
+HX = Γ(XK , OX
+) → HX
+→ H 1 (ΠXK , μZ (K))
+K
+def
+
+[where we use the easily veriﬁed fact that HX is residually ﬁnite]. On the other
+hand, the Leray spectral sequence for the quotient ΠXK → GK yields an exact
+sequence:
+0 → (K × )∧ → H 1 (ΠXK , μZ (K)) → DX = H 0 (GK , H 1 (ΔX , μZ (K)))
+def
+
+Moreover, since, by Lemma 4.6, H 0 (GK , H 1 (ΔX , μZ (K))) = 0, it follows that, if we
+assume, for simplicity, that XK is cuspidally split, then restriction to the various
+∼
+“Ix ” in ΔX determines [by applying the natural isomorphisms Ix → μZ (K)] an
+injection
+
+def
+
+DX → PX =
+Z
+x
+
+[where the product ranges over the cusps x of XK ]. In particular, we obtain exact
+sequences:
+∧
+→ PX
+0 → K × → HX → PX ; 0 → (K × )∧ → HX
+def
+
+Write EX = Im(HX ) ⊆ PX for the image of HX in PX [so we obtain an induced
+∧
+injection EX
+→ PX ]. Thus, the maps
+∧
+HX
+→ PX
+
+H X → PX ;
+
+are the maps obtained by associating to a function in HX its divisor of zeroes
+and poles. Put another way, EX ⊆ PX may be characterized as the submodule of
+cuspidal principal divisors.
+Proposition 4.7. (Principal Cuspidal Divisors) In the notation of Theorem
+2.3, assume that XK , YL are cuspidally split. Then the isomorphism
+∼
+
+PX → PY
+induced [cf. Theorem 1.3, (iii)] by α maps EX onto EY .
+Remark 4.7.1. In the statement of Proposition 4.7, as well as in the discussion to
+follow, we shall use similar notation for the objects associated to YL to the notation
+used for the various objects just deﬁned for XK .
+Proof. Write JX (respectively, AX ) for the Jacobian (respectively, Albanese variety) of XK . Thus, the natural map X K → AX determines a surjection on fundadef
+.
+mental groups ΠX K  ΠAX = π1 (AX ) whose kernel is the kernel of ΔX  Δab
+X
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+
+21
+
+In particular, any pair of sections of ΠX K → GK determines a pair of sections
+). Moreof ΠAX → GK whose diﬀerence determines an element of H 1 (GK , Δab
+X
+over, if these sections arise from points ∈ X K (K), then the resulting element of
+) completely determines the point of JX (K) given by forming the difH 1 (GK , Δab
+X
+ference of these two points [cf., e.g., [Mzk1], the discussion preceding Deﬁnition
+6.2; [BK], Example 3.11]. More generally, given any divisor of cusps on X K with
+Z-coeﬃcients of degree 0, the divisor is principal if and only if the resulting element
+) vanishes. Since the sections of ΠX K → GK arising from cusps
+of H 1 (GK , Δab
+X
+are preserved by α [cf. Theorem 1.3, (iii)], we thus conclude that the isomorphism
+PX → PY induced by α maps EX onto EY , as desired. 
+Deﬁnition 4.8. We shall say that XK is unitwise absolute if, in the notation of
+Theorem 2.3, the isomorphism
+∼
+
+H 1 (ΠXK , μZ (K)) → H 1 (ΠYL , μZ (L))
+×
+induced by α maps the image of Γ(XK , OX
+) via the Kummer map onto the image
+K
+×
+of Γ(YL , OYL ) via the Kummer map.
+
+Corollary 4.9. (Divisor-Theoretic Properties) In the notation of Theorem
+2.3, let x, y (respectively, A ∈ EX , B ∈ EY ) be cusps (respectively, cuspidal
+principal divisors) of XK , YL , respectively, that correspond via α [cf. Proposition
+4.7]. Then:
+(i) x is subprincipal if and only if y is.
+(ii) A is the divisor of a coabsolute unit if and only if B is.
+(iii) XK is coabsolute (respectively, quasi-coabsolute) if and only if YL is.
+(iv) XK is subprincipally ample (respectively, subprincipally quasi-ample)
+if and only if YL is.
+Proof. In light of Proposition 4.7, all of these statements follow formally from
+the deﬁnitions. Also, we note that for the various “quasi-” properties, one must
+apply [the “LocK (−) portion” — already contained in [Mzk3], Theorem 2.4 — of]
+Theorem 2.3, (ii), as in the proof of Corollary 2.8. 
+Theorem 4.10.
+(Units and Canonical Integral Structures) Let XK be a
+hyperbolic curve over a local ﬁeld K. Then:
+(i) If XK is quasi-coabsolute, then it admits a discretely absolute cusp.
+(ii) If XK admits a discretely absolute cusp or an absolute noncusp [i.e.,
+an absolute point which is not a cusp], then XK is unitwise absolute.
+
+22
+
+SHINICHI MOCHIZUKI
+
+(iii) If XK is unitwise absolute and subprincipally ample, then every
+cusp of XK is discretely absolute.
+(iv) Suppose that XK has stable reduction over OK . Then if XK is quasicoabsolute and subprincipally quasi-ample, then every cusp of XK is integrally absolute.
+Proof. First, we consider assertion (i). In light of Proposition 4.5, (i), we may
+assume that XK is coabsolute. Let U ∈ HX be a coabsolute unit of XK ; let x be a
+cusp of XK at which U fails to be invertible. If U has a zero of order (Z ) n = 0
+at x, then the restriction of the class
+ηU ∈ H 1 (ΠXK , μZ (K))
+determined by U to Dx determines a splitting of the torsor obtained by applying a
+change of structure group to the (K × )∧ -torsor at x via the map (K × )∧ → (K × )∧
+
+given by multiplication by n. Since n = 0, and Z/Z
+is divisible, it thus follows
+that this splitting is suﬃcient to determine the canonical discrete structure on Dx .
+Let us write U ∈ EX for the image of ηU in EX . Then U determines the set
+(K × )∧ · ηU . On the other hand, since U is coabsolute, it follows that X K admits
+an absolute point x at which U is invertible. Thus, the subset
+K × · ηU ⊆ (K × )∧ · ηU
+may be characterized as the set of elements of (K × )∧ · ηU whose restriction to Dx
+— which [by the invertibility of U at x ] necessarily lies in
+(K × )∧ ∼
+= H 1 (GK , μZ (K)) ⊆ H 1 (Dx , μZ (K))
+— in fact lies inside K × ⊆ (K × )∧ . Thus, Theorem 4.3, Proposition 4.7, together
+with the absoluteness of x , imply that x is discretely absolute, as desired.
+Next, we consider assertion (ii). Let x be a discretely absolute cusp or an
+absolute noncusp of XK . Then, as in the argument applied in the proof of assertion (i), the image of HX in H 1 (ΠXK , μZ (K)) may be characterized as the set of
+elements lying over elements of EX whose restriction to Dx determines a class in
+H 1 (Dx , μZ (K)) that lies in the submodule of this cohomology module generated by
+the elements that deﬁne splittings “compatible with the canonical discrete structure
+on Dx ” [where in the noncuspidal case, we take this compatibility to mean that
+the restriction to Dx lies in K × ⊆ (K × )∧ , as in the proof of assertion (i)]. Thus,
+assertion (ii) follows from Theorem 4.3, Proposition 4.7, together with the discrete
+absoluteness [in the cuspidal case] or absoluteness [in the noncuspidal case] of x.
+Next, we observe that assertion (iii) follows via the argument applied in the
+proof of assertion (i), since the hypothesis that XK is unitwise absolute and subprincipally ample implies that for every cusp x of XK , there exists a unit U ∈ HX
+that is not invertible at x and whose class in H 1 (ΠXK , μZ (K)) is mapped [in the
+notation of Theorem 2.3] to a class in H 1 (ΠYL , μZ (L)) that lies in the image of HY .
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+
+23
+
+Finally, we observe that assertion (iv) is a formal consequence of Proposition
+4.4, (ii); Proposition 4.5, (i); assertions (i), (ii), (iii). 
+Corollary 4.11.
+(The Case of Genus Zero) Let XK be a hyperbolic
+curve over a local ﬁeld K which is isogenous to a hyperbolic curve of genus
+zero. Then XK is quasi-coabsolute, subprincipally quasi-ample, and unitwise absolute. In particular, if XK has stable reduction over OK , then every
+cusp of XK is integrally absolute.
+Proof. In light of Theorem 4.10, it suﬃces to show that if XK is of genus zero and
+cuspidally split, then XK is coabsolute and subprincipally ample. But since cusps
+are always absolute [cf. Theorem 1.3, (iii)], these properties follow formally from
+the following two elementary facts: (a) every divisor of degree 0 on X K is principal;
+(b) XK has at least 3 cusps. 
+×
+-torsor determined by the canonical integral strucIn certain situations, the OK
+ture on the cuspidal decomposition group Dx admits an even “ﬁner reduction of
+structure group”, as follows:
+
+Corollary 4.12. (The Case of Once-punctured Elliptic Curves) Let XK be
+a once-punctured elliptic curve over a local ﬁeld K of residue characteristic
+= 2. Suppose that XK has stable reduction over OK . Also, if n ≥ 1 is an
+×
+for the subgroup of n-th roots of unity. Then
+integer, we shall write μn (K) ⊆ OK
+there exists a μ12 (K)-torsor structure at the unique cusp x of XK which is
+compatible with the canonical integral structure arising from the stable model
+X log and, moreover, is preserved by arbitrary automorphisms of ΠXK .
+Proof. We may assume without loss of generality that all of the 2-torsion points
+of the underlying elliptic curve of XK are deﬁned over K. Write YK → XK for
+the Galois covering of degree 4 determined by the “multiplication by 2” map on
+the underlying elliptic curve of XK [so YK is hyperbolic of type (1, 4)] and Y log for
+the stable model over Spec(OK )log [where the log structure on Spec(OK ) is that
+log
+determined by the closed point] of the smooth log curve Y K determined by YK .
+Also, let us write e1 , e2 , e3 , e4 for the four cusps of YK .
+∼
+
+Let α : ΠXK → ΠXK be an automorphism of ΠXK . Note that, by Theorem 1.3,
+(ii), any μ12 (K)-torsor structure at x is preserved by arbitrary inner automorphisms
+of ΠXK . Thus, we may assume [by composing with a suitable inner automorphism
+that induces a suitable element of Gal(YK /XK )] that the natural action of α on
+the cusps of YK [cf. Theorem 1.3, (iii)] preserves e1 .
+Next, let us observe that [by the well-known deﬁnition of the group law on an
+def
+
+elliptic curve; the deﬁnition of YK → XK ] the divisor D = 2[e1 ] − 2[e2 ] on YK is
+principal. Thus, there exists a unique rational function f on YK whose divisor of
+zeroes and poles is D and whose value at e3 is 1. Since D has multiplicity 2 at
+
+24
+
+SHINICHI MOCHIZUKI
+
+e1 , it follows that f determines a μ2 (K)-torsor structure at e1 , hence also at x.
+Write η for the Kummer class [i.e., the image under the Kummer map] of f . In the
+following, we shall write Kummer classes additively.
+Now, observe that, by Proposition 4.7; Theorem 1.3, (iii), if α ﬁxes all four
+cusps of YK , then it follows that α preserves the class η, hence also the μ2 (K)-torsor
+structure at x determined by η.
+Next, let us write Σ for the group of permutations of the three cusps e2 , e3 , e4
+that arise from automorphisms β ∈ Aut(ΠXK ) that preserve e1 . Thus, the order s
+of Σ divides 6. Let β1 , . . . , βs ∈ Aut(ΠXK ) be a collection of automorphisms that
+give rise to the elements of Σ. Set:
+ def
+
+η = (6/s) ·
+
+s
+
+
+η βj
+
+j=1
+
+Since YK is unitwise absolute by Corollary 4.11, it follows that η  arises from a
+rational function f  on YK which has a pole of order 12 at e1 . In particular, η 
+determines a μ12 (K)-torsor structure at e1 , hence also at x. Moreover, it follows
+formally from the preceding observation concerning automorphisms α that ﬁx all
+four cusps of YK that arbitrary α [i.e., that are only assumed to ﬁx e1 ] preserve the
+μ12 (K)-torsor structure determined by η  . Finally, the fact that this μ12 (K)-torsor
+structure is compatible with the canonical integral structure follows from the easily
+veriﬁed fact that the rational function f is generically invertible [in light of our
+assumption that the residue charactertistic of K is = 2] on the special ﬁber of Y.
+This completes the proof. 
+Remark 4.12.1. The number “12” appearing in Corollary 4.12 is interesting
+in light of the well-known fact that the line bundle on the moduli stack of elliptic
+curves determined by the cotangent bundle at the origin of the tautological family
+of elliptic curves has order 12 in the Picard group of this moduli stack.
+Remark 4.12.2. It seems natural to expect that a(n) [perhaps somewhat more
+complicated] analogue of Corollary 4.12 should hold for more general hyperbolic
+curves XK . This topic, however, lies beyond the scope of this paper.
+
+Bibliography
+
+[Belyi] G. V. Belyi, On Galois extensions of a maximal cyclotomic ﬁeld, Math. USSRIzv. 14 (1980), pp. 247-256.
+[BK] S. Bloch and K. Kato, L-Functions and Tamagawa Numbers in The Grothendieck Festschrift, Volume I, Birkhäuser (1990), pp. 333-400.
+
+GALOIS SECTIONS IN ABSOLUTE ANABELIAN GEOMETRY
+
+25
+
+[DM] P. Deligne and D. Mumford, The Irreducibility of the Moduli Space of Curves
+of Given Genus, IHES Publ. Math. 36 (1969), pp. 75-109.
+[Knud] F. F. Knudsen, The Projectivity of the Moduli Space of Stable Curves, II,
+Math. Scand. 52 (1983), pp. 161-199.
+[Kobl] N. Koblitz, p-adic Numbers, p-adic Analysis, and Zeta Functions, Graduate
+Texts in Mathematics 58, Springer Verlag (1977).
+[Mzk1] S. Mochizuki, The Local Pro-p Anabelian Geometry of Curves, Invent. Math.
+138 (1999), pp. 319-423.
+[Mzk2] S. Mochizuki, The Absolute Anabelian Geometry of Hyperbolic Curves, Galois
+Theory and Modular Forms, Kluwer Academic Publishers (2003), pp. 77-122.
+[Mzk3] S. Mochizuki, The Absolute Anabelian Geometry of Canonical Curves, Kazuya
+Kato’s ﬁftieth birthday, Doc. Math. 2003, Extra Vol., pp. 609-640.
+[Mzk4] S. Mochizuki, Topics Surrounding the Anabelian Geometry of Hyperbolic Curves,
+Galois Groups and Fundamental Groups, Mathematical Sciences Research Institute Publications 41, Cambridge University Press (2003), pp. 119-165.
+[Serre] J.-P. Serre, Lie Algebras and Lie Groups, Lecture Notes in Mathematics 1500,
+Springer Verlag (1992).
+[Tama] A. Tamagawa, The Grothendieck Conjecture for Aﬃne Curves, Compositio
+Math. 109 (1997), pp. 135-194.
+
+

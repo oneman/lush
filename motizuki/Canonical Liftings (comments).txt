@@ -1,0 +1,28 @@
+COMMENTS ON “THE ABSOLUTE ANABELIAN
+GEOMETRY OF CANONICAL CURVES”
+Shinichi Mochizuki
+June 2012
+
+(1.) There are a few notational errors in the statement of the condition (†M ) of
+Lemma 3.4, which, however, do not aﬀect the proof of Lemma 3.4 in any substantive
+way. The subquotient “G2 (M )” (respectively, “G−1 ”) should have been denoted
+“G−2 (M )” (respectively, “G1 ”). The subquotient G−2 (M ) (respectively, G1 ) is
+isomorphic to the tensor product of an unramiﬁed module with a Tate twist Fp (−2)
+(respectively, Fp (1)). That is to say, there is a sign error in the Tate twists stated in
+(†M ). Finally, in order to obtain the desired dimensions over Fp , one must replace
+the cohomology module
+def
+
+“M = H 1 (ΔX log , Ad(VFp ))”
+by the submodule of this module consisting of elements whose restriction to each of
+the cuspidal inertia groups of ΔX log is upper triangular with respect to the ﬁltration
+determined by the nilpotent monodromy action on VFp [i.e., by the cuspidal inertia
+group in question]. That is to say, an elementary computation shows that the
+operation of restriction to this submodule has the eﬀect of lowering the dimension
+of G−2 (M ) from 3g − 3 + 2r to 3g − 3 + r, as desired.
+
+Typeset by AMS-TEX
+
+1
+
+

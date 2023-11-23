@@ -1,0 +1,18 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+ALLIGJ+CMBX10                        Type 1C           Custom           yes yes yes     80  0
+ALLIJB+MSAM7                         Type 1C           Custom           yes yes no      83  0
+ALLIKC+CMTI10                        Type 1C           Custom           yes yes yes     86  0
+ALLIKD+CMR8                          Type 1C           Custom           yes yes yes     89  0
+ALLIKE+CMSY8                         Type 1C           Custom           yes yes yes     92  0
+ALLIHK+CMCSC10                       Type 1C           Custom           yes yes yes     95  0
+ALLIHL+CMR10                         Type 1C           Custom           yes yes yes     98  0
+ALLIHM+CMMI10                        Type 1C           Custom           yes yes yes    101  0
+ALLIHN+CMSY7                         Type 1C           Custom           yes yes yes    104  0
+ALLIIN+CMSY10                        Type 1C           Custom           yes yes yes    107  0
+ALLIIO+CMR7                          Type 1C           Custom           yes yes yes    110  0
+ALLIIP+CMMI7                         Type 1C           Custom           yes yes yes    113  0
+ALLIJA+MSBM10                        Type 1C           Custom           yes yes yes    116  0
+ALLIME+EUFM10                        Type 1C           Custom           yes yes yes     28  0
+ALLIMF+MSBM7                         Type 1C           Custom           yes yes yes     26  0
+ALLING+CMMI5                         Type 1C           Custom           yes yes yes     25  0

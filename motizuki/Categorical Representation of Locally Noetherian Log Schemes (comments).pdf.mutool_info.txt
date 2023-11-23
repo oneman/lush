@@ -1,0 +1,23 @@
+Categorical Representation of Locally Noetherian Log Schemes (comments).pdf:
+
+PDF-1.5
+Info object (13 0 R):
+<</Author(<905688EA>)/CreationDate(D:20141028211553+09'00')/Creator( TeX output 2014.10.28:2115)/ModDate(D:20141028211553+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(logsch-comments-2014-10.pdf)>>
+Pages: 2
+
+Retrieving info from pages 1-2...
+Mediaboxes (1):
+	1	(16 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (10):
+	1	(16 0 R):	Type1 'IODONJ+CMBX10' (55 0 R)
+	1	(16 0 R):	Type1 'IODPBB+CMSY8' (58 0 R)
+	1	(16 0 R):	Type1 'IODONK+CMCSC10' (61 0 R)
+	1	(16 0 R):	Type1 'IODOOL+CMR10' (64 0 R)
+	1	(16 0 R):	Type1 'IODOOM+CMSY10' (67 0 R)
+	1	(16 0 R):	Type1 'IODOON+CMTI10' (70 0 R)
+	1	(16 0 R):	Type1 'IODOPO+CMMI10' (73 0 R)
+	1	(16 0 R):	Type1 'IODOPP+MSBM7' (76 0 R)
+	1	(16 0 R):	Type1 'IODPAP+CMR7' (79 0 R)
+	1	(16 0 R):	Type1 'IODPBA+CMR8' (82 0 R)
+

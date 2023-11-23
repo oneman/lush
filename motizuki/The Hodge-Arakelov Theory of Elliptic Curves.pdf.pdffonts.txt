@@ -1,0 +1,21 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+HPHLNI+CMR10                         Type 1C           Custom           yes yes yes   1635  0
+HPHLOJ+CMCSC10                       Type 1C           Custom           yes yes yes   1638  0
+HPHLOK+CMBX10                        Type 1C           Custom           yes yes yes   1641  0
+HPHLOL+CMSY10                        Type 1C           Custom           yes yes yes   1644  0
+HPHMBL+CMMI10                        Type 1C           Custom           yes yes yes   1524  0
+HPHMDL+CMTI10                        Type 1C           Custom           yes yes yes   1528  0
+HPHMHN+CMBX7                         Type 1C           Custom           yes yes yes   1536  0
+HPHMGL+CMR7                          Type 1C           Custom           yes yes yes   1534  0
+HPHMGM+CMMI7                         Type 1C           Custom           yes yes yes   1535  0
+HPHMHM+CMMI5                         Type 1C           Custom           yes yes yes   1540  0
+HPHMJN+CMSY7                         Type 1C           Custom           yes yes yes   1548  0
+HPHMKO+CMSY5                         Type 1C           Custom           yes yes yes   1545  0
+HPHMKP+CMR5                          Type 1C           Custom           yes yes yes   1542  0
+HPHMMP+CMEX10                        Type 1C           Custom           yes yes yes   1551  0
+HPHNBO+CMMIB10                       Type 1C           Custom           yes yes yes   1554  0
+HPHNHN+EUFM10                        Type 1C           Custom           yes yes yes   1557  0
+HPHNOL+CMBX5                         Type 1C           Custom           yes yes yes   1560  0
+TimesNewRomanPSMT                    TrueType          WinAnsi          no  no  no    1563  0
+HPHPIE+CMSL10                        Type 1C           Custom           yes yes yes   1564  0

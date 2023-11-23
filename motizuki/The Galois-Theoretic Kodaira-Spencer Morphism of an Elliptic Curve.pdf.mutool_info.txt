@@ -1,0 +1,39 @@
+The Galois-Theoretic Kodaira-Spencer Morphism of an Elliptic Curve.pdf:
+
+PDF-1.5
+Info object (209 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107211454+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111107211454+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(galois.dvi)>>
+Pages: 28
+
+Retrieving info from pages 1-28...
+Mediaboxes (1):
+	1	(212 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (26):
+	1	(212 0 R):	Type1 'HJECAK+CMR10' (240 0 R)
+	1	(212 0 R):	Type1 'HJECAL+CMCSC10' (243 0 R)
+	1	(212 0 R):	Type1 'HJECBL+CMBX10' (246 0 R)
+	1	(212 0 R):	Type1 'HJECBM+CMSY10' (249 0 R)
+	1	(212 0 R):	Type1 'HJECBN+CMTI10' (252 0 R)
+	1	(212 0 R):	Type1 'HJECBO+CMMI10' (255 0 R)
+	1	(212 0 R):	Type1 'HJECCP+CMR8' (258 0 R)
+	1	(212 0 R):	Type1 'HJECDA+CMSY8' (261 0 R)
+	2	(1 0 R):	Type1 'HJECFB+CMMI7' (164 0 R)
+	2	(1 0 R):	Type1 'HJECFC+MSBM7' (162 0 R)
+	2	(1 0 R):	Type1 'HJECGD+MSBM10' (160 0 R)
+	2	(1 0 R):	Type1 'HJECFA+CMR7' (165 0 R)
+	3	(4 0 R):	Type1 'HJECID+CMSY7' (167 0 R)
+	3	(4 0 R):	Type1 'HJECIE+CMMI5' (178 0 R)
+	3	(4 0 R):	Type1 'HJECJE+CMSY5' (168 0 R)
+	3	(4 0 R):	Type1 'HJECJF+CMR5' (169 0 R)
+	5	(10 0 R):	Type1 'HJECNF+CMEX10' (181 0 R)
+	7	(16 0 R):	Type1 'HJEDCE+EUFM10' (182 0 R)
+	8	(19 0 R):	Type1 'HJEDFE+MSAM10' (185 0 R)
+	14	(37 0 R):	Type1 'HJEEBA+CMMIB10' (188 0 R)
+	16	(43 0 R):	Type1 'HJEEEA+EUFM7' (191 0 R)
+	17	(46 0 R):	Type3 'T1' (194 0 R)
+	18	(51 0 R):	Type1 'HJEEKO+CMMIB7' (199 0 R)
+	18	(51 0 R):	Type3 'T2' (195 0 R)
+	22	(65 0 R):	Type1 'HJEFBM+MSBM5' (200 0 R)
+	28	(83 0 R):	Type1 'HJEFOI+CMSL10' (202 0 R)
+

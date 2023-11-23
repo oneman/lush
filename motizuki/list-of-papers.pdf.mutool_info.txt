@@ -1,0 +1,23 @@
+list-of-papers.pdf:
+
+PDF-1.5
+Info object (32 0 R):
+<</Author(<905688EA>)/CreationDate(D:20231009150722+09'00')/Creator( TeX output 2023.10.09:1506)/ModDate(D:20231009150722+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(list-of-papers.pdf)>>
+Pages: 4
+
+Retrieving info from pages 1-4...
+Mediaboxes (1):
+	1	(35 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (10):
+	1	(35 0 R):	Type1 'BIMNNO+CMBX10' (64 0 R)
+	1	(35 0 R):	Type1 'BIMNOP+CMR10' (67 0 R)
+	1	(35 0 R):	Type1 'BIMOAA+CMTI10' (70 0 R)
+	1	(35 0 R):	Type1 'BIMOBA+CMMI10' (73 0 R)
+	1	(35 0 R):	Type1 'BIMOBB+CMSL10' (76 0 R)
+	1	(35 0 R):	Type1 'BIMODC+CMR8' (79 0 R)
+	1	(35 0 R):	Type1 'BIMODD+CMSY8' (82 0 R)
+	1	(35 0 R):	Type0 'BIMNMO+IPAexMincho-90ms-RKSJ-H' Identity-H (85 0 R)
+	2	(1 0 R):	Type1 'BIMOED+CMBX8' (25 0 R)
+	4	(7 0 R):	Type1 'BIMOLC+CMSY10' (28 0 R)
+

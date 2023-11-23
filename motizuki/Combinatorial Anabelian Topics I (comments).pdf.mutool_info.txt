@@ -1,0 +1,27 @@
+Combinatorial Anabelian Topics I (comments).pdf:
+
+PDF-1.5
+Info object (18 0 R):
+<</Author(<905688EA>)/CreationDate(D:20171213053126+09'00')/Creator( TeX output 2017.12.13:0530)/ModDate(D:20171213053126+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(comb-topics-1-comments-2017-12-14.pdf)>>
+Pages: 2
+
+Retrieving info from pages 1-2...
+Mediaboxes (1):
+	1	(21 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (14):
+	1	(21 0 R):	Type1 'ACMEAN+CMBX10' (67 0 R)
+	1	(21 0 R):	Type1 'ACMELD+CMMI10' (70 0 R)
+	1	(21 0 R):	Type1 'ACMELE+CMMI7' (73 0 R)
+	1	(21 0 R):	Type1 'ACMEME+CMR8' (76 0 R)
+	1	(21 0 R):	Type1 'ACMENF+CMSY8' (79 0 R)
+	1	(21 0 R):	Type1 'ACMEDN+CMCSC10' (82 0 R)
+	1	(21 0 R):	Type1 'ACMEDO+CMR10' (85 0 R)
+	1	(21 0 R):	Type1 'ACMEDP+CMSY7' (88 0 R)
+	1	(21 0 R):	Type1 'ACMEGP+CMR7' (91 0 R)
+	1	(21 0 R):	Type1 'ACMEHA+CMSY10' (94 0 R)
+	1	(21 0 R):	Type1 'ACMEIB+MSBM7' (97 0 R)
+	1	(21 0 R):	Type1 'ACMEIC+MSBM10' (99 0 R)
+	1	(21 0 R):	Type1 'ACMEKC+CMTI10' (102 0 R)
+	2	(1 0 R):	Type1 'ACMFHC+CMEX10' (14 0 R)
+

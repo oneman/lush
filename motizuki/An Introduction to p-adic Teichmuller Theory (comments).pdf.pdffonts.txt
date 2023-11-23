@@ -1,0 +1,19 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+BOAGME+CMBX10                        Type 1C           Custom           yes yes yes     72  0
+BOAHAM+MSBM7                         Type 1C           Custom           yes yes yes     75  0
+BOAHAN+MSBM10                        Type 1C           Custom           yes yes yes     78  0
+BOAHAO+EUFM10                        Type 1C           Custom           yes yes yes     81  0
+BOAHBO+CMTI10                        Type 1C           Custom           yes yes yes     84  0
+BOAHBP+EUFM7                         Type 1C           Custom           yes yes yes     87  0
+BOAHDA+CMR8                          Type 1C           Custom           yes yes yes     90  0
+BOAHDB+CMSY8                         Type 1C           Custom           yes yes yes     93  0
+BOAGNF+CMCSC10                       Type 1C           Custom           yes yes yes     96  0
+BOAGNG+CMR10                         Type 1C           Custom           yes yes yes     99  0
+BOAGOG+CMSY10                        Type 1C           Custom           yes yes yes    102  0
+BOAGOH+CMSY7                         Type 1C           Custom           yes yes yes    105  0
+BOAGPI+CMMI5                         Type 1C           Custom           yes yes yes    108  0
+BOAGPJ+CMMI10                        Type 1C           Custom           yes yes yes    111  0
+BOAGPK+CMMI7                         Type 1C           Custom           yes yes yes    114  0
+BOAHAL+CMR7                          Type 1C           Custom           yes yes yes    117  0
+BOAHGB+CMEX10                        Type 1C           Custom           yes yes no      14  0

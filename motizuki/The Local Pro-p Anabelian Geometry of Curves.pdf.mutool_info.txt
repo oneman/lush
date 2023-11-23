@@ -1,0 +1,31 @@
+The Local Pro-p Anabelian Geometry of Curves.pdf:
+
+PDF-1.5
+Info object (465 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107212640+09'00')/Creator(PScript5.dll Version 5.2.2)/ModDate(D:20111107212640+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(The Local Pro-p Anabelian Geometry of Curves.pdf)>>
+Pages: 103
+
+Retrieving info from pages 1-103...
+Mediaboxes (1):
+	1	(468 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (15):
+	1	(468 0 R):	Type1 'IEAGJB+CMR10' (504 0 R)
+	1	(468 0 R):	Type1 'IEAGJC+CMBX10' (507 0 R)
+	1	(468 0 R):	Type1 'IEAGKD+CMMI10' (510 0 R)
+	1	(468 0 R):	Type1 'IEAGKE+CMTI10' (513 0 R)
+	1	(468 0 R):	Type1 'IEAGKF+CMR7' (516 0 R)
+	1	(468 0 R):	Type1 'IEAGKG+CMSY10' (519 0 R)
+	1	(468 0 R):	Type1 'IEAGKH+CMMI7' (522 0 R)
+	1	(468 0 R):	Type1 'IEAGMH+CMMI5' (525 0 R)
+	2	(1 0 R):	Type1 'IEAGOH+CMSY7' (431 0 R)
+	4	(7 0 R):	Type1 'IEAHCG+CMR5' (434 0 R)
+	9	(22 0 R):	Type1 'IEAHLE+CMEX10' (436 0 R)
+	10	(25 0 R):	Type1 'IEAHOE+EUFM10' (438 0 R)
+	12	(31 0 R):	Type1 'IEAIBE+CMBX7' (441 0 R)
+	16	(43 0 R):	Type1 'IEAILB+CMSY5' (444 0 R)
+	101	(298 0 R):	Type1 'IEBEJE+CMSL10' (447 0 R)
+
+Images (1):
+	1	(468 0 R):	[ Raw ] 1x1 1bpc ImageMask (493 0 R)
+

@@ -1,0 +1,28 @@
+Correspondences on Hyperbolic Curves.pdf:
+
+PDF-1.5
+Info object (106 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107155718+09'00')/Creator(PScript5.dll Version 5.2.2)/ModDate(D:20111107155718+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(Correspondences on Hyperbolic Curves.pdf)>>
+Pages: 18
+
+Retrieving info from pages 1-18...
+Mediaboxes (1):
+	1	(109 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (12):
+	1	(109 0 R):	Type1 'FGHLIH+CMR10' (142 0 R)
+	1	(109 0 R):	Type1 'FGHLII+CMBX10' (145 0 R)
+	1	(109 0 R):	Type1 'FGHLIJ+CMSY10' (148 0 R)
+	1	(109 0 R):	Type1 'FGHLJK+CMMI10' (151 0 R)
+	1	(109 0 R):	Type1 'FGHLJL+CMTI10' (154 0 R)
+	1	(109 0 R):	Type1 'FGHLJM+CMSY7' (157 0 R)
+	1	(109 0 R):	Type1 'FGHLKM+CMMI7' (160 0 R)
+	2	(1 0 R):	Type1 'FGHLMM+CMR7' (90 0 R)
+	4	(7 0 R):	Type1 'FGHMAM+CMEX10' (93 0 R)
+	5	(10 0 R):	Type1 'FGHMDM+CMBX7' (95 0 R)
+	10	(25 0 R):	Type1 'FGHMNJ+CMMI5' (97 0 R)
+	18	(49 0 R):	Type1 'FGHOAC+CMSL10' (100 0 R)
+
+Images (1):
+	3	(4 0 R):	[ Raw ] 1x1 1bpc ImageMask (56 0 R)
+

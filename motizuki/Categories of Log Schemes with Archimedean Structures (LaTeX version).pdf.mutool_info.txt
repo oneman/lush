@@ -1,0 +1,36 @@
+Categories of Log Schemes with Archimedean Structures (LaTeX version).pdf:
+
+PDF-1.5
+Info object (147 0 R):
+<</Author(<905688EA>)/CreationDate(D:20140818235840+09'00')/Creator(PScript5.dll Version 5.2.2)/ModDate(D:20140818235957+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(arst-latex.pdf)>>
+Pages: 21
+
+Retrieving info from pages 1-21...
+Mediaboxes (1):
+	1	(150 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (20):
+	1	(150 0 R):	Type1 'GPNLFC+CMBX12' (189 0 R)
+	1	(150 0 R):	Type1 'GPNLFD+CMR10' (192 0 R)
+	1	(150 0 R):	Type1 'GPNLGD+CMSY7' (195 0 R)
+	1	(150 0 R):	Type1 'GPNLGE+CMBX10' (198 0 R)
+	1	(150 0 R):	Type1 'GPNLGF+CMBX8' (201 0 R)
+	1	(150 0 R):	Type1 'GPNLGG+CMR9' (204 0 R)
+	1	(150 0 R):	Type1 'GPNLGH+CMTI10' (207 0 R)
+	2	(1 0 R):	Type1 'GPNLFB+CMR8' (183 0 R)
+	2	(1 0 R):	Type1 'GPNLIK+CMSY10' (117 0 R)
+	2	(1 0 R):	Type1 'GPNLIL+MSBM10' (116 0 R)
+	2	(1 0 R):	Type1 'GPNLJL+CMMI10' (122 0 R)
+	2	(1 0 R):	Type1 'GPNLJM+CMR7' (126 0 R)
+	2	(1 0 R):	Type1 'GPNLJN+MSBM7' (114 0 R)
+	2	(1 0 R):	Type1 'GPNLHI+CMTI8' (210 0 R)
+	3	(4 0 R):	Type1 'GPNLKO+CMMI7' (130 0 R)
+	4	(7 0 R):	Type1 'GPNLLP+CMR5' (132 0 R)
+	10	(25 0 R):	Type1 'GPNNBH+MSAM10' (135 0 R)
+	14	(37 0 R):	Type1 'GPNOIP+CMEX10' (138 0 R)
+	21	(60 0 R):	Type1 'GPNPOI+CMCSC10' (140 0 R)
+	21	(60 0 R):	Type1 'GPNPOJ+CMTT10' (139 0 R)
+
+Images (1):
+	1	(150 0 R):	[ Raw ] 1x1 1bpc ImageMask (165 0 R)
+

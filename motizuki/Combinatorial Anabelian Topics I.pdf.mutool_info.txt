@@ -1,0 +1,43 @@
+Combinatorial Anabelian Topics I.pdf:
+
+PDF-1.5
+Info object (766 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20121109134900+09'00')/Creator( TeX output 2012.08.28:1952)/ModDate(D:20121109134900+09'00')/Producer(Acrobat Distiller 10.1.3 \(Windows\))/Title(comb-topics-1-2012-08-28.pdf)>>
+Pages: 154
+
+Retrieving info from pages 1-154...
+Mediaboxes (1):
+	1	(769 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (30):
+	1	(769 0 R):	Type1 'OBBOKM+CMBX12' (790 0 R)
+	1	(769 0 R):	Type1 'OBBOKN+CMBX10' (793 0 R)
+	1	(769 0 R):	Type1 'OBBOLO+CMR10' (796 0 R)
+	1	(769 0 R):	Type1 'OBBOLP+CMTI10' (799 0 R)
+	2	(1 0 R):	Type1 'OBBONA+CMCSC10' (675 0 R)
+	3	(6 0 R):	Type1 'OBBOOA+CMSY10' (680 0 R)
+	3	(6 0 R):	Type1 'OBBOOB+EUFM10' (683 0 R)
+	3	(6 0 R):	Type1 'OBBOPC+CMMI10' (676 0 R)
+	4	(9 0 R):	Type1 'OBBPBD+CMR7' (687 0 R)
+	4	(9 0 R):	Type1 'OBBPBE+MSAM10' (693 0 R)
+	4	(9 0 R):	Type1 'OBBPAC+CMMI7' (688 0 R)
+	5	(12 0 R):	Type1 'OBBPDE+MSBM10' (697 0 R)
+	5	(12 0 R):	Type1 'OBBPDF+CMEX10' (694 0 R)
+	6	(15 0 R):	Type1 'OBBPFF+CMSY7' (710 0 R)
+	6	(15 0 R):	Type1 'OBBPFG+CMMI5' (707 0 R)
+	6	(15 0 R):	Type1 'OBBPFH+MSBM7' (704 0 R)
+	6	(15 0 R):	Type1 'OBBPFI+CMR5' (701 0 R)
+	7	(18 0 R):	Type1 'OBBPGJ+CMBX7' (721 0 R)
+	7	(18 0 R):	Type1 'OBBPHK+CMBSY10' (718 0 R)
+	7	(18 0 R):	Type1 'OBBPHL+CMMIB7' (715 0 R)
+	7	(18 0 R):	Type1 'OBBPHM+CMSY5' (712 0 R)
+	15	(42 0 R):	Type1 'OBCAEH+CMMIB10' (724 0 R)
+	20	(57 0 R):	Type1 'OBCAMF+MSAM7' (727 0 R)
+	21	(60 0 R):	Type1 'OBCAOF+MSAM5' (730 0 R)
+	33	(96 0 R):	Type1 'OBCCCO+CMMI12' (733 0 R)
+	37	(108 0 R):	Type1 'OBCCPK+CMR6' (736 0 R)
+	38	(113 0 R):	Type1 'OBCDKG+MSBM5' (737 0 R)
+	71	(212 0 R):	Type1 'OBCHOL+EUFM7' (740 0 R)
+	153	(458 0 R):	Type1 'OBDAOC+CMMI6' (743 0 R)
+	154	(463 0 R):	Type1 'OBDAPC+CMTT9' (744 0 R)
+

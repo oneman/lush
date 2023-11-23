@@ -1,0 +1,23 @@
+Topics in Absolute Anabelian Geometry III (comments).pdf:
+
+PDF-1.5
+Info object (13 0 R):
+<</Author(<905688EA>)/CreationDate(D:20190526170014+09'00')/Creator( TeX output 2019.05.26:1658)/ModDate(D:20190526170014+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(abs-anab-topics-3-comments-2019-06-01.pdf)>>
+Pages: 2
+
+Retrieving info from pages 1-2...
+Mediaboxes (1):
+	1	(16 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (10):
+	1	(16 0 R):	Type1 'BCDLAK+CMBX10' (48 0 R)
+	1	(16 0 R):	Type1 'BCDLEB+CMSY8' (51 0 R)
+	1	(16 0 R):	Type1 'BCDLAL+CMCSC10' (54 0 R)
+	1	(16 0 R):	Type1 'BCDLBL+CMR10' (57 0 R)
+	1	(16 0 R):	Type1 'BCDLBM+CMTI10' (60 0 R)
+	1	(16 0 R):	Type1 'BCDLBN+MSBM10' (63 0 R)
+	1	(16 0 R):	Type1 'BCDLCO+CMMI10' (66 0 R)
+	1	(16 0 R):	Type1 'BCDLCP+MSBM7' (69 0 R)
+	1	(16 0 R):	Type1 'BCDLDA+CMSY7' (72 0 R)
+	1	(16 0 R):	Type1 'BCDLDB+CMR8' (75 0 R)
+

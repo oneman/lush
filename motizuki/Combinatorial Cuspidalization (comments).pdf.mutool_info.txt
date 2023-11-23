@@ -1,0 +1,25 @@
+Combinatorial Cuspidalization (comments).pdf:
+
+PDF-1.5
+Info object (9 0 R):
+<</Author(<905688EA>)/CreationDate(D:20190720201130+09'00')/Creator( TeX output 2019.07.20:2010)/ModDate(D:20190720201130+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(combcusp-comments-2019-07-20.pdf)>>
+Pages: 1
+
+Retrieving info from pages 1-1...
+Mediaboxes (1):
+	1	(12 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (12):
+	1	(12 0 R):	Type1 'IEHBKI+CMBX10' (56 0 R)
+	1	(12 0 R):	Type1 'IEHBOA+CMR7' (59 0 R)
+	1	(12 0 R):	Type1 'IEHCAA+CMR8' (62 0 R)
+	1	(12 0 R):	Type1 'IEHCAB+CMSY8' (65 0 R)
+	1	(12 0 R):	Type1 'IEHBKJ+CMCSC10' (68 0 R)
+	1	(12 0 R):	Type1 'IEHBKK+CMR10' (71 0 R)
+	1	(12 0 R):	Type1 'IEHBLK+CMTI10' (74 0 R)
+	1	(12 0 R):	Type1 'IEHBLL+CMSY10' (77 0 R)
+	1	(12 0 R):	Type1 'IEHBLM+CMMI10' (80 0 R)
+	1	(12 0 R):	Type1 'IEHBNN+CMSY7' (83 0 R)
+	1	(12 0 R):	Type1 'IEHBNO+CMMI7' (86 0 R)
+	1	(12 0 R):	Type1 'IEHBNP+CMSY5' (89 0 R)
+

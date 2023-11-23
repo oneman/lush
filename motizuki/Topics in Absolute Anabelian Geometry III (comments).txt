@@ -1,0 +1,42 @@
+COMMENTS ON “TOPICS IN
+ABSOLUTE ANABELIAN GEOMETRY III:
+GLOBAL RECONSTRUCTION ALGORITHMS”
+Shinichi Mochizuki
+June 2019
+
+(1.) In Remark 5.10.2, (iv), “On the other,” should read “On the other hand,”.
+(2.) In Theorem 1.11, (b), the text “totally ramiﬁed at precisely one closed point
+but unramiﬁed elsewhere” should read “totally ramiﬁed at some closed point”.
+(3.) In the ﬁnal sentences of Proposition 5.8, (iii), (vi), the phrase “despite the fact
+one does not” should read “despite the fact that one does not”.
+(4.) In Remark 3.7.5, (ii), (2), “muliplication” should read “multiplication”.
+(5.) In the statement of Proposition 3.2, (iv), the phrase “if T = TM, or” should
+read as follows:
+“if T = TM, and (Π  MT ), (Π∗  MT∗ ) are of hyperbolic orbicurve
+type, or”
+In the proof of Proposition 3.2, (iv), the phrase “[cf. also the ﬁrst displayed isomorphism of Corollary 1.10, (b)]” should read as follows:
+“[cf. also the ﬁrst displayed isomorphism of Corollary 1.10, (b); [Mzk20],
+Theorem 2.6, (v)]”
+In the statement of Proposition 3.3, (ii), the phrase “if T = TCG. If T = TLG,”
+should read as follows:
+“if T = TCG, and (Π  M ), (Π∗  M ∗ ) are of hyperbolic orbicurve
+type. If T = TLG, and (Π  M ), (Π∗  M ∗ ) are of hyperbolic
+orbicurve type,”
+These changes have no eﬀect either on the subsequent discussions and results of
+the paper under consideration or on subsequent papers.
+Typeset by AMS-TEX
+
+1
+
+2
+
+SHINICHI MOCHIZUKI
+
+(6.) In the statement of Theorem 1.9, (b), the phrase “is as in (i)” should read “is
+as in (a)”.
+(7.) In the second sentence of the statement of Proposition 5.7, (i), the phrase
+“compact open subsets” should read “nonempty compact open subsets”.
+Similarly, in the second sentence of the statement of Proposition 5.7, (i), (c), the
+phrase “an open subset” should read “a nonempty open subset”.
+
+

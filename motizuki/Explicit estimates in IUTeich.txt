@@ -1,0 +1,3825 @@
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL
+TEICHMÜLLER THEORY
+SHINICHI MOCHIZUKI, IVAN FESENKO, YUICHIRO HOSHI,
+ARATA MINAMIDE, AND WOJCIECH POROWSKI
+
+Abstract. In the ﬁnal paper of a series of papers concerning interuniversal Teichmüller theory, Mochizuki veriﬁed various numerically
+non-eﬀective versions of the Vojta, ABC, and Szpiro Conjectures over
+number ﬁelds. In the present paper, we obtain various numerically effective versions of Mochizuki’s results. In order to obtain these results,
+we ﬁrst establish a version of the theory of étale theta functions that
+functions properly at arbitrary bad places, i.e., even bad places that
+divide the prime “2”. We then proceed to discuss how such a modiﬁed version of the theory of étale theta functions aﬀects inter-universal
+Teichmüller theory. Finally, by applying our slightly modiﬁed version
+of inter-universal Teichmüller theory, together with various explicit estimates concerning heights, the j-invariants of “arithmetic” elliptic curves,
+and the prime number theorem, we verify the numerically eﬀective versions of Mochizuki’s results referred to above. These numerically effective versions imply eﬀective diophantine results such as an eﬀective
+version of the ABC inequality over mono-complex number ﬁelds [i.e.,
+the rational number ﬁeld or an imaginary quadratic ﬁeld] and eﬀective
+versions of conjectures of Szpiro. We also obtain an explicit estimate
+concerning “Fermat’s Last Theorem” (FLT) — i.e., to the eﬀect that
+FLT holds for prime exponents > 1.615 · 1014 — which is suﬃcient, in
+light of a numerical result of Coppersmith, to give an alternative proof of
+the ﬁrst case of FLT. In the second case of FLT, if one combines the techniques of the present paper with a recent estimate due to Mihăilescu and
+Rassias, then the lower bound “1.615 · 1014 ” can be improved to “257”.
+This estimate, combined with a classical result of Vandiver, yields an
+alternative proof of the second case of FLT. In particular, the results of
+the present paper, combined with the results of Vandiver, Coppersmith,
+and Mihăilescu-Rassias, yield an unconditional new alternative proof of
+Fermat’s Last Theorem.
+
+Contents
+Introduction
+Acknowledgements
+0. Notations and Conventions
+1. Heights
+2. Auxiliary Numerical Results
+3. μ6 -Theory for [EtTh]
+
+2
+8
+9
+10
+21
+22
+
+2020 Mathematics Subject Classiﬁcation. Primary 14H25; Secondary 14H30.
+Key words and phrases. inter-universal Teichmüller theory, punctured elliptic curve,
+number ﬁeld, mono-complex, étale theta function, 6-torsion points, height, explicit estimate, eﬀective version, diophantine inequality, ABC Conjecture, Szpiro Conjecture, Fermat’s Last Theorem.
+1
+
+2
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+4. μ6 -Theory for [IUTchI-III]
+5. μ6 -Theory for [IUTchIV]
+References
+
+26
+32
+57
+
+Introduction
+In [IUTchIV], Mochizuki applied the theory of [IUTchI-IV] [cf. also
+[Alien] for a detailed survey of this theory] to prove the following result
+[cf. [IUTchIV], Corollary 2.2, (ii), (iii)]:
+Theorem. Write X for the projective line over Q; D ⊆ X for the divisor
+consisting of the three points “0”, “1”, and “∞”; (Mell )Q for the moduli
+stack of elliptic curves over Q. We shall regard X as the “λ-line” — i.e.,
+we shall regard the standard coordinate on X as the “λ” in the Legendre
+form “y 2 = x(x − 1)(x − λ)” of the Weierstrass equation deﬁning an elliptic
+curve — and hence as being equipped with a natural classifying morphism
+def
+UX = X \ D → (Mell )Q . Write
+log(q∀(−) )
+for the R-valued function on (Mell )Q (Q), hence also on UX (Q), obtained by
+forming the normalized degree “deg(−)” of the eﬀective arithmetic divisor
+determined by the q-parameters of an elliptic curve over a number ﬁeld at
+arbitrary nonarchimedean places. Let
+KV ⊆ UX (Q)
+be a compactly bounded subset that satisﬁes the following conditions:
+(CBS1) The support of KV contains the nonarchimedean place “2”.
+(CBS2) The image of the subset “K2 ⊆ UX (Q2 )” associated to KV via the jinvariant UX → (Mell )Q → A1Q is a bounded subset of A1Q (Q2 ) =
+Q2 , i.e., is contained in a subset of the form 2Nj-inv · OQ2 ⊆ Q2 ,
+where Nj-inv ∈ Z, and OQ2 ⊆ Q2 denotes the ring of integers [cf. the
+condition (∗j-inv ) of [IUTchIV], Corollary 2.2, (ii)].
+Then there exist
+· a positive real number Hunif which is independent of KV and
+· positive real numbers CK and HK which depend only on the choice
+of the compactly bounded subset KV
+such that the following property is satisﬁed: Let d be a positive integer, d
+and  positive real numbers ≤ 1. Then there exists a ﬁnite subset
+Exc,d ⊆ UX (Q)≤d
+— where we denote by UX (Q)≤d ⊆ UX (Q) the subset of Q-rational points
+deﬁned over a ﬁnite extension ﬁeld of Q of degree ≤ d — which depends
+only on KV , , d, and d , and satisﬁes the following properties:
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+3
+
+• The function log(q∀(−) ) is
+4+d
+≤ Hunif · −3 · −3
++ HK
+d ·d
+
+on Exc,d .
+• Let EF be an elliptic curve over a number ﬁeld F ⊆ Q that determines
+a Q-valued point of (Mell )Q which lifts [not necessarily uniquely!] to a point
+xE ∈ UX (F ) ∩ UX (Q)≤d such that
+xE ∈ K V , x E ∈
+/ Exc,d .
+Write Fmod for the minimal ﬁeld of deﬁnition of the corresponding point
+∈ (Mell )Q (Q) and
+def
+
+Fmod ⊆ Ftpd = Fmod (EFmod [2]) ⊆ F
+for the “tripodal” intermediate ﬁeld obtained from Fmod by adjoining the
+ﬁelds of deﬁnition of the 2-torsion points of any model of EF ×F Q over
+Fmod [cf. [IUTchIV], Proposition 1.8, (ii), (iii)]. Moreover, we assume that
+the (3 · 5)-torsion points of EF are deﬁned over F , and that
+√
+√
+def
+F = Fmod ( −1, EFmod [2 · 3 · 5]) = Ftpd ( −1, EFtpd [3 · 5])
+√
+— i.e., that F is obtained from Ftpd by adjoining −1, together with the
+ﬁelds of deﬁnition of the (3 · 5)-torsion points of a model EFtpd of the elliptic
+curve EF ×F Q over Ftpd determined by the Legendre form of the Weierstrass equation discussed above. Then EF and Fmod arise as the “EF ” and
+“Fmod ” for a collection of initial Θ-data as in [IUTchIV], Theorem 1.10,
+that satisﬁes the following conditions:
+(C1) (log(q∀xE ))1/2 ≤ l ≤ 10δ · (log(q∀xE ))1/2 · log(2δ · log(q∀xE ));
+(C2) we have an inequality
+∀
+1
+6 · log(qxE )
+
+≤ (1 + ) · (log-diﬀX (xE ) + log-condD (xE )) + CK
+def
+
+— where we write δ = 212 ·33 ·5·d; log-diﬀX for the [normalized] log-diﬀerent
+function on UX (Q) [cf. [GenEll], Deﬁnition 1.5, (iii)]; log-condD for the
+[normalized] log-conductor function on UX (Q) [cf. [GenEll], Deﬁnition 1.5,
+(iv)].
+In the present paper, we prove a numerically eﬀective version of this
+theorem without assuming the conditions (CBS1), (CBS2) [cf. the portion
+of Corollary 5.2 that concerns κ/κlog /K]. Moreover, we prove that if one
+restricts one’s attention to the case where the point “xE ” is deﬁned over
+a mono-complex number ﬁeld [i.e., Q or an imaginary quadratic ﬁeld — cf.
+Deﬁnition 1.2], then one may eliminate the compactly bounded subset “KV ”
+from the statement of this theorem [cf. the portion of Corollary 5.2 that
+does not concern κ/κlog /K].
+In order to obtain Corollary 5.2, we establish a version of the theory
+of étale theta functions that functions properly at arbitrary bad places, i.e.,
+even bad places that divide the prime “2”. Roughly speaking, this is achieved
+by modifying the notion of evaluation points at which the theta function is
+evaluated [cf. the explanation of §3 below for more details].
+
+4
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+We then proceed to apply Corollary 5.2 to verify the following eﬀective
+diophantine results [cf. Theorems 5.3, 5.4; Remarks 5.3.3, 5.3.4, 5.3.5; Corollary 5.8; the notations and conventions of §0]:
+Theorem A. (Eﬀective versions of ABC/Szpiro inequalities over
+mono-complex number ﬁelds) Let L be a mono-complex number ﬁeld
+[i.e., Q or an imaginary quadratic ﬁeld — cf. Deﬁnition 1.2]; a, b, c ∈ L×
+nonzero elements of L such that
+a + b + c = 0;
+ a positive real number ≤ 1. Write Ea,b,c for the elliptic curve over L
+deﬁned by the equation y 2 = x(x − 1)(x + ac ); j(Ea,b,c ) for the j-invariant of
+def
+
+Ea,b,c ; ΔL for the absolute value of the discriminant of L; d = [L : Q];
+
+def
+max{|a|v , |b|v , |c|v };
+HL (a, b, c) =
+v∈V(L)
+def
+
+IL (a, b, c) = {v ∈ V(L)non | {|a|v , |b|v , |c|v } ≥ 2} ⊆ V(L)non ;
+def
+
+radL (a, b, c) =
+
+
+
+(OL /pv );
+
+v∈IL (a,b,c)
+
+
+def
+
+hd () =
+
+3.4 · 1030 · −166/81 (d = 1)
+6 · 1031 · −174/85
+
+(d = 2).
+
+Then the following hold:
+(i) We have [cf. Deﬁnition 1.1, (i)]
+1
+6 · hnon (j(Ea,b,c ))
+
+≤ max{ d1 · (1 + ) · log(ΔL · radL (a, b, c)), 16 · hd ()}
+≤
+
+1
+1
+d · (1 + ) · log(ΔL · radL (a, b, c)) + 6 · hd ().
+
+(ii) We have
+HL (a, b, c) ≤ 25d/2 · max{exp( d4 · hd ()), (ΔL · radL (a, b, c))3(1+)/2 }
+≤ 25d/2 · exp( d4 · hd ()) · (ΔL · radL (a, b, c))3(1+)/2 .
+Theorem B. (Eﬀective version of a conjecture of Szpiro) Let a, b, c
+be nonzero coprime integers such that
+a + b + c = 0;
+ a positive real number ≤ 1. Then we have
+|abc| ≤ 24 · max{exp(1.7 · 1030 · −166/81 ), (rad(abc))3(1+) }
+≤ 24 · exp(1.7 · 1030 · −166/81 ) · (rad(abc))3(1+)
+— which may be regarded as an explicit version of the inequality
+  3+
+“|abc| ≤ C()
+p
+”
+p|abc
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+5
+
+conjectured in [Szp], §2 [i.e., the “forme
+forte” of loc. cit., where we note
+
+that the “p” to the right of the “ ” in the above display was apparently
+unintentionally omitted in loc. cit.].
+
+Corollary C. (Application to “Fermat’s Last Theorem”) Let
+p > 1.615 · 1014
+be a prime number. Then there does not exist any triple (x, y, z) of positive
+integers that satisﬁes the Fermat equation
+xp + y p = z p .
+The proof of Corollary C is obtained by combining
+• the slightly modiﬁed version of [IUTchI-IV] developed in the present
+paper with
+• various estimates [cf. Lemmas 5.5, 5.6, 5.7] of an entirely elementary
+nature.
+In fact, the lower bound of Corollary C may be strengthened roughly by a
+factor of 2 by applying the results of [Ink1], [Ink2] [cf. Remarks 5.7.1, 5.8.2],
+which are obtained by means of techniques of classical algebraic number
+theory that are somewhat more involved than the argument applied in the
+corresponding portion of the proof of Corollary C. The original estimate
+of Corollary C is suﬃcient, in light of a numerical result of Coppersmith,
+to give an alternative proof [i.e., to the proof of [Wls]] of the ﬁrst case of
+Fermat’s Last Theorem [cf. Remark 5.8.1]. In the second case of Fermat’s
+Last Theorem, if one combines the techniques of the present paper with
+a recent estimate due to Mihăilescu and Rassias, then the lower bound
+“1.615 · 1014 ” of Corollary C can be improved to “257” [cf. Remark 5.8.3,
+(i)]. This estimate, combined with a classical result of Vandiver, yields an
+alternative proof [i.e., to the proof of [Wls]] of the second case of Fermat’s
+Last Theorem [cf. Remark 5.8.3, (ii)]. In particular,
+the results of the present paper, combined with the results
+of Vandiver, Coppersmith, and Mihăilescu-Rassias, yield an
+unconditional new alternative proof [i.e., to the proof
+of [Wls]] of Fermat’s Last Theorem.
+[The authors have received informal reports to the eﬀect that one mathematician has obtained some sort of numerical estimate that is formally
+similar to Corollary C, but with a substantially weaker [by many orders of
+magnitude!] lower bound for p, by combining the techniques of [IUTchIV],
+§1, §2, with eﬀective computations concerning Belyi maps. On the other
+hand, the authors have not been able to ﬁnd any detailed written exposition
+of this informally advertized numerical estimate and are not in a position to
+comment on it.]
+We also obtain an application of the ABC inequality of Theorem B to
+a generalized version of Fermat’s Last Theorem [cf. Corollary 5.9], which
+does not appear to be accessible via the techniques involving modularity of
+
+6
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+elliptic curves over Q and deformations of Galois representations that play
+a central role in [Wls].
+In the following, we explain the content of each section of the present
+paper in greater detail.
+In §1, we examine various [elementary and essentially well-known] properties of heights of elliptic curves over number ﬁelds. Let F ⊆ Q be a number
+ﬁeld; E an elliptic curve over F that has semi-stable reduction over the ring
+of integers OF of F . Suppose that E is isomorphic over Q to the elliptic
+curve deﬁned by an equation
+y 2 = x(x − 1)(x − λ)
+— where λ ∈ Q \ {0, 1}. For simplicity, assume further that
+Q(λ) is mono-complex
+[i.e., Q or an imaginary quadratic ﬁeld — cf. Deﬁnition 1.2]. Write j(E) ∈ Q
+for the j-invariant of E. In Corollary 1.14, (iii), we verify that the [logarithmic] Weil height
+h(j(E))
+[cf. Deﬁnition 1.1, (i)] of j(E) satisﬁes the following property:
+(H1) Let l be a prime number. Suppose that E admits an l-cyclic subgroup scheme, and that l is prime to the local heights of E at each
+of its places of [bad] multiplicative reduction [i.e., the orders of the
+q-parameter at such places — cf. [GenEll], Deﬁnition 3.3]. Then the
+nonarchimedean portion of h(j(E)) is bounded by an explicit absolute
+constant ∈ R.
+To verify (H1), we make use of the following two types of heights:
+• the Faltings height hFal (E) [cf. the discussion entitled “Curves” in
+§0],
+• the symmetrized toric height hS-tor (E) [cf. Deﬁnition 1.7].
+These heights hFal (E) and hS-tor (E) may be related to h(j(E)) by means of
+numerically explicit inequalities [cf. Propositions 1.8, 1.10, 1.12] and satisfy
+the following important properties:
+(H2) Let E  be an elliptic curve over F ; φ : E → E  an isogeny of degree d.
+Then it holds that hFal (E  ) − hFal (E) ≤ 12 log(d) [cf. [Falt], Lemma
+5].
+(H3) The archimedean portion of hS-tor (E) is bounded above by the nonarchimedean portion of hS-tor (E) [cf. Proposition 1.9, (i)].
+[Here, we note that (H3) is an immediate consequence of the product formula,
+together with the assumption that the cardinality of the set of archimedean
+places of the mono-complex number ﬁeld Q(λ) is one.] The property (H1)
+then follows, essentially formally, by applying (H2) and (H3), together with
+the numerically explicit inequalities [mentioned above], which allow one to
+compare the diﬀerent types of heights.
+In §2, we review
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+7
+
+• a result concerning the j-invariants of “arithmetic” elliptic curves
+[cf. Proposition 2.1];
+• certain eﬀective versions of the prime number theorem [cf. Proposition 2.2].
+In §3, we establish a version of the theory of étale theta functions [cf.
+[EtTh], [IUTchII]] that functions properly at arbitrary bad places, i.e., even
+bad places that divide the prime “2”. Here, we note that the original definition of the notion of an evaluation point — i.e., a point at which the
+theta function is evaluated that is obtained by translating a cusp by a 2torsion point [cf. [EtTh], Deﬁnition 1.9; [IUTchI], Example 4.4, (i)] — does
+not function properly at places over 2 [cf. [IUTchIV], Remark 1.10.6, (ii)].
+Thus, it is natural to pose the following question:
+Is it possible to obtain a new deﬁnition of evaluation points
+that functions properly at arbitrary bad places by replacing
+the “2-torsion point” appearing in the [original] deﬁnition of
+an evaluation point by an “n-torsion point”, for some integer
+n > 2?
+Here, we recall that the deﬁnition of an evaluation point obtained by translating a cusp by an n-torsion point functions properly at arbitrary bad places
+if the following two conditions are satisﬁed:
+(1) The various ratios of theta values at the Galois conjugates of [the
+point of the Tate uniformization of a Tate curve corresponding to a
+primitive 2n-th root of unity] ζ2n are roots of unity [cf. [IUTchII],
+Remark 2.5.1, (ii)].
+(2) The theta value at ζ2n is a unit at arbitrary bad places [cf. [IUTchIV],
+Remark 1.10.6, (ii)].
+One fundamental observation — due to Porowski — that underlies the theory
+of the present paper is the following:
+n satisﬁes the conditions (1), (2) if and only if n = 6
+[cf. Lemma 3.1; Proposition 3.2; the well-known fact that 1 − ζ4 , 1 − ζ8
+are non-units at places over 2]. Following this observation, in Deﬁnition
+3.3, we introduce a new version of the notion of an “étale theta function
+of standard type” [cf. [EtTh], Deﬁnition 1.9] obtained by normalizing étale
+theta functions at points arising from 6-torsion points of the given elliptic
+curve. In the remainder of §3, we then proceed to discuss how the adoption of
+such “étale theta functions of μ6 -standard type” aﬀects the theory developed
+in [EtTh].
+Next, in §4, we discuss how the modiﬁcations of §3 aﬀect [IUTchI-III].
+Roughly speaking, we observe that, once one makes suitable minor technical
+modiﬁcations,
+(∗) the theory developed in [IUTchI-III] remains essentially unaﬀected
+even if, in the notation of [IUTchI], Deﬁnition 3.1, (b), one eliminates
+
+8
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+the assumption “of odd residue characteristic” that appears in the
+discussion of “Vbad
+mod ”.
+In §5, we begin by proving a “μ6 -version” [cf. Theorem 5.1] of [IUTchIV],
+Theorem 1.10, i.e., that applies the theory developed in §2, §3, §4. This allows us to obtain a “μ6 -version” [cf. Corollary 5.2] of [IUTchIV], Corollary
+2.2, (ii), (iii) [i.e., the “Theorem” reviewed at the beginning of the present
+Introduction] without assuming the conditions (CBS1), (CBS2) that appear
+in the statement of this Theorem concerning the nonarchimedean place “2”.
+The proof of Corollary 5.2 makes essential use of the theory of §1, §2 [cf., especially, Corollary 1.14; Propositions 2.1, 2.2]. In the case of mono-complex
+number ﬁelds, we then derive
+• Theorem 5.3 from Corollary 5.2 by applying the product formula,
+together with the essential assumption that the number ﬁeld under consideration is mono-complex [cf. the property (H3) discussed
+above] and various elementary computations [such as Proposition
+1.8, (i)];
+• Theorem 5.4 from Theorem 5.3, together with various elementary
+computations [such as Proposition 1.8, (i)].
+Finally, we apply
+• Theorem 5.3, together with various elementary considerations, to
+“Fermat’s Last Theorem” [cf. Corollary 5.8] and
+• Theorem 5.4, again together with various elementary computations,
+to a generalized version of “Fermat’s Last Theorem” [cf. Corollary
+5.9].
+In this context, we note [cf. Remark 5.3.2] that it is quite possible that, in
+the future, other interesting applications of Theorems 5.3, 5.4 to the study
+of numerical aspects of diophantine equations can be found.
+Acknowledgements
+Each of the co-authors of the present paper would like to thank the other
+co-authors for their valuable contributions to the theory exposed in the
+present paper. In particular, the co-authors [other than the ﬁrst author] of
+the present paper wish to express their deep gratitude to the ﬁrst author,
+i.e., the originator of inter-universal Teichmüller theory, for countless hours
+of valuable discussions related to his work. The authors are grateful to J. Sijsling for responding to our request to provide us with the computations that
+underlie Proposition 2.1. Moreover, the authors are grateful to P. Mihăilescu
+for producing a paper, co-authored with M. Rassias, based on his unpublished results on lower bounds for the second case of Fermat’s Last Theorem
+and a new insight on lattices and an “inhomogeneous Siegel box principle”. The second and ﬁfth authors were partially supported by the ESPRC
+Programme Grant “Symmetries and Correspondences”. The third author
+was supported by JSPS KAKENHI Grant Number 18K03239; the fourth
+author was supported by JSPS KAKENHI Grant Number 20K14285. This
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+9
+
+research was supported by the Research Institute for Mathematical Sciences,
+an International Joint Usage/Research Center located in Kyoto University,
+as well as by the Center for Next Generation Geometry [a research center
+aﬃliated with the Research Institute for Mathematical Sciences].
+0. Notations and Conventions
+Numbers:
+Let S be a set. Then we shall write S for the cardinality of S.
+Let E ⊆ R be a subset of the set of real numbers R. Then for λ ∈ R, if
+ denotes “< λ”, “≤ λ”, “> λ”, or “≥ λ”, then we shall write E ⊆ E for
+the subset of elements that satisfy the inequality “”. If E is ﬁnite, then
+we shall write max E for the smallest real number λ such that E≤λ = E and
+min E for the largest real number λ such that E≥λ = E.
+For any nonzero integer n ∈
+/ {1, −1}, we shall write rad(n) for the product
+of the distinct prime numbers p which divide n. We shall deﬁne rad(1) and
+rad(−1) to be 1.
+def
+
+Let F be a ﬁeld. Then we shall write F  = F \ {0, 1}.
+Let Q be an algebraic closure of the ﬁeld of rational numbers Q, F ⊆ Q a
+def
+subﬁeld. Then we shall write OF ⊆ F for the ring of integers of F ; Z = OQ ;
+non
+Primes ⊆ Z for the set of all prime numbers; V(F )
+(respectively, V(F )arc )
+for the set of nonarchimedean (respectively, archimedean) places of F ;
+
+def
+V(F ) = V(F )arc
+V(F )non .
+For v ∈ V(F ), we shall write Fv for the completion of F at v.
+Now suppose that F is a number ﬁeld, i.e., that [F : Q] < ∞.
+Let v ∈ V(F )non . Write pv ⊆ OF for the prime ideal corresponding to v;
+pv for the residue characteristic of Fv ; fv for the residue ﬁeld degree of Fv
+over Qpv ; ordv for the normalized valuation on Fv determined by v, where we
+take the normalization to be such that ordv restricts to the standard pv -adic
+valuation on Qpv . Then for any x ∈ Fv , we shall write
+||x||v = pv−ordv (x) ,
+def
+
+def
+
+[F :Qpv ]
+
+|x|v = ||x||v v
+
+.
+
+Let v ∈ V(F )arc . Write σv : F → C for the embedding determined, up to
+complex conjugation, by v. Then for any x ∈ Fv , we shall write
+def
+
+||x||v = ||σv (x)||C ,
+
+def
+
+|x|v = ||x||v[Fv :R]
+
+— where we denote by || · ||C the standard [complex] absolute value on C.
+Note that for any w ∈ V(Q) that lies over v ∈ V(F ), the absolute value
+|| · ||v : Fv → R≥0 extends uniquely to an absolute value || · ||w : Qw → R≥0 .
+We shall refer to this absolute value on Qw as the standard absolute value
+on Qw .
+Curves:
+Let E be an elliptic curve over a ﬁeld. Then we shall write j(E) for the
+j-invariant of E.
+
+10
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+Let E be an elliptic curve over a number ﬁeld F that has semi-stable
+reduction over OF . Write hFal (E) for the Faltings height of E [cf. [Falt], §3,
+the ﬁrst Deﬁnition]. Then we shall write
+def
+
+hFal (E) = hFal (E) + 12 log π
+[cf. [Lbr], Deﬁnition 2.3; [Lbr], Remark 2.1]. Here, we note that the quantity
+hFal (E) is unaﬀected by passage to a ﬁnite extension of the base ﬁeld F of
+E [cf., e.g., [Lbr], Proposition 2.1, (i)].
+1. Heights
+Let E be an elliptic curve over a number ﬁeld. In the present section,
+we introduce the notion of the symmetrized toric height hS-tor (E) of E [cf.
+Deﬁnition 1.7]. We then compare hS-tor (E) with the [logarithmic] Weil
+height h(j(E)) of j(E) [cf. Proposition 1.8]. Finally, we prove that if E
+satisﬁes certain conditions, then the nonarchimedean portion of h(j(E)) is
+bounded by an absolute constant [cf. Corollary 1.14, (iii)].
+Deﬁnition 1.1. Let F be a number ﬁeld.
+(i) Let α ∈ F . Then for  ∈ {non, arc}, we shall write
+
+def
+h (α) = [F1:Q]
+log max{|α|v , 1} (≥ 0),
+v∈V(F )
+def
+
+h(α) = hnon (α) + harc (α)
+and refer to h(α) as the [logarithmic] Weil height of α. We shall also
+write h (α) for h(α).
+(ii) Let α ∈ F × . Then for  ∈ {non, arc}, we shall write
+
+def
+1
+htor
+log max{|α|v , |α|−1
+ (α) = 2[F :Q]
+v } (≥ 0),
+v∈V(F )
+def
+
+tor
+htor (α) = htor
+non (α) + harc (α)
+
+and refer to htor (α) as the [logarithmic] toric height of α. We shall
+tor
+also write htor
+ (α) for h (α).
+Remark 1.1.1. One veriﬁes easily that for  ∈ {non, arc, }, the quantities
+h (α) and htor
+ (α) are unaﬀected by passage to a ﬁnite extension of F .
+Deﬁnition 1.2. Let F be a number ﬁeld. Then we shall say that F is
+mono-complex if F is either
+the ﬁeld of rational numbers Q or an imaginary quadratic ﬁeld.
+One veriﬁes easily that F is mono-complex if and only if the cardinality of
+V(F )arc is one.
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+11
+
+Lemma 1.3. (Properties of toric heights) Let F be a number ﬁeld,
+α ∈ F × . Then the following hold:
+(i) It holds that
+tor −1
+htor
+ (α) = h (α );
+
+htor
+ (α) =
+
+−1
+1
+2 · {h (α) + h (α )}
+
+for  ∈ {non, arc, }.
+(ii) It holds that
+h(α) = htor (α).
+In particular, we have h(α) = h(α−1 ) [cf. (i)].
+(iii) Suppose that F is mono-complex. Then we have
+tor
+htor
+arc (α) ≤ hnon (α).
+
+(iv) Let x, y ∈ F ; xtor , y tor ∈ F × . Then we have
+h (x) + h (y) ≥ h (x · y);
+tor tor
+tor
+tor tor
+· y tor )
+h (x ) + htor
+ (y ) ≥ h (x
+
+for  ∈ {non, arc, }.
+
+Proof. First, we consider assertion (i). The ﬁrst equality follows immediately from the various deﬁnitions involved. The second equality follows immediately from the various deﬁnitions involved, together with the following
+[easily veriﬁed] fact: For any s ∈ R>0 , it holds that
+max{s, s−1 } = max{s, 1} · max{s−1 , 1}.
+def
+
+Next, we consider assertion (ii). Write d = [F : Q]. Then we compute:
+
+
+2
+2d · htor (α) =
+log max{|α|v , |α|−1
+log(|α|−1
+v } =
+v · max{|α|v , 1})
+v∈V(F )
+
+
+
+= 2d · h(α) +
+
+v∈V(F )
+
+log |α|−1
+v
+
+= 2d · h(α)
+
+v∈V(F )
+
+— where the ﬁnal equality follows from the product formula. This completes
+the proof of assertion (ii).
+Next, we consider assertion (iii). Let w be the unique element of V(F )arc .
+In light of the ﬁrst equality of assertion (i), to verify assertion (iii), we may
+assume without loss of generality that |α|w ≥ 1. Then we compute:
+
+2d · htor
+(α)
+=
+log
+|α|
+=
+log |α|−1
+w
+arc
+v
+≤
+
+
+
+v∈V(F )non
+tor
+log max{|α|v , |α|−1
+v } = 2d · hnon (α)
+
+v∈V(F )non
+
+— where the second equality follows from the product formula. This completes the proof of assertion (iii). Finally, we consider assertion (iv). It
+follows immediately from the second equality of assertion (i) that to verify
+the second inequality of assertion (iv), it suﬃces to verify the ﬁrst inequality of assertion (iv). But the ﬁrst inequality follows immediately from the
+following [easily veriﬁed] fact: For any s, t ∈ R≥0 , it holds that
+max{st, 1} ≤ max{s, 1} · max{t, 1}.
+
+12
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+
+
+This completes the proof of assertion (iv).
+
+Remark 1.3.1. It may appear to the reader, at ﬁrst glance, that the notion
+of the toric height of an element of a number ﬁeld F is unnecessary [cf.
+Lemma 1.3, (ii)]. In fact, however, the toric height of an element α ∈ F ×
+satisﬁes the following important property [cf. Lemma 1.3, (iii)]:
+If F is mono-complex, then the archimedean portion of the
+toric height of α is bounded by the nonarchimedean portion
+of the toric height of α.
+This property is an immediate consequence of the product formula [cf. the
+proof of Lemma 1.3, (iii)]. We note that, in general, the notion of the Weil
+height does not satisfy this property. For instance, for any n ∈ Z>0 , we have
+hnon (n) = 0;
+htor
+non (n)
+
+=
+
+harc (n) = log(n);
+
+1
+2 log(n);
+
+htor
+arc (n) =
+
+1
+2 log(n).
+
+Deﬁnition 1.4. Let F be a ﬁeld; | · | : F → R≥0 a map satisfying the
+following conditions:
+(i) The restriction of | · | to F × determines a group homomorphism
+F × → R>0 [relative to the multiplicative group structures on F × ,
+R>0 ].
+(ii) It holds that |0| = 0.
+(iii) For any x ∈ F , it holds that |x + 1| ≤ |x| + 1.
+Then for α ∈ F  , we shall write
+J(α)
+J0∞ (α)
+J1∞ (α)
+J01 (α)
+
+=
+
+|α2 − α + 1|3 · |α|−2 · |α − 1|−2
+
+=
+
+|α(1 − α) − 1|3 · |α|−2 · |1 − α|−2 ;
+
+def
+
+def
+
+max |α|, |α|−1 ;
+
+def
+
+max |α − 1|, |α − 1|−1 ;
+
+def
+
+max |α − 1| · |α|−1 , |α| · |α − 1|−1 .
+
+=
+=
+=
+
+Lemma 1.5. (Comparison between J(α) and |α|2 ) In the notation of
+Deﬁnition 1.4, suppose that |α| ≥ 2. Then we have
+|α|2 ≤ 28 · J(α).
+Proof. First, we note that since |α − 1| ≤ |α| + 1, we have
+|α2 − α + 1| = |α2 − (α − 1)| ≥ |α|2 − |α − 1| ≥ |α|2 − (|α| + 1).
+Thus, we conclude that
+28 · |α2 − α + 1|3 · |α|−2 · |α − 1|−2 ≥ 28 · (|α|2 − |α| − 1)3 · |α|−2 · (|α| + 1)−2
+≥ |α|2
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+13
+
+— where we observe that since x2 − x − 1 ≥ x(x − 32 ), −(x + 1)2 ≥ −(2x)2 ,
+3
+is monotonically decreasing for x ∈ R≥2 , the ﬁnal
+and the function 2x−3
+inequality follows from the elementary fact that
+28 · (x2 − x − 1)3 − x4 · (x + 1)2 ≥ x3 · 28 · (x − 32 )3 − x · (x + 1)2
+≥ 22 · x3 · 26 · (x − 32 )3 − x3
+3
+≥ 28 · x3 · (x − 32 )3 · 1 − 2−6 · (1 + 2x−3
+)3
+
+≥ 0
+
+
+for x ∈ R≥2 .
+
+Lemma 1.6. (Comparison between J(α) and J0∞ (α) · J1∞ (α) · J01 (α))
+In the notation of Deﬁnition 1.4, the following hold:
+(i) Write z for the rational function given by the standard coordinate
+on P1Z and
+A = {z, z −1 , 1 − z, (1 − z)−1 , z · (z − 1)−1 , (z − 1) · z −1 },
+def
+def
+
+B = {δ ⊆ A | δ = 2; if we write δ = {a, b}, then
+it holds that A = {a, a−1 , b, b−1 , −ab, −(ab)−1 }}.
+Then the set B coincides with the set
+B  = {{z, (1 − z)−1 }, {z, (z − 1) · z −1 }, {z −1 , 1 − z},
+def
+
+{z −1 , z · (z − 1)−1 }, {1 − z, z · (z − 1)−1 },
+{(1 − z)−1 , (z − 1) · z −1 }}.
+Moreover, the map
+φ: B
+
+→ A
+
+{a, b} → −ab
+is bijective. Here, we recall that the symmetric group on 3 letters
+S3 admits a natural faithful action on the projective line P1Z over Z,
+∼
+hence also on the set of F -rational points (P1Z \ {0, 1, ∞})(F ) → F  ,
+and that the orbit S3 ·z of z coincides with the set A. In particular,
+the action of S3 on A induces, via φ−1 , a transitive action of S3
+on B.
+(ii) For every δ = {a, b} ∈ B, write
+Dδ = {f ∈ F  | |a(f )| ≥ 1, |b(f )| ≥ 1} ⊆ F  .
+def
+
+We note that the action of S3 on B [cf. (i)] induces a transitive
+action on the set [of subsets of F  ] {Dδ }δ∈B . Then we have
+
+F =
+Dδ .
+δ∈B
+
+14
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+(iii) For any  ∈ R≥0 , we have
+2−2 · J0∞ (α) · J1∞ (α) · J01 (α) ≤ max{26+ · J(α), 1}
+≤ 29+ · J0∞ (α) · J1∞ (α) · J01 (α).
+(iv) Suppose that | · | is nonarchimedean, i.e., that for any x ∈ F , it
+holds that |x + 1| ≤ max{|x|, 1}. [Thus, for any x ∈ F such that
+|x| < 1, it holds that |x + 1| = 1.] Then we have
+max{J(α), 1} = J0∞ (α) · J1∞ (α) · J01 (α).
+Proof. First, we consider assertion (i). To verify assertion (i), it suﬃces to
+show that B = B  . [Indeed, it follows from this equality that B = 6. Thus,
+to verify that φ is bijective, it suﬃces to show that φ is surjective. But this
+surjectivity follows immediately from the equality B = B  and the various
+deﬁnitions involved.] The inclusion B  ⊆ B follows immediately from the
+various deﬁnitions involved. Thus, it suﬃces to verify the inclusion B ⊆ B  .
+First, we observe that A is the [disjoint] union of the following sets:
+A0∞ = {z, z −1 }, A1∞ = {1−z, (1−z)−1 }, A01 = {z·(z−1)−1 , (z−1)·z −1 }.
+def
+
+def
+
+def
+
+Let δ ∈ B. Note that [as is easily veriﬁed] δ ∈
+/ {A0∞ , A1∞ , A01 }. Thus, we
+may write
+δ = {a, b}
+— where the pair (a, b) satisﬁes precisely one of the following three conditions:
+(1) a ∈ A0∞ , b ∈ A1∞ ,
+
+(2) a ∈ A1∞ , b ∈ A01 ,
+
+(3) a ∈ A01 , b ∈ A0∞ .
+
+On the other hand, in each of these three cases, one veriﬁes immediately
+that the condition
+A = {a, a−1 , b, b−1 , −ab, −(ab)−1 }
+implies that there are precisely two possibilities for δ, and, moreover, that
+these two possibilities are ∈ B  , as desired. This completes the proof of
+assertion (i).
+Next, we consider assertion (ii). Assertion (ii) follows immediately from
+the following claim:
+def
+
+Claim 1.6A: For f ∈ F  , δ ∈ B, write δ(f ) = φ(δ)(f ).
+Suppose that it holds that
+|δ(f )| = max{|(f )|}.
+∈B
+
+Then we have f ∈ Dδ .
+Let us verify Claim 1.6A. Write δ = {a, b}. Suppose that f ∈
+/ Dδ . Then we
+may assume without loss of generality that |a(f )| < 1. Thus, we have
+|δ(f )| = |a(f )| · |b(f )| < |b(f )|.
+On the other hand, since we have |b(f )| ∈ {(f )}∈B [cf. the latter portion
+of assertion (i), i.e., the fact that φ is a bijection], we obtain a contradiction.
+Therefore, we conclude that f ∈ Dδ . This completes the veriﬁcation of
+Claim 1.6A, hence also of assertion (ii).
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+15
+
+Next, we consider assertions (iii) and (iv). First, we observe that, in
+assertion (iii), we may assume without loss of generality, that  = 0. Write
+D = D{1−z,z·(z−1)−1 } = {f ∈ F  | |f | ≥ |f − 1| ≥ 1} ⊆ F  .
+def
+
+Then we observe that
+F =
+
+
+
+(σ · D)
+
+σ∈S3
+
+[cf. assertion (ii)], and that for α ∈ F  , σ ∈ S3 , we have
+J0∞ (α) · J1∞ (α) · J01 (α) = J0∞ (σ · α) · J1∞ (σ · α) · J01 (σ · α),
+J(α) = J(σ · α)
+[cf. the fact discussed in the proof of Lemma 1.3, (i); Deﬁnition 1.4; the
+equality “A = S3 · z” discussed in assertion (i); the manifest invariance
+of J(α) with respect to the transformations α → 1 − α, α → α−1 , which
+correspond to a pair of generators of S3 ]. Thus, to verify assertions (iii) and
+(iv), we may assume without loss of generality that α ∈ D. Then observe
+that J0∞ (α) = |α| ≥ 1, J1∞ (α) = |α − 1| ≥ 1, J01 (α) = |α| · |α − 1|−1 ≥ 1,
+hence that
+J0∞ (α) · J1∞ (α) · J01 (α) = |α|2 (≥ 1).
+Now let us verify assertion (iii). The inequality
+J0∞ (α) · J1∞ (α) · J01 (α) ≤ 22 · max{26 · J(α), 1}
+follows immediately from Lemma 1.5. On the other hand, the inequality
+max{26 · J(α), 1} ≤ 29 · J0∞ (α) · J1∞ (α) · J01 (α)
+follows immediately from the following computation:
+J(α) = |α(α − 1) + 1|3 · |α|−2 · |α − 1|−2
+≤ 23 · |α|−2 · |α − 1|−2 · max{|α|3 · |α − 1|3 , 1}
+= 23 · |α| · |α − 1| ≤ 23 · |α|2 = 23 · J0∞ (α) · J1∞ (α) · J01 (α).
+— where we apply the easily veriﬁed fact that |x + 1|3 ≤ 23 · max{|x|3 , 1}
+for x ∈ F . This completes the proof of assertion (iii).
+Finally, let us verify assertion (iv). First, observe that it follows immediately from our assumption that | · | is nonarchimedean that
+D = {f ∈ F  | |f | = |f − 1|}.
+Suppose that |α| = |α − 1| = 1 (respectively, |α| = |α − 1| > 1). Then we
+have
+J(α) = |α(α − 1) + 1|3 ≤ (max{|α| · |α − 1|, 1})3 = 1 = |α|2
+(respectively, J(α) = |α(α − 1) + 1|3 · |α|−4 = |α|6 · |α|−4 = |α|2 ).
+Thus, we conclude that
+max{J(α), 1} = |α|2 = J0∞ (α) · J1∞ (α) · J01 (α),
+as desired. This completes the proof of assertion (iv).
+
+
+
+16
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+Deﬁnition 1.7. Let Q be an algebraic closure of Q, F ⊆ Q a number ﬁeld,
+E an elliptic curve over F . Recall that E is isomorphic over Q to the elliptic
+curve deﬁned by an equation
+y 2 = x(x − 1)(x − λ)
+
+
+— where λ ∈ Q [cf. [Silv1], Chapter III, Proposition 1.7, (a)]. Recall
+further that the j-invariant j(E) of E satisﬁes
+j(E) = 28 (λλ2 −λ+1)
+(λ−1)2
+2
+
+3
+
+(∈ F )
+
+[cf. [Silv1], Chapter III, Proposition 1.7, (b)], and that the symmetric group
+on 3 letters S3 admits a natural faithful action on the projective line P1Q
+∼
+
+
+
+over Q, hence also on the set of Q-rational points (P1Q \ {0, 1, ∞})(Q) → Q .
+For  ∈ {non, arc}, we shall write
+
+def
+hS-tor
+(E) =
+htor
+
+ (σ · λ),
+σ∈S3
+def
+
+S-tor
+hS-tor (E) = hS-tor
+non (E) + harc (E)
+
+[cf. Remark 1.1.1] and refer to hS-tor (E) as the symmetrized toric height
+of E. We shall also write hS-tor
+(E) for hS-tor (E). One veriﬁes easily that
+
+S-tor
+S-tor (E) do not depend on the choice of “λ” [cf. the
+hS-tor
+non (E), harc (E), h
+proof of [Silv1], Chapter III, Proposition 1.7, (c)].
+Remark 1.7.1. One veriﬁes easily [cf. Remark 1.1.1] that for  ∈ {non, arc,
+}, the quantity hS-tor
+(E) is unaﬀected by passage to a ﬁnite extension of
+
+the base ﬁeld F of E.
+Remark 1.7.2. It follows immediately from Lemma 1.3, (i), that for  ∈
+{non, arc, }, we have
+
+hS-tor
+(E) =
+h (σ · λ).
+
+σ∈S3
+
+(E) and h (j(E))) In
+Proposition 1.8. (Comparison between hS-tor
+
+the notation of Deﬁnition 1.7, the following hold:
+(i) 0 ≤ hS-tor
+non (E) − hnon (j(E)) ≤ 8 log 2.
+(ii) −11 log 2 ≤ hS-tor
+arc (E) − harc (j(E)) ≤ 2 log 2.
+Proof. If v ∈ V(F ), then it is well-known that || · ||v satisﬁes the conditions
+(i), (ii), and (iii) of Deﬁnition 1.4, and, moreover, that, if v ∈ V(F )non , then
+|| · ||v is nonarchimedean in the sense of Lemma 1.6, (iv). Observe that,
+in the remainder of the proof, we may assume without loss of generality
+that, in the situation of Deﬁnition 1.7, λ ∈ F  [cf. Remark 1.7.1]. In the
+following, for v ∈ V(F ), we shall write J(λ)v , J0∞ (λ)v , J1∞ (λ)v , J01 (λ)v for
+the “J(α)”, “J0∞ (α)”, “J1∞ (α)”, “J01 (α)” of Deﬁnition 1.4, where we take
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+17
+
+· “F ” to be F ;
+· “α” to be λ;
+· “| · |” to be || · ||v .
+Here, we observe that, for  ∈ {non, arc}, we have
+tor
+tor
+−1
+(E) = 2 · htor
+hS-tor
+
+ (λ) + 2 · h (1 − λ) + 2 · h (λ · (λ − 1) )
+
+[cf. Lemma 1.3, (i); the set “A” of Lemma 1.6, (i)].
+First, we consider assertion (i). It follows from Lemma 1.6, (iv), that
+
+[F : Q] · hS-tor
+[Fv : Qpv ] · log(J0∞ (λ)v · J1∞ (λ)v · J01 (λ)v )
+non (E) =
+v∈V(F )non
+
+=
+
+
+
+[Fv : Qpv ] · log max{J(λ)v , 1}.
+
+v∈V(F )non
+
+Thus, to verify assertion (i), it suﬃces to show that, for every v ∈ V(F )non
+lying over 2, it holds that
+0 ≤ log max{J(λ)v , 1} − log max{2−8 · J(λ)v , 1} ≤ 8 log 2
+[cf. the equality 2−8 · J(λ)v = ||j(E)||v ]. The ﬁrst inequality follows immediately from the inequality J(λ)v ≥ 2−8 · J(λ)v . Next, we verify the second
+inequality. If J(λ)v ≤ 1, then
+log max{J(λ)v , 1} − log max{2−8 · J(λ)v , 1} = 0 − 0 ≤ 8 log 2
+Thus, we may assume that J(λ)v > 1, hence that max{J(λ)v , 1} = J(λ)v .
+In particular, if 2−8 · J(λ)v > 1 (respectively, 2−8 · J(λ)v ≤ 1), then we have
+log J(λ)v − log max{2−8 · J(λ)v , 1} = − log(2−8 ) = 8 log 2
+(respectively,
+log J(λ)v − log max{2−8 · J(λ)v , 1} = log J(λ)v ≤ 8 log 2).
+This completes the veriﬁcation of the second inequality, hence also of assertion (i).
+Next, we consider assertion (ii). Observe that
+
+[F : Q] · hS-tor
+(E)
+=
+[Fv : R] · log(J0∞ (λ)v · J1∞ (λ)v · J01 (λ)v ).
+arc
+v∈V(F )arc
+
+Assertion (ii) then follows immediately from Lemma 1.6, (iii) — where we
+take the “” of Lemma 1.6, (iii), to be 2 [cf. the equality 28 · J(λ)v =
+||j(E)||v ].
+
+Proposition 1.9. (Comparison between hnon (j(E)) and harc (j(E))) In
+the notation of Deﬁnition 1.7, suppose that Q(λ) is mono-complex. [Here,
+note that the fact that Q(λ) is mono-complex does not depend on the choice
+of “λ” [cf. the set “A” of Lemma 1.6, (i)].] Then the following hold:
+S-tor
+(i) hS-tor
+arc (E) ≤ hnon (E).
+(ii) harc (j(E)) ≤ hnon (j(E)) + 19 log 2.
+(iii) If C ∈ R, then the element j(E) ∈ Q is completely determined up
+to a ﬁnite number of possibilities by the condition hnon (−) ≤ C.
+
+18
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+Proof. Assertion (i) follows immediately from Lemma 1.3, (iii), and the
+various deﬁnitions involved. Assertion (ii) follows from assertion (i) and
+Proposition 1.8, (i), (ii). Finally, we consider assertion (iii). It follows from
+assertion (ii) [cf. also Deﬁnition 1.1, (i)] that
+h(j(E)) = hnon (j(E)) + harc (j(E)) ≤ 2hnon (j(E)) + 19 log 2.
+Thus, assertion (iii) follows immediately from Northcott’s theorem, i.e., the
+well-known fact that the set of algebraic numbers of bounded degree and
+bounded height is ﬁnite [cf. [BG], Theorem 1.6.8].
+
+Proposition 1.10. (Comparison between h(j(E)) and hFal (E), I) Let
+F be a number ﬁeld; E an elliptic curve over F that has semi-stable reduction over OF . Then, in the notation of Deﬁnitions 1.1, (i); 1.7 [cf.
+also the discussion entitled “Curves” in §0], we have
+0 ≤
+
+Fal
+1
+12 · h(j(E)) − h (E)
+
+≤
+
+1
+2 · log(1 + h(j(E))) + 2.071.
+
+Proof. This follows immediately from [Lbr], Proposition 3.1 [and the surrounding discussion].
+
+
+Remark 1.10.1. In the notation of Proposition 1.10, we observe that
+(a) the normalized degree [cf. [IUTchIV], Deﬁnition 1.9, (i)] of the [effective] arithmetic divisor determined by the q-parameters of E at
+the elements of V(F )non
+coincides with
+(b) hnon (j(E)).
+Indeed, this follows immediately from [Silv1], Chapter VII, Proposition 5.5;
+the discussion at the beginning of [Silv2], Chapter V, §5. Moreover, we observe that both (a) and (b) are unaﬀected by passing to ﬁnite extensions of
+the number ﬁeld F [cf. [GenEll], Remark 3.3.1]. In particular, the assumption [cf. the statement of Proposition 1.10] that E has semi-stable reduction
+over OF is, in fact, inessential.
+Lemma 1.11. (Linearization of logarithms) Let a ∈ R>0 be a positive
+real number. Then we have
+0 ≤ a − log(a) − 1.
+In particular, [by taking “a” to be a · (1 + x)] we have
+log(1 + x) − a · x ≤ a − log(a) − 1
+for all nonnegative real x ∈ R≥0 .
+Proof. Lemma 1.11 is well-known and entirely elementary.
+
+
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+19
+
+Proposition 1.12. (Comparison between h(j(E)) and hFal (E), II) Let
+ξ ∈ R>0 be a positive real number. Write
+def
+
+C(ξ) =
+
+ξ
+ξ
+1
+2 · { 6(1+ξ) − log 6(1+ξ) − 1} + 2.071.
+
+Then, in the notation of Proposition 1.10, we have
+Fal
+1
+12(1+ξ) · h(j(E)) − h (E)
+
+≤ C(ξ).
+
+Proof. Indeed, we have
+Fal
+1
+12(1+ξ) · h(j(E)) − h (E)
+
+=
+≤
+
+Fal
+1
+12 · h(j(E)) − h (E)
+1
+2 ·
+
+ξ
+− 12(1+ξ)
+· h(j(E))
+
+ξ
+log(1 + h(j(E))) − 6(1+ξ)
+· h(j(E)) + 2.071 ≤ C(ξ)
+
+— where the ﬁrst (respectively, second) inequality follows from Proposition
+ξ
+and “x” to
+1.10 (respectively, Lemma 1.11, where we take “a” to be 6(1+ξ)
+be h(j(E))).
+
+
+Deﬁnition 1.13. Let κ ≤ 1 be a positive real number; Σ a ﬁnite subset
+of V(Q) such that V(Q)arc ⊆ Σ. Write Σ ⊆ V(Q) for the inverse image of
+Σ ⊆ V(Q) via the natural restriction map V(Q)  V(Q). Recall the set of
+rational functions “A” of Lemma 1.6, (i). Then we shall write
+def
+
+
+
+KΣ (κ) = {x ∈ Q | min min{||a(x)||w } ≥ κ} ⊆ Q
+
+
+
+w∈Σ a∈A
+
+[cf. the discussion entitled “Numbers” in §0] and refer to KΣ (κ) as a com
+
+pactly bounded subset of Q . Thus, the subset KΣ (κ) ⊆ Q is stabilized by
+
+the natural action of S3 on Q [cf. Lemma 1.6, (i)].
+
+Corollary 1.14. (Upper bounds for hnon (j(E))) In the notation of Proposition 1.12, let l be a prime number. Suppose that E admits an l-cyclic
+subgroup scheme [cf. [GenEll], Lemma 3.5], and that l is prime to the local heights [cf. [GenEll], Deﬁnition 3.3] of E at each of its places of [bad]
+multiplicative reduction [a condition that is satisﬁed, for instance, if l is >
+these local heights]. Then the following hold:
+(i) We have
+l
+12(1+ξ) · hnon (j(E))
+
+≤ hFal (E) + 12 log(l) + C(ξ).
+
+In particular, by applying the ﬁrst inequality of Proposition 1.10, we
+obtain that
+l−(1+ξ)
+12(1+ξ) · hnon (j(E))
+
+≤
+
+1
+1
+12 · harc (j(E)) + 2 log(l) + C(ξ).
+
+20
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+(ii) In the notation of Deﬁnitions 1.7, 1.13, suppose that
+λ ∈ KΣ (κ).
+[Note that the issue of whether or not λ ∈ KΣ (κ) does not depend on
+the choice of the particular element “λ” within the S3 -orbit of “λ”
+[cf. the ﬁnal portion of Deﬁnition 1.13].] Then we have
+l−(1+ξ)
+12(1+ξ) · hnon (j(E))
+
+≤
+
+1
+1
+11
+2 log(l) + C(ξ) − 4 log(κ) + 12 log(2).
+
+Suppose, moreover, that l ≥ 1015 . Then, by taking ξ to be 1, we
+obtain that
+hnon (j(E)) ≤
+≤
+
+24 1
+1
+11
+l−2 { 2 log(l) + C(1) − 4 log(κ) + 12 log(2)}
+24 1
+1
+l−2 { 2 log(l) + 2.86 − 4 log(κ) + 0.64}
+−13
+−15
+
+≤ 5 · 10
+
+− 6.01 · 10
+
+log(κ)
+
+−14 , 6 ≤ 6.01 ·
+— where we apply the estimates log(l)
+l−2 ≤ 3.46 · 10
+l−2
+log(2)
+≤
+0.64,
+and
+C(1)
+≤
+2.86.
+10−15 , 11
+12
+(iii) Suppose that Q(λ) is mono-complex. Then we have
+l−2(1+ξ)
+12(1+ξ) · hnon (j(E))
+
+≤
+
+1
+19
+2 log(l) + C(ξ) + 12 log(2).
+
+Suppose, moreover, that l ≥ 1015 . Then, by taking ξ to be 1, we
+obtain that
+hnon (j(E)) ≤
+≤
+
+24 1
+19
+l−4 { 2 log(l) + C(1) + 12 log(2)}
+24 1
+l−4 { 2 log(l) + 2.86 + 1.1}
+−13
+−13
+
+≤ 4.16 · 10
+
++ 0.96 · 10
+
+= 5.12 · 10−13
+
+−14 , 24 ≤ 2.41 ·
+— where we apply the estimates log(l)
+l−4 ≤ 3.46 · 10
+l−4
+log(2)
+≤
+1.1,
+and
+C(1)
+≤
+2.86.
+10−14 , 19
+12
+
+Proof. First, we consider assertion (i). Let H ⊆ E be an l-cyclic subgroup
+def
+
+scheme. Write EH = E/H. [In particular, EH is isogenous to E, hence
+has semi-stable reduction at all v ∈ V(F )non .] Thus, by applying the same
+arguments as those applied in the proof of [GenEll], Lemma 3.5, we obtain
+the following equality:
+hnon (j(EH )) = l · hnon (j(E))
+[cf. also Remark 1.10.1]. On the other hand, it follows from the discussion entitled “Curves” in §0; [Falt], Lemma 5, that we have the following
+inequality:
+hFal (EH ) ≤ hFal (E) + 12 log(l).
+In light of the above equality and inequality, assertion (i) follows from Proposition 1.12.
+Next, we consider assertion (ii). Note that, since λ ∈ KΣ (κ), for each
+v ∈ V(Q(λ))arc , we have:
+−1
+max{||λ||v , ||λ||−1
+v } ≤ κ ;
+
+−1
+max{||λ − 1||v , ||λ − 1||−1
+v } ≤ κ ;
+
+−1
+−1
+max{||λ − 1||v · ||λ||−1
+v , ||λ||v · ||λ − 1||v } ≤ κ .
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+21
+
+Thus, we conclude from Proposition 1.8, (ii), that
+harc (j(E)) − 11 log(2) ≤ hS-tor
+arc (E)
+≤
+
+1
+[Q(λ):Q]
+
+
+
+[Q(λ)v : R] · log(κ−3 )
+
+v∈V(Q(λ))arc
+
+= log(κ
+
+−3
+
+).
+
+Assertion (ii) then follows immediately from the second inequality of assertion (i). Finally, assertion (iii) follows immediately from the second inequality of assertion (i) and Proposition 1.9, (ii).
+
+
+2. Auxiliary Numerical Results
+In the present section, we recall
+• a numerical result concerning the j-invariants of certain special elliptic curves over ﬁelds of characteristic zero;
+• certain eﬀective versions of the prime number theorem.
+These results will be applied in §5.
+Proposition 2.1. (j-invariants of arithmetic elliptic curves) Let F
+be a ﬁeld of characteristic zero; E an elliptic curve over F . Suppose that the
+hyperbolic curve obtained by removing the origin from E is “arithmetic”,
+i.e., fails to admit an F -core [cf. [CanLift], Remark 2.1.1]. Then the
+j-invariant j(E) of E coincides with one of the following:
+• 488095744
+= 214 · 313 · 5−3 ,
+125
+• 1556068
+= 22 · 733 · 3−4 ,
+81
+• 1728 = 26 · 33 ,
+• 0.
+Proof. Proposition 2.1 follows immediately from [Sijs], Table 4 [cf. also
+[Sijs], Lemma 1.1.1; [CanLift], Proposition 2.7].
+
+Proposition 2.2. (Eﬀective versions of the prime number theorem)
+For x ∈ R≥2 , write
+def
+
+π(x) = {p ∈ Primes | p ≤ x};
+
+def
+log(p).
+θ(x) =
+p∈Primes; p≤x
+
+Set
+def
+
+ηprm = 5 · 1020 ;
+Then the following hold:
+
+def
+
+ξprm = 1015 .
+
+22
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+(i) For any real number x ≥ ηprm , it holds that
+x
+π(x) ≤ 1.022 · log(x)
+
+[cf. [IUTchIV], Proposition 1.6].
+(ii) For any real number x ≥ ξprm , it holds that
+|θ(x) − x| ≤ 0.00071 · x
+In particular, if A is a ﬁnite subset of Primes, and we write
+
+def
+log(p)
+θA =
+p∈A
+
+[where we take the sum to be 0 if A = ∅], then there exists a prime
+number p ∈
+/ A such that
+p ≤ (1 − 0.00071)−1 · (θA + ξprm ) ≤ 1.00072 · (θA + ξprm )
+[cf. [IUTchIV], Proposition 2.1, (ii)].
+Proof. First, we consider assertion (i). Observe that log(x) ≥ log(ηprm ) ≥
+1.17
+47.66 ≥ 0.0246
+. Thus, it holds that
+π(x) ≤
+
+x
+1.17
+log(x)−1− log(x)
+
+≤
+
+x
+log(x)−1.0246
+
+[cf. [Ax1], Corollary 3.4; [Ax2]]. Therefore, we conclude that
+x
+≥
+1.022 · log(x)
+
+x
+log(x)−1.0246
+
+≥ π(x).
+
+Next, we consider assertion (ii). Observe that log(x) ≥ log(ξprm ) ≥ 34.53.
+Then since 0.0242269
+log(x) ≤ 0.00071, assertion (ii) follows immediately from [RS],
+Theorem 7.
+
+3. μ6 -Theory for [EtTh]
+In the present section, we introduce a slightly modiﬁed version of the
+notion of an étale theta function of standard type [cf. Deﬁnitions 3.3, 3.5], a
+notion which plays a central role in the theory developed in [EtTh]. We then
+proceed to discuss how the adoption of such a modiﬁed version of the notion
+of an étale theta function of standard type aﬀects the theory developed in
+[EtTh].
+We begin with certain elementary observations concerning roots of unity
+and theta functions.
+Lemma 3.1. (Group actions on primitive roots of unity) Let n ≥ 2
+be an even integer; k an algebraically closed ﬁeld of characteristic zero.
+× for the set of primitive 2n-th roots of unity in k;
+Write μ×
+2n ⊆ k
+×
+×
+Aut(μ×
+2n ) for the group of automorphisms of the set μ2n ; Γ− ⊆ Aut(μ2n )
+×
+−
+(respectively, Γ ⊆ Aut(μ2n )) for the subgroup of cardinality two generated
+×
+by the automorphism of μ×
+2n deﬁned as follows: ∀ζ ∈ μ2n ,
+ζ → −ζ
+
+(respectively, ζ → ζ −1 ).
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+23
+
+[Note that since n is even, it follows that −ζ ∈ μ×
+2n .] Then the following
+conditions are equivalent:
+(1) n ∈ {2, 4, 6}.
+(2) The action of Γ− × Γ− on μ×
+2n is transitive.
+Proof. The fact that (1) ⇒ (2) is immediate from the deﬁnitions. Thus, it
+remains to verify that (2) ⇒ (1). First, we observe that the transitivity of
+the action of the group Γ− × Γ− [whose cardinality is four] on μ×
+2n implies
+×
+that (μ2n ) ≤ 4. In light of this observation, one veriﬁes easily that
+n ∈ {1, 2, 3, 4, 5, 6}.
+Since n is even, we thus conclude that n ∈ {2, 4, 6}. This completes the
+proof of Lemma 3.1.
+
+
+Proposition 3.2. (Theta values at primitive 12-th roots of unity) In
+the notation of [EtTh], Proposition 1.4: Suppose that K̈ contains a primitive
+12-th root of unity ζ12 . Thus, we note that the set of primitive 12-th roots
+of unity in K̈ coincides with the set
+5
+7
+11
+{ζ12 , ζ12
+, ζ12
+, ζ12
+} ⊆ K̈.
+
+Recall the theta function Θ̈ of [EtTh], Proposition 1.4,
+1
+−1 
+(n+ 12 )2
+Θ̈(U ) = qX 8 ·
+(−1)n · qX2
+· Ü 2n+1 ,
+n∈Z
+
+which satisﬁes the relations Θ̈(Ü ) = −Θ̈(Ü −1 ) = −Θ̈(−Ü ) [cf. [EtTh],
+Proposition 1.4, (ii)]. Then the following hold:
+(i) We have
+5
+7
+11
+Θ̈(ζ12 ), Θ̈(ζ12
+), Θ̈(ζ12
+), Θ̈(ζ12
+) ∈ {Θ̈(ζ12 ), −Θ̈(ζ12 )}.
+×
+.
+(ii) We have Θ̈(ζ12 ) ∈ OK̈
+
+Proof. Assertion (i) follows immediately from Lemma 3.1 and [EtTh], Proposition 1.4, (ii). Assertion (ii) follows immediately from the fact that ζ12 −
+−1
+×
+−1 2
+ζ12
+∈ OK̈
+[cf. the equality −(ζ12 − ζ12
+) = 1].
+
+Remark 3.2.1. Lemma 3.1 and Proposition 3.2 arose from observations
+due to Porowski. These observations are, in some sense, the starting point
+of the theory developed in the present paper.
+In the remainder of the present §3, we consider a slightly modiﬁed version
+of [EtTh] based on “étale theta functions of μ6 -standard type”.
+
+24
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+Deﬁnition 3.3. In the notation of [EtTh], Deﬁnition 1.9, suppose that K
+contains a primitive 12-th root of unity. Note that the primitive 12-th roots
+of unity in K determine precisely four 12-torsion points
+{τ1 , τ2 , τ3 , τ4 }
+of [the underlying elliptic curve of] Ẋ whose restriction to the special ﬁber
+lies in the interior of [i.e., avoids the nodes of] the unique irreducible component of the special ﬁber.
+(i) We shall refer to either of the following four sets of values [cf. [EtTh],
+Proposition 1.4, (iii)] of η̈ Θ,Z
+η̈ Θ,Z |τ1 , η̈ Θ,Z |τ2 , η̈ Θ,Z |τ3 , η̈ Θ,Z |τ4
+
+⊆ K×
+
+as a μ6 -standard set of values of η̈ Θ,Z .
+(ii) If η̈ Θ,Z satisﬁes the property that the unique value ∈ K × [cf. Proposition 3.2, (i); Remark 4.2.3, (vi); [IUTchII], Remark 2.5.1, (ii)] of
+maximal order [i.e., relative to the valuation on K] of some μ6 standard set of values of η̈ Θ,Z is equal to ±1, then we shall say that
+η̈ Θ,Z is of μ6 -standard type.
+
+Remark 3.3.1. By applying Deﬁnition 4.3, together with a similar argument to the argument applied in the proof of [EtTh], Theorem 1.10, one may
+prove a “μ6 -version” of [EtTh], Theorem 1.10, i.e., the assertion obtained
+by replacing, in [EtTh], Theorem 1.10, (iii),
+“odd” −→ “arbitrary”
+[cf. Proposition 3.2, (ii); [IUTchIV], Remark 1.10.6, (ii)]. Note that, in the
+notation of [EtTh], Theorem 1.10,
+the dual graphs of the special ﬁbers of the various coverings
+of Cα , Cβ are somewhat more complicated in the case where
+p ∈ {2, 3}.
+On the other hand, since one may still reconstruct the dual graphs grouptheoretically, this will not aﬀect the proof of the μ6 -version of [EtTh], Theorem 1.10, in any signiﬁcant way.
+
+Deﬁnition 3.4. Let l ≥ 1 be an integer coprime to 6. In the notation of
+[EtTh], §1, suppose that
+• the residue characteristic of K is arbitrary;
+• K = K̈;
+• K contains a primitive 12-th root of unity ζ12
+[cf. [EtTh], Deﬁnition 1.7, and the preceding discussion; [EtTh], Deﬁnition
+2.5].
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+25
+
+(i) Suppose, in the situation of [EtTh], Deﬁnitions 2.1, 2.3, that the
+ell
+quotient ΠX  Q factors through the natural quotient ΠX  Z
+determined by the quotient Πtp
+X  Z discussed at the beginning of
+[EtTh], §1, and that the choice of a splitting of Dx → GK [cf. [EtTh],
+Proposition 2.2, (ii)] that determined the covering X log → X log is
+compatible with the “{±1}-structure” of the μ6 -version of Theorem
+1.10, (iii), of Remark 3.3.1. Then we shall say that the orbicurve of
+type (1, l-tors) (respectively, (1, l-torsΘ ); (1, l-tors)± ; (1, l-torsΘ )± )
+under consideration is of type (1, Z/lZ) (respectively, (1, (Z/lZ)Θ );
+(1, Z/lZ)± ; (1, (Z/lZ)Θ )± ).
+(ii) In the notation of the above discussion and the discussion at the end
+of [EtTh], §1, we shall refer to a smooth log orbicurve isomorphic to
+the smooth log orbicurve
+Ẋ
+
+log
+
+(respectively, Ẋ
+
+log
+
+; Ċ
+
+log
+
+; Ċ
+
+log
+
+)
+
+obtained by taking the composite of the covering
+X log (respectively, X log ; C log ; C log )
+of C log with the covering Ċ log → C log , as being of type (1, μ2 ×Z/lZ)
+(respectively, (1, μ2 ×(Z/lZ)Θ ); (1, μ2 ×Z/lZ)± ; (1, μ2 ×(Z/lZ)Θ )± ).
+Remark 3.4.1. In the “μ6 -version” of [EtTh], Remark 2.5.1, the portion
+concerning “Ċ” should be eliminated.
+Deﬁnition 3.5. In the notation of Deﬁnition 3.3 and the discussion preceding of [EtTh], Deﬁnition 2.7, if η̈ Θ,Z is of μ6 -standard type, then we shall also
+refer to η̈ Θ,l·Z , η̈ Θ,l·Z , η̈ Θ,l·Z×μ2 , η̈ Θ,l·Z×μ2 , η̈ Θ,Z×μ2 as being of μ6 -standard
+type.
+Remark 3.5.1. By applying Deﬁnitions 3.3, 3.4, 3.5 [cf. also Remarks
+3.3.1, 3.4.1], the exposition of [EtTh], §1, §2, goes through without essential
+change under the assumptions stated in the ﬁrst paragraph of Deﬁnition 3.4,
+with the following exception: In the “μ6 -versions” of [EtTh], Proposition
+2.12; [EtTh], Remark 2.12.1, the portions concerning the hyperbolic orbicurves whose notation contains a “ ˙ ” [i.e., a single “overline dot”] should
+be eliminated.
+Remark 3.5.2. By applying Deﬁnitions 3.3, 3.4, 3.5 [cf. also Remarks 3.3.1,
+3.4.1, 3.5.1], the exposition of [EtTh], §3, §4, goes through without essential
+change under the assumptions stated in the ﬁrst paragraph of Deﬁnition 3.4,
+with the following exception: In the “μ6 -version” of [EtTh], Example 3.9,
+the portions concerning the hyperbolic orbicurves whose notation contains
+a “ ˙ ” [i.e., a single “overline dot”] should be eliminated.
+
+26
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+Remark 3.5.3. By applying Deﬁnitions 3.3, 3.4, 3.5 [cf. also Remarks
+3.3.1, 3.4.1, 3.5.1, 3.5.2], the exposition of [EtTh], §5, goes through without essential change under the assumptions stated in the ﬁrst paragraph of
+Deﬁnition 3.4, with the following exceptions:
+(i) Throughout the “μ6 -version” of [EtTh], §5, the portions concerning the
+hyperbolic orbicurves whose notation contains a “ ˙ ” [i.e., a single “overline
+dot”] should be eliminated.
+(ii) In the “μ6 -version” of the statement and proof of [EtTh], Proposition
+5.3, as well as the preceding discussion, the notation “Ÿ” should be replaced
+by “Y”.
+(iii) In the “μ6 -version” of [EtTh], Theorem 5.7, as well as the “μ6 version” of the remainder of [EtTh], §5, the following modiﬁcation should
+be made:
+√
+“Θ̈( −1)−1 · Θ̈” −→ “Θ̈(ζ12 )−1 · Θ̈”.
+
+4. μ6 -Theory for [IUTchI-III]
+In the present section, we introduce a slightly modiﬁed version of the
+notion of initial Θ-data [cf. Deﬁnitions 4.1], a notion which plays a central
+role in the theory developed in [IUTchI-IV]. We then proceed to discuss how
+the adoption of such a modiﬁed version of the notion of initial Θ-data aﬀects
+the theory developed in [IUTchI-III].
+Deﬁnition 4.1. We shall refer to as μ6 -initial Θ-data any collection of data
+(F /F, XF , l, C K , V, Vbad
+mod , )
+satisfying the following conditions:
+• [IUTchI], Deﬁnition 3.1, (a), (c), (d);
+• The “μ6 -version” of [IUTchI], Deﬁnition 3.1, (b), i.e., the condition
+obtained by replacing, in [IUTchI], Deﬁnition 3.1, (b),
+“odd” −→ “arbitrary”;
+• The “μ6 -versions” of [IUTchI], Deﬁnition 3.1, (e), (f), i.e., the conditions obtained by replacing, in [IUTchI], Deﬁnition 3.1, (e), (f),
+“[EtTh], Deﬁnition 2.5, (i)” −→ “Deﬁnition 3.4, (i)”
+[cf. Remark 4.1.1 below].
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+27
+
+Remark 4.1.1. In the notation of Deﬁnition 4.1, write EF for
+√ the elliptic
+curve over F determined by XF [so XF ⊆ EF ]. Then since −1 ∈ F [cf.
+[IUTchI], Deﬁnition 3.1, (a)], and, moreover, the 3-torsion points of EF
+are rational over F [cf. [IUTchI], Deﬁnition 3.1, (b)], we conclude that F
+contains a primitive 12-th root of unity ζ12 [cf. the conditions in the ﬁrst
+display of Deﬁnition 3.4].
+Remark 4.1.2. By applying Deﬁnitions 3.3, 3.4, 3.5, 4.1 [cf. also Remarks
+3.3.1, 3.4.1, 3.5.1, 3.5.2, 3.5.3, 4.1.1], the exposition of [IUTchI], §3, goes
+through without essential change, with the following exceptions: In the “μ6 version” of [IUTchI], Example 3.2, the following modiﬁcations should be
+made:
+• In [IUTchI], Example 3.2, (ii),
+√
+“ −1” −→ “ζ12 ”;
+• In [IUTchI], Example 3.2, (iv),
+√
+√
+“ −qv ” −→ “ζ12 qv ”;
+“μ2l (TX )-multiple” −→ “μ6l (TX )-multiple”;
+v
+
+v
+
+“μ2l (−)-orbit” −→ “μ6l (−)-orbit”.
+• In [IUTchI], Example 3.2, (v),
+“μ2l (−)-orbit” −→ “μ6l (−)-orbit”.
+Remark 4.1.3. By applying Deﬁnitions 3.3, 3.4, 3.5, 4.1 [cf. also Remarks
+3.3.1, 3.4.1, 3.5.1, 3.5.2, 3.5.3, 4.1.1, 4.1.2], the exposition of [IUTchI], §4,
+§5, §6, goes through without essential change, with the following exceptions:
+In the “μ6 -version” of [IUTchI], Example 4.4, the following modiﬁcations
+should be made:
+• In [IUTchI], Example 4.4, (i),
+“the unique torsion point of order 2”
+−→ “a torsion point of order 6”.
+Thus, throughout the μ6 -version of [IUTchI], Example 4.4, (i) —
+and indeed throughout the remainder of the “μ6 -version” of [IUTchIIV] — “μ− ” is to be regarded as being allowed to vary among the
+torsion points of order 6 that satisfy the condition stated in the
+initial deﬁnition of “μ− ”, with the following exception: In [IUTchI],
+Remark 5.2.3, the notation “μ− ” is to be understood in the original
+“non-μ6 ” sense, i.e., as the unique torsion point of order 2 discussed
+in the original “non-μ6 ” version of [IUTchI], Example 4.4, (i).
+• In [IUTchI], Example 4.4, (i),
+“evaluation points” −→ “μ6l -evaluation points”;
+“evaluation sections” −→ “μ6l -evaluation sections”;
+“μ2l -orbit” −→ “μ6l -orbit”.
+
+28
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+Deﬁnition 4.2. Suppose that we are in the situation of [IUTchII], Remark
+1.4.1 [cf. also Remark 4.2.2 below]. Write
+τ ∈ X k (k)
+for a torsion point of order 6 whose closure in any stable model of X k over Ok
+intersects the same irreducible component of the special ﬁber of the stable
+model as the zero cusp [cf. Remark 4.1.3]. Since k contains a primitive
+12l-th root of unity [cf. Remark 4.2.2 below], it follows from the deﬁnition
+of an “étale theta function of μ6 -standard type” [cf. Deﬁnitions 3.3, (ii);
+3.5] that there exists a rational point
+τ Ÿ ∈ Ÿ k (k)
+such that τ Ÿ → τ . Write
+Dτ ⊆ Πtp
+Ÿ
+
+k
+
+for the decomposition group of τ Ÿ [which is well-deﬁned up to Δtp
+-conjugacy].
+Ÿ
+k
+
+We shall refer to either of the pairs
+(ιŸ ∈ Aut(Ÿ k ), τ Ÿ );
+
+(ιŸ ∈ Aut(Πtp
+)/Inn(Δtp
+), Dτ )
+Ÿ
+Ÿ
+k
+
+k
+
+as a μ6 -pointed inversion automorphism. Again, we recall from Deﬁnitions
+3.3, (ii); 3.5, that
+an “étale theta function of μ6 -standard type” is deﬁned precisely by the condition that its restriction to Dτ be a 2l-th
+root of unity.
+
+Remark 4.2.1. By applying Deﬁnitions 3.3, 3.4, 3.5, 4.1, 4.2 [cf. also
+Remarks 3.3.1, 3.4.1, 3.5.1, 3.5.2, 3.5.3, 4.1.1, 4.1.2, 4.1.3], the exposition of
+the Abstract and Introduction of [IUTchII] goes through without essential
+change, with the following exceptions:
+(i) In the “μ6 -version” of the Abstract of [IUTchII], the following modiﬁcation should be made:
+“2-torsion point” −→ “6-torsion point”.
+(ii) In the “μ6 -version” of the ﬁrst display and the discussion immediately
+following the ﬁrst display of the Introduction of [IUTchII], the following
+modiﬁcations should be made:
+
+“
+
+√
+
+−1 ·
+
+
+m∈Z
+
+1
+
+qv2
+
+(m+ 12 )2
+
+
+
+√
+
+
+1
+(m+ 12 )2
+” −→ “ −1 ·
+”;
+ζ3m+2 qv2
+m∈Z
+
+“2-torsion point” −→ “6-torsion point −ζ3 ”;
+“2l-th root of unity” −→ “6l-th root of unity”.
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+29
+
+(iii) In the “μ6 -version” of the paragraph of the Introduction of [IUTchII]
+that begins “Constant multiple rigidity”, the following modiﬁcations
+should be made:
+“[2-]torsion point” −→ “[6-]torsion point”;
+“2l-th roots of unity” −→ “6l-th roots of unity”.
+Remark 4.2.2. By applying Deﬁnitions 3.3, 3.4, 3.5, 4.1, 4.2 [cf. also
+Remarks 3.3.1, 3.4.1, 3.5.1, 3.5.2, 3.5.3, 4.1.1, 4.1.2, 4.1.3], the exposition
+of [IUTchII], §1, goes through without essential change, with the following
+exceptions:
+(i) In the “μ6 -version” of the discussion preceding [IUTchII], Deﬁnition
+1.1, the following modiﬁcations should be made:
+“odd prime number” −→ “prime number ≥ 5”;
+“of odd residue” −→ “of arbitrary residue”;
+“4l-th root” −→ “12l-th root”.
+(ii) In the “μ6 -version” of [IUTchII], Remark 1.12.2, (ii), the following
+modiﬁcations should be made:
+“the 2-torsion point “μ− ” of [IUTchI], Example 4.4, (i)”
+−→ “a 6-torsion point “τ ” as in Deﬁnition 4.2”;
+“the 2-torsion point “μ− ” are reconstructed”
+−→ “6-torsion points “τ ” are reconstructed”.
+(iii) In the “μ6 -version” of [IUTchII], Remark 1.12.2, (iii), the following
+modiﬁcation should be made:
+“where we recall that . . . is assumed to be”
+−→ “where we assume, for simplicity, that . . . is”.
+(iv) In the “μ6 -version” of [IUTchII], Remark 1.12.4, the following modiﬁcation should be made:
+“ the point “μ− ” ” −→ “ 6-torsion points “τ ” ”.
+Remark 4.2.3. By applying Deﬁnitions 3.3, 3.4, 3.5, 4.1, 4.2 [cf. also Remarks 3.3.1, 3.4.1, 3.5.1, 3.5.2, 3.5.3, 4.1.1, 4.1.2, 4.1.3, 4.2.2], the exposition
+of [IUTchII], §2, goes through without essential change, with the following
+exceptions:
+(i) In the “μ6 -version” of [IUTchII], Corollary 2.4, (ii), (b), the following
+modiﬁcations should be made:
+“Dμδ − ” −→ “Dτδ ”;
+“the torsion point “μ− ” of Remark 1.4.1, (i), (ii)”
+
+30
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+−→ “some torsion point “τ ” as in Deﬁnition 4.2”.
+(ii) In the “μ6 -version” of [IUTchII], Corollary 2.4, (ii), (c), the following
+modiﬁcations should be made:
+δ
+δ ”;
+” −→ “Dt,τ
+“Dt,μ
+−
+
+“[IUTchI], Example 4.4, (i)” −→ “Remark 4.1.3”;
+“μ− -translate” −→ “τ -translate”.
+(iii) In the “μ6 -version” of [IUTchII], Corollary 2.5, (ii), the following
+modiﬁcations should be made:
+δ
+δ ”;
+“Dt,μ
+” −→ “Dt,τ
+−
+
+“yield μ2l -,” −→ “yield μ6l -,”.
+(iv) In the “μ6 -version” of [IUTchII], Corollary 2.5, (iii), the following
+modiﬁcation should be made:
+“μ2l ” −→ “μ6l ”.
+(v) In the “μ6 -version” of [IUTchII], Remark 2.5.1, (i), the following
+modiﬁcation should be made:
+“μ2l ” −→ “μ6l ”.
+(vi) In the “μ6 -version” of [IUTchII], Remark 2.5.1, (ii), the following
+modiﬁcation should be made:
+√
+±1
+“± −1” −→ “±ζ12
+”.
+(vii) In the “μ6 -version” of [IUTchII], Remark 2.5.1, (iii), the following
+modiﬁcation should be made:
+“μ2l -orbit” −→ “μ6l -orbit”.
+(viii) In the “μ6 -version” of [IUTchII], Remark 2.5.2, (i), the following
+modiﬁcation should be made:
+γ1
+γ1
+“Dt,μ
+” −→ “Dt,τ
+”.
+−
+
+(ix) In the “μ6 -version” of [IUTchII], Corollary 2.6, (ii), the following
+modiﬁcations should be made:
+“μ2l ” −→ “μ6l ”;
+δ
+δ ”.
+“Dt,μ
+” −→ “Dt,τ
+−
+
+(x) In the “μ6 -version” of [IUTchII], Remark 2.6.3, (i), the following
+modiﬁcation should be made:
+“μ− -translates” −→ “τ -translates”.
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+31
+
+(xi) In the “μ6 -version” of [IUTchII], Corollary 2.8, (i), the following
+modiﬁcations should be made:
+δ
+δ ”;
+“Dt,μ
+” −→ “Dt,τ
+−
+“yield μ2l -,” −→ “yield μ6l -,”.
+(xii) In the “μ6 -version” of [IUTchII], Corollary 2.8, (ii), the following
+modiﬁcation should be made:
+“μ2l ” −→ “μ6l ”.
+(xiii) In the “μ6 -version” of [IUTchII], Corollary 2.9, (i), the following
+modiﬁcations should be made:
+δ ”;
+δ
+” −→ “Dt,τ
+“Dt,μ
+−
+“yield μ2l -,” −→ “yield μ6l -,”.
+(xiv) In the “μ6 -version” of [IUTchII], Corollary 2.9, (ii), the following
+modiﬁcation should be made:
+“μ2l ” −→ “μ6l ”.
+
+Remark 4.2.4. By applying Deﬁnitions 3.3, 3.4, 3.5, 4.1, 4.2 [cf. also
+Remarks 3.3.1, 3.4.1, 3.5.1, 3.5.2, 3.5.3, 4.1.1, 4.1.2, 4.1.3, 4.2.2, 4.2.3], the
+exposition of [IUTchII], §3, goes through without essential change, with the
+following exceptions:
+(i) In the “μ6 -version” of [IUTchII], Corollary 3.5, (i), the following modiﬁcation should be made:
+δ
+δ ”.
+“Dt,μ
+” −→ “Dt,τ
+−
+(ii) In the “μ6 -version” of [IUTchII], Corollary 3.5, (ii), the following
+modiﬁcations should be made:
+
+
+“(2l)l ” −→ “(6l)l ”;
+Θ
+“Ψ2l·ξ (MΘ
+∗ )” −→ “Ψ6l·ξ (M∗ )”;
+“ξ 2l·N ” −→ “ξ 6l·N ”;
+δ
+δ ”;
+” −→ “Dt,τ
+“Dt,μ
+−
+Θ
+Θ
+Θ
+“Ψ2l·ξ1 (MΘ
+∗ ) = Ψ2l·ξ2 (M∗ )” −→ “Ψ6l·ξ1 (M∗ ) = Ψ6l·ξ2 (M∗ )”.
+
+(iii) In the “μ6 -version” of [IUTchII], Remark 3.5.1, (i), the following
+modiﬁcation should be made:
+δ
+δ ”.
+“Dt,μ
+” −→ “Dt,τ
+−
+(iv) In the “μ6 -version” of [IUTchII], Corollary 3.6, (ii), the following
+modiﬁcation should be made:
+“Ψ2l·ξ (−)” −→ “Ψ6l·ξ (−)”.
+
+32
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+(v) In the “μ6 -version” of [IUTchII], Deﬁnition 3.8, (ii), (iii), the following
+modiﬁcations should be made:
+Θ
+“F2l·ξ (MΘ
+∗ )” −→ “F6l·ξ (M∗ )”;
+“FF2l·ξ († F v )” −→ “FF6l·ξ († F v )”;
+“Ψ2l·ξ (−)” −→ “Ψ6l·ξ (−)”.
+Remark 4.2.5. By applying Deﬁnitions 3.3, 3.4, 3.5, 4.1, 4.2 [cf. also
+Remarks 3.3.1, 3.4.1, 3.5.1, 3.5.2, 3.5.3, 4.1.1, 4.1.2, 4.1.3, 4.2.2, 4.2.3, 4.2.4],
+the exposition of [IUTchII], §4, goes through without essential change, with
+the following exceptions: In the “μ6 -version” of [IUTchII], Deﬁnition 4.9,
+(ii), the following modiﬁcations should be made:
+“2l-torsion subgroup” −→ “6l-torsion subgroup”;
+“μ2l (‡ A)” −→ “μ6l (‡ A)”.
+Remark 4.2.6. By applying Deﬁnitions 3.3, 3.4, 3.5, 4.1, 4.2 [cf. also
+Remarks 3.3.1, 3.4.1, 3.5.1, 3.5.2, 3.5.3, 4.1.1, 4.1.2, 4.1.3, 4.2.2, 4.2.3, 4.2.4,
+4.2.5], the exposition of [IUTchIII], §1, §2, §3, goes through without essential
+change, with the following exceptions:
+(i) In the “μ6 -version” of [IUTchIII], Proposition 3.5, (ii), (c), the following modiﬁcation should be made:
+“2l-torsion subgroup” −→ “6l-torsion subgroup”.
+(ii) In the “μ6 -version” of [IUTchIII], Remark 3.11.4, (i), the following
+modiﬁcation should be made:
+“2l-th roots of unity” −→ “6l-th roots of unity”.
+(iii) In the “μ6 -version” of [IUTchIII], Fig. 3.4, the following modiﬁcation
+should be made:
+“μ2l ” −→ “μ6l ”.
+5. μ6 -Theory for [IUTchIV]
+In the present section, we ﬁrst give explicit log-volume estimates for the
+“μ6 -version” of Θ-pilot objects [cf. Theorem 5.1; Corollary 5.2]. [We refer to
+[IUTchIV], Theorem 1.10; [IUTchIV], Corollary 2.2, (ii), (iii), for the original
+“non-μ6 ” versions of these results.] Theorem 5.1 follows directly from the
+modiﬁed version of [IUTchI-III] discussed in §4 [cf. also §3], together with
+certain estimates from §2, while Corollary 5.2 is obtained by combining
+Theorem 5.1 with the theory of §1, §2. We then examine Corollary 5.2
+in more detail in the case of mono-complex number ﬁelds; this yields an
+eﬀective version of the ABC inequality over mono-complex number ﬁelds [cf.
+Theorem 5.3], as well as an eﬀective version of a conjecture of Szpiro over the
+ﬁeld of rational numbers [cf. Theorem 5.4]. As an application, we compute
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+33
+
+an explicit integer n0 > 0 such that for any prime number p ≥ n0 , the
+Fermat equation xp + y p = z p does not have any positive integer solutions
+[cf. Corollary 5.8], i.e., we give an alternative approach, via fundamentally
+diﬀerent techniques, to verifying an eﬀective asymptotic version of “Fermat’s
+Last Theorem”, as proven in [Wls]. We also apply the eﬀective version of
+the ABC inequality that we obtain to a generalized version of the Fermat
+equation [cf. Corollary 5.9].
+Theorem 5.1. (Log-volume estimates for the “μ6 -version” of Θpilot objects) Fix a collection of μ6 -initial Θ-data [cf. Deﬁnition 4.1].
+Suppose that we are in the situation of the “μ6 -version” of [IUTchIII], Corollary 3.12 [cf. Remark 4.2.6], and that the elliptic curve EF has good reduction at every place ∈ V(F )good ∩V(F )non that does not divide 2·3·5·l. In
+def
+
+the notation of Deﬁnition 4.1, let us write dmod = [Fmod : Q], (1 ≤) emod (≤
+dmod ) for the maximal ramiﬁcation index of Fmod [i.e., of places ∈ Vnon
+mod ]
+def
+
+def
+
+over Q, d∗mod = 212 · 33 · 5 · dmod , e∗mod = 212 · 33 · 5 · emod (≤ d∗mod ), and
+def
+
+Fmod ⊆ Ftpd = Fmod (EFmod [2]) ⊆ F
+for the “tripodal” intermediate ﬁeld obtained from Fmod by adjoining the
+ﬁelds of deﬁnition of the 2-torsion points of any model of EF ×F F over
+Fmod [cf. [IUTchIV], Proposition 1.8, (ii), (iii)]. Moreover, we assume that
+the (3 · 5)-torsion points of EF are deﬁned over F , and that
+√
+√
+def
+F = Fmod ( −1, EFmod [2 · 3 · 5]) = Ftpd ( −1, EFtpd [3 · 5])
+√
+— i.e., that F is obtained from Ftpd by adjoining −1, together with the
+ﬁelds of deﬁnition of the (3 · 5)-torsion points of a model EFtpd of the elliptic
+curve EF ×F F over Ftpd determined by the Legendre form of the Weierstrass equation [cf., e.g., the statement of Corollary 5.2, below; [IUTchIV],
+Proposition 1.8, (vi)]. [Thus, it follows from [IUTchIV], Proposition 1.8,
+(iv), that EF ∼
+= EFtpd ×Ftpd F over F , and from Deﬁnition 4.1 that l = 5.]
+If Fmod ⊆ F ⊆ K is any intermediate extension which is Galois over Fmod ,
+then we shall write
+F
+dADiv
+∈ ADivR (F )
+for the eﬀective arithmetic divisor determined by the diﬀerent ideal of F
+over Q,
+F
+qADiv
+∈ ADivR (F )
+for the eﬀective arithmetic divisor determined by the q-parameters of the
+def
+elliptic curve EF at the elements of V(F )bad = Vbad
+mod ×Vmod V(F ) (= ∅)
+[cf. [GenEll], Remark 3.3.1],
+F
+
+
+fADiv
+∈ ADivR (F )
+
+F
+
+
+),
+for the eﬀective arithmetic divisor whose support coincides with Supp(qADiv
+but all of whose coeﬃcients are equal to 1 — i.e., the conductor — and
+
+def
+
+def
+
+F
+
+F
+
+
+
+log(dFv  ) = degV(F )v (dADiv
+) ∈ R≥0 ; log(dFvQ ) = degV(F )v (dADiv
+) ∈ R≥0
+Q
+
+def
+
+F
+
+
+log(dF ) = deg(dADiv
+) ∈ R≥0
+
+34
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+def
+
+def
+
+F
+
+F
+
+
+
+log(qv ) = degV(F )v (qADiv
+) ∈ R≥0 ; log(qvQ ) = degV(F )v (qADiv
+) ∈ R≥0
+Q
+
+def
+
+F
+
+
+log(q) = deg(qADiv
+) ∈ R≥0
+
+def
+
+def
+
+F
+
+F
+
+
+
+log(fFv  ) = degV(F )v (fADiv
+) ∈ R≥0 ; log(fFvQ ) = degV(F )v (fADiv
+) ∈ R≥0
+Q
+
+def
+
+F
+
+
+log(fF ) = deg(fADiv
+) ∈ R≥0
+
+def
+
+def
+
+— where v ∈ Vmod = V(Fmod ), vQ ∈ VQ = V(Q), V(F )v = V(F ) ×Vmod
+def
+
+{v}, V(F )vQ = V(F )×VQ {vQ } [cf. also [IUTchIV], Deﬁnition 1.9]. Here,
+we observe that the various “log(q(−) )’s” are independent of the choice of
+F , and that the quantity “| log(q)| ∈ R>0 ” deﬁned in the μ6 -version of
+[IUTchIII], Corollary 3.12 [cf. Remark 4.2.6], is equal to 2l1 · log(q) ∈ R [cf.
+the deﬁnition of “q ” in [IUTchI], Example 3.2, (iv)]. Moreover, suppose
+v
+
+that
+
+l ≥ 1015 .
+Then one may take the constant “CΘ ∈ R” of the μ6 -version of [IUTchIII],
+Corollary 3.12 [cf. Remark 4.2.6], to be
+l+1
+4·| log(q)| ·
+
+(1 + 12·dlmod ) · (log(dFtpd ) + log(fFtpd )) + 4.08803 · e∗mod · l
+) · log(q) − 1
+− 16 · (1 − 12
+l2
+
+and hence, by applying the inequality “CΘ ≥ −1” of the μ6 -version of
+[IUTchIII], Corollary 3.12 [cf. Remark 4.2.6], conclude that
+1
+6 · log(q)
+
+≤ (1 + 20·dlmod ) · (log(dFtpd ) + log(fFtpd )) + 4.0881 · e∗mod · l
+≤ (1 + 20·dlmod ) · (log(dF ) + log(fF )) + 4.0881 · e∗mod · l.
+
+Proof. Theorem 5.1 follows by applying a similar argument to the argument
+applied in the proof of [IUTchIV], Theorem 1.10. In the present paper,
+however, we replace some of the estimates applied in the proof of [IUTchIV],
+Theorem 1.10, as follows:
+• We replace the estimate “ 4(l+5)
+≤ 20
+l+1
+3 ” appearing in the ﬁnal portion
+of Step (v) of the proof of [IUTchIV], Theorem 1.10, by the estimate
+4(l+5)
+l+1
+
+16
+= 4 + l+1
+≤ 4 + 100
+≤ 4 + 10−13
+l
+
+— cf. our assumption that l ≥ 1015 .
+∗
+·log(s≤ ) ≤ 43 ·(e∗mod ·l +ηprm )” appearing
+• We replace the estimate “lmod
+in Step (viii) of the proof of [IUTchIV], Theorem 1.10, by the estimate
+∗
+lmod
+· log(s≤ ) ≤ 1.022 · e∗mod · l
+
+— cf. Proposition 2.2, (i); our assumption that l ≥ 1015 , which implies the
+estimate e∗mod · l ≥ 212 · 33 · 5 · 1015 ≥ ηprm = 5 · 1020 .
+• We replace the estimate
+“ 13 · 43 · e∗mod · l ≥ 2 · 2 · 212 · 3 · 5 · l ≥ 2 · log(l) + 56”
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+35
+
+appearing in Step (viii) of the proof of [IUTchIV], Theorem 1.10, by the
+estimate
+10−5 · 1.022 · e∗mod · l ≥ (10−5 · 212 · 32 · 5) · 3l ≥ 3l ≥ 2 · log(l) + 56
+— where the ﬁrst (respectively, second; third) inequality follows from the
+estimate 1.022 ≥ 1 (respectively, 212 · 32 · 5 ≥ 105 ; l ≥ max{56, log(l)}
+[which is a consequence of our assumption that l ≥ 1015 ]).
+In light of these [three] modiﬁcations, together with the estimate
+(4 + 10−13 + 10−5 ) · 1.022 ≤ (4 + 2 · 10−5 ) · 1.022 ≤ 4.08803,
+we conclude that one may take the constant “CΘ ∈ R” to be the constant
+stated in Theorem 5.1.
+Finally, by replacing the estimate “(1 − 12
+)−1 ≤ 2” appearing in the
+l2
+ﬁnal portion of Step (viii) of the proof of [IUTchIV], Theorem 1.10, by the
+estimate
+)−1 = 1 + l2 12
+≤ 1 + 100
+≤ 1 + 10−13
+(1 − 12
+l
+l2
+−12
+[where we apply the estimates l ≥ 1015 , l2 − 12 ≥ l], we obtain [by applying
+the estimate 4.08803 · (1 + 10−13 ) ≤ 4.0881] the ﬁnal inequality of Theorem
+5.1.
+
+Corollary 5.2. (Construction of suitable μ6 -initial Θ-data) Write X
+for the projective line over Q; D ⊆ X for the divisor consisting of the
+three points “0”, “1”, and “∞”; (Mell )Q for the moduli stack of elliptic
+curves over Q. We shall regard X as the “λ-line” — i.e., we shall regard
+the standard coordinate on X as the “λ” in the Legendre form “y 2 =
+x(x − 1)(x − λ)” of the Weierstrass equation deﬁning an elliptic curve —
+def
+
+and hence as being equipped with a natural classifying morphism UX =
+X \ D → (Mell )Q [cf. the discussion preceding [IUTchIV], Proposition 1.8].
+Let κ ∈ R>0 ∩ R≤1 ;
+∼
+
+def
+
+
+
+K = KV(Q)arc (κ) ⊆ UX (Q) (→ Q )
+a compactly bounded subset [cf. Deﬁnition 1.13]; d ∈ Z>0 [cf. [IUTchIV],
+Corollary 2.2, (ii), (iii)];  ∈ R>0 ∩R≤1 [cf. [IUTchIV], Corollary 2.2, (iii)].
+Write
+log(q∀(−) )
+for the R-valued function on (Mell )Q (Q), hence on UX (Q), obtained by
+forming the normalized degree “deg(−)” of the eﬀective arithmetic divisor
+determined by the q-parameters of an elliptic curve over a number ﬁeld
+at arbitrary nonarchimedean places [cf. [IUTchIV], Corollary 2.2, (i)];
+UX (Q)≤d ⊆ UX (Q) for the subset of Q-rational points deﬁned over a ﬁnite
+extension ﬁeld of Q of degree ≤ d; UX (Q)mcx ⊆ UX (Q) for the subset of Qrational points deﬁned over a mono-complex number ﬁeld [cf. Deﬁnition
+1.2]. Set
+def
+
+δ = 212 · 33 · 5 · d = 552960 · d;
+κlog = 5 · 10−13 − 6.01 · 10−15 log(κ)
+def
+
+36
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+[cf. the term “HK ” in the ﬁrst display of [IUTchIV], Corollary 2.2, (iii)];
+⎧
+(d = 1)
+3.4 · 1030 · −166/81
+⎪
+⎪
+⎨
+def
+hd () =
+6 · 1031 · −174/85
+(d = 2)
+⎪
+⎪
+⎩
+3.4 · 1030 · −166/81 · d5 (d ≥ 3)
+4+d ” in the ﬁrst display of [IUTchIV],
+[cf. the term “Hunif · −3 · −3
+d · d
+Corollary 2.2, (iii), where we take “d ” to be 1]. Then there exists a ﬁnite
+subset
+
+Excκ,d, ⊆ UX (Q)≤d
+
+(respectively, Excmcx
+⊆ UX (Q)≤d ∩ UX (Q)mcx )
+d,
+
+— which depends only on κ, d,  (respectively, d, ) and contains all points
+corresponding to elliptic curves that admit automorphisms of order > 2 —
+satisfying the following properties:
+• The function log(q∀(−) ) is
+≤ max{κlog , hd ()}
+
+(respectively, ≤ hd ())
+
+on Excκ,d, (respectively, Excmcx
+d, ).
+• Let EF be an elliptic curve over a number ﬁeld F ⊆ Q that determines
+a Q-valued point of (Mell )Q which lifts [not necessarily uniquely!] to a point
+xE ∈ UX (F ) ∩ UX (Q)≤d ∩ K
+(respectively, xE ∈ UX (F ) ∩ UX (Q)≤d ∩ UX (Q)mcx )
+such that
+/ Excκ,d, (respectively, xE ∈
+/ Excmcx
+xE ∈
+d, ).
+Write Fmod for the minimal ﬁeld of deﬁnition of the corresponding point
+∈ (Mell )Q (Q) and
+def
+
+Fmod ⊆ Ftpd = Fmod (EFmod [2]) ⊆ F
+for the “tripodal” intermediate ﬁeld obtained from Fmod by adjoining the
+ﬁelds of deﬁnition of the 2-torsion points of any model of EF ×F Q over
+Fmod [cf. [IUTchIV], Proposition 1.8, (ii), (iii)]. Moreover, we assume that
+the (3 · 5)-torsion points of EF are deﬁned over F , and that
+√
+√
+def
+F = Fmod ( −1, EFmod [2 · 3 · 5]) = Ftpd ( −1, EFtpd [3 · 5])
+√
+— i.e., that F is obtained from Ftpd by adjoining −1, together with the
+ﬁelds of deﬁnition of the (3 · 5)-torsion points of a model EFtpd of the elliptic
+curve EF ×F Q over Ftpd determined by the Legendre form of the Weierstrass equation discussed above [cf. [IUTchIV], Proposition 1.8, (vi)]. [Thus,
+it follows from [IUTchIV], Proposition 1.8, (iv), that EF ∼
+= EFtpd ×Ftpd F
+over F , so xE ∈ UX (Ftpd ) ⊆ UX (F ); it follows from [IUTchIV], Proposition 1.8, (v), that EF has stable reduction at every element of V(F )non .]
+Write
+log(q∀ )
+for the result of applying the function “log(q∀(−) )” to xE . Then EF and Fmod
+arise as the “EF ” and “Fmod ” for a collection of μ6 -initial Θ-data as in
+Theorem 5.1 that satisﬁes the following conditions:
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+1
+
+37
+
+1
+
+(C1) (1015 ·d ≤) (log(q∀ )) 2 ≤ l ≤ 1.464δ·(log(q∀ )) 2 ·log(1.45δ·log(q∀ ));
+(C2) we have an inequality
+∀
+1
+6 · log(q )
+
+≤ (1 + ) · (log-diﬀX (xE ) + log-condD (xE ))
+
+— where we write log-diﬀX for the [normalized] log-diﬀerent function on
+UX (Q) [cf. [GenEll], Deﬁnition 1.5, (iii)]; log-condD for the [normalized]
+log-conductor function on UX (Q) [cf. [GenEll], Deﬁnition 1.5, (iv)].
+
+Proof. First, let us recall that if the once-punctured elliptic curve associated
+to EF fails to admit an F -core, then it holds that
+j(EF ) ∈ {214 · 313 · 5−3 , 22 · 733 · 3−4 , 26 · 33 , 0}
+[cf. Proposition 2.1]. Thus, if we take the set Excκ,d, (respectively, Excmcx
+d, ) to
+be the [ﬁnite!] collection of points corresponding to these four j-invariants,
+then we may assume that the once-punctured elliptic curve associated to EF
+admits an F -core — hence, in particular, does not have any automorphisms
+of order > 2 over Q — and that it holds that
+log(q∀(−) ) ≤ max{log(53 ), log(34 )} = log(53 )
+on Excκ,d, (respectively, Excmcx
+d, ) [cf. Remark 1.10.1]. [In the discussion to
+follow, it will in fact be necessary to enlarge the ﬁnite set Excκ,d, (respectively, Excmcx
+d, ) several times.]
+Next, let us write
+h = log(q∀ ) =
+def
+
+1
+[F :Q] ·
+
+
+
+hv · fv · log(pv )
+
+v∈V(F )non
+
+— that is to say, hv = 0 for those v at which EF has good reduction; hv ∈ N≥1
+is the local height of EF [cf. [GenEll], Deﬁnition 3.3] for those v at which
+EF has bad multiplicative reduction. Now it follows [from [GenEll], Proposition 1.4, (iv) [cf. also the proof of [IUTchIV], Corollary 2.2, (i)] (respectively, from Proposition 1.9, (iii), of the present paper)] that the inequality
+h1/2 < 1015 · d implies that there is only a ﬁnite number of possibilities for
+the j-invariant of EF . Thus, by possibly enlarging the ﬁnite set Excκ,d,
+(respectively, Excmcx
+d, ), we may assume without loss of generality that
+h1/2 ≥ 1015 · d (≥ ξprm ),
+[cf. the notation of Proposition 2.2], and that it holds that
+log(q∀(−) ) ≤ max{log(53 ), 1030 · d2 } = 1030 · d2
+on Excκ,d, (respectively, Excmcx
+d, ).
+
+38
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+Thus, since [F : Q] ≤ δ [cf. the properties (E3), (E4), (E5) in the proof
+of [IUTchIV], Theorem 1.10], it follows that
+
+δ · h1/2 ≥ [F : Q] · h1/2 =
+h−1/2 · hv · fv · log(pv )
+≥
+
+
+v
+
+≥
+hv
+
+v
+
+h
+
+−1/2
+
+
+
+· hv · log(pv ) ≥
+
+h−1/2 · hv · log(pv )
+
+hv ≥ h1/2
+
+
+
+log(pv )
+
+≥ h1/2
+
+and
+1.45δ · h1/2 · log(1.45δ · h) ≥ 1.45 · [F : Q] · h1/2 · log(1.45 · [F : Q] · h)
+
+≥
+1.45 · h−1/2 · log(1.45 · hv · fv · log(pv )) · hv · fv · log(pv )
+hv = 0
+
+≥
+
+
+
+h−1/2 · log(hv ) · hv ≥
+
+≥
+hv
+
+h−1/2 · log(hv ) · hv
+
+hv ≥ h1/2
+
+hv = 0
+
+
+
+
+
+log(hv )
+
+≥ h1/2
+
+— where the sums are all over v ∈ V(F )non [possibly subject to various conditions, as indicated], and we apply the elementary estimate 1.45 · log(pv ) ≥
+1.45 · log(2) ≥ 1.
+Thus, in summary, we conclude from the estimates made above that if we
+take
+A
+to be the [ﬁnite!] set of prime numbers p such that p either
+(S1) is ≤ h1/2 ,
+(S2) divides a nonzero hv for some v ∈ V(F )non , or
+(S3) is equal to pv for some v ∈ V(F )non for which hv ≥ h1/2 ,
+then it follows from Proposition 2.2, (ii), together with our assumption that
+h1/2 ≥ ξprm , that, in the notation of Proposition 2.2, (ii),
+θA ≤ 2 · h1/2 + δ · h1/2 + 1.45δ · h1/2 · log(1.45δ · h)
+= (2 + δ + 1.45δ · log(1.45δ · h)) · h1/2
+≤ 1.4621δ · h1/2 · log(1.45δ · h)
+— where we apply the estimates 1 + 0.00071 ≤ 2;
+2 ≤ 0.0121δ · log(1.45δ · 1030 ) − δ ≤ 0.0121δ · log(1.45δ · h) − δ
+[cf. the fact that the function
+0.0121x · log(1.45x · 1030 ) − x
+is monotonically increasing for x ∈ R≥552960 ]. On the other hand, since we
+have
+ξprm ≤ h1/2 ≤ 0.0001δ · h1/2 · log(1.45δ · h)
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+39
+
+[cf. the estimates 1 ≤ 0.0001δ and 1 ≤ log(1.45δ · h)], we obtain that
+1.00072 · (θA + ξprm ) ≤ 1.464δ · h1/2 · log(1.45δ · h)
+[cf. the estimate 1.00072·(1.4621+0.0001) ≤ 1.464]. In particular, it follows
+from Proposition 2.2, (ii), that there exists a prime number l such that
+(P1) (1015 ·d ≤) h1/2 ≤ l ≤ 1.464δ ·h1/2 ·log(1.45δ ·h) [cf. the condition
+(C1) in the statement of Corollary 5.2];
+(P2) l does not divide any nonzero hv for v ∈ V(F )non ;
+(P3) if l = pv for some v ∈ V(F )non , then hv < h1/2 .
+Next, let us observe that, again by possibly enlarging the ﬁnite set Excκ,d,
+(respectively, Excmcx
+d, ), we may assume without loss of generality that, in the
+terminology of [GenEll], Lemma 3.5,
+(P4) EF does not admit an l-cyclic subgroup scheme,
+and that it holds that
+log(q∀(−) ) ≤ max{1030 · d2 , κlog }
+(respectively, log(q∀(−) ) ≤ max{1030 · d2 , 5.12 · 10−13 } = 1030 · d2 )
+on Excκ,d, (respectively, Excmcx
+d, ). Indeed, the existence of an l-cyclic subgroup scheme of EF , together with the fact that l ≥ 1015 [cf. (P1)], would
+imply that
+h ≤ κlog
+
+(respectively, h ≤ 5.12 · 10−13 )
+
+[cf. (P2); Remark 1.10.1; Corollary 1.14, (ii) (respectively, Corollary 1.14,
+(iii))]. On the other hand, [by [GenEll], Proposition 1.4, (iv) [cf. also
+the proof of [IUTchIV], Corollary 2.2, (i)] (respectively, Proposition 1.9,
+(iii))] this implies that there is only a ﬁnite number of possibilities for the
+j-invariant of EF . This completes the proof of the above observation.
+Next, we observe that
+(P5) if we write Vbad
+mod for the set of nonarchimedean places ∈ Vmod that
+do not divide l and at which EF has bad multiplicative reduction,
+then Vbad
+mod = ∅.
+Indeed, if Vbad
+mod = ∅, then it follows, in light of the deﬁnition of h, from (P3)
+that
+h ≤ h1/2 · log(l).
+In particular, we have
+h1/2 ≤ log(l) ≤
+≤
+=
+≤
+
+log(1.464δ) + 0.5 · log(h) + log(log(1.45δ · h))
+log(1.464δ) + 0.5 · log(h) + log(1.45δ · h)
+1.5 · log(h) + log(1.464δ) + log(1.45δ)
+1.5 · log(h) + 2 · log(2δ)
+
+40
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+— where the second inequality follows from (P1); the third inequality follows
+from the fact that log(x) ≤ x for all x ∈ R≥1 ; the fourth inequality follows
+from the estimate 1.464 · 1.45 ≤ 4. Thus, if we write f (x) for the function
+x1/2 − 1.5 · log(x) − 2 · log(2δ),
+then it holds that f (h) ≤ 0. On the other hand, since [as is easily veriﬁed]
+f (x) is monotonically increasing for x ∈ R≥9 , we obtain that
+f (h) ≥ f (1030 · d2 )
+= 1015 · d − 3 · log(1015 · d) − 2 · log(213 · 33 · 5 · d)
+≥ 1015 · d − 5 · log(1015 · d) > 0
+— where we apply the estimate 213 · 33 · 5 ≤ 1015 ; the fact that 5 · log(x) < x
+for all x ∈ R≥13 — a contradiction. This completes the proof of the above
+observation. This property (P5) implies that
+(P6) the image of the outer homomorphism Gal(Q/F ) → GL2 (Fl ) determined by the l-torsion points of EF contains the subgroup SL2 (Fl ) ⊆
+GL2 (Fl ).
+Indeed, since, by (P5), EF has bad multiplicative reduction at some place
+∈ Vbad
+mod = ∅, (P6) follows formally from (P2), (P4), and [GenEll], Lemma
+3.1, (iii) [cf. the proof of the ﬁnal portion of [GenEll], Theorem 3.8].
+Now it follows formally from (P1), (P2), (P5), and (P6) that, if one takes
+“F ” to be Q, “F ” to be the number ﬁeld F of the above discussion, “XF ” to
+be the once-punctured elliptic curve associated to EF , “l” to be the prime
+bad
+number l of the above discussion, and “Vbad
+mod ”to be the set Vmod of (P5),
+then there exist data “C K ”, “V”, and “” such that all of the conditions of
+Deﬁnition 4.1 are satisﬁed, and, moreover, that
+(P7) the resulting μ6 -initial Θ-data
+(F /F, XF , l, C K , V, Vbad
+mod , )
+satisﬁes the various conditions in the statement of Theorem 5.1.
+Here, we note in passing that the crucial existence of data “V” and “”
+satisfying the requisite conditions follows, in essence, as a consequence of
+the fact [i.e., (P6)] that the Galois action on l-torsion points contains the
+full special linear group SL2 (Fl ).
+In light of (P7), we may apply Theorem 5.1 [cf. also the fact that e∗mod ≤
+d∗mod ] to conclude that
+1
+6 · log(q)
+
+≤ (1 + 20·dlmod ) · (log(dFtpd ) + log(fFtpd )) + 4.0881 · d∗mod · l
+≤ (1 + δ · h−1/2 ) · (log(dFtpd ) + log(fFtpd ))
+
++ 5.985 · δ 2 · h1/2 · log(1.45δ · h)
+— where we apply (P1), as well as the estimates 20 · dmod ≤ d∗mod ≤ δ
+and 4.0881 · 1.464 ≤ 5.985.
+Next, let us observe that it follows from (P3) that
+1
+1
+6 · h − 6 · log(q)
+
+≤
+
+1/2
+1
+· log(l).
+6 ·h
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+41
+
+Thus, we conclude that
+1
+6 ·h
+
+≤ (1 + δ · h−1/2 ) · (log(dFtpd ) + log(fFtpd )) + 16 · h1/2 · log(l)
++ 5.985 · δ 2 · h1/2 · log(1.45δ · h)
+
+and hence that
+(P8) the following equality holds:
+1
+6 ·h
+
+· (1 − h−1/2 · log(l) − 35.91 · δ 2 · h−1/2 · log(1.45δ · h))
+≤ (1 + δ · h−1/2 ) · (log(dFtpd ) + log(fFtpd )).
+
+Now we claim that
+Claim 5.2A: If h ≥ hd (), then it holds that
+71.82 · δ 2 · h−1/2 · log(1.45δ · h) ≤  · (1 − 10−7 ).
+Indeed, since [as is easily veriﬁed] the function x−1/2 · log(1.45δ · x) is monotonically decreasing for x ∈ R>1 , to verify Claim 5.2A, it suﬃces to show
+that
+71.82 · δ 2 · hd ()−1/2 · log(1.45δ · hd ()) ≤  · (1 − 10−7 ).
+def
+
+Let us prove this inequality. First, suppose that d ∈ {1, 2}. Write δ1 =
+def
+
+212 · 33 · 5, δ2 = 213 · 33 · 5. Then one veriﬁes easily that
+71.82 · δ 2 · hd (1)−1/2 · log(1.45δ · hd (1)) ≤ 1 − 10−7 .
+Thus, if d = 1, then we have
+71.82 · δ 2 · hd ()−1/2 · log(1.45δ · hd ())
+2/81
+
+log(
+)·83
+= 71.82 · δ 2 · hd (1)−1/2 · log(1.45δ · hd (1)) · 83/81 · 1 − log(1.45δ·h
+d (1))
+
+≤  · (1 − 10−7 ) · 2/81 · (1 − log(2/81 )) ≤  · (1 − 10−7 );
+if d = 2, then we have
+71.82 · δ 2 · hd ()−1/2 · log(1.45δ · hd ())
+2/85
+
+log(
+)·87
+= 71.82 · δ 2 · hd (1)−1/2 · log(1.45δ · hd (1)) · 87/85 · 1 − log(1.45δ·h
+d (1))
+
+≤  · (1 − 10−7 ) · 2/85 · (1 − log(2/85 )) ≤  · (1 − 10−7 ).
+Here, we apply the estimate log(1.45δ1 ·h1 (1)) ≥ 83; the estimate log(1.45δ2 ·
+h2 (1)) ≥ 87; our assumption that 0 <  ≤ 1; the fact that x · (1 − log(x)) ≤ 1
+for all x ∈ R>0 .
+Next, suppose that d ≥ 3. Then we have
+71.82 · δ 2 · hd ()−1/2 · log(1.45δ · hd ())
+6·log(d)
+= 71.82 · δ12 · h1 ()−1/2 · log(1.45δ1 · h1 ()) · d−1/2 · 1 + log(1.45δ
+1 ·h1 ())
+6
+· log(d)) ≤  · (1 − 10−7 )
+≤  · (1 − 10−7 ) · d−1/2 · (1 + 83
+
+— where we apply the estimate log(1.45δ1 · h1 ()) ≥ log(1.45δ1 · h1 (1)) ≥ 83;
+6
+·log(x)) ≤ 1 for all x ∈ R≥3 ; the estimate obtained
+the fact that x−1/2 ·(1+ 83
+above in the case where d = 1. This completes the proof of Claim 5.2A.
+
+42
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+Next, we claim that
+Claim 5.2B: If h ≥ hd (), then it holds that
+2 · h−1/2 · log(l) + 71.82 · δ 2 · h−1/2 · log(1.45δ · h) + δ · h−1/2 ≤ .
+Indeed, since [cf. (P1)] it holds that
+71.82 · δ · log(1.45δ · h) ≥ 71.82 · 212 · 33 · 5 · log(1.45 · 212 · 33 · 5 · 1030 ) ≥ 108 ,
+we have
+71.82 · δ 2 · h−1/2 · log(1.45δ · h) ≥ 108 · δ · h−1/2 .
+Moreover, since it holds that
+71.82 · δ 2 ≥ 71.82 · (212 · 33 · 5)2 ≥ 4 · 1012 ,
+we have [cf. (P1)]
+71.82 · δ 2 · h−1/2 · log(1.45δ · h)
+≥ 1012 · 2 · h−1/2 · log((1.45δ · h)2 )
+≥ 1012 · 2 · h−1/2 · log(1.464δ · h1/2 · 1.45δ · h)
+≥ 1012 · 2 · h−1/2 · log(1.464δ · h1/2 · log(1.45δ · h))
+≥ 1012 · 2 · h−1/2 · log(l)
+— where the second inequality follows from the estimate 1.45 · h1/2 ≥ 1.464;
+the third inequality follows from the fact that x ≥ log(x) for all x ∈ R≥1 .
+Thus, it follows from Claim 5.2A that
+2 · h−1/2 · log(l) + 71.82 · δ 2 · h−1/2 · log(1.45δ · h) + δ · h−1/2
+≤ (10−12 + 1 + 10−8 ) · 71.82 · δ 2 · h−1/2 · log(1.45δ · h)
+≤ (10−12 + 1 + 10−8 ) ·  · (1 − 10−7 ) ≤ 
+— where we apply the estimate (10−12 + 1 + 10−8 ) · (1 − 10−7 ) ≤ 1. This
+completes the proof of Claim 5.2B.
+Here, note that the inequality h < hd () implies [by [GenEll], Proposition
+1.4, (iv) [cf. also the proof of [IUTchIV], Corollary 2.2, (i)] (respectively,
+Proposition 1.9, (iii))] that there is only a ﬁnite number of possibilities for
+the j-invariant of EF . Thus, by possibly enlarging the ﬁnite set Excκ,d,
+(respectively, Excmcx
+d, ), we may assume without loss of generality that
+h ≥ hd (),
+and that it holds that
+log(q∀(−) ) ≤ max{1030 · d2 , κlog , hd ()}
+= max{κlog , hd ()}
+(respectively,
+log(q∀(−) ) ≤ max{1030 · d2 , hd ()}
+= hd ())
+[cf. the estimate hd () ≥ 1030 · d2 ] on Excκ,d, (respectively, Excmcx
+d, ).
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+43
+
+Thus, in light of Claim 5.2B, it follows from (P8) [cf. also (P1)] that
+1
+6 ·h
+
+≤ (1 + ) · (log(dFtpd ) + log(fFtpd ))
+≤ (1 + ) · (log-diﬀX (xE ) + log-condD (xE ))
+
+— where we apply the fact that for any x, y ∈ R>0 such that 2x + y ≤ , it
+holds that
+(1 − x)−1 · (1 + y) ≤ 1 + 
+[which is a consequence of the fact that 0 <  ≤ 1]. This completes the proof
+of (C2), hence [cf. (P1), (P7)] of Corollary 5.2.
+
+Theorem 5.3. (Eﬀective versions of ABC/Szpiro inequalities over
+mono-complex number ﬁelds) Let L be a mono-complex number ﬁeld
+[cf. Deﬁnition 1.2]; a, b, c ∈ L× nonzero elements of L such that
+a + b + c = 0;
+ a positive real number ≤ 1. Write Ea,b,c for the elliptic curve over L
+deﬁned by the equation y 2 = x(x − 1)(x + ac ); j(Ea,b,c ) for the j-invariant of
+def
+
+Ea,b,c ; ΔL for the absolute value of the discriminant of L; d = [L : Q];
+
+def
+max{|a|v , |b|v , |c|v };
+HL (a, b, c) =
+v∈V(L)
+def
+
+IL (a, b, c) = {v ∈ V(L)non | {|a|v , |b|v , |c|v } ≥ 2} ⊆ V(L)non ;
+def
+
+radL (a, b, c) =
+
+
+
+(OL /pv );
+
+v∈IL (a,b,c)
+
+
+def
+
+hd () =
+
+3.4 · 1030 · −166/81 (d = 1)
+6 · 1031 · −174/85
+
+(d = 2).
+
+Then the following hold:
+(i) We have [cf. Deﬁnition 1.1, (i)]
+1
+6 · hnon (j(Ea,b,c ))
+
+≤ max{ d1 · (1 + ) · log(ΔL · radL (a, b, c)), 16 · hd ()}
+≤
+
+1
+1
+d · (1 + ) · log(ΔL · radL (a, b, c)) + 6 · hd ().
+
+(ii) We have
+HL (a, b, c) ≤ 25d/2 · max{exp( d4 · hd ()), (ΔL · radL (a, b, c))3(1+)/2 }
+≤ 25d/2 · exp( d4 · hd ()) · (ΔL · radL (a, b, c))3(1+)/2 .
+Proof. Assertion (i) follows immediately from Corollary 5.2 [cf. the bound
+on the restriction of the function “log(q∀(−) )” to “Excmcx
+d, ”; the displayed
+inequality of (C2)], Remark 1.10.1, and the various deﬁnitions involved.
+Next, we consider assertion (ii). Write w ∈ V(L)arc for the unique element
+of V(L)arc [cf. Deﬁnition 1.2]. First, we claim the following:
+
+44
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+Claim 5.3A: It holds that
+b
+d · htor
+non ( c ) =
+
+
+
+1
+2 log |bc|w +
+
+log max{|a|v , |b|v , |c|v }.
+
+v∈V(L)non
+
+Indeed, we compute:
+b
+d · htor
+non ( c ) =
+
+
+
+1
+2
+
+log max{| cb |v , | cb |v }
+
+v∈V(L)non
+
+=
+
+
+
+1
+2
+
+1
+log( |bc|
+· max{|b|2v , |c|2v })
+v
+
+v∈V(L)non
+
+=
+
+
+
+1
+2 log |bc|w +
+
+log max{|b|v , |c|v }
+
+v∈V(L)non
+
+=
+
+
+
+1
+2 log |bc|w +
+
+log max{|a|v , |b|v , |c|v }
+
+v∈V(L)non
+
+— where the third equality (respectively, the fourth equality) follows from
+the product formula (respectively, the fact that for v ∈ V(L)non ,
+|a|v = |b + c|v ≤ max{|b|v , |c|v }).
+This completes the proof of Claim 5.3A.
+Next, we observe that, to verify assertion (ii), we may assume without
+loss of generality that
+||a||w ≤ ||b||w ≤ ||c||w .
+Then we observe the following:
+Claim 5.3B: It holds that || cb ||w ≥ 12 , hence that | cb |w ≥ ( 12 )d .
+Indeed, since a + b + c = 0, we have
+||c||w = ||a + b||w ≤ ||a||w + ||b||w ≤ 2 · ||b||w .
+This completes the proof of Claim 5.3B.
+Now we claim the following:
+Claim 5.3C: It holds that
+1
+6 · hnon (j(Ea,b,c ))
+
+≥
+
+2
+5
+3d · log(HL (a, b, c)) − 3 log 2.
+
+Indeed, it follows from Lemma 1.3, (i), (iv); Proposition 1.8, (i); Remark
+1.10.1, that
+(∗1 )
+
+1
+4
+6 · hnon (j(Ea,b,c )) + 3 log 2
+
+≥
+≥
+
+On the other hand, we have
+(∗2 )
+
+b
+d · htor
+non ( c ) =
+
+1
+2 log |bc|w +
+
+tor a
+tor b
+tor b
+1
+3 · (hnon ( c ) + hnon ( c ) + hnon ( a ))
+tor b
+2
+3 · hnon ( c ).
+
+
+
+log max{|a|v , |b|v , |c|v }
+
+v∈V(L)non
+
+=
+
+1
+b
+2 log | c |w + log(HL (a, b, c))
+
+≥
+
+d
+1
+2 log 2 + log(HL (a, b, c))
+
+— where the ﬁrst equality (respectively, the second equality; the ﬁnal inequality) follows from Claim 5.3A (respectively, the fact that |c|w ≥ |b|w ≥
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+45
+
+|a|w ; Claim 5.3B). The inequality of Claim 5.3C follows immediately from
+(∗1 ) and (∗2 ).
+Finally, in light of assertion (i) and Claim 5.3C, we obtain that
+log(HL (a, b, c)) ≤ max{ d4 · hd (), 32 (1 + ) · log(ΔL · radL (a, b, c))} + 5d
+2 log 2.
+This completes the proof of assertion (ii).
+
+
+
+Remark 5.3.1. The astronomically large constants in the inequalities established in Theorem 5.3 reﬂect the explicit [i.e., “non-conjectural”] nature
+of inter-universal Teichmüller theory. Their size may seem quite unexpected,
+especially from the point of view of the classical [“conjectural”] literature on
+such inequalities, where sometimes it is even naively assumed that these
+constants may be taken to be as small as 1.
+Remark 5.3.2. The approach to applying the version of the ABC inequality
+established in Theorem 5.3, (ii), to “Fermat’s Last Theorem” in the present
+paper [cf. Corollary 5.8 below] extends to other diophantine equations [cf.
+Corollary 5.9 below]. Namely, in view of the very large constants [cf. Remark 5.3.1] that appear, in order to apply such an inequality to a concrete
+diophantine equation of the form u + v = w with polynomial functions u,
+v, w which involve, respectively, positive integers l, m, n as exponents, one
+needs ﬁrst to establish a lower bound on potential solutions of this equation
+[cf. Lemma 5.7 below; the second to last display of the proof of Corollary
+5.9]. One then applies a suitable version of the ABC inequality to obtain an
+upper bound on l, m, n, under the condition that the diophantine equation
+admits a solution of the desired type [cf. the portion of the proof of Corollary 5.8 subsequent to the application of Lemma 5.7; the ﬁnal display of the
+proof of Corollary 5.9]. Finally, the existence of solutions to the diophantine equation for l, m, n satisfying the upper bound may be investigated by
+means of computer calculations.
+Remark 5.3.3. In the notation of Theorem 5.3, let λ ∈ L . Write Eλ for
+the elliptic curve over L deﬁned by the equation y 2 = x(x − 1)(x − λ); DEλ
+(respectively, fEλ ) for the minimal discriminant ideal [cf. [Silv1], Chapter
+VIII, §8, the ﬁrst Deﬁnition] (respectively, conductor ideal [cf. [Silv2], Chapter IV, §10, the Deﬁnition preceding Example 10.5]) of Eλ over L. Let us
+ﬁrst observe that Eλ has semi-stable reduction at every place v ∈ V(L)non
+such that λ is integral at v, and v does not divide 2. If v ∈ V(L)non is such
+that λ is not integral at v, then observe the following:
+There exists an element u ∈ L× such that u = λw2 for some
+w ∈ L× , and, moreover, u is a unit or a uniformizer at v.
+Thus, Eλ is deﬁned by the equation
+(y  )2 = x (x − u)(x − uλ ),
+def
+
+where we write λ = λ−1 ∈ L× [so u and uλ are integral at
+def
+
+def
+
+v], x = uλ x, and y  = w3 y.
+
+46
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+In particular, by applying a similar argument to the argument applied in
+[Silv1], Chapter VII, §5, the proof of Proposition 5.4, we obtain that
+log(NL/Q (DEλ )) ≤ d · hnon (j(Eλ )) + 6(log(NL/Q (fEλ )) − log(radL (a, b, c)))
++ d · (8 − (−4)) log 2
+— where we take “a” (respectively, “b”; “c”) to be λ (respectively, 1−λ; −1);
+we write “NL/Q (−)” for the absolute norm of the ideal (−) of OL ; we recall
+that NL/Q (fEλ ) ≥ radL (a, b, c) [cf. Remark 1.10.1; [Silv1], Chapter III, §1,
+Proposition 1.7, (b), and its proof; [Silv2], Chapter IV, §10, Theorem 10.2,
+(a); [Silv2], Chapter IV, §10, Example 10.5; [Silv2], Chapter IV, §11, Ogg’s
+Formula 11.1 and its proof]. Then it follows immediately from Theorem 5.3,
+(i), that we have
+6(1+)
+
+NL/Q (DEλ ) ≤ 212d · max{ΔL
+6(1+)
+
+≤ 212d · ΔL
+
+· NL/Q (fEλ )6(1+) , exp(d · hd ())}
+
+· exp(d · hd ()) · NL/Q (fEλ )6(1+) .
+
+This may be regarded as an explicit version of the inequality
+“NormeK/Q (ΔE ) ≤ C(K, )(NormeK/Q (NE ))6+ ”
+conjectured in [Szp], §1, CONJECTURE 1 forme forte, in the case of L and
+Eλ as above.
+
+Remark 5.3.4. Let K be a ﬁeld such that 2 is invertible in K, E an elliptic
+curve over K whose 2-torsion points are K-rational. Then, by considering
+global sections, with suitable leading terms, of tensor powers of the line
+bundle on E determined by the origin [cf., e.g., [Hts], Chapter IV, the proof
+of Proposition 4.6], one concludes immediately that there exists λ ∈ K 
+such that E is isomorphic over K to the elliptic curve over K deﬁned by the
+equation y 2 = x(x − 1)(x − λ). Conversely, one veriﬁes immediately that
+the 2-torsion points of any elliptic curve Eλ over K deﬁned by an equation
+of the form y 2 = x(x − 1)(x − λ) for some λ ∈ K  are rational over K.
+
+Remark 5.3.5. By combining the inequalities in the second to last display
+of Remark 5.3.3 with [HS], Theorem 0.3, one obtains a numerically explicit
+version of the inequality that appears in a conjecture of Lang [cf. [HS],
+Conjecture 0.1] concerning a lower bound on the canonical height of nontorsion points, for elliptic curves “Eλ ” over “L” as in Remarks 5.3.3, 5.3.4.
+One may also apply the inequalities in the second to last display of Remark
+5.3.3 to obtain a “partially numerically explicit” version of the displayed
+inequality of [HS], Theorem 0.7, for elliptic curves “Eλ ” over “L” as in
+Remarks 5.3.3, 5.3.4.
+
+Theorem 5.4. (Eﬀective version of a conjecture of Szpiro) Let a, b,
+c be nonzero coprime integers such that
+a + b + c = 0;
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+47
+
+ a positive real number ≤ 1. Then we have
+|abc| = ||abc||C ≤ 24 · max{exp(1.7 · 1030 · −166/81 ), (rad(abc))3(1+) }
+≤ 24 · exp(1.7 · 1030 · −166/81 ) · (rad(abc))3(1+)
+— which may be regarded as an explicit version of the inequality
+  3+
+“|abc| ≤ C()
+p
+”
+p|abc
+
+conjectured in [Szp], §2 [i.e., the “forme
+forte” of loc. cit., where we note
+
+that the “p” to the right of the “ ” in the above display was apparently
+unintentionally omitted in loc. cit.].
+Proof. First, we claim the following:
+Claim 5.4A: In the notation of Theorem 5.3, suppose that
+||a||w ≤ ||b||w ≤ ||c||w
+— where w ∈ V(L)arc denotes the unique element of V(L)arc
+[cf. Deﬁnition 1.2]. Then it holds that
+−1/3
+HL (a, b, c) ≤ 24d/3 · max{exp( d6 · hd ()), (ΔL · radL (a, b, c))1+ } · |abc−2 |w
+.
+
+Indeed, it follows from Theorem 5.3, (i), that we have
+Claim 5.4B: It holds that
+1
+6 · hnon (j(Ea,b,c ))
+
+≤ max{ d1 · (1 + ) · log(ΔL · radL (a, b, c)), 16 · hd ()}.
+
+Now we claim the following:
+Claim 5.4C: It holds that
+1
+6 · hnon (j(Ea,b,c ))
+
+≥
+
+−2
+1
+1
+4
+d · log(HL (a, b, c)) + 3d · log |abc |w − 3 log 2.
+
+Let us verify Claim 5.4C. First, let us recall the inequality (∗1 ) in the proof
+of Theorem 5.3
+(†1 )
+
+1
+4
+6 · hnon (j(Ea,b,c )) + 3 log 2
+
+≥
+
+tor a
+tor b
+tor b
+1
+3 · (hnon ( c ) + hnon ( c ) + hnon ( a )).
+
+On the other hand, we compute:
+tor b
+tor b
+a
+d · (htor
+non ( c ) + hnon ( c ) + hnon ( a ))
+
+(†2 )
+=
+
+1
+2 · (log |ac|w + log |bc|w + log |ba|w ) + 3
+
+= log |abc|w + 3
+
+
+
+
+
+log max{|a|v , |b|v , |c|v }
+
+v∈V(L)non
+
+log max{|a|v , |b|v , |c|v }
+
+v∈V(L)non
+
+= log |abc−2 |w + 3 · log(HL (a, b, c))
+— where the ﬁrst equality (respectively, the third equality) follows from
+Claim 5.3A (respectively, the fact that |c|w ≥ |b|w ≥ |a|w ). The inequality
+of Claim 5.4C follows immediately from (†1 ) and (†2 ). The inequality of
+Claim 5.4A then follows immediately from the inequalities of Claims 5.4B,
+5.4C.
+
+48
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+Next, we observe that, to verify Theorem 5.4, we may assume without
+loss of generality that
+||a||C ≤ ||b||C ≤ ||c||C .
+Now we apply the inequality in Claim 5.4A to the present situation, by
+taking “L” to be Q. Then we have
+−1/3
+
+||c||C ≤ 24/3 · max{exp( 16 · 3.4 · 1030 · −166/81 ), (rad(abc))1+ } · ||abc−2 ||C
+
+.
+
+Therefore, by raising this inequality to the 3-rd power, we conclude that
+||abc||C ≤ 24 · max{exp(1.7 · 1030 · −166/81 ), (rad(abc))3(1+) }.
+
+
+This completes the proof of Theorem 5.4.
+
+In the following, we give an alternative approach to proving an eﬀective
+asymptotic version of “Fermat’s Last Theorem”, as proven in [Wls]. The
+following Lemmas 5.5, 5.6, 5.7 are entirely elementary, but their statements
+and proofs are given in full detail for lack of a suitable reference.
+Lemma 5.5. (Elementary identity) Let p ≥ 3 be an odd integer; r, s
+integers such that r + s = 0. Then we have
+p
+
+p
+
+(r + s )(r + s)
+
+−1
+
+= ps
+
+p−1
+
+− (r + s)
+
+p−2
+
+
+(−1)i+1 (i + 1)rp−2−i si .
+
+i=0
+
+Proof. One veriﬁes immediately that we may assume without loss of generality that r = 0. Then, to verify Lemma 5.5, it suﬃces to show [by dividing
+by rp−1 ] the following equality of elements ∈ Q(x):
+p
+
+(1 + x )(1 + x)
+
+−1
+
+= px
+
+p−1
+
+− (1 + x)
+
+p−2
+
+
+(−1)i+1 (i + 1)xi .
+
+i=0
+
+Write ∂ for the derivation d/dx on Q(x). Then:
+pxp−1 = ∂(1 + xp ) = ∂{(1 + xp )(1 + x)−1 · (1 + x)}
+= (1 + xp )(1 + x)−1 + (1 + x)∂{(1 + xp )(1 + x)−1 }
+= (1 + xp )(1 + x)−1 + (1 + x)∂
+
+p−2
+
+
+(−1)i+1 xi+1
+
+
+
+i=−1
+
+= (1 + xp )(1 + x)−1 + (1 + x)
+
+p−2
+
+
+(−1)i+1 (i + 1)xi .
+
+i=0
+
+This completes the veriﬁcation of Lemma 5.5.
+
+
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+49
+
+Lemma 5.6. (Elementary properties of possible solutions of the
+Fermat equation) Let p ≥ 3 be a prime number; r, s, t nonzero coprime
+integers such that
+rp + sp + tp = 0.
+Then the following hold:
+(i) Let l be a prime number which divides r + s, (rp + sp )(r + s)−1 ∈ Z.
+Then it holds that l = p.
+(ii) Suppose that p does not divide t. Then r + s and (rp + sp )(r + s)−1
+are coprime. In particular, [since (r +s)·(rp +sp )(r +s)−1 = (−t)p ]
+there exist integers u and ũ such that
+r + s = up ,
+
+(rp + sp )(r + s)−1 = ũp
+
+t = −uũ.
+
+(iii) Suppose that p divides t. Then it holds that
+r + s ∈ pZ,
+
+(rp + sp )(r + s)−1 ∈ pZ \ p2 Z.
+
+In particular, if we write t = pk v, where k ∈ Z>0 , v ∈ Z \ pZ, then
+[since (r + s) · (rp + sp )(r + s)−1 = (−t)p ] there exist integers w ∈
+/ pZ
+and w̃ ∈
+/ pZ such that
+r + s = pkp−1 wp ,
+
+(rp + sp )(r + s)−1 = pw̃p ,
+
+v = −ww̃
+
+[cf. (i)].
+
+Proof. First, we consider assertion (i). Let l be a prime number which
+divides r + s and (rp + sp )(r + s)−1 . In particular, it follows from Lemma
+5.5 that l divides psp−1 . Thus, if l = p, then we conclude that l divides s,
+hence that l divides r = (r + s) − s — a contradiction. This completes the
+proof of assertion (i).
+Next, we consider assertion (ii). Suppose that r + s and (rp + sp )(r + s)−1
+are not coprime. Then it follows from assertion (i) that p divides r + s and
+(rp + sp )(r + s)−1 , hence that p divides rp + sp = (−t)p — a contradiction.
+Therefore, we conclude that r + s and (rp + sp )(r + s)−1 are coprime. This
+completes the proof of assertion (ii).
+Finally, we consider assertion (iii). We begin by observing that
+(r + s)p ≡ rp + sp ≡ −tp ≡ 0 (mod p),
+hence that r + s ≡ 0 (mod p). In particular, it follows from Lemma 5.5 that
+(rp + sp )(r + s)−1 ≡ 0 (mod p). Thus, to verify assertion (iii), it suﬃces to
+prove the following claim:
+/ p2 Z.
+Claim 5.6A: It holds that (rp + sp )(r + s)−1 ∈
+
+50
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+Indeed, suppose that (rp + sp )(r + s)−1 ∈ p2 Z. Write r + s = pm, where
+m ∈ Z. Then since we have
+(rp + sp )(r + s)−1 = {rp + (pm − r)p }(pm)−1
+=
+
+=
+
+p
+
+r +
+
+p  
+
+p
+
+i=0
+
+
+p−1
+
+
+i
+
+(pm)p−i (−r)i (pm)−1
+
+p
+(pm)p−i−1 (−r)i ,
+i
+
+i=0
+p
+p
+our assumption that (r + s )(r + s)−1 ∈ p2 Z implies that prp−1 ∈ p2 Z.
+
+Thus, we conclude that r ∈ pZ, hence that s = (r + s) − r ∈ pZ — a
+contradiction. Therefore, we conclude that (rp + sp )(r + s)−1 ∈
+/ p2 Z. This
+completes the proof of Claim 5.6A, hence also of assertion (iii).
+
+Lemma 5.7. (Elementary estimate for possible solutions of the Fermat equation) Let p ≥ 3 be a prime number; x, y, z coprime positive
+integers such that
+xp + y p = z p .
+Then it holds that
+p
+z > (p+1)
+.
+2
+Proof. First, we consider the case where p divides xy. [In particular, p does
+not divide z.] In this case, to verify Lemma 5.7, we may assume without loss
+of generality that p divides x. [In particular, p does not divide y.] Then it
+follows by applying Lemma 5.6, (ii), ﬁrst in the case where we take “(r, s, t)”
+to be (x, y, −z), then in the case where we take “(r, s, t)” to be (z, −x, −y),
+that there exist positive integers a and b such that
+x + y = ap ,
+
+z − x = bp .
+
+Here, observe that
+(z − y)p ≡ z p − y p ≡ xp ≡ 0 (mod p),
+hence that z − y ≡ 0 (mod p). Thus, we obtain that
+(b − a)p ≡ bp − ap ≡ (z − y) − 2x ≡ 0 (mod p),
+hence that b − a ≡ 0 (mod p). Now we claim the following:
+Claim 5.7A: It holds that max{a, b} ≥ p + 1.
+Indeed, suppose that max{a, b} ≤ p. Then it follows from the fact that
+b − a ≡ 0 (mod p) that a = b, hence that z = 2x + y. In particular, we
+conclude that z p = (2x + y)p > xp + y p — a contradiction.
+In light of Claim 5.7A, we have
+2z > z + y = ap + bp > (p + 1)p .
+This completes the proof of Lemma 5.7 in the case where p divides xy.
+Next, we consider the case where p does not divide xyz. Then it follows
+by applying Lemma 5.6, (ii), ﬁrst in the case where we take “(r, s, t)” to be
+(x, y, −z), then in the case where we take “(r, s, t)” to be (z, −x, −y), and
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+51
+
+ﬁnally in the case where we take “(r, s, t)” to be (z, −y, −x), that there exist
+positive integers a, b, and c such that
+x + y = ap ,
+
+z − x = bp ,
+
+z − y = cp .
+
+Here, observe that
+(z − x − y)p ≡ z p − xp − y p ≡ 0 (mod p),
+hence that z − x − y ≡ 0 (mod p). Thus, we obtain that
+(b + c − a)p ≡ bp + cp − ap ≡ 2(z − x − y) ≡ 0 (mod p),
+hence that b + c − a ≡ 0 (mod p). Now we claim the following:
+Claim 5.7B: It holds that a ≥ p + 1.
+Indeed, suppose that a ≤ p. Observe that since (2x + y)p > xp + y p = z p ,
+(x + 2y)p > xp + y p = z p , it holds that x + y > z − x, x + y > z − y, hence
+that a > b, a > c. Thus, we conclude that
+−p ≤ −a < b + c − a < a + a − a ≤ p,
+hence that b + c − a = 0. Next, we claim that
+def
+
+Claim 5.7C: Write E = { ∈ {a, b, c} |  is even}. Then it
+holds that E = 1.
+Indeed, it follows immediately from the equality b + c − a = 0 that E ≥ 1.
+Suppose that E ≥ 2. Then it follows from the equality b + c − a = 0 that
+a, b, and c are even. In particular, since ap (= x + y) divides z p (= xp + y p ),
+we conclude that z is even. On the other hand, this implies that x and y
+are even [cf. the equalities z − x = bp and z − y = cp ] — a contradiction.
+This completes the proof of Claim 5.7C.
+Now suppose that E = {a} [cf. Claim 5.7C]. Here, note that it follows by
+applying Lemma 5.6, (ii), in the case where we take “(r, s, t)” to be (x, y, −z),
+that there exists a positive integer ã such that (xp + y p )(x + y)−1 = ãp . [In
+particular, we have z = aã.] Then since
+(bp + cp )(b + c)−1 = (bp + cp )a−1 = (2z − x − y)a−1 = 2ã − ap−1 ,
+we conclude that (bp + cp )(b + c)−1 is an even integer. On the other hand,
+since
+p−1
+
+(bp + cp )(b + c)−1 =
+(−1)i bp−i−1 ci ,
+i=0
+
+and, moreover, each term “bp−i−1 ci ” is odd, we conclude that (bp +cp )(b+c)−1
+is odd — a contradiction.
+Thus, it follows from Claim 5.7C that E ∈ {{b}, {c}}. Moreover, to verify
+Claim 5.7B, we may assume without loss of generality that E = {b}. Next,
+observe that it follows by applying Lemma 5.6, (ii), in the case where we
+take “(r, s, t)” to be (z, −x, −y), that there exists a positive integer b̃ such
+that (z p − xp )(z − x)−1 = b̃p . [In particular, we have y = bb̃.] Then since
+(ap − cp )(a − c)−1 = (ap − cp )b−1 = (2y + x − z)b−1 = 2b̃ − bp−1 ,
+
+52
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+we conclude that (ap − cp )(a − c)−1 is an even integer. On the other hand,
+since
+p−1
+
+(ap − cp )(a − c)−1 =
+ap−i−1 ci ,
+i=0
+p−i−1
+i
+c ” is odd, we conclude that (ap − cp )(a −
+and, moreover, each term “a
+
+c)−1 is odd — a contradiction. This completes the proof of Claim 5.7B.
+In light of Claim 5.7B, we have
+2z > x + y = ap ≥ (p + 1)p .
+
+This completes the proof of Lemma 5.7 in the case where p does not divide
+xyz.
+Finally, we consider the case where p divides z. [In particular, p does not
+divide xy.] Then it follows by applying Lemma 5.6, (ii), ﬁrst in the case
+where we take “(r, s, t)” to be (z, −x, −y), then in the case where we take
+“(r, s, t)” to be (z, −y, −x), that there exist positive integers b and c such
+that
+z − x = bp ,
+z − y = cp .
+Moreover, it follows by applying Lemma 5.6, (iii), in the case where we take
+“(r, s, t)” to be (x, y, −z), that there exist positive integers w ∈
+/ pZ and k,
+together with a negative integer v ∈
+/ pZ, such that
+x + y = pkp−1 wp ,
+
+z = −pk v.
+
+Next, observe that
+(b + c)p ≡ bp + cp ≡ 2z − x − y ≡ 0 (mod p),
+hence that b + c ≡ 0 (mod p). In particular, it follows from the equality
+bp + cp = pcp−1 (b + c) − (b + c)2
+
+p−2
+
+
+(−1)i+1 (i + 1)bp−2−i ci
+
+i=0
+
+[cf. Lemma 5.5] that bp + cp ∈ p2 Z. Thus, since we have
+−2pk v = 2z = (z − x) + (z − y) + (x + y) = bp + cp + pkp−1 wp ∈ p2 Z
+[cf. the fact that kp−1 ≥ 2], we conclude that k ≥ 2. Therefore, we conclude
+that
+2z > x + y ≥ p2p−1 wp > (p + 1)p
+[cf. the fact that γ 2γ−1 > (γ + 1)γ for all γ ∈ R≥3 ]. This completes the
+proof of Lemma 5.7 in the case where p divides z.
+
+Remark 5.7.1.
+(i) In the notation of Lemma 5.7, we observe that a stronger estimate
+z > z − x > (2p20/7 )p
+may be obtained by means of techniques of classical algebraic number theory
+that are somewhat more involved than the argument given above in the proof
+of Lemma 5.7 [cf. [Ink1]; [Ink2], Theorem 2].
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+53
+
+(ii) In fact, it follows from [Ink1], (4), that, in the situation of (i), if we
+assume further that p divides xyz, then a stronger estimate
+z >
+
+p3p−1
+2
+
+may be obtained.
+
+Remark 5.7.2. In the notation of Lemma 5.7, suppose that p divides xyz,
+and that p ≥ 257. Then we observe that an even stronger estimate [i.e.,
+than the estimate of Remark 5.7.1, (ii)]
+z ≥ p(5/2)
+
+p−1
+
+may be obtained by means of techniques that are somewhat more involved
+than the argument given above in the proof of Lemma 5.7 [cf. [MR], Theorem 1]. [A similar, but weaker estimate may be found in [Mls], Lemma
+2.] These techniques of Mihăilescu [and Rassias] use Mihăilescu’s technique
+of working with a map of the Stickelberger ideal into the algebraic integers and related power series developments associated to the image of this
+map, as well as a new insight on lattices and an “inhomogeneous Siegel box
+principle”.
+
+Corollary 5.8. (Application to “Fermat’s Last Theorem”) Let
+p > 1.615 · 1014
+be a prime number. Then there does not exist any triple (x, y, z) of positive
+integers that satisﬁes the Fermat equation
+xp + y p = z p .
+Proof. Suppose that there exists a triple (x, y, z) of positive integers such
+that xp + y p = z p . Here, we may assume without loss of generality that x,
+y, z are coprime. Then it follows from Lemma 5.7 that
+z >
+
+(p+1)p
+.
+2
+
+Now we apply Theorem 5.3, (ii), to the present situation, by taking
+• “L” to be Q;
+• “(a, b, c)” to be (xp , y p , −z p );
+• “” to be 1.
+Then, in the notation of Theorem 5.3, we have
+z p ≤ 25/2 · exp( 14 · h1 (1)) · (radQ (xp , y p , −z p ))3
+≤ 25/2 · exp( 14 · h1 (1)) · (xyz)3
+≤ 25/2 · exp( 14 · h1 (1)) · (z 3 )3
+— where we apply the fact that z ≥ max{x, y}. Thus, we obtain that
+(p+1)p
+2
+
+p−9
+
+< z p−9 ≤ 25/2 · exp( 14 · h1 (1)).
+
+54
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+In particular, we conclude that
+(p − 9)(−1 + p · log2 (p + 1)) <
+
+5
+1
+2 + log2 (e) · 4 · h1 (1)
+
+< 1.227 · 1030 .
+
+On the other hand, since [as is easily veriﬁed] the function
+(x − 9)(−1 + 1.44x · log(x + 1))
+is monotonically increasing for x ∈ R≥9 , we have
+1
+(p − 9)(−1 + p · log2 (p + 1)) = (p − 9)(−1 + log(2)
+· p · log(p + 1))
+
+> (p − 9)(−1 + 1.44 · p · log(p + 1))
+> 1.227 · 1030
+— where the ﬁrst (respectively, second) inequality follows from the esti1
+> 1.44 (respectively, our assumption that p > 1.615 · 1014 ) — a
+mate log(2)
+contradiction. This completes the proof of Corollary 5.8.
+
+
+Remark 5.8.1. By combining Corollary 5.8 with the numerical estimate
+of [Cop] [cf. [Cop], Abstract; the discussion following the ﬁrst display of
+[Cop], §3], we obtain [by applying the estimate 7.568 · 1017 > 1.615 · 1014 ]
+the following result:
+Let p be an odd prime number. Then there does not exist
+any triple (x, y, z) of positive integers such that p does not
+divide xyz, and, moreover, the Fermat equation
+xp + y p = z p
+is satisﬁed.
+This assertion is often called the ﬁrst case of Fermat’s Last Theorem.
+
+Remark 5.8.2.
+(i) If we apply the estimate
+z > (2p20/7 )p
+of Remark 5.7.1, (i), instead of Lemma 5.7 in the proof of Corollary 5.8,
+then the quantity “1.615 · 1014 ” in Corollary 5.8 may be replaced by 9.58 ·
+1013 . Indeed, by applying this estimate of Remark 5.7.1, (i), we obtain the
+estimate
+(2p20/7 )p(p−9) < z p−9 ≤ 25/2 · exp( 14 · h1 (1)).
+In particular, we conclude that
+p(p − 9)(1 + 20
+7 · log2 (p)) <
+
+5
+1
+2 + log2 (e) · 4 · h1 (1)
+
+< 1.227 · 1030 .
+
+Thus, it suﬃces to observe that the manifestly monotonically increasing
+function
+x(x − 9)(1 + 20
+7 · log2 (x))
+satisﬁes the inequality > 1.227 · 1030 for x > 9.58 · 1013 .
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+55
+
+(ii) Suppose that p divides xyz. That is to say, we suppose that we
+are in the situation of what is often called the second case of Fermat’s Last
+Theorem. Then if we apply the estimate
+z >
+
+p3p−1
+2
+
+of Remark 5.7.1, (ii), instead of Lemma 5.7 in the proof of Corollary 5.8,
+then the quantity “1.615 · 1014 ” in Corollary 5.8 may be replaced by 9.39 ·
+1013 . Indeed, by applying this estimate of Remark 5.7.1, (ii), we obtain the
+estimate
+3p−1
+( p 2 )(p−9) < z p−9 ≤ 25/2 · exp( 14 · h1 (1)).
+In particular, we conclude that
+(p − 9)((3p − 1) log2 (p) − 1) <
+
+5
+1
+2 + log2 (e) · 4 · h1 (1)
+
+< 1.227 · 1030 .
+
+Thus, it suﬃces to observe that the manifestly monotonically increasing
+function
+(x − 9)((3x − 1) log2 (x) − 1)
+satisﬁes the inequality > 1.227 · 1030 for x > 9.39 · 1013 .
+Remark 5.8.3.
+(i) Observe that the estimate of Remark 5.7.2 due to [MR] implies the
+following consequence:
+Let
+p ≥ 257
+be a prime number. Then there does not exist any triple
+(x, y, z) of positive integers such that p divides xyz, and the
+Fermat equation
+xp + y p = z p
+is satisﬁed.
+[A similar, but weaker lower bound for p follows, by a similar argument,
+from [Mls], Lemma 2.] Indeed, by applying the estimate of Remark 5.7.2
+[instead of Lemma 5.7] in the proof of Corollary 5.8, we obtain the estimate
+p(5/2)
+
+p−1 (p−9)
+
+≤ z p−9 ≤ 25/2 · exp( 14 · h1 (1)).
+
+In particular, we conclude that
+( 52 )p−1 (p − 9) log2 (p) ≤
+
+5
+1
+2 + log2 (e) · 4 · h1 (1)
+
+< 1.227 · 1030 .
+
+Thus, it suﬃces to observe that the manifestly monotonically increasing
+function
+( 52 )x−1 (x − 9) log2 (x)
+satisﬁes the inequality ≥ 1.227 · 1030 for x ≥ 257.
+(ii) By combining (i) with the classical result of [Van] [cf. [Van], Theorem
+VIIa, as well as [Rbm], pp. 200-202], we obtain [by applying the estimate
+269 > 257] an alternative proof [i.e., to the proof of [Wls]] of the second case
+of Fermat’s Last Theorem [cf. Remark 5.8.2, (ii)]. In particular, in light of
+Remark 5.8.1, we conclude that the results of the present paper, combined
+
+56
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+with the results of [Van], [Cop], and [MR], yield an unconditional new
+alternative proof [i.e., to the proof of [Wls]] of Fermat’s Last Theorem.
+
+Finally, we give an application of the ABC inequality of Theorem 5.4 to a
+generalized version of Fermat’s Last Theorem, which does not appear to be
+accessible via the techniques involving modularity of elliptic curves over Q
+and deformations of Galois representations that play a central role in [Wls].
+Corollary 5.9. (Application to a generalized version of “Fermat’s
+Last Theorem”) Let r, s, t be nonzero integers every two of which are
+coprime. Write
+def
+
+S = {(X, Y, Z) ∈ Z3 | ||XY Z||C ≥ 2}.
+Let l, m, n be positive integers such that
+min{l, m, n} > max{2.453 · 1030 , log2 ||rst||C , 10 + 5 log2 (rad(rst))}.
+Then there does not exist any triple (x, y, z) ∈ S of coprime [i.e., the set of
+prime numbers which divide x, y, and z is empty] integers that satisﬁes the
+equation
+rxl + sy m + tz n = 0.
+def
+
+Proof. Write k = min{l, m, n}. Suppose that there exists a triple (x, y, z) ∈
+S of coprime integers such that rxl + sy m + tz n = 0. Then we claim the
+following:
+Claim 5.9A: rxl , sy m , and tz n are coprime.
+Indeed, suppose that a prime number p divides rxl , sy m , and tz n . Let us
+consider the set
+def
+
+E = { ∈ {x, y, z} | p divides }.
+Then, by applying our assumption that (x, y, z) are coprime (respectively,
+every two of (r, s, t) are coprime), we conclude that E ≤ 2 (respectively,
+E ≥ 2), hence that E = 2. Thus, to verify Claim 5.9A, we may assume
+without loss of generality that p divides x and y. [In particular, p does not
+divide z.] Then observe that pk divides rxl and sy m , hence also tz n . In
+particular, since p does not divide z, we conclude that pk divides t. Thus,
+we have
+log2 ||rst||C ≥ log2 ||t||C ≥ log2 pk ≥ k
+— a contradiction. This completes the proof of Claim 5.9A.
+Now we apply Theorem 5.4 to the present situation, by taking
+• “(a, b, c)” to be (rxl , sy m , tz n ) [cf. Claim 5.9A];
+• “” to be 1.
+
+EXPLICIT ESTIMATES IN INTER-UNIVERSAL TEICHMÜLLER THEORY
+
+57
+
+Then we have
+||rst||C · ||xyz||kC ≤ ||rstxl y m z n ||C
+≤ 24 · max{exp(1.7 · 1030 ), (rad(rstxl y m z n ))6 }
+= 24 · max{exp(1.7 · 1030 ), (rad(rstxyz))6 }.
+On the other hand, since
+||rst||C · ||xyz||kC ≥ rad(rst) · ||xyz||kC
+> 24 · (rad(rst))6 · ||xyz||6C
+≥ 24 · (rad(rstxyz))6
+[cf. our assumptions that k > 4+(6−1)·log2 (rad(rst))+6 and ||xyz||C ≥ 2],
+we obtain that
+2k ≤ ||rst||C · ||xyz||kC ≤ 24 · exp(1.7 · 1030 ),
+hence that k ≤ 2.453 · 1030 — a contradiction. This completes the proof of
+Corollary 5.9.
+
+
+References
+[Ax1] C. Axler, New bounds for the prime counting function, Integers 16 (2016), A22.
+[Ax2] C. Axler, Corrigendum to “New bounds for the prime counting function”, available
+at the following URL: http://math.colgate.edu/~integers/vol16.html
+[BG] E. Bombieri and W. Gubler, Heights in Diophantine Geometry, Cambridge New
+Mathematical Monographs 4, Cambridge University Press (2006).
+[Cop] D. Coppersmith, Fermat’s Last Theorem (Case 1) and the Wieferich Criterion,
+Math. Comp. 54 (1990), pp. 895-902.
+[Falt] G. Faltings, Finiteness Theorems for Abelian Varieties over Number Fields, in Arithmetic Geometry, ed. by G. Cornell and J.H. Silverman, Springer (1986).
+[Hts] R. Hartshorne, Algebraic Geometry, Graduate Texts in Mathematics 52, SpringerVerlag (1977).
+[HS] M. Hindry and J. H. Silverman, The canonical height and integral points on elliptic
+curves, Invent. math. 93 (1988), pp. 419-450.
+[Ink1] K. Inkeri, Abschätzungen für eventuelle Lösungen der Gleichung im Fermatschen
+Problem, Ann. Univ. Turkuensis. Ser. A. 16 (1953), pp. 3-9.
+[Ink2] K. Inkeri, Remarks on Fermat’s equation in The very knowledge of coding, Univ.
+of Turku (1987), pp. 82-87.
+[Lbr] S. Löbrich, A Gap in the Spectrum of the Faltings Height, Journal de Théorie des
+Nombres de Bordeaux 29 (2017), pp. 289-305.
+[Mls] P. Mihăilescu, Improved lower bounds for possible solutions in the Second Case
+of the Fermat Last Theorem and in the Catalan Equation, J. Number Theory 225
+(2021), pp. 151-173.
+[MR] P. Mihăilescu and M. Rassias, Double exponential lower bounds for possible solutions in the Second Case of the Fermat Last Theorem, J. Number Theory (2022),
+available at the following URL: https://doi.org/10.1016/j.jnt.2021.10.014
+[CanLift] S. Mochizuki, The Absolute Anabelian Geometry of Canonical Curves, Kazuya
+Kato’s ﬁftieth birthday, Doc. Math. 2003, Extra Vol., pp. 609-640.
+[EtTh] S. Mochizuki, The Étale Theta Function and its Frobenioid-theoretic Manifestations, Publ. Res. Inst. Math. Sci. 45 (2009), pp. 227-349.
+
+58
+
+MOCHIZUKI, FESENKO, HOSHI, MINAMIDE, AND POROWSKI
+
+[GenEll] S. Mochizuki, Arithmetic Elliptic Curves in General Position, Math. J. Okayama
+Univ. 52 (2010), pp. 1-28.
+[IUTchI] S. Mochizuki, Inter-universal Teichmüller Theory I: Construction of Hodge Theaters, Publ. Res. Inst. Math. Sci. 57 (2021), pp. 3-207.
+[IUTchII] S. Mochizuki, Inter-universal Teichmüller Theory II: Hodge-Arakelov-theoretic
+Evaluation, Publ. Res. Inst. Math. Sci. 57 (2021), pp. 209-401.
+[IUTchIII] S. Mochizuki, Inter-universal Teichmüller Theory III: Canonical Splittings of
+the Log-theta-lattice, Publ. Res. Inst. Math. Sci. 57 (2021), pp. 403-626.
+[IUTchIV] S. Mochizuki, Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, Publ. Res. Inst. Math. Sci. 57 (2021), pp. 627723.
+[Alien] S. Mochizuki, The Mathematics of Mutually Alien Copies: from Gaussian Integrals
+to Inter-universal Teichmüller Theory, Inter-universal Teichmüller Theory Summit
+2016, RIMS Kōkyūroku Bessatsu B84, Res. Inst. Math. Sci. (RIMS), Kyoto (2021),
+pp. 23-192.
+[Rbm] P. Ribenboim, 13 lectures on Fermat’s last theorem, Springer-Verlag, New YorkHeidelberg, (1979).
+[RS] J. B. Rosser and L. Schoenfeld, Sharper Bounds for the Chebyshev Functions θ(x)
+and ψ(x), Math. Comp. 29 (1975), pp. 243-269.
+[Sijs] J. Sijsling, Canonical models of arithmetic (1, ∞) curves, Arithmetic geometry: computation and applications, Contemp. Math., 722, Amer. Math. Soc., Providence, RI,
+(2019), pp. 149-165.
+[Silv1] J. H. Silverman, The Arithmetic of Elliptic Curves, Second Edition, Graduate
+Texts in Mathematics 106, Springer-Verlag (2009).
+[Silv2] J. H. Silverman, Advanced Topics in the Arithmetic of Elliptic Curves, Graduate
+Texts in Mathematics 151, Springer-Verlag (1994).
+[Szp] L. Szpiro, Discriminant et conducteur des courbes elliptiques in Astérisque 183
+(1990), pp. 7-18.
+[Van] H. S. Vandiver, Summary of Results and Proofs on Fermat’s Last Theorem (Fifth
+Paper), Proc. Nat. Acad. Sci. U.S.A. 16 (1930), pp. 298-304.
+[Wls] A. Wiles, Modular elliptic curves and Fermat’s last theorem, Ann. of Math. 141
+(1995), pp. 443-551.
+
+(Shinichi Mochizuki) Research Institute for Mathematical Sciences, Kyoto
+University, Kyoto 606-8502, Japan
+E-mail address: motizuki@kurims.kyoto-u.ac.jp
+(Ivan Fesenko) Mathematics Institute, Zeeman Building, University of Warwick, Coventry CV4 7AL, United Kingdom
+E-mail address: ivan.b.fesenko@gmail.com
+(Yuichiro Hoshi) Research Institute for Mathematical Sciences, Kyoto University, Kyoto 606-8502, Japan
+E-mail address: yuichiro@kurims.kyoto-u.ac.jp
+(Arata Minamide) Research Institute for Mathematical Sciences, Kyoto University, Kyoto 606-8502, Japan
+E-mail address: minamide@kurims.kyoto-u.ac.jp
+(Wojciech Porowski) Research Institute for Mathematical Sciences, Kyoto
+University, Kyoto 606-8502, Japan
+E-mail address: wo.porowski@gmail.com
+
+

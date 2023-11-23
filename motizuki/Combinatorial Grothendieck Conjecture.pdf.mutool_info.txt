@@ -1,0 +1,39 @@
+Combinatorial Grothendieck Conjecture.pdf:
+
+PDF-1.5
+Info object (197 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107155525+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111107155525+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(comb-gc.dvi)>>
+Pages: 29
+
+Retrieving info from pages 1-29...
+Mediaboxes (1):
+	1	(200 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (23):
+	1	(200 0 R):	Type1 'FELPPA+CMBX10' (235 0 R)
+	1	(200 0 R):	Type1 'FELPPB+CMCSC10' (238 0 R)
+	1	(200 0 R):	Type1 'FEMAAC+CMR10' (241 0 R)
+	1	(200 0 R):	Type1 'FEMABD+CMR8' (244 0 R)
+	1	(200 0 R):	Type1 'FEMABE+CMTI8' (247 0 R)
+	1	(200 0 R):	Type1 'FEMACE+CMTI10' (250 0 R)
+	1	(200 0 R):	Type1 'FEMACF+CMSY8' (253 0 R)
+	1	(200 0 R):	Type3 'T1' (257 0 R)
+	2	(1 0 R):	Type1 'FEMAEF+CMMI10' (148 0 R)
+	2	(1 0 R):	Type1 'FEMAEG+CMSY10' (153 0 R)
+	3	(4 0 R):	Type1 'FEMAGH+MSBM10' (166 0 R)
+	3	(4 0 R):	Type1 'FEMAHH+CMMI7' (163 0 R)
+	3	(4 0 R):	Type1 'FEMAHI+CMR7' (164 0 R)
+	3	(4 0 R):	Type1 'FEMAHJ+CMSY7' (168 0 R)
+	3	(4 0 R):	Type1 'FEMAHK+CMEX10' (160 0 R)
+	4	(7 0 R):	Type1 'FEMALK+MSBM7' (171 0 R)
+	7	(16 0 R):	Type1 'FEMBCI+MSAM10' (172 0 R)
+	8	(19 0 R):	Type1 'FEMBEI+CMSY5' (175 0 R)
+	9	(22 0 R):	Type1 'FEMBGI+CMR5' (178 0 R)
+	15	(40 0 R):	Type1 'FEMCDE+CMMIB10' (181 0 R)
+	18	(49 0 R):	Type1 'FEMCID+CMMI5' (184 0 R)
+	28	(79 0 R):	Type1 'FEMDNL+CMSL10' (187 0 R)
+	29	(82 0 R):	Type1 'FEMDOM+CMTT10' (190 0 R)
+
+Images (1):
+	1	(200 0 R):	[ Raw ] 1x1 1bpc ImageMask (211 0 R)
+

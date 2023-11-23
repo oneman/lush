@@ -1,0 +1,32 @@
+The Hodge-Arakelov Theory of Elliptic Curves.pdf:
+
+PDF-1.5
+Info object (1612 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107212142+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111107212142+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(CONTENTS.DVI)>>
+Pages: 373
+
+Retrieving info from pages 1-373...
+Mediaboxes (1):
+	1	(1615 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (19):
+	1	(1615 0 R):	Type1 'HPHLNI+CMR10' (1635 0 R)
+	1	(1615 0 R):	Type1 'HPHLOJ+CMCSC10' (1638 0 R)
+	1	(1615 0 R):	Type1 'HPHLOK+CMBX10' (1641 0 R)
+	1	(1615 0 R):	Type1 'HPHLOL+CMSY10' (1644 0 R)
+	3	(4 0 R):	Type1 'HPHMBL+CMMI10' (1524 0 R)
+	4	(7 0 R):	Type1 'HPHMDL+CMTI10' (1528 0 R)
+	5	(10 0 R):	Type1 'HPHMHN+CMBX7' (1536 0 R)
+	5	(10 0 R):	Type1 'HPHMGL+CMR7' (1534 0 R)
+	5	(10 0 R):	Type1 'HPHMGM+CMMI7' (1535 0 R)
+	5	(10 0 R):	Type1 'HPHMHM+CMMI5' (1540 0 R)
+	6	(13 0 R):	Type1 'HPHMJN+CMSY7' (1548 0 R)
+	6	(13 0 R):	Type1 'HPHMKO+CMSY5' (1545 0 R)
+	6	(13 0 R):	Type1 'HPHMKP+CMR5' (1542 0 R)
+	7	(16 0 R):	Type1 'HPHMMP+CMEX10' (1551 0 R)
+	9	(22 0 R):	Type1 'HPHNBO+CMMIB10' (1554 0 R)
+	12	(31 0 R):	Type1 'HPHNHN+EUFM10' (1557 0 R)
+	16	(43 0 R):	Type1 'HPHNOL+CMBX5' (1560 0 R)
+	22	(61 0 R):	TrueType 'TimesNewRomanPSMT' WinAnsiEncoding (1563 0 R)
+	32	(91 0 R):	Type1 'HPHPIE+CMSL10' (1564 0 R)
+

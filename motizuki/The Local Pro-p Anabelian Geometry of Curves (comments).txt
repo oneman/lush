@@ -1,0 +1,15 @@
+COMMENTS ON “THE LOCAL PRO-P
+ANABELIAN GEOMETRY OF CURVES”
+Shinichi Mochizuki
+June 2019
+
+(1.) In the sentence immediately preceding Theorem a2.4, the phrase “we see that
+we see that” should read “we see that”.
+(2.) In the ﬁrst paragraph of the proof of Lemma a1.1, “Ker(φ)” should read
+“Ker(ψ)”.
+
+Typeset by AMS-TEX
+
+1
+
+

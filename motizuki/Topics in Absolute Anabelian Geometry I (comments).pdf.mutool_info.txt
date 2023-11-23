@@ -1,0 +1,27 @@
+Topics in Absolute Anabelian Geometry I (comments).pdf:
+
+PDF-1.5
+Info object (9 0 R):
+<</Author(<905688EA>)/CreationDate(D:20171227031230+09'00')/Creator( TeX output 2017.12.27:0308)/ModDate(D:20171227031230+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(abs-anab-topics-1-comments-2017-12-30.pdf)>>
+Pages: 1
+
+Retrieving info from pages 1-1...
+Mediaboxes (1):
+	1	(12 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (14):
+	1	(12 0 R):	Type1 'GCLONM+CMBX10' (52 0 R)
+	1	(12 0 R):	Type1 'GCLPFD+CMR5' (55 0 R)
+	1	(12 0 R):	Type1 'GCLPGD+CMMI5' (58 0 R)
+	1	(12 0 R):	Type1 'GCLPHE+CMR7' (61 0 R)
+	1	(12 0 R):	Type1 'GCLPIF+CMR8' (64 0 R)
+	1	(12 0 R):	Type1 'GCLPIG+CMSY8' (67 0 R)
+	1	(12 0 R):	Type1 'GCLONN+CMCSC10' (70 0 R)
+	1	(12 0 R):	Type1 'GCLPAN+CMR10' (73 0 R)
+	1	(12 0 R):	Type1 'GCLPAO+CMTI10' (76 0 R)
+	1	(12 0 R):	Type1 'GCLPBP+CMSY10' (79 0 R)
+	1	(12 0 R):	Type1 'GCLPCA+CMMI10' (82 0 R)
+	1	(12 0 R):	Type1 'GCLPEA+CMSY7' (85 0 R)
+	1	(12 0 R):	Type1 'GCLPFB+MSBM10' (88 0 R)
+	1	(12 0 R):	Type1 'GCLPFC+CMMI7' (91 0 R)
+

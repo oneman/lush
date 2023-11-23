@@ -1,0 +1,21 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+FCKDJE+CMBX10                        Type 1C           Custom           yes yes yes    177  0
+FCKDKE+CMCSC10                       Type 1C           Custom           yes yes yes    180  0
+FCKDKF+CMR10                         Type 1C           Custom           yes yes yes    183  0
+FCKDLG+CMR8                          Type 1C           Custom           yes yes yes    186  0
+FCKDLH+CMSY10                        Type 1C           Custom           yes yes yes    189  0
+FCKDMI+CMTI10                        Type 1C           Custom           yes yes yes    192  0
+FCKDMJ+CMTI8                         Type 1C           Custom           yes yes yes    195  0
+FCKDNJ+CMSY8                         Type 1C           Custom           yes yes yes    198  0
+T1                                   Type 3            Custom           yes no  no     202  0
+FCKDPK+CMMI10                        Type 1C           Custom           yes yes yes    123  0
+FCKDPL+CMR7                          Type 1C           Custom           yes yes yes    111  0
+FCKEAM+CMSY7                         Type 1C           Custom           yes yes yes    108  0
+FCKEAN+MSBM7                         Type 1C           Custom           yes yes yes    116  0
+FCKEAO+CMMI7                         Type 1C           Custom           yes yes yes    106  0
+FCKDPJ+MSBM10                        Type 1C           Custom           yes yes yes    122  0
+FCKEDO+CMR5                          Type 1C           Custom           yes yes yes    124  0
+FCKFHH+MSAM10                        Type 1C           Custom           yes yes no     127  0
+FCKGMP+CMEX10                        Type 1C           Custom           yes yes yes    130  0
+FCKIDH+CMTT10                        Type 1C           Custom           yes yes yes    131  0

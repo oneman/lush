@@ -1,0 +1,36 @@
+The Grothendieck Conjecture on the Fundamental Groups of Algebraic Curves.pdf:
+
+PDF-1.5
+Info object (171 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107212123+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111107212123+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title<FEFF82F18A33002E006400760069>>>
+Pages: 23
+
+Retrieving info from pages 1-23...
+Mediaboxes (1):
+	1	(174 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (23):
+	1	(174 0 R):	Type1 'HPDBFJ+CMBX10' (211 0 R)
+	1	(174 0 R):	Type1 'HPDBGK+CMCSC10' (214 0 R)
+	1	(174 0 R):	Type1 'HPDBGL+CMR10' (217 0 R)
+	1	(174 0 R):	Type1 'HPDBGM+CMMI10' (220 0 R)
+	1	(174 0 R):	Type1 'HPDBHN+CMSY10' (223 0 R)
+	1	(174 0 R):	Type1 'HPDBHO+CMTI10' (226 0 R)
+	1	(174 0 R):	Type1 'HPDBHP+CMR7' (229 0 R)
+	1	(174 0 R):	Type1 'HPDBIP+CMR8' (232 0 R)
+	1	(174 0 R):	Type1 'HPDBJA+CMSY8' (235 0 R)
+	2	(1 0 R):	Type1 'HPDBLA+CMMI7' (139 0 R)
+	2	(1 0 R):	Type1 'HPDBLB+CMSY7' (141 0 R)
+	2	(1 0 R):	Type1 'HPDBLC+CMMI5' (137 0 R)
+	7	(16 0 R):	Type0 'HPDCHO+HGMinchoL' Identity-H (143 0 R)
+	10	(25 0 R):	Type1 'HPDDDK+CMEX10' (148 0 R)
+	10	(25 0 R):	Type1 'HPDDDL+CMSY5' (145 0 R)
+	14	(38 0 R):	Type1 'HPDDKK+EUFM10' (149 0 R)
+	15	(41 0 R):	Type1 'HPDDMK+CMMIB10' (152 0 R)
+	17	(49 0 R):	Type1 'HPDDPK+CMBX7' (153 0 R)
+	21	(63 0 R):	Type1 'HPDEGI+CMR5' (154 0 R)
+	22	(68 0 R):	Type1 'HPDEJI+CMTI8' (162 0 R)
+	22	(68 0 R):	Type1 'HPDEJJ+CMMI8' (159 0 R)
+	22	(68 0 R):	Type1 'HPDEJK+CMBX8' (156 0 R)
+	22	(68 0 R):	Type1 'HPDEJL+CMR6' (155 0 R)
+

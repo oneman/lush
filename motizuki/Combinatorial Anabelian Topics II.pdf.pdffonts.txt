@@ -1,0 +1,43 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+CFMPDD+CMBX12                        Type 1C           Custom           yes yes yes    892  0
+CFMPDE+CMR10                         Type 1C           Custom           yes yes yes    895  0
+CFMPFE+CMSS10                        Type 1C           Custom           yes yes yes    898  0
+CFMPFF+CMCSC10                       Type 1C           Custom           yes yes yes    901  0
+CFMPFG+CMR9                          Type 1C           Custom           yes yes yes    904  0
+CFMPFH+CMTI9                         Type 1C           Custom           yes yes yes    907  0
+CFMPGH+CMBX9                         Type 1C           Custom           yes yes yes    910  0
+CFMPHI+CMTI10                        Type 1C           Custom           yes yes yes    913  0
+CFMPKJ+CMSY9                         Type 1C           Custom           yes yes yes    757  0
+CFMPKK+MSBM10                        Type 1C           Custom           yes yes yes    746  0
+CFMPLL+CMR12                         Type 1C           Custom           yes yes yes    753  0
+CFMPLM+CMSY10                        Type 1C           Custom           yes yes yes    748  0
+CFMPMM+EUFM10                        Type 1C           Custom           yes yes yes    754  0
+CFMPMN+CMTI12                        Type 1C           Custom           yes yes yes    762  0
+CFMPMO+CMMI12                        Type 1C           Custom           yes yes yes    770  0
+CFMPMP+CMMI8                         Type 1C           Custom           yes yes yes    767  0
+CFMPNA+CMR8                          Type 1C           Custom           yes yes yes    764  0
+CFMPKI+CMMI9                         Type 1C           Custom           yes yes yes    763  0
+CFNABA+SFRM1200                      Type 1C           Custom           yes yes yes    771  0
+CFNAEA+MSAM10                        Type 1C           Custom           yes yes no     774  0
+CFNAGA+CMSY8                         Type 1C           Custom           yes yes yes    780  0
+CFNAHA+CMMI6                         Type 1C           Custom           yes yes yes    777  0
+CFNAKA+CMMIB10                       Type 1C           Custom           yes yes yes    783  0
+CFNAOA+CMEX10                        Type 1C           Custom           yes yes yes    786  0
+CFNBEO+CMBSY10                       Type 1C           Custom           yes yes yes    789  0
+CFNBHO+CMR6                          Type 1C           Custom           yes yes yes    792  0
+KozGoPro-Regular-90msp-RKSJ-H-Identity-H CID Type 0C       Identity-H       yes no  no     795  0
+CFNCNI+CMEX8                         Type 1C           Custom           yes yes no     796  0
+CFNDAI+CMSY6                         Type 1C           Custom           yes yes yes    802  0
+CFNDAJ+MSBM7                         Type 1C           Custom           yes yes yes    799  0
+CFNDKG+CMTI8                         Type 1C           Custom           yes yes yes    805  0
+CFNDPF+SFTI1200                      Type 1C           Custom           yes yes yes    808  0
+CFNJNC+CMMIB8                        Type 1C           Custom           yes yes yes    816  0
+CFNJND+CMBX8                         Type 1C           Custom           yes yes yes    813  0
+CFNJNE+CMBSY8                        Type 1C           Custom           yes yes yes    810  0
+CFNNPM+MSAM7                         Type 1C           Custom           yes yes no     817  0
+CFOABP+CMEX7                         Type 1C           Custom           yes yes no     820  0
+CFOHFE+CMMI10                        Type 1C           Custom           yes yes yes    826  0
+CFOHFF+CMR17                         Type 1C           Custom           yes yes yes    823  0
+CFPBKH+CMBX6                         Type 1C           Custom           yes yes yes    829  0
+CFPBPG+CMBX10                        Type 1C           Custom           yes yes yes    830  0

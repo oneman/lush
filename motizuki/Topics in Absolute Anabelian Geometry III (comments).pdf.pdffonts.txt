@@ -1,0 +1,12 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+BCDLAK+CMBX10                        Type 1C           Custom           yes yes yes     48  0
+BCDLEB+CMSY8                         Type 1C           Custom           yes yes yes     51  0
+BCDLAL+CMCSC10                       Type 1C           Custom           yes yes yes     54  0
+BCDLBL+CMR10                         Type 1C           Custom           yes yes yes     57  0
+BCDLBM+CMTI10                        Type 1C           Custom           yes yes yes     60  0
+BCDLBN+MSBM10                        Type 1C           Custom           yes yes yes     63  0
+BCDLCO+CMMI10                        Type 1C           Custom           yes yes yes     66  0
+BCDLCP+MSBM7                         Type 1C           Custom           yes yes yes     69  0
+BCDLDA+CMSY7                         Type 1C           Custom           yes yes yes     72  0
+BCDLDB+CMR8                          Type 1C           Custom           yes yes yes     75  0

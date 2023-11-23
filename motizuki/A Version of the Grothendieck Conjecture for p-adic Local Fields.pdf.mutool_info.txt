@@ -1,0 +1,30 @@
+A Version of the Grothendieck Conjecture for p-adic Local Fields.pdf:
+
+PDF-1.5
+Info object (62 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111103024333+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111103024333+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(LOCFLDS.dvi)>>
+Pages: 9
+
+Retrieving info from pages 1-9...
+Mediaboxes (1):
+	1	(65 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (14):
+	1	(65 0 R):	Type1 'OGGMMD+CMR10' (105 0 R)
+	1	(65 0 R):	Type1 'OGGMPL+CMSY10' (108 0 R)
+	1	(65 0 R):	Type1 'OGGMNE+CMBX10' (111 0 R)
+	1	(65 0 R):	Type1 'OGGMNF+CMMI10' (114 0 R)
+	1	(65 0 R):	Type1 'OGGMNG+CMTI10' (117 0 R)
+	1	(65 0 R):	Type1 'OGGMOH+CMSY7' (120 0 R)
+	1	(65 0 R):	Type1 'OGGMOI+CMMI7' (123 0 R)
+	1	(65 0 R):	Type1 'OGGMOJ+CMBX7' (126 0 R)
+	1	(65 0 R):	Type1 'OGGMOK+CMMI5' (129 0 R)
+	1	(65 0 R):	Type1 'OGGMOL+CMSY5' (132 0 R)
+	2	(1 0 R):	Type1 'OGGNAM+CMR7' (51 0 R)
+	3	(4 0 R):	Type1 'OGGNDM+CMEX10' (54 0 R)
+	5	(10 0 R):	Type1 'OGGNIL+CMSL10' (56 0 R)
+	5	(10 0 R):	Type1 'OGGNJL+CMR5' (57 0 R)
+
+Images (1):
+	1	(65 0 R):	[ Raw ] 1x1 1bpc ImageMask (94 0 R)
+

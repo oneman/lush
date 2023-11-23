@@ -1,0 +1,26 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+OJONPE+CMR10                         Type 1C           Custom           yes yes yes    162  0
+OJOOCM+MSBM7                         Type 1C           Custom           yes yes yes    165  0
+OJOODM+CMR5                          Type 1C           Custom           yes yes yes    168  0
+OJOODN+CMR8                          Type 1C           Custom           yes yes yes    171  0
+OJOODO+CMSY8                         Type 1C           Custom           yes yes yes    174  0
+OJOOAE+CMCSC10                       Type 1C           Custom           yes yes yes    177  0
+OJOOBF+CMBX10                        Type 1C           Custom           yes yes yes    180  0
+OJOOBG+CMTI10                        Type 1C           Custom           yes yes yes    183  0
+OJOOBH+CMMI10                        Type 1C           Custom           yes yes yes    186  0
+OJOOCI+CMSY10                        Type 1C           Custom           yes yes yes    189  0
+OJOOCJ+CMEX10                        Type 1C           Custom           yes yes no     192  0
+OJOOCK+CMMI7                         Type 1C           Custom           yes yes yes    195  0
+OJOOCL+CMSY7                         Type 1C           Custom           yes yes yes    198  0
+OJONKF+HGMinchoL                     CID TrueType      Identity-H       yes yes yes    201  0
+OJOOFO+CMR7                          Type 1C           Custom           yes yes yes     87  0
+OJOOFP+MSBM10                        Type 1C           Custom           yes yes yes     91  0
+OJOOHA+CMMIB10                       Type 1C           Custom           yes yes yes     93  0
+OJOOJA+EUFM7                         Type 1C           Custom           yes yes yes     96  0
+OJOOJB+EUFM10                        Type 1C           Custom           yes yes yes    104  0
+OJOOKC+MSAM7                         Type 1C           Custom           yes yes no     101  0
+OJOOKD+MSAM5                         Type 1C           Custom           yes yes no      98  0
+OJOOMD+MSAM10                        Type 1C           Custom           yes yes no     110  0
+OJOONE+CMSY5                         Type 1C           Custom           yes yes yes    107  0
+OJPABM+CMSL10                        Type 1C           Custom           yes yes yes    112  0

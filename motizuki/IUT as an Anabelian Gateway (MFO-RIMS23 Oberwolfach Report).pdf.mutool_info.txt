@@ -1,0 +1,32 @@
+IUT as an Anabelian Gateway (MFO-RIMS23 Oberwolfach Report).pdf:
+
+PDF-1.4
+Info object (2 0 R):
+<</Creator( TeX output 2023.10.17:1220)/Producer(dvipdfmx \(20100328\))/CreationDate(D:20231017122035+09'00')>>
+Pages: 5
+
+Retrieving info from pages 1-5...
+Fonts (22):
+	1	(3 0 R):	Type1 'UURMRU+CMBX10' (4 0 R)
+	1	(3 0 R):	Type1 'KRDLNT+CMCSC10' (5 0 R)
+	1	(3 0 R):	Type1 'PZEPHP+CMR10' (6 0 R)
+	1	(3 0 R):	Type1 'WZDPQM+CMTI10' (7 0 R)
+	1	(3 0 R):	Type1 'PXQDWX+CMSY10' (8 0 R)
+	1	(3 0 R):	Type1 'GUOAME+CMMI10' (9 0 R)
+	1	(3 0 R):	Type1 'CQXIKE+MSBM10' (10 0 R)
+	1	(3 0 R):	Type1 'VVODLD+MSAM7' (11 0 R)
+	1	(3 0 R):	Type1 'FTKVKD+CMSY7' (12 0 R)
+	1	(3 0 R):	Type1 'RZULBT+CMMI7' (13 0 R)
+	1	(3 0 R):	Type1 'KQAXFF+CMR7' (14 0 R)
+	2	(17 0 R):	Type1 'DBPAPQ+CMMIB10' (18 0 R)
+	2	(17 0 R):	Type1 'HJLVYL+MSBM7' (19 0 R)
+	3	(22 0 R):	Type1 'VJHCMG+CMSY5' (23 0 R)
+	3	(22 0 R):	Type1 'PYWJEH+CMR5' (24 0 R)
+	3	(22 0 R):	Type1 'BMTSCN+MSAM10' (25 0 R)
+	5	(31 0 R):	Type1 'JUXQJH+CMR8' (32 0 R)
+	5	(31 0 R):	Type1 'NWCVNK+CMTT8' (33 0 R)
+	5	(31 0 R):	Type1 'JIZBCB+CMTI8' (34 0 R)
+	5	(31 0 R):	Type1 'GZNBHQ+CMBX8' (35 0 R)
+	5	(31 0 R):	Type1 'TCVCPC+CMSY8' (36 0 R)
+	5	(31 0 R):	Type1 'SEEUGC+CMMI8' (37 0 R)
+

@@ -1,0 +1,29 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+FCEIKO+CMBX10                        Type 1C           Custom           yes yes yes    287  0
+FCEILO+CMCSC10                       Type 1C           Custom           yes yes yes    290  0
+FCEILP+CMR10                         Type 1C           Custom           yes yes yes    293  0
+FCEINP+CMR8                          Type 1C           Custom           yes yes yes    296  0
+FCEIOA+CMTI8                         Type 1C           Custom           yes yes yes    299  0
+FCEIOB+CMMI8                         Type 1C           Custom           yes yes yes    302  0
+FCEIOC+CMSY10                        Type 1C           Custom           yes yes yes    305  0
+FCEIPD+CMTI10                        Type 1C           Custom           yes yes yes    308  0
+FCEIPE+CMSY8                         Type 1C           Custom           yes yes yes    311  0
+T1                                   Type 3            Custom           yes no  no     315  0
+FCEJBE+CMMI10                        Type 1C           Custom           yes yes yes    195  0
+FCEJBF+CMR7                          Type 1C           Custom           yes yes yes    194  0
+FCEJCG+MSBM10                        Type 1C           Custom           yes yes yes    192  0
+FCEJCH+CMMI7                         Type 1C           Custom           yes yes yes    198  0
+FCEJEH+CMSY7                         Type 1C           Custom           yes yes yes    205  0
+FCEKCC+CMEX10                        Type 1C           Custom           yes yes yes    206  0
+FCEKFC+EUFM10                        Type 1C           Custom           yes yes yes    209  0
+FCEKIC+EUFM7                         Type 1C           Custom           yes yes yes    212  0
+FCEKKC+MSAM10                        Type 1C           Custom           yes yes no     218  0
+FCEKLD+MSBM7                         Type 1C           Custom           yes yes yes    215  0
+FCELBB+CMSY5                         Type 1C           Custom           yes yes yes    227  0
+FCELBC+CMR5                          Type 1C           Custom           yes yes yes    224  0
+FCELCD+MSAM7                         Type 1C           Custom           yes yes no     221  0
+FCELFD+CMMI5                         Type 1C           Custom           yes yes yes    230  0
+FCENAJ+CMMIB10                       Type 1C           Custom           yes yes yes    233  0
+FCEOIA+CMSL10                        Type 1C           Custom           yes yes yes    237  0
+FCEOIB+CMTT10                        Type 1C           Custom           yes yes yes    236  0

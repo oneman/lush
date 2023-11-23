@@ -1,0 +1,46 @@
+Combinatorial Cuspidalization.pdf:
+
+PDF-1.5
+Info object (372 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107155428+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111107155428+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(comb-cusp-1.dvi)>>
+Pages: 65
+
+Retrieving info from pages 1-65...
+Mediaboxes (1):
+	1	(375 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (30):
+	1	(375 0 R):	Type1 'FDOEAK+CMBX10' (412 0 R)
+	1	(375 0 R):	Type1 'FDOEAL+CMCSC10' (415 0 R)
+	1	(375 0 R):	Type1 'FDOECM+CMR8' (418 0 R)
+	1	(375 0 R):	Type1 'FDOECN+CMTI8' (421 0 R)
+	1	(375 0 R):	Type1 'FDOECO+CMMI8' (424 0 R)
+	1	(375 0 R):	Type1 'FDOECP+CMSY8' (427 0 R)
+	1	(375 0 R):	Type1 'FDOEDP+CMR10' (430 0 R)
+	1	(375 0 R):	Type1 'FDOEEA+CMSY10' (433 0 R)
+	1	(375 0 R):	Type3 'T1' (437 0 R)
+	2	(1 0 R):	Type1 'FDOEHB+CMMI10' (308 0 R)
+	2	(1 0 R):	Type1 'FDOEHC+CMR7' (319 0 R)
+	2	(1 0 R):	Type1 'FDOEHD+CMSY7' (317 0 R)
+	2	(1 0 R):	Type1 'FDOEHE+CMMI7' (325 0 R)
+	2	(1 0 R):	Type1 'FDOEHF+CMMI5' (324 0 R)
+	2	(1 0 R):	Type1 'FDOEGA+CMTI10' (310 0 R)
+	3	(4 0 R):	Type1 'FDOEJF+MSBM10' (328 0 R)
+	5	(10 0 R):	Type1 'FDOENF+CMMIB10' (332 0 R)
+	5	(10 0 R):	Type1 'FDOEOF+EUFM10' (329 0 R)
+	6	(13 0 R):	Type1 'FDOFAF+MSAM10' (334 0 R)
+	8	(19 0 R):	Type1 'FDOFID+Symbol' (341 0 R)
+	8	(19 0 R):	TrueType 'FDOFJF+TimesNewRomanPS-BoldItalicMT' WinAnsiEncoding (339 0 R)
+	8	(19 0 R):	TrueType 'TimesNewRomanPSMT' WinAnsiEncoding (337 0 R)
+	9	(22 0 R):	Type1 'FDOFMH+MSBM7' (344 0 R)
+	12	(31 0 R):	Type1 'FDOGDF+CMSY5' (350 0 R)
+	12	(31 0 R):	Type1 'FDOGDG+CMR5' (347 0 R)
+	14	(37 0 R):	Type1 'FDOGHF+CMEX10' (353 0 R)
+	35	(100 0 R):	Type3 'T2' (356 0 R)
+	46	(134 0 R):	Type0 'FDOFIE+TimesNewRomanPS-BoldItalicMT' Identity-H (357 0 R)
+	63	(188 0 R):	Type1 'FDPBDP+CMSL10' (358 0 R)
+	65	(194 0 R):	Type1 'FDPBGP+CMTT10' (361 0 R)
+
+Images (1):
+	1	(375 0 R):	[ Raw ] 1x1 1bpc ImageMask (386 0 R)
+

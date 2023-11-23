@@ -1,0 +1,50 @@
+Inter-universal Teichmuller Theory II.pdf:
+
+PDF-1.5
+Info object (825 0 R):
+<</Author(<905688EA>)/CreationDate(D:20201223124819+09'00')/Creator( TeX output 2020.12.23:1241)/ModDate(D:20201223124819+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(iu-teich-2.pdf)>>
+Pages: 174
+
+Retrieving info from pages 1-174...
+Mediaboxes (1):
+	1	(828 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (37):
+	1	(828 0 R):	Type1 'BENJGK+CMBX10' (878 0 R)
+	1	(828 0 R):	Type1 'BENJJC+CMTI8' (881 0 R)
+	1	(828 0 R):	Type1 'BENJJD+CMSY6' (884 0 R)
+	1	(828 0 R):	Type1 'BENJKE+CMR6' (887 0 R)
+	1	(828 0 R):	Type1 'BENJKF+CMMI6' (890 0 R)
+	1	(828 0 R):	Type1 'BENJKG+CMMIB7' (893 0 R)
+	1	(828 0 R):	Type1 'BENJKH+MSBM8' (896 0 R)
+	1	(828 0 R):	Type1 'BENJKI+MSBM6' (899 0 R)
+	1	(828 0 R):	Type1 'BENJGL+CMCSC10' (902 0 R)
+	1	(828 0 R):	Type1 'BENJGM+CMR10' (905 0 R)
+	1	(828 0 R):	Type1 'BENJHN+CMCSC8' (908 0 R)
+	1	(828 0 R):	Type1 'BENJHO+CMR8' (911 0 R)
+	1	(828 0 R):	Type1 'BENJHP+CMBX8' (914 0 R)
+	1	(828 0 R):	Type1 'BENJIP+CMMI8' (917 0 R)
+	1	(828 0 R):	Type1 'BENJJA+CMMIB10' (920 0 R)
+	1	(828 0 R):	Type1 'BENJJB+CMSY8' (923 0 R)
+	2	(1 0 R):	Type1 'BENJOI+CMSY10' (771 0 R)
+	2	(1 0 R):	Type1 'BENJOJ+CMTI10' (768 0 R)
+	2	(1 0 R):	Type1 'BENJOK+CMMI10' (765 0 R)
+	2	(1 0 R):	Type1 'BENJOL+CMMI7' (762 0 R)
+	2	(1 0 R):	Type1 'BENJPL+CMR7' (759 0 R)
+	2	(1 0 R):	Type1 'BENKAM+CMEX10' (756 0 R)
+	2	(1 0 R):	Type1 'BENKAN+CMSY7' (753 0 R)
+	2	(1 0 R):	Type1 'BENKAO+MSBM7' (750 0 R)
+	2	(1 0 R):	Type1 'BENKAP+CMR5' (747 0 R)
+	2	(1 0 R):	Type1 'BENKBA+CMMI5' (744 0 R)
+	2	(1 0 R):	Type1 'BENKCA+MSBM10' (741 0 R)
+	3	(4 0 R):	Type1 'BENKEB+CMSY5' (775 0 R)
+	4	(7 0 R):	Type1 'BENKGB+EUFM10' (778 0 R)
+	10	(25 0 R):	Type1 'BENLBN+MSAM7' (781 0 R)
+	11	(28 0 R):	Type1 'BENLDO+MSAM10' (787 0 R)
+	11	(28 0 R):	Type1 'BENLDP+MSBM5' (784 0 R)
+	16	(43 0 R):	Type1 'BENLOM+CMMIB5' (790 0 R)
+	36	(103 0 R):	Type1 'BENOPK+EUFM7' (792 0 R)
+	81	(238 0 R):	Type1 'BEOFMB+MSAM5' (795 0 R)
+	173	(514 0 R):	Type1 'BEPJFK+CMSL10' (798 0 R)
+	174	(517 0 R):	Type1 'BEPJIK+CMTT10' (801 0 R)
+

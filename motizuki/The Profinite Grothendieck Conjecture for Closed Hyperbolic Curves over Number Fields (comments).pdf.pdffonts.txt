@@ -1,0 +1,11 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+KEMPAF+CMBX10                        Type 1C           Custom           yes yes yes     41  0
+KEMPBF+CMCSC10                       Type 1C           Custom           yes yes yes     44  0
+KEMPBG+CMR10                         Type 1C           Custom           yes yes yes     47  0
+KEMPBH+CMMI10                        Type 1C           Custom           yes yes yes     50  0
+KEMPCI+CMMI7                         Type 1C           Custom           yes yes yes     53  0
+KEMPCJ+CMSY10                        Type 1C           Custom           yes yes yes     56  0
+KEMPCK+CMSY7                         Type 1C           Custom           yes yes no      59  0
+KEMPCL+CMR8                          Type 1C           Custom           yes yes yes     62  0
+KEMPCM+CMSY8                         Type 1C           Custom           yes yes yes     65  0

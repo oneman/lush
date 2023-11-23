@@ -1,0 +1,22 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+GPNLFC+CMBX12                        Type 1C           Custom           yes yes yes    189  0
+GPNLFD+CMR10                         Type 1C           Custom           yes yes yes    192  0
+GPNLGD+CMSY7                         Type 1C           Custom           yes yes yes    195  0
+GPNLGE+CMBX10                        Type 1C           Custom           yes yes yes    198  0
+GPNLGF+CMBX8                         Type 1C           Custom           yes yes yes    201  0
+GPNLGG+CMR9                          Type 1C           Custom           yes yes yes    204  0
+GPNLGH+CMTI10                        Type 1C           Custom           yes yes yes    207  0
+GPNLFB+CMR8                          Type 1C           Custom           yes yes yes    183  0
+GPNLIK+CMSY10                        Type 1C           Custom           yes yes yes    117  0
+GPNLIL+MSBM10                        Type 1C           Custom           yes yes yes    116  0
+GPNLJL+CMMI10                        Type 1C           Custom           yes yes yes    122  0
+GPNLJM+CMR7                          Type 1C           Custom           yes yes yes    126  0
+GPNLJN+MSBM7                         Type 1C           Custom           yes yes yes    114  0
+GPNLHI+CMTI8                         Type 1C           Custom           yes yes yes    210  0
+GPNLKO+CMMI7                         Type 1C           Custom           yes yes yes    130  0
+GPNLLP+CMR5                          Type 1C           Custom           yes yes yes    132  0
+GPNNBH+MSAM10                        Type 1C           Custom           yes yes no     135  0
+GPNOIP+CMEX10                        Type 1C           Custom           yes yes yes    138  0
+GPNPOI+CMCSC10                       Type 1C           Custom           yes yes yes    140  0
+GPNPOJ+CMTT10                        Type 1C           Custom           yes yes yes    139  0

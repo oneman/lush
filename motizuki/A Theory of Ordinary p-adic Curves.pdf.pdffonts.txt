@@ -1,0 +1,19 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+OFIHJI+CMBX10                        Type 1C           Custom           yes yes yes    834  0
+OFIHJJ+CMR10                         Type 1C           Custom           yes yes yes    837  0
+OFIHJK+CMR9                          Type 1C           Custom           yes yes yes    840  0
+OFIHKK+CMSY10                        Type 1C           Custom           yes yes yes    843  0
+OFIHMK+CMR7                          Type 1C           Custom           yes yes yes    753  0
+OFIHML+CMMI10                        Type 1C           Custom           yes yes yes    749  0
+OFIHNM+CMMI7                         Type 1C           Custom           yes yes yes    755  0
+OFIHON+CMSY7                         Type 1C           Custom           yes yes yes    760  0
+OFIIBM+CMTI10                        Type 1C           Custom           yes yes yes    763  0
+OFIIHL+CMR5                          Type 1C           Custom           yes yes yes    766  0
+OFIIHM+CMBX7                         Type 1C           Custom           yes yes yes    767  0
+OFIIHN+CMMI5                         Type 1C           Custom           yes yes yes    770  0
+OFIIOL+CMEX10                        Type 1C           Custom           yes yes yes    773  0
+OFILEN+CMSY5                         Type 1C           Custom           yes yes yes    776  0
+OFJDHI+EUFM10                        Type 1C           Custom           yes yes yes    779  0
+OFJGND+CMBX5                         Type 1C           Custom           yes yes yes    782  0
+OFJLND+CMSL10                        Type 1C           Custom           yes yes yes    785  0

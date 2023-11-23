@@ -1,0 +1,54 @@
+Combinatorial Anabelian Topics II.pdf:
+
+PDF-1.5
+Info object (853 0 R):
+<</Author(<905688EA>)/CreationDate(D:20220320004230+09'00')/Creator( TeX output 2021.10.08:1545)/ModDate(D:20220320004230+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(comb-topics-2-2021-10-08.pdf)>>
+Pages: 167
+
+Retrieving info from pages 1-167...
+Mediaboxes (1):
+	1	(856 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (41):
+	1	(856 0 R):	Type1 'CFMPDD+CMBX12' (892 0 R)
+	1	(856 0 R):	Type1 'CFMPDE+CMR10' (895 0 R)
+	1	(856 0 R):	Type1 'CFMPFE+CMSS10' (898 0 R)
+	1	(856 0 R):	Type1 'CFMPFF+CMCSC10' (901 0 R)
+	1	(856 0 R):	Type1 'CFMPFG+CMR9' (904 0 R)
+	1	(856 0 R):	Type1 'CFMPFH+CMTI9' (907 0 R)
+	1	(856 0 R):	Type1 'CFMPGH+CMBX9' (910 0 R)
+	1	(856 0 R):	Type1 'CFMPHI+CMTI10' (913 0 R)
+	2	(1 0 R):	Type1 'CFMPKJ+CMSY9' (757 0 R)
+	2	(1 0 R):	Type1 'CFMPKK+MSBM10' (746 0 R)
+	2	(1 0 R):	Type1 'CFMPLL+CMR12' (753 0 R)
+	2	(1 0 R):	Type1 'CFMPLM+CMSY10' (748 0 R)
+	2	(1 0 R):	Type1 'CFMPMM+EUFM10' (754 0 R)
+	2	(1 0 R):	Type1 'CFMPMN+CMTI12' (762 0 R)
+	2	(1 0 R):	Type1 'CFMPMO+CMMI12' (770 0 R)
+	2	(1 0 R):	Type1 'CFMPMP+CMMI8' (767 0 R)
+	2	(1 0 R):	Type1 'CFMPNA+CMR8' (764 0 R)
+	2	(1 0 R):	Type1 'CFMPKI+CMMI9' (763 0 R)
+	3	(8 0 R):	Type1 'CFNABA+SFRM1200' (771 0 R)
+	4	(11 0 R):	Type1 'CFNAEA+MSAM10' (774 0 R)
+	5	(14 0 R):	Type1 'CFNAGA+CMSY8' (780 0 R)
+	5	(14 0 R):	Type1 'CFNAHA+CMMI6' (777 0 R)
+	6	(17 0 R):	Type1 'CFNAKA+CMMIB10' (783 0 R)
+	7	(20 0 R):	Type1 'CFNAOA+CMEX10' (786 0 R)
+	10	(29 0 R):	Type1 'CFNBEO+CMBSY10' (789 0 R)
+	11	(32 0 R):	Type1 'CFNBHO+CMR6' (792 0 R)
+	17	(50 0 R):	Type0 'KozGoPro-Regular-90msp-RKSJ-H-Identity-H' Identity-H (795 0 R)
+	19	(58 0 R):	Type1 'CFNCNI+CMEX8' (796 0 R)
+	20	(61 0 R):	Type1 'CFNDAI+CMSY6' (802 0 R)
+	20	(61 0 R):	Type1 'CFNDAJ+MSBM7' (799 0 R)
+	22	(67 0 R):	Type1 'CFNDKG+CMTI8' (805 0 R)
+	24	(73 0 R):	Type1 'CFNDPF+SFTI1200' (808 0 R)
+	54	(163 0 R):	Type1 'CFNJNC+CMMIB8' (816 0 R)
+	54	(163 0 R):	Type1 'CFNJND+CMBX8' (813 0 R)
+	54	(163 0 R):	Type1 'CFNJNE+CMBSY8' (810 0 R)
+	71	(216 0 R):	Type1 'CFNNPM+MSAM7' (817 0 R)
+	80	(243 0 R):	Type1 'CFOABP+CMEX7' (820 0 R)
+	116	(351 0 R):	Type1 'CFOHFE+CMMI10' (826 0 R)
+	116	(351 0 R):	Type1 'CFOHFF+CMR17' (823 0 R)
+	165	(498 0 R):	Type1 'CFPBKH+CMBX6' (829 0 R)
+	167	(506 0 R):	Type1 'CFPBPG+CMBX10' (830 0 R)
+

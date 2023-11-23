@@ -1,0 +1,32 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+KJMEND+CMBX10                        Type 1C           Custom           yes yes yes    519  0
+KJMEOD+CMCSC10                       Type 1C           Custom           yes yes yes    522  0
+KJMEPE+CMR10                         Type 1C           Custom           yes yes yes    525  0
+KJMFAF+CMR8                          Type 1C           Custom           yes yes yes    528  0
+KJMFAG+CMTI8                         Type 1C           Custom           yes yes yes    531  0
+KJMFBG+CMMI8                         Type 1C           Custom           yes yes yes    534  0
+KJMFBH+CMSY10                        Type 1C           Custom           yes yes yes    537  0
+KJMFCI+CMTI10                        Type 1C           Custom           yes yes yes    540  0
+KJMFCJ+CMSY8                         Type 1C           Custom           yes yes yes    543  0
+T1                                   Type 3            Custom           yes no  no     547  0
+KJMFEJ+CMMI10                        Type 1C           Custom           yes yes yes    409  0
+KJMFKI+CMMI7                         Type 1C           Custom           yes yes yes    412  0
+KJMFKJ+CMR7                          Type 1C           Custom           yes yes yes    415  0
+KJMFKK+CMSY7                         Type 1C           Custom           yes yes yes    417  0
+KJMFKL+CMEX10                        Type 1C           Custom           yes yes yes    424  0
+KJMFLL+MSBM10                        Type 1C           Custom           yes yes yes    421  0
+KJMFPL+CMR5                          Type 1C           Custom           yes yes yes    426  0
+KJMGGJ+MSBM7                         Type 1C           Custom           yes yes yes    432  0
+KJMGGK+CMMI5                         Type 1C           Custom           yes yes yes    429  0
+TimesNewRomanPS-BoldMT               TrueType          WinAnsi          no  no  no     435  0
+KJMHBI+CMSY5                         Type 1C           Custom           yes yes yes    436  0
+KJMJCM+MSBM5                         Type 1C           Custom           yes yes yes    439  0
+KJMKFF+MSAM10                        Type 1C           Custom           yes yes no     442  0
+KJMKOD+CMMIB10                       Type 1C           Custom           yes yes yes    445  0
+KJMLFB+MSAM7                         Type 1C           Custom           yes yes no     450  0
+KJMLFC+MSAM5                         Type 1C           Custom           yes yes no     448  0
+KJMMBO+EUFM10                        Type 1C           Custom           yes yes yes    453  0
+T2                                   Type 3            Custom           yes no  no     456  0
+KJNCCH+CMSL10                        Type 1C           Custom           yes yes yes    460  0
+KJNCEH+CMTT10                        Type 1C           Custom           yes yes yes    463  0

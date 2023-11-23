@@ -1,0 +1,19 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+NNPFBE+CMBX10                        Type 1C           Custom           yes yes yes     98  0
+NNPFEM+CMR7                          Type 1C           Custom           yes yes yes    101  0
+NNPFEN+MSBM10                        Type 1C           Custom           yes yes yes    104  0
+NNPFEO+CMR8                          Type 1C           Custom           yes yes yes    107  0
+NNPFEP+CMSY8                         Type 1C           Custom           yes yes yes    110  0
+NNPFBF+CMCSC10                       Type 1C           Custom           yes yes yes    113  0
+NNPFCG+CMR10                         Type 1C           Custom           yes yes yes    116  0
+NNPFCH+CMTI10                        Type 1C           Custom           yes yes yes    119  0
+NNPFCI+CMSY10                        Type 1C           Custom           yes yes yes    122  0
+NNPFDI+CMMI10                        Type 1C           Custom           yes yes yes    125  0
+NNPFDJ+CMSY7                         Type 1C           Custom           yes yes yes    128  0
+NNPFDK+CMMI7                         Type 1C           Custom           yes yes yes    131  0
+NNPFDL+EUFM10                        Type 1C           Custom           yes yes yes    134  0
+NNPFHP+MSBM7                         Type 1C           Custom           yes yes yes     39  0
+NNPFIA+CMSY5                         Type 1C           Custom           yes yes yes     42  0
+NNPFJA+CMR5                          Type 1C           Custom           yes yes yes     45  0
+NNPFOA+MSAM7                         Type 1C           Custom           yes yes no      46  0

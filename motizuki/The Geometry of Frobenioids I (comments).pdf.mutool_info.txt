@@ -1,0 +1,30 @@
+The Geometry of Frobenioids I (comments).pdf:
+
+PDF-1.5
+Info object (50 0 R):
+<</Author(<905688EA>)/CreationDate(D:20200424024143+09'00')/Creator( TeX output 2020.04.24:0238)/ModDate(D:20200424024143+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(frobenioids-1-2020-04-24.pdf)>>
+Pages: 6
+
+Retrieving info from pages 1-6...
+Mediaboxes (1):
+	1	(53 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (17):
+	1	(53 0 R):	Type1 'NNPFBE+CMBX10' (98 0 R)
+	1	(53 0 R):	Type1 'NNPFEM+CMR7' (101 0 R)
+	1	(53 0 R):	Type1 'NNPFEN+MSBM10' (104 0 R)
+	1	(53 0 R):	Type1 'NNPFEO+CMR8' (107 0 R)
+	1	(53 0 R):	Type1 'NNPFEP+CMSY8' (110 0 R)
+	1	(53 0 R):	Type1 'NNPFBF+CMCSC10' (113 0 R)
+	1	(53 0 R):	Type1 'NNPFCG+CMR10' (116 0 R)
+	1	(53 0 R):	Type1 'NNPFCH+CMTI10' (119 0 R)
+	1	(53 0 R):	Type1 'NNPFCI+CMSY10' (122 0 R)
+	1	(53 0 R):	Type1 'NNPFDI+CMMI10' (125 0 R)
+	1	(53 0 R):	Type1 'NNPFDJ+CMSY7' (128 0 R)
+	1	(53 0 R):	Type1 'NNPFDK+CMMI7' (131 0 R)
+	1	(53 0 R):	Type1 'NNPFDL+EUFM10' (134 0 R)
+	2	(1 0 R):	Type1 'NNPFHP+MSBM7' (39 0 R)
+	2	(1 0 R):	Type1 'NNPFIA+CMSY5' (42 0 R)
+	2	(1 0 R):	Type1 'NNPFJA+CMR5' (45 0 R)
+	5	(10 0 R):	Type1 'NNPFOA+MSAM7' (46 0 R)
+

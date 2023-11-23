@@ -1,0 +1,40 @@
+Global Solvably Closed Anabelian Geometry (LaTeX version).pdf:
+
+PDF-1.5
+Info object (149 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107160351+09'00')/Creator(dvipsk 5.78 p1.4c Copyright 1996-99 ASCII Corp.\(www-ptex@ascii.co.jp\))/ModDate(D:20111107160351+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(solvably-closed-latex-personal.dvi)>>
+Pages: 16
+
+Retrieving info from pages 1-16...
+Mediaboxes (1):
+	1	(152 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (24):
+	1	(152 0 R):	Type1 'FMHLNB+CMBX10' (188 0 R)
+	1	(152 0 R):	Type1 'FMHLNC+CMCSC10' (191 0 R)
+	1	(152 0 R):	Type1 'FMHLOD+CMR9' (194 0 R)
+	1	(152 0 R):	Type1 'FMHLOE+CMTI9' (197 0 R)
+	1	(152 0 R):	Type1 'FMHLPE+CMR10' (200 0 R)
+	1	(152 0 R):	Type1 'FMHLPF+CMTI10' (203 0 R)
+	1	(152 0 R):	Type1 'FMHLPG+CMSY10' (206 0 R)
+	1	(152 0 R):	Type1 'FMHMAH+CMR8' (209 0 R)
+	2	(1 0 R):	Type1 'FMHMCI+CMEX10' (107 0 R)
+	2	(1 0 R):	Type1 'FMHMCJ+CMMI8' (102 0 R)
+	2	(1 0 R):	Type1 'FMHMDK+MSAM10' (112 0 R)
+	2	(1 0 R):	Type1 'FMHMCH+CMMI10' (106 0 R)
+	3	(4 0 R):	Type1 'FMHMGJ+CMSY8' (116 0 R)
+	3	(4 0 R):	Type1 'FMHMGK+CMMIB10' (114 0 R)
+	3	(4 0 R):	Type1 'FMHMHL+MSBM10' (120 0 R)
+	3	(4 0 R):	Type1 'FMHMHM+CMMI6' (115 0 R)
+	9	(22 0 R):	Type1 'FMHNCJ+CMR6' (125 0 R)
+	13	(34 0 R):	Type3 'T1' (128 0 R)
+	14	(38 0 R):	Type1 'FMHNOF+EUFM10' (134 0 R)
+	14	(38 0 R):	Type3 'T2' (132 0 R)
+	14	(38 0 R):	Type3 'T3' (129 0 R)
+	15	(42 0 R):	Type1 'FMHOBF+CMSL9' (140 0 R)
+	15	(42 0 R):	Type1 'FMHOCF+CMBX9' (137 0 R)
+	16	(45 0 R):	Type1 'FMHOEF+CMMI9' (143 0 R)
+
+Images (1):
+	1	(152 0 R):	[ Raw ] 1x1 1bpc ImageMask (177 0 R)
+

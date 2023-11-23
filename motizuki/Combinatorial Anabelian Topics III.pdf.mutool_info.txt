@@ -1,0 +1,51 @@
+Combinatorial Anabelian Topics III.pdf:
+
+PDF-1.6
+Info object (575 0 R):
+<</Author(shini)/CreationDate(D:20230610012007+09'00')/Creator( TeX output 2023.06.09:1354)/ModDate(D:20230610012007+09'00')/Producer(Acrobat Distiller 23.0 \(Windows\))/Title(comb-topics-3-2023-06-09.pdf)>>
+Pages: 104
+
+Retrieving info from pages 1-104...
+Mediaboxes (1):
+	1	(578 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (38):
+	1	(578 0 R):	Type1 'IBFLJO+CMBX12' (614 0 R)
+	1	(578 0 R):	Type1 'IBFLKO+CMR10' (617 0 R)
+	1	(578 0 R):	Type1 'IBFLKP+CMSS10' (620 0 R)
+	1	(578 0 R):	Type1 'IBFLLA+CMCSC10' (623 0 R)
+	1	(578 0 R):	Type1 'IBFLLB+CMR9' (626 0 R)
+	1	(578 0 R):	Type1 'IBFLLC+CMBX9' (629 0 R)
+	1	(578 0 R):	Type1 'IBFLMD+CMTI9' (632 0 R)
+	1	(578 0 R):	Type1 'IBFLME+CMMI9' (635 0 R)
+	1	(578 0 R):	Type1 'IBFLMF+CMTI10' (638 0 R)
+	2	(1 0 R):	Type1 'IBFLOF+CMR12' (491 0 R)
+	2	(1 0 R):	Type1 'IBFLOG+CMSY10' (482 0 R)
+	2	(1 0 R):	Type1 'IBFLOH+EUFM10' (478 0 R)
+	2	(1 0 R):	Type1 'IBFLOI+CMTI12' (488 0 R)
+	2	(1 0 R):	Type1 'IBFLPJ+SFRM1200' (486 0 R)
+	2	(1 0 R):	Type1 'IBFLPK+CMMI12' (492 0 R)
+	3	(4 0 R):	Type1 'IBFMAK+CMMIB10' (495 0 R)
+	4	(7 0 R):	Type1 'IBFMCL+CMR8' (501 0 R)
+	4	(7 0 R):	Type1 'IBFMCM+CMMI8' (513 0 R)
+	4	(7 0 R):	Type1 'IBFMCN+SFTI1200' (511 0 R)
+	4	(7 0 R):	Type1 'IBFMDN+CMBSY10' (512 0 R)
+	4	(7 0 R):	Type1 'IBFMDO+CMR6' (502 0 R)
+	4	(7 0 R):	Type1 'IBFMDP+CMEX10' (498 0 R)
+	5	(10 0 R):	Type1 'IBFMFA+CMSY8' (519 0 R)
+	5	(10 0 R):	Type1 'IBFMGA+CMMI6' (517 0 R)
+	10	(25 0 R):	Type1 'IBFMNO+MSBM10' (523 0 R)
+	11	(28 0 R):	Type1 'IBFMPP+MSAM10' (527 0 R)
+	13	(34 0 R):	Type1 'IBFNDO+CMSY6' (528 0 R)
+	16	(43 0 R):	Type1 'IBFNIN+CMEX8' (532 0 R)
+	22	(61 0 R):	Type1 'IBFOEK+MSAM7' (535 0 R)
+	37	(106 0 R):	Type1 'IBGACA+CMMI10' (538 0 R)
+	38	(109 0 R):	Type1 'IBGAEA+MSBM7' (540 0 R)
+	52	(151 0 R):	Type1 'IBGCEE+CMBX8' (543 0 R)
+	71	(208 0 R):	Type1 'IBGFDD+CMEX7' (547 0 R)
+	74	(217 0 R):	Type1 'IBGFKC+CMBSY8' (549 0 R)
+	82	(243 0 R):	Type1 'IBGGLM+CMTI8' (550 0 R)
+	103	(306 0 R):	Type1 'IBGJBO+CMMI7' (556 0 R)
+	103	(306 0 R):	Type1 'IBGJBP+CMBX10' (554 0 R)
+	103	(306 0 R):	Type1 'IBGJCA+CMSL10' (559 0 R)
+

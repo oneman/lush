@@ -1,0 +1,14 @@
+COMMENTS ON “NONCRITICAL BELYI MAPS”
+Shinichi Mochizuki
+July 2016
+
+(1.) In the proof of Lemma 2.3, the phrase “take λ such” should read “take λ such
+that”.
+(2.) In the ﬁrst sentence of the proof of Corollary 3.2, the phrase “product X over
+F ” should read “product of X over F ”.
+
+Typeset by AMS-TEX
+
+1
+
+

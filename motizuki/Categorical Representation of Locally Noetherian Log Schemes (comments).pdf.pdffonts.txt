@@ -1,0 +1,12 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+IODONJ+CMBX10                        Type 1C           Custom           yes yes yes     55  0
+IODPBB+CMSY8                         Type 1C           Custom           yes yes yes     58  0
+IODONK+CMCSC10                       Type 1C           Custom           yes yes yes     61  0
+IODOOL+CMR10                         Type 1C           Custom           yes yes yes     64  0
+IODOOM+CMSY10                        Type 1C           Custom           yes yes yes     67  0
+IODOON+CMTI10                        Type 1C           Custom           yes yes yes     70  0
+IODOPO+CMMI10                        Type 1C           Custom           yes yes yes     73  0
+IODOPP+MSBM7                         Type 1C           Custom           yes yes yes     76  0
+IODPAP+CMR7                          Type 1C           Custom           yes yes yes     79  0
+IODPBA+CMR8                          Type 1C           Custom           yes yes yes     82  0

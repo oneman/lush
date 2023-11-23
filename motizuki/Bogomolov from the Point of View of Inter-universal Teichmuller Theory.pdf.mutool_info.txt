@@ -1,0 +1,39 @@
+Bogomolov from the Point of View of Inter-universal Teichmuller Theory.pdf:
+
+PDF-1.5
+Info object (164 0 R):
+<</Author(<905688EA>)/CreationDate(D:20160112044436+09'00')/Creator( TeX output 2016.01.12:0438)/ModDate(D:20160112044436+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(bogomolov-iu-teich.pdf)>>
+Pages: 24
+
+Retrieving info from pages 1-24...
+Mediaboxes (1):
+	1	(167 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (26):
+	1	(167 0 R):	Type1 'MMBKEB+CMBX10' (207 0 R)
+	1	(167 0 R):	Type1 'MMBKHI+CMR7' (210 0 R)
+	1	(167 0 R):	Type1 'MMBKIJ+CMMI10' (213 0 R)
+	1	(167 0 R):	Type1 'MMBKIK+CMTI10' (216 0 R)
+	1	(167 0 R):	Type1 'MMBKIL+CMMIB7' (219 0 R)
+	1	(167 0 R):	Type1 'MMBKIM+CMSY8' (222 0 R)
+	1	(167 0 R):	Type1 'MMBKGB+CMCSC10' (225 0 R)
+	1	(167 0 R):	Type1 'MMBKGC+CMR10' (228 0 R)
+	1	(167 0 R):	Type1 'MMBKGD+CMCSC8' (231 0 R)
+	1	(167 0 R):	Type1 'MMBKGE+CMR8' (234 0 R)
+	1	(167 0 R):	Type1 'MMBKHE+CMBX8' (237 0 R)
+	1	(167 0 R):	Type1 'MMBKHF+CMTI8' (240 0 R)
+	1	(167 0 R):	Type1 'MMBKHG+CMSY10' (243 0 R)
+	1	(167 0 R):	Type1 'MMBKHH+CMSY7' (246 0 R)
+	2	(1 0 R):	Type1 'MMBKLM+CMEX10' (125 0 R)
+	2	(1 0 R):	Type1 'MMBKLN+EUFM10' (135 0 R)
+	2	(1 0 R):	Type1 'MMBKLO+MSBM10' (129 0 R)
+	2	(1 0 R):	Type1 'MMBKLP+MSBM7' (126 0 R)
+	3	(4 0 R):	Type1 'MMBKNP+MSAM7' (140 0 R)
+	3	(4 0 R):	Type1 'MMBKOA+CMMI7' (144 0 R)
+	3	(4 0 R):	Type1 'MMBKPB+MSAM10' (141 0 R)
+	5	(10 0 R):	Type1 'MMBLCB+MSBM5' (147 0 R)
+	9	(22 0 R):	Type1 'MMBLJP+CMMI5' (150 0 R)
+	10	(25 0 R):	Type1 'MMBLMP+MSAM5' (153 0 R)
+	19	(53 0 R):	Type1 'MMBMJL+CMMIB10' (154 0 R)
+	24	(68 0 R):	Type1 'MMBNCI+CMSL10' (157 0 R)
+

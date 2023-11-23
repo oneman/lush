@@ -1,0 +1,30 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+PKOGIC+CMR10                         Type 1C           Custom           yes yes yes    388  0
+PKOGLK+CMR7                          Type 1C           Custom           yes yes yes    391  0
+PKOGLL+CMMI7                         Type 1C           Custom           yes yes yes    394  0
+PKOGLM+CMSY8                         Type 1C           Custom           yes yes yes    397  0
+PKOGJC+CMCSC10                       Type 1C           Custom           yes yes yes    400  0
+PKOGJD+CMCSC8                        Type 1C           Custom           yes yes yes    403  0
+PKOGJE+CMR8                          Type 1C           Custom           yes yes yes    406  0
+PKOGJF+CMTI8                         Type 1C           Custom           yes yes yes    409  0
+PKOGKG+CMBX10                        Type 1C           Custom           yes yes yes    412  0
+PKOGKH+CMSY10                        Type 1C           Custom           yes yes yes    415  0
+PKOGKI+CMTI10                        Type 1C           Custom           yes yes yes    418  0
+PKOGLJ+CMMI10                        Type 1C           Custom           yes yes yes    421  0
+PKOGNM+CMSY7                         Type 1C           Custom           yes yes yes    297  0
+PKOGNN+MSBM10                        Type 1C           Custom           yes yes yes    302  0
+PKOHCM+EUFM10                        Type 1C           Custom           yes yes yes    303  0
+PKOHCN+EUFM7                         Type 1C           Custom           yes yes yes    307  0
+PKOHCO+CMMI5                         Type 1C           Custom           yes yes yes    304  0
+PKOHEO+MSAM10                        Type 1C           Custom           yes yes no     308  0
+PKOHOL+CMR5                          Type 1C           Custom           yes yes yes    312  0
+PKOHOM+MSAM7                         Type 1C           Custom           yes yes no     311  0
+PKOIHK+CMSY5                         Type 1C           Custom           yes yes yes    315  0
+PKOJEG+CMMIB10                       Type 1C           Custom           yes yes yes    316  0
+PKOJHG+CMEX10                        Type 1C           Custom           yes yes yes    319  0
+PKOJIH+MSBM7                         Type 1C           Custom           yes yes yes    322  0
+PKOKMA+CMBSY10                       Type 1C           Custom           yes yes yes    325  0
+PKOLAA+CMEX7                         Type 1C           Custom           yes yes no     326  0
+PKONMA+CMTT10                        Type 1C           Custom           yes yes yes    329  0
+PKONPA+CMTT8                         Type 1C           Custom           yes yes yes    330  0

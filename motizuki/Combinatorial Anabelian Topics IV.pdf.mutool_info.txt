@@ -1,0 +1,53 @@
+Combinatorial Anabelian Topics IV.pdf:
+
+PDF-1.6
+Info object (693 0 R):
+<</Author(shini)/CreationDate(D:20220728034454+09'00')/Creator( TeX output 2022.07.22:2221)/ModDate(D:20220728034454+09'00')/Producer(Acrobat Distiller 22.0 \(Windows\))/Title(comb-topics-4-2022-07-22+figure.pdf)>>
+Pages: 131
+
+Retrieving info from pages 1-131...
+Mediaboxes (1):
+	1	(696 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (40):
+	1	(696 0 R):	Type1 'OFPAPD+CMBX12' (734 0 R)
+	1	(696 0 R):	Type1 'OFPBAL+CMTI10' (737 0 R)
+	1	(696 0 R):	Type1 'OFPAPE+CMR10' (740 0 R)
+	1	(696 0 R):	Type1 'OFPAPF+CMSS10' (743 0 R)
+	1	(696 0 R):	Type1 'OFPAPG+CMCSC10' (746 0 R)
+	1	(696 0 R):	Type1 'OFPAPH+CMR9' (749 0 R)
+	1	(696 0 R):	Type1 'OFPAPI+CMBX9' (752 0 R)
+	1	(696 0 R):	Type1 'OFPBAI+CMMI9' (755 0 R)
+	1	(696 0 R):	Type1 'OFPBAJ+CMSY9' (758 0 R)
+	1	(696 0 R):	Type1 'OFPBAK+CMTI9' (761 0 R)
+	2	(1 0 R):	Type1 'OFPBCL+CMR12' (592 0 R)
+	2	(1 0 R):	Type1 'OFPBCM+CMSY10' (593 0 R)
+	2	(1 0 R):	Type1 'OFPBCN+EUFM10' (596 0 R)
+	2	(1 0 R):	Type1 'OFPBCO+SFRM1200' (606 0 R)
+	2	(1 0 R):	Type1 'OFPBCP+CMTI12' (605 0 R)
+	3	(4 0 R):	Type1 'OFPBFA+CMMI12' (607 0 R)
+	3	(4 0 R):	Type1 'OFPBFB+CMMI8' (611 0 R)
+	3	(4 0 R):	Type1 'OFPBFC+CMSY8' (615 0 R)
+	3	(4 0 R):	Type1 'OFPBFD+CMR8' (618 0 R)
+	4	(7 0 R):	Type1 'OFPBHD+MSBM10' (627 0 R)
+	4	(7 0 R):	Type1 'OFPBHE+SFTI1200' (628 0 R)
+	4	(7 0 R):	Type1 'OFPBHF+CMEX10' (631 0 R)
+	4	(7 0 R):	Type1 'OFPBHG+CMMIB10' (623 0 R)
+	4	(7 0 R):	Type1 'OFPBHH+MSAM10' (621 0 R)
+	5	(10 0 R):	Type1 'OFPBOF+CMSY6' (634 0 R)
+	6	(13 0 R):	Type1 'OFPCAG+CMEX8' (639 0 R)
+	9	(22 0 R):	Type1 'OFPCEF+CMBSY10' (647 0 R)
+	9	(22 0 R):	Type1 'OFPCEG+CMBX8' (644 0 R)
+	9	(22 0 R):	Type1 'OFPCEH+CMMIB8' (641 0 R)
+	10	(25 0 R):	Type1 'OFPCGH+CMMI6' (654 0 R)
+	10	(25 0 R):	Type1 'OFPCGI+CMR6' (651 0 R)
+	21	(58 0 R):	Type1 'OFPDHD+MSAM7' (656 0 R)
+	62	(181 0 R):	Type1 'OFPHPI+MSBM7' (658 0 R)
+	68	(199 0 R):	Type1 'OFPIJF+EUFB10' (661 0 R)
+	91	(270 0 R):	Type1 'OFPKOI+EUFM7' (662 0 R)
+	113	(336 0 R):	Type1 'OFPNDL+CMTI8' (665 0 R)
+	130	(389 0 R):	Type1 'OFPOPB+CMMI7' (670 0 R)
+	130	(389 0 R):	Type1 'OFPOPC+CMMI10' (672 0 R)
+	130	(389 0 R):	Type1 'OFPPAD+CMBX10' (666 0 R)
+	131	(394 0 R):	Type1 'OFPPBE+CMTT10' (673 0 R)
+

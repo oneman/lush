@@ -1,0 +1,19 @@
+A Survey of the Hodge-Arakelov Theory of Elliptic Curves I (comments).pdf:
+
+PDF-1.5
+Info object (9 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20121109135723+09'00')/Creator( TeX output 2012.10.17:2303)/ModDate(D:20121109135723+09'00')/Producer(Acrobat Distiller 10.1.3 \(Windows\))/Title(hodge-arakelov-survey-i-comments-2012-10-18.pdf)>>
+Pages: 1
+
+Retrieving info from pages 1-1...
+Mediaboxes (1):
+	1	(12 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (6):
+	1	(12 0 R):	Type1 'OIMNBE+CMBX10' (36 0 R)
+	1	(12 0 R):	Type1 'OIMNBF+CMCSC10' (39 0 R)
+	1	(12 0 R):	Type1 'OIMNBG+CMR10' (42 0 R)
+	1	(12 0 R):	Type1 'OIMNBH+CMSY10' (45 0 R)
+	1	(12 0 R):	Type1 'OIMNCI+CMR8' (48 0 R)
+	1	(12 0 R):	Type1 'OIMNCJ+CMSY8' (51 0 R)
+

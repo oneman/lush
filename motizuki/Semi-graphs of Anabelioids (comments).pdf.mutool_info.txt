@@ -1,0 +1,28 @@
+Semi-graphs of Anabelioids (comments).pdf:
+
+PDF-1.5
+Info object (57 0 R):
+<</Author(<905688EA>)/CreationDate(D:20200518154056+09'00')/Creator( TeX output 2020.05.18:1511)/ModDate(D:20200518154056+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(semianab-comments-2020-05-18.pdf)>>
+Pages: 8
+
+Retrieving info from pages 1-8...
+Mediaboxes (1):
+	1	(60 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (15):
+	1	(60 0 R):	Type1 'OKEHKM+CMBX10' (102 0 R)
+	1	(60 0 R):	Type1 'OKEIFB+CMR8' (105 0 R)
+	1	(60 0 R):	Type1 'OKEIFC+CMSY8' (108 0 R)
+	1	(60 0 R):	Type1 'OKEHLM+CMCSC10' (111 0 R)
+	1	(60 0 R):	Type1 'OKEHMN+CMR10' (114 0 R)
+	1	(60 0 R):	Type1 'OKEHON+CMTI10' (117 0 R)
+	1	(60 0 R):	Type1 'OKEHPO+CMSY10' (120 0 R)
+	1	(60 0 R):	Type1 'OKEIAO+CMMI10' (123 0 R)
+	1	(60 0 R):	Type1 'OKEIAP+CMMI7' (126 0 R)
+	1	(60 0 R):	Type1 'OKEIDP+CMR7' (129 0 R)
+	1	(60 0 R):	Type1 'OKEIFA+CMSY7' (132 0 R)
+	2	(1 0 R):	Type1 'OKEIOP+MSBM10' (46 0 R)
+	2	(1 0 R):	Type1 'OKEJCP+CMR5' (47 0 R)
+	3	(6 0 R):	Type1 'OKEJKN+CMEX10' (50 0 R)
+	3	(6 0 R):	Type1 'OKEJOM+EUFM10' (53 0 R)
+

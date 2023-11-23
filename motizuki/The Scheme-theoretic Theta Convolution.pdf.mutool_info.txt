@@ -1,0 +1,32 @@
+The Scheme-theoretic Theta Convolution.pdf:
+
+PDF-1.5
+Info object (275 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107212727+09'00')/Creator(PScript5.dll Version 5.2.2)/ModDate(D:20111107212727+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(The Scheme-theoretic Theta Convolution.pdf)>>
+Pages: 52
+
+Retrieving info from pages 1-52...
+Mediaboxes (1):
+	1	(278 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (16):
+	1	(278 0 R):	Type1 'IELNLO+CMR10' (300 0 R)
+	1	(278 0 R):	Type1 'IELNLP+CMCSC10' (303 0 R)
+	1	(278 0 R):	Type1 'IELNMP+CMBX10' (306 0 R)
+	1	(278 0 R):	Type1 'IELNNA+CMSY10' (309 0 R)
+	1	(278 0 R):	Type1 'IELNNB+CMTI10' (312 0 R)
+	2	(1 0 R):	Type1 'IELNPC+CMMI10' (236 0 R)
+	2	(1 0 R):	Type1 'IELNPD+CMSY7' (233 0 R)
+	2	(1 0 R):	Type1 'IELNPE+CMMI7' (237 0 R)
+	2	(1 0 R):	Type1 'IELNPF+CMR5' (244 0 R)
+	3	(4 0 R):	Type1 'IELOCE+CMBX7' (246 0 R)
+	3	(4 0 R):	Type1 'IELOCF+CMMIB10' (250 0 R)
+	4	(7 0 R):	Type1 'IELOFF+CMR7' (253 0 R)
+	5	(10 0 R):	Type1 'IELOHF+CMEX10' (260 0 R)
+	5	(10 0 R):	Type1 'IELOHG+CMMI5' (255 0 R)
+	5	(10 0 R):	Type1 'IELOHH+CMSY5' (256 0 R)
+	28	(79 0 R):	Type1 'IEMBPC+CMBX5' (263 0 R)
+
+Images (1):
+	2	(1 0 R):	[ Raw ] 1x1 1bpc ImageMask (155 0 R)
+

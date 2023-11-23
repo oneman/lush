@@ -1,0 +1,35 @@
+Noncritical Belyi Maps.pdf:
+
+PDF-1.5
+Info object (60 0 R):
+<</Author(<965D8C8E8140905688EA>)/CreationDate(D:20111107162450+09'00')/Creator(PScript5.dll Version 5.2.2)/ModDate(D:20111107162450+09'00')/Producer(Acrobat Distiller 10.1.1 \(Windows\))/Title(Noncritical Belyi Maps.pdf)>>
+Pages: 9
+
+Retrieving info from pages 1-9...
+Mediaboxes (1):
+	1	(63 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (19):
+	1	(63 0 R):	Type1 'GPLBGH+CMR10' (119 0 R)
+	1	(63 0 R):	Type1 'GPLBJP+CMR7' (122 0 R)
+	1	(63 0 R):	Type1 'GPLBKP+CMMI7' (125 0 R)
+	1	(63 0 R):	Type1 'GPLBLA+MSBM7' (128 0 R)
+	1	(63 0 R):	Type1 'GPLBLB+CMSY7' (131 0 R)
+	1	(63 0 R):	Type1 'GPLBMC+CMSY8' (134 0 R)
+	1	(63 0 R):	Type1 'GPLBGI+CMCSC10' (137 0 R)
+	1	(63 0 R):	Type1 'GPLBHI+CMR8' (140 0 R)
+	1	(63 0 R):	Type1 'GPLBIJ+CMTI8' (143 0 R)
+	1	(63 0 R):	Type1 'GPLBIK+CMBX10' (146 0 R)
+	1	(63 0 R):	Type1 'GPLBIL+MSBM10' (149 0 R)
+	1	(63 0 R):	Type1 'GPLBIM+CMTI10' (152 0 R)
+	1	(63 0 R):	Type1 'GPLBJN+CMSY10' (155 0 R)
+	1	(63 0 R):	Type1 'GPLBJO+CMMI10' (158 0 R)
+	1	(63 0 R):	Type3 'T1' (162 0 R)
+	5	(10 0 R):	Type1 'GPLCFP+CMR5' (50 0 R)
+	5	(10 0 R):	Type1 'GPLCGA+CMEX10' (47 0 R)
+	6	(13 0 R):	Type1 'GPLCJP+MSAM10' (53 0 R)
+	7	(17 0 R):	Type1 'GPLCPO+CMMI5' (54 0 R)
+
+Images (1):
+	1	(63 0 R):	[ Raw ] 1x1 1bpc ImageMask (94 0 R)
+

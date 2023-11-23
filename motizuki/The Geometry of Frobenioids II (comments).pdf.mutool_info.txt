@@ -1,0 +1,29 @@
+The Geometry of Frobenioids II (comments).pdf:
+
+PDF-1.5
+Info object (33 0 R):
+<</Author(<905688EA>)/CreationDate(D:20190207162247+09'00')/Creator( TeX output 2019.02.07:1621)/ModDate(D:20190207162247+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(frobenioids-2-2019-02-10.pdf)>>
+Pages: 3
+
+Retrieving info from pages 1-3...
+Mediaboxes (1):
+	1	(36 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (16):
+	1	(36 0 R):	Type1 'ALLIGJ+CMBX10' (80 0 R)
+	1	(36 0 R):	Type1 'ALLIJB+MSAM7' (83 0 R)
+	1	(36 0 R):	Type1 'ALLIKC+CMTI10' (86 0 R)
+	1	(36 0 R):	Type1 'ALLIKD+CMR8' (89 0 R)
+	1	(36 0 R):	Type1 'ALLIKE+CMSY8' (92 0 R)
+	1	(36 0 R):	Type1 'ALLIHK+CMCSC10' (95 0 R)
+	1	(36 0 R):	Type1 'ALLIHL+CMR10' (98 0 R)
+	1	(36 0 R):	Type1 'ALLIHM+CMMI10' (101 0 R)
+	1	(36 0 R):	Type1 'ALLIHN+CMSY7' (104 0 R)
+	1	(36 0 R):	Type1 'ALLIIN+CMSY10' (107 0 R)
+	1	(36 0 R):	Type1 'ALLIIO+CMR7' (110 0 R)
+	1	(36 0 R):	Type1 'ALLIIP+CMMI7' (113 0 R)
+	1	(36 0 R):	Type1 'ALLIJA+MSBM10' (116 0 R)
+	2	(1 0 R):	Type1 'ALLIME+EUFM10' (28 0 R)
+	2	(1 0 R):	Type1 'ALLIMF+MSBM7' (26 0 R)
+	2	(1 0 R):	Type1 'ALLING+CMMI5' (25 0 R)
+

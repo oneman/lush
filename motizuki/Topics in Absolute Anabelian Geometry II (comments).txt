@@ -1,0 +1,47 @@
+COMMENTS ON “TOPICS IN
+ABSOLUTE ANABELIAN GEOMETRY II:
+DECOMPOSITION GROUPS AND ENDOMORPHISMS”
+
+Shinichi Mochizuki
+June 2016
+
+(1.) In the situation of Example 3.2, (ii) [cf. also Corollaries 3.3, 3.4], we observe
+that it follows immediately from the k-coricity condition in Deﬁnition 3.1, (a), that
+the open subscheme [i.e., strictly speaking, open substack] UX ⊆ X is completely
+determined by the positive integer N and, in particular, independent of the choice
+of ﬁnite étale coverings V → X, V → D. In fact, this independence is implicit in
+the statement of Corollary 3.4.
+(2.) In the statement of Corollary 3.4, the phrase “pro-ﬁnite étale covering of
+X” should read “pro-ﬁnite étale covering of Xi ”.
+(3.) In the Π-chain discussed in Corollary 3.7, (a), it is to be understood that
+the proﬁnite group “Πj ” [cf. the notational conventions of [AbsTopI], Deﬁnition
+4.2, (iii)] that corresponds to the input datum for the ﬁnal “” in the associated
+type-chain — i.e., the proﬁnite group that corresponds to the copy of the projective
+line minus three points “P ” of Example 3.6, (ii) — is such that
+· the corresponding “geometric fundamental group Δj ” [cf. the notational
+conventions of [AbsTopI], Deﬁnition 4.2, (iii)] is a proﬁnite free group of
+rank 2;
+· the set of conjugacy classes of cuspidal decomposition groups in Δj is of
+cardinality 3
+— i.e., such that Πj does indeed correspond to a copy of the projective line minus
+three points [cf. [AbsTopI], Lemma 4.1, (iv); [AbsTopI], Lemma 4.5, (v)]. Note
+that, by [AbsTopI], Lemma 4.5, (v), these conditions on Πj are entirely grouptheoretic. Although these conditions were not stated explicitly in Corollary 3.7,
+(a), they were intended to be implicit in the phrase “which admits an entirely
+‘group-theoretic’ description”, together with the reference given in Corollary
+3.7, (a), to Example 3.6, (ii).
+(4.) In the ﬁnal paragaraph of the proof of Corollary 2.10, the text “totally ramiﬁed
+at precisely one closed point but unramiﬁed elsewhere” should read “totally ramiﬁed
+at some closed point”.
+Typeset by AMS-TEX
+
+1
+
+2
+
+SHINICHI MOCHIZUKI
+
+Bibliography
+[AbsTopI] S. Mochizuki, Topics in Absolute Anabelian Geometry I: Generalities, J. Math.
+Sci. Univ. Tokyo 19 (2012), pp. 139-242.
+
+

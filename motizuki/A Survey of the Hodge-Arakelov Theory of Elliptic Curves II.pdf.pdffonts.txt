@@ -1,0 +1,32 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+LMEMOB+CMR9                          Type 1C           Custom           yes yes yes    284  0
+LMEMPC+CMBX12                        Type 1C           Custom           yes yes yes    287  0
+LMEMPD+CMBX10                        Type 1C           Custom           yes yes yes    290  0
+LMEMPE+CMR7                          Type 1C           Custom           yes yes yes    293  0
+LMEMPF+CMBX9                         Type 1C           Custom           yes yes yes    296  0
+LMENAF+CMTI9                         Type 1C           Custom           yes yes yes    299  0
+LMENAG+CMMI9                         Type 1C           Custom           yes yes yes    302  0
+LMENAH+CMR6                          Type 1C           Custom           yes yes yes    305  0
+LMENCJ+CMR10                         Type 1C           Custom           yes yes yes    208  0
+LMENCK+CMSY10                        Type 1C           Custom           yes yes yes    189  0
+LMENDK+CMTI10                        Type 1C           Custom           yes yes yes    191  0
+LMENDL+CMMI10                        Type 1C           Custom           yes yes yes    192  0
+LMENDM+CMMI7                         Type 1C           Custom           yes yes yes    196  0
+LMENDN+CMMI5                         Type 1C           Custom           yes yes yes    199  0
+LMENDO+CMSY7                         Type 1C           Custom           yes yes yes    188  0
+LMENCI+CMCSC10                       Type 1C           Custom           yes yes yes    203  0
+LMENEP+CMR5                          Type 1C           Custom           yes yes yes    211  0
+LMENGP+CMSY5                         Type 1C           Custom           yes yes yes    215  0
+LMENIP+MSBM10                        Type 1C           Custom           yes yes yes    219  0
+LMENJA+MSBM5                         Type 1C           Custom           yes yes yes    216  0
+LMENKB+MSBM7                         Type 1C           Custom           yes yes yes    223  0
+LMENKC+CMBX7                         Type 1C           Custom           yes yes yes    222  0
+LMENMC+CMEX10                        Type 1C           Custom           yes yes yes    226  0
+LMENND+CMEX7                         Type 1C           Custom           yes yes no     229  0
+LMENPD+CMMIB7                        Type 1C           Custom           yes yes yes    234  0
+LMENPE+CMMIB10                       Type 1C           Custom           yes yes yes    232  0
+LMEOLB+MSAM10                        Type 1C           Custom           yes yes no     237  0
+LMEOPA+EUFM10                        Type 1C           Custom           yes yes yes    240  0
+LMEPJN+CMTI7                         Type 1C           Custom           yes yes yes    243  0
+LMEPPM+CMSL9                         Type 1C           Custom           yes yes yes    244  0

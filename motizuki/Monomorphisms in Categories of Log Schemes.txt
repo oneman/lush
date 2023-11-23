@@ -1,0 +1,4104 @@
+Monomorphisms in
+Categories of Log Schemes
+Shinichi Mochizuki
+November 2014
+Abstract. In the present paper, we study category-theoretic properties of monomorphisms in categories of log schemes. This study allows one to give a purely categorytheoretic reconstruction of the log scheme that gave rise to the category under consideration. We also obtain analogous results for categories of schemes of locally ﬁnite
+type over the ring of rational integers that are equipped with “archimedean structures”. Such reconstructions were discussed in two previous papers by the author,
+but these reconstructions contained some errors, which were pointed out to the author by C. Nakayama and Y. Hoshi. These errors revolve around certain elementary
+combinatorial aspects of fan decompositions of two-dimensional rational polyhedral
+cones — i.e., of the sort that occur in the classical theory of toric varieties — and
+may be repaired by applying the theory developed in the present paper.
+
+Contents:
+§0. Notations and Conventions
+§1. Generalities on Monomorphisms and Minimal Points
+§2. The Scheme Structure of Submonic Log Schemes
+§3. Seamless Partitions of Orientable Log Schemes
+§4. Category-theoretic Representation of Archimedean Structures
+Appendix
+
+Introduction
+The purpose of the present paper is to study, in some detail, various aspects
+of the structure of categories of log schemes that revolve around the behavior
+of monomorphisms in such categories. This study leads naturally to a purely
+category-theoretic reconstruction of the log scheme that gave rise to the category
+under consideration. Our main result is the following [cf. Theorem 3.8, (iii)].
+Theorem A. (Category-theoretic reconstruction of log schemes) For
+i = 1, 2, let Xilog be a locally noetherian fs log scheme [cf. the discussion
+entitled “Log schemes” in §0]. For i = 1, 2, we shall write Schlog (Xilog ) for the
+2010 Mathematics Subject Classiﬁcation. Primary 14A15; Secondary 14G40.
+Key words and phrases. Log scheme, scheme, category, anabelian geometry, archimedean
+structure.
+Typeset by AMS-TEX
+
+1
+
+2
+
+SHINICHI MOCHIZUKI
+
+category of noetherian fs log schemes of ﬁnite type over Xilog and morphisms of
+ﬁnite type [cf. the discussion at the beginning of §1 for more details]. Let
+∼
+
+Φ : Schlog (X1log ) → Schlog (X2log )
+be an [arbitrary!] equivalence of categories. Then there exists a unique isomorphism of log schemes
+∼
+X1log → X2log
+such that Φ is isomorphic to the equivalence of categories induced by this isomor∼
+phism of log schemes X1log → X2log .
+We also obtain analogous results for categories of locally noetherian fs log
+schemes
+“SCHlog (−)”
+[cf. Theorem 4.6, (iv)], as well as for versions
+“Sch
+
+log
+
+log
+
+(−)”, “SCH
+
+(−)”
+
+of the categories “Schlog (−)”, “SCHlog (−)” for schemes of locally ﬁnite type over
+Z that are equipped with “archimedean structures” [cf. Theorem 4.8, (iv)].
+The theory exposed in the present paper arose as an attempt to correct errors,
+pointed out to the author by Chikara Nakayama and Yuichiro Hoshi in June 2013,
+in the theory of [LgSch], §2. These errors concern the category-theoretic properties
+of monomorphisms in categories of log schemes and are discussed in more detail in
+Example 0.3 and Remark 1.4.1 of the present paper.
+At the level of main results of the paper [LgSch], these errors in the theory of
+[LgSch], §2, do not aﬀect the proof of [LgSch], Theorem A, given in [LgSch], §1,
+but they do aﬀect the proof — although not the validity! — of [LgSch], Theorem B.
+This result [LgSch], Theorem B, is given a correct proof in §3 of the present paper
+and corresponds precisely to Theorem A [stated above].
+At the level of main results of papers of the author subsequent to [LgSch], the
+only place where the errors in the theory of [LgSch], §2, have an eﬀect is in the
+portion of the proof of the main result of [ArLgSch] [i.e., [ArLgSch], Theorem 5.1]
+that involves the theory of [ArLgSch], §4. The aﬀected portions of [ArLgSch], §4,
+are discussed in more detail in the introduction to §4 of the present paper. The
+main result [ArLgSch], Theorem 5.1, of [ArLgSch] is given a correct proof in §4 of
+the present paper and corresponds precisely to Theorem 4.8, (iv) [quoted above].
+At the level of individual propositions, lemmas, corollaries, theorems, and examples [i.e., which do not necessarily qualify as “main results” of the paper under
+consideration], a detailed discussion of the aﬀected portions of [LgSch] and [ArLgSch] may be found in the Appendix to the present paper.
+One important invariant of the structure of an fs log scheme is the rank of the
+groupiﬁcation of the ﬁber of the characteristic sheaf associated to the log structure
+at a geometric point of the underlying scheme of the log scheme [cf. Deﬁnition
+1.2, (i)]. For instance, when this rank is equal to 0 at all geometric points, the log
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+3
+
+structure of the fs log scheme under consideration is trivial. One central theme of
+the theory of the present paper consists of the phenomenon that
+the theory of category-theoretic properties of monomorphisms exhibits
+quite substantive qualitative diﬀerences, depending upon whether or
+not it holds that the ranks just referred to are ≤ 1.
+When it holds that these rank are ≤ 1, the fs log scheme under consideration will
+be referred to in the present paper as submonic [cf. Deﬁnition 1.2, (i)].
+Thus, in some sense, the simplest “borderline case” between submonic and
+non-submonic fs log schemes is the case of a log scheme whose underlying scheme
+is the spectrum of a ﬁeld whose absolute Galois group acts trivially on geometric
+ﬁbers of the characteristic sheaf associated to the log structure, and for which the
+rank of the groupiﬁcation of each such geometric ﬁber of the characteristic sheaf is
+equal to 2. In this case, the log scheme under consideration will be referred to as
+log-nodal [cf. Deﬁnition 1.2, (i)].
+One important feature of the category-theoretic properties of monomorphisms
+in categories of log schemes lies in the observation that
+these category-theoretic properties of monomorphisms take on a particularly straightforward and intuitive form whenever it holds that the
+various fs log schemes under consideration are all submonic.
+This observation is one of the main themes of the theory discussed in §1 of the
+present paper. Roughly speaking, the errors pointed out by Nakayama and Hoshi
+in the theory of [LgSch], §2, may be summarized as follows:
+the author wrote [LgSch], §2, under the misunderstanding that this
+“straightforward” and “intuitive” approach to category-theoretic properties of monomorphisms holds even if the various fs log schemes under
+consideration are not necessarily submonic.
+On the other hand, it turns out [cf. the theory of §2 of the present paper] that the
+various complications that occur in the study of the category-theoretic properties
+of monomorphisms of arbitrary non-submonic fs log schemes already appear in the
+case of log-nodal fs log schemes. Moreover, it turns out that
+these complications essentially revolve around various combinatorial aspects of fan decompositions of two-dimensional rational polyhedral
+cones, i.e., of the sort that occur in the classical theory of toric varieties.
+These elementary combinatorial aspects are reviewed in §0 of the present paper.
+The theory developed in the present paper may be summarized as follows.
+In §1, we introduce basic terminology and discuss various generalities concerning monomorphisms in categories of log schemes. In particular, we discuss [cf.,
+especially, Lemma 1.5] how the elementary combinatorics of two-dimensional fan
+decompositions reviewed in §0 may be interpreted in the context of categories of log
+schemes. In §2, we apply these elementary combinatorics of two-dimensional fan
+decompositions [cf. Proposition 2.3] to show, in eﬀect, that certain connectedness
+properties of such fan decompositions allow one to give a category-theoretic characterization of submonic fs log schemes. We then proceed to give, in Theorem
+
+4
+
+SHINICHI MOCHIZUKI
+
+2.6, a category-theoretic reconstruction of the scheme structure of a submonic
+fs log scheme. This reconstruction is quite “straightforward” and “intuitive” and
+amounts, in essence, to an application of the techniques of [LgSch], §2. In the
+remainder of §2, we show [cf. Corollary 2.12] that the various complications that
+arise in the case of arbitrary non-submonic fs log schemes amount, in essence, to
+the issue of giving a category-theoretic algorithm that allows one
+to distinguish a log-nodal fs log scheme from a nontrivial log étale
+localization of such a log-nodal fs log scheme [i.e., of the sort that arises
+from a nontrivial two-dimensional fan decomposition].
+Such a category-theoretic algorithm is furnished, in eﬀect, by the theory of seamless partitions of orientable log schemes developed in §3 [cf. Theorem 3.6]. This
+theory may be regarded as a translation into category theory of the elementary
+observation that
+a nontrivial two-dimensional fan decomposition may be distinguished from
+a trivial two-dimensional fan decomposition by considering the “seamless
+partition” constituted by the various constituent cones of the fan decomposition.
+Finally, in §4, we observe that the theory developed in §1, §2, §3 may be generalized,
+without any essential complications, to the case of fs log schemes of locally ﬁnite
+type over Z that are equipped with archimedean structures [cf. Theorems 4.3, 4.8].
+Such generalizations allow one to avoid the diﬃculties that arise from applying the
+erroneous portions of [LgSch], §2, in the theory of [ArLgSch], §4, i.e., by, in essence,
+isolating the [easily resolved] submonic aspects of these diﬃculties from the [more
+subtle!] non-submonic aspects of these diﬃculties.
+Acknowledgements:
+This paper owes its existence to the discovery by Chikara Nakayama and
+Yuichiro Hoshi of various errors [cf. Example 0.3; Remark 1.4.1] in the arguments
+of [LgSch], §2. The author wishes to express his gratitude to Nakayama and Hoshi
+for their careful reading of [LgSch].
+Section 0: Notations and Conventions
+
+Numbers:
+We will denote by N the set of natural numbers, by which we mean the set of
+integers n ≥ 0, and by Z the ring of rational integers. By a slight abuse of notation,
+we shall also use the notation N, Z to denote the corresponding monoids. We shall
+denote by Q≥0 the additive monoid of nonnegative rational numbers.
+Generalities on monoids:
+We shall refer to a ﬁnitely generated, saturated [cf. [Kato2], §1.1] monoid that
+has no nonzero invertible elements as an fs monoid. Thus, if P is an fs monoid,
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+5
+
+then the natural homomorphism of monoids P → P gp from P to its groupiﬁcation
+P gp is injective, and P gp is a ﬁnitely generated free abelian group. We shall refer
+to the rank of P gp as the rank rk(P ) of the fs monoid P .
+A homomorphism of monoids φ : P → Q between monoids P , Q will be
+called positive if φ maps every nonzero element of P to a nonzero element of Q.
+A nonzero element a ∈ P of a monoid P will be called a sum-dominator if there
+exists a positive integer n such that n · a may be written as the sum of a ﬁnite
+collection of generators of P . Thus, if φ : P → Q is a nonzero homomorphism
+[i.e., a homomorphism that maps any collection of generators of P to a subset of
+Q that contains at least one nonzero element!] from an arbitrary monoid P to an
+fs monoid Q, and a ∈ P is a sum-dominator, then φ(a) = 0. We shall say that a
+homomorphism of monoids φ : P → Q is sum-dominating if it maps every nonzero
+element of P to a sum-dominator of Q. Thus, a sum-dominating homomorphism is
+necessarily positive.
+Let P be an fs monoid. Thus, in the terminology of the discussion entitled
+“Monoids” of [FrdI], §0, P is sharp, integral, and saturated. In particular, it makes
+sense to speak of the perfection P pf of P , as well as of the set of primes Prime(P )
+of P — cf. the discussion entitled “Monoids” of [FrdI], §0, for more details.
+Rank two fs monoids:
+Now let us suppose that P is an fs monoid of rank two. Then we recall that
+there exists an isomorphism of monoids
+∼
+
+P pf → Q≥0 ⊕ Q≥0
+[cf. [ExtFam], Proposition 1.7]. In particular, one veriﬁes immediately that the
+set of primes Prime(P ) = Prime(P pf ) is of cardinality two. Write Prime(P ) =
+Prime(P pf ) = {p1 , p2 }. Thus, for each i = 1, 2, pi may be regarded as a collection
+of elements of P pf , which generates a submonoid Pppfi ⊆ P pf . For simplicity, let us
+def
+
+write Pi = Pppfi . Then one veriﬁes immediately that the two direct summands of
+the codomain of the isomorphism of the above display correspond precisely to P1 ,
+P2 , i.e., we have a natural isomorphism
+∼
+
+P1 ⊕ P2 → P pf
+and noncanonical isomorphisms of abstract monoids P1 ∼
+= P2 ∼
+= Q≥0 . In particular,
+these two direct summands are preserved, up to possible permutation, by any automorphism of the monoid P pf . Note that [since the monoid Q≥0 has no nontrivial
+automorphisms of ﬁnite order] these observations imply that
+any ﬁnite subgroup of Aut(P pf ) — or, indeed, of Aut(P ) (→ Aut(P pf ))
+— is of order ≤ 2.
+Next, let
+def
+
+φ0 : P → J 0 = N
+
+6
+
+SHINICHI MOCHIZUKI
+
+be a positive homomorphism that induces a surjection on groupiﬁcations φgp
+0 :
+gp
+gp ∼
+gp
+gp
+P  J0 = Z. Thus, Ker(φ0 ) = Z. Fix a nonzero element a ∈ Ker(φ0 ) ⊆ P gp .
+For i = 1, 2, write
+(P ⊆) Ji ⊆ P gp
+for the saturation [cf. [LgSch], Lemma 2.5, (ii)] of the submonoid of P gp generated
+by P and a if i = 1 (respectively, −a if i = 2) and
+φi : P → Ji
+for the natural inclusion. Thus, P gp = Jigp for i = 1, 2. One veriﬁes immediately
+that, up to a possible permutation of the indices “1” and “2”, the submonoids J1
+and J2 of P gp are independent of the choice of a. Moreover, we observe that it
+follows immediately from the deﬁnition of J1 and J2 that
+if i = 0 (respectively, i = 1, i = 2), then a positive homomorphism φ : P →
+N factors, via φi : P → Ji , through a positive homomorphism Ji → N if
+and only if the homomorphism induced on groupiﬁcations φgp : P gp → Z
+satisﬁes the condition φgp (a) = 0 (respectively, φgp (a) > 0; φgp (a) < 0).
+In this situation, we shall refer to J1 and J2 as bisecting monoids of P at φ0 .
+Before proceeding, we observe the following “continuity property” of bisecting
+monoids:
+Suppose that P ∗ ⊆ P gp is a rank two fs monoid that arises as a submonoid
+of P gp that contains P . For i = 1, 2, suppose that there exists a homomorphism ψi : P ∗ → N whose restriction to P factors, via φi : P → Ji ,
+through a positive homomorphism Ji → N. Then φ0 : P → N extends to
+a positive homomorphism ψ0 : P ∗ → N.
+Indeed, if φ0 does not admit such an extension ψ0 , then it follows that there exist
+nonzero elements b ∈ P , c ∈ P ∗ such that a + b + c = 0 for some element a ∈
+gp
+Ker(φgp
+0 ) ⊆ P . Then it follows from the above discussion of bisecting monoids
+that, for some i ∈ {1, 2}, ψigp (a) ≥ 0. Since the restriction of ψi to P is a positive
+homomorphism, we thus conclude that 0 = ψigp (a) + ψigp (b) + ψigp (c) > 0 ∈ N, a
+contradiction. This completes the proof of this “continuity property”.
+Bisecting monoids may be understood more explicitly if one passes to perfections. Indeed, by restricting our attention to perfections, one veriﬁes immediately
+that we may assume without loss of generality that
+P pf = Q≥0 ⊕ Q≥0 ,
+
+P1 = Q≥0 ⊕ 0,
+
+P2 = 0 ⊕ Q≥0 ,
+
+pf
+and that φpf
+→ Q≥0 is the homomorphism determined by sending (1, 0) and
+0 : P
+def
+
+(0, 1) to 1. Then one computes easily that, if one takes a = (1, −1), then J1pf is
+equal to the perfection of the submonoid of (P pf )gp = Q⊕Q generated by (0, 1) and
+(1, −1), while J2pf is equal to the perfection of the submonoid of (P pf )gp = Q ⊕ Q
+generated by (1, 0) and (−1, 1). Thus, if φpf maps
+(1, 0) → α;
+
+(0, 1) → β
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+7
+
+for α, β ∈ Q≥0 , then one veriﬁes immediately that φpf : P pf → Q≥0 factors, via
+pf
+φpf
+→ Jipf , through a positive homomorphism Jipf → Q≥0
+i :P
+for i = 0 (respectively, i = 1; i = 2) ⇐⇒ α = β (respectively, α > β; α < β).
+In the present paper, we shall often consider certain sequences of submonoids
+satisfying certain special properties, as in the following examples.
+Example 0.1.
+Submonoids converging from one side. Let P be an fs
+monoid of rank two, ∞ P ⊆ P gp a bisecting monoid of P at some positive homomorphism ∞ φ : P → N. Then there exists an inﬁnite descending sequence
+P ⊆ ∞P ⊆ . . . ⊆ nP ⊆ . . . ⊆ 1P ⊆ 0P
+— where n ∈ N — of submonoids of P gp such that every positive homomorphism
+φ : ∞ P → N factors through a positive homomorphism n P → N for some n [which
+may depend on φ], and, moreover, for each m ∈ N, m P is a bisecting monoid
+of P [hence, in particular, an fs monoid of rank two] whose image ∞ φgp (m P ) via
+∞ gp
+φ : P gp → Z contains both positive and negative elements. Indeed, by reasoning
+as in the above discussion, one reduces immediately to the veriﬁcation — say, in the
+case where P pf = Q≥0 ⊕ Q≥0 , ∞ φpf is the homomorphism P pf = Q≥0 ⊕ Q≥0 → Q≥0
+given by (α, β) → α + β, and ∞ P pf is the perfection of the submonoid of Q ⊕ Q
+generated by (−1, 1) and (1, 0) — of the existence of an inﬁnite descending sequence
+P pf ⊆ ∞ P pf ⊆ . . . ⊆ n P pf ⊆ . . . ⊆ 1 P pf ⊆ 0 P pf
+— where n ∈ N — of submonoids of (P pf )gp such that every positive homomorphism
+ψ : ∞ P pf → Q≥0 factors through a positive homomorphism n P pf → Q≥0 for some
+n [which may depend on ψ], and, moreover, for each m ∈ N, m P pf is the perfection
+def
+
+of a ﬁnitely generated submonoid of Q ⊕ Q such that m P = m P pf ∩ P gp [so m P pf
+may be identiﬁed with the perfection of m P , as the notation suggests!] is a bisecting
+monoid of P whose image ∞ φgp (m P ) contains both positive and negative elements.
+Such an inﬁnite descending sequence may be obtained, for instance, by taking n P pf
+1
+to be the perfection of the submonoid of Q ⊕ Q generated by (−1, 1 − n+2
+) and
+(1, 0).
+Example 0.2.
+Submonoids converging from the center. Let P be an fs
+monoid of rank two. Then there exists an inﬁnite descending sequence
+P ⊆ . . . ⊆ nP ⊆ . . . ⊆ 1P ⊆ 0P
+— where n ∈ N — of submonoids of P gp such that every positive homomorphism
+φ : P → N factors through a positive homomorphism n P → N for some n [which
+may depend on φ], and, moreover, for each m ∈ N, the inclusion P → m P is
+a sum-dominating homomorphism of fs monoids. Indeed, by reasoning as in the
+above discussion, one reduces immediately to the veriﬁcation, in the case where
+P pf = Q≥0 ⊕ Q≥0 , of the existence of an inﬁnite descending sequence
+P pf ⊆ . . . ⊆ n P pf ⊆ . . . ⊆ 1 P pf ⊆ 0 P pf
+
+8
+
+SHINICHI MOCHIZUKI
+
+— where n ∈ N — of perfections of ﬁnitely generated submonoids of (P pf )gp such
+that every positive homomorphism ψ : P pf → Q≥0 factors through a positive homomorphism n P pf → Q≥0 for some n [which may depend on ψ], and, moreover,
+def
+
+for each m ∈ N, the inclusion P → m P = m P pf ∩ P gp [so m P pf may be identiﬁed with the perfection of m P , as the notation suggests!] induced by the inclusion
+P pf → m P pf is a sum-dominating homomorphism of fs monoids. Such an inﬁnite
+descending sequence may be obtained, for instance, by taking n P pf to be the per1
+1
+) and (− n+2
+, 1). Finally,
+fection of the submonoid of Q ⊕ Q generated by (1, − n+2
+n
+we observe that this explicit construction shows that the P may be chosen so as
+to be preserved by any ﬁnite group of automorphisms of P .
+Log schemes:
+If X is a scheme, then we shall write
+Xred ⊆ X
+for the closed subscheme determined by equipping the underlying topological space
+of the scheme X with the reduced induced scheme structure. If X is the underlying
+log
+for the log
+scheme of a log scheme X log [cf. [Kato1], §1.2], then we shall write Xred
+log
+scheme determined by restricting the log structure of X to Xred ⊆ X.
+We shall use the terms log étale (respectively, log smooth) to refer to morphisms
+between log schemes which are “étale” (respectively, “smooth”) in the sense of
+[Kato1], §3.3 (respectively, [Kato1], §3.3; [Kato2], §8.1).
+We use the term “fs log scheme” to refer to a log scheme which is ﬁne [cf.
+[Kato1], §2.3] and saturated [cf. [the evident étale generalization of] [Kato2], §1.5].
+We shall refer to a log scheme as noetherian (respectively, locally noetherian) if
+its underlying scheme is noetherian (respectively, locally noetherian). We shall
+say that a morphism of log schemes is of ﬁnite type if its underlying morphism
+of schemes is of ﬁnite type. We shall say that a morphism of log schemes is an
+open immersion if its underlying morphism of schemes is an open immersion, and,
+moreover, the log structure on its domain is obtained as the pull-back of the log
+structure on its codomain. We shall say that a morphism of log schemes is dominant
+if its underlying morphism of schemes is dominant.
+We recall from [LgSch], Lemma 2.6, (i), (ii), (iii), that the natural morphism
+from the underlying scheme of any ﬁber product in the category of locally noetherian
+fs log schemes to the corresponding ﬁber product of underlying schemes is ﬁnite.
+On the other hand, this natural morphism is not necessarily surjective! That is to
+say, the isomorphism asserted [unfortunately, without an explicit proof!] in [LgSch],
+Lemma 2.6, (ii), is false. Indeed, the following example constitutes a counterexample
+to this isomorphism.
+Example 0.3.
+Empty ﬁber products of log schemes. Consider the ﬁber
+product determined by the diagram of log schemes
+X log
+
+→
+
+Z log
+
+←
+
+Y log
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+9
+
+obtained by equipping the diagram of schemes
+def
+
+X = Spec(k)
+
+→
+
+def
+
+Z = Spec(k)
+
+←
+
+def
+
+Y = Spec(k)
+
+— where k is a ﬁeld, and the arrows are the identity morphisms — with the log
+structures determined by the diagram of monoids
+def
+
+PX = (1, 0); (−1, 1)
+
+⊇
+
+def
+
+PZ = N ⊕ N
+
+⊆
+
+def
+
+PY = (1, −1); (0, 1)
+
+— where the notation “−” denotes the submonoid of PZgp = Ngp ⊕ Ngp = Z ⊕ Z
+generated by the element(s) in brackets — and the morphisms of monoids PX → k,
+PY → k, PZ → k that map 0 → 1 ∈ k and all nonzero elements of the domain
+to 0 ∈ k. Then one veriﬁes immediately that this ﬁber product is, in fact, empty,
+despite the fact that X ×Y Z = Spec(k) = ∅.
+Section 1: Generalities on Monomorphisms and Minimal Points
+In the present §1, we discuss various deﬁnitions and generalities related to
+monomorphisms and “minimal points” in categories of log schemes.
+We suppose that we are in the situation of [LgSch], §2. That is to say, let X log
+be a locally noetherian fs log scheme [cf. the discussion entitled “Log schemes” in
+§0]. Then we denote by
+Schlog (X log )
+the category whose objects are morphisms of log schemes of ﬁnite type Y log → X log ,
+where Y log is a noetherian fs log scheme, and whose morphisms [from an object
+Y1log → X log to an object Y2log → X log ] are morphisms of ﬁnite type Y1log → Y2log
+lying over X log . To simplify the exposition, we shall often refer to the domain
+Y log of an arrow Y log → X log which is an object of Schlog (X log ) as an “object of
+Schlog (X log )”.
+Recall the category Sch(X) of [LgSch], §1, i.e., the category whose objects are
+morphisms of ﬁnite type Y → X, where Y is a noetherian scheme, and whose
+morphisms [from an object Y1 → X to an object Y2 → X] are morphisms of ﬁnite
+type Y1 → Y2 lying over X. Note that by associating to an object Y → X of
+Sch(X) the object Y log → X log of Schlog (X log ) obtained by equipping Y with the
+log structure obtained by pulling back the log structure on X log via Y → X, we
+obtain a natural embedding
+Sch(X) → Schlog (X log )
+— which thus allows us to regard Sch(X) as a full subcategory of Schlog (X log ).
+Let Y log be an fs log scheme. Then we shall denote its underlying scheme
+(respectively, the morphism of monoids that constitutes its log structure) by Y
+(respectively, expY : MY → OY ). Thus, we have an exact sequence of étale sheaves
+of monoids on Y
+0 → OY× → MY → PY → 0
+
+10
+
+SHINICHI MOCHIZUKI
+
+— where the “characteristic sheaf ” PY is deﬁned so as to make the sequence exact.
+It follows immediately from the fact that Y log is an fs log scheme that the ﬁbers
+of PY (respectively, the groupiﬁcation PYgp of PY ) at geometric points of Y are fs
+monoids [cf. the discussion entitled “Generalities on monoids” in §0] (respectively,
+are ﬁnitely generated free abelian groups). In particular, we have natural injections
+PY → PYgp ;
+
+MY → MYgp
+
+— where the superscript “gp” denotes the groupiﬁcation associated to a sheaf of
+monoids. In the following, we shall use similar notation for objects associated to
+arbitrary fs log schemes “(−)log ”.
+In this situation, we shall apply the terminology introduced in [LgSch], §2:
+Deﬁnition 1.1.
+
+In the notation of the above discussion:
+
+(i) If Y is reduced (respectively, one-pointed — cf. [LgSch], Proposition 1.1),
+then we shall say that Y log is reduced (respectively, one-pointed). If Y log is reduced
+and one-pointed, i.e., Y is equal to the spectrum of a ﬁeld k, then one may think
+of PY as consisting of a [discrete] monoid equipped with a continuous action of the
+absolute Galois group Gk of k; when this action is trivial, we shall say that Y log is
+split and, by a slight abuse of notation, denote Γ(Y, PY ) by PY .
+(ii) An object Y log → X log of Schlog (X log ) will be called minimal if it is
+non-initial and satisﬁes the property that any monomorphism Z log  Y log in
+Schlog (X log ), where Z log is non-initial, is necessarily an isomorphism [cf. [LgSch],
+Proposition 2.4].
+(iii) Suppose that Y log is a one-pointed object of the category Schlog (X log ).
+Then a monomorphism H log  Y log in Schlog (X log ) will be called a hull for Y log
+if every morphism S log → Y log in Schlog (X log ) from a minimal object S log to
+Y log factors [necessarily uniquely!] through the given monomorphism H log  Y log
+[cf. [LgSch], Proposition 2.7]. A hull H log  Y log will be called a minimal hull if
+every monomorphism H1log  H log in Schlog (X log ) for which the composite H1log 
+H log  Y log is a hull is necessarily an isomorphism [cf. [LgSch], Proposition 2.7]. A
+one-pointed object H log of Schlog (X log ) will be called a minimal hull if the identity
+morphism H log → H log is a minimal hull for H log . [The notions of “hull”/“minimal
+hull” will not be used in the present paper, but are reviewed here for the sake of
+comparison with the notions of “point-hull”/“minimal point-hull”, which do play
+an important role in the present paper — cf. Deﬁnition 2.9, (iii).]
+(iv) Suppose that f log : Z log → Y log is a morphism of Schlog (X log ). Then
+[cf. [LgSch], Deﬁnition 2.11, (i), (ii)]: f log will be called log-like if the underlying
+morphism of schemes f : Z → Y is an isomorphism; f log will be called schemelike if the log structure on Z log is the pull-back of the log structure on Y log via
+the underlying morphism of schemes f : Z → Y [i.e., in the terminology of many
+authors, if f log is strict]. Write
+Schlog (X log )|sch-lk ⊆ Schlog (X log )
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+11
+
+for the full subcategory of objects of Schlog (X log ) determined by scheme-like morphisms Y log → X log . Thus, one veriﬁes immediately that the natural embedding
+Sch(X) → Schlog (X log ) discussed above admits a natural factorization as the composite of a natural equivalence of categories
+∼
+
+Sch(X) → Schlog (X log )|sch-lk
+with the natural inclusion Schlog (X log )|sch-lk → Schlog (X log ).
+Also, we introduce some new terminology as follows:
+Deﬁnition 1.2.
+
+In the notation of the above discussion:
+
+(i) Let n ∈ N. Then we shall say that Y log is of rank ≤ n (respectively, of rank
+n) and write
+rk(Y log ) ≤ n (respectively, rk(Y log ) = n)
+if every ﬁber of PY at a geometric point of Y is of rank ≤ n (respectively, rank
+n) [cf. the discussion entitled “Generalities on monoids” in §0]. We shall say that
+Y log is submonic if it is of rank ≤ 1. If Y log is locally noetherian, then we deﬁne
+the submonic dimension of Y log to be the supremum
+def
+
+dimsm (Y log ) =
+
+sup
+Z log Y log
+
+dim(Z) ∈ N ∪ {−∞, +∞}
+
+— where Z log  Y log ranges over the monomorphisms of Schlog (Y log ) such that
+Z log is submonic, and “dim(Z)” denotes the scheme-theoretic dimension of the
+underlying locally noetherian scheme Z of Z log . Thus, the submonic dimension is
+equal to −∞ if and only if it holds that the underlying scheme of every “Z log ” that
+appears in the supremum of the above display is the empty scheme. We shall say
+that Y log is log-nodal if it is reduced, one-pointed, split, and of rank two.
+(ii) Suppose that Y log arises from an object Y log → X log of Schlog (X log ). Then
+a minimal point Z log  Y log of Y log is deﬁned to be a monomorphism Z log  Y log
+of Schlog (X log ) such that Z log is a minimal object of Schlog (X log ). Thus, a minimal
+point of Y log may be thought of as an object of Schlog (Y log ). We shall write
+MinPt(Y log )
+for the set of isomorphism classes [i.e., as objects of Schlog (Y log )] of minimal points
+of Y log .
+Proposition 1.3.
+(Empty and connected underlying schemes) Suppose
+log
+is an object of Schlog (X log ). Then:
+that Y
+(i) The underlying scheme Y of Y log is empty if and only if Y log is an initial
+object in the category Schlog (X log ).
+(ii) The underlying scheme Y of Y log is connected if and only if the object
+Y log of Schlog (X log ) is non-initial and, moreover, does not admit a representation
+as a coproduct of two non-initial objects of Schlog (X log ).
+
+12
+
+SHINICHI MOCHIZUKI
+
+Proof. Assertions (i) and (ii) follow immediately from the deﬁnitions. 
+Proposition 1.4.
+(First properties of monomorphisms) Suppose that
+log
+log
+log
+f :Z →Y
+is a morphism of Schlog (X log ). Thus, the underlying morphism
+log
+may be regarded as a morphism of Sch(X). Then:
+f : Z → Y of f
+(i) The property of being a monomorphism in the category of fs log schemes
+(respectively, in the category Schlog (X log )) is stable under base-change in the
+category of fs log schemes (respectively, in the category Schlog (X log )).
+(ii) Let M → N be a morphism of ﬁnitely generated, saturated monoids
+such that the induced morphism M gp → N gp is surjective. Then the induced
+morphism of fs log schemes
+Spec(Z[N ])log → Spec(Z[M ])log
+— where we use the superscript “log” to denote the log structures determined by
+the tautological charts M → Z[M ], N → Z[N ] — is a monomorphism in the
+category of fs log schemes.
+(iii) If f log is a monomorphism in Schlog (X log ), then the induced morphism
+of sheaves of abelian groups PYgp |Z → PZgp is surjective.
+(iv) Suppose that Y log is submonic, and that the morphism PYgp |Z → PZgp
+induced by f log is surjective. Then Z log is submonic, and f log is scheme-like.
+(v) Suppose that f log is scheme-like. Then f log is a monomorphism in
+Schlog (X log ) if and only if f is a monomorphism in Sch(X).
+(vi) Suppose that Y log is submonic, and that f log is a monomorphism in
+Sch (X log ). Then the morphism PYgp |Z → PZgp induced by f log is surjective; Z log
+is submonic; f log is scheme-like [which, in fact, implies the surjectivity of the
+morphism PYgp |Z → PZgp ]; and f is a monomorphism in Sch(X).
+log
+
+(vii) Suppose that f is a monomorphism in Sch(X), and that the morphism
+Then f log is a monomorphism in
+Sch (X ).
+
+PYgp |Z → PZgp induced by f log is surjective.
+log
+log
+
+Proof. Assertions (i) and (v) follow immediately from the deﬁnitions. Next, before
+proceeding, let us recall that, for instance in the case of the log scheme Y log ,
+(∗sys ) the sheaf of monoids that deﬁnes the log structure of Y log may be thought
+of as the restriction to PY ⊆ PYgp of a certain system of line bundles [i.e.,
+a system of Gm -torsors] parametrized by the sheaf of abelian groups PYgp .
+Now assertion (ii) follows immediately from (∗sys ). Assertion (iii) follows from the
+argument given in the proof of [LgSch], Proposition 2.3 [but cf. Remark 1.4.1
+below!]: That is to say, one reduces immediately to the case where Z and Y are
+equal to Spec(k) for some ﬁeld k; then, under the assumption that the asserted
+surjectivity fails to hold, one constructs scheme-like morphisms W log → Z log , where
+W log is an fs log scheme whose underlying scheme is an artinian k-algebra, whose
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+13
+
+existence contradicts the assumption that f log is a monomorphism in Schlog (X log ).
+Assertion (iv) follows immediately from the simple and well-understood structure
+of the monoid N. Assertion (vi) follows formally from assertions (iii), (iv), and (v).
+Finally, assertion (vii) follows from the deﬁnitions, together with the observation
+(∗sys ) discussed above. 
+Remark 1.4.1. Suppose that we are in the situation of Proposition 1.4. Then in
+general,
+it is not necessarily the case that the assumption that f log is a monomorphism in Schlog (X log ) implies that f is a monomorphism in Sch(X).
+That is to say, the corresponding portion of the necessity asserted in [LgSch], Proposition 2.3, is false as stated. Such an example may be obtained by considering the
+monomorphism constructed in Proposition 1.4, (ii), in the case where the morphism
+of monoids M → N is taken to be the morphism
+def
+
+def
+
+M = N⊕N → N = N⊕N
+that maps M  (1, 0) → (1, 1) ∈ N and M  (0, 1) → (0, 1) ∈ N , i.e., in which
+case the resulting morphism of schemes is a “blow-up morphism” that has ﬁbers of
+dimension one.
+Lemma 1.5.
+(Well-known generalities concerning fs monoids and
+associated log schemes) Let k be a ﬁeld; k sep a separable closure of k;
+def
+
+Gk = Gal(k sep /k); P an fs monoid [cf. the discussion entitled “Generalities
+on monoids” in §0] equipped with a continuous action by Gk [i.e., relative to the
+discrete topology on P ]; M gp an extension, in the category of topological abelian
+groups equipped with continuous Gk -actions, of P gp by (k sep )× [i.e., the multiplicative group of nonzero elements of k sep , equipped with the discrete topology];
+def
+
+M = M gp ×P gp P . Write T log for the reduced, one-pointed fs log scheme whose
+underlying scheme is equal to T = Spec(k sep ), and whose log structure is given by
+the homomorphism of monoids M → k sep that restricts to the natural inclusion
+(k sep )× → k sep on (k sep )× ⊆ M and maps non-invertible elements of M to 0 ∈ k.
+Thus, the associated characteristic sheaf PT is the constant sheaf on T determined
+by P ; the log scheme T log admits a natural Gk -action, which may be regarded as a
+collection of [pro-]ﬁnite étale descent data that gives rise to a reduced, one-pointed
+fs log scheme S log whose underlying scheme is S = Spec(k). Then:
+(i) Suppose that the action of Gk on P is trivial. Then the extension of
+Gk -modules 1 → (k sep )× → M gp → P gp → 1 splits.
+(ii) Suppose that rk(P ) ≥ 1. Then there exists a positive [cf. the discussion
+entitled “Generalities on monoids” in §0], Gk -equivariant [i.e., with respect to the
+trivial action of Gk on N] homomorphism φ : P → N that induces a surjection on
+groupiﬁcations φgp : P gp  Ngp . Now ﬁx such a homomorphism φ : P → N, and
+assume, moreover, that rk(P ) ≥ 2. Then there exists a positive homomorphism
+ψ : P → N that induces a surjection on groupiﬁcations ψ gp : P gp  Ngp such that
+Ker(φgp ) = Ker(ψ gp ).
+
+14
+
+SHINICHI MOCHIZUKI
+
+(iii) Suppose that rk(P ) ≥ 2. Then there exist an fs monoid Q of rank
+two and a positive homomorphism ξ : P → Q that induces a surjection on
+groupiﬁcations ξ gp : P gp  Qgp , and, moreover, satisﬁes the following property:
+Let ζ : Q → R be a positive homomorphism of fs monoids of rank ≥ 1 and
+σ ∈ Gk such that the composite homomorphism ζ ◦ ξ ◦ σ : P → R factors
+as the composite ζσ ◦ ξ of ξ : P → Q with some positive homomorphism
+ζσ : Q → R. Then σ stabilizes the subquotient P gp  Qgp ⊇ Q and
+induces the identity on Q.
+In particular, if τ ∈ Gk stabilizes the subquotient P gp  Qgp ⊇ Q, then τ induces
+the identity on Q.
+(iv) Let ξ : P → Q be a positive homomorphism of fs monoids that induces
+a surjection on groupiﬁcations ξ gp : P gp  Qgp . Write Ξsep for the subfunctor of the contravariant functor determined by the terminal object [i.e., T log ] of
+Schlog (T log ) that consists of objects Z log → T log of Schlog (T log ) such that the composite homomorphism P gp → Γ(T, PTgp ) → Γ(Z, PZgp ) induces, via ξ, a homomorsep
+for the subfunctor corresponding to the
+phism Q → Γ(Z, PZ ); write Ξsep
++ ⊆ Ξ
+condition that, for each ﬁber PZ,z of PZ at a geometric point z of Z, the resulting
+homomorphism Q → PZ,z is positive. Then Ξsep may be represented by the object
+of Schlog (T log ) determined by a log étale monomorphism
+T log [ξ]  T log
+of Schlog (T log ). If, moreover, Q coincides with the saturation of the image of
+sep
+; the closed subscheme
+ξ in Qgp , then the following properties hold: Ξsep
++ = Ξ
+T [ξ]red ⊆ T [ξ] [cf. the discussion entitled “Log schemes” in §0] of the underlying
+scheme T [ξ] of T log [ξ] is a torus over k sep of dimension rk(P ) − rk(Q); the
+characteristic sheaf PT log [ξ] is isomorphic to the constant sheaf on T [ξ] determined
+def
+
+by Q; if we write M [ξ] = M gp ×P gp Ker(ξ gp ), then the group of invertible functions
+on the torus T [ξ]red may be naturally identiﬁed with M [ξ].
+(v) Suppose that we are in the situation of (iv). Write H ⊆ Gk for the open
+subgroup of elements that stabilize the subquotient P gp  Qgp ⊇ Q determined
+log
+by ξ; SH
+for the reduced, one-pointed fs log scheme obtained by descending T log
+via H ⊆ Gk ; Ξ for the subfunctor of the contravariant functor determined by the
+log
+log
+log
+terminal object [i.e., SH
+] of Schlog (SH
+) that consists of objects Z log → SH
+of
+log
+log
+log
+log
+log
+log
+log
+→T
+of Sch (T ) determined
+Sch (SH ) such that the object Z ×S log T
+H
+
+log
+by base-changing from SH
+to T log determines an element of Ξsep (Z log ×S log T log );
+H
+sep
+of
+Ξ
+.
+Then
+Ξ may
+Ξ+ for the subfunctor of Ξ determined by the subfunctor Ξsep
++
+log
+log
+be represented by the object of Sch (SH ) determined by a log étale monomor-
+
+phism
+log
+S log [ξ]  SH
+log
+of Schlog (SH
+) which may be obtained, via [pro-]ﬁnite étale descent, from the natural H-action on the monomorphism T log [ξ]  T log of (iv).
+log
+[ξ]  S log [ξ] be some
+(vi) Suppose that we are in the situation of (v). Let S+
+log
+monomorphism of Schlog (SH
+) that determines an element of Ξ+ (−) ⊆ Ξ(−). [That
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+15
+
+log
+is say, we do not make any assumption to the eﬀect that S+
+[ξ] admits some sort
+of “special functorial interpretation”!] Then if either rk(Q) = 1 or ξ is as in (iii),
+then the composite
+log
+log
+S+
+[ξ]  S log [ξ]  SH
+→ S log
+
+— where the second arrow is the monomorphism of the ﬁnal display of (v); the
+log
+third arrow is the natural morphism SH
+→ S log — is a monomorphism in
+Schlog (S log ).
+(vii) Suppose that rk(P ) = 2, and that we have been given a positive hodef
+
+momorphism φ0 : P → J0 = N that induces a surjection on groupiﬁcations
+gp
+φgp
+ J0gp = Z. Then, in the notation of the discussion entitled “Rank
+0 : P
+two fs monoids” in §0, for i = 0, 1, 2, let us write φi : P → Ji for the associated positive homomorphism of fs monoids [which is well-deﬁned, up to possible
+for the subpermutation of the indices “1” and “2”]. For i = 0, 1, 2, write Φsep
+i
+functor of the contravariant functor determined by the terminal object [i.e., T log ]
+of Schlog (T log ) that consists of objects Z log → T log of Schlog (T log ) such that, for
+each ﬁber PZ,z of PZ at a geometric point z of Z, the composite homomorphism
+gp
+induces, via φi : P → Ji , a positive
+P gp → Γ(T, PTgp ) → Γ(Z, PZgp ) → PZ,z
+homomorphism Ji → PZ,z . If E ⊆ {0, 1, 2} is a subset, then write Φsep
+E for the subfunctor of the contravariant functor determined by the terminal object [i.e., T log ]
+of Schlog (T log ) that consists of the [disjoint!] union of the Φsep
+i , for i ∈ E. Then,
+may
+be
+represented
+by the object of
+for any E ⊆ {0, 1, 2} such that 0 ∈ E, Φsep
+E
+log
+log
+Sch (T ) determined by a log étale monomorphism
+T log [φE ]  T log
+of Schlog (T log ) which satisﬁes the following properties: T log [φE ] is connected
+[hence nonempty]. If E = {0}, then T log [φE ]  T log may be identiﬁed with
+the morphism T log [φ0 ]  T log of (iv); in particular, in this case, the closed subscheme T [φE ]red ⊆ T [φE ] of the underlying scheme T [φE ] of T log [φE ] is a onedimensional torus over k sep . Finally, if 0 ∈ E ⊆ E ∗ ⊆ {0, 1, 2}, then the
+resulting morphism of log schemes T log [φE ] → T log [φE ∗ ] is a dominant open
+immersion [cf. the discussion entitled “Log schemes” in §0].
+(viii) Suppose that we are in the situation of (vii). Write H ⊆ Gk for the open
+subgroup of elements that stabilize the subquotient P gp  J0gp ⊇ J0 determined
+log
+for the reduced, one-pointed fs log scheme obtained by descending T log
+by φ0 ; SH
+via H ⊆ Gk . Thus, H acts naturally on Prime(P ), hence also on the set of indices
+{0, 1, 2} [where we regard the index “0” as being stabilized by the action of H]. Let
+E ⊆ {0, 1, 2} be a subset that is stabilized by this natural action of H. Write ΦE
+for the subfunctor of the contravariant functor determined by the terminal object
+log
+log
+log
+log
+[i.e., SH
+] of Schlog (SH
+) that consists of objects Z log → SH
+of Schlog (SH
+) such
+that the object Z log ×S log T log → T log of Schlog (T log ) determined by base-changing
+H
+
+log
+log
+from SH
+to T log determines an element of Φsep
+×S log T log ). Suppose that
+E (Z
+H
+
+log
+0 ∈ E. Then ΦE may be represented by the object of Schlog (SH
+) determined by a
+log étale monomorphism
+log
+S log [φE ]  SH
+
+16
+
+SHINICHI MOCHIZUKI
+
+log
+of Schlog (SH
+) which may be obtained, via [pro-]ﬁnite étale descent, from the natural H-action on the monomorphism T log [φE ]  T log of (vii).
+
+(ix) Suppose that we are in the situation of (viii). Suppose further that φ0 :
+P → J0 satisﬁes the following property:
+Let ζ : P → N be a positive homomorphism of fs monoids; σ ∈ Gk ;
+i0 , i1 ∈ {0, 1}. Suppose that, for m ∈ {0, 1}, ζ ◦ σ m : P → N factors, via
+φim : P → Jim , through a positive homomorphism Jim → N. Then σ
+acts trivially on P .
+Then [one veriﬁes immediately, by taking “ζ” to be φ0 that] H ﬁxes the index “1”.
+log
+Moreover, the composite S log [φ{0,1} ]  SH
+→ S log of the monomorphism of the
+log
+→ S log is a monomorphism
+ﬁnal display of (viii) with the natural morphism SH
+in Schlog (S log ).
+Proof. Since P gp is a ﬁnitely generated free abelian group, assertion (i) follows
+immediately from the assumption that the action of Gk on P is trivial, together
+with the well-known fact from elementary Galois theory [i.e., Hilbert’s “Theorem
+90”] that H 1 (Gk , (k sep )× ) = 0. Next, we consider assertion (ii). The existence of φ
+follows immediately from [LgSch], Lemma 2.5, (iii), i.e., by considering the [ﬁnite!]
+sum of the Gk -conjugates of a positive homomorphism P → N of the sort discussed
+in [LgSch], Lemma 2.5, (iii); the existence of ψ then follows by applying [LgSch],
+Lemma 2.5, (iii), to two distinct elements of P that map, via φ, to the same nonzero
+element of N. This completes the proof of assertion (ii).
+Next, we consider assertion (iii). First, we observe that the ﬁnal portion of
+assertion (iii) concerning τ ∈ Gk follows immediately from the property in the
+display of assertion (iii) by taking ζ : Q → R to be the identity automorphism of
+Q. Next, we observe that the homomorphisms φ and ψ of assertion (ii) determine
+a positive homomorphism (φ, ψ) : P → N ⊕ N whose image I ⊆ N ⊕ N generates a
+rank two subgroup I gp of Ngp ⊕ Ngp = Z ⊕ Z. Thus, for some positive integer n, it
+def
+holds that n · Ngp ⊕ n · Ngp ⊆ I gp . In particular, we have n · N ⊕ n · N ⊆ Q =
+I gp ∩ (N ⊕ N) ⊆ N ⊕ N; I ⊆ Q; Qgp = I gp [since I gp ⊆ Qgp ⊆ I gp ]. One veriﬁes
+immediately that this implies that this monoid Q ⊆ N ⊕ N is an fs monoid of rank
+two. Write ξ : P → Q for the resulting positive homomorphism of monoids. Note
+that ξ induces a surjection on groupiﬁcations ξ gp : P gp  Qgp (= I gp ).
+Now suppose that ζ : Q → R is a positive homomorphism of fs monoids of
+rank ≥ 1 and σ ∈ Gk such that the composite homomorphism ζ ◦ ξ ◦ σ : P → R
+factors as the composite ζσ ◦ ξ of ξ : P → Q with some positive homomorphism
+ζσ : Q → R; in the following, we shall show that σ stabilizes the subquotient
+P gp  Qgp ⊇ Q and induces the identity on Q. Here, we note that, by applying
+assertion (ii) in the case where we take “P ”, “k”, and “M gp ” to be R, k sep , and
+Rgp × (k sep )× , respectively, we may assume without loss of generality that R = N.
+Also, by replacing R by a suitable submonoid of R, we may assume without loss of
+generality that ζ, ζσ induce surjections ζ gp , ζσgp : Qgp  Rgp = Ngp = Z. Next, let
+us observe that, by restricting the ﬁrst projection N ⊕ N  N to Q ⊆ N ⊕ N, one
+may regard φ : P → N as the composite η ◦ ξ of ξ : P → Q with a homomorphism
+of monoids η : Q → N. Since η vanishes on 0 ⊕ n · N ⊆ Q, it follows that η is not
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+17
+
+positive, and hence that Ker(η gp ) = Ker(ζ gp ), Ker(η gp ) = Ker(ζσgp ). Since ξ gp is
+def
+
+def
+
+surjective, we thus conclude that, if we write θ = ζ ◦ξ, θσ = ζσ ◦ξ, then Ker(φgp ) =
+Ker(θgp ), Ker(φgp ) = Ker(θσgp ), and hence that both Ker(φgp ) ∩ Ker(θgp ) ⊆ P gp
+and Ker(φgp ) ∩ Ker(θσgp ) ⊆ P gp are submodules of rank rk(P gp ) − 2 that contain
+Ker(ξ gp ). Since Ker(ξ gp ) is also a submodule of P gp of rank rk(P gp ) − 2, we thus
+∼
+conclude [since P gp /Ker(ξ gp ) → Qgp is torsion-free] that Ker(φgp ) ∩ Ker(θgp ) =
+Ker(φgp ) ∩ Ker(θσgp ) = Ker(ξ gp ). But, since φ is Gk -equivariant, this implies that
+Ker(ξ gp ) is stabilized by σ, i.e., that σ induces an automorphism of the quotient
+ξ gp : P gp  Qgp , as well as of the quotient η gp : Qgp  Ngp = Z, and maps the
+quotient ζ gp : Qgp  Ngp = Z to the quotient ζσgp : Qgp  Ngp = Z.
+Now to complete the proof of assertion (iii), it suﬃces to verify that σ induces
+the identity on Qgp . Thus, we suppose that σ does not induce the identity on
+Qgp . Then since σ clearly stabilizes the fs monoid of rank two obtained by forming
+the saturation of the image of ξ : P → Q in Q [cf. [LgSch], Lemma 2.5, (ii)],
+it follows [cf. the discussion entitled “Rank two fs monoids” in §0] that σ acts
+on Qgp as an automorphism of order 2, and hence that σ permutes the quotients
+determined by ζ gp , ζσgp . In particular, σ stabilizes the kernel of the homomorphism
+gp
+: Qgp → Z determined by the positive homomorphism ζ+ :
+on groupiﬁcations ζ+
+Q → N obtained by forming the sum of ζ, ζσ . Since σ acts nontrivially on Qgp ,
+gp
+) = Ker(η gp ). Thus, the positivity of ζ+ contradicts the
+this implies that Ker(ζ+
+non-positivity of η. This completes the proof of assertion (iii).
+Next, we observe that assertions (iv), (v), (vii), and (viii) are immediate consequences of the well-known correspondence between the theory of log schemes and
+the classical theory of toric varieties. Next, we consider assertion (vi). First of all,
+log
+[ξ],
+given an object Z log of Schlog (S log ) and two S log -morphisms α : Z log → S+
+log
+β : Z log → S+ [ξ], to verify that α = β, it suﬃces to verify that α and β coincide
+after base-change from k to k sep . Moreover, since the morphism SH → S is ﬁnite
+log
+log
+étale, and the morphism S+
+[ξ]  SH
+is already known to be a monomorphism,
+one veriﬁes immediately that we may assume without loss of generality that Z log
+is reduced and one-pointed — an assumption which reduces the assertion under
+consideration to an assertion concerning fs monoids, i.e., the assertion that if, for
+some σ ∈ Gk , there exist positive homomorphisms of fs monoids ζ : Q → R and
+ζσ : Q → R such that ζ ◦ ξ ◦ σ = ζσ ◦ ξ : P → R, then σ stabilizes the subquotient
+P gp  Qgp ⊇ Q determined by ξ. But this assertion concerning fs monoids follows
+immediately, i.e., if one assumes either that rk(Q) = 1 or that ξ satisﬁes the properties stated in (iii). This completes the proof of assertion (vi). Finally, we observe
+that assertion (ix) may be veriﬁed by a similar argument to the argument applied
+in the proof of assertion (vi). 
+Proposition 1.6.
+Schlog (X log ). Then:
+
+(Minimal objects) Suppose that Y log is an object of
+
+(i) Suppose that Y log is a nonempty object of Schlog (X log ). Then there exists
+a minimal point Z log → Y log such that Z log is submonic. Now ﬁx such a
+minimal point Z log → Y log , and assume, moreover, that Y log is not submonic.
+Then there exists a minimal point W log → Y log , where W log is submonic, that
+is not isomorphic to Z log → Y log .
+
+18
+
+SHINICHI MOCHIZUKI
+
+(ii) Y log is a minimal object of Schlog (X log ) if and only if Y log is reduced,
+one-pointed, and submonic. Put another way, Y log is a minimal object of
+Schlog (X log ) if and only if, for some ﬁeld k, Y log is either equal to Spec(k) equipped
+with the trivial log structure or equal to Spec(k) equipped with the log structure
+N  1 → 0 ∈ k.
+Z
+
+log
+
+(iii) Suppose that Y log and Z log are minimal objects of Schlog (X log ). If f log :
+→ Y log is a morphism in Schlog (X log ), then let us write
+MinLg(f log ) ∈ N ∪ {+∞}
+def
+
+for the “minimal length” of f log : that is to say, we set MinLg(f log ) = 0 if f log
+is an isomorphism; if f log is not an isomorphism, then we take MinLg(f log ) to be
+the supremum of the set of positive integers n such that f log admits a factorization
+def
+
+def
+
+log
+Znlog = Z log → Zn−1
+→ . . . → Z1log → Z0log = Y log
+
+as a composite of morphisms of Schlog (X log ) which are not isomorphisms such
+that, for each i = 1, . . . , n, Zilog is a minimal object of Schlog (X log ). Then Y log
+is of rank one if and only if MinLg(f log ) is ﬁnite for every morphism f log in
+Schlog (X log ) with codomain equal to Y log [and domain given by some minimal object].
+Proof. First, we consider assertion (i). Observe that we may assume without loss
+of generality that Y log is reduced and one-pointed [cf. [LgSch], Proposition 1.1,
+(i)], and hence that the underlying scheme Y of Y log may be written in the form
+Spec(kY ), for a suitable ﬁeld kY . Next, let us consider the situation discussed in
+Lemma 1.5, (v), in the case where
+· one takes the data that gives rise to “S log ” to be the data that arises
+from Y log [so “k” corresponds to kY ];
+· if rk(Y log ) = 0, then one takes the positive homomorphism “ξ” to be the
+identity morphism;
+· if rk(Y log ) ≥ 1, then one takes the positive homomorphism “ξ” to be the
+homomorphism “φ : P → N” of Lemma 1.5, (ii).
+Then one veriﬁes immediately from the description of the torus “T [ξ]red ” in Lemma
+1.5, (iv), that any splitting as in Lemma 1.5, (i), over a suitable ﬁnite separable
+extension of k — which, in the terminology of [ExtFam], Deﬁnition 1.3, may be
+regarded as a “Galois-equivariant clean chart” — determines a closed point of S[ξ].
+In particular, by restricting the log structure of the submonic log scheme S log [ξ] to
+this closed point, we obtain, by Proposition 1.4, (vii); Lemma 1.5, (vi), a monomorphism f log : Z log → Y log in Schlog (X log ), for some submonic Z log . Since, by [LgSch],
+Proposition 2.4, (ii), (iii), Z log is necessarily minimal, we thus conclude that the
+morphism f log determines a minimal point of Y log , as desired. In a similar vein, if
+Y log is not submonic [i.e., is of rank n ≥ 2], then we consider the situation discussed
+in Lemma 1.5, (v), in the case where one takes the data that gives rise to “S log ”
+to be the data that arises from Y log [so “k” corresponds to kY ], and one takes the
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+19
+
+positive homomorphism “ξ” to be the homomorphism “ψ : P → N” of Lemma 1.5,
+(ii). Then a splitting as in Lemma 1.5, (i), over a suitable ﬁnite separable extension
+of k determines a closed point of S[ξ] whose residue ﬁeld kW is a ﬁnite separable
+extension ﬁeld of kY . Now, by restricting the log structure of the submonic log
+scheme S log [ξ] to this closed point, we obtain, by Proposition 1.4, (vii); Lemma 1.5,
+(vi), a monomorphism W log → Y log in Schlog (X log ), for some submonic W log whose
+underlying scheme W is equal to Spec(kW ), which determines, by [LgSch], Proposition 2.4, (iii), a minimal point of Y log that is not isomorphic to f log : Z log → Y log .
+This completes the proof of assertion (i).
+Next, we consider assertion (ii). The suﬃciency portion of assertion (ii) follows
+immediately from [LgSch], Proposition 2.4, (ii), (iii). Thus, to complete the proof
+of assertion (ii), it suﬃces to verify the necessity portion of assertion (ii). To this
+end, suppose that Y log is minimal. Then it follows from [LgSch], Proposition 2.4,
+(i), that Y log is reduced and one-pointed, i.e., that Y = Spec(kY ), for some ﬁeld kY ,
+and hence, from assertion (i), that there exists a minimal point f log : Z log → Y log
+in Schlog (X log ), for some submonic Z log . If Y log is not submonic, then it follows
+that f log is not an isomorphism, i.e., in contradiction to the assumed minimality of
+Y log . This completes the proof of assertion (ii).
+Finally, we consider assertion (iii). First, let us observe that it follows from
+assertion (ii) that the underlying scheme Y (respectively, Z) of Y log (respectively,
+Z log ) may be written in the form Spec(kY ) (respectively, Spec(kZ )), for a suitable ﬁeld kY (respectively, kZ ). Then if Y log is of rank one, then the ﬁniteness
+of MinLg(f log ) follows immediately by considering the ﬁniteness of the extension
+degree [kZ : kY ], together with the simple, well-understood structure of the monoid
+N. On the other hand, if Y log is of rank zero, but Z log is of rank one, then the fact
+that MinLg(f log ) = +∞ follows by considering the inﬁnite descending sequence of
+submonoids N ⊇ 2 · N ⊇ . . . ⊇ 2n · N ⊇ . . . , for 1 ≤ n ∈ N. This completes the proof
+of assertion (iii). 
+Proposition 1.7.
+(Monomorphisms from log-nodal objects into nonsubmonic objects) Suppose that Y log is a non-submonic object of Schlog (X log ).
+Then there exists a log-nodal object Z log of Schlog (X log ) that admits a monomorphism Z log  Y log .
+Proof. As in the proof of Proposition 1.6, (i), one veriﬁes immediately that we
+may assume without loss of generality that Y log is reduced and one-pointed, i.e.,
+that Y = Spec(kY ), for some ﬁeld kY . Now we consider the situation discussed in
+Lemma 1.5, (v), in the case where one takes the data that gives rise to “S log ” to
+be the data that arises from Y log [so “k” corresponds to kY ], and one takes the
+positive homomorphism “ξ” to be the homomorphism “ξ : P → Q” of Lemma 1.5,
+(iii). Then one veriﬁes immediately that any splitting as in Lemma 1.5, (i), over
+a suitable ﬁnite separable extension of k determines a closed point of S[ξ] whose
+residue ﬁeld kZ is a ﬁnite separable extension ﬁeld of kY such that the log scheme
+Z log obtained by restricting the log structure of the log scheme S log [ξ] to this closed
+point determines an element of Ξ+ (−) ⊆ Ξ(−). Thus, we obtain, by Proposition
+1.4, (vii); Lemma 1.5, (vi), a monomorphism Z log → Y log in Schlog (X log ), for some
+reduced, one-pointed, split [cf. the ﬁnal portion of Lemma 1.5, (iii)] Z log of rank two
+
+20
+
+SHINICHI MOCHIZUKI
+
+[cf. Lemma 1.5, (iii)] whose underlying scheme Z is equal to Spec(kZ ), as desired.
+
+Proposition 1.8. (Submonic one-pointed log schemes) Suppose that Y log
+is an object of Schlog (X log ). Then Y log is submonic and one-pointed if and only
+if MinPt(Y log ) is of cardinality one.
+Proof. First, we verify necessity. Suppose that Y log is submonic and one-pointed.
+log
+Then it follows that Yred
+[cf. the discussion entitled “Log schemes” in §0] is reduced,
+log
+one-pointed, and submonic, hence, by Proposition 1.6, (ii), that Yred
+is minimal.
+Since any morphism from a [necessarily reduced, by Proposition 1.6, (ii)!] minilog
+mal object of Schlog (X log ) to Y log clearly factors uniquely through Yred
+, we thus
+log
+conclude that MinPt(Y ) is of cardinality one, and that the unique element of
+log
+MinPt(Y log ) arises from the natural inclusion Yred
+→ Y log . This completes the
+proof of necessity. Next, we verify suﬃciency. Suppose that MinPt(Y log ) is of
+cardinality one. Then by applying the initial portion of Proposition 1.6, (i), to the
+objects “Z log ” of Schlog (X log ) obtained by considering scheme-like monomorphisms
+Z log  Y log that arise from monomorphisms Z  Y in Sch(X) for reduced, onepointed Z [cf. Proposition 1.4, (vii); [LgSch], Proposition 1.1, (iii)], we conclude
+that Y log is one-pointed. Thus, by applying the ﬁnal portion of Proposition 1.6, (i),
+to Y log , we conclude that Y log is submonic. This completes the proof of suﬃciency.
+
+Before proceeding, we review a well-known consequence of the general theory
+of fs log schemes.
+Lemma 1.9.
+(Specialization morphisms associated to characteristic
+sheaves) Suppose that the underlying scheme Y of Y log is the spectrum of a strict
+henselian domain A. Write s for the tautological geometric point of Y associated
+to the unique closed point of Y . Let η be a geometric point of Y whose image in
+Y is the unique generic point of Y . In the following, we shall use subscripted “s’s”
+and “η’s” to denote the respective ﬁbers at s, η of sheaves on the étale site of Y .
+Then the natural “specialization morphism”
+PY,s → PY,η
+is surjective. In particular, this specialization morphism is an isomorphism if
+and only if rk(PY,s ) = rk(PY,η ). Finally, if rk(PY,η ) ≥ 1, and a ∈ PY,s is a sumdominator [cf. the discussion entitled “Generalities on monoids” in §0] such that,
+for elements a∗ ∈ MY,s and f ∈ A, it holds that a∗ → a, a∗ → f , then f = 0.
+Proof. The asserted surjectivity follows immediately from the existence, étale
+locally, of charts that give rise to the log structure of Y log . If rk(PY,s ) = rk(PY,η ),
+gp
+gp
+ PY,η
+between free abelian groups of the
+then we thus obtain a surjection PY,s
+same rank; since such a surjection is necessarily an isomorphism, we thus conclude
+from the inclusion PY → PYgp , that the specialization morphism PY,s → PY,η is an
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+21
+
+isomorphism, as desired. Finally, we observe that if rk(PY,η ) ≥ 1, and MY,s  a∗ →
+f ∈ A, where a∗ lifts a sum-dominator a ∈ PY,s , then, in light of the surjectivity of
+the specialization morphism PY,s → PY,η , it follows immediately from the discussion
+of sum-dominators in §0 that a maps to a nonzero element b ∈ PY,η . On the other
+hand, if we write K for the quotient ﬁeld of A, then it follows immediately from
+the deﬁnition of the notion of a log structure that the image f ∈ A ⊆ K of any
+lifting b∗ ∈ MY,η of the element b ∈ PY,η in K is noninvertible, hence 0, as desired.
+This completes the proof of Lemma 1.9. 
+Proposition 1.10. (Lower bounds on the submonic dimension) Suppose
+that Y log is an object of Schlog (X log ), and that Z log  Y log is a monomorphism of
+Schlog (X log ) such that, for suitable n, d ∈ N, the log scheme Z log is of rank n, and
+the underlying scheme Z of Z log is of dimension d. Then if n ≥ 1 (respectively,
+n = 0), then the submonic dimensions dimsm (Y log ), dimsm (Z log ) of Y log , Z log
+satisfy the inequality
+dimsm (Y log ) ≥ dimsm (Z log ) = d + n − 1
+(respectively, dimsm (Y log ) ≥ dimsm (Z log ) = d).
+Proof. First, let us observe that it follows immediately from the deﬁnition of
+submonic dimension [cf. Deﬁnition 1.2, (i)] that dimsm (Y log ) ≥ dimsm (Z log ). In
+particular, we may assume without loss of generality that Z log = Y log . Thus, it
+follows immediately from Lemma 1.9 that the characteristic sheaf PY is locally
+constant. Next, by replacing Y log by the log scheme determined by a suitable subscheme of Y , one veriﬁes immediately we may assume without loss of generality
+that the scheme Y is integral. Now the case where n = 0 is immediate [cf. Proposition 1.4, (vi)], so we may assume without loss of generality that n ≥ 1. Thus, we
+may apply the theory reviewed in Lemma 1.5 to the generic point of Y . Moreover,
+one veriﬁes immediately from the fact that PY is locally constant that the objects
+[and properties of these objects] discussed in this theory extend to objects [and
+properties of these objects] over the entire scheme Y [i.e., not just the generic point
+of Y ]. In particular, by applying Lemma 1.5, (iv), (v), (vi), where we take the fs
+monoid “Q” to be N, we conclude that given any monomorphism W log  Y log ,
+where W log is a submonic object of Schlog (X log ) whose underlying scheme W is
+integral, there exists a monomorphism V log  Y log , where V log is a submonic object of Schlog (X log ) whose underlying scheme V is a family of (n − 1)-dimensional
+tori [cf. Lemma 1.5, (iv)] over Y , such that the monomorphism W log  Y log
+factors as a composite of monomorphisms W log  V log  Y log . In particular,
+dim(W ) ≤ dim(V ) = d + n − 1 [cf. Proposition 1.4, (vi)], so we conclude that
+dimsm (Y log ) = d + n − 1, as desired. 
+The following generalities on log-like and scheme-like morphisms will be of use
+in the remainder of the present paper.
+Proposition 1.11. (Generalities on log-like and scheme-like morphisms)
+Let f log : Z log → Y log be a morphism of Schlog (X log ). Then:
+(i) Write U log for the log scheme whose underlying scheme is equal to the
+underlying scheme Z of Z log and whose log structure is the pull-back of the log
+
+22
+
+SHINICHI MOCHIZUKI
+
+structure of Y log via the underlying morphism of schemes f : Z = U → Y associated
+to f log . Then U log may be regarded, in a natural way, as an object of Schlog (X log ),
+and there exists a natural factorization
+f log
+
+f log
+
+1
+2
+Z log −→
+U log −→
+Y log
+
+of f log in Schlog (X log ), where f1log is log-like, and f2log is scheme-like.
+f log
+
+f log
+
+1
+2
+(ii) The factorization Z log −→
+U log −→
+Y log of (i) may be characterized, up
+to a unique isomorphism, via the following universal property: The morphism
+f2log is scheme-like, and, moreover, if
+
+hlog
+
+hlog
+
+1
+2
+V log −→
+Y log
+Z log −→
+
+is a factorization of f log in Schlog (X log ) such that hlog
+2 is scheme-like, then there
+log
+log
+log
+exists a unique scheme-like morphism g : U → V log such that hlog
+◦
+1 = g
+log
+log
+log
+log
+f 1 , h2 ◦ g = f 2 .
+(iii) Base-change via the morphism f1log : Z log → U log of (i) determines an
+equivalence of categories
+∼
+
+Schlog (U log )|sch-lk → Schlog (Z log )|sch-lk
+[cf. the notational conventions of Deﬁnition 1.1, (iv)]. The morphism f2log : U log →
+Y log of (i) — which may be regarded as an object of Schlog (Y log )|sch-lk — determines an equivalence of categories
+
+
+∼
+
+Schlog (U log )|sch-lk →
+of Sch
+
+log
+
+(U
+
+log
+
+
+) with the category
+
+log
+
+Sch
+
+Schlog (Y log )|sch-lk
+
+(Y
+
+log
+
+
+f2log
+
+
+)|sch-lk
+
+f2log
+
+of objects of the cat-
+
+egory Schlog (Y log )|sch-lk equipped with a structure morphism to the object f2log of
+Schlog (Y log )|sch-lk and morphisms of the category Schlog (Y log )|sch-lk that are compatible with the structure morphisms to the object f2log .
+Proof. Assertions (i), (ii), and (iii) follow immediately from the various deﬁnitions
+involved. 
+
+Section 2: The Scheme Structure of Submonic Log Schemes
+In the present §2, we give a category-theoretic reconstruction of the underlying
+scheme structure of submonic objects of the categories of log schemes deﬁned in §1.
+We maintain the notation of §1.
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+23
+
+Deﬁnition 2.1. Let f log : Z log → Y log be a morphism of Schlog (X log ). Then we
+shall say that the morphism f log is SLEM [i.e., a “submonically log étale monomorphism”] if f log is a monomorphism in Schlog (X log ), and, moreover, for any commutative diagram
+V log −→ Z log
+⏐
+⏐
+⏐ log
+⏐
+f
+
+W log
+
+−→ Y log
+
+— where V log and W log are one-pointed and submonic, and the left-hand vertical arrow is a monomorphism in Schlog (X log ) — of objects and morphisms in
+Schlog (X log ), there exists a unique [“lifting”] morphism W log → Z log that renders
+the two resulting triangles in the above diagram commutative.
+Proposition 2.2.
+(SLEM morphisms and open immersions) Let f log :
+Z log → Y log be a morphism of Schlog (X log ). Thus, the underlying morphism f :
+Z → Y of f log may be regarded as a morphism of Sch(X). Then:
+(i) If f log is an open immersion [cf. the discussion entitled “Log schemes”
+in §0], then f log is SLEM.
+(ii) If Y log is submonic, and f log is SLEM, then f log is an open immersion.
+Proof. First, let us observe that any monomorphism between one-pointed objects
+in Sch(X) is necessarily a closed immersion between spectra of artinian rings [cf.,
+e.g., the proof of [LgSch], Corollary 1.2]. In particular, it follows from Proposition
+1.4, (vi), that any monomorphism V log → W log as in Deﬁnition 2.1 is necessarily
+scheme-like, and, moreover, that the underlying morphism of schemes associated
+to any monomorphism V log → W log as in Deﬁnition 2.1 is necessarily a closed
+immersion between spectra of artinian rings. Thus, it is immediate that if f log is an
+open immersion, then f log is SLEM. This completes the proof of assertion (i). Now
+suppose that Y log is submonic, and f log is SLEM. Thus, it follows from Proposition
+1.4, (vi), that f log is scheme-like, and, moreover, that f is a monomorphism in
+Sch(X). In particular, the existence of unique liftings as stipulated in Deﬁnition
+2.1 implies that f is an étale monomorphism in Sch(X), hence [cf., e.g., [LgSch],
+Corollary 1.3] an open immersion. This completes the proof of assertion (ii). 
+Proposition 2.3.
+
+(Connectedness with respect to SLEM localizations)
+
+(i) Let S log be a connected [hence nonempty] object of Schlog (X log ) [cf.
+Proposition 1.3]; U log , {Vilog }i∈N nonempty objects of Schlog (X log ); U log  S log ,
+{Vilog  S log }i∈N SLEM morphisms of Schlog (X log ) such that, for each i ∈ N,
+the morphism Vilog  S log admits a [necessarily unique] factorization Vilog 
+log
+log
+Vi+1
+ S log through the morphism Vi+1
+ S log , and, moreover, the ﬁber product
+U log ×S log Vilog [in Schlog (X log )] is empty. Then the natural map
+
+ 
+log
+log
+MinPt(U )
+MinPt(Vi ) → MinPt(S log )
+i∈N
+
+24
+
+SHINICHI MOCHIZUKI
+
+is injective.
+(ii) In the situation of (i), suppose further that S log is submonic. Then the
+natural map of (i) is never surjective.
+(iii) Suppose that S log is a log-nodal object of Schlog (X log ). Then, for suitable
+choices of U log  S log and {Vilog  S log }i∈N as in (i), the natural map of (i) is
+surjective.
+(iv) Let T log be an object of Schlog (X log ). Then T log is non-submonic if and
+only if there exist morphisms U log  S log and {Vilog  S log }i∈N as in (i), together
+with a monomorphism S log  T log in Schlog (X log ), such that the natural map of
+(i) is surjective.
+Proof. First, we consider assertion (i). Let i ∈ N. Then the injectivity of each
+of the natural maps MinPt(U log ) → MinPt(S log ), MinPt(Vilog ) → MinPt(S log )
+follows immediately from the deﬁnition of “MinPt(−)”. The fact that the images of
+these two maps are disjoint follows immediately from the deﬁnition of “MinPt(−)”,
+together with the assumption that the ﬁber product U log ×S log Vilog is empty. This
+completes the proof of assertion (i).
+Next, we consider assertion (ii). Since S log is submonic, it follows from Proposition 2.2, (ii), that the morphisms U log  S log , {Vilog  S log }i∈N are open immersions. Since [the underlying scheme of] S log is connected, it thus follows from
+the assumption that the objects U log , {Vilog }i∈N are nonempty, whereas the ﬁber
+products {U log ×S log Vilog }i∈N are empty, that the open subscheme of S log determined by the union of the images of the morphisms U log  S log , {Vilog  S log }i∈N
+does not coincide with S log , and hence [cf. Proposition 1.6, (i)] that the natural
+map of (i) is not surjective. This completes the proof of assertion (ii).
+Next, we consider assertion (iii). First, let us observe that, in light of the
+various assumptions imposed on S log , one veriﬁes immediately that S log may be
+regarded as the “S log ” that appears in Lemma 1.5, (viii). Here, the positive homomorphism φ0 : P → J0 = N of Lemma 1.5, (viii), may be taken to be the positive
+homomorphism “φ” of Lemma 1.5, (ii). In particular, we also obtain homomorphisms φ1 : P → J1 and φ2 : P → J2 . Now we apply Example 0.1, where we take
+“P ” to be P and “∞ P ” to be J2 . This yields an inﬁnite descending sequence
+P ⊆ J2 ⊆ . . . ⊆ i P ⊆ . . . ⊆ 1 P ⊆ 0 P
+— where i ∈ N — of submonoids of P gp satisfying various properties as described
+in Example 0.1. Suppose that, for i ∈ N, i P is obtained as the bisecting monoid of
+P at a positive homomorphism i ψ0 : P → N that is assigned the index “2”.
+Thus, for i ∈ N, the log étale monomorphism
+S log [i ψ{0,2} ]  S log
+of Lemma 1.5, (vii), (viii) [where we take “φ0 ” to be i ψ0 ] factors through the log
+étale monomorphism
+S log [i+1 ψ{0,2} ]  S log
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+25
+
+of Lemma 1.5, (vii), (viii) [where we take “φ0 ” to be i+1 ψ0 ], as well as through the
+log étale monomorphism
+S log [φ{0,2} ]  S log
+of Lemma 1.5, (vii), (viii) [where we take “φ0 ” to be φ0 ]. In particular, it follows from the fact that S log [φ{0,1} ] ×S log S log [φ{0,2} ] = S log [φ{0} ] [cf. Lemma 1.5,
+(vii), (viii)], together with the discussion of Example 0.1, that the ﬁber product
+S log [φ{0,1} ] ×S log S log [i ψ{0,2} ] is empty.
+Thus, in summary, if we take U log  S log to be the morphism
+S log [φ{0,1} ]  S log
+and, for i ∈ N, Vilog  S log to be the morphism
+S log [i ψ{0,2} ]  S log
+discussed above, then we obtain data as in assertion (i). Note, moreover, that it
+follows immediately from the discussion of Example 0.1 that the natural map of
+assertion (i) is surjective, as desired. This completes the proof of assertion (iii).
+Finally, we observe that the suﬃciency (respectively, necessity) portion of assertion (iv) follows formally from assertion (ii) (respectively, (iii)), together with
+Proposition 1.4, (vi) (respectively, together with Proposition 1.7, applied to T log ).
+This completes the proof of assertion (iv). 
+Proposition 2.4. (Characterization of scheme-like morphisms between
+minimal objects) Let hlog : T log → S log be a morphism between minimal objects
+def
+
+of Schlog (X log ). Set r = rk(S log ) ∈ {0, 1} [cf. Proposition 1.6, (ii)]. Then hlog
+is scheme-like if and only if there exists a connected, submonic object Z log of
+Schlog (X log ) such that the domain of every minimal point of Z log is of rank r,
+and, moreover, hlog admits a factorization
+T log → Z log → S log
+as the composite of a minimal point T log  Z log of Z log with a morphism Z log →
+S log that admits a section S log → Z log [i.e., such that the composite S log → Z log →
+S log is the identity morphism].
+Proof. First, we observe that since the underlying morphism of schemes T → S
+necessarily arises from [i.e., by applying “Spec(−)” to] a ﬁnite extension of ﬁelds,
+def
+
+log
+[i.e., N the asserted necessity follows immediately by taking Z log = AN
+Z ×Z S
+log
+dimensional aﬃne space over S , for a suitable positive integer N ]. Here, we note
+that the fact that “the domain of every minimal point of this Z log is of rank r” follows immediately from Proposition 1.4, (vi). Thus, it remains to verify suﬃciency.
+First, let us observe that it follows from the manifestly constructible nature of the
+characteristic sheaf PZ [cf. also Propositions 1.4, (vi); 1.6, (i), (ii)] that the assumption that “the domain of every minimal point of Z log is of rank r” implies that Z log
+itself is of rank r, and hence [cf. Lemma 1.9] that the characteristic sheaf PZ is
+
+26
+
+SHINICHI MOCHIZUKI
+
+locally constant. Since the monoids 0 and N have no nontrivial automorphisms, we
+thus conclude that the characteristic sheaf PZ is constant, with ﬁbers isomorphic
+to the monoid 0 (respectively, N) if r = 0 (respectively, r = 1). The existence of
+the section S log → Z log thus implies that the morphism Z log → S log is scheme-like.
+Since the monomorphism T log  Z log is also scheme-like [cf. Proposition 1.4, (vi)],
+we thus conclude that hlog is scheme-like, as desired. This completes the proof of
+suﬃciency and hence of Proposition 2.4. 
+Proposition 2.5. (Characterization of scheme-like morphisms between
+submonic objects) Let f log : Z log → Y log be a morphism between submonic
+objects of Schlog (X log ). Then f log is scheme-like if and only if, for every minimal
+point T log  Z log of Z log , there exists a minimal point S log  Y log of Y log and
+a scheme-like morphism T log → S log of Schlog (X log ) that ﬁt into a commutative
+diagram
+T log  Z log
+⏐
+⏐
+⏐ log
+⏐
+f
+
+S log
+
+
+
+Y log
+
+of objects of Schlog (X log ).
+Proof. The asserted necessity is immediate from the deﬁnitions and Propositions
+1.4, (vi), (vii); 1.6, (ii). The asserted suﬃciency follows immediately, in light of
+the manifestly constructible nature of the characteristic sheaves PZ , PY , from the
+deﬁnitions and Propositions 1.4, (vi); 1.6, (i), (ii). 
+Theorem 2.6.
+(Reconstruction of the scheme structure of submonic
+objects) For i = 1, 2, let Xilog be a locally noetherian fs log scheme [cf. the
+discussion entitled “Log schemes” in §0]. For i = 1, 2, we shall write Schlog (Xilog )
+for the category deﬁned at the beginning of §1. Let
+∼
+
+Φ : Schlog (X1log ) → Schlog (X2log )
+be an [arbitrary!] equivalence of categories. Then:
+(i) Φ preserves the following:
+(i-a) monomorphisms;
+(i-b) empty objects;
+(i-c) connected objects;
+(i-d) minimal objects;
+(i-e) minimal points;
+(i-f ) submonic one-pointed objects;
+(i-g) ranks of minimal objects;
+(i-h) SLEM morphisms;
+(i-i) submonic objects;
+(i-j) scheme-like morphisms between minimal objects;
+(i-k) scheme-like morphisms between submonic objects;
+(i-l) the submonic dimension of objects.
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+27
+
+(ii) For i = 1, 2, let Yilog be an object of Schlog (Xilog ); write Yi for the underlying scheme of Yilog . Suppose further that Φ(Y1log ) = Y2log . Thus, [cf. the portion
+of (i) concerning (i-i)] Y1log is submonic if and only if Y2log is. Suppose that Yilog
+is submonic for i = 1, 2. Then Φ induces an equivalence of categories
+
+
+∼
+
+Sch(Y1 ) →
+
+∼
+
+Schlog (Y1log )|sch-lk → Schlog (Y2log )|sch-lk
+
+
+
+∼
+
+→ Sch(Y2 )
+
+— where the equivalences in parentheses are the natural equivalences of Deﬁnition
+1.1, (iv) — that is functorial [in the evident sense!] with respect to Y1log , Y2log .
+Finally, the composite of the equivalences of categories in the above display induces,
+by applying [LgSch], Theorem 1.7, (ii), an isomorphism of schemes
+∼
+
+Y 1 → Y2
+that is functorial [in the evident sense!] with respect to Y1log , Y2log .
+Proof. First, we consider assertion (i). The preservation of (i-a) is a matter of
+general nonsense. The preservation of (i-b) follows from Proposition 1.3, (i). The
+preservation of (i-c) follows from Proposition 1.3, (ii). The preservation of (i-d)
+and (i-e) follows immediately from the preservation of (i-a). The preservation of
+(i-f) follows immediately, in light of Proposition 1.8, from the preservation of (i-e).
+The preservation of (i-g) follows immediately, in light of Proposition 1.6, (iii), from
+the preservation of (i-d). The preservation of (i-h) follows immediately from the
+preservation of (i-a) and (i-f). The preservation of (i-i) follows immediately, in light
+of Proposition 2.3, (iv), from the preservation of (i-a), (i-b), (i-c), (i-e), and (i-h).
+The preservation of (i-j) follows immediately, in light of Proposition 2.4, from the
+preservation of (i-c), (i-d), (i-e), (i-g), and (i-i). The preservation of (i-k) follows
+immediately, in light of Proposition 2.5, from the preservation of (i-e), (i-i), and
+(i-j). This completes the proof of assertion (i), except for the veriﬁcation of the
+preservation of (i-l). Assertion (ii) follows immediately [i.e., in the spirit of [LgSch],
+Corollary 2.15] from the portion of assertion (i) concerning the preservation of (i-k).
+Here, we note that the functoriality of the isomorphism of schemes in the ﬁnal display in the statement of assertion (ii) follows immediately from the characterization
+given in Proposition 1.11, (ii), of the factorization discussed in Proposition 1.11, (i),
+together with the natural equivalences of categories discussed in Proposition 1.11,
+(iii). Finally, the portion of assertion (i) concerning the preservation of (i-l) follows
+from the portion of assertion (i) concerning the preservation of (i-a), (i-i), together
+with the isomorphisms of schemes obtained in assertion (ii). 
+Lemma 2.7.
+(Characterization of isomorphisms among positive homomorphisms) Let ξ : P → Q be a positive homomorphism between fs monoids
+such that rk(P ) ≥ rk(Q), and, moreover, the following condition is satisﬁed:
+Every positive homomorphism φ : P → N admits a factorization P →
+Q → N as a composite of ξ with a positive homomorphism ψ : Q → N.
+Then ξ is an isomorphism.
+
+28
+
+SHINICHI MOCHIZUKI
+
+Proof. First, let us observe that, by Lemma 1.5, (ii), there exists a positive homomorphism φ† : P → N. Next, let us observe that if p is a prime number, then
+given a surjective homomorphism ζ : P gp  Fp , there exists a homomorphism
+ζ : P gp → Z whose composite with the natural surjection Z  Fp is equal to ζ.
+[Indeed, this follows immediately from the fact that P gp is a ﬁnitely generated free
+abelian group — cf. the discussion entitled “Generalities on monoids” in §0.] In
+particular, it follows from the fact that P is a ﬁnitely generated monoid that, for
+suﬃciently large n ∈ N, the homomorphism (ζ + pn · (φ† )gp ) : P gp → Z coincides
+with ζ when composed with the natural surjection Z  Fp and, moreover, determines a positive homomorphism φ : P → N. In particular, it follows from the
+hypotheses imposed on ξ that φ admits a factorization P → Q → N as a composite
+of ξ with a positive homomorphism ψ : Q → N. Since the resulting composite
+P gp → Qgp → Z  Fp coincides with ζ, we thus conclude, by allowing p and ζ
+to vary, that the reduction of the homomorphism of ﬁnitely generated free abelian
+groups ξ gp : P gp → Qgp modulo any prime number is injective, and, hence, since
+rk(P ) ≥ rk(Q), that ξ gp : P gp → Qgp is an isomorphism. That is to say, P and Q
+may be regarded as ﬁnitely generated saturated monoids within a single Z-module
+∼
+P gp → Qgp . In particular, it follows from well-known properties of fs monoids [cf.,
+e.g., [LgSch], Lemma 2.5, (iv)] that the hypotheses imposed on ξ imply that ξ is an
+isomorphism, as desired. 
+Proposition 2.8. (Characterization of scheme-like morphisms between
+reduced, one-pointed, non-minimal objects) Let f log : Z log → Y log be a
+morphism between reduced, one-pointed, non-minimal objects of Schlog (X log ).
+Then f log is scheme-like if and only if dimsm (Z log ) ≤ dimsm (Y log ), and, moreover, the following condition is satisﬁed:
+Let S log be a minimal object of Schlog (X log ), hlog : S log → Y log a morphism of Schlog (X log ). Then there exists a commutative diagram of morphisms of Schlog (X log )
+T log → Z log
+⏐
+⏐
+⏐
+⏐ log
+
+f
+S log
+
+hlog
+
+−→
+
+Y log
+
+in which the left-hand vertical arrow T log → S log is a scheme-like morphism between minimal objects of Schlog (X log ).
+Proof. First of all, we observe that the asserted necessity follows immediately
+from Proposition 1.10, together with the deﬁnition of the term “scheme-like”.
+Thus, it suﬃces to verify the suﬃciency of the condition that appears in the
+statement of Proposition 2.8. To this end, let us ﬁrst observe that it follows [cf.
+Proposition 1.6, (ii)] from the assumption that Z log and Y log are non-minimal
+that rk(Z log ) ≥ 2, rk(Y log ) ≥ 2. Thus, it follows from Proposition 1.10 that
+rk(Z log ) = dimsm (Z log ) + 1 ≤ dimsm (Y log ) + 1 = rk(Y log ). Next, let us observe —
+i.e., by applying Lemma 1.5, (v), as in the proof of Proposition 1.6, (i) — that the
+condition under consideration implies that the restriction to a geometric point of
+Z log of the morphism of characteristic sheaves PY |Z → PZ induced by f log satisﬁes
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+29
+
+the condition discussed in Lemma 2.7. In particular, we conclude from Lemma 2.7
+that this morphism PY |Z → PZ is, in fact, an isomorphism, and hence that f log is
+scheme-like, as desired. 
+Deﬁnition 2.9.
+(i) Let Z be a scheme. Then we shall refer to a point z of the underlying
+topological space of Z as a locally closed point if z determines a closed point of
+some open subscheme of Z. Write
+LCPt(Z)
+for the set of locally closed points of Z.
+(ii) Let Z log be an object of Schlog (X log ). For i = 1, 2, let Uilog be a minimal
+object of Schlog (X log ) and filog : Uilog → Z log an arrow of Schlog (X log ). Then we
+log
+shall say that f1log and f2log are point-equivalent if there exist a morphism fW
+:
+log
+log
+log
+log
+log
+W
+→ Z
+and, for each i = 1, 2, a morphism hi : Vi
+→ Ui between
+minimal objects of Schlog (X log ) such that W log is log-nodal, and, moreover, for each
+i = 1, 2, the composite morphism filog ◦ hlog
+: Vilog → Z log admits a factorization
+i
+log
+: W log → Z log .
+Vilog → W log → Z log through fW
+(iii) Let Z log be an object of Schlog (X log ) whose underlying scheme we dedef
+
+note by Z, z ∈ LCPt(Z log ) = LCPt(Z). Then a monomorphism H log  Z log in
+Schlog (X log ) will be called a point-hull at z if H log is one-pointed, and, moreover,
+every morphism S log → Z log in Schlog (X log ) from a minimal object S log to Z log
+that maps the unique point of the underlying scheme S of S log to z factors [necessarily uniquely!] through the given monomorphism H log  Z log . A point-hull
+H log  Z log at z will be called a minimal point-hull at z if every monomorphism
+H1log  H log in Schlog (X log ) for which the composite H1log  H log  Z log is a
+point-hull at z is necessarily an isomorphism. An arrow of Schlog (X log ) which is a
+minimal point-hull at some element of LCPt(−) of the codomain of the arrow will
+be referred to as a minimal point-hull. Thus, if Z log is one-pointed, and one restricts
+one’s attention to monomorphisms with one-pointed domains, then the notion of a
+point-hull (respectively, minimal point-hull) at z is identical to the notion of a hull
+(respectively, minimal hull) [cf. Deﬁnition 1.1, (iii)].
+Proposition 2.10. (Point-classes and minimal point-hulls) Let Z log be an
+object of Schlog (X log ). For i = 1, 2, let Uilog be a minimal object of Schlog (X log )
+and filog : Uilog → Z log an arrow of Schlog (X log ). For i = 1, 2, write Z, Ui for the
+underlying schemes of Z log , Uilog , respectively. Then:
+(i) Z log is one-pointed if and only if the set LCPt(Z log ) = LCPt(Z) is of
+cardinality one.
+(ii) Let z be a point of the underlying topological space of Z. Then the following
+conditions are equivalent: (ii-a) z is locally closed; (ii-b) z appears as the image of
+a morphism U → Z of Sch(X) for some minimal object U [cf. [LgSch], Proposition
+
+30
+
+SHINICHI MOCHIZUKI
+
+1.1, (ii)] of Sch(X); (ii-c) z appears as the image of a morphism U log → Z log of
+Schlog (X log ) for some minimal object U log of Schlog (X log ).
+(iii) Write zi for the image in Z via [the underlying morphism of schemes
+associated to] filog of the unique point of Ui . Then the arrows f1log and f2log are
+point-equivalent if and only if z1 = z2 . In particular, the notion of pointequivalence determines an equivalence relation on the collection [i.e., which, strictly
+speaking, is not necessarily a set!] of arrows in Schlog (X log ) from minimal objects
+of Schlog (X log ) to Z log . Write
+PtCl(Z log )
+for the set of equivalence classes of such arrows. We shall refer to an element of
+PtCl(Z log ) as a point-class of Z log .
+(iv) If f log : U log → Z log is an arrow that determines a point-class of Z log , then
+let us write Im(f log ) for the image in Z via [the underlying morphism of schemes
+associated to] f log of the unique point of the underlying scheme U of U log . Then
+the assignment f log → Im(f log ) determines a bijection of sets
+∼
+
+PtCl(Z log ) → LCPt(Z log ) = LCPt(Z)
+that is functorial [in the evident sense] with respect to Z log .
+(v) Let z ∈ LCPt(Z). Write z log for the reduced, one-pointed object of
+Schlog (X log ) obtained by restricting the log structure of Z log to z. Then a monomorphism hlog : H log  Z log in Schlog (X log ) is a minimal point-hull at z if and
+∼
+only if hlog induces an isomorphism H log → z log .
+Proof. First, we observe that assertion (i) follows immediately from the various
+deﬁnitions involved [cf. also [LgSch], Proposition 1.1, (i)]. Next, we consider assertion (ii). First, we recall from [LgSch], Proposition 1.1, (ii), that an object of
+Sch(X) is minimal if and only if it is reduced and one-pointed. Next, we recall from
+Proposition 1.6, (ii), that a minimal object of Schlog (X log ) is necessarily reduced and
+one-pointed. Now the implication (ii-a) =⇒ (ii-b) follows immediately. In a similar
+vein, the implication (ii-a) =⇒ (ii-c) follows immediately, by applying Proposition
+1.6, (i). To verify the implications (ii-b) =⇒ (ii-a), (ii-c) =⇒ (ii-a), it suﬃces to
+verify that if U is a one-pointed object of Sch(X), then the image via any morphism
+U → Z of Sch(X) of the unique point of U is a locally closed point of Z. Note that,
+by considering the schematic closure of such a morphism in a suitable aﬃne open of
+Z, we may assume without loss of generality that U and Z are aﬃne, and that the
+morphism [of ﬁnite type!] U → Z has dense image. Since this image [which consists
+of a single point!] is necessarily constructible, hence contains a dense open subset of
+the underlying topological space of Z, we thus conclude that we may assume, after
+replacing Z by a suitable aﬃne open of Z, that the morphism U → Z is surjective,
+i.e., that Z is one-pointed. This completes the proof of assertion (ii).
+Next, we consider assertion (iii). Since minimal objects of Schlog (X log ) are necessarily one-pointed [cf. Proposition 1.6, (ii)], the necessity portion of the asserted
+equivalence follows immediately from the various deﬁnitions involved. Thus, it sufﬁces to verify the suﬃciency portion of the asserted equivalence. To this end, let us
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+31
+
+ﬁrst observe that, since minimal objects of Schlog (X log ) are necessarily reduced [cf.
+Proposition 1.6, (ii)], we may assume without loss of generality that Z log is reduced
+and one-pointed. Also, by base-changing to a suitable ﬁnite extension of the ﬁeld
+whose spectrum is Z, we conclude that we may assume without loss of generality
+that f1log and f2log are log-like, and that Z log is split. Thus, by considering a suitable
+splitting as in Lemma 1.5, (i), one veriﬁes immediately that, to complete the proof
+of suﬃciency, it suﬃces to verify the following assertion concerning fs monoids:
+Let P be an fs monoid. For i = 1, 2, let φi : P → N be a positive
+homomorphism of fs monoids. Then there exist an fs monoid Q of rank
+two and a positive homomorphism ψ : P → Q of fs monoids such that, for
+i = 1, 2, the homomorphism 2 · φi : P → N [i.e., the composite of φi with
+the positive homomorphism N → N given by multiplication by 2] admits
+a factorization P → Q → N as the composite of ψ with some positive
+homomorphism ψi : Q → N.
+This assertion concerning fs monoids may be veriﬁed as follows. For i = 1, 2,
+gp
+→ Z. If N1gp = N2gp ,
+write Nigp ⊆ P gp for the kernel of the morphism φgp
+i : P
+then one veriﬁes immediately that one obtains data as desired by considering the
+factorization N → N ⊕ N → N [i.e., determined by the assignments N  1 →
+(1, 1) ∈ N ⊕ N and N ⊕ N  (a, b) → a + b ∈ N] of the homomorphism N → N
+given by multiplication by 2. Thus, we may assume without loss of generality that
+N1gp = N2gp . Write Q for the saturation [cf. [LgSch], Lemma 2.5, (ii)] of the image
+of P in (P gp /N1gp ) ⊕ (P gp /N2gp ) (∼
+= Z ⊕ Z). Thus, we obtain a natural positive
+homomorphism of monoids ψ : P → Q such that, for i = 1, 2, φi : P → N admits a
+factorization P → Q → N as the composite of ψ with some positive homomorphism
+ψi : Q → N. Here, we note that the positivity of ψi follows immediately from the
+positivity of φi . Also, we observe that the positivity of ψi implies that the monoid
+Q has no nonzero invertible elements. We thus conclude that Q is an fs monoid
+of rank two, as desired. This completes the proof of assertion (iii). Assertion (iv)
+follows immediately from assertion (iii), together with the equivalence (ii-a) ⇐⇒
+(ii-c) of assertion (ii).
+Finally, we consider assertion (v). First, we consider the suﬃciency portion
+of the asserted equivalence. To verify this suﬃciency, it suﬃces to verify that the
+log
+ Z log [cf. Proposition 1.4, (vii)] is a minimal
+natural monomorphism hlog
+z : z
+point-hull at z. The fact that hlog
+z is a point-hull at z follows immediately from the
+log
+various deﬁnitions involved. Now suppose that hlog
+ z log is a monomor1 : H1
+log
+log
+log
+phism such that the composite hlog
+is a point-hull at z [so both
+z ◦ h1 : H1  Z
+log
+log
+z
+and H1 are one-pointed]. Then one veriﬁes immediately that, by applying
+Lemma 1.5, (v), as in the proof of Proposition 1.6, (i), it follows from Proposition
+1.4, (iii), and Lemma 2.7 that hlog
+is scheme-like, and hence, by Proposition 1.4,
+1
+(v); [LgSch], Proposition 1.1, (ii), that hlog
+1 is an isomorphism, as desired. Thus, to
+complete the proof of assertion (v), it suﬃces to verify the necessity portion of the
+asserted equivalence. First, let us observe that it follows from the existence of the
+log
+ H log , together with the deﬁnition of the notion of
+natural monomorphism Hred
+a minimal point-hull, that H log is reduced and one-pointed. Thus, it follows immediately from Proposition 1.6, (i), that hlog induces a monomorphism H log  z log .
+Since we have already veriﬁed that hlog
+z is a minimal point-hull at z, we thus conlog
+ z log is an isomorphism, as desired. This
+clude that this monomorphism H
+
+32
+
+SHINICHI MOCHIZUKI
+
+completes the proof of assertion (v). 
+Proposition 2.11. (Characterization of scheme-like morphisms between
+arbitrary objects) Let f log : Z log → Y log be a morphism between arbitrary
+objects of Schlog (X log ). Then f log is scheme-like if and only if, for every minimal
+point-hull hlog : T log → Z log , there exists a commutative diagram of morphisms
+of Schlog (X log )
+hlog
+T log −→ Z log
+⏐
+⏐
+⏐ log
+⏐
+f
+
+S log
+
+→
+
+Y log
+
+in which the lower horizontal arrow S log → Y log is a minimal point-hull, and the
+left-hand vertical arrow T log → S log is a scheme-like morphism between reduced,
+one-pointed objects of Schlog (X log ).
+Proof. The asserted equivalence follows immediately, in light of the manifestly
+constructible nature of the characteristic sheaves PZ , PY , from Proposition 2.10,
+(v), together with the deﬁnition of the term “scheme-like”. 
+Corollary 2.12. (Conditional reconstruction of the scheme structure of
+arbitrary objects) Suppose that we are in the situation of Theorem 2.6, and that
+Φ satisﬁes the following condition:
+(∗nod ) an object of Schlog (X1log ) is log-nodal if and only if its image via Φ is
+a log-nodal object of Schlog (X2log ).
+Then:
+(i) Φ preserves the following:
+(i-a) point-equivalent pairs of arrows;
+(i-b) the set-valued functor LCPt(−) [up to natural equivalence];
+(i-c) arrows which are minimal point-hulls;
+(i-d) scheme-like morphisms between arbitrary objects.
+(ii) For i = 1, 2, let Yilog be an object of Schlog (Xilog ); write Yi for the underlying scheme of Yilog . Suppose further that Φ(Y1log ) = Y2log . Then Φ induces an
+equivalence of categories
+
+
+∼
+∼
+∼
+Schlog (Y1log )|sch-lk → Schlog (Y2log )|sch-lk
+→ Sch(Y2 )
+Sch(Y1 ) →
+— where the equivalences in parentheses are the natural equivalences of Deﬁnition
+1.1, (iv) — that is functorial [in the evident sense!] with respect to Y1log , Y2log .
+Finally, the composite of the equivalences of categories in the above display induces,
+by applying [LgSch], Theorem 1.7, (ii), an isomorphism of schemes
+∼
+
+Y 1 → Y2
+that is functorial [in the evident sense!] with respect to Y1log , Y2log .
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+33
+
+Proof. First, we consider assertion (i). The preservation of (i-a) follows immediately, in light of the preservation of (i-d) asserted in Theorem 2.6, (i), from the
+condition (∗nod ), together with the deﬁnition of the term “point-equivalent”. The
+prservation of (i-b) now follows from the preservation of (i-a), together with the
+bijection of Proposition 2.10, (iv). The preservation of (i-c) then follows from the
+preservation of (i-b) [cf. also the preservation of (i-a), (i-d) asserted in Theorem
+2.6, (i)], together with the equivalence of Proposition 2.10, (i). The preservation of
+(i-d) follows, in light of the preservation of (i-c), from Propositions 2.8; 2.10, (v);
+2.11 [cf. also the preservation of (i-d), (i-j), (i-l) asserted in Theorem 2.6, (i)]. This
+completes the proof of assertion (i). Now assertion (ii) follows immediately [i.e., in
+the spirit of Theorem 2.6, (ii); [LgSch], Corollary 2.15] from the portion of assertion
+(i) concerning the preservation of (i-d). Here, we note that the functoriality of the
+isomorphism of schemes in the ﬁnal display in the statement of assertion (ii) follows
+immediately from the characterization given in Proposition 1.11, (ii), of the factorization discussed in Proposition 1.11, (i), together with the natural equivalences of
+categories discussed in Proposition 1.11, (iii). 
+
+Section 3: Seamless Partitions of Orientable Log Schemes
+In the present §3, we discuss the notion of a seamless partition of an orientable
+log scheme. This notion leads naturally to a category-theoretic characterization of
+log-nodal objects, which we apply to eliminate the dependence on the condition
+“(∗nod )” in Corollary 2.12.
+We maintain the notation of §2.
+Deﬁnition 3.1.
+(i) Suppose that Y log is an object of Schlog (X log ). Then we shall say that Y log
+is log-Dedekind if it satisﬁes the following conditions:
+(i-a) dimsm (Y log ) ≤ 1;
+(i-b) if Z log is a minimal object of Schlog (X log ) such that there exists a morphism Z log → Y log in Schlog (X log ), then Z log is of rank one;
+(i-c) if Z log is a nonempty submonic object of Schlog (X log ), with underlying scheme Z, such that there exists a SLEM morphism Z log  Y log in
+Schlog (X log ), then the closed subscheme Zred ⊆ Z is regular and of positive
+dimension.
+If y is a point of the underlying scheme Y of a log-Dedekind object Y log , and the
+ﬁber of PY at some geometric point of Y that maps to y is of rank two, then we
+shall say that y is a nodal point of Y log .
+(ii) Suppose that Y log is a log-Dedekind object of Schlog (X log ). For i = 1, 2,
+let Zilog be a connected [hence nonempty], submonic object of Schlog (X log ) and
+filog : Zilog  Y log
+
+34
+
+SHINICHI MOCHIZUKI
+
+a SLEM morphism. We shall say that f1log and f2log are submonically equivalent if
+def
+
+log
+the ﬁber product Z12
+= Z1log ×Y log Z2log determined by f1log and f2log is nonempty.
+log
+→ Zilog , is SLEM, hence, by
+[Here, we note that, for i = 1, 2, the projection Z12
+Proposition 2.2, (ii), an open immersion, whose image is, by condition (i-c), dense
+whenever it is nonempty.] One veriﬁes immediately that the notion of submonic
+equivalence determines an equivalence relation on the collection [i.e., which, strictly
+speaking, is not necessarily a set!] of arrows of Schlog (X log ) which are SLEM
+morphisms from connected, submonic objects of Schlog (X log ) to Y log . Write
+
+SmCp(Y log )
+for the set of equivalence classes of such arrows. We shall refer to an element of
+SmCp(Y log ) as a submonic component of Y log .
+(iii) Suppose that Y log is a log-Dedekind object of Schlog (X log ). If hlog : H log 
+Y log is a monomorphism of Schlog (X log ), then we shall write
+Chn(hlog ) ⊆ SmCp(Y log )
+for the subset of submonic components for which there exists a representative arrow
+Z log  Y log that admits a factorization Z log  H log  Y log through hlog :
+H log  Y log . If C ⊆ SmCp(Y log ) is a nonempty subset, then we shall refer to C as
+a chain if there exists a SLEM morphism hlog : H log  Y log of Schlog (X log ) such
+that H log is connected [hence nonempty!], and C = Chn(hlog ). If C ⊆ SmCp(Y log )
+is a subset, then we shall refer to C as an N-chain if there exists a collection {Ci }i∈N
+of chains Ci ⊆ SmCp(Y log ) such that C = ∪i∈N Ci , and Ci ⊆ Ci+1 for all i ∈ N.
+Proposition 3.2. (First properties of log-Dedekind objects) Suppose that
+Y log is a log-Dedekind object of Schlog (X log ). Then:
+(i) Y log is of rank ≤ 2.
+(ii) The non-nodal points of the underlying scheme Y of Y log form an open
+subset of the underlying topological space of Y . Write Ysm ⊆ Y for the correlog
+for the log scheme obtained by restricting the
+sponding open subscheme and Ysm
+log
+to Ysm . Then the complement of Ysm in Y is a closed sublog structure of Y
+log
+log
+is submonic. We shall refer to Ysm
+scheme of Y of dimension zero, and Ysm
+as the submonic locus of Y log .
+(iii) Let Z log be a nonempty submonic object of Schlog (X log ) and Z log 
+a SLEM morphism. Then the closed subscheme Zred ⊆ Z of the underlying
+Y
+scheme Z of Z log is regular and of dimension one, and Z log is of rank one. In
+particular, [cf. Proposition 2.2, (i)] (Ysm )red is regular and of dimension one, and
+log
+is of rank one.
+Ysm
+log
+
+(iv) Let f log : Z log  Y log be a SLEM morphism from a connected, submonic object Z log of Schlog (X log ) to Y log . Then f log either admits a factorization
+log
+log
+ Y log as the composite of an open immersion Z log  Ysm
+with the
+Z log  Ysm
+log
+log
+or maps the entire underlying scheme Z of
+natural monomorphism Ysm  Y
+log
+log
+to some nodal point y of Y . In the former case, we shall say that f log
+Z
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+35
+
+is non-nodal; in the latter case, we shall say that f log is nodal and lies over
+y. We shall also apply this terminology “non-nodal”/“nodal” to the element of
+SmCp(Y log ) determined by f log .
+(v) Let y be a nodal point of Y log . Then the subset
+SmCp(Y log )y ⊆ SmCp(Y log )
+of nodal elements that lie over y forms an N-chain. Moreover, every morphism
+H log → Y log in Schlog (X log ) from a minimal object H log to Y log that maps the
+unique point of the underlying scheme of H log to y factors through some representative of an element of SmCp(Y log )y .
+(vi) Every element γ ∈ SmCp(Y log ) admits a “maximal” representative arrow
+f log : Z log  Y log , i.e., a representative arrow such that every arrow U log  Y log
+of Schlog (X log ) that is submonically equivalent to f log admits a factorization
+U log  Z log  Y log
+as the composite of some open immersion U log  Z log with f log . If, moreover, γ
+is non-nodal, then such a maximal representative f log : Z log  Y log arises from
+log
+.
+an isomorphism of Z log onto some connected component of Ysm
+Proof. First, let us observe that the inequality dimsm (Y log ) ≤ 1 of Deﬁnition
+3.1, (i-a), together with the restriction imposed by Deﬁnition 3.1, (i-b) [cf. also
+Propositions 1.4, (iv); 1.6, (i)], imply that the integers “d” and “n” in Proposition
+1.10 satisfy the following conditions:
+(∗1 ) n ∈ {1, 2};
+(∗2 ) n = 2 =⇒ d = 0;
+(∗3 ) n = 1 =⇒ d ≤ 1.
+Assertion (i) thus follows from (∗1 ) [cf. also Lemma 1.9]. Assertion (ii) follows from
+(∗1 ), (∗2 ) [cf. also Lemma 1.9]. Assertion (iii) follows from (∗1 ), (∗3 ), together with
+Deﬁnition 3.1, (i-c) [cf. also Proposition 2.2, (i)].
+Next, we consider assertion (iv). If y is a nodal point of Y log , then write y log
+for the log scheme obtained by restricting the log structure of Y log to the closed
+subscheme, equipped with the reduced induced scheme structure, of Y determined
+def
+by y. Write Zylog = Z log ×Y log y log . Thus, the underlying scheme Zy of Zylog may
+be identiﬁed with the scheme-theoretic ﬁber of Z over y. Note that if Zy = ∅ for
+log
+every nodal point y of Y log , then f log admits a factorization Z log  Ysm
+ Y log as
+log
+with the natural monomorphism
+the composite of a monomorphism Z log  Ysm
+log
+log
+log
+is SLEM, it follows immediately that the morYsm  Y ; moreover, since f
+log
+is SLEM and hence, by assertion (ii) and Proposition 2.2, (ii),
+phism Z log  Ysm
+an open immersion. Thus, since, by assertion (iii), Zred is regular and of dimension
+one, it follows immediately — i.e., by possibly replacing Z log by the log scheme
+determined by a suitable dense open subscheme of Z — that, to complete the proof
+of assertion (iv), it suﬃces to verify, under the additional assumption that Zylog is
+connected [hence nonempty] for some ﬁxed nodal point y of Y log , that dim(Zy ) = 1.
+
+36
+
+SHINICHI MOCHIZUKI
+
+To this end, let us ﬁrst observe that the natural morphism Zylog → y log is SLEM.
+Since Zylog is connected and [by assertion (iii)] of rank one, it follows from Lemma
+1.5, (v) [where we take “S log ” to be y log ], that the monomorphism Zylog → y log
+admits a factorization as a composite of monomorphisms
+log
+ y log
+Zylog  yZ
+log
+— where yZ
+is, in the notation of Lemma 1.5, (v), a log scheme of rank one of
+log
+log
+the form “S [ξ]”; yZ
+ y log is the composite monomorphism of Lemma 1.5, (vi)
+log
+[where we take “S+
+[ξ]  S log [ξ]” to be the identity morphism]. Since Zylog 
+log
+is SLEM and hence, by
+y log is SLEM, it follows immediately that Zylog  yZ
+log
+Proposition 2.2, (ii), an open immersion. Since the underlying scheme of yZ
+is of
+dimension one [cf. Lemma 1.5, (iv), (v)], we thus conclude that dim(Zy ) = 1, as
+desired. This completes the proof of assertion (iv).
+def
+
+Next, we consider assertion (v). Write k for the residue ﬁeld of Y at y, S log =
+log
+Y ×Y Spec(k) [where the morphism implicit in the right-hand factor of the ﬁber
+product is the tautological morphism Spec(k) → Y associated to y]. Thus, S log is
+a log scheme of the sort that appears in Lemma 1.5, so, in the following discussion,
+we shall apply the notational conventions introduced at the beginning of Lemma
+1.5. Write OY for the complete noetherian local ring obtained by completing Y
+def
+
+def
+
+along y, Y = Spec(OY ), Y log = Y log ×Y Y , y for the unique closed point of
+Y . Write OY sep for the completion of the strict henselization of OY determined
+def
+
+by k sep , Y sep = Spec(OY sep ) [so Y sep is equipped with a natural action by Gk ],
+def
+
+(Y sep )log = Y log ×Y Y sep , y sep for the unique closed point of Y sep .
+Next, let us ﬁx a chart P → OY sep of (Y sep )log that determines a “clean chart”
+in the sense of [ExtFam], Deﬁnition 1.3. This chart thus determines a natural
+isomorphism of the ﬁber at y sep of the monoid MY sep that deﬁnes the log structure
+of (Y sep )log with the product P × OY×
+ sep . In particular, the natural action of Gk on
+this ﬁber determines an action of Gk on P ×OY×
+ sep [i.e., which is compatible with the
+×
+factor {0} × OY sep , but not necessarily compatible with the factor P × {1}, of this
+×
+product decomposition!], hence also on the groupiﬁcation P gp × OY×
+ sep of P × OY
+ sep .
+log
+log
+log
+Note that since Y
+is a log-Dedekind object of Sch (X ), it follows immediately
+from assertion (ii) that the support of the closed subscheme Y∗sep ⊆ Y sep determined
+by the ideal generated by the image via the chart under consideration of P \ {0} is
+equal to {y sep }.
+Next, let
+Q ⊆ P gp
+be a ﬁnitely generated, saturated submonoid such that P ⊆ Q = P gp . Write
+GQ ⊆ Gk for the open subgroup of elements that preserve Q [i.e., relative to
+∼
+×
+gp
+deterthe natural action of Gk on the quotient (P gp × OY×
+ sep )/OY
+ sep → P
+mined, as discussed above, by the chart under consideration!]. Thus, the action of Gk on P gp × OY×
+ sep determines an action of GQ ⊆ Gk on the submonoid
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+37
+
+gp
+Q × OY×
+× OY×
+ sep ⊆ P
+ sep . Moreover, we assume further that one of the following
+[mutually exclusive!] conditions holds:
+
+(v-a)
+
+GQ = Gk , and, moreover, the natural inclusion P ⊆ Q is a sumdominating homomorphism of fs monoids [cf. the discussion entitled “Generalities on monoids” in §0].
+
+(v-b) There exists a positive homomorphism ξ : P → N which induces a
+surjection on groupiﬁcations ξ gp : P gp  Z such that Q coincides with
+the saturation [cf. [LgSch], Lemma 2.5, (ii)] of the submonoid of P gp
+generated by P and Ker(ξ gp ).
+Thus, even when GQ = Gk [which implies that condition (v-b) holds], one veriﬁes
+immediately that the natural inclusion P ⊆ Q is a sum-dominating homomorphism.
+That is to say, the natural inclusion P ⊆ Q is a sum-dominating homomorphism,
+no matter which of the two conditions (v-a), (v-b) one assumes.
+Next, let us observe that the inclusion P → Q determines a log étale monomorphism
+def
+
+def
+
+Z log [Q] = Spec(OY sep [Q])log → Z log [P ] = Spec(OY sep [P ])log
+[cf. the construction discussed in Proposition 1.4, (ii), as well as [Kato1], Proposition 3.4]. Thus, one veriﬁes immediately that the actions [determined, as discussed
+×
+above, by the chart under consideration!] of Gk on P ×OY×
+ sep and of GQ on Q×OY
+ sep
+determine, respectively, actions of Gk on Z log [P ] and GQ on Z log [Q]. Moreover,
+the chart P → OY sep under consideration determines a tautological Gk -equivariant
+morphism (Y sep )log → Z log [P ] and hence a ﬁber product [of fs log schemes]
+def
+
+(Z sep )log = (Y sep )log ×Z log [P ] Z log [Q]
+equipped with a natural action by GQ . This natural GQ -action in turn determines
+descent data for the projection morphism (Z sep )log → (Y sep )log , which may be used
+to descend this projection morphism to a log étale monomorphism Z log → YQlog ,
+where we write YQ → Y for the ﬁnite étale covering corresponding to the open
+def
+
+subgroup GQ ⊆ Gk , YQlog = Y log ×Y YQ .
+Next, let us observe that since Y log is a log-Dedekind object of Schlog (X log ) [or,
+equivalently, of Schlog (Y log )], it follows immediately from assertions (ii) and (iii)
+that any minimal object of Schlog (Z log ) is of rank one. Thus, since the inclusion
+P ⊆ Q is sum-dominating, it follows from the ﬁnal portion of Lemma 1.9 that
+any regular function on the underlying scheme Z sep of (Z sep )log that arises [i.e.,
+via the various charts implicit in the above discussion] from an element ∈ P \
+{0} necessarily vanishes at every point of Z sep , hence [since Z sep is noetherian] is
+necessarily nilpotent. Since, as observed above, the support of the closed subscheme
+Y∗sep ⊆ Y sep is equal to {y sep }, we thus conclude that the natural morphism Z sep →
+Y sep factors through a closed subscheme of Y sep whose support is equal to {y sep }.
+This in turn implies that, if we write Z for the underlying scheme of Z log , then the
+composite morphism Z → YQ → Y factors through a closed subscheme of Y whose
+support is equal to {y}.
+
+38
+
+SHINICHI MOCHIZUKI
+
+Next, I claim that the composite morphism
+Z log → YQlog → Y log
+is a log étale monomorphism. Indeed, in light of what has already been veriﬁed, it
+suﬃces to prove, in the case where GQ = Gk [which implies that condition (v-b)
+holds], that this composite morphism is a monomorphism. Since the morphism
+Z log → YQlog is already known to be a monomorphism, and the morphism YQlog →
+Y log is a scheme-like morphism whose underlying morphism of schemes is ﬁnite
+étale, one veriﬁes immediately that to complete the proof of the claim, it suﬃces
+to verify [cf. the argument applied in the proof of Lemma 1.5, (vi); the fact that
+the composite morphism Z → YQ → Y factors through a closed subscheme of Y
+whose support is equal to {y}] that the base-change of the morphism Z log → Y log
+via the natural morphism S log → Y log is a monomorphism. On the other hand, one
+veriﬁes immediately that this base-changed morphism Z log ×Y log S log → S log may
+be identiﬁed with the morphism “S log [ξ] → S log ” of Lemma 1.5, (vi) [where the
+objects “ξ”, “H” of Lemma 1.5, (vi), correspond, respectively, to ξ and GQ in the
+present discussion; we observe that it follows immediately from condition (v-b) that
+“Ξ+ = Ξ”]. Thus, the fact that this base-changed morphism Z log ×Y log S log → S log
+is a monomorphism follows from Lemma 1.5, (vi). This completes the proof of the
+claim.
+Thus, in summary, the composite morphism Z log → Y log → Y log may be
+regarded as a log étale monomorphism of Schlog (Y log ), or, indeed, of Schlog (X log ).
+In the following, we shall use the notation
+f log : Z log → Y log
+to denote this composite morphism. Moreover, one computes easily that, if we write
+Z for the underlying scheme of Z log , then Zred ×YQ Y sep may be identiﬁed with the
+reduced closed subscheme of Spec(k sep [Q]) determined by forming the zero locus of
+the set of functions P \ {0} ⊆ Q. Thus, if condition (v-a) holds, then one veriﬁes
+∼
+immediately, by applying an isomorphism Qpf → Q≥0 ⊕ Q≥0 as in the discussion
+entitled “Rank two fs monoids” in §0 [cf. also Lemma 1.5, (iv)], that Zred ×YQ Y sep
+may be regarded as the codomain of a ﬁnite surjective morphism whose domain
+consists of two copies of the aﬃne line over k sep glued together at a single point,
+hence, in particular, is connected. On the other hand, if condition (v-b) holds, then
+one veriﬁes immediately that Zred ×YQ Y sep is a one-dimensional torus [cf. the
+situation discussed in Lemma 1.5, (iv)], hence, in particular, is connected.
+Thus, in summary, the morphism f log : Z log → Y log is a log étale monomorphism with connected domain such that the resulting chain
+Chn(f log ) ⊆ SmCp(Y log )
+is contained in SmCp(Y log )y . Now we consider the monoids constructed in Example 0.2, where we allow n ∈ N to vary. Then it follows immediately from the
+discussion of Example 0.2 that given any element γ ∈ SmCp(Y log )y , it holds that
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+39
+
+def
+
+γ ∈ Chn(f log ), if, in the notation of Example 0.2, we take Q = n P — a submonoid which, as discussed in Example 0.2, may be constructed in such a way that
+condition (v-a) holds — for n suﬃciently large.
+Finally, let H log → Y log be a morphism in Schlog (X log ) from a minimal object
+H log to Y log that maps the unique point of the underlying scheme H of H log to
+y. Thus, if we regard H as the spectrum of a ﬁnite subextension of k in the
+perfection of k sep , then the morphism H log → Y log determines, by considering the
+induced morphism on log structures, a positive homomorphism ξ : P → N and
+submonoid Q ⊆ P gp that satisfy condition (v-b). Moreover, it follows immediately
+from the construction of f log that Z log is submonic [so f log may be regarded as a
+representative of an element of SmCp(Y log )y ], and that the morphism H log → Y log
+factors through f log . This completes the proof of assertion (v).
+Finally, we consider assertion (vi). If γ is non-nodal, then assertion (vi) follows
+immediately from assertions (iii) and (iv). Thus, we may assume without loss of
+generality that γ is nodal. Then assertion (vi) follows immediately by gluing, in the
+notation of Deﬁnition 3.1, (ii), the various Zilog  Y log that constitute an element
+log
+of SmCp(Y log ) along the open immersions Z12
+ Zilog . Here, we note that it
+log
+that appeared in the
+follows immediately from the fact that the log scheme yZ
+proof of assertion (iv) is noetherian that this gluing process terminates after a ﬁnite
+number of steps. This completes the proof of assertion (vi). 
+Deﬁnition 3.3.
+Suppose that Y log is a connected, non-submonic, log-Dedekind
+object of Schlog (X log ). Let γ ∈ SmCp(Y log ). Write
+Mono(Y log )
+for the full subcategory of Schlog (Y log ) determined by the arrows H log → Y log of
+Schlog (X log ) which are monomorphisms in Schlog (X log ).
+(i) Let C1 , C2 ⊆ SmCp(Y log ) be chains. Then we shall say that the pair of
+chains {C1 , C2 } forms a partition at γ if the chains C1 , C2 satisfy the following
+conditions:
+(i-a) C1 ∪ C2 = SmCp(Y log ),
+
+C1 ∩ C2 = {γ};
+
+(i-b) for i = 1, 2, the subset Ci \ {γ} ⊆ SmCp(Y log ) is an N-chain [hence
+nonempty];
+(i-c) the N-chains of (i-b) are “maximal” in the sense that every N-chain
+C ⊆ SmCp(Y log ) such that γ ∈ C is contained in Ci for some i ∈ {1, 2};
+(i-d) if, for i = 1, 2, we write Ψi for the subfunctor of the contravariant
+functor determined by the terminal object [i.e., Y log ] of Mono(Y log ) that
+consists of objects hlog : H log  Y log of Mono(Y log ) such that every
+composite morphism H∗log  H log  Y log , where H∗log  H log is a
+minimal point of H log , factors through some representative of an element
+∈ Ci (⊆ SmCp(Y log )), then Ψi is representable by an object hlog
+: Yilog 
+i
+Y log of Mono(Y log ).
+
+40
+
+SHINICHI MOCHIZUKI
+
+We shall say that Y log is orientable if Y log admits a partition at every element of
+SmCp(Y log ).
+log
+are as in (i-d).
+(ii) Let {C1 , C2 } be a partition at γ. Suppose that hlog
+1 , h2
+Then we shall say that the partition {C1 , C2 } is seamless if the following condition
+is satisﬁed:
+
+a monomorphism hlog : H log  Y log in Schlog (X log ) is an isomorphism if
+and only if, for i = 1, 2, the projection H log ×Y log Yilog → Yilog associated
+is an isomorphism.
+to the ﬁber product determined by hlog and hlog
+i
+We shall say that Y log is homogeneous if Y log is orientable, and, moreover, no
+partition at an element ∈ SmCp(Y log ) is seamless.
+Remark 3.3.1.
+In the situation of Deﬁnition 3.3, (i-d), we observe that it
+follows immediately from Proposition 3.2, (v), (vi), that [the underlying morphism
+of schemes of] the morphism
+hlog
+1
+
+
+
+hlog
+2 :
+
+Y1log
+
+
+
+Y2log
+
+→
+
+Y log
+
+is surjective.
+Proposition 3.4.
+
+(First properties of partitions)
+
+(i) Suppose that Y log is an orientable object of Schlog (X log ). Let {C1 , C2 } be
+a partition at an element γ ∈ SmCp(Y log ). Then, up to a possible permutation of
+the indices “1”, “2”, every partition at γ coincides with {C1 , C2 }.
+(ii) Suppose that Y log is an orientable object of Schlog (X log ). Let {C1 , C2 }
+be a partition at a non-nodal element γ ∈ SmCp(Y log ); hlog
+: Y1log  Y log ,
+1
+log
+hlog
+ Y log monomorphisms as in Deﬁnition 3.3, (i-d). Then, for i = 1, 2,
+2 : Y2
+log
+log
+hi : Yi  Y log is an open immersion, and the ﬁber product Y1log ×Y log Y2log
+determined by hlog
+and hlog
+is a maximal representative for γ, i.e., in the sense
+1
+2
+of Proposition 3.2, (vi). In particular [cf. Remark 3.3.1], the partition {C1 , C2 } is
+seamless.
+(iii) Suppose that Y log is a homogeneous object of Schlog (X log ). Then Y log
+log
+is one-pointed, and Ysm
+is empty.
+(iv) Suppose that Y log is a log-nodal object of Schlog (X log ). Then Y log is
+homogeneous, hence, in particular, orientable. Moreover, relative to the notational conventions introduced in Deﬁnition 1.1, (i), SmCp(Y log ) may be naturally
+identiﬁed with the set of positive homomorphisms ξ : PY → N such that ξ induces
+a surjection on groupiﬁcations ξ gp : PYgp  Z.
+(v) Suppose that Y log is a reduced, one-pointed, non-split object of rank
+two of Schlog (X log ). Then Y log is log-Dedekind, but not orientable. In particular, Y log is not homogeneous. If, moreover, Y = Spec(kY ) for some ﬁeld kY , and
+def
+
+kZ is a ﬁnite Galois extension of kY such that Z log = Y log ×kY kZ is log-nodal,
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+41
+
+then SmCp(Y log ) may be naturally identiﬁed with the set of Gal(kZ /kY )-orbits of
+the set SmCp(Z log ) [i.e., which was described explicitly in (iv)].
+Proof. Assertion (i) follows, by applying entirely formal set-theoretic considerations, from Deﬁnition 3.3, (i-a), (i-b), (i-c). Next, we consider assertion (ii). If
+one restricts the morphisms hlog
+: Yilog  Y log to the open subscheme Ysm ⊆ Y [cf.
+i
+Proposition 3.2, (ii)], then one veriﬁes immediately that the corresponding “restrictions” [in the evident sense] to Ysm of the properties asserted in assertion (ii) follow
+immediately from Proposition 3.2, (vi). Next, let y be a nodal point of Y log . Then,
+since γ is non-nodal, it follows immediately from Propositions 1.6, (i); 3.2, (iv), (v);
+Deﬁnition 3.3, (i-a), (i-c), (i-d), that there exists a j ∈ {1, 2} such that, if i = j (respectively, i = j), then SmCp(Y log )y ⊆ Ci (respectively, SmCp(Y log )y ∩ Ci = ∅),
+to the formal scheme obtained by completing
+and, moreover, the restriction of hlog
+i
+Y along y is an isomorphism (respectively, has empty domain). Thus, it follows
+immediately [cf. Proposition 3.2, (ii)] that there exists a Zariski open neighborhood
+log
+to U is scheme-like,
+U of y in Y such that, for i = 1, 2, the restriction hlog
+i |U of hi
+and, moreover, the underlying morphism of schemes associated to hlog
+i |U is an étale
+monomorphism [cf. Proposition 1.4, (v)], hence, by elementary scheme theory, an
+open immersion, whose image contains y if i = j. The seamlessness of the partition
+{C1 , C2 } thus follows from elementary scheme theory [i.e., an easy case of “Zariski
+descent”]. This completes the proof of assertion (ii).
+Next, we consider assertion (iii). First, let us observe that it follows formally
+from assertion (ii) that every submonic component of a homogeneous object of
+Schlog (X log ) is necessarily nodal. It thus follows formally [cf. Proposition 3.2,
+log
+is empty and hence, by Proposition 3.2, (ii), that Y is of dimension
+(vi)] that Ysm
+zero. Since homogeneous objects of Schlog (X log ) are, by deﬁnition, connected [hence
+nonempty], we thus conclude that Y log is one-pointed. This completes the proof of
+assertion (iii).
+Next, we consider assertion (iv). First, let us observe that Y log satisﬁes the
+hypotheses imposed on the log scheme “S log ” of Lemma 1.5. Thus, Lemma 1.5, (iv),
+(v), which we apply in the case where, in the notation of loc. cit., “Q” is of rank one,
+yields a log étale monomorphism “S log [ξ]  S log ”, whose domain is connected and
+submonic. In particular, it follows immediately from the existence and functorial
+interpretation [cf. Lemma 1.5, (iv), (v)] of such monomorphisms “S log [ξ]  S log ”
+that Y log is log-Dedekind [cf. Propositions 1.4, (vi); 2.2, (ii)]. Next, for simplicity,
+def
+
+let us write P = PY . Then observe that, since Y log is split, it follows immediately
+from the various deﬁnitions involved that any element γ ∈ SmCp(Y log ) determines
+— i.e., by considering the morphism induced on log structures by a representative
+of γ [cf. Proposition 1.4, (iii)] — a positive homomorphism ξγ : P → N such that
+ξγ induces a surjection on groupiﬁcations ξγgp : P gp  Z. Moreover, it follows
+immediately from Proposition 3.2, (vi), together with the various properties of the
+monomorphisms “S log [ξ]  S log ” discussed in Lemma 1.5, (v), that the assignment
+γ → ξγ
+just discussed determines a natural bijection between SmCp(Y log ) and the set of
+positive homomorphisms ξ : P → N such that ξ induces a surjection on groupiﬁcations ξ gp : P gp  Z. In the following, we shall apply this natural bijection to
+identify these two sets.
+
+42
+
+SHINICHI MOCHIZUKI
+def
+
+Next, let γ ∈ SmCp(Y log ). Write φ0 : P → J0 = N for the element ξγ
+discussed above. In the notation of the discussion entitled “Rank two fs monoids”
+in §0, for i = 1, 2, let us write φi : P → Ji for the associated positive homomorphism
+of fs monoids [which is well-deﬁned, up to possible permutation of the indices “1”
+and “2”] and Ci ⊆ SmCp(Y log ) for the subset of elements δ ∈ SmCp(Y log ) such
+that ξδ : P → N factors through either φ0 or φi . Then I claim that
+{C1 , C2 } is a partition at γ which is not seamless.
+Indeed, let us ﬁrst observe that condition (i-a) of Deﬁnition 3.3 follows immediately
+from the discussion of bisecting monoids in §0. Next, let us observe that, if we
+take the log scheme “S log ” in Lemma 1.5 to be Y log , then it follows, by applying
+Lemma 1.5, (vii), (viii), to φ0 , that, for i = 1, 2, the log étale monomorphism
+“S log [φ{0,i} ]  S log ” yields an object hlog
+: Yilog  Y log as in condition (i-d)
+i
+of Deﬁnition 3.3. Next, we verify condition (i-c) of Deﬁnition 3.3. To this end,
+suppose that C ⊆ SmCp(Y log ) \ {γ} is a chain that intersects both C1 \ {γ} and
+C2 \ {γ}. Then it follows immediately from the connectedness assumption in the
+deﬁnition of a chain [cf. Deﬁnition 3.1, (iii)], together with Proposition 1.4, (iii);
+Lemma 1.9, that there exists a rank two fs monoid P ∗ that arises as a submonoid
+of P gp that contains P and, moreover, for i = 1, 2, admits a homomorphism ψi :
+P ∗ → N whose restriction to P determines an element of Ci \ {γ}. Moreover,
+it follows immediately from the description given above of SmCp(Y log ) [i.e., by
+considering suitable minimal points — cf. also Proposition 2.2, (ii)] that P ∗ may
+be chosen so that any positive homomorphism P ∗ → N that induces a surjection
+on groupiﬁcations determines an element of C. On the other hand, it follows
+immediately from the “continuity property” of bisecting monoids discussed in §0
+that φ0 extends to a positive homomorphism P ∗ → N and hence that γ ∈ C, a
+contradiction. This completes the veriﬁcation of condition (i-c) of Deﬁnition 3.3.
+Next, we observe that condition (i-b) of Deﬁnition 3.3 — i.e., the fact that, for
+i = 1, 2, Ci \ {γ} is an N-chain — follows immediately by considering the log
+étale monomorphisms “S log [φ{0,i} ]  S log ” that arise by applying Lemma 1.5,
+(vii), (viii) [for an appropriate choice of the indices “1” and “2”], to a sequence of
+bisecting monoids as in Example 0.1, where we take “P ⊆ ∞ P ” to be the inclusion
+of monoids P ⊆ Ji that appears in the present discussion. This completes the
+proof of the fact that {C1 , C2 } is a partition at γ. The fact that this partition is
+not seamless follows immediately from the existence of the log étale monomorphism
+“S log [φ{0,1,2} ]  S log ” that arises by applying Lemma 1.5, (vii), (viii), to φ0 . This
+completes the proof of the claim. Now it follows formally that Y log is homogeneous.
+This completes the proof of assertion (iv).
+Finally, we consider assertion (v). First, we observe that the fact that Y log
+is log-Dedekind follows immediately from assertion (iv), via a routine étale descent argument; the description given in the statement of assertion (v) of the
+set SmCp(Y log ) also follows immediately, in light of the various deﬁnitions involved, via a routine étale descent argument [cf. also Proposition 3.2, (vi)]. Now
+let δ ∈ SmCp(Y log ) be an element that arises from a Gal(kZ /kY )-invariant element γ ∈ SmCp(Z log ). Here, we note that the existence of such an element of
+SmCp(Z log ) follows immediately from the description of SmCp(Z log ) given in assertion (iv), together with Lemma 1.5, (ii), which implies the existence of a suitable
+def
+
+positive homomorphism ξγ : P = PZ → N. Then to complete the proof that Y log
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+43
+
+is not orientable, it suﬃces to verify that Y log does not admit a partition at δ.
+Moreover, to verify that Y log does not admit a partition at δ, it suﬃces, in light of
+conditions (i-b), (i-c) of Deﬁnition 3.3, to show that SmCp(Y log )\{δ} is an N-chain.
+To this end, we consider the sequence of bisecting monoids {n P }n∈N of Example
+0.1, where we take “P ⊆ ∞ P ” to be one of the two bisecting monoids of P at ξγ .
+Thus, the homomorphism “∞ φ” of Example 0.1 corresponds to ξγ in the present
+discussion. Now let us consider the log étale monomorphisms
+“S log [φ{0,1} ]  S log ”
+that arise by applying Lemma 1.5, (vii), (viii), (ix), where we take the log scheme
+“S log ” of loc. cit. to be Y log , and we take “φ1 : P → J1 ” to be the inclusion
+P ⊆ n P , for n ∈ N. Here, we observe that if ζ : P → N and σ are as in the
+condition of the display of Lemma 1.5, (ix), and σ acts nontrivially on P , then it
+follows immediately from the Gal(kZ /kY )-invariance of ξγ [i.e., “∞ φ”] that σ acts
+nontrivially on Ker(ξγgp ) (∼
+= Z), and hence [since both ζ and ζ ◦ σ are assumed to
+factor through J1 and hence through “∞ P ”] that ζ gp vanishes on Ker(ξγgp ); but
+this implies that we may assume without loss of generality that ζ = ξγ , which in
+turn implies [cf. Example 0.1] that ζ gp (J1 ) = ξγgp (J1 ) ⊆ Z contains both positive
+and negative elements, in contradiction to the assumptions imposed on ζ. That is
+to say, the condition of the display of Lemma 1.5, (ix), is satisﬁed.
+Thus, in summary, we obtain a collection
+{Znlog  Y log }n∈N
+of log étale monomorphisms with connected domains [cf. Lemma 1.5, (vii), (viii)]
+such that [cf. the discussion of Example 0.1] δ ∈ Chn(Znlog  Y log ) ⊆ SmCp(Y log ),
+and, moreover, ∪n∈N Chn(Znlog  Y log ) = SmCp(Y log ) \ {δ}. This completes the
+proof of the fact that SmCp(Y log ) \ {δ} is an N-chain and hence of assertion (v).
+
+Proposition 3.5.
+
+(Characterization of log-nodal objects)
+
+(i) Suppose that Y log is nonempty object of Schlog (X log ). Then Y log is onepointed if and only if the following condition is satisﬁed:
+For i = 1, 2, let Uilog be a minimal object of Schlog (X log ) and filog :
+Uilog → Y log an arrow of Schlog (X log ). Then there exist a morphism
+log
+: W log → Y log and, for each i = 1, 2, a morphism hlog
+: Vilog →
+fW
+i
+Uilog between minimal objects of Schlog (X log ) such that W log is homogeneous, and, moreover, for each i = 1, 2, the composite morphism
+: Vilog → Y log admits a factorization Vilog → W log → Y log
+filog ◦ hlog
+i
+log
+through fW
+: W log → Y log .
+(ii) Suppose that Y log is an object of Schlog (X log ). Then Y log is log-nodal if
+and only if Y log is homogeneous, and the identity morphism Y log → Y log is a
+minimal point-hull in Schlog (X log ).
+
+44
+
+SHINICHI MOCHIZUKI
+
+Proof. First, we consider assertion (i). Since, by Proposition 3.4, (iii), homogeneous objects are one-pointed, one veriﬁes immediately from the suﬃcency portion of Proposition 2.10, (iii), that the condition under consideration implies that
+PtCl(Y log ) is of cardinality one, and hence, by Proposition 2.10, (i), (iv), that
+Y log is one-pointed, as desired. Now suppose that Y log is one-pointed. Then, by
+Proposition 2.10, (i), (iv), it follows that PtCl(Y log ) is of cardinality one. Since,
+by Proposition 3.4, (iv), log-nodal objects are homogeneous, we thus conclude from
+the deﬁnition of the notion of “point-equivalence” that the condition under consideration is satisﬁed. This completes the proof of assertion (i).
+Next, we consider assertion (ii). The necessity portion of assertion (ii) follows
+immediately from Propositions 2.10, (v); 3.4, (iv). The suﬃciency portion of assertion (ii) follows immediately, in light of the deﬁnition of the term “homogeneous”,
+from Propositions 2.10, (v); 3.2, (i); 3.4, (v). This completes the proof of assertion
+(ii). 
+Theorem 3.6.
+(Reconstruction of the scheme structure of arbitrary
+objects) For i = 1, 2, let Xilog be a locally noetherian fs log scheme [cf. the
+discussion entitled “Log schemes” in §0]. For i = 1, 2, we shall write Schlog (Xilog )
+for the category deﬁned at the beginning of §1. Let
+∼
+
+Φ : Schlog (X1log ) → Schlog (X2log )
+be an [arbitrary!] equivalence of categories. Then:
+(i) Φ preserves the following:
+(i-a) log-Dedekind objects;
+(i-b) the set SmCp(−) associated to a log-Dedekind object;
+(i-c) the subsets of the set SmCp(−) of (i-b) which are [N-]chains;
+(i-d) partitions at elements of the set SmCp(−) of (i-b);
+(i-e) orientable objects;
+(i-f ) homogeneous objects;
+(i-g) one-pointed objects;
+(i-h) point-hulls with one-pointed codomains;
+(i-i) minimal point-hulls with one-pointed codomains;
+(i-j) log-nodal objects.
+(ii) For i = 1, 2, let Yilog be an object of Schlog (Xilog ); write Yi for the underlying scheme of Yilog . Suppose further that Φ(Y1log ) = Y2log . Then Φ induces an
+equivalence of categories
+
+
+∼
+∼
+∼
+log
+log
+log
+log
+Sch (Y1 )|sch-lk → Sch (Y2 )|sch-lk
+→ Sch(Y2 )
+Sch(Y1 ) →
+— where the equivalences in parentheses are the natural equivalences of Deﬁnition
+1.1, (iv) — that is functorial [in the evident sense!] with respect to Y1log , Y2log .
+Finally, the composite of the equivalences of categories in the above display induces,
+by applying [LgSch], Theorem 1.7, (ii), an isomorphism of schemes
+∼
+
+Y 1 → Y2
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+45
+
+that is functorial [in the evident sense!] with respect to Y1log , Y2log .
+Proof. First, we consider assertion (i). The preservation of (i-a) follows immediately from the preservation of (i-b), (i-d), (i-g), (i-h), (i-i), (i-l) asserted in Theorem
+2.6, (i), together with the isomorphisms of schemes obtained in Theorem 2.6, (ii).
+The preservation of (i-b) follows immediately from the preservation of (i-b), (i-c),
+(i-h), (i-i) asserted in Theorem 2.6, (i). The preservation of (i-c) follows immediately, in light of the preservation of (i-b), from the preservation of (i-c), (i-h)
+asserted in Theorem 2.6, (i). The preservation of (i-d) follows immediately, in light
+of the preservation of (i-a), (i-b), (i-c), from the preservation of (i-a), (i-c), (i-e),
+(i-i) asserted in Theorem 2.6, (i). The preservation of (i-e) follows formally from
+the preservation of (i-b), (i-d). The preservation of (i-f) follows formally from the
+preservation of (i-b), (i-d), (i-e), together with the preservation of (i-a) asserted
+in Theorem 2.6, (i). The preservation of (i-g) follows immediately, in light of the
+preservation of (i-f) and the characterization given in Proposition 3.5, (i), from the
+preservation of (i-b), (i-d) asserted in Theorem 2.6, (i). The preservation of (i-h),
+(i-i) follows immediately, in light of the preservation of (i-g), from the preservation
+of (i-a), (i-d) asserted in Theorem 2.6, (i). The preservation of (i-j) follows immediately from the preservation of (i-f), (i-i), together with the characterization given in
+Proposition 3.5, (ii). Finally, assertion (ii) follows formally, in light of the portion
+of assertion (i) concerning the preservation of (i-j), from Corollary 2.12, (ii). 
+It remains to reconstruct, in a category-theoretic fashion, the log structures of
+the various log schemes under consideration. The approach taken in the present
+paper is essentially similar to the approach taken in [LgSch], but is formulated in
+a slightly diﬀerent way. We begin by introducing notation as in the discussion preceding [LgSch], Lemma 2.16: Write A1Z = Spec(Z[t]) [where t is an indeterminate]
+1
+for the aﬃne line over Z; Alog
+Z for the aﬃne line AZ over Z equipped with the log
+structure determined by the divisor V (t) [i.e., “the origin”]; expA : Alog
+Z → AZ for
+the natural morphism determined by “forgetting the log structure”;
+→ AY log
+expY log : Alog
+Y log
+for the “exponentiation morphism” obtained by base-changing expA via the natural
+morphism Y log → Spec(Z);
+A×
+→ AY log
+Y log
+for the open immersion determined by the complement of the origin of AY log ; A×
+Y,
+×
+AY for the underlying schemes of AY log , AY log ;
+0Y : Y → AY ,
+
+1Y : Y → AY
+
+for the sections determined by the assignments t → 0, t → 1. Thus, the map induced
+by expY log on Y log -valued points may be naturally identiﬁed with expY : MY → OY .
+Moreover, one veriﬁes easily that the morphism AZ ×Z AZ → AZ that deﬁnes the
+multiplication operation on the ring scheme AZ → Spec(Z) determines a morphism
+of log schemes over Y log
+Alog
+×Y log Alog
+→ Alog
+Y log
+Y log
+Y log
+
+46
+
+SHINICHI MOCHIZUKI
+
+that induces, i.e., on Y log -valued points, the monoid operation on MY . In the
+following,
+we shall always regard AY log as being equipped with the “ring log scheme”
+structure — i.e., the ring object structure in the category of log schemes
+— determined by the ring scheme structure of AZ → Spec(Z).
+One veriﬁes immediately that any automorphism of the log scheme AY log that lies
+over the identity automorphism of Y log and is compatible with the ring log scheme
+structure of AY log is necessarily equal to the identity automorphism. Finally, if Y log
+is an object of Schlog (X log ), then we observe that expY log : Alog
+→ AY log may be
+Y log
+log
+regarded, in a natural way, as an arrow between objects of Sch (X log ).
+Proposition 3.7.
+(Categories of quasi-exponentiation morphisms) We
+maintain the notation of the above discussion. Suppose that Y log is an object
+of Schlog (X log ). Thus, AY log may be regarded, in a natural way, as an object of
+Schlog (X log ). Write
+QExp(Y log ) ⊆ Schlog (AY log )
+for the full subcategory of Schlog (AY log ) consisting of objects f log : Z log → AY log
+[i.e., “quasi-exponentiation morphisms”] that satisfy the following conditions:
+(a) the morphism Z log → Y log determined by f log is log smooth;
+∼
+(b) f log is log-like, i.e., induces an isomorphism f : Z → AY between the
+underlying schemes of Z log , AY log ;
+→ AY log is an
+(c) the base-change of f log via the open immersion A×
+Y log
+isomorphism;
+(d) if
+f log
+T log −→ Z log −→ AY log
+⏐
+⏐
+⏐ log
+⏐
+g
+
+S log
+
+→
+
+Y log
+
+is a commutative diagram of morphisms of Schlog (X log ) in which the horizontal arrows of the square are minimal point-hulls, and the resulting
+is the empty object of Schlog (X log ), then
+ﬁber product T log ×AY log A×
+Y log
+g log is not an isomorphism, and, moreover, if S log is not a minimal
+object of rank zero, then, for some reduced, one-pointed object W log of
+log
+log
+Schlog (X log ), there exist two distinct morphisms hlog
+→ T log
+1 , h2 : W
+log
+such that the two resulting composite morphisms g log ◦ hlog
+◦ hlog
+:
+1 ,g
+2
+log
+log
+log
+W → T → S coincide and are scheme-like;
+(e) there exists a Y log -morphism Z log ×Y log Z log → Z log in Schlog (X log )
+for which the induced morphism on underlying schemes coincides, rela∼
+tive to the isomorphism f : Z → AY of condition (b), with the morphism
+AY ×Y AY → AY determined by the multiplication operation arising
+from the ring log scheme structure of AY log .
+[Thus, expY log : Alog
+→ AY log may be regarded as an object of QExp(Y log ).]
+Y log
+Then every object f log : Z log → AY log of QExp(Y log ) is isomorphic to the object
+of QExp(Y log ) determined by expY log : Alog
+→ AY log . Finally, the morphism
+Y log
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+47
+
+Z log ×Y log Z log → Z log of condition (e) is, in fact, uniquely determined by the
+hypotheses imposed in condition (e).
+Proof. Proposition 3.7 follows formally from [LgSch], Lemma 2.16. Indeed, one
+veriﬁes immediately that property (i) (respectively, (ii); (iii) [cf. Remark 3.7.1 below]; (iv)) of [LgSch], Lemma 2.16, follows, in light of condition (b) in the statement
+of Proposition 3.7, from condition (c) (respectively, (d); (a); (e)) in the statement
+of Proposition 3.7. Here, we note in passing that the argument applied in the ﬁnal
+paragraph of the proof of [LgSch], Lemma 2.16, may be simpliﬁed considerably:
+that is to say, in the notation of loc. cit., the fact that “the morphism of monoids
+Q → P may be identiﬁed with the natural inclusion Q → Q × N” may be concluded
+∼
+directly from the isomorphism of rings “k[[Q]][[T ]] → k[[P ]]” obtained in the second
+to last paragraph of the proof of [LgSch], Lemma 2.16, by considering an element
+ξ ∈ P such that, if we apply this isomorphism to identify the rings k[[Q]][[T ]] and
+k[[P ]], then the set Q ∪ {ξ} generates the maximal ideal of the local ring k[[P ]]. 
+Remark 3.7.1. In the context of Proposition 3.7, we take the opportunity to correct a misprint in the statement of [LgSch], Lemma 2.16: In [LgSch], Lemma 2.16,
+(iii), the phrase “a monomorphism” should read “a scheme-like monomorphism”.
+The following result may be regarded as the culmination of the theory developed in the present paper and corresponds to Theorem B [or, more precisely,
+Theorem 2.19, (ii)] of [LgSch], the proof of which [i.e., as given in [LgSch]] is,
+unfortunately, incomplete.
+Theorem 3.8. (Reconstruction of the log scheme structure of arbitrary
+objects) For i = 1, 2, let Xilog be a locally noetherian fs log scheme [cf. the
+discussion entitled “Log schemes” in §0]. For i = 1, 2, we shall write Schlog (Xilog )
+for the category deﬁned at the beginning of §1. Let
+∼
+
+Φ : Schlog (X1log ) → Schlog (X2log )
+be an [arbitrary!] equivalence of categories. Then:
+(i) Φ preserves the following constructions [i.e., up to, in the case of (i-a),
+(i-c), a unique isomorphism] associated to an object “(−)”:
+(i-a) the ring object A(−) ;
+(i-b) the full subcategory QExp( (−) ) ⊆ Schlog (A(−) );
+(i-c) the exponentiation morphism exp(−) : Alog
+(−) → A(−) ;
+(i-d) the monoid object structure on the object Alog
+(−) of (i-c).
+(ii) For i = 1, 2, let Yilog be an object of Schlog (Xilog ); write Yi for the underlying scheme of Yilog . Suppose further that Φ(Y1log ) = Y2log . Then Φ induces an
+isomorphism of log schemes
+∼
+
+Y1log → Y2log
+
+48
+
+SHINICHI MOCHIZUKI
+
+that is functorial [in the evident sense!] with respect to Y1log , Y2log and compatible
+with the isomorphism of schemes of Theorem 3.6, (ii).
+(iii) There exists a unique isomorphism of log schemes
+∼
+
+X1log → X2log
+such that Φ is isomorphic to the equivalence of categories induced by this isomor∼
+phism of log schemes X1log → X2log .
+Proof. First, we consider assertion (i). The preservation of (i-a) follows immediately from Theorem 3.6, (ii); [LgSch], Proposition 1.6, (iii). To verify the preservation of (i-b), it suﬃces to verify the preservation of the conditions (a), (b), (c), (d),
+(e) in the statement of Proposition 3.7. The preservation of condition (a) follows
+immediately, in light of the functorial deﬁnition of log smoothness [i.e., in terms
+of scheme-like closed immersions, as in [Kato2], §8.1, (i)], from Theorem 3.6, (ii).
+The preservation of condition (b) follows formally from Theorem 3.6, (ii). The
+preservation of conditions (c) and (e) follows immediately from the preservation of
+(i-a) [i.e., which has already been veriﬁed], together with Theorem 3.6, (ii). The
+preservation of condition (d) follows immediately from the preservation of (i-c) [cf.
+also Proposition 2.10, (v)], (i-d) asserted in Corollary 2.12, (i) [which is applicable
+in light of the preservation of (i-j) asserted in Theorem 3.6, (i)], together with the
+preservation of (i-b), (i-d), (i-g) asserted in Theorem 2.6, (i). This completes the
+proof of the preservation of (i-b). The preservation of (i-c) and (i-d) follows formally from Proposition 3.7, together with the preservation of (i-b). This completes
+the proof of assertion (i).
+Since the map induced by the exponentiation morphism exp(−) on (−)-valued
+points may be naturally identiﬁed with the morphism between sheaves of monoids
+that deﬁnes the log structure of “(−)” [cf. the discussion preceding Proposition
+3.7], assertion (ii) follows immediately from assertion (i); Theorem 3.6, (ii). Finally,
+assertion (iii) follows immediately from the existence of the functorial isomorphisms
+of log schemes discussed in assertion (ii), by considering, for i = 1, 2, a suitable indobject of Schlog (Xilog )
+{αi Yilog }αi ∈Ai
+— where the transition morphisms [notation for which was omitted for the sake
+of simplicity!] are assumed to be open immersions — that “represents Xilog ” in
+Schlog (Xilog ). [Here, we recall that if Xilog fails to be quasi-compact, then Xilog does
+not determine an object of Schlog (Xilog ) in the usual sense.] 
+
+Section 4: Category-theoretic Representation of Archimedean Structures
+In the present §4, we explain the relatively minor modiﬁcations to the theory developed in the present paper for log schemes that are necessary in order to
+accommodate categories of log schemes equipped with archimedean structures as
+discussed in [ArLgSch]. At a more concrete level, we observe that
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+49
+
+· Theorem 3.1;
+· Proposition 4.3;
+· Proposition 4.4
+of [ArLgSch] depend on the portions of the theory of [LgSch] that [cf. Example 0.3;
+Remark 1.4.1] are in error. Thus, in the present §4, we explain how these results,
+as well as the main theorem of [ArLgSch] [i.e., [ArLgSch], Theorem 5.1], may be
+repaired by applying the theory developed thus far in the present paper.
+We begin by reviewing [and slightly modifying] the notation introduced at the
+beginning of [ArLgSch], §4. Write
+SCH
+for the category of arithmetic schemes,
+log
+
+SCH
+
+for the category of arithmetic log schemes [cf. [ArLgSch], Deﬁnition 4.2, and the
+following discussion], and
+SCH ⊆ SCH;
+
+log
+
+SCHlog ⊆ SCH
+
+for the full subcategories determined by the purely nonarchimedean objects [cf.
+log
+log
+log
+[ArLgSch], Deﬁnition 4.3, (i)]. Let X be an object of SCH . Thus, X determines underlying objects X log , X, and X of the categories SCHlog , SCH, and SCH,
+respectively. Write
+SCH
+
+log
+
+(X
+
+log
+
+log
+
+def
+
+) = (SCH
+
+)X log ;
+
+def
+
+SCH(X) = SCHX ;
+
+def
+
+SCHlog (X log ) = (SCHlog )X log ;
+def
+
+SCH(X) = SCHX
+
+for the respective categories of “objects over the subscripted objects” [cf. the notational conventions introduced in the discussion entitled “Categories” in [ArLgSch],
+§2] and
+Sch
+
+log
+
+(X
+
+log
+
+log
+
+) ⊆ SCH
+
+(X
+
+log
+
+);
+
+Sch(X) ⊆ SCH(X);
+
+Schlog (X log ) ⊆ SCHlog (X log );
+Sch(X) ⊆ SCH(X)
+
+for the full subcategories determined by the noetherian objects. To simplify the
+exposition, we shall often refer to the domain of an arrow which is an object of any
+of the categories of the preceding display as an “object” of the category.
+Note that the notation just introduced is consistent with the notational conventions introduced at the beginning of §1 of the present paper for “Schlog (X log )”
+and “Sch(X)”. Indeed, if X log is any locally noetherian fs log scheme, then one
+may deﬁne [in a fashion consistent with the notation introduced above!]
+SCHlog (X log )
+to be the category whose objects are morphisms of log schemes of locally ﬁnite type
+Y log → X log , where Y log is a locally noetherian fs log scheme, and whose morphisms
+
+50
+
+SHINICHI MOCHIZUKI
+
+[from an object Y1log → X log to an object Y2log → X log ] are morphisms of locally
+ﬁnite type Y1log → Y2log lying over X log . In a similar vein, if X is any locally
+noetherian scheme, then one may deﬁne [in a fashion consistent with the notation
+introduced above!]
+SCH(X)
+to be the category whose objects are morphisms of schemes of locally ﬁnite type
+Y → X, where Y is a locally noetherian scheme, and whose morphisms [from an
+object Y1 → X to an object Y2 → X] are morphisms of locally ﬁnite type Y1 → Y2
+lying over X.
+Deﬁnition 4.1.
+(i) We shall apply similar terminology to data [i.e., such as collections of objects
+and collections of morphisms] associated to any of the categories
+log
+
+Sch
+
+(X
+
+log
+
+log
+
+),
+
+SCH
+
+Sch(X),
+
+(X
+
+log
+
+Schlog (X log ),
+
+),
+
+SCH(X),
+
+Sch(X),
+
+SCHlog (X log ),
+
+SCH(X)
+
+to the terminology that has already been established earlier in the present paper
+for “Schlog (X log )” or in [LgSch], §1, for “Sch(X)” whenever this terminology may
+be deﬁned in an evidently analogous fashion for the category of the above display
+under consideration. When it is necessary, in order to avoid confusion, to specify
+the category of the above display with respect to which the terminology is to be
+understood, we shall append an appropriate preﬁx such as
+log
+
+Sch
+
+-,
+
+log
+
+SCH
+
+-,
+
+Schlog -,
+
+SCHlog - Sch-,
+
+SCH-,
+
+Sch-,
+
+SCH-
+
+to the terminology in question. This convention concerning preﬁxes will be applied,
+in particular, when the terminology is to be understood as being applied to the
+underlying object in one of the categories of the ﬁrst display that is determined by
+another of the categories of the ﬁrst display.
+log
+
+log
+
+log
+
+log
+
+log
+
+an object
+(ii) Let C ∈ {Sch , SCH }, X an arithmetic log scheme, Y
+log
+log
+log
+of C (X ). Then we shall say that Y
+is submonically nonarchimedean if it holds
+log
+log
+log
+that every submonic one-pointed object Z of C (X ) that admits a morphism
+log
+to Y
+is purely nonarchimedean.
+Theorem 4.2. (Equivalences of categories of schemes) Let C ∈ {Sch, SCH}.
+For i = 1, 2, let Xi be a locally noetherian scheme. Then, relative to the notation introduced at the beginning of the present §4, any equivalence of categories
+∼
+
+Φ : C(X1 ) → C(X2 )
+∼
+
+arises from a unique isomorphism of schemes X1 → X2 .
+Proof. When C = Sch, Theorem 4.2 is precisely the content of [LgSch], Theorem
+1.7, (ii). When C = SCH, Theorem 4.2 follows from an entirely similar argument.
+
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+51
+
+Theorem 4.3.
+(Equivalences of categories of arithmetic schemes) Let
+C ∈ {Sch, SCH}. For i = 1, 2, let X i be an arithmetic scheme [cf. [ArLgSch],
+Deﬁnition 4.2, (i)]. Then, relative to the notation introduced at the beginning of
+the present §4, any equivalence of categories
+∼
+
+Φ : C(X 1 ) → C(X 2 )
+∼
+
+arises from a unique isomorphism of arithmetic schemes X 1 → X 2 .
+def
+
+def
+
+Proof. If C = Sch, then set C = Sch; if C = SCH, then set C = SCH. Then
+Theorem 4.3 follows, in eﬀect, by combining the theory of [LgSch], §1, with the
+non-logarithmic portion of the theory developed in [ArLgSch], §4, §5. [That is to
+say, the errors in [ArLgSch] discussed at the beginning of the present §4 concern
+subtleties that arise from the log structures of the log schemes involved and hence
+have no eﬀect on the non-logarithmic portion of the theory.] Indeed, let i ∈ {1, 2};
+write Xi for the underlying scheme of X i . Then one veriﬁes immediately that
+the C-minimal objects of C(X i ) are the purely nonarchimedean objects that arise
+from the C-minimal objects of C(Xi ). Thus, the one-pointed objects of C(X i ) are
+precisely the objects Y such that MinPt(Y ) = MinPt(Y ) [where we write Y for
+the object of C(Xi ) determined by the underlying scheme of Y ] is of cardinality
+one. This characterization of one-pointed objects of C(X i ) allows one to circumvent the application of [ArLgSch], Proposition 4.3, in the theory of [ArLgSch], §4.
+In particular, we obtain a category-theoretic characterization of C-minimal pointhulls as in [ArLgSch], Proposition 4.4, (iii). One thus obtains — i.e., by considering
+epimorphisms as in [ArLgSch], Proposition 4.5 — a category-theoretic characterization of the purely nonarchimedean one-pointed objects of C(X i ) as in [ArLgSch],
+Corollary 4.1, (i), and of the purely archimedean morphisms [cf. [ArLgSch], Definition 4.3, (ii)] of C(X i ) as in [ArLgSch], Corollary 4.1, (ii). In particular, we
+obtain a category-theoretic characterization, as in [ArLgSch], Corollary 4.2, of the
+purely nonarchimedean objects of C(X i ) and hence, by applying Theorem 4.2, a
+category-theoretic reconstruction of the underlying scheme of an object of C(X i ), as
+in [ArLgSch], Corollary 4.3. Now, to complete the proof of Theorem 4.3 [cf. the
+proof of [ArLgSch], Theorem 5.1], it suﬃces to apply the “non-logarithmic global
+compatibility” established in [ArLgSch], Lemma 5.1. 
+Next, we consider analogues of Theorem 2.6 for SCHlog , Sch
+
+log
+
+log
+
+, and SCH
+
+.
+
+Theorem 4.4.
+(Reconstruction of the scheme structure of submonic
+log
+objects for SCH ) For i = 1, 2, let Xilog be a locally noetherian fs log scheme
+[cf. the discussion entitled “Log schemes” in §0]. We shall apply the notation
+introduced at the beginning of the present §4. Let
+∼
+
+Φ : SCHlog (X1log ) → SCHlog (X2log )
+be an [arbitrary!] equivalence of categories. Then:
+(i) Φ preserves the following:
+(i-a) monomorphisms;
+
+52
+
+SHINICHI MOCHIZUKI
+
+(i-b) empty objects;
+(i-c) connected objects;
+(i-d) minimal objects;
+(i-e) minimal points;
+(i-f ) submonic one-pointed objects;
+(i-g) ranks of minimal objects;
+(i-h) SLEM morphisms;
+(i-i) submonic objects;
+(i-j) scheme-like morphisms between minimal objects;
+(i-k) scheme-like morphisms between submonic objects;
+(i-l) the submonic dimension of objects.
+(ii) For i = 1, 2, let Yilog be an object of SCHlog (Xilog ); write Yi for the underlying scheme of Yilog . Suppose further that Φ(Y1log ) = Y2log . Thus, [cf. the portion
+of (i) concerning (i-i)] Y1log is submonic if and only if Y2log is. Suppose that Yilog
+is submonic for i = 1, 2. Then Φ induces an equivalence of categories
+
+
+∼
+
+∼
+
+SCHlog (Y1log )|sch-lk → SCHlog (Y2log )|sch-lk
+
+SCH(Y1 ) →
+
+
+
+∼
+
+→ SCH(Y2 )
+
+— where the equivalences in parentheses are the evident analogues for SCH, SCHlog
+of the natural equivalences of Deﬁnition 1.1, (iv) — that is functorial [in the evident sense!] with respect to Y1log , Y2log . Finally, the composite of the equivalences of
+categories in the above display induces, by applying Theorem 4.2, an isomorphism
+of schemes
+∼
+Y 1 → Y2
+that is functorial [in the evident sense!] with respect to Y1log , Y2log .
+Proof. The proof is entirely similar to the proof of Theorem 2.6. 
+Theorem 4.5.
+(Reconstruction of the scheme structure of submonic
+log
+log
+log
+log
+log
+log
+log
+objects for Sch , SCH ) Let C ∈ {Sch , SCH }. If C = Sch , then set
+def
+
+def
+
+log
+
+log
+
+def
+
+def
+
+C log = Schlog , C = Sch; if C = SCH , then set C log = SCHlog , C = SCH. For
+log
+i = 1, 2, let X i be an arithmetic log scheme [cf. [ArLgSch], Deﬁnition 4.2,
+(ii)]. We shall apply the notation introduced at the beginning of the present §4. Let
+Φ:C
+
+log
+
+log
+
+∼
+
+(X 1 ) → C
+
+log
+
+log
+
+(X 2 )
+
+be an [arbitrary!] equivalence of categories. Then:
+(i) Φ preserves the following:
+(i-a) monomorphisms;
+(i-b) empty objects;
+(i-c) connected objects;
+(i-d) minimal objects;
+(i-e) minimal points;
+(i-f ) submonic one-pointed objects;
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+53
+
+(i-fnon ) purely nonarchimedean submonic one-pointed objects;
+(i-g) ranks of minimal objects;
+(i-h) C log -SLEM morphisms;
+(i-i) submonic objects;
+(i-inon ) purely nonarchimedean submonic objects;
+(i-j) C log -scheme-like morphisms between minimal objects;
+(i-k) C log -scheme-like morphisms between submonic objects;
+(i-l) the submonic dimension of objects.
+log
+
+(ii) For i = 1, 2, let Y i
+
+be an object of C
+
+log
+
+log
+
+log
+
+(X i ); write Yilog for the underlog
+
+lying log scheme of Y i , Yi for the underlying scheme of Y i . Suppose further
+log
+log
+log
+that Φ(Y 1 ) = Y 2 . Thus, [cf. the portion of (i) concerning (i-i), (i-inon )] Y 1 is
+log
+log
+submonic if and only if Y 2 is; Y 1 is purely nonarchimedean submonic if
+log
+log
+and only if Y 2 is. Suppose that Y i is submonic for i = 1, 2. Then Φ induces
+an equivalence of categories
+
+
+∼
+
+C(Y1 ) →
+
+C
+
+log
+
+(Y1log )|sch-lk
+
+∼
+
+→ C
+
+log
+
+
+
+(Y2log )|sch-lk
+
+∼
+
+→ C(Y2 )
+
+— where the equivalences in parentheses are the evident analogues for C, C log of
+the natural equivalences of Deﬁnition 1.1, (iv) — that is functorial [in the evident
+log
+log
+sense!] with respect to Y 1 , Y 2 . Finally, the composite of the equivalences of
+categories in the above display induces, by applying Theorem 4.2, an isomorphism
+of schemes
+∼
+Y 1 → Y2
+log
+
+log
+
+that is functorial [in the evident sense!] with respect to Y 1 , Y 2 .
+Proof. First, we consider assertion (i). The preservation of (i-a), (i-b), (i-c), (i-d),
+(i-e), (i-f), and (i-g) follows from an entirely similar argument to the argument
+applied in the proof of the preservation of the corresponding properties in Theorem
+2.6, (i). Here, we observe that one veriﬁes immediately, by arguing as in [ArLgSch],
+Proposition 4.2, that
+log
+
+log
+
+the minimal objects of C (X i ) are precisely the purely nonarchimedean
+log
+log
+objects of C (X i ) that arise from the minimal objects of C log (Xilog ),
+log
+
+where we write Xilog for the underlying log scheme of X i .
+The preservation of (i-fnon ) now follows, in light of the preservation of (i-f), from
+an entirely similar argument — i.e., by considering epimorphisms as in [ArLgSch],
+Proposition 4.5 — to the argument applied to verify the category-theoretic characterization of purely nonarchimedean one-pointed objects given in [ArLgSch], Corollary 4.1, (i). In light of the preservation of (i-fnon ), the preservation of (i-h) follows
+from an entirely similar argument to the argument applied in the proof of the
+preservation of (i-h) in Theorem 2.6, (i). In light of the preservation of (i-h), the
+preservation of (i-i) follows from an entirely similar argument to the argument applied in the proof of the preservation of (i-i) in Theorem 2.6, (i). The preservation
+of (i-inon ) now follows from the preservation of (i-f), (i-fnon ), (i-i), since [one veriﬁes
+
+54
+
+SHINICHI MOCHIZUKI
+log
+
+log
+
+log
+
+immediately that] the purely nonarchimedean submonic objects Y
+of C (X i )
+log
+may be characterized as the submonically nonarchimedean submonic objects Y
+log
+log
+of C (X i ). In light of the preservation of (i-i), the preservation of (i-j), (i-k)
+follows from an entirely similar argument to the argument applied in the proof of
+the preservation of (i-j), (i-k) in Theorem 2.6, (i). This completes the proof of
+assertion (i), except for the veriﬁcation of the preservation of (i-l).
+log
+
+Next, we consider assertion (ii). Suppose that Y i is submonic for i = 1, 2.
+log
+log
+log
+log
+log
+Let Z i → Y i be a purely archimedean morphism of C (X i ) such that Z i
+is purely nonarchimedean submonic. Here, one veriﬁes immediately that such a
+log
+log
+log
+morphism Z i → Y i exists, and, moreover, that Z i may be characterized up to
+log
+log
+log
+isomorphism as an object over Y i by the property that any arrow T
+→ Yi
+log
+log
+log
+in C (X i ) such that T
+is purely nonarchimedean submonic admits a unique
+log
+log
+log
+factorization T → Z i → Y i . Thus, it follows from the portion of assertion (i)
+concerning the preservation of (i-inon ) that we may assume without loss of generality
+log
+log
+log
+that Φ(Z 1 ) = Z 2 . Moreover, since Z i is purely nonarchimedean, one veriﬁes
+immediately from the various deﬁnitions involved that the full subcategory
+C
+
+log
+
+log
+
+(Z i ) ⊆ C
+
+log
+
+log
+
+(Y i )
+∼
+
+log
+
+log
+
+admits a natural equivalence of categories C log (Yilog ) → C (Z i ) [cf. the statement of [ArLgSch], Corollary 4.3]. Thus, by applying the portion of assertion (i)
+concerning the preservation of (i-k), one veriﬁes immediately that assertion (ii)
+follows immediately follows from an entirely similar argument to the argument applied to verify Theorem 2.6, (ii). Finally, the portion of assertion (i) concerning
+the preservation of (i-l) follows from an entirely similar argument to the argument
+applied in the proof of the preservation of (i-l) in Theorem 2.6, (i). 
+Next, we consider the analogue of Corollary 2.12 and Theorems 3.6, 3.8 for
+SCHlog .
+Theorem 4.6. (Reconstruction of the log scheme structure of arbitrary
+objects for SCHlog ) For i = 1, 2, let Xilog be a locally noetherian fs log scheme
+[cf. the discussion entitled “Log schemes” in §0]. We shall apply the notation
+introduced at the beginning of the present §4. Let
+∼
+
+Φ : SCHlog (X1log ) → SCHlog (X2log )
+be an [arbitrary!] equivalence of categories. Then:
+(i) Φ preserves the following:
+(i-a) log-Dedekind objects;
+(i-b) the set SmCp(−) associated to a log-Dedekind object;
+(i-c) the subsets of the set SmCp(−) of (i-b) which are [N-]chains;
+(i-d) partitions at elements of the set SmCp(−) of (i-b);
+(i-e) orientable objects;
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+55
+
+(i-f ) homogeneous objects;
+(i-g) one-pointed objects;
+(i-h) point-hulls with one-pointed codomains;
+(i-i) minimal point-hulls with one-pointed codomains;
+(i-j) log-nodal objects.
+(ii) Φ preserves the following:
+(ii-a) point-equivalent pairs of arrows;
+(ii-b) the set-valued functor LCPt(−) [up to natural equivalence];
+(ii-c) arrows which are minimal point-hulls;
+(ii-d) scheme-like morphisms between arbitrary objects.
+(iii) For i = 1, 2, let Yilog be an object of SCHlog (Xilog ); write Yi for the underlying scheme of Yilog . Suppose further that Φ(Y1log ) = Y2log . Then Φ induces an
+equivalence of categories
+
+
+∼
+∼
+∼
+log
+log
+log
+log
+SCH(Y1 ) →
+SCH (Y1 )|sch-lk → SCH (Y2 )|sch-lk
+→ SCH(Y2 )
+— where the equivalences in parentheses are the evident analogues for SCH, SCHlog
+of the natural equivalences of Deﬁnition 1.1, (iv) — that is functorial [in the evident sense!] with respect to Y1log , Y2log . Finally, the composite of the equivalences of
+categories in the above display induces, by applying Theorem 4.2, an isomorphism
+of schemes
+∼
+Y 1 → Y2
+that is functorial [in the evident sense!] with respect to Y1log , Y2log .
+(iv) There exists a unique isomorphism of log schemes
+∼
+
+X1log → X2log
+such that Φ is isomorphic to the equivalence of categories induced by this isomor∼
+phism of log schemes X1log → X2log .
+Proof. In light of Theorem 4.4, the proof of assertion (i) (respectively, assertion
+(ii)) is entirely similar to the proof of Theorem 3.6, (i) (respectively, Corollary 2.12,
+(i)). Now assertion (iii) follows from the portion of assertion (ii) concerning the
+preservation of (ii-d) by applying an entirely similar argument to the argument
+applied to verify Corollary 2.12, (ii). Finally, it follows immediately from assertion
+(iii) that Φ preserves objects whose underlying scheme is noetherian [i.e., quasicompact], and hence that Φ induces an equivalence of categories
+∼
+
+Schlog (X1log ) → Schlog (X2log )
+[i.e., as in Theorem 3.8]. Thus, assertion (iv) follows immediately from Theorem
+3.8, (iii). 
+log
+
+log
+
+Finally, we consider analogues of Theorems 3.6, 3.8 for Sch , SCH . In
+order to formulate and prove these analogues, it will be necessary to introduce
+
+56
+
+SHINICHI MOCHIZUKI
+
+some new terminology [patterned after the terminology introduced in Deﬁnition
+3.3], as follows.
+Let C
+
+Deﬁnition 4.7.
+log def
+
+log
+
+log
+
+log
+
+∈ {Sch
+
+log
+
+, SCH
+
+log
+
+}.
+
+If C
+
+log def
+
+log
+
+= Sch
+
+log
+
+, then set
+
+log
+
+= Sch ; if C
+= SCH , then set C
+= SCH . Let X
+be an arithC
+metic log scheme. We shall apply the notation introduced at the beginning of the
+log
+present §4. Let Y
+be a connected, non-submonic, C log -log-Dedekind, submonically
+log
+log
+nonarchimedean [cf. Remark 4.7.1 below] object of C (X ); write Y log for the
+log
+
+underlying log scheme of Y
+
+log
+
+log
+
+log
+
+. Let γ ∈ C log -SmCp(Y
+Mono(Y
+
+log
+
+log
+
+def
+
+) = SmCp(Y log ). Write
+
+)
+
+log
+
+for the full subcategory of C (Y ) determined by the arrows H
+log
+log
+log
+log
+C (X ) which are monomorphisms in C (X ).
+
+log
+
+→ Y
+
+log
+
+of
+
+log
+
+(i) Let C1 , C2 ⊆ C log -SmCp(Y ) be C log -chains. Then we shall say that the
+pair of C log -chains {C1 , C2 } forms a C¨log -partition at γ if the C log -chains C1 , C2
+satisfy the following conditions:
+(i-a) C1 ∪ C2 = C log -SmCp(Y
+
+log
+
+),
+
+C1 ∩ C2 = {γ};
+
+(i-b) for i = 1, 2, the subset Ci \ {γ} ⊆ C log -SmCp(Y
+[hence nonempty];
+
+log
+
+) is a C log -N-chain
+
+(i-c) the C log -N-chains of (i-b) are “maximal” in the sense that every C log -Nchain C ⊆ C log -SmCp(Y log ) such that γ ∈ C is contained in Ci for some
+i ∈ {1, 2};
+(i-d) if, for i = 1, 2, we write Ψi for the subfunctor of the contravariant functor
+log
+log
+determined by the terminal object [i.e., Y ] of Mono(Y ) that consists
+log
+log
+log
+log
+ Y
+of Mono(Y ) such that every composite
+of objects h : H
+log
+log
+log
+log
+log
+morphism H ∗  H
+ Y , where H ∗  H
+is a minimal point
+log
+log
+of H , determines an underlying morphism in C (Y log ) that factors
+log
+through some representative of an element ∈ Ci (⊆ C log -SmCp(Y )),
+log
+log
+log
+log
+of Mono(Y ).
+then Ψi is representable by an object hi : Y i  Y
+log
+log
+We shall say that Y
+is C¨log -orientable if Y
+admits a C¨log -partition at every
+log
+element of C log -SmCp(Y ).
+log
+log
+(ii) Let {C1 , C2 } be a C¨log -partition at γ. Suppose that h1 , h2 are as in (i-d).
+Then we shall say that the C¨log -partition {C1 , C2 } is C¨log -seamless if the following
+condition is satisﬁed:
+log
+
+log
+
+log
+
+log
+
+log
+
+a monomorphism h : H
+Y
+in C (X ) is an isomorphism if
+log
+log
+log
+and only if, for i = 1, 2, the projection H ×Y log Y i → Y i associated
+to the ﬁber product determined by h
+
+log
+
+log
+
+and hi
+
+is an isomorphism.
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+57
+
+log
+log
+We shall say that Y
+is C¨log -homogeneous if Y
+is C¨log -orientable, and, moreover,
+log
+no C¨log -partition at an element ∈ C log -SmCp(Y ) is C¨log -seamless.
+log
+
+Remark 4.7.1. Let Y
+be as in Deﬁnition 4.7, i.e., a connected, non-submonic,
+log
+log
+C log -log-Dedekind, submonically nonarchimedean object of C (X ). Write Y log
+log
+for the underlying log scheme of Y ; Y for the underlying arithmetic scheme of
+log
+Y ; Y for the underlying scheme of Y ; K log for the compact set that determines
+log
+the archimedean structure of Y
+[i.e., the set “H” of [ArLgSch], Deﬁnition 4.2,
+(ii)]; K for the compact set that determines the archimedean structure of Y [i.e.,
+the set “H” of [ArLgSch], Deﬁnition 4.2, (i)]. Thus, it follows immediately from
+the various deﬁnitions involved that we have a natural surjection K log  K whose
+ﬁbers are compact [cf. the discussion of such compact subsets in the proof of [ArLlog
+gSch], Lemma 4.1] . Now observe that the assumption that Y
+is submonically
+nonarchimedean implies [cf. Proposition 3.2, (i), (ii)] that
+K is a ﬁnite compact set which is supported over the nodal points of Y log .
+Since the ﬁniteness of K implies that any [e.g., open!] subset of K is compact [i.e.,
+relative to the topology induced by K], we thus conclude that
+any subset of K log that arises as the inverse image via the natural surjection K log  K of a subset of K is compact [i.e., relative to the topology
+induced by K log ].
+In particular, it follows that any open subscheme Z ⊆ Y determines, in a natural
+def
+way, not only a log scheme Z log = Y log ×Y Z, but also an arithmetic scheme Z and
+log
+an arithmetic log scheme Z [i.e., by considering the subsets of K, K log consisting
+of points that map to points of Z (⊆ Y )]. Moreover, one veriﬁes immediately that
+log
+
+Z
+(respectively, Z) represents the covariant subfunctor of the functor
+log
+(respectively, Y ) on the category of arithmetic log
+represented by Y
+schemes (respectively, arithmetic schemes) determined by the condition
+log
+on a morphism to Y
+(respectively, Y ) that the associated underlying
+morphism of schemes maps into Z ⊆ Y .
+These observations may be applied, for instance, to open subschemes of Y that
+arise as images of open immersions of the sort discussed in Proposition 3.4, (ii).
+Theorem 4.8. (Reconstruction of the arithmetic log scheme structure
+log
+log
+log
+log
+log
+log
+of arbitrary objects for Sch , SCH ) Let C ∈ {Sch , SCH }. If C =
+log
+
+log
+
+def
+
+log
+
+def
+
+Sch , then set C log = Schlog ; if C
+= SCH , then set C log = SCHlog . For
+log
+i = 1, 2, let X i be an arithmetic log scheme [cf. [ArLgSch], Deﬁnition 4.2,
+(ii)]. We shall apply the notation introduced at the beginning of the present §4. Let
+Φ:C
+
+log
+
+log
+
+∼
+
+(X 1 ) → C
+
+log
+
+log
+
+(X 2 )
+
+be an [arbitrary!] equivalence of categories. Then:
+
+58
+
+SHINICHI MOCHIZUKI
+log
+
+log
+
+log
+
+log
+
+(i) Let Y , Z
+be objects of C (X i ), for some i ∈ {1, 2}, that are connected, non-submonic, C log -log-Dedekind, and submonically nonarchimelog
+log
+dean; write Y log , Z log for the underlying log schemes of Y , Z , respectively.
+log
+Suppose further that Z
+is purely nonarchimedean. Then the following properties hold:
+log
+(i-aY ) every C¨log -partition at an element γ ∈ C log -SmCp(Y )
+determines a C log -partition at γ;
+(i-aZ ) there is a natural bijective correspondence between
+log
+C¨log -partitions at elements ∈ C log -SmCp(Z ) and C log log
+partitions at elements ∈ C log -SmCp(Z );
+log
+log
+(i-bY ) if Y
+is C¨log -orientable, then Y
+is C log -orientable;
+log
+log
+(i-bZ ) Z
+is C¨log -orientable if and only if Z
+is C log orientable;
+log
+(i-cZ ) a C¨log -partition at an element ∈ C log -SmCp(Z ) is
+C¨log -seamless if and only if it corresponds to a C log partition [cf. (i-aZ )] that is C log -seamless;
+log
+(i-dY ) if Y
+is C¨log -homogeneous, then it is one-pointed,
+log
+is empty;
+and Ysm
+log
+log
+(i-dZ ) Z is C¨log -homogeneous if and only if Z is C log homogeneous.
+
+(ii) Φ preserves the following:
+(ii-a) C log -log-Dedekind objects;
+(ii-b) the set C log -SmCp(−) associated to a C log -log-Dedekind object;
+(ii-c) the subsets of the set C log -SmCp(−) of (ii-b) which are C log -[N-]chains;
+(ii-d) C¨log -partitions at elements of the set C log -SmCp(−) of (ii-b);
+(ii-e) C¨log -orientable objects;
+(ii-f ) C¨log -homogeneous objects;
+(ii-g) one-pointed objects;
+(ii-h) point-hulls with one-pointed codomains;
+(ii-i) minimal point-hulls with one-pointed codomains.
+log
+
+(iii) For i = 1, 2, let Y i
+
+be an object of C
+
+log
+
+log
+
+log
+
+(X i ); write Yilog for the underlylog
+
+log
+
+log
+
+ing log scheme of Y i . Suppose further that Φ(Y 1 ) = Y 2 . Then Y 1 is purely
+log
+nonarchimedean if and only if Y 2 is. In particular, Φ induces an equivalence
+of categories
+∼
+C log (Y1log ) → C log (Y2log )
+log
+
+log
+
+that is functorial [in the evident sense!] with respect to Y 1 , Y 2 . Finally, the
+equivalence of categories in the above display induces, by applying Theorems 3.8,
+(iii); 4.6, (iv), an isomorphism of log schemes
+∼
+
+Y1log → Y2log
+log
+
+log
+
+that is functorial [in the evident sense!] with respect to Y 1 , Y 2 .
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+59
+
+(iv) There exists a unique isomorphism of arithmetic log schemes
+log
+
+X1
+
+∼
+
+log
+
+→ X2
+
+such that Φ is isomorphic to the equivalence of categories induced by this isomorlog ∼
+log
+phism of arithmetic log schemes X 1 → X 2 .
+Proof. First, we consider assertion (i). Properties (i-aY ), (i-aZ ), (i-bY ), (i-bZ ),
+(i-cZ ), and (i-dZ ) follow formally from the deﬁnitions [cf. also the ﬁrst display in
+the proof of Theorem 4.5]. Property (i-dY ) then follows, in light of properties (iaY ) and (i-bY ) [cf. also the ﬁrst display in the proof of Theorem 4.5], by applying
+a similar argument to the argument [i.e., involving Proposition 3.4, (ii)] applied
+in the proof of Proposition 3.4, (iii). Here, we note that one must apply the assumption [cf. the beginning of Deﬁnition 4.7] that any C¨log -homogeneous object
+is submonically nonarchimedean in order to conclude that any C¨log -partition that
+determines a C log -seamless C log -partition as in [the evident analogue for C log of]
+Proposition 3.4, (ii), is necessarily C¨log -seamless. That is to say, this assumption
+that any C¨log -homogeneous object is submonically nonarchimedean implies [cf. the
+discussion of Remark 4.7.1] that the discrepancy between C¨log -/C log -seamless C¨log /C log -partitions may — at least in the case of C log -seamless C log -partitions as in [the
+evident analogue for C log of] Proposition 3.4, (ii) — be ignored. This completes the
+proof of assertion (i).
+Next, we observe that, in light of Theorem 4.5, (i), (ii), assertion (ii) follows
+by applying a similar argument to the argument applied to verify Theorem 3.6, (i).
+Here, we observe that the preservation of the crucial property of being submonically
+nonarchimedean [cf. the beginning of Deﬁnition 4.7] follows formally from the
+portion of Theorem 4.5, (i), concerning the preservation of (i-f), (i-fnon ). Also, we
+observe, with regard to the preservation of (ii-g), that, by applying
+· the property (i-dY ) of assertion (i) in place of Proposition 3.4, (iii), and
+· the property (i-dZ ) of assertion (i), together with the evident analogue
+for C log of Proposition 3.4, (iv), in place of Proposition 3.4, (iv),
+log
+— i.e., by considering C¨log -homogeneous
+one obtains a suitable analogue for C
+objects — of the characterization of one-pointed objects given in Proposition 3.5,
+(i). This completes the proof of assertion (ii).
+
+Next, we consider assertion (iii). First, let us observe that the portion of assertion (ii) concerning the preservation of (ii-g), (ii-i) allows one to circumvent the
+application of [ArLgSch], Propositions 4.3, 4.4, in the theory of [ArLgSch], §4. One
+thus obtains — i.e., by considering epimorphisms as in [ArLgSch], Proposition 4.5 —
+category-theoretic characterizations of the purely nonarchimedean one-pointed oblog
+log
+jects of C (X i ) as in [ArLgSch], Corollary 4.1, (i), and of the purely archimedean
+log
+log
+morphisms of C (X i ) as in [ArLgSch], Corollary 4.1, (ii) [cf. also Proposition 1.4,
+(iii), (v), of the present paper]. In particular, we obtain a category-theoretic characterization, as in [ArLgSch], Corollary 4.2, of the purely nonarchimedean objects of
+log
+log
+C (X i ) and hence, by applying Theorems 3.8, (iii); 4.6, (iv), a category-theoretic
+log
+log
+reconstruction of the underlying log scheme of an object of C (X i ), as in [ArLgSch], Corollary 4.3. This completes the proof of assertion (iii). Finally, assertion
+
+60
+
+SHINICHI MOCHIZUKI
+
+(iv) follows from assertion (iii) [cf. the proof of [ArLgSch], Theorem 5.1], by applying the “logarithmic global compatibility” established in [ArLgSch], Lemma 5.2.
+
+
+Appendix
+In the present Appendix, we discuss in more detail, at the level of individual
+propositions, lemmas, corollaries, theorems, and examples, the validity of the theory
+developed in [LgSch] and [ArLgSch].
+First, we recall that the errors discussed in the Introduction of the present
+paper have no eﬀect on [LgSch], §1. The eﬀect of these errors on the validity of the
+statements [second column], as well as on the validity of the proofs [third column],
+of the individual propositions, lemmas, corollaries, and theorems of [LgSch], §2,
+is summarized in Fig. 1 below. Here, the symbol “” indicates no eﬀect on
+the validity in question; the symbol “×” indicates some eﬀect on the validity in
+question. Certain results that concern equivalences are divided into suﬃciency and
+necessity portions. Moreover, the necessity portion of [LgSch], Proposition 2.3, is
+divided into
+· a portion concerning whether or not the underlying morphism of schemes
+is a monomorphism in the case where the given morphism of log schemes
+is scheme-like,
+· a portion concerning whether or not the induced morphism of groupiﬁcations of characteristics is surjective, and
+· a portion concerning whether or not the underlying morphism of schemes
+is a monomorphism in the case where the given morphism of log schemes
+is not scheme-like.
+The statement of [LgSch], Lemma 2.6, (ii), is also divided into a closed immersion
+portion, an isomorphism portion, and a [ﬁnal] surjectivity portion. We also indicate,
+in the fourth column of Fig. 1, whether [“”] or not [“×”] the result in question is
+applied, in an explicit [i.e., via a direct reference] logical sense, in the present paper.
+The data of this fourth column does not include references for the statements of
+deﬁnitions/conditions or references made for the sake of pointing out content that
+is related in an expository sense [i.e., but not in a logical sense!]. The unique “” in
+this fourth column in the case of [LgSch], Proposition 2.4, indicates that although
+we apply this result in an explicit logical sense in the present paper [i.e., despite the
+fact that the proof given in [LgSch] is in error!], this does not result in any logical
+gaps, since the proof of [LgSch], Proposition 2.4, given in [LgSch] may be repaired
+if, instead of applying [LgSch], Proposition 2.3, one applies Proposition 1.4, (vi),
+of the present paper [i.e., which corresponds to the necessity portion of [LgSch],
+Proposition 2.3, in the case of submonic log schemes].
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+Individual
+propositions/lemmas/
+corollaries/theorems
+
+2.3 (surjectivity portion of
+necessity); 2.5; 2.6, (i), (iii); 2.6, (ii)
+(closed immersion, [ﬁnal] surjectivity
+portions); 2.16 [cf. Remark 3.7.1]
+2.1; 2.2; 2.3 (suﬃciency);
+2.3 (monomorphism portion
+of necessity: scheme-like case);
+2.7, (i), (ii); 2.8;
+2.12, (i) (necessity); 2.12, (ii);
+2.17; 2.18; 2.19, (i); 2.20
+2.4
+2.14; 2.15; 2.19, (ii); 2.13
+2.3 (monomorphism portion
+of necessity: non-scheme-like case);
+2.6, (ii) (isomorphism portion);
+2.7, (iii); 2.9; 2.10;
+2.12, (i) (suﬃciency)
+
+61
+
+Explicit
+logical
+application
+in the
+present
+paper
+
+Validity
+of
+statement
+
+Validity
+of
+proof
+
+
+
+
+
+
+
+
+
+
+
+×
+
+
+
+
+×
+×
+
+
+×
+
+×
+
+×
+
+×
+
+Fig. 1: Validity of individual propositions/lemmas/corollaries/theorems
+of [LgSch]
+Next, we consider the eﬀect of the errors discussed in the Introduction of the
+present paper on [ArLgSch]. Here, we recall that [ArLgSch], §1, consists of an expository introduction to the theory of [ArLgSch], while [ArLgSch], §2, is devoted to
+a discussion of the notations and conventions applied in [ArLgSch]. Thus, it suﬃces
+to consider the eﬀect of the errors discussed in the Introduction of the present paper
+on [ArLgSch], §3, §4, §5. The eﬀect of these errors on the validity of the statements
+[second column], as well as on the validity of the proofs [third column], of the individual propositions [“P”], lemmas [“L”], corollaries [“C”], theorems [“T”], and
+examples [“E”] of [ArLgSch], §3, §4, §5, is summarized in Fig. 2 below. Here, the
+symbol “” indicates no eﬀect on the validity in question; the symbol “×” indicates
+some eﬀect on the validity in question; the numbers in parentheses indicate, for ease
+of reference, the corresponding result in the preprint version [available on the homepage http://www.kurims.kyoto-u.ac.jp/~motizuki/papers-english.html] of
+[ArLgSch]. We also indicate, in the fourth column of Fig. 2, whether [“”] or
+not [“×”] the result in question is applied, in an explicit [i.e., via a direct reference]
+logical sense, in the present paper. The data of this fourth column does not include
+references for the statements of deﬁnitions/conditions or references made for the
+
+62
+
+SHINICHI MOCHIZUKI
+
+sake of pointing out content that is related in an expository sense [i.e., but not in a
+logical sense!]. The three “’s” in this fourth column indicate the following state
+of aﬀairs:
+· The results marked with a “” are indeed applied in an explicit logical
+sense in the present paper in the proofs of Theorems 4.3, 4.5, 4.8 – i.e.,
+despite the fact that the proofs given in [ArLgSch] of these results are in
+error!
+· The explicit logical application of these results in the present paper does
+not, however, result in any logical gaps for the following reason: In the
+case of the ﬁrst and third (respectively, case of the second) “”, the only
+problem with the proofs given in [ArLgSch] is that they rely on the reconstruction of one-pointed objects given in [ArLgSch], Proposition 4.3 [i.e.,
+which is in error!] (respectively, on [ArLgSch], Corollaries 4.2, 4.3 [i.e.,
+whose proofs are in error!]). On the other hand, these results are only
+applied in the present paper in situations in which the one-pointed objects
+have already been reconstructed (respectively, in which results corresponding to [ArLgSch], Corollaries 4.2, 4.3, have already been proven).
+· Put another way, one may think of the application in the present paper of
+the results marked with a “” as consisting of a “similar argument” to the
+argument given in [ArLgSch] — i.e., a “similar argument” which does not
+suﬀer from the logical gaps of [ArLgSch], since, in the case of the ﬁrst and
+third (respectively, case of the second) “”, this “similar argument” is only
+applied in situations in which the one-pointed objects have already been
+reconstructed (respectively, in which results corresponding to [ArLgSch],
+Corollaries 4.2, 4.3, have already been proven).
+
+Individual
+propositions/lemmas/
+corollaries/theorems/
+examples
+
+L4.1 (2.5); P4.2 (2.6); C4.1 (2.10), (ii)
+P4.1 (2.4); P4.4 (2.8), (i), (ii);
+E5.1 (3.5)
+P4.4 (2.8), (iii); C4.2 (2.11)
+L5.1 (3.2); L5.2 (3.3)
+T3.1 (1.1); T5.1 (3.4); C4.3 (2.12)
+P4.5 (2.9); C4.1 (2.10), (i)
+P4.3 (2.7)
+
+Explicit
+logical
+application
+in the
+present
+paper
+
+Validity
+of
+statement
+
+Validity
+of
+proof
+
+
+
+
+
+
+
+
+×
+
+
+
+
+×
+×
+
+×
+×
+×
+×
+×
+
+
+
+×
+
+×
+
+Fig. 2: Validity of individual propositions/lemmas/corollaries
+theorems/examples of [ArLgSch]
+
+MONOMORPHISMS IN CATEGORIES OF LOG SCHEMES
+
+63
+
+Bibliography
+
+[Kato1] K. Kato, Logarithmic Structures of Fontaine-Illusie, Algebraic analysis, geometry, and number theory (Baltimore, MD, 1988), Johns Hopkins Univ. Press
+(1989), pp. 191-224.
+[Kato2] K. Kato, Toric Singularities, Amer. J. Math. 116 (1994), pp. 1073-1099.
+[ExtFam] S. Mochizuki, Extending Families of Curves over Log Regular Schemes, J. reine
+angew. Math. 511 (1999), pp. 43-71.
+[LgSch] S. Mochizuki, Categorical representation of locally noetherian log schemes,
+Adv. Math. 188 (2004), pp. 222-246.
+[ArLgSch] S. Mochizuki, Categories of log schemes with archimedean structures, J. Math.
+Kyoto Univ. 44 (2004), pp. 891-909.
+[FrdI] S. Mochizuki, The Geometry of Frobenioids I: The General Theory, Kyushu J.
+Math. 62 (2008), pp. 293-400.
+
+Research Institute for Mathematical Sciences,
+Kyoto University,
+Kyoto 606-8502,
+JAPAN
+E-mail address: motizuki@kurims.kyoto-u.ac.jp
+
+

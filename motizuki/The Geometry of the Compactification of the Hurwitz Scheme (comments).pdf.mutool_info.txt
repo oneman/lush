@@ -1,0 +1,24 @@
+The Geometry of the Compactification of the Hurwitz Scheme (comments).pdf:
+
+PDF-1.5
+Info object (9 0 R):
+<</Author(<905688EA>)/CreationDate(D:20170818014340+09'00')/Creator( TeX output 2017.08.18:0143)/ModDate(D:20170818014340+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(hurwitz-comments-2017-08-18.pdf)>>
+Pages: 1
+
+Retrieving info from pages 1-1...
+Mediaboxes (1):
+	1	(12 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (11):
+	1	(12 0 R):	Type1 'FEPNDI+CMBX10' (46 0 R)
+	1	(12 0 R):	Type1 'FEPNGA+CMR8' (49 0 R)
+	1	(12 0 R):	Type1 'FEPNHB+CMSY8' (52 0 R)
+	1	(12 0 R):	Type1 'FEPNDJ+CMCSC10' (55 0 R)
+	1	(12 0 R):	Type1 'FEPNEJ+CMR10' (58 0 R)
+	1	(12 0 R):	Type1 'FEPNEK+CMSY10' (61 0 R)
+	1	(12 0 R):	Type1 'FEPNEL+CMTI10' (64 0 R)
+	1	(12 0 R):	Type1 'FEPNFM+CMMI10' (67 0 R)
+	1	(12 0 R):	Type1 'FEPNFN+CMSY7' (70 0 R)
+	1	(12 0 R):	Type1 'FEPNFO+MSBM10' (73 0 R)
+	1	(12 0 R):	Type1 'FEPNFP+CMR7' (76 0 R)
+

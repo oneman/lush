@@ -1,0 +1,2738 @@
+Topics Surrounding
+the Anabelian Geometry of Hyperbolic Curves
+Shinichi Mochizuki
+September 2002
+
+Contents:
+§0. Introduction
+§1. The Tate Conjecture as a Sort of Grothendieck Conjecture
+§1.1. The Tate Conjecture for non-CM Elliptic Curves
+§1.2. Some Pro-p Group Theory
+§2. Hyperbolic Curves as their own “Anabelian Albanese Varieties”
+§2.1. A Corollary of the Main Theorem of [Mzk2]
+§2.2. A Partial Generalization to Finite Characteristic
+§3. Discrete Real Anabelian Geometry
+§3.1. Real Complex Manifolds
+§3.2. Fixed Points of Anti-Holomorphic Involutions
+§3.3. Hyperbolic Curves and their Moduli
+§3.4. Abelian Varieties and their Moduli
+§3.5. Proﬁnite Real Anabelian Geometry
+§4. Complements to the p-adic Theory
+§4.1. Good Chern Classes
+§4.2. The Group-Theoreticity of a Certain Chern Class
+§4.3. A Generalization of the Main Result of [Mzk2]
+
+Section 0: Introduction
+In this manuscript, we give an exposition of various ideas and results related to
+the fundamental results of [Tama1-2], [Mzk1-2] concerning Grothendieck’s Conjecture of Anabelian Geometry (which we refer to as the “Grothendieck Conjecture” for
+short; cf. [Mzk2], Introduction, for a brief introduction to this conjecture). Many
+of these ideas existed prior to the publication of [Tama1-2], [Mzk1-2], but were not
+Typeset by AMS-TEX
+1
+
+2
+
+SHINICHI MOCHIZUKI
+
+discussed in these papers because of their rather elementary nature and secondary
+importance (by comparison to the main results of these papers). Nevertheless, it is
+the hope of the author that the reader will ﬁnd the present manuscript useful as a
+supplement to [Tama1-2], [Mzk1-2]. In particular, we hope that the discussion of
+the present manuscript will serve to clarify the meaning and motivation behind the
+main result of [Mzk2].
+Our main results are the following:
+(1) In §1, we take the reverse point of view to the usual one (i.e., that the
+Grothendieck Conjecture should be regarded as a sort of (anabelian) Tate
+Conjecture) and show that in a certain case, the Tate Conjecture may be
+regarded as a sort of Grothendieck Conjecture (cf. Theorem 1.1, Corollary
+1.2). In particular, Corollary 1.2 is interesting in that it allows one to
+express the fundamental phenomenon involved in the Tate and Grothendieck Conjectures using elementary language that can, in principle, be
+understood even by high school students (cf. the Introduction to §1; the
+Remarks following Corollary 1.2).
+(2) In §2, we show how the main result of [Mzk2] gives rise to a purely
+algebro-geometric corollary (i.e., one which has nothing to do with Galois
+groups, arithmetic considerations, etc.) in characteristic 0 (cf. Corollary
+2.1). Moreover, we give a partial generalization of this result to positive
+characteristic (cf. Theorem 2.2).
+(3) In §3, we discuss real analogues of anabelian geometry. Not surprisingly,
+the real case is substantially easier than the case where the base ﬁeld is
+p-adic or a number ﬁeld. Thus, we are able to prove much stronger results
+in the real case than in the p-adic or number ﬁeld cases (cf. Theorem
+3.6, Corollaries 3.7, 3.8, 3.10, 3.11, 3.13, 3.14, 3.15). In particular, we are
+able to prove various real analogues of the so-called Section Conjecture of
+anabelian geometry (which has not been proven, at the time of writing,
+for any varieties over p-adic or number ﬁelds) — cf. [Groth], p. 289, (2);
+[NTM], §1.2, (GC3), for a discussion of the Section Conjecture. Also, we
+note that the real case is interesting relative to the analogy between the
+diﬀerential geometry that occurs in the real case and certain aspects of
+the p-adic case (cf. [Mzk4], Introduction, §0.10; the Introduction to §3 of
+the present manuscript). It was this analogy that led the author to the
+proof of the main result of [Mzk2].
+(4) In §4, we show that a certain isomorphism version (cf. Theorem 4.12)
+of the main result of [Mzk2] can be proven over “generalized sub-p-adic
+ﬁelds” (cf. Deﬁnition 4.11), which form a somewhat larger class of ﬁelds
+than the class of “sub-p-adic ﬁelds” dealt with in [Mzk2]. This result is
+interesting in that it is reminiscent of the main results of [Tama2], as well
+as of the rigidity theorem of Mostow-Prasad for hyperbolic manifolds of
+real dimension 3 (cf. the Remarks following the proof of Theorem 4.12).
+
+TOPICS IN ANABELIAN GEOMETRY
+
+3
+
+Although we believe the results of §4 to be essentially new, we make no claim of
+essential originality relative to the results of §1, 2, 3, which may be proven using
+well-known standard techniques. Nevertheless, we believe that it is likely that, even
+with respect to §1, 2, 3, the point of view of the discussion is likely to be new (and
+of interest relative to understanding the main result of [Mzk2]).
+Finally, before beginning our exposition, we pause to review the main result
+of [Mzk2] (which is the central result to which the ideas of the present manuscript
+are related). To do this, we must introduce some notation. Let Σ be a nonempty
+set of prime numbers. If K is a ﬁeld, then let us denote its absolute Galois group
+Gal(K/K) (where K is some algebraic closure of K) by ΓK . If X is a geometrically
+connected K-scheme, then let us recall that its algebraic fundamental group π1 (X)
+(for some choice of base-point) ﬁts into a natural exact sequence
+1 → π1 (X ⊗K K) → π(X) → ΓK → 1
+Let us denote by ΔX the maximal pro-Σ quotient of π1 (X ⊗K K) (i.e., the inverse
+limit of those ﬁnite quotients whose orders are products of primes contained in Σ).
+The proﬁnite group ΔX is often referred to as the (pro-Σ) geometric fundamental
+group of X. Note that since the kernel of π1 (X ⊗K K) → ΔX is a characteristic
+subgroup of π1 (X ⊗K K), it follows that it is normal inside π1 (X). Denote the
+quotient of π1 (X) by this normal subgroup by ΠX . The proﬁnite group ΠX is
+often referred to as the (pro-Σ) arithmetic fundamental group of X. (When it is
+Σ
+necessary to specify the set of primes Σ, we will write ΔΣ
+X , ΠX .) Thus, we have a
+natural exact sequence
+1 → ΔX → ΠX → ΓK → 1
+In [Mzk2], the author proved the following result:
+Theorem A. Let K be a sub-p-adic ﬁeld (i.e., a ﬁeld isomorphic to a subﬁeld
+of a ﬁnitely generated ﬁeld extension of Qp), where p ∈ Σ. Let XK be a smooth
+variety over K, and YK a hyperbolic curve over K. Let Homdom
+K (XK , YK ) be the
+open
+set of dominant K-morphisms from XK to YK . Let HomΓK (ΠX , ΠY ) be the set
+of open, continuous group homomorphisms ΠX → ΠY over ΓK , considered up to
+composition with an inner automorphism arising from ΔY . Then the natural map
+open
+Homdom
+K (XK , YK ) → HomΓK (ΠX , ΠY )
+
+is bijective.
+Remark. Theorem A as stated above is a formal consequence of “Theorem A” of
+[Mzk2]. In [Mzk2], only the cases of Σ = {p}, and Σ equal to the set of all prime
+numbers are discussed, but it is easy to see that the case of arbitrary Σ containing
+p may be derived from the case Σ = {p} by precisely the same argument as that
+
+4
+
+SHINICHI MOCHIZUKI
+
+used in [Mzk2] (cf. [Mzk2], the Remark following Theorem 16.5) to derive the case
+of Σ equal to the set of all prime numbers from the case of Σ = {p}.
+Acknowledgements: The author would like to thank A. Tamagawa and T. Tsuji
+for stimulating discussions of the various topics presented in this manuscript. In
+particular, the author would especially like to express his gratitude A. Tamagawa
+for discussions concerning removing the hypothesis of “monodromy type” from
+Theorem 4.12 in an earlier version of this manuscript. Also, the author greatly
+appreciates the advice given to him by Y. Ihara (orally) concerning the Remark
+following Corollary 1.2, and by M. Seppala and C. McMullen (by email) concerning
+the Teichmüller theory used in §3.
+
+Section 1: The Tate Conjecture as a Sort of Grothendieck Conjecture
+In this §, we attempt to present what might be referred to as the most fundamental “prototype result” among the family of results (including the Tate and
+Grothendieck Conjectures) that states that maps between varieties are “essentially
+equivalent” to maps between arithmetic fundamental groups. The result given below, especially in the form Corollary 1.2, is interesting in that it allows one to
+express the fundamental phenomenon involved using elementary language that can,
+in principle, be understood even by high school students (cf. the Remark following
+Corollary 1.2). In particular, it does not require a knowledge of the notion of a Galois group or any another advanced notions, hence provides a convincing example
+of how advanced mathematics can be applied to prove results which can be stated
+in simple terms. Also, it may be useful for explaining to mathematicians in other
+ﬁelds (who may not be familiar with Galois groups or other notions used in arithmetic geometry) the essence of the Tate and Grothendieck Conjectures. Another
+interesting feature of Corollary 1.2 is that it shows how the Tate conjecture may
+be thought of as being of the “same genre” as the Grothendieck Conjecture in that
+it expresses how the isomorphism class of a curve (in this case, an elliptic curve)
+may be recovered from Galois-theoretic information.
+§1.1. The Tate Conjecture for non-CM Elliptic Curves
+Let K be a number ﬁeld (i.e., a ﬁnite extension of Q). If E is an elliptic curve
+over K, and N is a natural number, then let us write
+K(E[N ])
+for the minimal ﬁnite extension ﬁeld of K over which all of the N -torsion points
+are deﬁned. Note that the extension K(E[N ]) will always be Galois. Then we have
+the following elementary consequence of the “Tate Conjecture for abelian varieties
+over number ﬁelds” proven in [Falt]:
+
+TOPICS IN ANABELIAN GEOMETRY
+
+5
+
+Theorem 1.1. Let K be a number ﬁeld. Let E1 and E2 be elliptic curves over K
+such that neither E1 nor E2 admits complex multiplication over Q. Then E1 and
+E2 are isomorphic as elliptic curves over K if and only if K(E1 [N ]) = K(E2 [N ])
+for all natural numbers N .
+Remark. Note that the expression “K(E1 [N ]) = K(E2 [N ])” is to be understood to
+mean “equal as subﬁelds of some ﬁxed algebraic closure of K.” Moreover, the substance of this expression is independent of the choice of algebraic closure precisely
+because both ﬁelds in question are Galois extensions of K.
+Proof. If E1 ∼
+= E2 over K, then it is clear that K(E1 [N ]) = K(E2 [N ]) for
+all natural numbers N . Thus, let us assume that K(E1 [N ]) = K(E2 [N ]) for all
+natural numbers N , and prove that E1 ∼
+= E2 over K. In this proof, we use the
+notation and results of §1.2 below. Since we assume that K(E1 [N ]) = K(E2 [N ]),
+let us denote this ﬁeld by K[N ]. Also, if p is a prime number, then let us write
+K[p∞ ] for the union of the K[pn], as n ranges over the positive integers. Finally,
+for n ≥ 0, we denote the Galois group Gal(K[p∞ ]/K[pn]) by Γ[pn ]; the center of
+Γ[pn ] by ZΓ[pn]; and the quotient Γ[pn ]/ZΓ[pn ] by P Γ[pn ].
+Let p be a prime number. Then by the semisimplicity of the Tate module,
+together with the Tate conjecture (both proven in general in [Falt]; cf. also [Ser2],
+IV), the fact that neither E1 nor E2 admits complex multiplication over Q implies
+that there exists an integer n ≥ 1 such that the Galois representation on the ppower torsion points of E1 (respectively, E2 ) induces an isomorphism β1 : Γ[pn ] ∼
+=
+[n]
+[n]
+[n]
+n ∼
+GL2 (Zp ) (respectively, β2 : Γ[p ] = GL2 (Zp )), where GL2 (Zp ) ⊆ GL2 (Zp ) is
+[n]
+the subgroup of matrices that are ≡ 1 modulo pn . Since the kernel of GL2 (Zp ) →
+[n]
+[n]
+P GL2 (Zp ) is easily seen to be equal to the center of GL2 (Zp ), it thus follows
+that β1 , β2 induce isomorphisms
+[n]
+α1 : P Γ[pn ] ∼
+= P GL2 (Zp );
+
+[n]
+α2 : P Γ[pn ] ∼
+= P GL2 (Zp )
+
+Thus, in particular, by Lemma 1.3 of §1.2 below, we obtain that (after possibly
+def
+[n]
+increasing n) the automorphism α = α1 ◦ α−1
+of P GL2 (Zp ) is deﬁned by con2
+jugation by an element of P GL2 (Zp ). In particular, we obtain that there exists a
+Zp -linear isomorphism
+ψ : Tp (E1 ) ∼
+= Tp (E2 )
+between the p-adic Tate modules of E1 and E2 with the property that for σ ∈ Γ[pn ],
+we have ψ(σ(t)) = λσ σ(ψ(t)) (∀t ∈ Tp (E1 )), for some λσ ∈ Zp × which is independent of t. On the other hand, since the determinant of ψ is clearly compatible with
+the Galois actions on both sides (given by the cyclotomic character), it thus follows
+(by taking determinants of both sides of the equation ψ(σ(t)) = λσ σ(ψ(t))) that
+λ2σ = 1. Since the correspondence σ → λσ is clearly a homomorphism (hence a
+character of order 2), we thus obtain that:
+
+6
+
+SHINICHI MOCHIZUKI
+
+(*) There exists a ﬁnite extension K  of K over which the Gal(K/K  )modules Tp (E1 ) and Tp (E2 ) become isomorphic.
+(Here, K  is the extension of K[pn ] (of degree ≤ 2) deﬁned by the kernel of σ → λσ .
+In fact, if p > 2, then this extension is trivial (since Γ[pn ] is a pro-p-group).) Thus,
+by the Tate Conjecture proven in [Falt], we obtain that HomK  (E1 , E2 ) ⊗Z Zp
+contains an element that induces an isomorphism on p-adic Tate modules. On
+def
+the other hand, since HK  = HomK  (E1 , E2 ) (the module of homomorphisms
+(E1 )K  → (E2 )K  over K  ) is a ﬁnitely generated free Z-module of rank ≤ 1 (since
+E1 , E2 do not have complex multiplication over Q), we thus obtain that HK  is a
+free Z-module of rank 1. Let  ∈ HK  be a generator of HK  . Then  necessarily corresponds to an isogeny E1 → E2 that induces an isomorphism on p-power
+torsion points.
+def
+
+Now write HK = HomK (E1 , E2 ). Then the above argument shows that HK is
+a free Z-module of rank 1 with a generator  that induces an isomorphism on p-power
+torsion points for every prime number p. But this implies that  : (E1 )K → (E2 )K
+is an isomorphism, i.e., that E1 and E2 become isomorphic over K.
+Thus, it remains to check that E1 and E2 are, in fact, isomorphic over K.
+Let p ≥ 5 be a prime number which is suﬃciently large that: (i) K is absolutely
+unramiﬁed at p; (ii) the Galois representations on the p-power torsion points of E1
+and E2 induce isomorphisms
+β1 : Γ[p0 ] ∼
+= GL2 (Zp );
+
+β2 : Γ[p0 ] ∼
+= GL2 (Zp )
+
+(the existence of such p follows from the “modulo l versions” (for large l) of the
+semisimplicity of the Tate module, together with the Tate conjecture in [Mord],
+VIII, §5 ; cf. also [Ser2], IV). Now we would like to consider the extent to which
+the automorphism β = β1 ◦β2−1 of GL2 (Zp ) is deﬁned by conjugation by an element
+of GL2 (Zp ). Note that by what we did above, we know that the morphism induced
+[n]
+by β on P GL2 (Zp ) (for some large n) is given by conjugation by some element
+A ∈ GL2 (Zp ). Let γ : GL2 (Zp ) → GL2 (Zp ) be the automorphism of GL2 (Zp )
+obtained by composing β with the automorphism given by conjugation by A−1 .
+[n]
+Thus, γ induces the identity on P GL2 (Zp ). But this implies (by Lemma 1.4
+below) that γ induces the identity on P GL2 (Zp ). In particular, it follows that
+there exists a homomorphism λ : GL2 (Zp ) → Zp × such that γ(σ) = λ(σ) · σ
+(∀σ ∈ GL2 (Zp )). Next, let us recall that since p ≥ 5, the topological group SL2(Zp )
+has no abelian quotients (an easy exercise). Thus, λ factors through the determinant
+map GL2 (Zp ) → Zp × . Moreover, (cf. the argument at the beginning of the proof
+involving arbitrary p) since the composites of β1 , β2 with the determinant map are
+given by the cyclotomic character, we obtain that λ2 = 1. In particular, we obtain
+that λ is trivial on the index 2 subgroup of GL2 (Zp ) of elements whose determinant
+is a square. Put another way, if we write Kp for the quadratic extension of K
+determined by composing the cyclotomic character Gal(K/K) → Zp × (which is
+surjective since K is absolutely unramiﬁed at p) with the unique surjection Zp × 
+def
+
+TOPICS IN ANABELIAN GEOMETRY
+
+7
+
+Z/2Z, then over Kp , the Tate modules Tp (E1 ), Tp (E2 ) become isomorphic as Galois
+modules, which implies that HomKp (E1 , E2 ) = 0. But this implies that E1 and E2
+become isomorphic over Kp .
+On the other hand, for distinct primes p, p as above, Kp , Kp form linearly
+disjoint quadratic extensions of K (as can be seen by considering the ramiﬁcation
+at p, p ). Thus, the fact that both Gal(K/Kp ) and Gal(K/Kp ) act trivially on
+HomK (E1 , E2 ) implies that Gal(K/K) acts trivially on HomK (E1 , E2 ), so E1 ∼
+= E2
+over K, as desired. 
+Remark. The above proof beneﬁted from discussions with A. Tamagawa and T.
+Tsuji.
+Remark. Note that in the above proof (cf. also the arguments of §1.2 below), we
+use in an essential way the strong rigidity properties of the simple p-adic Lie group
+P GL2 (Zp ). Such rigidity properties are not shared by abelian Lie groups such as
+Zp ; this is why it was necessary to assume in Theorem 1.1 that the elliptic curves
+in question do not admit complex multiplication.
+Corollary 1.2. There is a ﬁnite set CM ⊆ Z such that if E1 and E2 are arbitrary
+elliptic curves over Q whose j-invariants j(E1 ), j(E2 ) do not belong to CM, then E1
+and E2 are isomorphic as elliptic curves over Q if and only if Q(E1 [N ]) = Q(E2 [N ])
+for all natural numbers N .
+Proof. In light of Theorem 1.1, it suﬃces to show that there are only ﬁnitely
+many possibilities (all of which are integral — cf., e.g., [Shi], p. 108, Theorem 4.4)
+for the j-invariant of an elliptic curve over Q which has complex multiplication
+over Q. But this follows from the ﬁniteness of the number of imaginary quadratic
+extensions of Q with class number one (cf., e.g., [Stk]), together with the theory
+of [Shi] (cf. [Shi], p. 123, Theorem 5.7, (i), (ii)). (Note that we also use here the
+elementary facts that: (i) the class group of any order surjects onto the class group
+of the maximal order; (ii) in a given imaginary quadratic extension of Q, there are
+only ﬁnitely many orders with trivial class group.) 
+Remark. According to an (apparently) unpublished manuscript of J.-P. Serre
+([Ser3]) whose existence was made known to the author by Y. Ihara, the set CM
+of Corollary 1.2, i.e., the list of rational j-invariants of elliptic curves with complex
+multiplication, is as follows:
+d = 1, f = 1 =⇒ j = j(i) = 26 · 33
+d = 1, f = 2 =⇒ j = j(2i) = (2 · 3 · 11)3
+√
+d = 2, f = 1 =⇒ j = j( −2) = (22 · 5)3 ,
+√
+−1 + −3
+)=0
+d = 3, f = 1 =⇒ j = j(
+2
+
+([Weber], p. 721)
+
+8
+
+SHINICHI MOCHIZUKI
+
+√
+d = 3, f = 2 =⇒ j = j( −3) = 24 · 33 · 53 , ([Weber], p. 721)
+√
+−1 + 3 −3
+d = 3, f = 3 =⇒ j = j(
+) = −3 · 215 · 53 , ([Weber], p. 462)
+2√
+−1 + −7
+) = −33 · 53 , ([Weber], p. 460)
+d = 7, f = 1 =⇒ j = j(
+√ 2
+d = 7, f = 2 =⇒ j = j( −7) = (3 · 5 · 17)3 , ([Weber], p. 475)
+√
+−1 + −11
+) = −215, ([Weber], p. 462)
+d = 11, f = 1 =⇒ j = j(
+2
+d = 19, f = 1 =⇒ j = −(25 · 3)3 , ([Weber], p. 462)
+d = 43, f = 1 =⇒ j = −(26 · 3 · 5)3 ,
+
+([Weber], p. 462)
+
+d = 67, f = 1 =⇒ j = −(25 · 3 · 5 · 11)3 ,
+
+([Weber], p. 462)
+
+d = 163, f = 1 =⇒ j = −(2 · 3 · 5 · 23 · 29)3 ,
+6
+
+([Weber], p. 462)
+
+√
+(where Q( −d) is the imaginary quadratic extension of Q containing the order in
+question, f is the conductor of the order, and the reference given in parentheses is
+for the values of the invariants “f” and “f1 ” of [Weber], which are related to the
+j-invariant as follows: j = (f 24 − 16)3 /f 24 = (f124 + 16)3 /f124 ).
+Remark. Thus, if one deﬁnes elliptic curves over Q using cubic equations, constructs
+the group law on elliptic curves by considering the intersection of the cubic with
+various lines, and interprets the notion of isomorphism of elliptic curves (over Q) to
+mean “being deﬁned by the same cubic equation, up to coordinate transformations,”
+then Corollary 1.2 may be expressed as follows:
+Except for the case of ﬁnitely many exceptional j-invariants, two elliptic
+curves E1 , E2 over Q are isomorphic if and only if for each natural number
+N , the coordinates (∈ C) necessary to deﬁne the N -torsion points of E1
+generate the same “subﬁeld of C” — i.e., “collection of complex numbers
+closed under addition, subtraction, multiplication, and division” — as the
+coordinates necessary to deﬁne the N -torsion points of E2 .
+(where, of course, the j-invariant is deﬁned as a polynomial in the coeﬃcients of the
+cubic). In this form, the essential phenomenon at issue in the Tate or Grothendieck
+Conjectures may be understood even by high school students or mathematicians
+unfamiliar with Galois theory.
+§1.2. Some Pro-p Group Theory
+Let n ≥ 1 be an integer. In this §, let us denote by P GL2 the algebraic
+group (deﬁned over Z) obtained by forming the quotient of GL2 by Gm (where
+Gm → GL2 is the standard embedding by scalars), and by
+
+TOPICS IN ANABELIAN GEOMETRY
+
+9
+
+[n]
+
+P GL2 (Zp ) ⊆ P GL2 (Zp )
+the subgroup of elements which are ≡ 1 modulo pn . Let us write pgl2 (Zp ) for the
+quotient of the Lie algebra M2 (Zp ) (of 2 by 2 matrices with Zp coeﬃcients) by
+the scalars Zp ⊆ M2 (Zp ). Thus, pgl2 (Zp ) ⊆ pgl2 (Zp ) ⊗Zp Qp = pgl2 (Qp ). Write
+[n]
+pgl2 (Zp ) ⊆ pgl2 (Zp ) for the submodule which is the image of matrices in M2 (Zp )
+[n]
+which are ≡ 0 modulo pn . Thus, for n suﬃciently large, pgl2 (Zp ) maps bijectively
+[n]
+onto P GL2 (Zp ) via the exponential map (cf. [Ser1], Chapter V, §7).
+[n]
+
+[n]
+
+Lemma 1.3. Let α : P GL2 (Zp ) → P GL2 (Zp ) be an automorphism of the
+[n]
+[m]
+[m]
+proﬁnite topological group P GL2 (Zp ) such that α(P GL2 (Zp )) = P GL2 (Zp )
+for all m ≥ n. Then there exists an element A ∈ P GL2 (Zp ) such that for some
+m ≥ n, the restriction α|P GL[m] (Zp ) is given by conjugation by A.
+2
+
+Proof. Let us write
+A : pgl2 (Qp ) → pgl2 (Qp )
+for the morphism on Lie algebras induced by α. By [Ser1], Chapter V, §7, 9, after
+possibly replacing n by a larger n, we may assume that α is the homomorphism
+obtained by exponentiating A. Moreover, by the well-known theory of the Lie
+algebra pgl2 (Qp ), it follows that A may be obtained by conjugating by some A ∈
+P GL2 (Qp ). (Indeed, this may be proven by noting that A induces an automorphism
+of the “variety of Borel subalgebras of pgl2 (Qp ).” Since this variety is simply P1Qp ,
+we thus get an automorphism of P1Qp , hence an element of P GL2 (Qp ), as desired.)
+On the other hand, it follows immediately from the structure theory of ﬁnitely
+generated Zp -modules that A may be written as a product
+A = C1 · A · C2
+
+where C1 , C2 ∈ P GL2 (Zp ), and A is deﬁned by a matrix of the form
+where λ1 , λ2 ∈ Qp × .
+
+λ1
+
+0
+
+0
+
+λ2
+
+
+,
+
+[n]
+
+Now observe that the fact that A arises from an automorphism of P GL2 (Zp )
+[n]
+implies that A induces an automorphism of pgl2 (Zp ) (cf. the discussion at the
+beginning of this §). Since conjugation by C1 and C2 clearly induces automorphisms
+[n]
+of pgl2 (Zp ), it thus follows that conjugation by A induces an automorphism of
+[n]
+pgl2 (Zp ). Now, by considering, for instance, upper triangular matrices with zeroes
+[n]
+along the diagonal, one sees that A can only induce an automorphism of pgl2 (Zp )
+
+if λ1 = λ2 · u, where u ∈ Zp × . Let A = λ−1
+1 · A . Then clearly A ∈ P GL2 (Zp ),
+def
+
+10
+
+SHINICHI MOCHIZUKI
+
+and conjugation by A induces A. Thus, by using the exponential map, we obtain
+that for some m ≥ n, the restriction α|P GL[m] (Z ) is given by conjugation by A, as
+p
+2
+desired. 
+The following lemma was pointed out to the author by A. Tamagawa:
+Lemma 1.4. Let α : P GL2 (Zp ) → P GL2 (Zp ) be an automorphism of the proﬁnite topological group P GL2 (Zp ) such that for some integer m ≥ 1, the restriction
+α|P GL[m] (Z ) is the identity. Then α itself is the identity.
+2
+
+p
+
+Proof.
+
+First let us show
+that
+
+ α is the identity on the image in P GL2 (Zp ) of
+1 λ
+matrices of the form
+(where λ ∈ Zp ). For m ≥ 0 an integer, write
+0 1
+Um ⊆ P GL2 (Zp ) for the subgroup of images in P GL2 (Zp ) of matrices of the form
+
+
+1 λ
+0
+
+
+
+1
+
+where λ ∈ pm ·Zp . Since, by hypothesis, α preserves Um for some m, it follows that α
+preserves the centralizer Z(Um ) of Um in P GL2 (Zp ). On the other hand, one checks
+easily that Z(Um ) = U0 . Thus, α preserves U0 , i.e., induces an automorphism of
+the topological group U0 ∼
+= Zp which is the identity on pm · Zp . Since Zp is torsion
+free, it thus follows that α is the identity on U0 , as desired. Moreover, let us observe
+that since conjugation commutes with the operation of taking centralizers, one sees
+immediately that the above argument implies also that α is the identity on all
+conjugates of U0 in P GL2 (Zp ).
+Next, let us observe that α is the identity on the subgroup B ⊆ P GL2 (Zp )
+consisting of images of matrices of the form:
+
+
+μ1
+
+λ
+
+0
+
+μ2
+
+
+
+(where λ ∈ Zp , μ1 , μ2 ∈ Zp × ). Indeed, since B is generated
+
+by U0 and the subgroup
+μ 0
+T ⊆ P GL2 (Zp ) of images of matrices of the form
+, it suﬃces to see that
+0 1
+α is the identity on T . But T acts faithfully by conjugation on U0 , and α is the
+identity on U0 . This implies that α is the identity on T , hence on B. Moreover,
+as in the previous paragraph, this argument implies that α is the identity on all
+conjugates of B in P GL2 (Zp ). Since P GL2 (Zp ) is generated by the union of the
+conjugates of B, it thus follows that α is the identity on P GL2 (Zp ). 
+
+TOPICS IN ANABELIAN GEOMETRY
+
+11
+
+Section 2: Hyperbolic Curves as their own “Anabelian Albanese Varieties”
+In this §, we present an application (Corollary 2.1) of the main theorem of
+[Mzk2] which is interesting in that it is purely algebro-geometric, i.e., it makes no
+mention of Galois actions or other arithmetic phenomena.
+§2.1. A Corollary of the Main Theorem of [Mzk2]
+In this §, we ﬁx a nonempty set of prime numbers Σ, and use the notation of
+the discussion of Theorem A in the Introduction. Now Theorem A has the following
+immediate consequence:
+Corollary 2.1. Let K be a ﬁeld of characteristic 0. Let C be a hyperbolic
+curve over K, and let ψ : X → Y be a morphism of (geometrically integral)
+smooth varieties over K which induces an isomorphism ΔX ∼
+= ΔY . Let us write
+“Homdom
+(−,
+C)”
+for
+the
+set
+of
+dominant
+K-morphisms
+from
+“−” to C. Then the
+K
+natural morphism of sets
+dom
+Homdom
+K (Y, C) → HomK (X, C)
+
+induced by ψ : X → Y is a bijection.
+Proof. By a standard technique involving the use of subﬁelds of K which are
+ﬁnitely generated over Q, we reduce immediately to the case where K is ﬁnitely
+generated over Q. (We recall for the convenience of the reader that the essence of
+this technique lies in the fact that since we are working with K-schemes of ﬁnite
+type, all schemes and morphisms between schemes are deﬁned by ﬁnitely many
+polynomials with coeﬃcients in K, hence may be deﬁned over any subﬁeld of K
+that contains these coeﬃcients (of which there are only ﬁnitely many!).)
+Next, observe that since the morphism ψ : X → Y induces an isomorphism
+between the respective geometric fundamental groups, it follows from the exact
+sequences reviewed in the Introduction that it induces an isomorphism ΠX ∼
+= ΠY .
+By Theorem A of the Introduction, it thus follows that the morphism of sets under
+dom
+consideration — i.e., Homdom
+K (Y, C) → HomK (X, C) — is naturally isomorphic
+to the morphism of sets given by
+open
+Homopen
+ΓK (ΠY , ΠC ) → HomΓK (ΠX , ΠC )
+
+which is bijective. This completes the proof. 
+Remark. As stated above, Corollary 2.1 is interesting in that it is a purely algebrogeometric application of Theorem A, i.e., it makes no mention of Galois actions or
+other arithmetic phenomena. The observation that Corollary 2.1 holds ﬁrst arose in
+discussions between the author and A. Tamagawa. Typical examples of morphisms
+ψ : X → Y as in Corollary 2.1 are:
+
+12
+
+SHINICHI MOCHIZUKI
+
+(1) the case where X → Y is a ﬁber bundle in, say, the étale topology, with
+proper, simply connected ﬁbers;
+(2) the case where Y ⊆ Pnk is a closed subvariety of dimension ≥ 3 in some
+projective space, and X is obtained by intersecting Y with a hyperplane
+in Pnk .
+In these cases, the fact that the resulting morphism on geometric fundamental
+groups is an isomorphism follows from the long exact homotopy sequence of a ﬁber
+bundle in the ﬁrst case (cf. [SGA1], X, Corollary 1.4), and Lefshetz-type theorems
+(cf. [SGA2], XII, Corollary 3.5) in the second case. Since this consequence of
+Theorem A (i.e., Corollary 2.1) is purely algebro-geometric, it is natural to ask if
+one can give a purely algebro-geometric proof of Corollary 2.1. In §2.2 below, we
+give a partial answer to this question.
+§2.2. A Partial Generalization to Finite Characteristic
+Let k be an algebraically closed ﬁeld. Let C be a proper hyperbolic curve over
+k. Suppose that we are also given a connected, smooth closed subvariety
+Y ⊆ Pnk
+of projective space, of dimension ≥ 3, together with a hyperplane H ⊆ Pnk such
+
+def
+that the scheme-theoretic intersection X = H Y is still smooth. Note that X is
+necessarily connected (cf. [SGA2], XII, Corollary 3.5) and of dimension ≥ 2.
+If k is of characteristic p > 0, and S is a k-scheme, then let us write ΦS : S → S
+for the Frobenius morphism on S (given by raising regular functions on S to the
+power p). If k is of characteristic 0, then we make the convention that ΦS : S → S
+denotes the identity morphism. If T is a k-schemes, then we deﬁne
+HomΦ (T, C)
+to be the inductive limit of the system
+Homdom
+(T, C) → Homdom
+(T, C) → . . . → Homdom
+(T, C) → . . .
+k
+k
+k
+(−, C) to the
+where the arrows are those induced by applying the functor Homdom
+k
+morphism ΦT . Thus, in particular, if k is of characteristic 0, then HomΦ (T, C) =
+(T, C).
+Homdom
+k
+Now we have the following partial generalization of Corollary 2.1 of §2.1 to the
+case of varieties over a ﬁeld of arbitrary characteristic:
+Theorem 2.2. Let k, C, X, and Y be as above. Then the natural morphism
+HomΦ (Y, C) → HomΦ (X, C)
+
+TOPICS IN ANABELIAN GEOMETRY
+
+13
+
+induced by the inclusion X → Y is a bijection.
+Proof. Let us denote by AX , AY , and AC the Albanese varieties of X, Y , and
+C, respectively. We refer to [Lang], Chapter II, §3, for basic facts concerning
+Albanese varieties. Thus, the inclusion X → Y induces a morphism AX → AY . I
+claim that this morphism is a purely inseparable isogeny . Indeed, by various wellknown Leftshetz theorem-type results (cf., [SGA2], XII, Corollary 3.5), the inclusion
+X → Y induces an isomorphism π1 (X) ∼
+= π1 (Y ); since (by the universal property
+of the Albanese variety as the “minimal abelian variety to which the original variety
+maps”) we have surjections π1 (X)  π1 (AX ), π1 (Y )  π1 (AY ), we thus obtain
+that π1 (AX )  π1 (AY ) is a surjection. Moreover, since X → AX , Y → AY induce
+isomorphisms on the respectively étale ﬁrst cohomology groups with Zl -coeﬃcients
+(where l is prime to the characteristic of k), we thus obtain that π1 (AX )  π1 (AY )
+is a surjection which is an isomorphism on the respective maximal pro-l quotients.
+Now it follows from the elementary theory of abelian varieties that this implies that
+AX → AY is a isogeny of degree a power of p. Finally, applying again the fact that
+π1 (AX )  π1 (AY ) is surjective (i.e., even on maximal pro-p quotients), we conclude
+(again from the elementary theory of abelian varieties) that this isogeny has trivial
+étale part, hence is purely inseparable, as desired. Note that since AX → AY is an
+isogeny, it follows in particular that it is faithfully ﬂat.
+Now let γX : X → C be a dominant k-morphism. Write αX : AX → AC for
+the induced morphism on Albanese varieties. If γX arises from some γY : Y → C,
+then this γY is unique. Indeed, γY is determined by its associated αY , and the
+composite of αY with AX → AY is given by αX (which is uniquely determined
+by γX ). Thus, the fact that αY is uniquely determined follows from the fact that
+AX → AY is faithfully ﬂat. This completes the proof of the claim, and hence of
+the injectivity portion of the bijectivity assertion in Theorem 2.2.
+Now suppose that γX is arbitrary (i.e., does not necessarily arise from some
+γY ). The surjectivity portion of the bijectivity assertion in Theorem 2.2 amounts
+to showing that, up to replacing γX by the composite of γX with some power of
+ΦX , γX necessarily arises from some γY : Y → C. Now although αX : AX → AC
+itself might not factor through AY , since AX → AY is purely inseparable, it follows
+that the composite of αX with some power of ΦAX will factor through AY . Thus, if
+we replace γX by the composite of γX with some power of ΦX , then αX will factor
+(uniquely) through AY . Let us denote this morphism by αY : AY → AC . Thus, in
+order to complete the proof of surjectivity, it suﬃces to show:
+(*) The restriction αY |Y of αY to Y (relative to the natural morphism
+Y → AY ) maps into the subvariety C ⊆ AC .
+Before continuing, we observe the following:
+(1) The assertion (*) for characteristic zero k follows immediately from the
+assertion (*) for k of ﬁnite characteristic. Indeed, this follows via the usual
+argument of replacing k ﬁrst by a ﬁnitely generated Z-algebra, and then
+
+14
+
+SHINICHI MOCHIZUKI
+
+reducing modulo various primes. Thus, in the following, we assume the k
+is of characteristic p > 0.
+(2) The assertion (*) will follow if we can show that the restriction αY |Y
+(where we write Y for the completion of Y along X) maps into C ⊆ AC .
+Now let us show that (up to possibly composing γX again with a power of Frobenius), γX extends to Y . If I is the sheaf of ideals on Y that deﬁnes the closed
+def
+subscheme X ⊆ Y , then let us write Yn = V (I n ) ⊆ Y for the n-th inﬁnitesimal
+def
+neighborhood of X in Y , and J = I|X ∼
+= OX (−1). Write T for the pull-back of
+the tangent bundle of C to X via γX . Since T −1 is generated by global sections,
+it thus follows that T −1 ⊗ J −1 is ample, hence, by Serre duality (cf., e.g., [Harts],
+Chapter III, Theorem 7.6), together with the fact that dim(X) ≥ 2, that there
+exists a natural number N such that
+N
+
+N
+
+H 1 (X, T ⊗p ⊗ J ⊗p ) = 0
+Note that this implies that for all n ≥ pN , we have:
+N
+
+H 1 (X, T ⊗p ⊗ J ⊗n ) = 0
+(Indeed, it suﬃces to assume that n > pN . Then since J −1 ∼
+= OX (1) is very
+ample, it follows that there exists a section s ∈ Γ(X, OX (1)) whose zero locus
+def
+
+Z = V (s) ⊆ X is smooth of dimension ≥ 1. Thus, s deﬁnes an exact sequence
+N
+
+N
+
+N
+
+0 → T ⊗p ⊗ J ⊗n → T ⊗p ⊗ J ⊗n−1 → T ⊗p ⊗ J ⊗n−1 |Z → 0
+whose associated long exact cohomology sequence yields:
+
+N
+
+N
+
+N
+
+H 0 (Z, T ⊗p ⊗ J ⊗n−1 |Z ) → H 1 (X, T ⊗p ⊗ J ⊗n ) → H 1 (X, T ⊗p ⊗ J ⊗n−1 )
+N
+
+N
+
+But H 0 (Z, T ⊗p ⊗ J ⊗n−1 |Z ) = 0 since T ⊗p ⊗ J ⊗n−1 |Z is the inverse of an ample
+N
+line bundle on a smooth scheme of dimension ≥ 1, while H 1 (X, T ⊗p ⊗J ⊗n−1 ) = 0
+by the induction hypothesis.)
+N
+Next, observe that ΦN
+Y N : YpN → YpN factors through X (since ΦY N is induced
+p
+
+p
+
+by raising functions to the pN -th power). Thus, if we compose γX : X → C with
+ΦN
+X , we see that this composite extends to a morphism YpN → C. Moreover, since
+N
+the pull-back to X via this composite of the tangent bundle on C is given by T ⊗p ,
+it follows that the obstruction to extending this composite to Yn+1 for n ≥ pN is
+given by an element of the cohomology group
+N
+
+H 1 (X, T ⊗p ⊗ J ⊗n )
+
+TOPICS IN ANABELIAN GEOMETRY
+
+15
+
+which (by the above discussion concerning cohomology groups) is zero. Thus, in
+summary, if we replace the given γX by its composite with ΦN
+X , the resulting γX
+
+extends to a morphism Y → C. This completes the proof of (*), and hence of the
+entire proof of Theorem 2.2. 
+Remark. The above proof beneﬁted from discussions with A. Tamagawa.
+Remark. Note that the other case discussed in the Remark at the end of §2.1,
+i.e., the case of a ﬁber bundle with proper, simply connected ﬁbers also admits
+a purely algebro-geometric proof: namely, it follows immediately from the theory
+of Albanese varieties that there do not exist any nonconstant morphisms from a
+simply connected smooth proper variety to an abelian variety.
+Remark. The role played by the Albanese variety in the proof of Theorem 2.2 given
+above suggests that the property proven in Corollary 2.1 and Theorem 2.2 might be
+thought of as asserting that a hyperbolic curve is, so to speak, its own “anabelian
+Albanese variety.” This is the reason for the title of §2.
+
+Section 3: Discrete Real Anabelian Geometry
+The original motivation for the p-adic result of [Mzk2] came from the (differential) geometry of the upper half-plane uniformization of a hyperbolic curve.
+This point of view — and, especially, the related idea that Kähler geometry at
+archimedean primes should be regarded as analogous to Frobenius actions at p-adic
+primes — is discussed in detail in [Mzk4], Introduction (especially §0.10; cf. also
+the Introduction of [Mzk3]). In the present §, we attempt to make this motivation
+more rigorous by presenting the real analogues of various theorems/conjectures of
+anabelian geometry. The substantive mathematics here — i.e., essentially the geometry of the Siegel upper half-plane and Teichmüller space — is not new, but
+has been well-known to topologists, Teichmüller theorists, and symmetric domain
+theorists for some time. What is (perhaps) new is the formulation or point of
+view presented here, namely, that these geometric facts should be regarded as real
+analogues of Grothendieck’s conjectured anabelian geometry.
+§3.1. Real Complex Manifolds
+We begin with the following purely analytic deﬁnition: Let X be a complex
+manifold and ι an anti-holomorphic involution (i.e., automorphism of order 2) of
+X.
+Deﬁnition 3.1.
+A pair such as (X, ι) will be referred to as a real complex
+manifold. If X has the structure of an abelian variety whose origin is ﬁxed by ι,
+then (X, ι) will be referred to as a real abelian variety. If dimC (X) = 1, then (X, ι)
+
+16
+
+SHINICHI MOCHIZUKI
+
+will be referred to as a real Riemann surface. A real Riemann surface (X, ι) will be
+called hyperbolic if the universal covering space of X is isomorphic (as a Riemann
+def
+
+surface) to the upper half-plane H = {z ∈ C | Im(z) > 0}.
+Remark. Note that if XR is a smooth algebraic variety over R, then XR (C) equipped
+with the anti-holomorphic involution deﬁned by complex conjugation deﬁnes a real
+complex manifold (X, ι). Moreover, one checks easily that XR is uniquely determined by (X, ι). Conversely, any real complex manifold (X, ι) such that X is
+projective arises from a unique algebraic variety XR over R. Indeed, this follows
+easily from “Chow’s Theorem” (that any projective complex manifold is necessarily
+algebraic) and the (related) fact that any holomorphic isomorphism between projective algebraic varieties (in this case, the given X and its complex conjugate) is
+necessarily algebraic. Thus, in summary, one motivating reason for the introduction
+of Deﬁnition 3.1 is that it allows one to describe the notion of a (proper, smooth)
+algebraic variety over R entirely in terms of complex manifolds and analytic maps.
+Remark. In the case of one complex dimension, one does not even need to assume
+projectivity: That is, any real Riemann surface (X, ι) such that X is algebraic arises
+from a unique algebraic curve XR over R. Indeed, this follows easily by observing
+that any holomorphic isomorphism between Riemann surfaces associated to complex algebraic curves is necessarily algebraic. (Note that this may be proven by
+noting that any such isomorphism extends naturally to the “one-point compactiﬁcations” of the Riemann surfaces (which have natural algebraic structures), hence
+is necessarily algebraizable.) It is not clear to the author whether or not this can
+be generalized to higher dimensions.
+In the following, we shall consider various groups G with natural augmentations
+G → Gal(C/R). In this sort of situation, we shall denote the inverse image of the
+identity element (respectively, the complex conjugation element) in Gal(C/R) by
+G+ (respectively, G− ).
+If X is a complex manifold, then we shall denote by
+Aut(X) → Gal(C/R)
+the group of automorphisms of X which are either holomorphic or anti-holomorphic,
+equipped with its natural augmentation (which sends holomorphic (respectively,
+anti-holomorphic) automorphisms to the identity (respectively, complex conjugation element) in Gal(C/R)). Thus,
+Aut+ (X), Aut− (X) ⊆ Aut(X)
+denote the subsets of holomorphic and anti-holomorphic automorphisms, respectively. In many cases, X will come equipped with a natural Riemannian metric
+
+TOPICS IN ANABELIAN GEOMETRY
+
+17
+
+which is preserved by Aut(X). The principal examples of this situation are the
+following:
+Example 3.2.
+us write
+
+(The Siegel Upper Half-Plane) Let g ≥ 1 be an integer. Let
+
+def
+
+Hg = {Z ∈ Mg (C) | Z = t Z; Im(Z) > 0}
+(where “t ” denotes the “transpose matrix,” and “> 0” is to be understood to mean
+“positive deﬁnite”) for the Siegel upper half-plane. (Thus, H1 is the usual upper
+half-plane H.) We shall regard H
+g as a complex
+ manifold (equipped with the obvious
+0
+I
+g
+def
+∈ M2g (R) (where Ig ∈ Mg (R) is the
+complex structure). Set Jg =
+−Ig 0
+identity matrix). Write
+GSp2g = {M ∈ M2g (R) | M · J · t M = η · J, η ∈ R× }
+def
+
+for the group of symplectic similitudes. Thus, we have a natural character
+χ : GSp2g → Gal(C/R)
+that maps an M ∈ GSp2g to the sign of η (where η is as in the above deﬁni−
+tion of GSp2g ). In particular, χ deﬁnes GSp+
+2g , GSp2g . Then we have a natural
+homomorphism
+φ : GSp2g → Aut(Hg )
+
+
+
+
+A
+
+B
+
+C
+
+D
+
+given by letting M =
+
+∈ GSp2g act on Z ∈ Hg by
+
+Z → (AZ χ(M ) + B)(CZ χ(M ) + D)−1
+Thus, φ is compatible with the augmentations to Gal(C/R). Now it is clear that
+the kernel of φ is given by the scalars R× ⊆ GSp2g . In fact, φ is surjective.
+Indeed, this is well-known when +’s are added to both sides (i.e., for holomorphic
+automorphisms — cf., e.g., [Maass], §4, Theorem 2). On the other hand, since φ is
+compatible with the augmentations to Gal(C/R), the surjectivity of φ thus follows
+from the “5-Lemma.” Thus, in summary, we have a natural isomorphism
+GSp2g /R× ∼
+= Aut(Hg )
+Moreover, the space Hg admits a natural Riemannian metric. Relative to this metric, any two points Z1 , Z2 of Hg can be joined by a unique geodesic (cf. [Maass], §3,
+
+18
+
+SHINICHI MOCHIZUKI
+
+Theorem). Moreover, this Riemannian metric is preserved by the action of GSp2g
+on Hg . (Indeed, this follows from [Maass], §4, Theorem 1, in the holomorphic case.
+As for the anti-holomorphic case, it suﬃces to check that the metric is preserved
+by a single anti-holomorphic map. But this is clear from [Maass], §4, Theorem 1,
+for the map Z → −Z.)
+Example 3.3. (Teichmüller Space) Let g, r ≥ 0 be integers such that 2g − 2 +
+r > 0. Let us denote by Tg,r the Teichmüller space of genus g Riemann surfaces
+with r marked points. Thus, Tg,r has a natural structure of complex manifold.
+Moreover, Tg,r is equipped with a natural Kähler metric, called the Weil-Petersson
+metric, whose associated Riemannian metric has the property that any two points
+t1 , t2 ∈ Tg,r may be joined by a unique geodesic (cf. [Wolp], §5.1).
+Write
+Modg,r
+for the full modular group, i.e., the group of homotopy classes of homeomorphisms of
+a topological surface of type (g, r) onto itself. Note that Modg,r is equipped with an
+augmentation Modg,r → Gal(C/R) given by considering whether or not the homeomorphism preserves the orientation of the surface. The quotient Tg,r /Mod+
+g,r (in the
+sense of stacks) may be identiﬁed with the moduli stack Mg,r of hyperbolic curves
+of type (g, r) over C, and the Weil-Petersson metric descends to Mg,r . Moreover,
+the Riemannian metric arising from the Weil-Petersson metric on Mg,r is preserved
+by complex conjugation. Indeed, this follows easily, for instance, from the deﬁnition
+of the Weil-Petersson metric in terms of integration of the square of the absolute
+value of a quadratic diﬀerential (on the Riemann surface in question) divided by
+the (1, 1)-form given by the Poincaré metric (on the Riemann surface in question)
+— cf., e.g, [Wolp], §1.4.
+If (g, r) is not exceptional (i.e., not equal to the cases (0, 3), (0, 4), (1, 1), (1, 2),
+or (2, 0)), then it is known (by a theorem of Royden — cf., e.g., [Gard], §9.2,
+Theorem 2) that one has a natural isomorphism
+Modg,r ∼
+= Aut(Tg,r )
+which is compatible with the natural augmentations to Gal(C/R). Now I claim that
+(at least if (g, r) is nonexceptional, then) Aut(Tg,r ) preserves (the Riemannian metric arising from) the Weil-Petersson metric. Indeed, since Tg,r /Mod+
+g,r = Mg,r ,
+and the Weil-Petersson metric descends to Mg,r , it thus follows that Mod+
+g,r preserves the Weil-Petersson metric. Thus, the claim follows from the fact (observed
+above) that (the Riemannian metric arising from) the Weil-Petersson metric on
+Mg,r is preserved by complex conjugation.
+Now let us return to our discussion of an arbitrary real complex manifold (X, ι).
+By analogy with the case when (X, ι) arises from a real algebraic variety (cf. the
+
+TOPICS IN ANABELIAN GEOMETRY
+
+19
+
+Remark following Deﬁnition 3.1), we will refer to the ﬁxed point locus of ι as the
+real locus of (X, ι), and use the notation
+X(R)
+for this locus. Observe that X(R) is necessarily a real analytic submanifold of
+X of real dimension equal to the complex dimension of X. (Indeed, this follows
+immediately by considering the local structure of ι at a point x ∈ X(R).) Moreover,
+at any x ∈ X(R), the involution ι induces a semi-linear (i.e., with respect to complex
+conjugation) automorphism ιx of order 2 of the complex vector space Tx (X) (i.e.,
+the tangent space to the complex manifold X at x). That is to say, ιx deﬁnes a
+real structure Tx (X)R ⊆ Tx (X)R ⊗R C = Tx (X) on Tx (X). Put another way, this
+real structure Tx (X)R is simply the tangent space to the real analytic submanifold
+X(R) ⊆ X.
+Since ι acts without ﬁxed points on X\X(R), it follows that the quotient of
+X\X(R) by the action of ι deﬁnes a real analytic manifold over which X\X(R)
+forms an unramiﬁed double cover. In the following, in order to analyze the action
+of ι on all of X, we would like to consider the quotient of X by the action of ι in
+the sense of real analytic stacks. Let us denote this quotient by X ι . Thus, we have
+an unramiﬁed double cover
+X → Xι
+which extends the cover discussed above over X\X(R).
+The Galois group of this double cover (which is isomorphic to Z/2Z) may be
+identiﬁed with the Galois group Gal(C/R). Thus, this double cover induces a short
+exact sequence of fundamental groups
+1 → π1 (X) → π1 (X ι ) → Gal(C/R) → 1
+where we omit base-points, since they are inessential to the following discussion.
+(Here, by “π1 ” we mean the usual (discrete) topological fundamental group in the
+sense of algebraic topology.)
+ → X for the universal covering space of X. Thus, X
+ also
+Now write X
+has a natural structure of complex manifold, and ι induces an anti-holomorphic
+ which is uniquely determined
+automorphism 
+ι (not necessarily of order 2!) of X,
+ → X. Since X
+ is also the
+up to composition with the covering transformations of X
+ι
+universal cover of the real analytic stack X , it thus follows that by considering the
+ → X ι , we get a natural homomorphism
+covering transformations of the covering X
+
+π1 (X ι ) → Aut(X)
+which is compatible with the natural projections of both sides to Gal(C/R).
+
+20
+
+SHINICHI MOCHIZUKI
+
+Thus, if, for instance, (X, ι) is a hyperbolic real Riemann surface, then by
+ ∼
+Example 3.2, there is a natural isomorphism Aut(X)
+= P GL2 (R) = GSp2 /R×
++
+(well-deﬁned up to conjugation by an element of P GL2 (R)). Thus, we obtain a
+natural representation
+ρX : π1 (X ι ) → P GL2 (R)
+which is compatible with the natural projections of both sides to Gal(C/R).
+Deﬁnition 3.4.
+representation
+
+Let (X, ι) be a hyperbolic real Riemann surface. Then the
+ρX : π1 (X ι ) → P GL2 (R)
+
+(which is deﬁned up to composition with conjugation by an element of P GL+
+2 (R))
+just constructed will be referred to as the canonical representation of (X, ι).
+Remark. The point of view of Deﬁnition 3.4 is discussed in [Mzk3], §1, “Real
+Curves,” although the formulation presented there is somewhat less elegant.
+§3.2. Fixed Points of Anti-Holomorphic Involutions
+Let T be a (nonempty) complex manifold which is also equipped with a smooth
+Riemannian metric. Let us also assume that the Riemannian metric on T satisﬁes
+the following property:
+(*) For any two distinct points t1 , t2 ∈ T , there exists a unique geodesic
+joining t1 and t2 .
+Then we have the following result, which is fundamental to the theory of the present
+§3:
+Lemma 3.5. Let T be a (nonempty) complex manifold equipped with a smooth
+Riemannian metric satisfying the condition (*). Let ιT : T → T be an antiholomorphic involution of T which preserves this Riemannian metric. Then the
+def
+ﬁxed point set FιT = {t ∈ T | ιT (t) = t} of ιT is a nonempty, connected real
+analytic submanifold of T of real dimension equal to the complex dimension of T .
+Proof. By the discussion of §3.1, it follows that it suﬃces to prove that ιT is
+nonempty and connected. First, we prove nonemptiness. Let t1 ∈ T be any point
+def
+of T , and set t2 = ιT (t1 ). If t1 = t2 , then t1 ∈ FιT , so we are done. If t1 = t2 , then
+let γ be the unique geodesic joining t1 , t2 . Then since the subset {t1 , t2 } is preserved
+by ιT , it follows that γ is also preserved by ιT . Thus, it follows in particular that
+the midpoint t of γ is preserved by ιT , i.e., that t ∈ FιT , so FιT is nonempty as
+desired. Connectedness follows similarly: If t1 , t2 ∈ FιT , then the unique geodesic γ
+
+TOPICS IN ANABELIAN GEOMETRY
+
+21
+
+joining t1 , t2 is also clearly ﬁxed by ιT , i.e., γ ⊆ FιT , so FιT is pathwise connected.
+
+Remark. The idea for this proof (using the Weil-Petersson metric in the case of
+Teichmüller space) is essentially due to Wolpert ([Wolp]), and was related to the
+author by C. McMullen. We remark that this idea has been used to give a solution
+of the Nielsen Realization Problem (cf. the Introduction of [Wolp]). It is easiest to
+see what is going on by thinking about what happens in the case when T = H (the
+2
+2
+upper half-plane) equipped with the Poincaré metric dx y+dy
+. Also, we remark that
+2
+1
+in the case when T = PC , both the hypothesis and the conclusion of Lemma 3.5 are
+false! (That is, the hypothesis is false because there will always exist “conjugate
+points,” and the conclusion is false because it is easy to construct examples of
+anti-holomorphic involutions without ﬁxed points.)
+Now assume that (X, ι) is any real complex manifold equipped with a smooth
+Riemannian metric (i.e., X is equipped with a smooth Riemannian metric preserved
+def 
+by ι) such that the induced Riemannian metric on the universal cover T = X
+satisﬁes (*). Let Y ⊆ X(R) be a connected component of the real analytic manifold
+X(R). Then since ι acts trivially on Y , the quotient of Y by the action of ι forms a
+real analytic stack Y ι whose associated coarse space is Y itself, and which ﬁts into
+a commutative diagram:
+Y
+⏐
+⏐
+
+
+−→
+
+Yι
+⏐
+⏐
+
+
+X
+
+−→
+
+Xι
+
+Moreover, the mapping Y ι → Y (where we think of Y as the coarse space associated
+to the stack Y ι ) deﬁnes a splitting of the exact sequence:
+1 → π1 (Y ) → π1 (Y ι ) → Gal(C/R) → 1
+hence a homomorphism Gal(C/R) → π1 (Y ι ). If we compose this homomorphism
+with the natural homomorphism π1 (Y ι ) → π1 (X ι ), then we get a morphism
+αY : Gal(C/R) → π1 (X ι )
+naturally associated to Y , which is well-deﬁned up to composition with an inner
+autormorphism of π1 (X). In particular, the image of complex conjugation under
+αY deﬁnes a conjugacy class of involutions ιY of π1 (X ι ). Thus, to summarize, we
+have associated to each connected component Y ⊆ X(R) of the real locus of (X, ι)
+a conjugacy class of involutions ιY in π1 (X ι ).
+Now we have the following immediate consequence of Lemma 3.5:
+
+22
+
+SHINICHI MOCHIZUKI
+
+Theorem 3.6.
+(“General Discrete Real Section Conjecture”) Let (X, ι)
+be a real complex manifold equipped with a smooth Riemannian metric (i.e., X
+is equipped with a smooth Riemannian metric preserved by ι) such that the induced
+ satisﬁes (*). Then the correspondence
+Riemannian metric on the universal cover X
+Y → ιY deﬁnes a bijection
+π0 (X(R)) ∼
+= HomGal(C/R) (Gal(C/R), π1 (X ι ))
+from the set of connected components of the real locus X(R) to the set of conjugacy
+classes of sections of π1 (X ι ) → Gal(C/R) (or, equivalently, involutions in π1 (X ι )).
+Moreover, the centralizer of an involution ιY ∈ π1 (X ι ) is the image of π1 (Y ι ) in
+π1 (X ι ).
+Proof. Indeed, let ιT ∈ π1 (X ι ) be an involution. Then ιT may be thought of as an
+def 
+anti-holomorphic involution of T = X.
+By Lemma 3.5, the ﬁxed point locus FιT
+of ιT is nonempty and connected. Thus, FιT maps into some connected component
+Y ⊆ X(R). (In fact, the morphism FιT → Y is a covering map.) By functoriality
+(consider the map of triples (T, ιT , FιT ) → (X, ι, Y )!), it follows that ιY = ιT . Thus,
+every involution in π1 (X ι ) arises as some ιY . Next, let us show uniqueness. If ιT
+arises from two distinct Y1 , Y2 ⊆ X(R), then it would follow that the ﬁxed point
+locus FιT contains at least two distinct connected components (corresponding to
+Y1 , Y2 ), thus contradicting Lemma 3.5. Finally, if α ∈ π1 (X ι ) commutes with ιY ,
+then α preserves FιY , hence induces an automorphism of FιY over Y ι . But since
+FιY → Y ι is a covering map, this implies that α is in the image of π1 (Y ι ) in π1 (X ι ).
+This completes the proof. 
+Remark. Thus, Theorem 3.6 is a sort of analogue of the so-called “Section Conjecture” of anabelian geometry for the discrete fundamental groups of real complex
+manifolds — see [Groth], p. 289, (2); [NTM], §1.2, (GC3), for more on the Section
+Conjecture.
+Remark. Theorem 3.6 generalizes immediately to the case where X is a complex
+analytic stack. In this case, “Y ι ” is to be understood to be the real analytic stack
+whose stack structure is inherited from that of the real analytic stack X ι . We leave
+the routine details to the reader.
+§3.3. Hyperbolic Curves and their Moduli
+By the discussion of Examples 3.2 (in the case of H), 3.3, in §3.1, together with
+Theorem 3.6 of §3.2, we obtain the following:
+Corollary 3.7. (“Discrete Real Section Conjecture for Hyperbolic Real
+Riemann Surfaces”) Let (X, ι) be a hyperbolic real Riemann surface. Then
+the correspondence Y → ιY of §3.2 deﬁnes a bijection
+π0 (X(R)) ∼
+= HomGal(C/R) (Gal(C/R), π1 (X ι ))
+
+TOPICS IN ANABELIAN GEOMETRY
+
+23
+
+from the set of connected components of the real locus X(R) to the set of conjugacy
+classes of sections of π1 (X ι ) → Gal(C/R) (or, equivalently, involutions in π1 (X ι )).
+Remark. Some readers may ﬁnd it strange that there is no discussion of “tangential
+sections” (at the “points at inﬁnity” of X) in Corollary 3.7. The reason for this is
+that in the present “real context,” where we only consider connected components of
+the set of real points, every tangential section arising from a real point at inﬁnity
+may be obtained as a limit of a sequence of real points that are not at inﬁnity
+(and, which, moreover, may be chosen to lie in the same connected components
+of the real locus), hence is “automatically included” in the connected component
+containing those real points.
+Corollary 3.8.
+(“Discrete Real Section Conjecture for Moduli of Hyperbolic Curves”) Let g, r ≥ 0 be integers such that 2g − 2 + r > 0. Write
+(Mg,r , ιM ) for the moduli stack of complex hyperbolic curves of type (g, r), equipped
+with its natural anti-holomorphic involution (arising from the structure of Mg,r as
+an algebraic stack deﬁned over R). If (X, ι) arises from a real hyperbolic curve of
+type (g, r), then the exact sequence
+1 → π1 (X) → π1 (X ι ) → Gal(C/R) → 1
+M
+) = Modg,r ⊆ Out(π1 (X))
+deﬁnes a homomorphism α(X,ι) : Gal(C/R) → π1 (Mιg,r
+(where “Out(−)” denotes the group of outer automorphisms of the group in parentheses). This correspondence (X, ι) → α(X,ι) deﬁnes a bijection
+M
+))
+π0 (Mg,r (R)) ∼
+= HomGal(C/R) (Gal(C/R), π1 (Mιg,r
+
+from the set of connected components of Mg,r (R) to the set of conjugacy classes
+M
+M
+of sections of π1 (Mιg,r
+) → Gal(C/R) (or, equivalently, involutions in π1 (Mιg,r
+)).
+ιM
+ι
+Moreover, the centralizer of an involution ιY ∈ π1 (Mg,r ) is the image of π1 (Y ) in
+M
+π1 (Mιg,r
+).
+Remark. Note that the injectivity portion of the bijection of Corollary 3.8, together
+with the determination of the centralizer of an involution (the ﬁnal sentence in the
+statement of Corollary 3.8), may be regarded as the discrete real analogue of the
+so-called “Strong Isomorphism Version of the Grothendieck Conjecture.” (For the
+convenience of the reader, we recall that the “Strong Isomorphism Version of the
+Grothendieck Conjecture” is the statement of Theorem A in the Introduction, except with K-morphism (respectively, homomorphism) replaced by K-isomorphism
+(respectively, isomorphism).)
+Remark. The author was informed by M. Seppala that results similar to Corollary
+3.8 have been obtained in [AG].
+§3.4. Abelian Varieties and their Moduli
+
+24
+
+SHINICHI MOCHIZUKI
+
+We begin with a lemma:
+Lemma 3.9. Let (X, ι) be a real complex manifold such that X is an abelian
+variety over C. Then there exists a translation-invariant Riemannian metric on X
+which is preserved by ι.
+Proof. By the Remark following Deﬁnition 3.1, (X, ι) arises from a projective
+algebraic variety XR over R. Write X c for the complex conjugate of the complex
+manifold X (i.e., X c and X have the same underlying real analytic manifold, but
+holomorphic functions on X c are anti-holomorphic functions on X). Since X is an
+abelian variety over C, it follows that X c is also an abelian variety over C. Thus,
+the holomorphic isomorphism ι : X ∼
+= X c is the composite of an isomorphism of
+abelian varieties (i.e., one which preserves the group structures) with a translation.
+def
+
+In particular, it follows that ι preserves the invariant diﬀerentials V = Γ(X, ΩX )
+on X. Thus, ι induces a semi-linear (with respect to complex conjugation) automorphism of V , i.e., ι induces a real structure VR ⊆ VR ×R C = V on V . Then any
+inner product on the real vector space VR induces an ι-invariant inner product on
+the underlying real vector space of V which, in turn, induces a translation-invariant
+Riemannian metric on X which is preserved by ι, as desired. 
+ arising from a Riemannian metric
+Remark. Note that any Riemannian metric on X
+ which is isomorphic
+as in the conclusion of Lemma 3.9 induces a geometry on X
+to Euclidean space, hence enjoys the property that any two points are joined by a
+unique geodesic.
+Now if we apply Theorem 3.6 using Lemma 3.9, Example 3.2, we obtain the
+following:
+Corollary 3.10.
+(“Discrete Real Section Conjecture for Real Abelian
+Varieties”) Let (X, ι) be a real abelian variety. Then the correspondence Y →
+ιY of §3.2 deﬁnes a bijection
+π0 (X(R)) ∼
+= HomGal(C/R) (Gal(C/R), π1 (X ι ))
+from the set of connected components of the real locus X(R) to the set of conjugacy
+classes of sections of π1 (X ι ) → Gal(C/R) (or, equivalently, involutions in π1 (X ι )).
+Corollary 3.11.
+(“Discrete Real Section Conjecture for Moduli of
+Abelian Varieties”) Let g ≥ 1 be a positive integer. Write (Ag , ιA ) for the
+moduli stack of principally polarized abelian varieties of dimension g, equipped with
+its natural anti-holomorphic involution (arising from the structure of Ag as an
+algebraic stack deﬁned over R). If (X, ι) is a real abelian variety of dimension g,
+then the exact sequence
+1 → π1 (X) → π1 (X ι ) → Gal(C/R) → 1
+
+TOPICS IN ANABELIAN GEOMETRY
+
+25
+
+deﬁnes a homomorphism α(X,ι) : Gal(C/R) → π1 (AιgA ) ∼
+= GSp(π1 (X)) (where
+“GSp” denotes the automorphisms that preserve, up to a constant multiple, the
+symplectic form deﬁned by the polarization). This correspondence (X, ι) → α(X,ι)
+deﬁnes a bijection
+π0 (Ag (R)) ∼
+= HomGal(C/R) (Gal(C/R), π1 (AιgA ))
+from the set of connected components of Ag (R) to the set of conjugacy classes
+of sections of π1 (AιgA ) → Gal(C/R) (or, equivalently, involutions in π1 (AιgA )).
+Moreover, the centralizer of an involution ιY ∈ π1 (AιgA ) is the image of π1 (Y ι ) in
+π1 (AιgA ).
+Proof. Note that the bijectivity of the natural morphism
+π1 (AιgA ) → GSp(π1 (X))
+follows from the fact that it is compatible with the projections on both sides to
+Gal(C/R) (where the projection GSp(π1 (X)) → Z× = Gal(C/R) is given by looking
+at the constant multiple to which the symplectic form arising from the polarization
+is mapped), together with the well-known bijectivity of this morphism on the “+”
+portions of both sides. 
+
+§3.5. Proﬁnite Real Anabelian Geometry
+So far we have considered the real analogue of Grothendieck’s anabelian geometry given by using the discrete fundamental groups of varieties. Another “real
+analogue” of anabelian geometry is that given by using the proﬁnite fundamental
+groups. Just as in the discrete, the fundamental result was an existence theorem for
+real points in the presence of involutions (i.e., Lemma 3.5), in the proﬁnite case, the
+fundamental existence is given by the following theorem of Cox (cf. [Frdl], Corollary
+11.3):
+Lemma 3.12. Let X be a connected real algebraic variety. Then X(R) = ∅ if
+i
+i
+and only if Het
+(X, Z/2Z) = 0 (where “Het
+” denotes étale cohomology) for inﬁnitely
+many i.
+Remark. In particular, if the complex manifold X(C) is a “K(π, 1)” space (i.e.,
+its universal cover is contractible), and, moreover, its fundamental group π1 (X(C))
+is good (i.e., the cohomology of π1 (X(C)) with coeﬃcients in any ﬁnite π1 (X(C))module is isomorphic (via the natural morphism) to the cohomology of the proﬁnite
+completion of π1 (X(C)) with coeﬃcients in that module), then we obtain that:
+i
+(*) X(R) = ∅ if and only if Het
+(π1alg (X), Z/2Z) = 0 for inﬁnitely many
+integers i.
+
+26
+
+SHINICHI MOCHIZUKI
+
+(where π1alg (X) denotes the algebraic fundamental group of the scheme X). Also,
+let us observe that if the projection π1alg (X) → Gal(C/R) possesses a splitting,
+i
+(Gal(C/R), Z/2Z) = 0 for inﬁnitely many i implies that
+then the fact that Het
+alg
+i
+Het (π1 (X), Z/2Z) = 0 for inﬁnitely many i.
+Since hyperbolic curves and abelian varieties satisfy the conditions of the above
+Remark, we thus obtain the following:
+Corollary 3.13.
+(“Proﬁnite Real Section Conjecture for Real Hyperbolic Curves”) Let X be a hyperbolic curve over R. Then the proﬁnite version
+of the correspondence Y → ιY of §3.2 deﬁnes a bijection
+alg
+π0 (X(R)) ∼
+= HomGal(C/R) (Gal(C/R), π1 (X))
+
+from the set of connected components of the real locus X(R) to the set of conjugacy classes of sections of π1alg (X) → Gal(C/R) (or, equivalently, involutions in
+π1alg (X)).
+Proof. Surjectivity follows from the above Remark, using the technique of [Tama1]:
+Namely, given a section α : Gal(C/R) → π1alg (X) of π1alg (X) → Gal(C/R), the
+family of open subgroups of π1alg (X) containing Im(α) deﬁnes a system of coverings
+{Xi → X} (as i varies over the elements of some index set I) such that (by the
+above Remark) each Xi (R) = 0. Since each Xi (R) has only ﬁnitely many connected
+components, it thus follows that there exists a compatible system (indexed by I)
+of connected components of Xi (R). But this amounts to the assertion that α arises
+from some connected component of X(R), as desired (cf. [Tama1], Corollary 2.10).
+Injectivity follows from the fact that involutions arising from distinct connected
+components deﬁne distinct elements of H 1 (π1alg (X), Z/2Z) — cf. [Schd], §20, Propositions 20.1.8, 20.1.12. 
+Remark. To the author’s knowledge, the ﬁrst announcement in the literature of
+a result such as Corollary 3.13 (in the proper case) appears in a manuscript of
+Huisman ([Huis]). (In fact, [Huis] also treats the one-dimensional case of Corollary
+3.14 below.) Unfortunately, however, the author was not able to follow the portion
+of Huisman’s proof ([Huis], Lemma 5.7) that corresponds to the application of Cox’s
+theorem (as in the Remark following Lemma 3.12).
+Corollary 3.14.
+(“Proﬁnite Real Section Conjecture for Real Abelian
+Varieties”) Let X be an abelian variety over R. Then the proﬁnite version of
+the correspondence Y → ιY of §3.2 deﬁnes a bijection
+alg
+π0 (X(R)) ∼
+= HomGal(C/R) (Gal(C/R), π1 (X))
+
+TOPICS IN ANABELIAN GEOMETRY
+
+27
+
+from the set of connected components of the real locus X(R) to the set of conjugacy classes of sections of π1alg (X) → Gal(C/R) (or, equivalently, involutions in
+π1alg (X)).
+Proof. Surjectivity follows as in the proof of Corollary 3.13. Injectivity follows, for
+instance, from the discrete result (Corollary 3.10), together with the injectivity of
+the natural morphism
+H 1 (Gal(C/R), π1 (X(C))) → H 1 (Gal(C/R), π1alg (X ⊗R C))
+ where Z
+
+— itself a consequence of the fact that π1alg (X ⊗R C)) = π1 (X(C)) ⊗Z Z,
+is the proﬁnite completion of Z (hence a faithfully ﬂat Z-module). 
+As for the case of moduli, the above argument breaks down in most cases since
+it is either false that or unknown whether or not the fundamental group of the
+corresponding moduli stacks is good. More precisely, π1 (Ag ) = Sp(2g, Z) is known
+not to be good if g ≥ 2 (cf. Lemma 3.16 below). (If g = 1, then the “proﬁnite real
+section conjecture” for Ag is essentially contained in Corollary 3.13 above.) On the
+other hand, to the author’s knowledge, it is not known whether or not π1 (Mg,r )
+is good if g > 2. If g ≤ 2, then, up to passing to ﬁnite étale coverings, Mg,r may
+be written as a successive extension of smooth families of hyperbolic curves, hence
+has a good fundamental group. Thus, we obtain the following:
+Corollary 3.15.
+(“Proﬁnite Real Section Conjecture for Moduli of
+Hyperbolic Curves of Genus ≤ 2”) Let g, r ≥ 0 be integers such that 2g−2+r >
+0, g ≤ 2. Write (Mg,r )R for the moduli stack of complex hyperbolic curves of type
+(g, r) over R. If X is a real hyperbolic curve of type (g, r), then X deﬁnes a section
+α(X,ι) : Gal(C/R) → π1alg ((Mg,r )R ). This correspondence (X, ι) → α(X,ι) deﬁnes a
+bijection
+alg
+π0 ((Mg,r )R (R)) ∼
+= HomGal(C/R) (Gal(C/R), π1 ((Mg,r )R ))
+
+from the set of connected components of (Mg,r )R (R) to the set of conjugacy classes
+of sections of π1alg ((Mg,r )R ) → Gal(C/R) (or, equivalently, conjugacy classes of
+involutions in π1alg ((Mg,r )R )). Moreover, the centralizer of an involution ιY ∈
+π1alg ((Mg,r )R ) is the image of the proﬁnite completion of π1 (Y ι ) in π1alg ((Mg,r )R ).
+Proof. Since (as just remarked) the fundamental groups involved are good, surjectivity follows as in Corollaries 3.13, 3.14.
+As for injectivity, we reason as follows. Given two real hyperbolic curves X,
+Y of the same type (g, r) which induce the same section α (up to conjugacy) of
+π1alg ((Mg,r )R ) → Gal(C/R), we must show that they belong to the same connected
+component of (Mg,r )R (R). First, let us observe that since [C : R] = 2, it follows
+
+28
+
+SHINICHI MOCHIZUKI
+
+that the marked points of X and Y over C consist of: (i.) points deﬁned over R;
+(ii) complex conjugate pairs. Moreover, the combinatorial data of which points are
+deﬁned over R and which points are conjugate pairs is clearly determined by the
+section α. Thus, there exists an “ordering of connected components of the divisor
+of marked points over R” of X, Y , which is compatible with α. Write
+N → (Mg,r )R
+for the ﬁnite étale covering deﬁned by the moduli stack (over R) of hyperbolic
+curves equipped with such an ordering. Note, in particular, that the injectivity
+assertion under consideration for (Mg,r )R follows formally from the corresponding
+injectivity assertion for N . Moreover, N may be written as a “successive extension”
+N = Nr → Nr−1 → . . . → N1 → N0
+of smooth families (i.e., the Nj+1 → Nj ) of either hyperbolic curves (where we
+include curves which are stacks — cf. the remark in parentheses following the list
+below) or surfaces (of a special type, to be described below) over the stack N0 ,
+where N0 may be described as follows:
+(1) If g = 0, then N0 is the moduli stack of 4-pointed curves of genus 0,
+equipped with an “ordering type” T , where T is one of the following: a
+total ordering of the four points; a total ordering of two points, plus a pair
+of conjugate points; a total ordering of two pairs of conjugate points. In
+each of these three cases, one sees that N0 is a hyperbolic curve over R, so
+we conclude the corresponding injectivity assertion for N0 from Corollary
+3.13.
+(2) If g = 1, then N0 is either the moduli stack of 1-pointed curves of genus
+1 (which is a hyperbolic curve, so we may conclude the corresponding
+injectivity assertion for N0 from Corollary 3.13), or N0 is the moduli
+stack of 2-pointed curves of genus 1, where the two points are unordered.
+In the latter case, by considering the “group of automorphisms of the
+underlying genus 1 curve which preserve the invariant diﬀerentials,” we
+get a morphism N0 → (M1,1 )R , which is a smooth family whose ﬁber over
+the elliptic curve E is the stack given by forming the quotient of E\{0E }
+(where 0E is the origin of E) by the action of ±1. (Indeed, this ﬁber
+parametrizes the “diﬀerence” of the two unordered points.) In particular,
+(M1,1 )R , as well as these ﬁbers over (M1,1 )R are hyperbolic curves, so the
+corresponding injectivity assertion for N0 follows from Corollary 3.13.
+(3) If g = 2, then N0 is the moduli stack of 0-pointed curves of genus 2.
+Moreover, by using the well-known morphism (M2,0 )R → (M0,6 )R (given
+by considering the ramiﬁcation points of the canonical double covering
+of the projective line associated to a curve of genus 2), this case may be
+reduced to the case g = 0, which has already been dealt with.
+
+TOPICS IN ANABELIAN GEOMETRY
+
+29
+
+(We remark here that even though some of the hyperbolic curves appearing above
+are in fact stacks, by passing to appropriate ﬁnite étale coverings which are still
+deﬁned over R and for which the real points in question lift to real points of the
+covering, injectivity for such “stack-curves” follows from injectivity for usual curves
+as proven in Corollary 3.13.) Finally, the surfaces that may appear as ﬁbers in the
+families Nj+1 → Nj appearing above are of the following type: If C is a hyperbolic
+curve over R, write ΔC ⊆ C ×R C for the diagonal. Then the surfaces in question
+are of the form {(C ×R C)\ΔC }/S2 (where S2 is the symmetric group on two
+letters permuting the two factors of C, and we note that this quotient is the same
+whether taken in the sense of schemes or of stacks). Now by passing (as in the
+one-dimensional case) to appropriate ﬁnite étale coverings of these surfaces which
+are still deﬁned over R and for which the real points in question lift to real points of
+the covering, the corresponding injectivity assertion for such surfaces follows from
+injectivity for surfaces that may be written as a smooth family of hyperbolic curves
+parametrized by a hyperbolic curve, hence is a consequence of Corollary 3.13. Thus,
+by “dévissage” we conclude the desired injectivity for (Mg,r )R .
+Before proceeding, we observe that the above argument shows that the bijectivity assertion of Corollary 3.15 also holds for any ﬁnite étale covering of Mg,r
+which is deﬁned over R.
+The ﬁnal statement on centralizers may be proven as follows: Given an involution ιY , write MY → (Mg,r )R for the pro-covering deﬁned by the subgroup
+generated by ιY in π1alg ((Mg,r )R ). Then the statement on centralizers follows from
+the fact that the conjugates of ιY in π1alg ((Mg,r )R ) are in bijective correspondence
+with the connected components of the inverse images of Y in MY (where we note
+that this bijective correspondence follows from the observation of the preceding
+paragraph). 
+Remark. Note that in many respects the proﬁnite theory is more diﬃcult and less
+elegant than the discrete theory, where everything follows easily from the very general Lemma 3.5. It is thus the feeling of the author that the discrete theory provides
+a more natural real analogue of anabelian geometry than the proﬁnite theory.
+Lemma 3.16.
+Let g ≥ 2, and let H ⊆ Sp(2g, Z) be a subgroup of ﬁnite index. Then there exists a subgroup H  ⊆ H which is normal and of ﬁnite index in
+Sp(2g, Z) such that the cohomological dimension of the proﬁnite completion of H 
+is > dimR (Ag ) = 2 · dimC (Ag ) = g(g + 1). (This estimate holds even if one restricts
+to H  -modules of order equal to a power of p, for any ﬁxed prime number p.) In
+particular, if g ≥ 2, then Sp(2g, Z) is not good.
+Proof. First, note that if Sp(2g, Z) is good, then so is any subgroup H of ﬁnite
+index. But there exist H such that if we write AH  → Ag for the ﬁnite étale covering
+deﬁned by a ﬁnite index subgroup H  ⊆ H, then AH  is a complex manifold (i.e.,
+not just a stack). The cohomology of H  is then given by the cohomology of AH  .
+Moreover, the cohomological dimension of AH  is = dimR (AH  ) = dimR (Ag ). Thus,
+
+30
+
+SHINICHI MOCHIZUKI
+
+if the cohomological dimension of the proﬁnite completion of H  is > dimR (Ag ), it
+follows that the cohomology of H  and of its proﬁnite completion (with coeﬃcients
+in a ﬁnite module) are not isomorphic in general, i.e., that H  is not good. But this
+implies that Sp(2g, Z) is not good, as desired.
+Next, let us assume that we are given H as in the statement of Lemma 3.16, and
+prove the existence of an H  as stated. First, let us observe that since the congruence
+subgroup problem has been resolved aﬃrmatively for Sp(2g, Z) (cf. [BMS]), it follows
+that:
+ =
+Sp(2g, Z)∧ = Sp(2g, Z)
+
+Sp(2g, Zp )
+p
+
+(where the “∧” denotes the proﬁnite completion, and the product is taken over all
+prime numbers p). Thus, it follows that the cohomological dimension of Sp(2g, Z)∧
+is ≥ the cohomological dimension of Sp(2g, Zp) for any prime p. In particular, in
+order to complete the proof of Lemma 3.16, it suﬃces to show that Sp(2g, Zp ) admits a collection of arbitrarily small normal open subgroups whose p-cohomological
+dimension is > g(g + 1).
+But this follows from the theory of [Laz]: Indeed, by [Laz], V, §2.2.8, it follows
+that that the p-cohomological dimension of any “p-valuable group” is equal to the
+“rank” r of the group. Here, a p-valuable group (cf. [Laz], III, §2.1.2) is a topogical
+group with a ﬁltration satisfying certain properties. In the present context, the
+topological group Sp[n] (2g, Zp ) (i.e., symplectic matrices which are ≡ to the identity
+matrix modulo pn ), equipped with the ﬁltration deﬁned by the Sp[m] (2g, Zp ) for
+m ≥ n, will satisfy these properties. Moreover, the rank r of a p-valuable group
+(cf. [Laz], III, §2.1.1, §2.1.3) is the Qp-dimension of the Lie algebra sp(2g, Qp ) of
+Sp(2g, Zp ). Thus, in this case,
+
+r = dimQp (sp(2g, Qp )) = dimR (sp(2g, R)) = dimR (Sp(2g, R)) > dimR (Hg ) = dimR (Ag )
+(where Hg is the Siegel upper half-plane — cf. Example 3.2). Indeed, the inequality
+here follows from the fact that Sp(2g, R) acts transitively on Hg , with positive
+dimensional isotropy subgroups. This completes the proof. 
+
+Section 4: Complements to the p-adic Theory
+In this §, we present certain complements to the p-adic theory of [Mzk2] which
+allow us to prove a certain isomorphism version of Theorem A of [Mzk2] (cf. §0 of
+the present manuscript) over a somewhat larger class of ﬁelds K than was treated in
+[Mzk2]. This larger class of ﬁelds — which we refer to as generalized sub-p-adic —
+consists of those ﬁelds which may be embedded as subﬁelds of a ﬁnitely generated
+
+TOPICS IN ANABELIAN GEOMETRY
+
+31
+
+extension of the quotient ﬁeld of W (Fp ) (the ring of Witt vectors with coeﬃcients
+in the algebraic closure of Fp , for some prime number p).
+§4.1. Good Chern Classes
+In this §, we work over a base ﬁeld K, which we assume (for simplicity, although
+it is not absolutely necessary for much of what we shall do) to be of characteristic
+0. Let XK be a smooth, geometrically connected variety over K.
+If p is a prime number, and n ≥ 1 an integer, then we may consider the
+Kummer sequence on XK , i.e., the exact sequence of sheaves on (XK )et (i.e., the
+étale site of XK ) given by
+0 → (Z/pn Z)(1) → Gm → Gm → 0
+(where, the “(1)” is a “Tate twist,” and the morphism from Gm to Gm is given by
+raising to the pn -th power.) The connecting morphism induced on étale cohomology
+by the Kummer sequence then gives us a morphism
+1
+2
+δp,n : Het
+(XK , Gm ) → Het
+(XK , (Z/pn Z)(1))
+1
+(XK , Gm )
+Now suppose that L is a line bundle on XK . Then applying δp,n to L ∈ Het
+2
+n
+gives us a compatible system of classes δp,n (L) ∈ Het (XK , (Z/p Z)(1)), hence (by
+2
+
+(XK , Z(1)).
+letting p, n vary) a class c1 (L) ∈ Het
+
+2
+
+(XK , Z(1))
+as the (proﬁnite,
+Deﬁnition 4.1.
+We shall refer to c1 (L) ∈ Het
+étale-theoretic) ﬁrst Chern class of L. If N ≥ 1 is an integer, then we shall refer to
+2
+c1 (L) mod N ∈ Het
+(XK , (Z/NZ)(1)) as the (étale-theoretic) ﬁrst Chern class of L
+modulo N .
+
+Next, let us write
+π1 (XK )
+for the (algebraic) fundamental group of XK (where we omit the base-point since
+it will not be explicitly necessary in our discussion). Also, let us assume that we
+are given a quotient
+π1 (XK )  Q
+(where Q is proﬁnite, and the surjection is continuous). Then we make the following
+crucial deﬁnition:
+
+32
+
+SHINICHI MOCHIZUKI
+
+Deﬁnition 4.2.
+Let N ≥ 1 be an integer. For i, j ∈ Z, a cohomology class
+i
+η ∈ Het (XK , (Z/NZ)(j)) will be called good if there exists a (nonempty) ﬁnite étale
+i
+covering Y → XK such that η|Y ∈ Het
+(Y, (Z/NZ)(j)) is zero.
+Next, suppose that π1 (XK )  Q is a surjection such that the composite of the
+natural surjection π1 (XK )  ΓK with the cyclotomic character ΓK → (Z/NZ)×
+factors through Q. Then we shall say that η is Q-good if this covering Y → XK may
+be chosen to arise from a quotient of π1 (XK ) that factors through π1 (XK )  Q. If
+L is a line bundle on XK , then we will say that its Chern class is good (respectively,
+2
+(XK , (Z/NZ)(1)) is
+Q-good) modulo N if the Chern class of L modulo N in Het
+good (respectively, Q-good).
+Recall that a discrete group Γ is said to be good if the cohomology of Γ with
+coeﬃcients in any ﬁnite Γ-module is isomorphic (via the natural morphism) to the
+cohomology of the proﬁnite completion of Γ with coeﬃcients in that module. Then
+the justiﬁcation for the terminology of Deﬁnition 4.2 is the following:
+Lemma 4.3. Suppose that K is a subﬁeld of C (the complex number ﬁeld); that
+def
+the topological space X = XC (C) is a “K(π, 1)” space (i.e., its universal cover is
+contractible); and that the topological fundamental group π1top (X ) is good. Then it
+i
+follows that all cohomology classes η ∈ Het
+(XK , (Z/NZ)(j)) are good.
+def
+
+def
+
+Proof. Write XC = XK ⊗K C, XK = XK ⊗K K. Since ﬁnite étale coverings of
+XC are always deﬁned over a ﬁnite extension of K, and (by well-known elemeni
+tary properties of étale cohomology) the natural morphism Het
+(XK , (Z/NZ)(j)) →
+i
+Het (XC , (Z/NZ)(j)) is an isomorphism, one sees immediately that it suﬃces to
+prove Lemma 4.3 when K = C, j = 0. But then
+top
+i
+i
+Het
+(XC , Z/NZ) ∼
+(XC , Z/NZ) ∼
+= Hsing
+= H i (π1 (X ), Z/NZ)
+
+(where the second isomorphism (between singular and group cohomology) follows
+from the fact that X is a “K(π, 1)” space). Thus, the fact that η vanishes upon
+restriction to a (nonempty) ﬁnite étale covering follows from the fact that π1top (X )
+is assumed to be good. 
+Remark. Thus, under the hypotheses of Lemma 4.3, every cohomology class is
+good. In general, however, we would like to work with varieties XK that do not
+satisfy the hypotheses of Lemma 4.3, but which nonetheless have the property that
+the cohomology classes that we are interested in are good.
+Now let L be a line bundle on XK . Let us write L → XK for the geometric
+line bundle associated to L (i.e., the spectrum over XK of the symmetric algebra
+over OXK of L−1 ). Also, let us write
+
+TOPICS IN ANABELIAN GEOMETRY
+
+33
+
+L× ⊆ L → XK
+for the complement of the zero section in L. Thus, L× → XK is a Gm -torsor, and
+we have an exact sequence of (algebraic) fundamental groups
+
+Z(1)
+= π1 ((Gm )K ) → π1 (L× ) → π1 (XK ) → 1
+(where we omit base-points since they will not be explicitly necessary in our discussion). In general, however, it is not necessarily the case that the ﬁrst arrow
+is injective. (Consider, for instance, the line bundle O(−1) on P1 (over, say, an
+algebraically closed ﬁeld K of characteristic zero), in which case L× = A2 \{0} has
+trivial fundamental group.)
+Lemma 4.4. Suppose that the Chern class of L is good modulo all powers of p.
+
+
+of the morphism Z(1)
+→ π1 (L× ) is injective,
+Then the restriction to Zp (1) ⊆ Z(1)
+so the above exact sequence deﬁnes an extension class ∈ H 2 (π1 (XK ), Zp (1)). If,
+moreover, the Chern class of L is Q-good modulo all powers of p, then (for all
+integers n ≥ 1) the reduction modulo pn of this extension class arises from an
+element ∈ H 2 (Q, (Z/pn Z)(1)).
+Proof. Indeed, let
+Y → XK
+be a ﬁnite étale covering such that the Chern class of L modulo pn vanishes upon
+restriction to Y . Going back to the deﬁnition of the Chern class using the Kummer
+exact sequence, one thus sees that there exists a line bundle P on Y such that
+n
+P ⊗p ∼
+= L|Y . Let us write P× → Y for the complement of the zero section in the
+geometric line bundle corresponding to P. Thus, P× → Y is a Gm -torsor with the
+property that, if we execute the change of structure group Gm → Gm given by
+def
+raising to the pn -th power, we obtain the Gm -torsor L× |Y = L× ×XK Y → Y . In
+particular, we obtain a ﬁnite étale covering
+P× → L× |Y
+whose restriction to the geometric ﬁbers of L× |Y → Y is (isomorphic to) the
+covering of Gm given by raising to the pn -th power. Sorting through the definitions of the various fundamental groups involved, one thus sees that the existence of such coverings implies that Zp (1) → π1 (L× ) is injective, and, moreover, that if the covering Y → XK arises from a quotient of Q, then the extension class ∈ H 2 (π1 (XK ), (Z/pn Z)(1)) deﬁned by π1 (L× ) arises from a class
+∈ H 2 (Q, (Z/pn Z)(1)), as desired. 
+
+34
+
+SHINICHI MOCHIZUKI
+
+Remark. In the Q-good portion of Lemma 4.4, it was necessary to use ﬁnite coeﬃcients Z/pn Z (i.e., rather than Zp ) since it is not clear that the various group extensions of Q by (Z/pn Z)(1) form a compatible system as n varies. (When Q = π1 (XK ),
+one need not worry about this since one already has a natural group extension,
+namely, that arising from π1 (L× ).)
+Lemma 4.5. Suppose that the Chern class of L is good modulo all powers of p.
+Write
+2
+cgp
+1 (L) ∈ H (π1 (XK ), Zp (1))
+for the extension class of Lemma 4.4. Then the image of cgp
+1 (L) under the natural
+map
+2
+H 2 (π1 (XK ), Zp (1)) → Het
+(XK , Zp (1))
+is equal to the (p-adic portion of the) ﬁrst Chern class c1 (L) of Deﬁnition 4.1.
+If, moreover, the Chern class of L is Q-good modulo all powers of p, then (for
+all integers n ≥ 1) there exists a class ∈ H 2 (Q, (Z/pn Z)(1)) whose image in
+2
+Het
+(XK , (Z/pn Z)(1)) is equal to c1 (L) mod pn .
+Proof. If Γ is a proﬁnite group, then let us denote by B(Γ) the “classifying site of
+Γ,” i.e., the site deﬁned by considering the category of ﬁnite sets with continuous
+Γ-action (and coverings given by surjections of such sets). Thus, if M is a ﬁnite
+abelian group with continuous Γ-action, then M deﬁnes a sheaf of abelian groups
+on this site whose cohomology may be identiﬁed with the usual group cohomology
+of Γ with coeﬃcients in M.
+Next, let us note that relative to this notation, there is a tautological morphism
+(XK )et → B(π1 (XK ))
+determined by the well-known equivalence between ﬁnite étale coverings of XK
+and ﬁnite sets with continuous π1 (XK )-action. Put another way, this morphism
+is the étale analogue of the well-known tautological morphism (determined up to
+homotopy equivalence) in topology from a topological space to the classifying space
+of its fundamental group. By functoriality, we thus obtain a commutative diagram:
+(L× )et
+⏐
+⏐
+
+
+−→
+
+B(π1 (L× ))
+⏐
+⏐
+
+
+(XK )et
+
+−→
+
+B(π1 (XK ))
+
+(where the horizontal morphisms are the tautological morphisms just discussed,
+and the vertical morphisms are those induced by functoriality from L× → XK ).
+Next, let us observe that both vertical morphisms of the above commutative
+diagram give rise to Leray-Serre spectral sequences on cohomology with coeﬃcients
+in Zp (1). (Here, we note that the fact that the vertical morphism on the right gives
+
+TOPICS IN ANABELIAN GEOMETRY
+
+35
+
+rise to such a spectral sequence follows from the injectivity assertion of Lemma
+4.4.) In particular, if we consider the diﬀerential on the “E2 -term” of these spectral
+sequences we obtain a commutative diagram:
+
+Zp = H 0 (π1 (XK ), H 1 (Z(1),
+Zp (1))) −→
+⏐
+⏐
+
+H 2 (π1 (XK ), Zp (1))
+
+0
+1
+Zp = Het
+(XK , Het
+((Gm )K , Zp (1)))
+⏐
+⏐
+
+
+−→
+
+2
+Het
+(XK , Zp (1))
+
+(where the vertical morphisms are the diﬀerentials of the spectral sequence, and the
+horizontal morphisms are induced by the morphisms of sites just discussed). On
+the other hand, sorting through the deﬁnitions, one sees that it is a tautology that
+the image of 1 ∈ Zp under the vertical morphism on the right (respectively, left) is
+the Chern class c1 (L) (respectively, cgp
+1 (L)). Thus, the assertion that the image of
+2
+cgp
+(L)
+in
+H
+(X
+,
+Z
+(1))
+is
+equal
+to
+c1 (L) follows from the commutativity of the
+K
+p
+et
+1
+above diagram. The corresponding assertion in the Q-good case follows by replacing
+π1 (XK ), Zp in the above argument by Q, Z/pn Z, respectively, and applying the
+Q-good portion of Lemma 4.4. 
+Lemma 4.6. Suppose that XK is equipped with a smooth, proper morphism
+XK → ZK
+(where ZK is a smooth, geometrically connected variety over K) which admits a
+section σ : ZK → XK . Also, let us assume that K may be embedded as a subﬁeld
+of C, and that if z is any geometric point of ZK such that k(z) may be embedded as
+def
+
+a subﬁeld of C, then the geometric ﬁber Xz = XK ×ZK z satisﬁes the hypotheses
+of Lemma 4.3 (i.e., its complex valued points form a “K(π, 1)” space with good
+topological fundamental group). Then the Chern class of any line bundle L on XK
+for which the pull-back σ ∗ (L) is trivial (as a line bundle on ZK ) is good modulo
+all integers N ≥ 1.
+Proof. First, let us observe that we may always replace ZK (respectively, XK )
+by a ﬁnite étale covering of ZK (respectively, XK , possibly at the expense of also
+replacing ZK by some new ﬁnite étale covering of ZK ) without aﬀecting the validity
+of either the hypotheses or the conclusion of the lemma. Next, ﬁx a geometric point
+z of Z as in the statement of Lemma 4.6, and write Xz for the resulting geometric
+ﬁber. Then the existence of the section σ implies that we obtain an exact sequence
+of fundamental groups:
+1 → π1 (Xz ) → π1 (XK ) → π1 (ZK ) → 1
+Indeed, in general (i.e., in the absence of hypothesis that σ exist) the morphism
+π1 (Xz ) → π1 (XK ) need not be injective. That is to say, its kernel is naturally isomorphic to the cokernel of the morphism (induced by XK → ZK via functoriality)
+
+36
+
+SHINICHI MOCHIZUKI
+
+between certain étale-theoretic second homotopy groups of XK and ZK (cf. [Frdl],
+p. 107, Theorem 11.5). On the other hand, since XK → ZK admits a section, it
+thus follows (by functoriality) that this morphism between second homotopy groups
+also admits a section, hence that it is surjective (i.e., its cokernel is trivial). This
+implies the injectivity of the morphism π1 (Xz ) → π1 (XK ). Note that, stated in
+words, the injectivity of this morphism implies that (after possible base-change to
+a ﬁnite étale covering of ZK ) any ﬁnite étale covering of Xz may be realized as the
+restriction to the ﬁber Xz of a ﬁnite étale covering of XK .
+Next, let us consider the Leray-Serre spectral sequence associated to the morphism XK → ZK for étale cohomology with coeﬃcients in (Z/pn Z)(1) (for some p,
+n as in Deﬁnition 4.1). If we consider the “E2 -term”of this spectral sequence, we
+2
+see that the cohomology group Het
+(XK , (Z/pn Z)(1)) gets a natural ﬁltration whose
+“highest subquotient” (i.e., the subquotient which is, in fact, a quotient) is a sub0
+2
+(ZK , Het
+(Xz , (Z/pn Z)(1))). On the other hand, by the assumptions
+module of Het
+2
+placed on Xz , it follows that all the classes of Het
+(Xz , (Z/pn Z)(1)) vanish upon
+restriction to some ﬁnite étale covering of Xz . Moreover, by the discussion of the
+preceding paragraph, it follows that this covering may be realized as the restriction
+to Xz of a ﬁnite étale covering of XK . Thus, in conclusion, by replacing XK and
+ZK by appropriate ﬁnite étale coverings, we may assume that the image of the class
+2
+c1 (L) mod pn in the highest subquotient of Het
+(XK , (Z/pn Z)(1)) vanishes.
+2
+(XK , (Z/pn Z)(1))
+The next highest subquotient of the natural ﬁltration on Het
+induced by the Leray-Serre spectral sequence may be regarded naturally as a sub1
+1
+module of Het
+(ZK , Het
+(Xz , (Z/pn Z)(1))). Thus, by an argument similar to that of
+the preceding paragraph, we conclude that we may assume that the image of the
+2
+class c1(L) mod pn in the next highest subquotient of Het
+(XK , (Z/pn Z)(1)) also
+vanishes.
+
+The next subquotient (i.e., the subquotient which is, in fact, a submodule) of
+2
+the natural ﬁltration on Het
+(XK , (Z/pn Z)(1)) induced by the Leray-Serre spec2
+tral sequence is given by the submodule of Het
+(XK , (Z/pn Z)(1)) which is the
+2
+n
+2
+n
+image of Het (ZK , (Z/p Z)(1)) in Het (XK , (Z/p Z)(1)) (via pull-back relative to
+XK → ZK ). Note that the existence of the section σ implies that this pull-back
+2
+2
+morphism Het
+(ZK , (Z/pn Z)(1)) → Het
+(XK , (Z/pn Z)(1)) is injective. Thus, we
+n
+conclude that the class c1 (L) mod p arises as the pull-back to XK of a class in
+2
+Het
+(ZK , (Z/pn Z)(1)). On the other hand, by pulling back via σ (and applying the
+functoriality of the formation of the Chern class of a line bundle), we thus see that
+2
+this class in Het
+(ZK , (Z/pn Z)(1)) is simply c1(σ∗ (L)) mod pn , which is = 0 (since
+σ ∗ (L) is assumed to be trivial). This completes the proof of Lemma 4.6. 
+
+§4.2. The Group-Theoreticity of a Certain Chern Class
+In this §, we let K be a ﬁeld of characteristic 0 (until further notice). Also, we
+ﬁx a prime number p and an integer g ≥ 2.
+Let us denote by A the moduli stack of principally polarized abelian varieties
+of dimension g. Write
+
+TOPICS IN ANABELIAN GEOMETRY
+
+37
+
+G→A
+for the tautological abelian scheme over A, and  : A → G for its identity section.
+Also, let us denote by LG the tautological line bundle on G that deﬁnes the principal
+polarization. Thus, LG is relatively ample over A, and we assume that it is rigidiﬁed
+by some isomorphism ∗ (LG ) ∼
+= OA . Also, we ﬁx a geometric point a ∈ A(K), and
+denote the fundamental group π1 (Ga ) of the geometric ﬁber Ga by π1 (G/A). Thus,
+we obtain an exact sequence of fundamental groups
+1 → π1 (G/A) → π1 (G) → π1 (A) → 1
+equipped with a section π1 () : π1 (A) → π1 (G) which allows us to identify π1 (G)
+with the semi-direct product π1 (G/A)  π1 (A). Next, observe that since π1 (G/A)
+
+is a free Z-module
+of rank 2g, we may write
+(p)
+
+(=p)
+
+π1 (G/A) = ΠG/A × ΠG/A
+
+for the natural decomposition of π1 (G/A) as a product of a Zp -free module — i.e.,
+(p)
+(=p)
+ΠG/A — and a module ΠG/A which is free over the product of all Zp , where p ranges
+over the prime numbers not equal to p. Moreover, the above exact sequence shows
+that π1 (A) acts naturally on π1 (G/A) in a way that respects this decomposition.
+In particular, we may push forward the above exact sequence via the quotient
+(p)
+(p/A)
+π1 (G/A)  ΠG/A to obtain exact sequences (where ΠG
+is deﬁned by the ﬁrst
+exact sequence)
+(=p)
+
+(p/A)
+
+1 → ΠG/A → π1 (G) → ΠG
+(p)
+
+(p/A)
+
+1 → ΠG/A → ΠG
+
+→1
+
+→ π1 (A) → 1
+
+— of which the second exact sequence admits a section that allows us to identify
+(p/A)
+(p)
+with the semi-direct product ΠG/A  π1 (A).
+ΠG
+Now let us consider π1 (A) in greater detail. First, let us recall that the action of
+(p)
+π1 (A) on ΠG/A preserves the symplectic form deﬁned by the tautological principal
+polarization on the family of abelian varieties G → A up to multiplication by a
+scalar. Let us denote by
+(p)
+
+GSp(ΠG/A )
+(p)
+
+the group of Zp -linear automorphisms of ΠG/A which preserve this symplectic form
+up to multiplication by a scalar. Thus, we obtain a natural commutative diagram
+(in which the rows are exact):
+
+38
+
+SHINICHI MOCHIZUKI
+
+1 −→
+
+Sp(π1 (G/A)) −→
+⏐
+⏐
+
+
+1 −→
+
+Sp(ΠG/A )
+
+(p)
+
+−→
+
+ΓK
+⏐
+⏐
+
+
+−→
+
+1
+
+−→ GSp(ΠG/A ) −→
+
+Zp ×
+
+−→
+
+1
+
+π1 (A)
+⏐
+⏐
+
+(p)
+
+
+Here, “Sp” denotes the group of Z-linear
+automorphisms of π1 (G/A) that preserve
+(p)
+the symplectic form in question precisely; the homomorphism GSp(ΠG/A ) → Zp × is
+the map that assigns to an element of the domain the scalar by which this element
+acts on the symplectic form in question. (Also, we note that here, we apply the
+well-known facts that: (i.) when K = C, the topological fundamental group of A is
+equal to Sp(2g, Z); (ii.) for g ≥ 2, the congruence subgroup problem for Sp(2g, Z)
+has been resolved aﬃrmatively (cf. the proof of Lemma 3.16; [BMS]).) Finally,
+we observe that the vertical morphism (on the right) ΓK → Zp × is simply the
+cyclotomic character of K.
+(p/A)
+
+In particular, by applying the identiﬁcation of ΠG
+
+with the semi-direct
+
+(p)
+product ΠG/A  π1 (A), we obtain a continuous homomorphism
+(p/A)
+
+ΠG
+
+(p) def
+
+→ ΠG
+
+(p)
+
+(p)
+
+= ΠG/A  GSp(ΠG/A )
+
+which is surjective whenever the cyclotomic character ΓK → Zp × is surjective. As
+is well-known (cf., e.g., [Ser3], Chapter XIV, §7), this is the case, for instance, when
+K = Q, Qp .
+In the present discussion, we would like to concentrate our attention on the
+prime p, in the case K = Q. Thus, we have surjections:
+(p/A)
+
+π1 (G)  ΠG
+
+(p)
+
+ ΠG
+
+Let us denote (by abuse of notation relative to Deﬁnition 4.1) the p-adic component
+of the ﬁrst Chern class of LG by:
+2
+(G, Zp (1))
+c1 (LG ) ∈ Het
+
+Then we have the following:
+Lemma 4.7. Suppose that K = Q. Then relative to the tautological morphisms
+(p)
+
+Get → B(π1 (G)) → B(ΠG )
+2
+(cf. the proof of Lemma 4.5), the class c1 (LG ) mod pn ∈ Het
+(G, (Z/pn Z)(1)) arises
+(p)
+from a class ∈ H 2 (ΠG , (Z/pn Z)(1)), for all integers n ≥ 1.
+
+TOPICS IN ANABELIAN GEOMETRY
+
+39
+
+Proof. Indeed, Lemma 4.7 follows from Lemmas 4.4, 4.5, together with the proof
+of Lemma 4.6 (where, in Lemma 4.6, we take “G → A” as our smooth, proper
+morphism “XK → ZK ”). In fact, if we apply Lemmas 4.4, 4.5, 4.6, literally as
+stated, we already obtain that c1 (LG ) arises from a class ∈ H 2 (π1 (G), Zp (1)). Since
+(p/A)
+(=p)
+the kernel of the surjection π1 (G)  ΠG
+is equal to ΠG/A , which is a proﬁnite
+group of order prime to p, it thus follows immediately that this class arises from
+(p/A)
+a class ∈ H 2 (ΠG
+, Zp (1)). To see that, in fact, c1 (LG ) mod pn arises from a
+(p)
+
+class ∈ H 2 (ΠG , (Z/pn Z)(1)), it suﬃces to observe that, in the proof of Lemma
+4.6, the only coverings of G that were necessary to annihilate c1 (LG ) modulo pn
+were coverings of G that restricted to arbitrary p-power coverings of the abelian
+(p)
+variety Ga . But it is clear from the deﬁnition of ΠG (cf. the discussion above) that
+(p/A)
+
+such coverings may be constructed from quotients of ΠG
+
+that factor through
+
+(p/A)
+(p)
+the quotient ΠG
+ ΠG . Thus, we conclude by taking “Q” to be the quotient
+(p)
+π1 (G)  ΠG in Lemmas 4.4, 4.5. This completes the proof of Lemma 4.7. 
+
+Next, let us denote by
+Δ
+a copy of the maximal pro-p quotient of the proﬁnite completion of the fundamental
+group of a (Riemann) surface of genus g. Since, as is well-known (cf., e.g., [Tama1],
+Proposition 1.11), Δ is center-free, we have an exact sequence of proﬁnite groups:
+def
+
+def
+
+1 → Δ → AΔ = Aut(Δ) → OΔ = Out(Δ) → 1
+If we form the quotient AΔ of AΔ by the kernel of the quotient Δ  Δab (to the
+maximal abelian quotient of Δ), then we obtain a natural commutative diagram (in
+which the rows are exact):
+1
+
+−→
+
+Δ
+⏐
+⏐
+
+
+−→
+
+AΔ
+⏐
+⏐
+
+
+−→
+
+OΔ
+⏐
+⏐
+
+
+−→
+
+1
+
+1
+
+−→ Δab
+
+−→
+
+AΔ
+
+−→
+
+OΔ
+
+−→
+
+1
+
+In particular, we obtain a natural action of OΔ on Δab which preserves the natural
+symplectic form on Δab — i.e., the symplectic form determined by the cup product
+on group cohomology H 1 (Δ, Zp ) × H 1 (Δ, Zp ) → H 2 (Δ, Zp ) ∼
+= Zp (where we think
+1
+ab
+of H (Δ, Zp ) as the Zp -linear dual to Δ ) — up to multiplication by a scalar. Let
+us denote by
+GSp(Δab)
+the group of Zp -linear automorphisms of Δab which preserve this symplectic form
+up to multiplication by a scalar. Thus, we obtain a natural homomorphism
+
+40
+
+SHINICHI MOCHIZUKI
+
+OΔ → GSp(Δab )
+together with an OΔ -equivariant action of Δab on AΔ (via the inclusion Δab →
+AΔ ), which determines an isomorphism of proﬁnite groups
+(Δab  OΔ ) ×OΔ AΔ ∼
+= AΔ ×OΔ AΔ
+— i.e., in more “geometric language,” AΔ is a “Δab-torsor” over OΔ . In particular,
+by applying this isomorphism, we obtain a natural projection:
+AΔ ×OΔ AΔ → (Δab  OΔ) → (Δab  GSp(Δab ))
+Moreover, any choice of symplectic isomorphism Δab ∼
+= ΠG/A determines an isomorphism
+(p)
+
+(p)
+(Δab  GSp(Δab )) ∼
+= ΠG
+
+which, up to composition with an inner automorphism, is independent of our choice
+of symplectic isomorphism.
+In a similar vein, let us write M for the moduli stack of smooth, proper curves
+of genus g over K, and
+C→M
+for the tautological curve over M. Also, let us write J → M for the Jacobian of
+C → M and (for d ∈ Z) Jd → M for the J -torsor over M that parametrizes line
+bundles on C of relative degree d over M. By assigning to a point of the curve C the
+line bundle on C deﬁned by that point (regarded as an eﬀective divisor), we obtain
+a natural morphism:
+C → J1
+Moreover, the action of J on J1 determines an isomorphism
+J ×M J1 ∼
+= J1 ×M J1
+hence also a projection J1 ×M J1 → J . In particular, by composition, we obtain a
+morphism
+C ×M C → J1 × M J1 → J
+
+TOPICS IN ANABELIAN GEOMETRY
+
+41
+
+(over M), which may be thought of, in terms of S-valued points (where S is a
+scheme), as the morphism that maps a pair of points (x, y) ∈ C(S) ×M(S) C(S) to
+the line bundle of degree 0 on C determined by the divisor x − y. Finally, if we write
+M → A for the Torelli morphism — i.e., the classifying morphism of the abelian
+scheme J → M (equipped with its natural principal “theta polarization”) — we
+thus obtain a natural commutative diagram
+J
+⏐
+⏐
+
+
+−→
+
+G
+⏐
+⏐
+
+
+M
+
+−→
+
+A
+
+which is, in fact, cartesian, and, moreover, (by composition) induces a commutative
+diagram:
+C ×M C
+⏐
+⏐
+
+
+−→
+
+G
+⏐
+⏐
+
+
+M
+
+−→
+
+A
+
+Denote by LC×M C the pull-back of LG to C ×M C.
+Next, we consider fundamental groups. Fix a geometric point m ∈ M(K),
+and a set Σ of prime numbers such that p ∈ Σ. Write π1 (C/M) for π1 (Cm ), and
+π1 (C/M)  ΠC/M for the maximal pro-Σ quotient of π1 (C/M). Since this quotient
+is characteristic, its kernel is also normal when regarded as a subgroup of π1 (C);
+def
+
+denote the quotient of π1 (C) by this kernel by ΠC . Thus, if we write ΠM = π1 (M),
+then we obtain an exact sequence:
+1 → ΠC/M → ΠC → ΠM → 1
+Moreover, the morphism C×M C → G considered in the preceding paragraph induces
+a morphism on fundamental groups:
+(p)
+
+ΠC ×ΠM ΠC → ΠG
+
+Finally, it is an immediate formal consequence of our deﬁnitions that the diagram
+(p)
+
+ΠC ×ΠM ΠC
+⏐
+⏐
+
+
+−→
+
+ΠG
+⏐
+⏐
+
+
+AΔ ×OΔ AΔ
+
+−→
+
+(Δab  GSp(Δab ))
+
+— where the lower horizontal morphism is the morphism constructed above; the
+vertical morphism on the left arises from the natural action by conjugation of ΠC on
+
+42
+
+SHINICHI MOCHIZUKI
+
+ΠC/M (a proﬁnite group whose maximal pro-p quotient is isomorphic to Δ); and the
+vertical morphism on the right is the isomorphism (well-deﬁned up to composition
+with an inner automorphism) discussed above — commutes up to composition with
+an inner automorphism. In particular, by pulling back along the morphisms in this
+commutative diagram the group cohomology classes discussed in Lemma 4.7, it thus
+follows formally from Lemma 4.7 that:
+Corollary 4.8. Suppose that K = Q. Then relative to the tautological morphisms
+(C ×M C)et → B(ΠC ×ΠM ΠC ) → B(AΔ ×OΔ AΔ )
+2
+(C ×M C, (Z/pn Z)(1)) arises
+(cf. Lemma 4.7), the class c1 (LC×M C ) mod pn ∈ Het
+2
+n
+from a class ∈ H (AΔ ×OΔ AΔ , (Z/p Z)(1)), for all integers n ≥ 1.
+
+§4.3. A Generalization of the Main Result of [Mzk2]
+In this §, we maintain the notation of §4.2, except that we again allow K to
+be an arbitrary ﬁeld of characteristic 0 (until further notice).
+Let us assume that we are given two hyperbolic curves X1 , X2 of type (g, r)
+over K. For i = 1, 2, let us write π1 ((Xi )K )  Π(Xi ) for the maximal pro-Σ
+K
+quotient of π1 ((Xi )K ), and π1 (Xi )  ΠXi for the quotient of π1 (Xi ) by the kernel
+of π1 ((Xi )K )  Π(Xi ) . Thus, for i = 1, 2, we obtain exact sequences:
+K
+
+1 → Π(Xi ) → ΠXi → ΓK → 1
+K
+
+Next, let us assume that we are given an isomorphism
+α : ΠX1 ∼
+= ΠX2
+which preserves and induces the identity on the quotients ΠXi  ΓK . Thus, α
+induces isomorphisms:
+Πα : Π(X1 ) ∼
+= Π(X2 )
+K
+K
+
+K
+
+2
+2
+2 : H (X1 , Zp (1)) ∼
+αHet
+(X2 , Zp (1))
+= H 2 (ΠX1 , Zp (1)) ∼
+= H 2 (ΠX2 , Zp (1)) ∼
+= Het
+et
+
+Lemma 4.9. Let X be a proper hyperbolic curve over K equipped with a nontrivial automorphism σ : X ∼
+= X over K. Denote the Jacobian of X by JX .
+Then the morphism
+δσ : X → JX
+that maps an S-valued point x ∈ X(S) (where S is a scheme) to the degree 0 line
+bundle determined by the divisor x − σ(x) is nonconstant.
+
+TOPICS IN ANABELIAN GEOMETRY
+
+43
+
+Proof. Assume (without loss of generality) that X(K) is nonempty. Then we
+may think of JX as the Albanese variety associated to X. Write λ : X → JX for
+the morphism exhibiting JX as the Albanese variety of X. Then (by the universal property of the Albanese variety) δσ necessarily factors through λ, inducing a
+morphism δσλ : JX → JX which is nonconstant if and only if δσ is nonconstant. On
+the other hand, δσλ is easily computed to be (up to composition with a translation)
+equal to the morphism 1 − Jσ , where Jσ is the automorphism induced on JX by
+σ. Thus, it suﬃces to verify that Jσ is not equal to the identity. But this follows
+again (formally) from the universal property of the Albanese variety. 
+Corollary 4.10. Suppose that r = 0. Then for i = 1, 2, there exist ample
+2
+(X1 , Zp (1)) maps to
+line bundles Pi on Xi with the property that c1 (P1 ) ∈ Het
+2
+2 .
+c1 (P2 ) ∈ Het (X2 , Zp (1)) under αHet
+Proof. First, let us observe that by replacing the Xi by ﬁnite étale Galois coverings
+that correspond via α, we may assume (without loss of generality) that Xi admits a
+K-automorphism σi such that σ1 , σ2 correspond via α. Indeed, once the necessary
+line bundles are deﬁned over these coverings, one obtains line bundles on the original
+curves with the desired properties by simply “taking the norm” of the line bundles
+on the coverings.
+Since Xi deﬁnes a classifying morphism κi : Spec(K) → M, we let Pi be the
+pull-back (where we note that Xi = C ×M,κi Spec(K)) of the line bundle LC×M C of
+Corollary 4.8 to Xi ×K Xi . Moreover, by Lemma 4.9, it follows that the pull-back
+Pi of Pi via the morphism (1, σi ) : Xi → Xi ×K Xi given by the product of the
+identity and the automorphism σ is ample on Xi .
+Now let us consider the homomorphism on fundamental groups (well-deﬁned
+up to composition with an inner automorphism)
+ΠXi → ΠC
+induced by κi . Note that the composite
+ΠXi → AΔ
+of this homomorphism with the natural homomorphism ΠC → AΔ of §4.2 may be
+constructed entirely group-theoretically (from the action by conjugation of ΠXi on
+its normal subgroup Π(Xi ) ). Thus, in particular, it follows that (for i = 1, 2) these
+K
+composites are compatible with α.
+This compatibility implies that the composite of the homomorphism
+ΠXi ×ΓK ΠXi → ΠC ×ΠM ΠC
+(induced by κi ) with the homomorphism ΠC ×ΠM ΠC → AΔ ×OΔ AΔ of §4.2 is a
+homomorphism
+
+44
+
+SHINICHI MOCHIZUKI
+
+ΠXi ×ΓK ΠXi → AΔ ×OΔ AΔ
+which is compatible with α. Thus, it follows formally from Corollary 4.8 that the
+Chern classes of the Pi correspond via α. Since the pull-back via “(1, σi )” may also
+be deﬁned entirely group-theoretically, we thus conclude that the Chern classes of
+the Pi correspond via α, as desired. This completes the proof of Corollary 4.10. 
+We are now ready to state and prove the main result of the present §4:
+Deﬁnition 4.11.
+We shall say that K is generalized sub-p-adic if K may be
+embedded as a subﬁeld of a ﬁnitely generated extension of the quotient ﬁeld of
+W (Fp ) (the ring of Witt vectors with coeﬃcients in the algebraic closure of Fp ).
+Remark. Note that sub-p-adic ﬁelds are always generalized sub-p-adic. On the other
+hand, ﬁelds such as the maximal algebraic extension of Q which is unramiﬁed over
+p are generalized sub-p-adic, but not sub-p-adic.
+Remark. Suppose that K is generalized sub-p-adic, where p ∈ Σ. Then note that
+even if we do not know a priori that the hyperbolic curves X1 , X2 are of the same
+type (g, r), the mere existence of an isomorphism
+α : ΠX1 ∼
+= ΠX2
+(which preserves and induces the identity on the quotients ΠXi  ΓK ) already
+implies that X1 and X2 are of the same type. Indeed, to see this, we reduce immediately to the case where K is ﬁnite over the quotient ﬁeld of W (Fp ) and then
+consider the dimension of the weight 0 portion of the Hodge-Tate decomposition
+of the maximal pro-p abelian quotient of Π(Xi ) . This dimension gives back the
+K
+genus g; then r may be recovered from the fact that Π(Xi ) is free on 2g + r − 1
+K
+generators (respectively, not free) if r > 0 (respectively, r = 0). Thus, there is no
+loss of generality in assuming (as we did in the above discussion) that the Xi are
+of the same “type” (g, r).
+Theorem 4.12.
+(Isomorphism Version of the Grothendieck Conjecture over Generalized Sub-p-adic Fields) Suppose that K is a generalized
+sub-p-adic ﬁeld, where p ∈ Σ. Let X1 , X2 be hyperbolic curves over K. Let
+us write Isom(X1 , X2 ) for the set of K-isomorphisms between X1 and X2 , and
+IsomΓK (ΠX1 , ΠX2 ) for the set of continuous group isomorphisms ΠX1 ∼
+= ΠX2 over
+ΓK , considered up to composition with an inner automorphism arising from Π(X1 )
+K
+or Π(X2 ) . Then the natural map
+K
+
+Isom(X1 , X2 ) → IsomΓK (ΠX1 , ΠX2 )
+
+TOPICS IN ANABELIAN GEOMETRY
+
+45
+
+is bijective.
+Remark. One formal consequence of Theorem 4.12 (cf. [Mzk2], Theorem C) is the
+following:
+If K is generalized sub-p-adic, and M denotes the moduli stack of hyperbolic curves of type (g, r) over K, then the natural morphism
+M(K) → SectΓK (ΓK , ΠM )
+is injective.
+(Here, ΠM is as deﬁned in §4.2 (where we note that the same formal deﬁnition can
+be made even in the case r > 0), and “SectΓK (ΓK , ΠM )” is the set of sections of the
+projection ΠM  ΓK considered up to composition with an inner automorphism
+of ΠM arising from ΠM .)
+K
+
+Proof. In a word, once one has Corollary 4.10, the proof of Theorem 4.12 is entirely
+similar to the proof of Theorem A in [Mzk2], so we will only sketch details.
+First, we reduce immediately to the case where K is a ﬁnite extension of the
+quotient ﬁeld of W (Fp ) (cf. Lemmas 4.13, 4.14, below; [Mzk2], §15), and X1 , X2
+are proper of genus g (cf. [Mzk2], proof of Theorem 14.1).
+Now, the main idea of the proof is to replace the portion of the proof of [Mzk2]
+given in [Mzk2], §1 – 6, by Corollary 4.10, by using the following argument. First,
+(for i = 1, 2) let us write
+def
+
+2
+Hi = Het
+(Xi , Qp(1))
+
+and Gi ⊆ Hi for the geometric part of Hi , i.e., the Qp -subspace generated by ﬁrst
+Chern classes of line bundles on Xi . Also, let us write Ji for the Jacobian of Xi , and
+T (Ji ) for its associated p-adic Tate module. Note that α induces an isomorphism
+αH : H1 ∼
+= H2 . Also, let us observe that since K has cohomological dimension
+1 (cf. Lemma 4.13 below), applying the Leray-Serre spectral sequence (for Galois
+(p)
+cohomology with coeﬃcients in Qp (1)) to the surjection ΠXi  ΓK gives rise to an
+exact sequence:
+0 → H 1 (K, T (Ji ) ⊗ Qp) → Hi → Qp → 0
+(where the “T (Ji )” on the left should, strictly speaking, be the Cartier dual of
+T (Ji ), but we identify T (Ji ) with its Cartier dual via the standard principal polarization on the Jacobian Ji ; the “Qp” on the right arises from the isomorphism
+(p)
+H 0 (K, H 2 (Π(Xi ) , Qp(1)) ∼
+= Qp deﬁned by the “degree map”).
+K
+
+46
+
+SHINICHI MOCHIZUKI
+
+Now I claim that αH (G1 ) = G2 . Indeed, by Corollary 4.10, there exists a line
+bundle Pi of nonzero degree on Xi such that αH (c1 (P1 )) = c1(P2 ). Thus, to show
+that αH (G1 ) = G2 , it suﬃces to show that αH preserves ﬁrst Chern classes of line
+bundles of degree 0. Since we are working over Qp , we may always replace K by
+a ﬁnite extension of K without aﬀecting the validity of the claim. In particular,
+we may assume that the Xi have semi-stable reduction over K. Write Ji for
+the unique semi-abelian scheme over OK whose generic ﬁber is Ji . Now if Li
+is a line bundle of degree 0 on Xi , it deﬁnes a point [Li ] ∈ Ji (K), hence, by
+Kummer theory (i.e., considering the obstruction to the p-power divisibility of [Li ]
+— cf. [Mzk2], §6, the discussion following Deﬁnition 6.1), determines an element
+κ(Li ) ∈ H 1 (K, T (Ji )⊗Qp ). If we regard this Galois cohomology group as a subspace
+of Hi via the exact sequence of the preceding paragraph, then this class κ(Li )
+coincides with the ﬁrst Chern class c1 (Li ) of Li (cf. [Mzk2], the Remark preceding
+Deﬁnition 6.2). On the other hand, if [L1 ] ∈ J1 (K) arises from a point ∈ J1 (OK )
+which is equal to the zero section modulo mK , then κ(L1 ) corresponds, via α, to
+κ(L2 ) for some degree 0 line bundle L2 on X2 deﬁned by a point ∈ J2 (OK ) (which
+will also be equal to the zero section modulo mK ). Indeed, this follows by applying
+“Tate’s theorem” (cf. [Tate], Theorem 4) as in the argument of the proof of [Mzk2],
+Theorem 7.4, to the p-divisible groups deﬁned by the formal groups associated to J1 ,
+J2 . Moreover, for any point ∈ J1 (K) it follows from the fact that Fp = OK /mK
+is a union of ﬁnite ﬁelds that some nonzero multiple of this point arises from a
+point ∈ J1 (OK ) which is equal to the zero section modulo mK . Thus, since we are
+working with Qp -coeﬃcients, we thus conclude that αH maps the Qp-subspace of H1
+generated by ﬁrst Chern classes of line bundles of degree 0 onto the corresponding
+subspace of H2 . This completes the proof of the claim.
+Before proceeding, we note here that the argument of the preceding paragraph
+is the only place in this proof where we use that the original base ﬁeld is a subﬁeld
+of a ﬁnitely generated extension of the quotient ﬁeld of W (Fp ) — i.e., as opposed
+to W (k), where we permit k to be an arbitrary perfect ﬁeld of characteristic p. The
+arguments to be used in the remainder of the proof are valid for Fp replaced by an
+arbitrary such k. Also, we remark here that (not surprisingly) the portion of the
+argument of [Mzk2] that corresponds to what was done in the preceding paragraph
+is given in [Mzk2], §1 – 6, where it was necessary, especially for the arguments
+of [Mzk2], Lemma 4.1, §6, to assume that the residue ﬁeld be ﬁnite (i.e., not an
+arbitrary perfect ﬁeld of characteristic p).
+Now that we know that α preserves (up to Qp-coeﬃcients) ﬁrst Chern classes
+of line bundles over ﬁnite extensions of K, the rest of the argument of [Mzk2] goes
+through without much change. Namely, [Mzk2], Proposition 7.4, follows by the
+same argument as that given in loc. cit. (except that instead of working over a
+K which is ﬁnite over Qp as in loc. cit., we work over the present “K,” which is
+ﬁnite over the quotient ﬁeld of W (Fp )). We remark that in the present context, it
+is not necessary to distinguish between “F -geometricity” and “F I-geometricity” as
+was done in [Mzk2], since we are working with proper curves to begin with (cf. the
+Remark at the end of [Mzk2], §7). Then [Mzk2], §8, goes through without change
+(except that the ﬁnite ﬁeld “k” is to be replaced by Fp ). The convergence arguments
+of [Mzk2], §9, 10, are entirely valid when k is any perfect ﬁeld of characteristic p,
+
+TOPICS IN ANABELIAN GEOMETRY
+
+47
+
+so no changes are necessary in these two §’s. [Mzk2], §11, is unnecessary in the
+present context since we are working with proper curves to begin with. Finally, the
+arguments of [Mzk2], §12 – 14, go through without essential change (except that
+they are much easier in the present context since we are working with proper curves
+to begin with). This completes the proof of the bijectivity assertion of Theorem
+4.12 (cf. [Mzk2], Corollary 14.2). 
+Remark. Thus, Theorem 4.12 states (roughly) that the isomorphism class of a
+hyperbolic curve over a ﬁnite extension of the quotient ﬁeld of W (Fp ) may be
+recovered from the outer action of the Galois group on its geometric fundamental
+group. In particular, one need not make use of Gal(Fp /Fp ) (as was done in [Mzk2]).
+In this sense, Theorem 4.12 is reminiscent of the main results of [Tama2], which
+state that in certain cases, the isomorphism class of a hyperbolic curve over Fp is
+completely determined by the isomorphism class of its geometric fundamental group
+(cf. the results of [Tama1], which make essential use of the action of Gal(Fp /Fp )).
+It would be interesting to see if the relationship between Theorem 4.12 and [Tama2]
+could be understood more explicitly.
+Remark. Another interesting aspect of Theorem 4.12 is the following: Note that,
+if K is a ﬁnite extension of the quotient ﬁeld of W (Fp ), then its absolute Galois
+group ΓK has cohomological dimension 1 (cf. Lemma 4.13 below). On the other
+hand, if X is a hyperbolic curve over K, then ΠX has cohomological dimension 2.
+K
+Thus, the cohomological dimension of ΠX is equal to 3. Since, roughly speaking,
+Theorem 4.12, states that the structure of X is determined by ΠX , Theorem 4.12
+is reminiscent of the rigidity theorem of Mostow-Prasad for hyperbolic manifolds of
+real dimension 3 (cf. the discussion of [Mzk4], Introduction, §0.10, 2.2.3, 2.2.6).
+The following Lemma is, in essence, well-known:
+Lemma 4.13. Let K be a ﬁnite extension of the quotient ﬁeld of W (Fp ). Then
+ΓK is center-free and has cohomological dimension equal to 1.
+Proof. First, write L for the quotient ﬁeld of W (Fp ), and L for the union (inside
+L) of the quotient ﬁelds of the W (k), as k ranges over all ﬁnite extensions of Fp .
+Then the ring of integers OL of L is the union of the W (k), hence stictly henselian.
+Moreover, since OL = W (Fp ) is the p-adic completion of OL , it follows immediately
+from the general theory of henselian rings that ΓL = ΓL . In particular, since K is a
+ﬁnite extension of L, it follows that there exists a ﬁnite extension K  of L such that
+K = L ⊗L K  . Moreover, since OK  is strictly henselian, with completion equal
+to OK , we have ΓK = ΓK  . Thus, it suﬃces to prove that ΓK  is center-free and
+of cohomological dimension equal to 1. In the remainder of the proof, to simplify
+notation, we shall simply write K for K  .
+Next, observe that by considering the maximal tamely ramiﬁed extension K tm
+of K, we obtain an exact sequence
+
+48
+
+SHINICHI MOCHIZUKI
+
+1 → ΓK tm → ΓK →
+
+Zl (1) → 1
+l=p
+
+(where the product ranges over all prime numbers not equal to p). Moreover, let us
+recall that ΓK tm is a pro-p-group which is center-free and of cohomological dimension 1 (cf., e.g., [Mzk2], the proof of Lemma 15.6). We thus obtain immediately
+that ΓK is of cohomological dimension 1. To show that ΓK is center-free, it sufﬁces to show Gal(K tm /K) acts faithfully on Γab
+K tm ⊗ Qp (where “ab” denotes the
+maximal abelian quotient). But this may be done as follows: Let K0 ⊆ K be a
+ﬁnite extension of Qp such that K/K0 is unramiﬁed. Thus, it follows that K tm is
+also the maximal unramiﬁed extension of K0 , so Gal(K tm /K) → Gal(K tm /K0 ).
+Now let L0 /K0 be a ﬁnite, Galois, totally tamely ramiﬁed extension of K0 . Then
+L0 ⊆ K tm , so we obtain a surjection:
+ab wild
+⊗ Qp
+Γab
+K tm ⊗ Qp  (ΓL0 )
+
+(where the superscript “wild” denotes the wild inertia subgroup). But by the class
+wild
+ﬁeld theory of ﬁnite extensions of Qp , one knows that (Γab
+⊗ Qp is naturally
+L0 )
+isomorphic (via the p-adic logarithm — cf., e.g., [Mzk5], §2) to L0 , so the action
+wild
+⊗ Qp is faithful. Since arbitrary ﬁnite quotients of
+of Gal(L0 /K0 ) on (Γab
+L0 )
+tm
+Gal(K /K) may be realized as “Gal(L0 /K0 )’s” for appropriate choices of K0 , L0 ,
+it thus follows that Gal(K tm /K) acts faithfully on Γab
+K tm ⊗ Qp , as desired. This
+completes the proof of Lemma 4.13. 
+Lemma 4.14. Let K be generalized sub-p-adic. Then ΓK is center-free.
+Proof. Let K be an arbitrary generalized sub-p-adic ﬁeld. If XL is any hyperbolic
+curve of type (g, r) over a ﬁnite extension L of K, and σ ∈ Z(ΓK ) (i.e., the center
+of ΓK ), then we have an isomorphism
+Π(XL )K ∼
+= Π(XL )σ
+
+K
+
+(induced by conjugating by σ) which is compatible with the outer actions of ΓL on
+both sides.
+With this observation in hand, it follows that Lemma 4.14 may be derived
+from Lemma 4.13 by means of Theorem 4.12 using exactly the same argument as
+that used to derive [Mzk2], Lemma 15.8, from [Mzk2], Lemma 15.6, by means of
+[Mzk2], Corollary 15.3. 
+
+TOPICS IN ANABELIAN GEOMETRY
+
+49
+
+Bibliography
+
+[AG] N. Alling and N. Greenleaf, Foundations of the theory of Klein surfaces, Lecture
+Notes in Mathematics 219, Springer Verlag (1971).
+[BMS] H. Bass, J. Milnor, and J.-P. Serre, Solution of the congruence subgroup problem
+for SLn, (n ≥ 3) and Sp2n , (n ≥ 2), IHES Publ. Math. 33 (1967), pp. 59-137.
+[Falt] G. Faltings, Endlichkeitssätze für Abelschen Varietäten über Zahlkörpern, Inv.
+Math. 73 (1983), pp. 349-366.
+[Frdl] E. Friedlander, Étale Homotopy of Simplicial Schemes, Annals of Math. Studies
+104, Princeton University Press (1982).
+[Gard] F. Gardiner, Teichmüller Theory and Quadratic Diﬀerentials, John Wiley and
+Sons (1987).
+[Groth] A. Grothendieck, letter to G. Faltings (June 1983) in Lochak, L. Schneps, Geometric Galois Actions; 1. Around Grothendieck’s Esquisse d’un Programme,
+London Math. Soc. Lect. Note Ser. 242, Cambridge Univ. Press (1997).
+[Harts] R. Hartshorne, Algebraic Geometry, Graduate Texts in Mathematics 52, Springer
+Verlag (1977).
+[Huis] J. Huisman, On the fundamental group of a real algebraic curve, manuscript.
+[Kerck] S. Kerckhoﬀ, The Nielsen realization problem, Bull. Amer. Math. Soc. (N.S.)
+2 (1980), pp. 452-454.
+[Krav] S. Kravetz, On the geometry of Teichmüller spaces and the structure of their
+modular groups, Ann. Acad. Sci. Fenn. Ser. A I 278 (1959), 35 pp.
+[Lang] S. Lang, Abelian Varieties, Springer Verlag (1983).
+[Laz] M. Lazard, Groupes analytiques p-adiques, IHES Publ. Math. 26 (1965), pp.
+389-603.
+[Maass] H. Maass, Siegel’s Modular Forms and Dirichlet Series, Lecture Notes in Mathematics 216, Springer Verlag (1971).
+[Mord] L. Szpiro, Séminaire sur les pinceaux arithmétiques: la conjecture de Mordell,
+Astérisque 127, Soc. Math. France (1985).
+[Mzk1] S. Mochizuki, The Proﬁnite Grothendieck Conjecture for Closed Hyperbolic
+Curves over Number Fields, J. Math. Sci., Univ. Tokyo 3 (1996), pp. 571-627.
+[Mzk2] S. Mochizuki, The Local Pro-p Anabelian Geometry of Curves, Inv. Math. 138
+(1999), pp. 319-423.
+[Mzk3] S. Mochizuki, A Theory of Ordinary p-adic Curves, Publ. of RIMS 32 (1996),
+pp. 957-1151.
+[Mzk4] S. Mochizuki, Foundations of p-adic Teichmüller Theory, AMS/IP Studies
+in Advanced Mathematics 11, American Mathematical Society/International
+Press (1999).
+
+50
+
+SHINICHI MOCHIZUKI
+
+[Mzk5] S. Mochizuki, A Version of the Grothendieck Conjecture for p-adic Local Fields,
+The International Journal of Math. 8, No. 4 (1997), pp. 499-506.
+[NSW] J. Neukirch, A. Schmidt, K. Wingberg, Cohomology of number ﬁelds, Grundlehren
+der Mathematischen Wissenschaften 323, Springer Verlag (2000).
+[NTM] H. Nakamura, A. Tamagawa, S. Mochizuki, The Grothendieck Conjecture on
+the Fundamental Groups of Algebraic Curves, Sugaku 50 (1998), pp. 113–129;
+English translation in Sugaku Expositions (to appear).
+[Schd] C. Scheiderer, Real and étale cohomology, Lecture Notes in Mathematics 1588,
+Springer Verlag (1994).
+[Ser1] J.-P. Serre, Lie Algebras and Lie Groups, Lecture Notes in Mathematics 1500,
+Springer Verlag (1992).
+[Ser2] J.-P. Serre (with the collaboration of Willem Kuyk and John Labute), Abelian
+l-adic Representations and Elliptic Curves, Addison-Wesley Publishing Company (1989).
+[Ser3] J.-P. Serre, Liste des courbes elliptiques à multiplication complexe dont l’invariant
+modulaire j est rational, manuscript.
+[Ser4] J.-P. Serre, Local Fields, Graduate Texts in Mathematics 67, Springer Verlag
+(1977).
+[SGA1] A. Grothendieck et al., Revêtements étales et groupe fondamental, Lecture
+Notes in Mathematics 224, Springer Verlag (1971).
+[SGA2] A. Grothendieck et al., Cohomologie Locale des Faisceaux Cohérents et Théorèmes
+de Lefshetz Locaux et Globaux, North-Holland, Amsterdam (1968).
+[Shi] G. Shimura, Introduction to the Arithmetic Theory of Automorphic Forms,
+Publ. Math. Soc. of Japan 11, Iwanami Shoten and Princeton University Press
+(1971).
+[Stk] H. Stark, A complete determination of the complex quadratic ﬁelds of classnumber one, Michigan Math. J. 14 (1967), pp. 1-27.
+[Tama1] A. Tamagawa, The Grothendieck Conjecture for Aﬃne Curves, Compositio
+Math. 109, No. 2 (1997), pp. 135-194.
+[Tama2] A. Tamagawa, On the tame fundamental groups of curves over algebraically
+closed ﬁelds of characteristic > 0, to appear in the present Volume.
+[Tate] J. Tate, p-Divisible Groups, Proceedings of a Conference on Local Fields,
+Driebergen, Springer Verlag (1967), pp. 158-183.
+[Weber] H. Weber, Lehrbuch der Algebra, Vol. III, Chelsea Publ. Company.
+[Wolp] S. Wolpert, Geodesic length functions and the Nielsen problem, J. Diﬀerential
+Geom. 25 (1987), pp. 275-296.
+
+

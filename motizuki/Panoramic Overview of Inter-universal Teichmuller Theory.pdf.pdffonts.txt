@@ -1,0 +1,39 @@
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+EFDPDD+CMBX12                        Type 1C           Custom           yes yes yes    348  0
+EFDPFL+CMMI9                         Type 1C           Custom           yes yes yes    351  0
+EFDPFM+CMSY9                         Type 1C           Custom           yes yes yes    354  0
+EFDPGN+CMSY10                        Type 1C           Custom           yes yes yes    357  0
+EFDPGO+CMR10                         Type 1C           Custom           yes yes yes    360  0
+EFDPHP+CMTI8                         Type 1C           Custom           yes yes yes    363  0
+EFDPIA+CMSY6                         Type 1C           Custom           yes yes yes    366  0
+EFDPIB+CMTT8                         Type 1C           Custom           yes yes yes    369  0
+EFDPDE+CMR8                          Type 1C           Custom           yes yes yes    372  0
+EFDPDF+CMR12                         Type 1C           Custom           yes yes yes    375  0
+EFDPDG+CMCSC10                       Type 1C           Custom           yes yes yes    378  0
+EFDPDH+CMSY8                         Type 1C           Custom           yes yes yes    380  0
+EFDPDI+CMBX10                        Type 1C           Custom           yes yes yes    383  0
+EFDPEJ+CMBX9                         Type 1C           Custom           yes yes yes    386  0
+EFDPFJ+CMR9                          Type 1C           Custom           yes yes yes    389  0
+EFDPFK+CMTI9                         Type 1C           Custom           yes yes yes    392  0
+EFDPKB+CMBSY10                       Type 1C           Custom           yes yes yes    250  0
+EFDPKC+CMTI10                        Type 1C           Custom           yes yes yes    247  0
+EFDPLC+CMMI10                        Type 1C           Custom           yes yes yes    244  0
+EFDPLD+CMR7                          Type 1C           Custom           yes yes yes    241  0
+EFDPLE+MSBM10                        Type 1C           Custom           yes yes yes    238  0
+EFDPLF+CMMI7                         Type 1C           Custom           yes yes yes    235  0
+EFDPLG+MSBM7                         Type 1C           Custom           yes yes yes    232  0
+EFDPLH+CMMIB10                       Type 1C           Custom           yes yes yes    229  0
+EFDPMI+CMSY7                         Type 1C           Custom           yes yes yes    226  0
+EFDPNJ+EUFM10                        Type 1C           Custom           yes yes yes    268  0
+EFDPOJ+CMSY5                         Type 1C           Custom           yes yes yes    265  0
+EFDPOK+MSBM5                         Type 1C           Custom           yes yes no     262  0
+EFDPOL+CMEX10                        Type 1C           Custom           yes yes yes    259  0
+EFDPOM+CMR5                          Type 1C           Custom           yes yes yes    256  0
+EFDPON+CMMI5                         Type 1C           Custom           yes yes yes    253  0
+KozGoPro-Regular-90msp-RKSJ-H-Identity-H CID Type 0C       Identity-H       yes no  no     271  0
+EFEBPC+MSAM10                        Type 1C           Custom           yes yes no     274  0
+EFECCC+MSAM7                         Type 1C           Custom           yes yes no     277  0
+EFECMO+CMMIB7                        Type 1C           Custom           yes yes yes    280  0
+EFEDPI+CMSL9                         Type 1C           Custom           yes yes yes    283  0
+EFEEAI+CMTT10                        Type 1C           Custom           yes yes yes    284  0

@@ -1,0 +1,25 @@
+The Geometry of Anabelioids (comments).pdf:
+
+PDF-1.5
+Info object (9 0 R):
+<</Author(<905688EA>)/CreationDate(D:20220509225332+09'00')/Creator( TeX output 2022.05.09:2248)/ModDate(D:20220509225332+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(geom-anab-comments-2022-05-10.pdf)>>
+Pages: 1
+
+Retrieving info from pages 1-1...
+Mediaboxes (1):
+	1	(12 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (12):
+	1	(12 0 R):	Type1 'IPLMJD+CMBX10' (55 0 R)
+	1	(12 0 R):	Type1 'IPLMML+CMTI10' (58 0 R)
+	1	(12 0 R):	Type1 'IPLMMM+CMR8' (61 0 R)
+	1	(12 0 R):	Type1 'IPLMNM+CMSY8' (64 0 R)
+	1	(12 0 R):	Type1 'IPLMJE+CMCSC10' (67 0 R)
+	1	(12 0 R):	Type1 'IPLMJF+CMR10' (70 0 R)
+	1	(12 0 R):	Type1 'IPLMKF+CMMI10' (73 0 R)
+	1	(12 0 R):	Type1 'IPLMKG+EUFM10' (76 0 R)
+	1	(12 0 R):	Type1 'IPLMKH+CMSY10' (79 0 R)
+	1	(12 0 R):	Type1 'IPLMKI+CMSY7' (82 0 R)
+	1	(12 0 R):	Type1 'IPLMLJ+CMMI7' (85 0 R)
+	1	(12 0 R):	Type1 'IPLMLK+CMEX10' (88 0 R)
+
