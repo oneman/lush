@@ -1,0 +1,49 @@
+Inter-universal Teichmuller Theory III.pdf:
+
+PDF-1.5
+Info object (931 0 R):
+<</Author(<905688EA>)/CreationDate(D:20200518234406+09'00')/Creator( TeX output 2020.05.18:2324)/ModDate(D:20200518234406+09'00')/Producer(Acrobat Distiller 11.0 \(Windows\))/Title(iu-teich-3.pdf)>>
+Pages: 199
+
+Retrieving info from pages 1-199...
+Mediaboxes (1):
+	1	(934 0 R):	[ 0 0 595.22 842 ]
+
+Fonts (36):
+	1	(934 0 R):	Type1 'KEKBGO+CMBX10' (981 0 R)
+	1	(934 0 R):	Type1 'KEKBLG+CMMI8' (984 0 R)
+	1	(934 0 R):	Type1 'KEKBLH+CMMI6' (987 0 R)
+	1	(934 0 R):	Type1 'KEKBLI+CMSY8' (990 0 R)
+	1	(934 0 R):	Type1 'KEKBMI+CMMIB10' (993 0 R)
+	1	(934 0 R):	Type1 'KEKBMJ+eufm8' (996 0 R)
+	1	(934 0 R):	Type1 'KEKBHP+CMCSC10' (999 0 R)
+	1	(934 0 R):	Type1 'KEKBIP+CMR10' (1002 0 R)
+	1	(934 0 R):	Type1 'KEKBJA+CMCSC8' (1005 0 R)
+	1	(934 0 R):	Type1 'KEKBJB+CMR8' (1008 0 R)
+	1	(934 0 R):	Type1 'KEKBKC+CMTI8' (1011 0 R)
+	1	(934 0 R):	Type1 'KEKBKD+CMBX8' (1014 0 R)
+	1	(934 0 R):	Type1 'KEKBLE+CMSY6' (1017 0 R)
+	1	(934 0 R):	Type1 'KEKBLF+CMR6' (1020 0 R)
+	2	(1 0 R):	Type1 'KEKCAJ+CMSY10' (882 0 R)
+	2	(1 0 R):	Type1 'KEKCBJ+CMTI10' (879 0 R)
+	2	(1 0 R):	Type1 'KEKCBK+CMMI10' (876 0 R)
+	2	(1 0 R):	Type1 'KEKCCL+CMMI7' (873 0 R)
+	2	(1 0 R):	Type1 'KEKCCM+CMSY7' (870 0 R)
+	2	(1 0 R):	Type1 'KEKCCN+CMR7' (867 0 R)
+	2	(1 0 R):	Type1 'KEKCDO+EUFM10' (864 0 R)
+	2	(1 0 R):	Type1 'KEKCDP+MSBM10' (861 0 R)
+	2	(1 0 R):	Type1 'KEKCEA+CMMIB7' (858 0 R)
+	2	(1 0 R):	Type1 'KEKCFA+EUFM7' (855 0 R)
+	2	(1 0 R):	Type1 'KEKCFB+CMEX10' (852 0 R)
+	2	(1 0 R):	Type1 'KEKCGC+CMSY5' (849 0 R)
+	2	(1 0 R):	Type1 'KEKCGD+CMMIB5' (847 0 R)
+	2	(1 0 R):	Type1 'KEKCGE+CMR5' (844 0 R)
+	3	(4 0 R):	Type1 'KEKCJE+MSAM7' (887 0 R)
+	3	(4 0 R):	Type1 'KEKCJF+CMMI5' (884 0 R)
+	8	(19 0 R):	Type1 'KEKDIA+MSBM7' (890 0 R)
+	9	(22 0 R):	Type1 'KEKDMP+MSAM10' (893 0 R)
+	10	(25 0 R):	Type1 'KEKDPP+MSBM5' (896 0 R)
+	50	(145 0 R):	Type1 'KEKMHM+MSAM5' (899 0 R)
+	73	(214 0 R):	Type1 'KELAJE+EUFM5' (902 0 R)
+	199	(592 0 R):	Type1 'KEMJIM+CMTT10' (905 0 R)
+
