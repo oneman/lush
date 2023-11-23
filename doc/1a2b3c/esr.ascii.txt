@@ -1,0 +1,498 @@
+ASCII 0/0 is decimal 000, hex 00, octal 000, bits 00000000: called ^@, NUL
+Official name: Null
+C escape: '\0'
+Other names: 
+
+ASCII 0/1 is decimal 001, hex 01, octal 001, bits 00000001: called ^A, SOH
+Official name: Start Of Header
+
+ASCII 0/2 is decimal 002, hex 02, octal 002, bits 00000010: called ^B, STX
+Official name: Start of Text
+
+ASCII 0/3 is decimal 003, hex 03, octal 003, bits 00000011: called ^C, ETX
+Official name: End of Text
+
+ASCII 0/4 is decimal 004, hex 04, octal 004, bits 00000100: called ^D, EOT
+Official name: End Of Transmission
+
+ASCII 0/5 is decimal 005, hex 05, octal 005, bits 00000101: called ^E, ENQ
+Official name: Enquiry
+
+ASCII 0/6 is decimal 006, hex 06, octal 006, bits 00000110: called ^F, ACK
+Official name: Acknowledge
+
+ASCII 0/7 is decimal 007, hex 07, octal 007, bits 00000111: called ^G, BEL
+Official name: Bell
+C escape: '\a'
+Other names: Alert 
+
+ASCII 0/8 is decimal 008, hex 08, octal 010, bits 00001000: called ^H, BS
+Official name: Backspace
+C escape: '\b'
+Other names: 
+
+ASCII 0/9 is decimal 009, hex 09, octal 011, bits 00001001: called ^I, HT, TAB
+Official name: Character Tabulation
+Other names: Horizontal Tab, \t 
+
+ASCII 0/10 is decimal 010, hex 0a, octal 012, bits 00001010: called ^J, LF, NL
+Official name: Line Feed
+Other names: Newline, \n 
+
+ASCII 0/11 is decimal 011, hex 0b, octal 013, bits 00001011: called ^K, VT
+Official name: Line Tabulation
+Other names: Vertical Tab, \v 
+
+ASCII 0/12 is decimal 012, hex 0c, octal 014, bits 00001100: called ^L, FF
+Official name: Form Feed
+C escape: '\f'
+Other names: 
+
+ASCII 0/13 is decimal 013, hex 0d, octal 015, bits 00001101: called ^M, CR
+Official name: Carriage Return
+C escape: '\r'
+Other names: 
+
+ASCII 0/14 is decimal 014, hex 0e, octal 016, bits 00001110: called ^N, SO, LS1
+Official name: Shift Out
+Other names: Locking Shift 1 
+
+ASCII 0/15 is decimal 015, hex 0f, octal 017, bits 00001111: called ^O, SI, LS0
+Official name: Shift In
+Other names: Locking Shift 0 
+
+ASCII 1/0 is decimal 016, hex 10, octal 020, bits 00010000: called ^P, DLE
+Official name: Data Link Escape
+
+ASCII 1/1 is decimal 017, hex 11, octal 021, bits 00010001: called ^Q, DC1
+Official name: Device Control 1
+
+ASCII 1/2 is decimal 018, hex 12, octal 022, bits 00010010: called ^R, DC2
+Official name: Device Control 2
+
+ASCII 1/3 is decimal 019, hex 13, octal 023, bits 00010011: called ^S, DC3
+Official name: Device Control 3
+
+ASCII 1/4 is decimal 020, hex 14, octal 024, bits 00010100: called ^T, DC4
+Official name: Device Control 4
+
+ASCII 1/5 is decimal 021, hex 15, octal 025, bits 00010101: called ^U, NAK
+Official name: Negative Acknowledge
+
+ASCII 1/6 is decimal 022, hex 16, octal 026, bits 00010110: called ^V, SYN
+Official name: Synchronous Idle
+
+ASCII 1/7 is decimal 023, hex 17, octal 027, bits 00010111: called ^W, ETB
+Official name: End of Transmission Block
+
+ASCII 1/8 is decimal 024, hex 18, octal 030, bits 00011000: called ^X, CAN
+Official name: Cancel
+
+ASCII 1/9 is decimal 025, hex 19, octal 031, bits 00011001: called ^Y, EM
+Official name: End of Medium
+
+ASCII 1/10 is decimal 026, hex 1a, octal 032, bits 00011010: called ^Z, SUB
+Official name: Substitute
+
+ASCII 1/11 is decimal 027, hex 1b, octal 033, bits 00011011: called ^[, ESC
+Official name: Escape
+
+ASCII 1/12 is decimal 028, hex 1c, octal 034, bits 00011100: called ^\, FS
+Official name: File Separator
+
+ASCII 1/13 is decimal 029, hex 1d, octal 035, bits 00011101: called ^], GS
+Official name: Group Separator
+
+ASCII 1/14 is decimal 030, hex 1e, octal 036, bits 00011110: called ^^, RS
+Official name: Record Separator
+
+ASCII 1/15 is decimal 031, hex 1f, octal 037, bits 00011111: called ^_, US
+Official name: Unit Separator
+
+ASCII 2/0 is decimal 032, hex 20, octal 040, bits 00100000: prints as ` '
+Official name: SP
+Other names: Space, Blank 
+
+ASCII 2/1 is decimal 033, hex 21, octal 041, bits 00100001: prints as `!'
+Official name: Exclamation Mark
+Other names: Bang, Excl, Wow, Factorial, Shriek, Pling, Smash, Cuss 
+
+ASCII 2/2 is decimal 034, hex 22, octal 042, bits 00100010: prints as `"'
+Official name: Quotation Mark
+Other names: Double Quote, Quote, String Quote, Dirk, Literal Mark, Double Glitch, &quot; 
+Note: See ' and ` for matching names.
+
+ASCII 2/3 is decimal 035, hex 23, octal 043, bits 00100011: prints as `#'
+Official name: Number Sign
+Other names: Pound, Number, Sharp, Crunch, Mesh, Hex, Hash, Flash, Grid, Octothorpe 
+
+ASCII 2/4 is decimal 036, hex 24, octal 044, bits 00100100: prints as `$'
+Official name: Currency Sign
+Other names: Dollar, Buck, Cash, Ding 
+
+ASCII 2/5 is decimal 037, hex 25, octal 045, bits 00100101: prints as `%'
+Official name: Percent Sign
+Other names: Mod, Modulo 
+
+ASCII 2/6 is decimal 038, hex 26, octal 046, bits 00100110: prints as `&'
+Official name: Ampersand
+Other names: Amper, And, &amp; 
+
+ASCII 2/7 is decimal 039, hex 27, octal 047, bits 00100111: prints as `''
+Official name: Apostrophe
+Other names: Single Quote, Close Quote, Prime, Tick, Pop, Spark, Glitch, &apos; 
+Note: See ` and " for matching names.
+
+ASCII 2/8 is decimal 040, hex 28, octal 050, bits 00101000: prints as `('
+Official name: Left Parenthesis
+Other names: Open, Open Paren, Left Paren, Wax, Sad 
+Note: See ) for matching names.
+
+ASCII 2/9 is decimal 041, hex 29, octal 051, bits 00101001: prints as `)'
+Official name: Right Parenthesis
+Other names: Close, Close Paren, Right Paren, Wane, Happy 
+Note: See ( for matching names.
+
+ASCII 2/10 is decimal 042, hex 2a, octal 052, bits 00101010: prints as `*'
+Official name: Asterisk
+Other names: Star, Splat, Aster, Times, Gear, Dingle, Bug, Twinkle, Glob 
+
+ASCII 2/11 is decimal 043, hex 2b, octal 053, bits 00101011: prints as `+'
+Official name: Plus Sign
+Other names: Add, Cross 
+
+ASCII 2/12 is decimal 044, hex 2c, octal 054, bits 00101100: prints as `,'
+Official name: Comma
+Other names: Tail 
+
+ASCII 2/13 is decimal 045, hex 2d, octal 055, bits 00101101: prints as `-'
+Official name: Hyphen
+Other names: Dash, Minus, Worm 
+
+ASCII 2/14 is decimal 046, hex 2e, octal 056, bits 00101110: prints as `.'
+Official name: Full Stop
+Other names: Dot, Decimal Point, Radix Point, Point, Period, Spot 
+
+ASCII 2/15 is decimal 047, hex 2f, octal 057, bits 00101111: prints as `/'
+Official name: Solidus
+Other names: Slash, Stroke, Slant, Diagonal, Virgule, Over, Slat 
+Note: See \ for matching names.
+
+ASCII 3/0 is decimal 048, hex 30, octal 060, bits 00110000: prints as `0'
+Official name: Digit Zero
+
+ASCII 3/1 is decimal 049, hex 31, octal 061, bits 00110001: prints as `1'
+Official name: Digit One
+
+ASCII 3/2 is decimal 050, hex 32, octal 062, bits 00110010: prints as `2'
+Official name: Digit Two
+
+ASCII 3/3 is decimal 051, hex 33, octal 063, bits 00110011: prints as `3'
+Official name: Digit Three
+
+ASCII 3/4 is decimal 052, hex 34, octal 064, bits 00110100: prints as `4'
+Official name: Digit Four
+
+ASCII 3/5 is decimal 053, hex 35, octal 065, bits 00110101: prints as `5'
+Official name: Digit Five
+
+ASCII 3/6 is decimal 054, hex 36, octal 066, bits 00110110: prints as `6'
+Official name: Digit Six
+
+ASCII 3/7 is decimal 055, hex 37, octal 067, bits 00110111: prints as `7'
+Official name: Digit Seven
+
+ASCII 3/8 is decimal 056, hex 38, octal 070, bits 00111000: prints as `8'
+Official name: Digit Eight
+
+ASCII 3/9 is decimal 057, hex 39, octal 071, bits 00111001: prints as `9'
+Official name: Digit Nine
+
+ASCII 3/10 is decimal 058, hex 3a, octal 072, bits 00111010: prints as `:'
+Official name: Colon
+Other names: Double-Dot 
+
+ASCII 3/11 is decimal 059, hex 3b, octal 073, bits 00111011: prints as `;'
+Official name: Semicolon
+Other names: Semi, Go-on 
+
+ASCII 3/12 is decimal 060, hex 3c, octal 074, bits 00111100: prints as `<'
+Official name: Less-than Sign
+Other names: Left Angle Bracket, Read From, In, From, Comesfrom, Left Funnel, Left Broket, Crunch, Suck, &lt; 
+Note: See > for matching names.
+
+ASCII 3/13 is decimal 061, hex 3d, octal 075, bits 00111101: prints as `='
+Official name: Equals Sign
+Other names: Quadrathorp, Gets, Becomes, Half-Mesh 
+
+ASCII 3/14 is decimal 062, hex 3e, octal 076, bits 00111110: prints as `>'
+Official name: Greater-than sign
+Other names: Right Angle Bracket, Write To, Into, Toward, Out, To, Gozinta, Right Funnel, Right Broket, Zap, Blow, &gt; 
+Note: See < for matching names.
+
+ASCII 3/15 is decimal 063, hex 3f, octal 077, bits 00111111: prints as `?'
+Official name: Question Mark
+Other names: Whatmark, What, Ques 
+
+ASCII 4/0 is decimal 064, hex 40, octal 100, bits 01000000: prints as `@'
+Official name: Commercial At
+Other names: At, Each, Vortex, Whorl, Whirlpool, Cyclone, Snail, Rose 
+
+ASCII 4/1 is decimal 065, hex 41, octal 101, bits 01000001: prints as `A'
+Official name: Majuscule A
+Other names: Capital A, Uppercase A 
+
+ASCII 4/2 is decimal 066, hex 42, octal 102, bits 01000010: prints as `B'
+Official name: Majuscule B
+Other names: Capital B, Uppercase B 
+
+ASCII 4/3 is decimal 067, hex 43, octal 103, bits 01000011: prints as `C'
+Official name: Majuscule C
+Other names: Capital C, Uppercase C 
+
+ASCII 4/4 is decimal 068, hex 44, octal 104, bits 01000100: prints as `D'
+Official name: Majuscule D
+Other names: Capital D, Uppercase D 
+
+ASCII 4/5 is decimal 069, hex 45, octal 105, bits 01000101: prints as `E'
+Official name: Majuscule E
+Other names: Capital E, Uppercase E 
+
+ASCII 4/6 is decimal 070, hex 46, octal 106, bits 01000110: prints as `F'
+Official name: Majuscule F
+Other names: Capital F, Uppercase F 
+
+ASCII 4/7 is decimal 071, hex 47, octal 107, bits 01000111: prints as `G'
+Official name: Majuscule G
+Other names: Capital G, Uppercase G 
+
+ASCII 4/8 is decimal 072, hex 48, octal 110, bits 01001000: prints as `H'
+Official name: Majuscule H
+Other names: Capital H, Uppercase H 
+
+ASCII 4/9 is decimal 073, hex 49, octal 111, bits 01001001: prints as `I'
+Official name: Majuscule I
+Other names: Capital I, Uppercase I 
+
+ASCII 4/10 is decimal 074, hex 4a, octal 112, bits 01001010: prints as `J'
+Official name: Majuscule J
+Other names: Capital J, Uppercase J 
+
+ASCII 4/11 is decimal 075, hex 4b, octal 113, bits 01001011: prints as `K'
+Official name: Majuscule K
+Other names: Capital K, Uppercase K 
+
+ASCII 4/12 is decimal 076, hex 4c, octal 114, bits 01001100: prints as `L'
+Official name: Majuscule L
+Other names: Capital L, Uppercase L 
+
+ASCII 4/13 is decimal 077, hex 4d, octal 115, bits 01001101: prints as `M'
+Official name: Majuscule M
+Other names: Capital M, Uppercase M 
+
+ASCII 4/14 is decimal 078, hex 4e, octal 116, bits 01001110: prints as `N'
+Official name: Majuscule N
+Other names: Capital N, Uppercase N 
+
+ASCII 4/15 is decimal 079, hex 4f, octal 117, bits 01001111: prints as `O'
+Official name: Majuscule O
+Other names: Capital O, Uppercase O 
+
+ASCII 5/0 is decimal 080, hex 50, octal 120, bits 01010000: prints as `P'
+Official name: Majuscule P
+Other names: Capital P, Uppercase P 
+
+ASCII 5/1 is decimal 081, hex 51, octal 121, bits 01010001: prints as `Q'
+Official name: Majuscule Q
+Other names: Capital Q, Uppercase Q 
+
+ASCII 5/2 is decimal 082, hex 52, octal 122, bits 01010010: prints as `R'
+Official name: Majuscule R
+Other names: Capital R, Uppercase R 
+
+ASCII 5/3 is decimal 083, hex 53, octal 123, bits 01010011: prints as `S'
+Official name: Majuscule S
+Other names: Capital S, Uppercase S 
+
+ASCII 5/4 is decimal 084, hex 54, octal 124, bits 01010100: prints as `T'
+Official name: Majuscule T
+Other names: Capital T, Uppercase T 
+
+ASCII 5/5 is decimal 085, hex 55, octal 125, bits 01010101: prints as `U'
+Official name: Majuscule U
+Other names: Capital U, Uppercase U 
+
+ASCII 5/6 is decimal 086, hex 56, octal 126, bits 01010110: prints as `V'
+Official name: Majuscule V
+Other names: Capital V, Uppercase V 
+
+ASCII 5/7 is decimal 087, hex 57, octal 127, bits 01010111: prints as `W'
+Official name: Majuscule W
+Other names: Capital W, Uppercase W 
+
+ASCII 5/8 is decimal 088, hex 58, octal 130, bits 01011000: prints as `X'
+Official name: Majuscule X
+Other names: Capital X, Uppercase X 
+
+ASCII 5/9 is decimal 089, hex 59, octal 131, bits 01011001: prints as `Y'
+Official name: Majuscule Y
+Other names: Capital Y, Uppercase Y 
+
+ASCII 5/10 is decimal 090, hex 5a, octal 132, bits 01011010: prints as `Z'
+Official name: Majuscule Z
+Other names: Capital Z, Uppercase Z 
+
+ASCII 5/11 is decimal 091, hex 5b, octal 133, bits 01011011: prints as `['
+Official name: Left Square Bracket
+Other names: Bracket, Bra, Square 
+Note: See ] for matching names.
+
+ASCII 5/12 is decimal 092, hex 5c, octal 134, bits 01011100: prints as `\'
+Official name: Reversed Solidus
+Other names: Backslash, Bash, Backslant, Backwhack, Backslat, Literal, Escape 
+Note: See / for matching names.
+
+ASCII 5/13 is decimal 093, hex 5d, octal 135, bits 01011101: prints as `]'
+Official name: Right Square Bracket
+Other names: Unbracket, Ket, Unsquare 
+Note: See [ for matching names.
+
+ASCII 5/14 is decimal 094, hex 5e, octal 136, bits 01011110: prints as `^'
+Official name: Circumflex Accent
+Other names: Circumflex, Caret, Uparrow, Hat, Control, Boink, Chevron, Hiccup, Sharkfin, Fang 
+
+ASCII 5/15 is decimal 095, hex 5f, octal 137, bits 01011111: prints as `_'
+Official name: Low Line
+Other names: Underscore, Underline, Underbar, Under, Score, Backarrow, Flatworm 
+Note: Backarrow refers to this character's graphic in 1963 ASCII.
+
+ASCII 6/0 is decimal 096, hex 60, octal 140, bits 01100000: prints as ``'
+Official name: Grave Accent
+Other names: Grave, Backquote, Left Quote, Open Quote, Backprime, Unapostrophe, Backspark, Birk, Blugle, Back Tick, Push 
+Note: See ' and " for matching names.
+
+ASCII 6/1 is decimal 097, hex 61, octal 141, bits 01100001: prints as `a'
+Official name: Miniscule a
+Other names: Small a, Lowercase a 
+
+ASCII 6/2 is decimal 098, hex 62, octal 142, bits 01100010: prints as `b'
+Official name: Miniscule b
+Other names: Small b, Lowercase b 
+
+ASCII 6/3 is decimal 099, hex 63, octal 143, bits 01100011: prints as `c'
+Official name: Miniscule c
+Other names: Small c, Lowercase c 
+
+ASCII 6/4 is decimal 100, hex 64, octal 144, bits 01100100: prints as `d'
+Official name: Miniscule d
+Other names: Small d, Lowercase d 
+
+ASCII 6/5 is decimal 101, hex 65, octal 145, bits 01100101: prints as `e'
+Official name: Miniscule e
+Other names: Small e, Lowercase e 
+
+ASCII 6/6 is decimal 102, hex 66, octal 146, bits 01100110: prints as `f'
+Official name: Miniscule f
+Other names: Small f, Lowercase f 
+
+ASCII 6/7 is decimal 103, hex 67, octal 147, bits 01100111: prints as `g'
+Official name: Miniscule g
+Other names: Small g, Lowercase g 
+
+ASCII 6/8 is decimal 104, hex 68, octal 150, bits 01101000: prints as `h'
+Official name: Miniscule h
+Other names: Small h, Lowercase h 
+
+ASCII 6/9 is decimal 105, hex 69, octal 151, bits 01101001: prints as `i'
+Official name: Miniscule i
+Other names: Small i, Lowercase i 
+
+ASCII 6/10 is decimal 106, hex 6a, octal 152, bits 01101010: prints as `j'
+Official name: Miniscule j
+Other names: Small j, Lowercase j 
+
+ASCII 6/11 is decimal 107, hex 6b, octal 153, bits 01101011: prints as `k'
+Official name: Miniscule k
+Other names: Small k, Lowercase k 
+
+ASCII 6/12 is decimal 108, hex 6c, octal 154, bits 01101100: prints as `l'
+Official name: Miniscule l
+Other names: Small l, Lowercase l 
+
+ASCII 6/13 is decimal 109, hex 6d, octal 155, bits 01101101: prints as `m'
+Official name: Miniscule m
+Other names: Small m, Lowercase m 
+
+ASCII 6/14 is decimal 110, hex 6e, octal 156, bits 01101110: prints as `n'
+Official name: Miniscule n
+Other names: Small n, Lowercase n 
+
+ASCII 6/15 is decimal 111, hex 6f, octal 157, bits 01101111: prints as `o'
+Official name: Miniscule o
+Other names: Small o, Lowercase o 
+
+ASCII 7/0 is decimal 112, hex 70, octal 160, bits 01110000: prints as `p'
+Official name: Miniscule p
+Other names: Small p, Lowercase p 
+
+ASCII 7/1 is decimal 113, hex 71, octal 161, bits 01110001: prints as `q'
+Official name: Miniscule q
+Other names: Small q, Lowercase q 
+
+ASCII 7/2 is decimal 114, hex 72, octal 162, bits 01110010: prints as `r'
+Official name: Miniscule r
+Other names: Small r, Lowercase r 
+
+ASCII 7/3 is decimal 115, hex 73, octal 163, bits 01110011: prints as `s'
+Official name: Miniscule s
+Other names: Small s, Lowercase s 
+
+ASCII 7/4 is decimal 116, hex 74, octal 164, bits 01110100: prints as `t'
+Official name: Miniscule t
+Other names: Small t, Lowercase t 
+
+ASCII 7/5 is decimal 117, hex 75, octal 165, bits 01110101: prints as `u'
+Official name: Miniscule u
+Other names: Small u, Lowercase u 
+
+ASCII 7/6 is decimal 118, hex 76, octal 166, bits 01110110: prints as `v'
+Official name: Miniscule v
+Other names: Small v, Lowercase v 
+
+ASCII 7/7 is decimal 119, hex 77, octal 167, bits 01110111: prints as `w'
+Official name: Miniscule w
+Other names: Small w, Lowercase w 
+
+ASCII 7/8 is decimal 120, hex 78, octal 170, bits 01111000: prints as `x'
+Official name: Miniscule x
+Other names: Small x, Lowercase x 
+
+ASCII 7/9 is decimal 121, hex 79, octal 171, bits 01111001: prints as `y'
+Official name: Miniscule y
+Other names: Small y, Lowercase y 
+
+ASCII 7/10 is decimal 122, hex 7a, octal 172, bits 01111010: prints as `z'
+Official name: Miniscule z
+Other names: Small z, Lowercase z 
+
+ASCII 7/11 is decimal 123, hex 7b, octal 173, bits 01111011: prints as `{'
+Official name: Left Curly Bracket
+Other names: Left Brace, Brace, Open Brace, Curly, Leftit, Embrace 
+Note: See } for matching names.
+
+ASCII 7/12 is decimal 124, hex 7c, octal 174, bits 01111100: prints as `|'
+Official name: Vertical Line
+Other names: Pipe, Bar, Or, V-Bar, Spike, Gozinta, Thru 
+
+ASCII 7/13 is decimal 125, hex 7d, octal 175, bits 01111101: prints as `}'
+Official name: Right Curly Bracket
+Other names: Right Brace, Unbrace, Close Brace, Uncurly, Rytit, Bracelet 
+Note: See { for matching names.
+
+ASCII 7/14 is decimal 126, hex 7e, octal 176, bits 01111110: prints as `~'
+Official name: Overline
+Other names: Tilde, Swung Dash, Squiggle, Approx, Wiggle, Twiddle, Enyay 
+
+ASCII 7/15 is decimal 127, hex 7f, octal 177, bits 01111111: called ^?, DEL
+Official name: Delete
+
