@@ -1,0 +1,19 @@
+2023-11-23 22:02:44 Config written to /home/demo/.buttrc
+2023-11-23 22:03:31 Config written to /home/demo/.buttrc
+2023-11-23 22:03:37 Config written to /home/demo/.buttrc
+2023-11-23 22:03:40 Starting butt 0.1.39, Written by Daniel Nöthen, iPhone/iPad client: https://izicast.de, Donate: paypal@danielnoethen.de
+2023-11-23 22:03:40 Connecting to 192.168.1.1:8000 ...
+2023-11-23 22:03:40 Connection established
+2023-11-23 22:03:40 Settings:  Type:Icecast, Codec:opus, Bitrate:160kbps, Samplerate:48000Hz, Mountpoint:stream, User:source, SSL/TLS:no, Device 1:pipewire [ALSA], Device 2:None
+2023-11-23 22:04:03 Config written to /home/demo/.buttrc
+2023-11-23 22:04:07 disconnected
+2023-11-23 22:04:07 Config written to /home/demo/.buttrc
+2023-11-23 22:04:09 Starting butt 0.1.39, Written by Daniel Nöthen, iPhone/iPad client: https://izicast.de, Donate: paypal@danielnoethen.de
+2023-11-23 22:04:09 Connecting to 192.168.1.1:8000 ...
+2023-11-23 22:04:09 Connection established
+2023-11-23 22:04:09 Settings:  Type:Icecast, Codec:opus, Bitrate:160kbps, Samplerate:48000Hz, Mountpoint:stream, User:source, SSL/TLS:no, Device 1:pipewire [ALSA], Device 2:None
+2023-11-23 22:04:09 Recording to:
+2023-11-23 22:04:09 /home/demo/55/rec/rec_20231123-220409.opus
+2023-11-23 22:05:34 disconnected
+2023-11-23 22:05:37 recording stopped
+2023-11-23 22:05:43 Config written to /home/demo/.buttrc
