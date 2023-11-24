@@ -1,4 +1,4 @@
-#define KR_VERSION 37
+#define KR_VERSION 38
 
 #ifndef KR_GIT_VERSION
 #define KR_GIT_VERSION ""

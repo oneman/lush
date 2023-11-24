@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 
 alias s='sensors coretemp-isa-0'
-alias ls='ls -Q --color=auto'
+alias ls='ls --color=auto'
 alias htop='nice htop'
 alias weston='weston --width=1920 --height=1080'
 alias bemenu='/usr/local/bin/bemenu-run --fn "M+ 2mn Bold 55"'
