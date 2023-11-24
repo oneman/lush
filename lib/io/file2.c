@@ -134,7 +134,7 @@ int kr_file2_close(kr_file2 *file) {
   if (!file) return -1;
   file->ref--;
   if (file->ref) return 0;
-  printk("File: closing %s", file->info.path);
+  //printk("File: closing %s", file->info.path);
   if (file->fd > -1) {
     ret = close(file->fd);
     file->fd = -1;
@@ -309,13 +309,13 @@ int kr_file_set_destroy(kr_file_set *fs) {
   int i;
   kr_file2 *file;
   if (!fs) return -1;
-  printk("File set: Destroying");
+  //printk("File set: Destroying");
   i = 0;
   while ((file = kr_pool_iterate_active(fs->pool, &i))) {
     kr_file2_close(file);
   }
   kr_pool_destroy(fs->pool);
-  printk("File set: Destroyed");
+  //printk("File set: Destroyed");
   return 0;
 }
 
@@ -324,7 +324,7 @@ kr_file_set *kr_file_set_create(kr_fs_setup *setup) {
   kr_pool *pool;
   kr_pool_setup pool_setup;
   if (!setup) return NULL;
-  printk("File set: Creating");
+  //printk("File set: Creating");
   pool_setup.shared = 0;
   pool_setup.overlay = NULL;
   pool_setup.overlay_sz = sizeof(*fs);
@@ -337,6 +337,6 @@ kr_file_set *kr_file_set_create(kr_fs_setup *setup) {
   fs->pool = pool;
   fs->user = setup->user;
   fs->event_cb = setup->event_cb;
-  printk("File set: Created");
+  //printk("File set: Created");
   return fs;
 }
