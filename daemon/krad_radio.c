@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     exit(1);*/
     callsign = "demo";
   }
-  if (!kr_sysname_valid(callsign)) exit(1);
+  /*if (!kr_sysname_valid(callsign)) exit(1);*/
   krad_radio(callsign);
   return -1;
 }

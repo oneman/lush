@@ -185,7 +185,7 @@ static int radio_create(kr_app_server *app, void *user);
 
 static void syscheck(char *callsign) {
   /*printf("d mode c run b a %s\n", callsign);*/
-  sysrecheck();
+  sysrecheck(callsign);
   exit(0);
 }
 

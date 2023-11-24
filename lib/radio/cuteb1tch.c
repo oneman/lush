@@ -12,7 +12,7 @@ int cbev(kr_file_event *ev) {
 
 #include "/home/demo/src/rad/doc/1a2b3c/stdiov.h"
 
-static void filelist(uint8_t *bits, uint64_t sz) {
+static void uwls(uint8_t *bits, uint64_t sz) {
   uint64_t b;
   int wasntext = 0;
   int wasatext = 0;
@@ -39,7 +39,7 @@ static void filelist(uint8_t *bits, uint64_t sz) {
   }
 }
 
-static void sysrecheck(void) {
+static void sysrecheck(char *path) {
   //printf("demo running!!!\n");
   int ret;
   static boat demo;
@@ -50,7 +50,8 @@ static void sysrecheck(void) {
   static kr_file_set *set;
   set = kr_file_set_create(&setup);
   kr_file2 *in;
-  char *path = "/home/demo/src/rad/motizuki/Inter-universal Teichmuller Theory I.txt";
+  /*char *path = "/home/demo/src/rad/motizuki/Inter-universal
+   * Teichmuller Theory I.txt";*/
   size_t len;
   len = strlen(path);
   in = kr_file2_open(set, path, len);
@@ -65,7 +66,7 @@ static void sysrecheck(void) {
   /*printf("path: %s\n", info.path);
   printf("lastmod: %ld\n", info.lastmod);
   printf("sz: %lu\n", info.sz);*/
-  filelist(bits, info.sz);
+  uwls(bits, info.sz);
   ret = kr_file2_close(in);
   if (ret) printf("ret: %d\n", ret);
   ret = kr_file_set_destroy(set);
