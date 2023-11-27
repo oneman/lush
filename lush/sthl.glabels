@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Glabels-document version="4.0">
+  <Template brand="Worldlabel" part="WL-200 (Copy)" description="Filing labels" size="US-Letter">
+    <Label-rectangle y_waste="0pt" round="4.536pt" x_waste="0pt" width="247.536pt" id="0" height="48.024pt">
+      <Markup-margin size="4.536pt"/>
+      <Layout x0="38.232pt" dy="59.472pt" y0="18pt" ny="13" nx="2" dx="302.4pt"/>
+    </Label-rectangle>
+  </Template>
+  <Objects id="0" rotate="false">
+    <Object-text shadow_y="1.296pt" color="0xff" lock_aspect_ratio="false" w="258pt" shadow_x="1.296pt" shadow_color="0xbabdb6ff" shadow_opacity="0.5" auto_shrink="true" font_family="Sans" x="-2pt" a2="0" a5="0" shadow="true" a1="0" font_underline="false" h="44.28pt" font_weight="normal" a0="1" a3="1" line_spacing="1" y="3pt" wrap="word" font_italic="false" valign="top" font_size="14" align="hcenter" a4="0">
+      <p>${2}${1}${k}${labeltext}</p>
+    </Object-text>
+  </Objects>
+  <Merge src="/home/demo/kode/rad/motizuki/list-of-papers.uwls.txt" type="Text/Comma"/>
+  <Variables>
+    <Variable name="k" type="integer" initialValue="1" stepSize="2" increment="per_item"/>
+    <Variable name="labeltext" type="string" initialValue="bird"/>
+  </Variables>
+  <Data/>
+</Glabels-document>
