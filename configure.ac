@@ -137,19 +137,19 @@ AC_PROG_CXX
 AC_CONFIG_FILES([Makefile lib/Makefile daemon/Makefile clients/Makefile
                  tests/Makefile tools/code/analysis/gather_structs/Makefile
                  tools/code/gen/bootstrap/Makefile tools/code/gen/Makefile
-                 tools/code/gen/tests/Makefile tools/Makefile])
+                 tools/code/gen/tests/Makefile tools/Makefile demo/Makefile])
 
 AC_OUTPUT
 
 AC_MSG_RESULT([
 ------------------------------------------------------------------------
-      Krad Radio Build Configuration
+           Demo: Build Configuration
 
         Version: $PACKAGE_VERSION
              CC: $CC
          CFLAGS: $CFLAGS
 
-     Krad Tools: $tools
+          Tools: $tools
       Dev Tools: $dev
 
            ALSA: $alsa

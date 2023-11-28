@@ -6,4 +6,4 @@ endif
 if KR_ENABLE_TOOLS
   KR_TOOLS = tools
 endif
-SUBDIRS = $(KR_DEV_TOOLS) . lib daemon clients $(KR_TESTS) $(KR_TOOLS)
+SUBDIRS = $(KR_DEV_TOOLS) . lib daemon demo clients $(KR_TESTS) $(KR_TOOLS)

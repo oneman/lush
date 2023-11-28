@@ -1,6 +1,8 @@
 #if !defined(_io_types_H)
 # define _io_types_H (1)
 
+#include <inttypes.h>
+
 typedef enum {
   KR_FILE_ACCESS_ONLY,
   KR_FILE_ACCESS_APPEND,

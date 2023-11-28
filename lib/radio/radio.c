@@ -181,13 +181,6 @@ static int radio_create(kr_app_server *app, void *user);
 #include "event.c"
 #include "dispatch.c"
 #include "soundctl_unlock.c"
-#include "cuteb1tch.c"
-
-static void syscheck(char *callsign) {
-  /*printf("d mode c run b a %s\n", callsign);*/
-  sysrecheck(callsign);
-  exit(0);
-}
 
 static int radio_client_fds_get(void *ptr, int *fds, int nfds) {
   kr_radio *radio;
@@ -919,11 +912,7 @@ static int radio_create(kr_app_server *app, void *user) {
 void krad_radio(char *callsign) {
   static kr_radio radio;
   static kr_app_server_setup setup;
-  static char *mode;
-  static char *demo;
-  demo = getenv("DEMOFF");
-  if (demo || getenv("USER") || !demo) syscheck(callsign);
-  mode = getenv("DEMOFF");
+  char *mode;
   printk("Radio: Creating %s", callsign);
   strncpy(radio.info.callsign, callsign, sizeof(radio.info.callsign) - 1);
   strncpy(radio.info.name, callsign, sizeof(radio.info.name) - 1);

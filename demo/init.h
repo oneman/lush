@@ -1,3 +1,5 @@
+#include <krad/io/file2.h>
+
 typedef struct {
   uint8_t bytes[4096];
 } boat;
@@ -10,7 +12,7 @@ int cbev(kr_file_event *ev) {
   return 0;
 }
 
-#include "/home/demo/src/rad/doc/1a2b3c/stdiov.h"
+#include "doc/1a2b3c/stdiov.h"
 
 static void uwls(uint8_t *bits, uint64_t sz) {
   uint64_t b;
@@ -50,8 +52,6 @@ static void sysrecheck(char *path) {
   static kr_file_set *set;
   set = kr_file_set_create(&setup);
   kr_file2 *in;
-  /*char *path = "/home/demo/src/rad/motizuki/Inter-universal
-   * Teichmuller Theory I.txt";*/
   size_t len;
   len = strlen(path);
   in = kr_file2_open(set, path, len);
@@ -71,4 +71,22 @@ static void sysrecheck(char *path) {
   if (ret) printf("ret: %d\n", ret);
   ret = kr_file_set_destroy(set);
   if (ret) printf("ret: %d\n", ret);
+}
+
+int init_demo(int argc, char *argv[]) {
+  int ret;
+  ret = 0;
+  printf("Demo Init");
+  return ret;
+}
+
+int run_demo(int argc, char *argv[]) {
+  int ret;
+  ret = 0;
+  printf("Demo Run...\n");
+  if (1) {
+    ret = init_demo(argc, argv);
+  }
+  printf("Demo runs!\n");
+  return ret;
 }
