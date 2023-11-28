@@ -44,6 +44,7 @@ arc-gtk-theme
 arch-install-scripts
 archiso
 archlinux-keyring
+ardour
 arduino
 arduino-builder
 arduino-ctags
@@ -52,6 +53,7 @@ aribb24
 arj
 arpack
 artyfx
+ascii
 asciidoc
 asio
 aspnet-runtime-6.0
@@ -61,6 +63,7 @@ at51
 atkmm
 atomicparsley
 attr
+aubio
 audacity
 audit
 augeas
@@ -79,6 +82,9 @@ baobab
 base
 bash
 bc
+bcc
+bcc-tools
+bcg729
 bchunk
 bcprov
 benzene
@@ -98,6 +104,7 @@ boost
 boost-libs
 box2d
 bpf
+bpftrace
 brial
 brltty
 brotli
@@ -145,10 +152,12 @@ clipgrab
 cliquer
 cloc
 clpeak
+clthreads
 clucene
 clutter
 clutter-gst
 clutter-gtk
+clxclient
 cmake
 cmark
 codec2
@@ -184,7 +193,6 @@ dbus-python
 dconf
 debootstrap
 deepin-desktop-base
-deepin-font-manager
 deepin-qt5integration
 deepin-qt5platform-plugins
 deepin-reader
@@ -249,6 +257,7 @@ eog
 epiphany
 erlang-docs
 erofs-utils
+ethtool
 evince
 evince-lib-docs
 evolution-data-server
@@ -272,6 +281,7 @@ fftw
 fig2dev
 file
 filesystem
+filezilla
 findutils
 fingerterm
 firefox
@@ -298,7 +308,6 @@ fluajho
 fluidsynth
 fmt
 folks
-font-manager
 fontconfig
 fonteditfs
 fontforge
@@ -337,6 +346,8 @@ gcr
 gcr-4
 gd
 gdal
+gdb
+gdb-common
 gdbm
 gdk-pixbuf2
 gegl
@@ -363,6 +374,7 @@ git-annex
 givaro
 gjs
 gl2ps
+glabels
 glew
 glib-networking
 glib-perl
@@ -478,6 +490,7 @@ gtk2fontsel
 gtk3
 gtk4
 gtkd
+gtkmm
 gtkmm-4.0
 gtkmm3
 gtksourceview4
@@ -509,6 +522,7 @@ handbrake
 handbrake-cli
 harfbuzz
 harfbuzz-icu
+harvid
 haskell-adjunctions
 haskell-aeson
 haskell-ansi-terminal
@@ -759,6 +773,7 @@ haskell-yesod-static
 haskell-zlib
 hddtemp
 hdf5-openmpi
+hexedit
 hicolor-icon-theme
 hidapi
 highway
@@ -775,6 +790,7 @@ i2c-tools
 iana-etc
 ibus
 icu
+iec16022
 igraph
 igsc
 ijs
@@ -810,6 +826,7 @@ ir.lv2
 irssi
 iso-codes
 isomd5sum
+jaaa
 jansson
 jasper
 java-avalon-framework
@@ -869,6 +886,7 @@ lcalc
 lcms2
 ldb
 ldns
+leatherman
 lensfun
 leptonica
 less
@@ -915,6 +933,7 @@ lib32-openssl
 lib32-pam
 lib32-pcre2
 lib32-systemd
+lib32-tcl
 lib32-util-linux
 lib32-vkd3d
 lib32-vulkan-icd-loader
@@ -963,6 +982,7 @@ libcgif
 libchardet
 libcheese
 libcloudproviders
+libcmis
 libcolord
 libconfig
 libcue
@@ -979,6 +999,7 @@ libdca
 libde265
 libdeflate
 libdispatch
+libdisplay-info
 libdmapsharing
 libdovi
 libdrm
@@ -997,6 +1018,7 @@ libepoxy
 libepubgen
 libertinus-font
 libetonyek
+libev
 libevdev
 libevent
 libewf
@@ -1005,6 +1027,7 @@ libexttextcat
 libfakekey
 libfdk-aac
 libffi
+libfilezilla
 libfontenc
 libfreeaptx
 libfreehand
@@ -1216,6 +1239,7 @@ libtraceevent
 libtracefs
 libtracefs-docs
 libuhd
+libunibreak
 libuninameslist
 libunistring
 libunwind
@@ -1246,10 +1270,16 @@ libvolk
 libvorbis
 libvpx
 libwacom
+libwapcaplet
 libwbclient
 libwebp
+libwebsockets
+libwhereami
+libwhich
 libwireplumber
+libwlocate
 libwmf
+libwnck
 libwnck3
 libwpd
 libwpe
@@ -1277,6 +1307,7 @@ libxkbcommon
 libxkbcommon-x11
 libxkbfile
 libxklavier
+libxml-perl
 libxml2
 libxmlb
 libxmlbird
@@ -1305,8 +1336,6 @@ lilypond
 linbox
 linux
 linux-api-headers
-linux-ck-generic-v4
-linux-ck-generic-v4-headers
 linux-firmware
 linux-firmware-whence
 linux-hardened
@@ -1320,6 +1349,7 @@ llvm-libs
 lm_sensors
 lmdb
 log4cplus
+lprint
 lpsolve
 lrcalc
 lrzip
@@ -1444,15 +1474,16 @@ mtools
 mujs
 multipath-tools
 muparser
-mupdf-gl
 mupdf-tools
 mypaint-brushes1
 myrepos
 nageru
 namcap
 nano
+nasm
 nautilus
 nauty
+ncftp
 ncurses
 ndctl
 neatvnc
@@ -1564,12 +1595,16 @@ pango
 pangomm
 pangomm-2.48
 paperwork
+pappl
 pari
 pari-galdata
 pari-seadata-small
 parted
 patch
 pciutils
+pcp
+pcp-pmda-bcc
+pcp-pmda-bpftrace
 pcre
 pcre2
 pcsclite
@@ -1590,8 +1625,11 @@ pdftricks
 peg
 perl
 perl-algorithm-diff
+perl-alien-build
+perl-alien-libxml2
 perl-bit-vector
 perl-cairo-gobject
+perl-capture-tiny
 perl-carp-clan
 perl-class-data-inheritable
 perl-class-method-modifiers
@@ -1608,6 +1646,9 @@ perl-exception-class
 perl-exporter-tiny
 perl-extutils-depends
 perl-extutils-pkgconfig
+perl-ffi-checklib
+perl-file-chdir
+perl-file-listing
 perl-file-which
 perl-filesys-df
 perl-font-afm
@@ -1620,13 +1661,18 @@ perl-gtk3-imageview
 perl-gtk3-simplelist
 perl-html-parser
 perl-html-tagset
+perl-http-cookiejar
+perl-http-cookies
+perl-http-daemon
 perl-http-date
 perl-http-message
+perl-http-negotiate
 perl-image-sane
 perl-import-into
 perl-io-html
 perl-io-string
 perl-libintl-perl
+perl-libwww
 perl-list-moreutils
 perl-list-moreutils-xs
 perl-locale-codes
@@ -1636,8 +1682,10 @@ perl-lwp-mediatypes
 perl-mailtools
 perl-module-runtime
 perl-moo
+perl-net-http
 perl-parallel-forkmanager
 perl-params-util
+perl-path-tiny
 perl-pdf-api2
 perl-pdf-builder
 perl-proc-processtable
@@ -1653,12 +1701,19 @@ perl-test-requires
 perl-timedate
 perl-try-tiny
 perl-uri
+perl-www-robotrules
+perl-xml-libxml
+perl-xml-namespacesupport
+perl-xml-parser
+perl-xml-sax
+perl-xml-sax-base
 phodav
 php
 php-gd
 physfs
 pinentry
 pipewire
+pipewire-alsa
 pipewire-audio
 pipewire-jack
 pipewire-v4l2
@@ -1699,6 +1754,7 @@ psmisc
 pstoedit
 pugixml
 putty
+pwru
 pyalpm
 pyside2
 pyside2-tools
@@ -1713,6 +1769,7 @@ python-attrs
 python-autocommand
 python-babel
 python-backcall
+python-bcc
 python-beautifulsoup4
 python-booleanoperations
 python-brotli
@@ -1847,6 +1904,8 @@ python-pycountry
 python-pycparser
 python-pycryptodomex
 python-pycuda
+python-pycups
+python-pycurl
 python-pydantic
 python-pydantic-core
 python-pydbus
@@ -1930,6 +1989,7 @@ python-wheel
 python-whoosh
 python-wrapt
 python-wxpython
+python-xarray
 python-xcffib
 python-yaml
 python-ziafont
@@ -2114,6 +2174,7 @@ ruby-fileutils
 ruby-find
 ruby-forwardable
 ruby-getoptlong
+ruby-httpclient
 ruby-io-console
 ruby-io-nonblock
 ruby-io-wait
@@ -2147,6 +2208,7 @@ ruby-vimrunner
 ruby-x25519
 ruby-xpath
 rubygems
+rust
 rygel
 sage-data-combinatorial_designs
 sage-data-conway_polynomials
@@ -2250,6 +2312,7 @@ symmetrica
 sympow
 sysfsutils
 syslinux
+system-config-printer
 systemc
 systemd
 systemd-libs
@@ -2261,6 +2324,7 @@ taglib
 talloc
 tar
 tcl
+tclap
 tcsh
 tdb
 telegram-desktop
@@ -2467,6 +2531,7 @@ vlc
 vm.lv2
 vmaf
 volume_key
+vorbis-tools
 vsftpd
 vte-common
 vte-docs
@@ -2505,14 +2570,18 @@ widelands
 wiiuse
 wikicurses
 wildmidi
+wimlib
 wine
 wine-gecko
 winetricks
+wireless_tools
 wireplumber
+wireshark-cli
 wit
 wl-clipboard
 wldash
 wlroots
+wlroots0.16
 woff-fira-code
 woff2
 woff2-cascadia-code
@@ -2534,6 +2603,7 @@ wqy-microhei
 wqy-microhei-lite
 wqy-zenhei
 wtype
+wv
 wxwidgets-common
 wxwidgets-gtk3
 x264
@@ -2575,6 +2645,7 @@ xfwm4-themes
 xkbsel
 xkeyboard-config
 xmlsec
+xmlto
 xorg-bdftopcf
 xorg-font-util
 xorg-fonts-100dpi
@@ -2619,6 +2690,7 @@ xz
 yadm
 yajl
 yara
+yazi
 yelp
 yelp-xsl
 you-get
@@ -2630,8 +2702,10 @@ zbar
 zeromq
 zimg
 zip
+zita-alsa-pcmi
 zita-convolver
 zita-resampler
+zix
 zlib
 zopfli
 zsh
