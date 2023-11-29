@@ -102,6 +102,11 @@ int discover_environment(void) {
   checkpath(fs, "/bin/ls");
   checkpath(fs, "/usr/bin/demo");
 
+  checkpath(fs, "/home/demo/src/lush/lush.symlink");
+  checkpath(fs, "/home/demo/src/lush/bad.symlink");
+  checkpath(fs, "/home/demo/src/lush/demo/.libs/demo");
+  checkpath(fs, "/home/demo/src/lush/demo/demo");
+
   uint8_t some_page[4096];
   path = "/proc/self/environ";
   len = strlen(path);

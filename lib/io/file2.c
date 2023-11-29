@@ -185,25 +185,25 @@ ssize_t kr_file2_read(kr_file2 *file, uint8_t *data, size_t sz) {
 static int file_stat_to_text(kr_file2 *file) {
   int ret;
   ret = 0;
-  if ((file->st.st_mode & S_IFSOCK) == S_IFSOCK) {
+  if (S_ISSOCK(file->st.st_mode)) {
     memcpy(file->info.type, "socket", 7);
   }
-  if ((file->st.st_mode & S_IFLNK) == S_IFLNK) {
+  if (S_ISLNK(file->st.st_mode)) {
     memcpy(file->info.type, "symbolic link", 14);
   }
-  if ((file->st.st_mode & S_IFREG) == S_IFREG) {
+  if (S_ISREG(file->st.st_mode)) {
     memcpy(file->info.type, "regular file", 13);
   }
-  if ((file->st.st_mode & S_IFBLK) == S_IFBLK) {
+  if (S_ISBLK(file->st.st_mode)) {
     memcpy(file->info.type, "block device", 13);
   }
-  if ((file->st.st_mode & S_IFDIR) == S_IFDIR) {
+  if (S_ISDIR(file->st.st_mode)) {
     memcpy(file->info.type, "directory", 10);
   }
-  if ((file->st.st_mode & S_IFCHR) == S_IFCHR) {
+  if (S_ISCHR(file->st.st_mode)) {
     memcpy(file->info.type, "character device", 17);
   }
-  if ((file->st.st_mode & S_IFIFO) == S_IFIFO) {
+  if (S_ISFIFO(file->st.st_mode)) {
     memcpy(file->info.type, "FIFO", 5);
   }
   if (strnlen(file->info.type, 26) < 4) {
@@ -218,9 +218,9 @@ static int file_stat_to_text(kr_file2 *file) {
   printf("lastmod: %ld\n", file->info.lastmod);
   printf("sz: %lu\n", file->info.sz);
   printf("type: %s\n", file->info.type);
-  if (!(file->st.st_mode && S_IFREG)) {
+  /*if (!(file->st.st_mode && S_IFREG)) {
     printf("Can we even MMAP %s files?\n", file->info.type);
-  }
+  }*/
   return ret;
 }
 
