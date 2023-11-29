@@ -38,6 +38,7 @@ int kr_file2_close(kr_file2 *file);
 int kr_file2_truncate(kr_file2 *file, size_t sz);
 int kr_file2_wrote(kr_file2 *file, size_t sz);
 ssize_t kr_file2_append(kr_file2 *file, uint8_t *data, size_t sz);
+ssize_t kr_file2_read(kr_file2 *file, uint8_t *data, size_t sz);
 kr_file2 *kr_file2_open(kr_file_set *fs, char *path, size_t len);
 kr_file2 *kr_file2_create(kr_file_set *fs, char *path, size_t len, size_t sz);
 int kr_file_set_destroy(kr_file_set *fs);

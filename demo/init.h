@@ -1,7 +1,12 @@
 #include <krad/io/file2.h>
 #include "doc/1a2b3c/stdiov.h"
 
-static struct iovec demomem[(26 * 10 * 10) + 1];
+typedef struct {
+  char label[256];
+  struct iovec iovec[26];
+} labeled_iovec;
+
+static labeled_iovec demo_mem[(26 * 10 * 10) + 1];
 
 int cbev(kr_file_event *ev) {
   /*uint8_t *user_ptr;
@@ -78,9 +83,15 @@ static int checkpath(kr_file_set *fs, char *path) {
 int discover_environment(void) {
   int ret;
   ret = 0;
+  int len;
+  len = 0;
+  char *path;
+  path = NULL;
+  kr_file2 *file;
+  file = NULL;
   static kr_fs_setup setup;
   setup.nfiles = 64;
-  setup.user = &demomem;
+  setup.user = &demo_mem;
   setup.event_cb = cbev;
   static kr_file_set *fs;
   fs = kr_file_set_create(&setup);
@@ -89,7 +100,15 @@ int discover_environment(void) {
   checkpath(fs, "/proc/self/mounts");
   checkpath(fs, "/dev/null");
   checkpath(fs, "/bin/ls");
-  checkpath(fs, "/usr/bin/demo");  
+  checkpath(fs, "/usr/bin/demo");
+
+  uint8_t some_page[4096];
+  path = "/proc/self/environ";
+  len = strlen(path);
+  file = kr_file2_open(fs, path, len);
+  ret = kr_file2_read(file, some_page, sizeof(some_page));
+  printf("Read %d bytes from %s\n", ret, path);
+
   ret = kr_file_set_destroy(fs);
   if (ret) printf("ret: %d\n", ret);
   return ret;

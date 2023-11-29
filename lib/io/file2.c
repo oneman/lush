@@ -178,6 +178,10 @@ ssize_t kr_file2_append(kr_file2 *file, uint8_t *data, size_t sz) {
   return len;
 }
 
+ssize_t kr_file2_read(kr_file2 *file, uint8_t *data, size_t sz) {
+  return read(file->fd, data, sz);
+}
+
 static int file_stat_to_text(kr_file2 *file) {
   int ret;
   ret = 0;
