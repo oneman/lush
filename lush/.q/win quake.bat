@@ -1,1 +1,0 @@
-glquake -heapsize 64000 -width 800 -height 600 -bpp 16
