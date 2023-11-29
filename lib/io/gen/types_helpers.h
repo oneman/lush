@@ -7,8 +7,8 @@
 #include <krad/app/path.h>
 #include <krad/app/patch.h>
 #include <krad/app/diff.h>
-int str_to_kr_file_mode(char *str);
-char *kr_file_mode_to_str(int val);
+int str_to_kr_file_access_mode(char *str);
+char *kr_file_access_mode_to_str(int val);
 int kr_file2_info_init(void *info);
 int kr_file2_info_valid(void *info);
 int kr_file2_info_random(void *info);

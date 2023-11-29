@@ -173,8 +173,8 @@ char *codegen_enum_to_string(cgen_enum val) {
       return "kr_coded_image_type";
     case CGEN_KR_CODED_IMAGE_INFO:
       return "kr_coded_image_info";
-    case CGEN_KR_FILE_MODE:
-      return "kr_file_mode";
+    case CGEN_KR_FILE_ACCESS_MODE:
+      return "kr_file_access_mode";
     case CGEN_KR_FILE2_INFO:
       return "kr_file2_info";
     case CGEN_KR_MIXER_CHANNELS:
@@ -885,8 +885,8 @@ cgen_enum codegen_string_to_enum(char *string) {
   if (!strcmp(string,"kr_coded_image_info")) {
     return CGEN_KR_CODED_IMAGE_INFO;
   }
-  if (!strcmp(string,"kr_file_mode")) {
-    return CGEN_KR_FILE_MODE;
+  if (!strcmp(string,"kr_file_access_mode")) {
+    return CGEN_KR_FILE_ACCESS_MODE;
   }
   if (!strcmp(string,"kr_file2_info")) {
     return CGEN_KR_FILE2_INFO;
@@ -1640,8 +1640,8 @@ int codegen_is_enum(char *type) {
   if (!strcmp(type,"kr_coded_image_type")) {
     return CGEN_KR_CODED_IMAGE_TYPE;
   }
-  if (!strcmp(type,"kr_file_mode")) {
-    return CGEN_KR_FILE_MODE;
+  if (!strcmp(type,"kr_file_access_mode")) {
+    return CGEN_KR_FILE_ACCESS_MODE;
   }
   if (!strcmp(type,"kr_mixer_channels")) {
     return CGEN_KR_MIXER_CHANNELS;

@@ -1,9 +1,7 @@
 #include <krad/io/file2.h>
+#include "doc/1a2b3c/stdiov.h"
 
-typedef struct {
-  uint8_t bytes[4096];
-} boat;
-
+static struct iovec demomem[(26 * 10 * 10) + 1];
 
 int cbev(kr_file_event *ev) {
   /*uint8_t *user_ptr;
@@ -11,8 +9,6 @@ int cbev(kr_file_event *ev) {
   printf("cbev\n");*/
   return 0;
 }
-
-#include "doc/1a2b3c/stdiov.h"
 
 static void uwls(uint8_t *bits, uint64_t sz) {
   uint64_t b;
@@ -41,52 +37,99 @@ static void uwls(uint8_t *bits, uint64_t sz) {
   }
 }
 
-static void sysrecheck(char *path) {
-  //printf("demo running!!!\n");
+static int checkpath(kr_file_set *fs, char *path) {
   int ret;
-  static boat demo;
-  static kr_fs_setup setup;
-  setup.nfiles = 64;
-  setup.user = &demo;
-  setup.event_cb = cbev;
-  static kr_file_set *set;
-  set = kr_file_set_create(&setup);
   kr_file2 *in;
   size_t len;
   len = strlen(path);
-  in = kr_file2_open(set, path, len);
-  kr_file2_info info;
-  ret = kr_file2_get_info(in, &info);
-  if (ret) printf("ret: %d\n", ret);
-  uint8_t *bits = kr_file2_get_data(in);
-  if (!bits) {
-    printf("fubar\n");
-    exit(1);
+  in = kr_file2_open(fs, path, len);
+  if (!in) {
+    printf("We could not open a file: %s\n", path);
+    ret = 1;
   }
-  /*printf("path: %s\n", info.path);
-  printf("lastmod: %ld\n", info.lastmod);
-  printf("sz: %lu\n", info.sz);*/
-  uwls(bits, info.sz);
-  ret = kr_file2_close(in);
-  if (ret) printf("ret: %d\n", ret);
-  ret = kr_file_set_destroy(set);
-  if (ret) printf("ret: %d\n", ret);
+  if (ret == 0) { 
+    kr_file2_info info;
+    ret = kr_file2_get_info(in, &info);
+    if (ret) {
+      printf("Could not get file info: %d\n", ret);
+      return ret;
+    }
+    uint8_t *bits = kr_file2_get_data(in);
+    if (!bits) {
+      printf("Could not get the bits for: %s\n", info.path);
+      ret += kr_file2_close(in);
+      ret++;
+      if (ret) printf("ret: %d\n", ret);
+    }
+  }
+  return ret;
 }
+
+/*
+ *
+ * How many files out of all the files I can read
+ * have 1 partition when partitioned by byte LF
+ * and are larger than PATH_MAX ie 4096
+ *
+ */
+
+/* explain everything in the universe from the context
+ * of this one program parsing all the files ;) */
+int discover_environment(void) {
+  int ret;
+  ret = 0;
+  static kr_fs_setup setup;
+  setup.nfiles = 64;
+  setup.user = &demomem;
+  setup.event_cb = cbev;
+  static kr_file_set *fs;
+  fs = kr_file_set_create(&setup);
+  checkpath(fs, "/");
+  checkpath(fs, "/proc/self/environ");
+  checkpath(fs, "/proc/self/mounts");
+  checkpath(fs, "/dev/null");
+  checkpath(fs, "/bin/ls");
+  checkpath(fs, "/usr/bin/demo");  
+  ret = kr_file_set_destroy(fs);
+  if (ret) printf("ret: %d\n", ret);
+  return ret;
+}
+
+int seek_lush_source(void) {
+  int ret;
+  ret = 0;
+  /*reconstruct_argc?*/
+  /* Find lush src dir cd cwd $HOME/src/lush" *
+   [~/src/lush]% pwd
+/home/demo/src/lush
+[~/src/lush]% cat README.md | grep "# LUSH" | wc -l
+1
+[~/src/lush]%
+   */
+  return ret;
+}
+
+/* do i have the lush src?
+ * what username what cpu how much ram how much
+ * disk space what kernel version lib uring? *
+ * what date and time is it?
+ */
 
 int init_demo(int argc, char *argv[]) {
   int ret;
   ret = 0;
-  printf("Demo Init");
+  ret = discover_environment();
+  if (ret) return ret;
+  ret = seek_lush_source();
   return ret;
 }
 
 int run_demo(int argc, char *argv[]) {
   int ret;
   ret = 0;
-  printf("Demo Run...\n");
   if (1) {
     ret = init_demo(argc, argv);
   }
-  printf("Demo runs!\n");
+  printf("Demo runs proper!\n");
   return ret;
 }

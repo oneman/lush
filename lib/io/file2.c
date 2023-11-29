@@ -122,7 +122,7 @@ int kr_file2_get_info(kr_file2 *file, kr_file2_info *info) {
 int kr_file2_unlink(kr_file2 *file) {
   int ret;
   if (!file) return -1;
-  if (file->info.mode == KR_FILE_ACCESS_ONLY) return -2;
+  if (file->info.access_mode == KR_FILE_ACCESS_ONLY) return -2;
   ret = unlink(file->info.path);
   if (ret != 0) return ret;
   return kr_file2_close(file);
@@ -149,13 +149,13 @@ int kr_file2_close(kr_file2 *file) {
 int kr_file2_truncate(kr_file2 *file, size_t sz) {
   if (!file || !sz) return -1;
   if (file->fd < 0) return -1;
-  if (file->info.mode == KR_FILE_ACCESS_ONLY) return -2;
+  if (file->info.access_mode == KR_FILE_ACCESS_ONLY) return -2;
   return ftruncate(file->fd, sz);
 }
 
 int kr_file2_wrote(kr_file2 *file, size_t sz) {
   if (!file || !sz) return -1;
-  if (file->info.mode == KR_FILE_ACCESS_ONLY) return -2;
+  if (file->info.access_mode == KR_FILE_ACCESS_ONLY) return -2;
   file->info.wrote += sz;
   if (file->info.wrote > file->info.sz) return -3;
   run_event(file, KR_FILE_WROTE);
@@ -167,7 +167,7 @@ ssize_t kr_file2_append(kr_file2 *file, uint8_t *data, size_t sz) {
   uint8_t *buf;
   if (!file || !data || !sz) return -1;
   if (file->fd < 0) return -1;
-  if (file->info.mode == KR_FILE_ACCESS_ONLY) return -2;
+  if (file->info.access_mode == KR_FILE_ACCESS_ONLY) return -2;
   buf = kr_file2_get_data(file);
   len = sz;
   if (file->info.wrote + len > file->info.sz) {
@@ -176,6 +176,48 @@ ssize_t kr_file2_append(kr_file2 *file, uint8_t *data, size_t sz) {
   memcpy(buf + file->info.wrote, data, len);
   kr_file2_wrote(file, len);
   return len;
+}
+
+static int file_stat_to_text(kr_file2 *file) {
+  int ret;
+  ret = 0;
+  if ((file->st.st_mode & S_IFSOCK) == S_IFSOCK) {
+    memcpy(file->info.type, "socket", 7);
+  }
+  if ((file->st.st_mode & S_IFLNK) == S_IFLNK) {
+    memcpy(file->info.type, "symbolic link", 14);
+  }
+  if ((file->st.st_mode & S_IFREG) == S_IFREG) {
+    memcpy(file->info.type, "regular file", 13);
+  }
+  if ((file->st.st_mode & S_IFBLK) == S_IFBLK) {
+    memcpy(file->info.type, "block device", 13);
+  }
+  if ((file->st.st_mode & S_IFDIR) == S_IFDIR) {
+    memcpy(file->info.type, "directory", 10);
+  }
+  if ((file->st.st_mode & S_IFCHR) == S_IFCHR) {
+    memcpy(file->info.type, "character device", 17);
+  }
+  if ((file->st.st_mode & S_IFIFO) == S_IFIFO) {
+    memcpy(file->info.type, "FIFO", 5);
+  }
+  if (strnlen(file->info.type, 26) < 4) {
+    printf("\nWe dont know what type of file type %d is.\n", file->st.st_mode);
+    ret = 1;
+    return ret;
+  }
+  printf("\nThis type of file is %s\n", file->info.type);
+  file->info.lastmod = file->st.st_mtim.tv_sec;
+  file->info.sz = file->st.st_size;
+  printf("path: %s\n", file->info.path);
+  printf("lastmod: %ld\n", file->info.lastmod);
+  printf("sz: %lu\n", file->info.sz);
+  printf("type: %s\n", file->info.type);
+  if (!(file->st.st_mode && S_IFREG)) {
+    printf("Can we even MMAP %s files?\n", file->info.type);
+  }
+  return ret;
 }
 
 kr_file2 *kr_file2_open(kr_file_set *fs, char *path, size_t len) {
@@ -196,11 +238,14 @@ kr_file2 *kr_file2_open(kr_file_set *fs, char *path, size_t len) {
   }
   if (!file) return NULL;
   file->ref = 1; /* FIXME .. this look suspicious */
-  file->info.mode = KR_FILE_ACCESS_ONLY;
+  file->info.access_mode = KR_FILE_ACCESS_ONLY;
   file->info.len = len;
   file->info.path[len] = '\0';
   memcpy(file->info.path, path, len);
   ret = stat(file->info.path, &file->st);
+  if (ret == 0) {
+    file_stat_to_text(file);
+  }
   if (ret == -1) {
     err = errno;
     if (err == ENOENT) {
@@ -215,18 +260,17 @@ kr_file2 *kr_file2_open(kr_file_set *fs, char *path, size_t len) {
     }
   } else {
     //FIXME handle symlink
+    /* NOFIXME: we can open any kind of file its file but lets know the mode
     if (!(S_ISREG(file->st.st_mode))) {
       printke("File: open - %s not a normal file", file->info.path);
       kr_pool_release(fs->pool, file);
       return NULL;
-    }
+    }*/
   }
-  file->info.lastmod = file->st.st_mtim.tv_sec;
-  file->info.sz = file->st.st_size;
   if (file->info.sz == 0) {
-    printke("File: open - %s is zero bytes, screw it", file->info.path);
-    kr_pool_release(fs->pool, file);
-    return NULL;
+    //printke("File: %s is zero bytes ??", file->info.path);
+    //kr_pool_release(fs->pool, file);
+    //return NULL;
   }
   file->fd = open(file->info.path, flags);
   if (file->fd < 0) {
@@ -239,15 +283,19 @@ kr_file2 *kr_file2_open(kr_file_set *fs, char *path, size_t len) {
   /*printk("pages: %d bytes: %zu", file->pages, file->st.st_size);*/
   file->info.remote_fs = 0;
   fs_info(file);
-  file->pages = file->info.sz / KRPGSZ;
-  if (!file->pages || file->pages % KRPGSZ) file->pages++;
-  file->data = mmap(NULL, file->pages * KRPGSZ, prot, mflags, file->fd, 0);
-  if (file->data == MAP_FAILED) {
-    err = errno;
-    printke("File: mmap %s", strerror(err));
-    close(file->fd);
-    kr_pool_release(fs->pool, file);
-    return NULL;
+  if ((file->info.sz > 0) && ((file->st.st_mode & S_IFREG) == S_IFREG)) {
+    printf("We have a regular type file with size, we attempt to mmap\n");
+    file->pages = file->info.sz / KRPGSZ;
+    if (!file->pages || file->pages % KRPGSZ) file->pages++;
+    file->data = mmap(NULL, file->pages * KRPGSZ, prot, mflags, file->fd, 0);
+    if (file->data == MAP_FAILED) {
+      err = errno;
+      printke("File: mmap err %s", strerror(err));
+      close(file->fd);
+      kr_pool_release(fs->pool, file);
+      return NULL;
+    }
+    printf("MMAP'ed %s\n", file->info.path);
   }
   run_event(file, KR_FILE_OPEN);
   return file;
@@ -264,7 +312,7 @@ kr_file2 *kr_file2_create(kr_file_set *fs, char *path, size_t len, size_t sz) {
   file = fs_slot(fs);
   if (!file) return NULL;
   file->ref = 1;
-  file->info.mode = KR_FILE_ACCESS_APPEND;
+  file->info.access_mode = KR_FILE_ACCESS_APPEND;
   file->info.len = len;
   file->info.path[len] = '\0';
   memcpy(file->info.path, path, len);

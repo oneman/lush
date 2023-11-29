@@ -48,7 +48,7 @@ kr_file *kr_file_open_stdin() {
 
 kr_file *kr_file_open_stdout() {
   errno = 0;
-  fcntl (STDOUT_FILENO, F_GETFD);
+  fcntl(STDOUT_FILENO, F_GETFD);
   if (errno == EBADF) {
     return NULL;
   }

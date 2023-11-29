@@ -1,12 +1,12 @@
 #include "types_helpers.h"
 
 #include <krad/util/util.h>
-int str_to_kr_file_mode(char *str) {
-  return str_to_enum(KR_KR_FILE_MODE_META_INFO, str);
+int str_to_kr_file_access_mode(char *str) {
+  return str_to_enum(KR_KR_FILE_ACCESS_MODE_META_INFO, str);
 }
 
-char *kr_file_mode_to_str(int val) {
-  return enum_to_str(KR_KR_FILE_MODE_META_INFO, val);
+char *kr_file_access_mode_to_str(int val) {
+  return enum_to_str(KR_KR_FILE_ACCESS_MODE_META_INFO, val);
 }
 
 int kr_file2_info_init(void *info) {

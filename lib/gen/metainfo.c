@@ -220,7 +220,7 @@ char *enum_to_str(int idx, int value) {
       }
       break;
     }
-    case KR_KR_FILE_MODE_META_INFO: {
+    case KR_KR_FILE_ACCESS_MODE_META_INFO: {
       switch(value) {
         case KR_FILE_ACCESS_ONLY: return "only";
         case KR_FILE_ACCESS_APPEND: return "append";
@@ -1131,7 +1131,7 @@ int str_to_enum(int idx, char *str) {
       }
       break;
     }
-    case KR_KR_FILE_MODE_META_INFO: {
+    case KR_KR_FILE_ACCESS_MODE_META_INFO: {
       if (!strcasecmp(name, "only")) {
         return KR_FILE_ACCESS_ONLY;
       }
@@ -2276,7 +2276,7 @@ int enum_to_index(int idx, int value) {
       }
       break;
     }
-    case KR_KR_FILE_MODE_META_INFO: {
+    case KR_KR_FILE_ACCESS_MODE_META_INFO: {
       switch(value) {
         case KR_FILE_ACCESS_ONLY: return 0;
         case KR_FILE_ACCESS_APPEND: return 1;
@@ -9197,9 +9197,9 @@ const struct_info meta_info[] = {
     .sz = sizeof(kr_coded_image_info),
     .is_typedef = 1
   },
-  [KR_KR_FILE_MODE_META_INFO] = {
+  [KR_KR_FILE_ACCESS_MODE_META_INFO] = {
     .type = 1,
-    .name = "kr_file_mode",
+    .name = "kr_file_access_mode",
     .member_count = 3,
     .members = {
       {
@@ -9251,29 +9251,29 @@ const struct_info meta_info[] = {
         }
       }
     },
-    .sz = sizeof(kr_file_mode),
+    .sz = sizeof(kr_file_access_mode),
     .is_typedef = 1
   },
   [KR_KR_FILE2_INFO_META_INFO] = {
     .type = 2,
     .name = "kr_file2_info",
-    .member_count = 7,
+    .member_count = 8,
     .members = {
       {
-        .name = "mode",
+        .name = "access_mode",
         .arr = 0,
         .arr_notnull = 0,
         .len_def = "",
         .ptr = 0,
-        .off = offsetof(kr_file2_info, mode),
-        .sz = sizeof(((kr_file2_info*)0)->mode),
+        .off = offsetof(kr_file2_info, access_mode),
+        .sz = sizeof(((kr_file2_info*)0)->access_mode),
         .opt = 0,
         .type = 14,
         .type_info = {
           .subenum_info = {
-            .type_name = "kr_file_mode",
+            .type_name = "kr_file_access_mode",
             .enum_init = "",
-            .idx = KR_KR_FILE_MODE_META_INFO
+            .idx = KR_KR_FILE_ACCESS_MODE_META_INFO
           }
         }
       },
@@ -9377,6 +9377,23 @@ const struct_info meta_info[] = {
             .init = 0,
             .min = 0,
             .max = 0
+          }
+        }
+      },
+      {
+        .name = "type",
+        .arr = 26,
+        .arr_notnull = 0,
+        .len_def = "",
+        .ptr = 0,
+        .off = offsetof(kr_file2_info, type),
+        .sz = sizeof(((kr_file2_info*)0)->type),
+        .opt = 0,
+        .type = 1,
+        .type_info = {
+          .char_info = {
+            .max = 25,
+            .notnull = 0
           }
         }
       }
