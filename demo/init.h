@@ -104,7 +104,7 @@ int discover_environment(void) {
   ret = 0;
   int len;
   len = 0;
-  int uid
+  int uid;
   int euid;
   char *path;
   path = NULL;
@@ -127,8 +127,6 @@ int discover_environment(void) {
   printf("release: %s\n", d->uname.release);
   printf("version: %s\n", d->uname.version);
   printf("machine: %s\n", d->uname.machine);
-  int uid
-  int euid;
   uid = getuid();
   printf("uid: %d\n", uid);
   euid = geteuid();
