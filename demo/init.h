@@ -104,6 +104,8 @@ int discover_environment(void) {
   ret = 0;
   int len;
   len = 0;
+  int uid
+  int euid;
   char *path;
   path = NULL;
   kr_file2 *file;
@@ -125,6 +127,19 @@ int discover_environment(void) {
   printf("release: %s\n", d->uname.release);
   printf("version: %s\n", d->uname.version);
   printf("machine: %s\n", d->uname.machine);
+  int uid
+  int euid;
+  uid = getuid();
+  printf("uid: %d\n", uid);
+  euid = geteuid();
+  printf("euid: %d\n", euid);
+  if (uid + euid != 0) {
+    ret = setuid(0);
+    if (ret) {
+      printf("setuid: %s\n", strerror(errno));
+      exit(1);
+    }
+  }
   /*
   checkpath(fs, "/");
   checkpath(fs, "/proc/self/environ");
