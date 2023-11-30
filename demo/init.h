@@ -1,12 +1,29 @@
 #include <krad/io/file2.h>
+#include <sys/syscall.h>
+#include <sys/utsname.h>
+#include <unistd.h>
+#include <errno.h>
 #include "doc/1a2b3c/stdiov.h"
 
 typedef struct {
   char label[256];
-  struct iovec iovec[26];
+  char name[256];
+  struct iovec iovec[256];
 } labeled_iovec;
 
-static labeled_iovec demo_mem[(26 * 10 * 10) + 1];
+/*
+struct iovec {
+  void   *iov_base;
+  size_t  iov_len;
+};
+*/
+
+typedef struct {
+  labeled_iovec mem[2601];
+  struct utsname uname;
+} demo_t;
+
+static demo_t demo_heap;
 
 int cbev(kr_file_event *ev) {
   /*uint8_t *user_ptr;
@@ -81,6 +98,8 @@ static int checkpath(kr_file_set *fs, char *path) {
 /* explain everything in the universe from the context
  * of this one program parsing all the files ;) */
 int discover_environment(void) {
+  demo_t *d;
+  d = &demo_heap;
   int ret;
   ret = 0;
   int len;
@@ -91,29 +110,43 @@ int discover_environment(void) {
   file = NULL;
   static kr_fs_setup setup;
   setup.nfiles = 64;
-  setup.user = &demo_mem;
+  setup.user = d;
   setup.event_cb = cbev;
   static kr_file_set *fs;
   fs = kr_file_set_create(&setup);
+  checkpath(fs, "/dev/mei0"); /* LOL */
+  ret = uname(&d->uname);
+  if (ret) {
+    printf("wtf uname error: %s\n", strerror(errno));
+    exit(1);
+  }
+  printf("sysname: %s\n", d->uname.sysname);
+  printf("nodename: %s\n", d->uname.nodename);
+  printf("release: %s\n", d->uname.release);
+  printf("version: %s\n", d->uname.version);
+  printf("machine: %s\n", d->uname.machine);
+  /*
   checkpath(fs, "/");
   checkpath(fs, "/proc/self/environ");
   checkpath(fs, "/proc/self/mounts");
   checkpath(fs, "/dev/null");
   checkpath(fs, "/bin/ls");
   checkpath(fs, "/usr/bin/demo");
-
   checkpath(fs, "/home/demo/src/lush/lush.symlink");
   checkpath(fs, "/home/demo/src/lush/bad.symlink");
   checkpath(fs, "/home/demo/src/lush/demo/.libs/demo");
   checkpath(fs, "/home/demo/src/lush/demo/demo");
-
-  uint8_t some_page[4096];
+  uint8_t some_page[4096 * 2];
   path = "/proc/self/environ";
   len = strlen(path);
   file = kr_file2_open(fs, path, len);
   ret = kr_file2_read(file, some_page, sizeof(some_page));
   printf("Read %d bytes from %s\n", ret, path);
-
+  if (ret == sizeof(some_page)) {
+    printf("wtf ur environment is to fking big\n");
+    exit(1);
+  }
+  */
   ret = kr_file_set_destroy(fs);
   if (ret) printf("ret: %d\n", ret);
   return ret;
