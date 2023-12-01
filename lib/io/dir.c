@@ -11,7 +11,7 @@
 #include <krad/mem/mem.h>
 #include "dir.h"
 
-#define KR_DIR_PATH_SZ 512
+#define KR_DIR_PATH_SZ 4096
 
 int kr_dir_exists(char *dir) {
   int err;
@@ -55,8 +55,13 @@ int kr_dir_get_entry(kr_dir *dir, kr_dir_entry *entry) {
   for (;;) {
     dir->pos = telldir(dir->dh);
     if (dir->pos == -1) dir->pos = 0;
-    ret = readdir_r(dir->dh, &entry->entry, &res);
-    /*if (ret) return -1;*/
+    res = readdir(dir->dh);
+    if (!res) {
+      printf("ahh fail: %s\n", strerror(errno));
+      exit(1);
+    }
+    entry->entry = *res;
+    /*if (ret) return -1;
     if (ret) break;
     if (res == NULL) return 0;
     if (res->d_ino) {
@@ -64,10 +69,10 @@ int kr_dir_get_entry(kr_dir *dir, kr_dir_entry *entry) {
        || (res->d_name[0] == '.' && res->d_name[1] == '.'
        && res->d_name[2] == '\0')) continue;
        break;
-    }
+    }*/
   }
-  entry->name = res->d_name;
-  ret = fstatat(dirfd(dir->dh), entry->name, &entry->entry_stat, 0);
+  entry->name = entry->entry.d_name;
+  ret = fstatat(dirfd(dir->dh), entry->entry.d_name, &entry->entry_stat, 0);
   if (ret == 0) {
     entry->entry_mode = entry->entry_stat.st_mode;
     entry->sz = entry->entry_stat.st_size;
@@ -79,8 +84,12 @@ int kr_dir_get_entry(kr_dir *dir, kr_dir_entry *entry) {
 
 int kr_dir_iter(kr_dir *dir) {
   if (!dir || !dir->dh) return -1;
-  dir->pos = 0;
-  return 0;
+  if (dir->pos) {
+    dir->pos = 0;
+    return 0;
+  }
+  printf("Dir wasnt paused?\n");
+  return -1;
 }
 
 int kr_dir_close(kr_dir *dir) {
@@ -100,14 +109,34 @@ int kr_dir_is_open(kr_dir *dir) {
 }
 
 int kr_dir_open(kr_dir *dir, char *path, size_t len) {
-  if (dir && path && kr_dir_exists(path)) {
-    dir->dh = opendir(path);
-    if (dir->dh) {
-      dir->pos = telldir(dir->dh);
+  int err;
+  if (!dir || !path || len < 1) {
+    printf("wtf?\n");
+    return -1;
+  }
+  err = stat(path, &dir->s);
+  if (err == -1) {
+    if (ENOENT == errno) {
+      // does not exist
+      return 0;
+    } else {
+      // another error
       return 0;
     }
   }
+  if (S_ISDIR(dir->s.st_mode)) {
+    // it's a directory
+    //return 1;
+  } else {
+    // exists but is no dir
+    return 0;
+  }
+  dir->dh = opendir(path);
+  if (dir->dh) {
+    dir->pos = telldir(dir->dh);
+    return 0;
+  }
+  printf("What the fuck!\n");
+  exit(1);
   return -1;
 }
-
-size_t kr_dir_sizeof();

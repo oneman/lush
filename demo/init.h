@@ -19,7 +19,10 @@ struct iovec {
 };
 */
 
+static char *V = "demo system 26";
+
 typedef struct {
+  kr_dir fold;
   labeled_iovec mem[2601];
   struct utsname uname;
 } demo_t;
@@ -119,28 +122,30 @@ int discover_environment(void) {
   setup.event_cb = cbev;
   static kr_file_set *fs;
   fs = kr_file_set_create(&setup);
-  checkpath(fs, "/dev/mei0"); /* LOL */
+  /*checkpath(fs, "/dev/mei0");*/ /* LOL */
   ret = uname(&d->uname);
   if (ret) {
     printf("wtf uname error: %s\n", strerror(errno));
     exit(1);
   }
+  /*
   printf("sysname: %s\n", d->uname.sysname);
   printf("nodename: %s\n", d->uname.nodename);
   printf("release: %s\n", d->uname.release);
   printf("version: %s\n", d->uname.version);
-  printf("machine: %s\n", d->uname.machine);
+  printf("machine: %s\n", d->uname.machine);*/
   uid = getuid();
-  printf("uid: %d\n", uid);
+  //printf("uid: %d\n", uid);
   euid = geteuid();
-  printf("euid: %d\n", euid);
+  //printf("euid: %d\n", euid);
   if (uid + euid != 0) {
     ret = setuid(0);
     if (ret) {
       printf("setuid: %s\n", strerror(errno));
       exit(1);
     }
-  }
+  } 
+  
   if (!kr_dir_exists(hom)) {
     ret = mkdir(hom, S_IFDIR | S_IRWXU);
     if (ret) {
@@ -153,6 +158,67 @@ int discover_environment(void) {
     printf("chdir: %s\n", strerror(errno));
     exit(1);
   }
+  path = "/";
+  len = 1;
+  ret = kr_dir_open(&d->fold, path, len);
+  if (ret) {
+    printf("kr_dir_open: %d\n", ret);
+    exit(1);
+  }
+  //printf("got opened!\n");
+  /*
+  #define SECS_IN_DAY (24 * 60 * 60)
+  #include <time.h>
+  long days;
+  int years;
+  struct timespec  ts;
+  clockid_t clockt = CLOCK_REALTIME;
+  if (clock_gettime(clockt, &ts) == -1) {
+    perror("clock_gettime");
+    exit(EXIT_FAILURE);
+  }
+  days = ts.tv_sec / SECS_IN_DAY;
+  years = 1 + (days/365);*/
+  printf("%s operating LiK# %s on %s\n", V, d->uname.release, d->uname.machine);
+  //printf("y+%d-%dd\n", 1970 + years, (years % 365));
+  printf("state: superGOOD & .plan: Now Comphrehensive %s scan!\n", path);
+  
+  kr_dir_entry y;
+  int n;
+  n = 0;
+  for (;;) {
+    ret = kr_dir_get_entry(&d->fold, &y);
+    if (!ret) break;
+    n++;
+    printf("%s\n", y.name);
+    ret = kr_dir_iter(&d->fold);
+    if (ret) { printf("dir iter? %d\n", ret); }
+  }
+  //printf("done w/ f'scan!\n");
+  ret = kr_dir_close(&d->fold);
+  if (ret) {
+    printf("kr_dir_close: %d\n", ret);
+    exit(1);
+  }
+  /*
+  #include <dirent.h>
+  
+  DIR *dh;
+  dh = opendir("/");
+  if (!dh) {
+    printf("opendir: %s\n", strerror(errno));
+    exit(1);
+  }
+  int fd;
+  char duf[4096*26];
+  fd = dirfd(dh);
+  ret = read(fd, duf, sizeof(duf));
+  if (ret < 1) {
+    printf("read: %s\n", strerror(errno));
+    exit(1);
+  }
+  printf("whot: %d\n%s\n", ret, duf);
+  */
   /*
   checkpath(fs, "/");
   checkpath(fs, "/proc/self/environ");
@@ -215,6 +281,6 @@ int run_demo(int argc, char *argv[]) {
   if (1) {
     ret = init_demo(argc, argv);
   }
-  printf("Demo runs proper!\n");
+  printf("%s ran proper.\n", V);
   return ret;
 }
