@@ -79,7 +79,7 @@ static void run_event(kr_file2 *file, kr_file_event_type type) {
 }
 
 int kr_file2_exists(char *path, size_t len) {
-  char fpath[512];
+  char fpath[4096];
   int err;
   struct stat s;
   if (len >= sizeof(fpath)) return -1;
@@ -207,7 +207,7 @@ static int file_stat_to_text(kr_file2 *file) {
     memcpy(file->info.type, "FIFO", 5);
   }
   if (strnlen(file->info.type, 26) < 4) {
-    printf("\nWe dont know what type of file type %d is.\n", file->st.st_mode);
+    printf("There is seven types of file, wtf %d even is.\n", file->st.st_mode);
     ret = 1;
     return ret;
   }

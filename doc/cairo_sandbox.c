@@ -19,6 +19,11 @@
 #define letterpaper_nonmarginal_quad_ruled_columns 26
 #define letterpaper_nonmarginal_quad_ruled_rows 36
 /* 36 / 26 = 1.384615 */
+#define lpm letterpaper_gov_margin
+#define gs_diam 26 * 18
+#define gs_rad 13 * 18
+#define gs_center lpm + gs_rad
+
 
 /* content area: 6.5 * 9 = 58.5 in 484704 */
 /* letterpaper area: 58.5 + 35 = 93.5 in */
@@ -43,12 +48,12 @@ int main(int argc, char *argv[]) {
   char filename[128];
   if (argc > 1) {
     snprintf(filename, sizeof(filename),
-    "%s/rad_letter_paper.pdf",
+    "%s/rad_letter_paper4.pdf",
     getenv("HOME"));
     surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, 612, 792);
   } else {
     snprintf(filename, sizeof(filename),
-    "%s/rad_letter_paper.png",
+    "%s/rad_letter_paper4.png",
     getenv("HOME"));
     surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, 612, 792);
   }
@@ -95,6 +100,76 @@ int main(int argc, char *argv[]) {
   cairo_set_source_rgba(cr, 1.0, 0.13, 0.66, 0.2);
   cairo_rectangle(cr, 72, 18 * 30, 18 * 16, 18 * 10);
   cairo_fill(cr);
+
+  cairo_new_path(cr);
+  cairo_set_source_rgba(cr, 1.0, 0.53, 0.66, 0.4);
+  cairo_rectangle(cr, (4 * 18) + (13 * 18), (4 * 18),
+                      (13 * 18), (5 * 18));
+  cairo_fill(cr);
+  
+  cairo_new_path(cr);
+  cairo_set_line_width (cr, 2.6);
+  cairo_set_source_rgba(cr, 0.1, 0.3, 0.2, 1);
+  cairo_arc (cr, gs_center, gs_center, gs_rad, 0, (3.1 / 180.0) * 360.0);
+  cairo_stroke (cr);
+  cairo_fill(cr);
+
+
+  cairo_new_path(cr);
+  cairo_set_line_width (cr, 2.6);
+  cairo_set_source_rgba(cr, 1, 0.3, 0.2, 1);
+  cairo_arc (cr, gs_center, gs_center, gs_rad, (3.1415926 / 180.0) * 90, (3.1415926 / 180.0) * 150.0);
+  double x, y = 0;
+  cairo_get_current_point(cr, &x, &y);
+  printf("x,y: %f,%f\n", x, y); 
+  cairo_stroke (cr);
+  cairo_fill(cr);
+
+  cairo_new_path(cr);
+  cairo_set_source_rgba(cr, 1, 0.1, 0.1, 1);
+  cairo_arc(cr, x, y, 9, 0, 3.1415926 / 180.0 * 360);
+  cairo_fill(cr);
+
+
+  cairo_new_path(cr);
+  cairo_set_line_width (cr, 1.6);
+  cairo_set_source_rgba(cr, 0.3, 0.2, 0.1, 1);
+  cairo_move_to(cr, x, y);
+  cairo_line_to(cr, letterpaper_width_ptx - x, y);
+  cairo_line_to(cr, letterpaper_width_ptx/2, letterpaper_gov_margin);
+  cairo_close_path(cr);
+  cairo_stroke (cr);
+
+
+  cairo_new_path(cr);
+  cairo_set_line_width (cr, 1.6);
+  cairo_set_source_rgba(cr, 0.3, 0.6, 0.6, 1);
+  cairo_move_to(cr, x, y);
+  cairo_line_to(cr, letterpaper_width_ptx/2, letterpaper_gov_margin + (26 * 18));
+  cairo_line_to(cr, letterpaper_width_ptx -x, y);
+
+    
+  cairo_close_path(cr);
+  cairo_stroke (cr);
+
+
+  cairo_new_path(cr);
+  cairo_set_line_width (cr, 2.6);
+  cairo_set_source_rgba(cr, 0.3, 0.5, 0.4, 1);
+  cairo_arc (cr, gs_center, gs_center + gs_rad, gs_rad,
+   0,
+   (3.1415926 / 180.0) * 270.0);
+  cairo_stroke (cr);
+  cairo_fill(cr);
+
+  cairo_new_path(cr);
+  cairo_set_line_width (cr, 2.6);
+  cairo_set_source_rgba(cr, 0.7, 0.2, 0.6, 1);
+  cairo_arc (cr, gs_center, gs_center + gs_rad, gs_rad,
+   (3.1415926 / 30.0) * 70.0, 0);
+  cairo_stroke (cr);
+  cairo_fill(cr);
+
 
   cairo_surface_write_to_png(surface, filename);
   cairo_destroy(cr);

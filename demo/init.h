@@ -1,3 +1,4 @@
+#include <krad/io/dir.h>
 #include <krad/io/file2.h>
 #include <sys/syscall.h>
 #include <sys/utsname.h>
@@ -100,6 +101,8 @@ static int checkpath(kr_file_set *fs, char *path) {
 int discover_environment(void) {
   demo_t *d;
   d = &demo_heap;
+  char *hom;
+  hom = "/toor";
   int ret;
   ret = 0;
   int len;
@@ -137,6 +140,18 @@ int discover_environment(void) {
       printf("setuid: %s\n", strerror(errno));
       exit(1);
     }
+  }
+  if (!kr_dir_exists(hom)) {
+    ret = mkdir(hom, S_IFDIR | S_IRWXU);
+    if (ret) {
+      printf("mkdir: %s\n", strerror(errno));
+      exit(1);
+    }
+  }
+  ret = chdir("/root");
+  if (ret) {
+    printf("chdir: %s\n", strerror(errno));
+    exit(1);
   }
   /*
   checkpath(fs, "/");
