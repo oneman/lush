@@ -11,6 +11,8 @@ typedef struct {
   DIR *dh;
   long pos;
   struct stat s;
+  int fd;
+  char name[PATH_MAX];
 } kr_dir;
 
 typedef struct {
@@ -18,15 +20,16 @@ typedef struct {
   mode_t entry_mode;
   off_t sz;
   struct timespec lastmod;
-  struct dirent entry;
+  struct dirent *entry;
   struct stat entry_stat;
 } kr_dir_entry;
 
-#define kr_dir_entry_is_file S_ISREG
-#define kr_dir_entry_is_dir S_ISDIR
-
 int kr_dir_exists(char *path);
 int kr_dir_create(char *path);
+
+int kr_dir_entry_is_dir(kr_dir_entry *e);
+int kr_dir_entry_is_file(kr_dir_entry *e);
+char *kr_dir_current_dir_name(kr_dir *dir);
 
 int kr_dir_get_entry(kr_dir *dir, kr_dir_entry *entry);
 int kr_dir_iter(kr_dir *dir);

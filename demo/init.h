@@ -1,8 +1,11 @@
+#define _GNU_SOURCE
 #include <krad/io/dir.h>
 #include <krad/io/file2.h>
+#include <sys/types.h>
 #include <sys/syscall.h>
 #include <sys/utsname.h>
 #include <unistd.h>
+#include <dirent.h>
 #include <errno.h>
 #include "doc/1a2b3c/stdiov.h"
 
@@ -21,13 +24,22 @@ struct iovec {
 
 static char *V = "demo system 26";
 
+#define DEMO_MEMNOM 26000
+
 typedef struct {
-  kr_dir fold;
-  labeled_iovec mem[2601];
+  uint64_t nbytes;
+  int nfiles;
+  int ndirs;
+  int to_scan;
+  int scanned;
+  kr_dir fold[DEMO_MEMNOM];
+} dirscan;
+
+typedef struct {
+  dirscan scan;
+  labeled_iovec mem[DEMO_MEMNOM];
   struct utsname uname;
 } demo_t;
-
-static demo_t demo_heap;
 
 int cbev(kr_file_event *ev) {
   /*uint8_t *user_ptr;
@@ -36,6 +48,21 @@ int cbev(kr_file_event *ev) {
   return 0;
 }
 
+typedef struct {
+ ino_t        d_ino;    /* 64-bit inode number */
+ off_t        d_off;    /* 64-bit offset to next structure */
+ unsigned short int d_reclen; /* Size of this dirent */
+ unsigned char  d_type;   /* File type */
+ char           d_name[256]; /* Filename (null-terminated) */
+} dir_entry;
+
+/*ssize_t getdents64(int fd, void dirp[.count], size_t count);*/
+ssize_t get_dir_ls(unsigned int fd, dir_entry *dirp,
+                   unsigned int count) {
+  return syscall(SYS_getdents64, fd, dirp, count);
+}
+
+/*
 static void uwls(uint8_t *bits, uint64_t sz) {
   uint64_t b;
   int wasntext = 0;
@@ -73,7 +100,7 @@ static int checkpath(kr_file_set *fs, char *path) {
     printf("We could not open a file: %s\n", path);
     ret = 1;
   }
-  if (ret == 0) { 
+  if (ret == 0) {
     kr_file2_info info;
     ret = kr_file2_get_info(in, &info);
     if (ret) {
@@ -90,7 +117,7 @@ static int checkpath(kr_file_set *fs, char *path) {
   }
   return ret;
 }
-
+*/
 /*
  *
  * How many files out of all the files I can read
@@ -99,23 +126,96 @@ static int checkpath(kr_file_set *fs, char *path) {
  *
  */
 
+int addscan(demo_t *d, char *path) {
+  int len;
+  if (!d) return 0;
+  if (!path) return 0;
+  if (d->scan.to_scan == DEMO_MEMNOM) {
+    printf("damnit wtf to many dirs\n");
+    exit(1);
+    return -1;
+  }
+  len = strlen(path);
+  memcpy(d->scan.fold[d->scan.to_scan].name, path, len);
+  d->scan.fold[d->scan.to_scan].name[len] = '\0';
+  d->scan.to_scan++;
+  return 1;
+}
+
+int scan_another_dir(demo_t *d) {
+  int ret;
+  kr_dir *dir;
+  dir = &d->scan.fold[d->scan.scanned++];
+  printf("Scanning:\n%s\n", dir->name);
+  ret = kr_dir_open(dir, dir->name, strlen(dir->name));
+  if (ret) {
+    printf("kr_dir_open: %d\n", ret);
+    return 1;
+  }
+  kr_dir_entry y;
+  int nfiles = d->scan.nfiles;
+  int ndirs = d->scan.ndirs;
+  for (;;) {
+    if (((d->scan.ndirs + d->scan.nfiles) % 26) == 0) {
+      printf("%s status %d subdirs %d files\n", dir->name, d->scan.ndirs - ndirs,
+        d->scan.nfiles - nfiles);
+      printf("%lu megabytes\n", d->scan.nbytes / 1000000);
+    };
+    ret = kr_dir_get_entry(dir, &y);
+    if (!ret) break;
+    if (kr_dir_entry_is_file(&y)) {
+      printf("%s/%s %lu bytes\n", dir->name, y.name, y.sz);
+      d->scan.nbytes += y.sz;
+      d->scan.nfiles++;
+      continue;
+    }
+    if (kr_dir_entry_is_dir(&y)) {
+      static char fullpath[4096];
+      //printf("1Adding subscan!: %s / %s\n", dir->name, y.name);
+      sprintf(fullpath, "%s/%s", dir->name, y.name);
+      printf("subdir: %s\n", fullpath);
+      addscan(d, fullpath);
+      d->scan.ndirs++;
+      continue;
+    }
+  }
+  printf("Scan done: %s %d subdirs and %d files\n", dir->name, d->scan.ndirs - ndirs,
+         d->scan.nfiles - nfiles);
+  ret = kr_dir_close(dir);
+  if (ret) {
+    printf("kr_dir_close: %d\n", ret);
+    exit(1);
+  }
+  return 0;
+}
+
+int run_dirscan(demo_t *d) {
+  if (!d) return -1;
+  if (d->scan.to_scan < 1) return -1;
+  while (d->scan.to_scan != d->scan.scanned) {
+    scan_another_dir(d);
+    printf("Scanned %d entries. %d subdirs and %d files.\n", d->scan.scanned,
+           d->scan.ndirs, d->scan.nfiles);
+  }
+  return 0;
+}
+
 /* explain everything in the universe from the context
  * of this one program parsing all the files ;) */
-int discover_environment(void) {
-  demo_t *d;
-  d = &demo_heap;
+int scan_fs(demo_t *d) {
+  if (!d) return -1;
   char *hom;
-  hom = "/toor";
+  hom = "/root";
   int ret;
   ret = 0;
-  int len;
-  len = 0;
+  //int len;
+  //len = 0;
   int uid;
   int euid;
-  char *path;
-  path = NULL;
-  kr_file2 *file;
-  file = NULL;
+  //char *path;
+  //path = NULL;
+  //kr_file2 *file;
+  //file = NULL;
   static kr_fs_setup setup;
   setup.nfiles = 64;
   setup.user = d;
@@ -144,8 +244,7 @@ int discover_environment(void) {
       printf("setuid: %s\n", strerror(errno));
       exit(1);
     }
-  } 
-  
+  }
   if (!kr_dir_exists(hom)) {
     ret = mkdir(hom, S_IFDIR | S_IRWXU);
     if (ret) {
@@ -153,56 +252,37 @@ int discover_environment(void) {
       exit(1);
     }
   }
-  ret = chdir("/root");
+  ret = chdir(hom);
   if (ret) {
     printf("chdir: %s\n", strerror(errno));
     exit(1);
   }
-  path = "/";
-  len = 1;
-  ret = kr_dir_open(&d->fold, path, len);
-  if (ret) {
-    printf("kr_dir_open: %d\n", ret);
-    exit(1);
-  }
-  //printf("got opened!\n");
-  /*
-  #define SECS_IN_DAY (24 * 60 * 60)
-  #include <time.h>
-  long days;
-  int years;
-  struct timespec  ts;
-  clockid_t clockt = CLOCK_REALTIME;
-  if (clock_gettime(clockt, &ts) == -1) {
-    perror("clock_gettime");
-    exit(EXIT_FAILURE);
-  }
-  days = ts.tv_sec / SECS_IN_DAY;
-  years = 1 + (days/365);*/
   printf("%s operating LiK# %s on %s\n", V, d->uname.release, d->uname.machine);
-  //printf("y+%d-%dd\n", 1970 + years, (years % 365));
-  printf("state: superGOOD & .plan: Now Comphrehensive %s scan!\n", path);
-  
-  kr_dir_entry y;
-  int n;
-  n = 0;
-  for (;;) {
-    ret = kr_dir_get_entry(&d->fold, &y);
-    if (!ret) break;
-    n++;
-    printf("%s\n", y.name);
-    ret = kr_dir_iter(&d->fold);
-    if (ret) { printf("dir iter? %d\n", ret); }
-  }
-  //printf("done w/ f'scan!\n");
-  ret = kr_dir_close(&d->fold);
-  if (ret) {
-    printf("kr_dir_close: %d\n", ret);
-    exit(1);
-  }
+  printf("state: superGOOD & .plan: Now Comphrehensive fs scan!\n");
+  //addscan(d, "/", 1);
+  // ok so #1 we ..must encode in a sense a partial mirror of the kernel
+  // probably best by using something to pull the needed types from the kernel
+  // such as the "seven types of files" and that some files are apparently,
+  // both a directory and a symlink, surprise surprise
+  //
+  // ok lets make a masterfile of say 256mb on every block device with a
+  // partition, which we should mount all of them if avail
+  //
+  // need to get rid of lot of stupidnesses ..
+  //
+  // need to encode what "fs types" are "system" vs storage?
+  //openat(AT_FDCWD, "/proc/self/mountinfo", O_RDONLY|O_CLOEXEC) = 3
+  //newfstatat(AT_FDCWD, "/dev", {st_mode=S_IFDIR|0755, st_size=4240, ...}, 0) = 0
+  //statfs("/dev", {f_type=TMPFS_MAGIC, f_bsize=4096, f_blocks=8184431, f_bfree=8184431, f_bavail=8184431, f_files=8184431, f_ffree=8183802, f_fsid={val=[0xef75550f, 0xeb1f3c3]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_NOSUID|ST_RELATIME}) = 0
+
+  //
+  //
+  addscan(d, "/root");
+  addscan(d, "/etc");
+  addscan(d, "/usr");
+  addscan(d, "/home");
+  run_dirscan(d);
   /*
-  #include <dirent.h>
-  
   DIR *dh;
   dh = opendir("/");
   if (!dh) {
@@ -246,7 +326,8 @@ int discover_environment(void) {
   return ret;
 }
 
-int seek_lush_source(void) {
+int seek_lush_source(demo_t *d) {
+  if (!d) return -1;
   int ret;
   ret = 0;
   /*reconstruct_argc?*/
@@ -267,11 +348,15 @@ int seek_lush_source(void) {
  */
 
 int init_demo(int argc, char *argv[]) {
+  demo_t *d;
   int ret;
+  d = calloc(1, sizeof(demo_t));
+  if (d) printf("cAlloc'ed %lu megabyte mistake buffer\n", sizeof(demo_t) / 1000000);
   ret = 0;
-  ret = discover_environment();
+  ret = scan_fs(d);
   if (ret) return ret;
-  ret = seek_lush_source();
+  ret = seek_lush_source(d);
+  free(d);
   return ret;
 }
 

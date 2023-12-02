@@ -6,6 +6,7 @@
 #include <errno.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/syscall.h>
 #include <unistd.h>
 #include <krad/app/debug.h>
 #include <krad/mem/mem.h>
@@ -45,34 +46,51 @@ int kr_dir_create(char *dirname) {
   return mkdir(dirname, mode);
 }
 
+char *kr_dir_current_dir_name(kr_dir *dir) {
+  if (!dir || !dir->dh) return "WHAT THE FUCK";
+  return dir->name;
+}
+
+//entry->sz = entry->entry_stat.st_size;
+//entry->lastmod = entry->entry_stat.st_mtim;
+
+int kr_dir_entry_is_dir(kr_dir_entry *e) {
+  if (!e) return 0;
+  if (S_ISDIR(e->entry_mode)) return 1;
+  return 0;
+}
+
+int kr_dir_entry_is_file(kr_dir_entry *e) {
+  if (!e) return 0;
+  if (S_ISREG(e->entry_mode)) return 1;
+  return 0;
+}
+
 int kr_dir_get_entry(kr_dir *dir, kr_dir_entry *entry) {
   int ret;
-  struct dirent *res;
   if (!dir || !dir->dh || !entry) return -1;
   if (dir->pos) {
     seekdir(dir->dh, dir->pos);
   }
   for (;;) {
-    dir->pos = telldir(dir->dh);
-    if (dir->pos == -1) dir->pos = 0;
-    res = readdir(dir->dh);
-    if (!res) {
-      printf("ahh fail: %s\n", strerror(errno));
-      exit(1);
+    entry->entry = readdir(dir->dh);
+    if (!entry->entry) {
+      //printf("no entry: %s\n", strerror(errno));
+      //exit(1);
+      return 0;
     }
-    entry->entry = *res;
-    /*if (ret) return -1;
-    if (ret) break;
-    if (res == NULL) return 0;
-    if (res->d_ino) {
-      if ((res->d_name[0] == '.' && res->d_name[1] == '\0')
-       || (res->d_name[0] == '.' && res->d_name[1] == '.'
-       && res->d_name[2] == '\0')) continue;
-       break;
-    }*/
+    dir->pos = telldir(dir->dh);
+    if (dir->pos == -1) {
+      printf("telldir: %s\n", strerror(errno));
+      dir->pos = 0;
+    }
+    if ((entry->entry->d_name[0] == '.' && entry->entry->d_name[1] == '\0')
+       || (entry->entry->d_name[0] == '.' && entry->entry->d_name[1] == '.'
+       && entry->entry->d_name[2] == '\0')) continue;
+    break;
   }
-  entry->name = entry->entry.d_name;
-  ret = fstatat(dirfd(dir->dh), entry->entry.d_name, &entry->entry_stat, 0);
+  entry->name = entry->entry->d_name;
+  ret = fstatat(dirfd(dir->dh), entry->name, &entry->entry_stat, 0);
   if (ret == 0) {
     entry->entry_mode = entry->entry_stat.st_mode;
     entry->sz = entry->entry_stat.st_size;
@@ -110,18 +128,18 @@ int kr_dir_is_open(kr_dir *dir) {
 
 int kr_dir_open(kr_dir *dir, char *path, size_t len) {
   int err;
-  if (!dir || !path || len < 1) {
+  if (!dir || !path || len < 1 || (len > (PATH_MAX -1))) {
     printf("wtf?\n");
     return -1;
   }
   err = stat(path, &dir->s);
   if (err == -1) {
     if (ENOENT == errno) {
-      // does not exist
-      return 0;
+      printf("Prolly trying to open a linkhole\n");
+      return -1;
     } else {
-      // another error
-      return 0;
+      printf("another error\n");
+      return -1;
     }
   }
   if (S_ISDIR(dir->s.st_mode)) {
@@ -131,8 +149,14 @@ int kr_dir_open(kr_dir *dir, char *path, size_t len) {
     // exists but is no dir
     return 0;
   }
+  if (S_ISLNK(dir->s.st_mode)) {
+    printf("Oh noe: its a link, dont follow links u dont chek rly exist\n");
+    return -1;
+  }
   dir->dh = opendir(path);
   if (dir->dh) {
+    memcpy(dir->name, path, len);
+    dir->name[len] = '\0';
     dir->pos = telldir(dir->dh);
     return 0;
   }

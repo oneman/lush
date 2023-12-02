@@ -147,11 +147,11 @@ static int serve_index(kr_xfer_path *xf) {
       kr_dir_iter(&xf->serve.dir);
       continue;
     }
-    if (kr_dir_entry_is_file(entry.entry_mode)) {
+    if (kr_dir_entry_is_file(&entry)) {
       pos = snprintf(str, sizeof(str), "<li><a href=\"%s\">%s</a></li>",
        entry.name, entry.name);
       /*printf("\t\t\t%zd bytes", entry.sz);*/
-    } else if (kr_dir_entry_is_dir(entry.entry_mode)) {
+    } else if (kr_dir_entry_is_dir(&entry)) {
       pos = snprintf(str, sizeof(str), "<li><a href=\"%s/\">%s/</a></li>",
        entry.name, entry.name);
     }
