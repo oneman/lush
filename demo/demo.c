@@ -64,7 +64,7 @@ int lsdir(lush_t *demo) {
   if (fd == -1) err(EXIT_FAILURE, "open");
 
   for (;;) {
-    nread = syscall(SYS_getdents, fd, buf, BUF_SIZE);
+    nread = getdentry(fd, buf, BUF_SIZE);
     if (nread == -1) err(EXIT_FAILURE, "getdents");
     if (nread == 0) break;
 
