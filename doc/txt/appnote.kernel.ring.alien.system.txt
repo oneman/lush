@@ -1,0 +1,62 @@
+computer: I operate on the bits that memory locations point to
+unix: everything is a file
+hacker: which of those memory locations have informed the current
+memory layout mutation "filesystem structure/including file contents"
+as compared to the canonical monoidal computer system compactified
+general specification (wiring diagram).
+
+in a sense we want to simply "cat /computer > file" or capture the entire
+memory state "core" of the computer system for analysis in detail.
+
+It turns out that by implementing the monoidal computer as a corecursive
+kernel function with the linux kernel such as she is, 6.6.3-2 in specific,
+has many benefits. one of which is a conveient compactified representation
+of the canonical partitions that is totally transvertable (interpretable
+in any one of many well known and understood "data types" such as tar.xz)
+that are just a tranvertable to 26 dimensional string representations that
+are then compactified by embeded 5-bit representations usually stored in
+bytes aka the ascii isalpha() characters for the C locale
+
+
+memory address memory address memory address memory address
+
+struct iovec {
+  void *iov_base;
+  size_t iov_len;
+};
+
+paths paths paths paths paths paths paths
+path len path len path len path len path len path len
+
+THUS INFORMATION ABOUT KERNEL
+and filesystem types and local hardware
+and local filesystems of types such
+as the kind that present to the kernel
+via a device: /proc/filesystems
+
+The kernels "chatlog"/"syslog": /dev/kmsg
+
+ALL FILES HAVE A PATH AND A NAME
+THE TOTAL LENGTH OF WHICH IS NOT
+LONGER THAN 4096 BYTES EVER
+
+ALL FILES "ON A DEVICE" have a size
+
+dirents dirents dirents dirents
+
+files files files files files files
+
+look at any file but for example an essentially plain text file that is
+unicode but in my case preferably mostly ascii such as "dmesg" and then
+look at the length of the lines of the most interest in the matters of
+spliting a file by the LF byte aka \n aka newline aka line by line of
+a file which is a bitstream of finite byte size therefor also always of
+some finite amount of partitions of that bitstream by any byte in
+particular but for example here LF aka decimal 10 and hex 0a or 0A
+
+a file with no LF byte in it is a one line file, or to put another way
+it is a bitstream that when partitioned by the byte 00001010 admits
+exactly one partitition with a length that is equal to the size of the
+file.
+
+determine the ultimate basis function for any byte in the filesystem 
