@@ -6,6 +6,8 @@
 #include <sys/utsname.h>
 #include <unistd.h>
 #include <dirent.h>
+#include <fcntl.h>
+#include <err.h>
 #include <errno.h>
 #include "doc/1a2b3c/stdiov.h"
 
@@ -33,50 +35,56 @@ typedef struct {
  unsigned short int d_reclen; /* Size of this dirent */
  unsigned char d_type; /* File type */
  char d_name[256]; /* Filename (null-terminated) */
-} entry;
+} dentry;
 
 /*ssize_t getdents64(int fd, void dirp[.count], size_t count);*/
-ssize_t get_dir_ls(unsigned int fd, entry *dirp, unsigned int count) {
+ssize_t getdentry(unsigned int fd, dentry *dirp, unsigned int count) {
   return syscall(SYS_getdents64, fd, dirp, count);
 }
-int playlist(lush_t *d) {
-/*
-    DT_UNKNOWN = 0,
-# define DT_UNKNOWN	DT_UNKNOWN
-    DT_FIFO = 1,
-# define DT_FIFO	DT_FIFO
-    DT_CHR = 2,
-# define DT_CHR		DT_CHR
-    DT_DIR = 4,
-# define DT_DIR		DT_DIR
-    DT_BLK = 6,
-# define DT_BLK		DT_BLK
-    DT_REG = 8,
-# define DT_REG		DT_REG
-    DT_LNK = 10,
-# define DT_LNK		DT_LNK
-    DT_SOCK = 12,
-# define DT_SOCK	DT_SOCK
-    DT_WHT = 14
-# define DT_WHT		DT_WHT
-  };
-Convert between stat structure types and directory types.
-# define IFTODT(mode)	(((mode) & 0170000) >> 12)
-# define DTTOIF(dirtype)	((dirtype) << 12)
-S_IFDIR
-    This is the file type constant of a directory file.
-S_IFCHR
-    This is the file type constant of a character-oriented device file.
-S_IFBLK
-    This is the file type constant of a block-oriented device file.
-S_IFREG
-    This is the file type constant of a regular file.
-S_IFLNK
-    This is the file type constant of a symbolic link.
-S_IFSOCK
-    This is the file type constant of a socket.
-S_IFIFO
-*/
+
+int lsdir(lush_t *demo) {
+  /*
+  DT_UNKNOWN,
+  DT_FIFO, DT_CHR, DT_DIR, DT_BLK, DT_REG, DT_LNK, DT_SOCK,
+  DT_WHT
+  # define IFTODT(mode)	(((mode) & 0170000) >> 12)
+  # define DTTOIF(dirtype)	((dirtype) << 12)
+  S_IFDIR, S_IFCHR, S_IFBLK, S_IFREG, S_IFLNK, S_IFSOCK, S_IFIFO
+  /oh the types of directory entries*/
+
+#define BUF_SIZE 1024
+
+  int fd;
+  char d_type;
+  char buf[BUF_SIZE];
+  long nread;
+  dentry *d;
+
+  fd = open("/", O_RDONLY | O_DIRECTORY);
+  if (fd == -1) err(EXIT_FAILURE, "open");
+
+  for (;;) {
+    nread = syscall(SYS_getdents, fd, buf, BUF_SIZE);
+    if (nread == -1) err(EXIT_FAILURE, "getdents");
+    if (nread == 0) break;
+
+    printf("--------------- nread=%ld ---------------\n", nread);
+    printf("inode#    file type  d_reclen  d_off   d_name\n");
+      for (size_t bpos = 0; bpos < nread;) {
+        d = (dentry *) (buf + bpos);
+        printf("%8lu  ", d->d_ino);
+        d_type = *(buf + bpos + d->d_reclen - 1);
+        printf("%-10s ", (d_type == DT_REG) ?  "regular" :
+                         (d_type == DT_DIR) ?  "directory" :
+                         (d_type == DT_FIFO) ? "FIFO" :
+                         (d_type == DT_SOCK) ? "socket" :
+                         (d_type == DT_LNK) ?  "symlink" :
+                         (d_type == DT_BLK) ?  "block dev" :
+                         (d_type == DT_CHR) ?  "char dev" : "???");
+      printf("%4d %10jd  %s\n", d->d_reclen, (intmax_t) d->d_off, d->d_name);
+      bpos += d->d_reclen;
+    }
+  }
   return 0;
 }
 
@@ -97,7 +105,7 @@ int main(int argc, char *argv[]) {
   printf("%s: %s\n%s\n", NAMESYSTEM, VERSION, SYSDESC);
   printf("%s sysop %s on %s at %s\n", PROGRAMNAME, d->uname.release,
    d->uname.machine, d->uname.nodename);
-  ret = playlist(d);
+  ret = lsdir(d);
   free(d);
   printf("%s done: %d\n", PROGRAMNAME, ret);
   return ret;
