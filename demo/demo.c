@@ -18,8 +18,8 @@ int ls_fs() {
   int opt;
   FTS *fs;
   FTSENT *n;
-  opt = FTS_PHYSICAL | FTS_XDEV;
-  char * const paths[] = {"/", NULL}; 
+  opt = FTS_PHYSICAL;
+  char * const paths[] = {"/", NULL};
   fs = fts_open(paths, opt, NULL);
   if (!fs) exit(1);
   for (;;) {
