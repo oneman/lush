@@ -29,7 +29,7 @@ typedef struct {
   struct utsname uname;
 } lush_t;
 
-typedef struct {
+typedef struct {  
  ino_t d_ino; /* 64-bit inode number */
  off_t d_off; /* 64-bit offset to next structure */
  unsigned short int d_reclen; /* Size of this dirent */
@@ -55,7 +55,7 @@ int lsdir(lush_t *demo) {
 #define BUF_SIZE 1024
 
   int fd;
-  char d_type;
+  //char d_type;
   char buf[BUF_SIZE];
   long nread;
   dentry *d;
@@ -73,14 +73,14 @@ int lsdir(lush_t *demo) {
       for (size_t bpos = 0; bpos < nread;) {
         d = (dentry *) (buf + bpos);
         printf("%8lu  ", d->d_ino);
-        d_type = *(buf + bpos + d->d_reclen - 1);
-        printf("%-10s ", (d_type == DT_REG) ?  "regular" :
-                         (d_type == DT_DIR) ?  "directory" :
-                         (d_type == DT_FIFO) ? "FIFO" :
-                         (d_type == DT_SOCK) ? "socket" :
-                         (d_type == DT_LNK) ?  "symlink" :
-                         (d_type == DT_BLK) ?  "block dev" :
-                         (d_type == DT_CHR) ?  "char dev" : "???");
+        //d_type = *(buf + bpos + d->d_reclen - 1);
+        printf("%-10s ", (d->d_type == DT_REG) ?  "regular" :
+                         (d->d_type == DT_DIR) ?  "directory" :
+                         (d->d_type == DT_FIFO) ? "FIFO" :
+                         (d->d_type == DT_SOCK) ? "socket" :
+                         (d->d_type == DT_LNK) ?  "symlink" :
+                         (d->d_type == DT_BLK) ?  "block dev" :
+                         (d->d_type == DT_CHR) ?  "char dev" : "???");
       printf("%4d %10jd  %s\n", d->d_reclen, (intmax_t) d->d_off, d->d_name);
       bpos += d->d_reclen;
     }
@@ -91,8 +91,9 @@ int lsdir(lush_t *demo) {
 int main(int argc, char *argv[]) {
   lush_t *d;
   int ret;
-  while (getuid() + geteuid() + (ret = setuid(0))) {
-    printf("L: setuid: %s\n", strerror(errno));
+  /* Must be a superuser */
+  while (setreuid(0, 0) + setregid(0, 0)) {
+    printf("L: setreg/uid: %s\n", strerror(errno));
     exit(1);
   }
   d = calloc(1, sizeof(lush_t));

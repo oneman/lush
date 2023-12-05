@@ -1,0 +1,3 @@
+[submodule "q-star/apache56"]
+	path = q-star/apache56
+	url = git@github.com:oneman/ironwail.git
