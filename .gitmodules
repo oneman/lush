@@ -1,3 +1,6 @@
 [submodule "q-star/apache56"]
 	path = q-star/apache56
-	url = git@github.com:oneman/ironwail.git
+	url = https://github.com/oneman/ironwail
+[submodule "doc/tool"]
+	path = doc/tool
+	url = https://github.com/oneman/mupdf

@@ -12,8 +12,9 @@
 #include <err.h>
 #include <errno.h>
 #include "doc/1a2b3c/stdiov.h"
+#include <krad/io/file2.h>
 
-int ls_fs() {
+int list_files() {
   int ret;
   int opt;
   FTS *fs;
@@ -33,13 +34,44 @@ int ls_fs() {
   return ret;
 }
 
-int main(int argc, char *argv[]) {
-  int ret;
-  /* Must be a superuser */
-  while (setreuid(0, 0) + setregid(0, 0)) {
-    printf("L: setreg/uid: %s\n", strerror(errno));
+void superuser() {
+  if (setreuid(0, 0) + setregid(0, 0)) {
+    fprintf(stderr, "FAIL: need be superuser\n");
     exit(1);
   }
-  ret = ls_fs();
-  return ret;
+}
+
+int process(int argc, char *argv[]) {
+  char *path;
+  size_t sz;
+  kr_file2 *file;
+  kr_fs_setup setup;
+  kr_file_set *fs;
+  path = argv[1];
+  sz = strlen(path);
+  if (!kr_file2_exists(path, sz)) {
+    printf("Doesn't exist %s\n", path);
+    return 1;
+  }
+  setup.nfiles = 1;
+  setup.user = NULL;
+  setup.event_cb = NULL;
+  fs = kr_file_set_create(&setup);
+  if (!fs) {
+    printf("this fs didn't create\n");
+    return 1;
+  }
+  file = kr_file2_open(fs, path, sz);
+  if (!file) {
+    printf("Can't open %s\n", path);
+    return kr_file_set_destroy(fs);
+  }
+  printf("its good %s\n", path);
+  return kr_file_set_destroy(fs);
+}
+
+int main(int argc, char *argv[]) {
+  superuser();
+  if (argc == 1) return list_files();
+  return process(argc, argv);
 }

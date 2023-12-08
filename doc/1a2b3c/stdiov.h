@@ -18,7 +18,7 @@
 /* a more useful include */
 #include <sys/uio.h>
 
-char c0c1_str[32][4] = {
+char ascii_cc_str[32][4] = {
   "NUL",
   "SOH","STX",
   "ETX","EOT",
@@ -49,10 +49,10 @@ typedef enum {
   EM,
   SUB,ESC,
   FS,GS,RS,US
-} c0c1_t;
+} CC;
 
-#define C0C1_START 0
-#define C0C1_LAST US
+#define CC_START 0
+#define CC_LAST US
 
 #define SP (US + 1)
 #define SP_STR "SP"
@@ -202,4 +202,32 @@ uint8_t isvsciiword(char *string, size_t len) {
   return len;
 }
 
+/*
+letter
+ upper
+ lower
+number
+
+grouping, demarking group via enclosing
+8  character pairs (){}[]<>
+2  characters used in pairs '"
+
+5 adjacent "and-ish" joining  +-=_&
+5 adjacent "or-ish" spliting :;.,|
+
+2 path_sep /\
+
+10 attache: `~!@#$%^*? "not used for seperating term, for distingishing a term
+
+tick
+till
+bang
+at
+hash
+dollar
+percent
+rise
+star
+huh
+*/
 #endif

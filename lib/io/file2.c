@@ -72,6 +72,7 @@ static void fs_info(kr_file2 *file) {
 
 static void run_event(kr_file2 *file, kr_file_event_type type) {
   kr_file_event event;
+  if (!file->fs->event_cb) return;
   event.user = file->fs->user;
   event.file = file;
   event.type = type;
@@ -376,6 +377,7 @@ kr_file_set *kr_file_set_create(kr_fs_setup *setup) {
   kr_pool *pool;
   kr_pool_setup pool_setup;
   if (!setup) return NULL;
+  if (!setup->nfiles) return NULL;
   //printk("File set: Creating");
   pool_setup.shared = 0;
   pool_setup.overlay = NULL;
