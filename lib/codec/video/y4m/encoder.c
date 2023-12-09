@@ -11,7 +11,7 @@ struct kr_y4m_encoder {
   plane_sz plane[3];
   kr_y4m_encoder_info info;
   uint8_t header[KR_Y4M_HEADER_SIZE_MAX];
-  size_t header_sz;  
+  size_t header_sz;
 };
 
 static ssize_t generate_header(uint8_t *header, kr_y4m_encoder_info *info) {
