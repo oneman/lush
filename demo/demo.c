@@ -14,6 +14,8 @@
 #include "doc/1a2b3c/stdiov.h"
 #include <krad/io/file2.h>
 
+#include "teardown.c"
+
 int list_files() {
   int ret;
   int opt;
@@ -44,7 +46,9 @@ void superuser() {
 int process(int argc, char *argv[]) {
   char *path;
   size_t sz;
+  uint8_t *data;
   kr_file2 *file;
+  kr_file2_info info;
   kr_fs_setup setup;
   kr_file_set *fs;
   path = argv[1];
@@ -66,7 +70,11 @@ int process(int argc, char *argv[]) {
     printf("Can't open %s\n", path);
     return kr_file_set_destroy(fs);
   }
-  printf("its good %s\n", path);
+  data = kr_file2_get_data(file);
+  if (data && !kr_file2_get_info(file, &info)) {
+    printf("teardown %s\n", path);
+    teardown(data, info.sz);
+  }
   return kr_file_set_destroy(fs);
 }
 
