@@ -16,7 +16,7 @@
 
 #include "teardown.c"
 
-int list_files() {
+int find_files() {
   int ret;
   int opt;
   FTS *fs;
@@ -80,6 +80,6 @@ int process(int argc, char *argv[]) {
 
 int main(int argc, char *argv[]) {
   superuser();
-  if (argc == 1) return list_files();
+  if (argc == 1) return find_files();
   return process(argc, argv);
 }
