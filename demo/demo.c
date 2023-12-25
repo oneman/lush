@@ -14,7 +14,7 @@
 #include "doc/1a2b3c/stdiov.h"
 #include <krad/io/file2.h>
 
-#include "teardown.c"
+#include "cut/deep.c"
 
 int find_files() {
   int ret;
@@ -73,7 +73,7 @@ int process(int argc, char *argv[]) {
   data = kr_file2_get_data(file);
   if (data && !kr_file2_get_info(file, &info)) {
     printf("teardown %s\n", path);
-    teardown(data, info.sz);
+    deepcut(data, info.sz);
   }
   return kr_file_set_destroy(fs);
 }
