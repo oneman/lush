@@ -22,14 +22,15 @@ int find_files() {
   FTS *fs;
   FTSENT *n;
   opt = FTS_PHYSICAL;
-  char * const paths[] = {"/", NULL};
+  char * const paths[] = {"/home", NULL};
   fs = fts_open(paths, opt, NULL);
   if (!fs) exit(1);
   for (;;) {
     n = fts_read(fs);
     if (!n) break;
     if (n->fts_info == FTS_F) {
-      printf("%s/%s\n", n->fts_path, n->fts_name);
+      /*n->fts_name*/
+      printf("%s\n", n->fts_path);
     }
   }
   ret = fts_close(fs);
