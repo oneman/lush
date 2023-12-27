@@ -4,7 +4,7 @@
 typedef struct {
   void *rd;
   void *wr;
-  void *cur; 
+  void *cur;
   uint64_t rv;
   uint64_t wv;
 } kr_xnfo;
@@ -31,4 +31,4 @@ void *kr_xnfo_push(kr_xnfo *x) {
 void *kr_xnfo_pull(kr_xnfo *x) {
   x->cur = __atomic_exchange_n(x->rd, x->cur, MM);
   return x->cur;
-} 
+}
