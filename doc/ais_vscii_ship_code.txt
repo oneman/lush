@@ -1,0 +1,26 @@
+00001  aaa    a  aaa  a a  aaa  alpha
+00010  b    b    bbb  b b  bbb  bravo
+00011             cc   c    cc  charlie
+00100    d    d  ddd  d d  ddd  delta
+00101  eee  e e  eee  e    eee  echo
+00110  fff  f    ff   f    f    foxtrot
+00111 gggg g    g gg g  g gggg  golf
+01000  h    h    hhh  h h  h h  hotel
+01001   i    i    i    i    i   india
+01010    j    j    j  j j  jjj  juliet
+01011  k    k    k k  kk   k k  kilo
+01100  l    l    l    l    lll  lima
+01101           mmmmmm m mm m m mike
+01110            nnn  n n  n n  november
+01111  oo  o  o o  o  oo        oscar
+10000  ppp  p p  ppp  p    p    papa
+10001 qqq  q q  qqq    q    qq  quebec
+10010       rrr  r    r    r    romeo
+10011   ss  s    sss    s  ss   sierra
+10100   t  ttttt  t    t    t   tango
+10101            u u  u u  uuu  uniform
+10110           v   v v v   v   victor
+10111                w w ww w w whiskey
+11000 x   x x x   x   x x x   x x-ray
+11001 y   y y y   y   y   y     yankee
+11010  zzz    z   z   z    zzz  zulu

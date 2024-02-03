@@ -24,7 +24,6 @@
 #define gs_rad 13 * 18
 #define gs_center lpm + gs_rad
 
-
 /* content area: 6.5 * 9 = 58.5 in 484704 */
 /* letterpaper area: 58.5 + 35 = 93.5 in */
 /* letterpaper total quanta = 93.5 * 5184 */
@@ -35,8 +34,7 @@
 /* margin nonoverlapping wide quanta: 67392 */
 /* margin nonoverlapping tall quanta: 93312 */
 /* margin nonoverlapping ratio: 93312/67392 = 1.384615 */
-
-/* dollar size: 6.14 in 2.61 in (6.2 * 2.6) */
+/* dollar size: 6.2 * 2.6 */
 
 
 
