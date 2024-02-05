@@ -121,11 +121,11 @@ follow1 = 0x80 128
 10101010 = 170
 
 ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
- 
+
 typedef struct str {
   char *p;
   size_t sz;
-} 
+}
 */
 
 char ascii_cc_str[32][4] = {
@@ -170,20 +170,20 @@ typedef enum {
 #define DEL 127
 #define DEL_STR "DEL"
 
-#define ASCII_TEXT_MIN (SP + 1)
-#define ASCII_TEXT_MAX (DEL - 1)
-#define UTF8_TEXT_MIN (DEL + 1)
+#define ASCII_MARK_MIN (SP + 1)
+#define ASCII_MARK_MAX (DEL - 1)
+#define ASCII_MARKS = ASCII_MARKS_MAX - ASCII_MARK_MIN
 
 static const char *alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-uint8_t isascii_cc(uint8_t byte) {
-  if ((byte >= NUL) && (byte <= US)) return 1;
+uint8_t is_ascii_control(uint8_t byte) {
   if (byte == DEL) return 1;
+  if ((byte > NUL) && (byte < SP)) return 1;
   return 0;
 }
 
 uint8_t isascii_text(uint8_t byte) {
-  if ((byte >= ASCII_TEXT_MIN) && (byte <= ASCII_TEXT_MAX)) {
+  if ((byte >= SP) && (byte < DEL)) {
     return 1;
   }
   return 0;
@@ -195,7 +195,46 @@ uint8_t isascii_splf(uint8_t byte) {
   return 0;
 }
 
-uint8_t isvscii(uint8_t c) {
+char *ascii_dodads = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+
+
+#define ASCII_LETTERS 26
+#define ASCII_LETTERS_BIG 26
+#define ASCII_DIGITS 10
+#define ASCII_DODS 32
+#define ASCII_CTLS 33
+#define NUM_LETTERSORNUMBERS (NUM_LETTERS * NUM_CASES) + NUM_DIGITS
+
+int is_ascii_dodad(uint8_t c) {
+  int n;
+  char dod;
+  for (n = 0; n < ASCII_DODS; n++) {
+    dod = ascii_dodads[n];
+    if (c == dod) return 1;
+  }
+  return 0;
+}
+
+int is_ascii_number(uint8_t c) {
+  if (c == '0') return 1;
+  if (c == '1') return 1;
+  if (c == '2') return 1;
+  if (c == '3') return 1;
+  if (c == '4') return 1;
+  if (c == '5') return 1;
+  if (c == '6') return 1;
+  if (c == '7') return 1;
+  if (c == '8') return 1;
+  if (c == '9') return 1;
+  return 0;
+}
+
+int is_ascii(unsigned char byte) {
+  if ((byte > 0) && (byte < 128)) return 1;
+  return 0;
+}
+
+uint8_t is_vscii(uint8_t c) {
   if (c == 'A') return 1;
   if (c == 'B') return 1;
   if (c == 'C') return 1;
@@ -249,6 +288,33 @@ uint8_t isvscii(uint8_t c) {
   if (c == 'y') return 1;
   if (c == 'z') return 1;
   return 0;
+}
+
+int is_ascii_space(uint8_t c) {
+  if (c == SP) return 1;
+  return 0;
+}
+
+int is_ascii_line(uint8_t c) {
+  if (c == LF) return 1;
+  return 0;
+}
+
+int is_ascii_letter(uint8_t c) {
+  return is_vscii(c);
+}
+
+#define ℤ int
+#define cunt size_t
+#define csz size_t
+#define byte uint8_t
+
+ℤ ascii_len(byte *dat, cunt sz) {
+  byte b;
+  ℤ n = 0;
+  for (n = 0; n < sz; n++) { b = dat[n];
+    if (!is_ascii(b)) return n;
+  }
 }
 
 /* 26 sporatic groups vscii contains tits group? */
@@ -493,7 +559,7 @@ uint8_t isvsciiword(char *string, size_t len) {
     }
   }
   for (i = 0; i < len; i++) {
-    if (!(isvscii(string[i]))) {
+    if (!(is_vscii(string[i]))) {
   if (VSCII_REBUG) {
     fprintf(stderr, "Character %d, %c is not a vscii character.\n", i,
       string[i]);
@@ -757,15 +823,12 @@ void bfun() {
   for (n = 0; n < 256; n++) {
   printf("\n%*d ", 3, n);
   if (n == 0) { printf("bin zero"); 🔺 }
-  if (n == SP) { printf("ascii space"); 🔺 }
-  if (n == LF) { printf("ascii line"); 🔺 }
-  if (n == HT) { printf("ascii tab"); 🔺 }
-  if (n == VT) { printf("ascii virtual %s", "VT"); 🔺 }
-  if (n == FF) { printf("ascii fuck %s", "FF"); 🔺 }
-  if (n == CR) { printf("ascii return %s", "CR"); 🔺 }
+  if (n == SP) { printf("space"); 🔺 }
+  if (n == LF) { printf("newline"); 🔺 }
+  if (n == HT) { printf("tab"); 🔺 }
+  if (n == CR) { printf("return"); 🔺 }
   if (n < 33) { printf("ascii %s", ascii_cc_str[n]); 🔺 }
   if (n == 127) { printf("ascii DEL"); 🔺 }
-  if (n < 33) { printf("ascii ctl %s", ascii_cc_str[n]); 🔺 }
   if (n == ' ') { printf("space"); 🔺 }
   if (n == '!') { printf("fuck"); 🔺 }
   if (n == '"') { printf("quote"); 🔺 }  
