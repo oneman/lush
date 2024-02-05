@@ -404,7 +404,6 @@ dir_test_LDFLAGS =
 
 scan_test_SOURCES = io/scan_test.c
 scan_test_SOURCES += ../lib/mem/mem.c ../lib/app/debug.c ../lib/app/spinlock.c ../lib/io/dir.c
-scan_test_SOURCES += ../lib/io/scan.c
 scan_test_CFLAGS = $(XMMS2_CFLAGS)
 scan_test_LDFLAGS = $(XMMS2_LIBS)
 

@@ -1,14 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <krad/app/debug.h>
-#include <krad/io/scan.h>
 
-#ifdef KR_XMMS2
-#define KR_XMMS2_TEST 1
-#endif
-
-#ifdef KR_XMMS2_TEST
-#include <xmmsclient/xmmsclient.h>
+/*
 int add_xmms2_file(xmmsc_connection_t *conn, char *dir, char *name) {
 	xmmsc_result_t *res;
   xmmsv_t *val;
@@ -25,7 +19,7 @@ int add_xmms2_file(xmmsc_connection_t *conn, char *dir, char *name) {
     printke("xmmsc_medialib_add_entry: %s\n[%s]", err, url);
     return -1;
   } else {
-    /*printk("xmmsc_medialib_add_entry: %s", url);*/
+    
   }
   xmmsc_result_unref(res);
   return 0;
@@ -205,8 +199,10 @@ int scan_test(char *path, size_t len) {
   free(setup.mem);
   return ret;
 }
+*/
 
 int main(int argc, char const *argv[]) {
+/*
   int ret;
   size_t len;
   char cwd[PATH_MAX];
@@ -222,5 +218,6 @@ int main(int argc, char const *argv[]) {
     fprintf(stderr, "Failure.");
     return -1;
   }
+*/
   return 0;
 }

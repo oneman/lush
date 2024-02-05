@@ -34,33 +34,8 @@ to its sitationship status.
 
 vscii characters are global timeline operators.
 
-Decoding Measurement of Authoritarian Alignment Results in Monty Python Triality 
-
-clockwise downward spiral from the origin 0,0 right5, down4, back4, up3, right3, down3, back3, up2, right1, down1
-
-! fuck
-@ at
-# hash
-$ dollar
-% percent
-^ raise
-& and
-*
-( open parens
-) paran close
-{ block start
-} end block
-- minus
-+ plus
-| or
-= equals
-
-
-
-
-
-
-
+Decoding Measurement of Authoritarian Alignment Results in Monty
+Python Triality 
 
 */
 
@@ -117,7 +92,7 @@ MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA,
 RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY
 
 11111111111111111111111111111111111111111111111111111111111111111111111111111
-1                        26                                                78
+1        26                78
 
 an as at be by do go he id if in is it me my no of on or so to up us we yo
 
@@ -147,8 +122,6 @@ follow1 = 0x80 128
 
 ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
  
-
-
 typedef struct str {
   char *p;
   size_t sz;
@@ -205,6 +178,7 @@ static const char *alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 uint8_t isascii_cc(uint8_t byte) {
   if ((byte >= NUL) && (byte <= US)) return 1;
+  if (byte == DEL) return 1;
   return 0;
 }
 
@@ -221,7 +195,33 @@ uint8_t isascii_splf(uint8_t byte) {
   return 0;
 }
 
-uint8_t isvscii_nocap(uint8_t c) {
+uint8_t isvscii(uint8_t c) {
+  if (c == 'A') return 1;
+  if (c == 'B') return 1;
+  if (c == 'C') return 1;
+  if (c == 'D') return 1;
+  if (c == 'E') return 1;
+  if (c == 'F') return 1;
+  if (c == 'G') return 1;
+  if (c == 'H') return 1;
+  if (c == 'I') return 1;
+  if (c == 'J') return 1;
+  if (c == 'K') return 1;
+  if (c == 'L') return 1;
+  if (c == 'M') return 1;
+  if (c == 'N') return 1;
+  if (c == 'O') return 1;
+  if (c == 'P') return 1;
+  if (c == 'Q') return 1;
+  if (c == 'R') return 1;
+  if (c == 'S') return 1;
+  if (c == 'T') return 1;
+  if (c == 'U') return 1;
+  if (c == 'V') return 1;
+  if (c == 'W') return 1;
+  if (c == 'X') return 1;
+  if (c == 'Y') return 1;
+  if (c == 'Z') return 1;
   if (c == 'a') return 1;
   if (c == 'b') return 1;
   if (c == 'c') return 1;
@@ -249,10 +249,6 @@ uint8_t isvscii_nocap(uint8_t c) {
   if (c == 'y') return 1;
   if (c == 'z') return 1;
   return 0;
-}
-
-uint8_t isvscii(uint8_t c) {
-  return isvscii_nocap(c);
 }
 
 /* 26 sporatic groups vscii contains tits group? */
@@ -345,8 +341,6 @@ uint8_t isvscii(uint8_t c) {
 /* margin nonoverlapping ratio: 93312/67392 = 1.384615 */
 /* dollar size: 6.2 * 2.6 */
 
-
-
 int tryman(int argc, char *argv[]) {
   cairo_surface_t *surface;
   cairo_t *cr;
@@ -407,7 +401,7 @@ int tryman(int argc, char *argv[]) {
   cairo_new_path(cr);
   cairo_set_source_rgba(cr, 1.0, 0.53, 0.66, 0.4);
   cairo_rectangle(cr, (4 * 18) + (13 * 18), (4 * 18),
-                      (13 * 18), (5 * 18));
+          (13 * 18), (5 * 18));
   cairo_fill(cr);
   
   /*
@@ -485,59 +479,31 @@ uint8_t isvsciiword(char *string, size_t len) {
   int i;
   if ((len < VWORD_LEN_MIN) || (len > VWORD_LEN_MAX)) {
     if (len < VWORD_LEN_MIN) {
-      if (VSCII_REBUG) {
-        fprintf(stderr, "A vscii word is at the least 1 vscii character.\n");
-      }
-      return 0;
+  if (VSCII_REBUG) {
+    fprintf(stderr, "A vscii word is at the least 1 vscii character.\n");
+  }
+  return 0;
     } else {
-      if (len > VWORD_LEN_MAX) {
-        if (VSCII_REBUG) {
-          fprintf(stderr, "A vscii word is not more than 78 vscii chars.\n");
-        }
-        return 0;
-      }
+  if (len > VWORD_LEN_MAX) {
+    if (VSCII_REBUG) {
+      fprintf(stderr, "A vscii word is not more than 78 vscii chars.\n");
+    }
+    return 0;
+  }
     }
   }
   for (i = 0; i < len; i++) {
     if (!(isvscii(string[i]))) {
-      if (VSCII_REBUG) {
-        fprintf(stderr, "Character %d, %c is not a vscii character.\n", i,
-          string[i]);
-        return 0;
-      }
+  if (VSCII_REBUG) {
+    fprintf(stderr, "Character %d, %c is not a vscii character.\n", i,
+      string[i]);
+    return 0;
+  }
     }
   }
   return len;
 }
 
-/*
-letter
- upper
- lower
-number
-
-grouping, demarking group via enclosing
-8  character pairs (){}[]<>
-2  characters used in pairs '"
-
-5 adjacent "and-ish" joining  +-=_&
-5 adjacent "or-ish" spliting :;.,|
-
-2 path_sep /\
-
-10 attache: `~!@#$%^*? "not used for seperating term, for distingishing a term
-
-tick
-till
-bang
-at
-hash
-dollar
-percent
-rise
-star
-huh
-*/
 #endif
 
 void comcut(uint8_t *bs, size_t sz) {
@@ -561,18 +527,18 @@ void crosscut(uint8_t *bs, size_t sz) {
   for (i = 0; i < sz; i++) {
     len = i - start;
     if (bs[i] == '/') {
-      if (i == 0) {
-        start = i + 1;
-        continue;
-      }
-      if (!len) {
-        /*printf("nothing!\n");*/
-        start = i + 1;
-        continue;
-      }
-      comcut(bs + start, len);
-      start = i + 1;
-      continue;
+  if (i == 0) {
+    start = i + 1;
+    continue;
+  }
+  if (!len) {
+    /*printf("nothing!\n");*/
+    start = i + 1;
+    continue;
+  }
+  comcut(bs + start, len);
+  start = i + 1;
+  continue;
     }
   }
   len = i - start;
@@ -590,9 +556,9 @@ void deepcut(uint8_t *bs, size_t sz) {
   printf("len %lu\n", sz);
   for (i = 0; i < sz; i++) {
     if (bs[i] == LF) {
-      len = i - start;
-      if (len) crosscut(bs + start, len);
-      start = i + 1;
+  len = i - start;
+  if (len) crosscut(bs + start, len);
+  start = i + 1;
     }
   }
 }
@@ -610,8 +576,8 @@ int find_files() {
     n = fts_read(fs);
     if (!n) break;
     if (n->fts_info == FTS_F) {
-      /*n->fts_name*/
-      printf("%s\n", n->fts_path);
+  /*n->fts_name*/
+  printf("%s\n", n->fts_path);
     }
   }
   ret = fts_close(fs);
@@ -663,7 +629,6 @@ int process(int argc, char *argv[]) {
 
 /*
 char *has(char *bs, int len, char *a, int sz) {
-
 }
 */
 
@@ -692,10 +657,10 @@ void print_pixmap(char *filename, char c) {
   
   for (y = 0; y < height; y++) {
     for (x = 0; x < width; x++) {
-      int v;
-      v = pixmap[y * 20 + (x * 4)];
-      if (v > 0) v = 1;
-      if (!v) { printf("%c", c); } else { printf(" "); }
+  int v;
+  v = pixmap[y * 20 + (x * 4)];
+  if (v > 0) v = 1;
+  if (!v) { printf("%c", c); } else { printf(" "); }
     }
   } 
   cairo_destroy(cr);
@@ -703,36 +668,34 @@ void print_pixmap(char *filename, char c) {
 }
 
 char *nato(char letter) {
-  if (letter == 'a') return "alpha";
-  if (letter == 'b') return "bravo";
-  if (letter == 'c') return "charlie";
-  if (letter == 'd') return "delta";
-  if (letter == 'e') return "echo";
-  if (letter == 'f') return "foxtrot";
-  if (letter == 'g') return "golf";
-  if (letter == 'h') return "hotel";
-  if (letter == 'i') return "india";
-  if (letter == 'j') return "juliet";
-  if (letter == 'k') return "kilo";
-  if (letter == 'l') return "lima";
-  if (letter == 'm') return "mike";
-  if (letter == 'n') return "november";
-  if (letter == 'o') return "oscar";
-  if (letter == 'p') return "papa";
-  if (letter == 'q') return "quebec";
-  if (letter == 'r') return "romeo";
-  if (letter == 's') return "sierra";
-  if (letter == 't') return "tango";
-  if (letter == 'u') return "uniform";
-  if (letter == 'v') return "victor";
-  if (letter == 'w') return "whiskey";
-  if (letter == 'x') return "x-ray";
-  if (letter == 'y') return "yankee";
-  if (letter == 'z') return "zulu";
+  if ((letter == 'a') || (letter == 'A')) return "alpha";
+  if ((letter == 'b') || (letter == 'B')) return "bravo";
+  if ((letter == 'c') || (letter == 'C')) return "charlie";
+  if ((letter == 'd') || (letter == 'D')) return "delta";
+  if ((letter == 'e') || (letter == 'E')) return "echo";
+  if ((letter == 'f') || (letter == 'F')) return "foxtrot";
+  if ((letter == 'g') || (letter == 'G')) return "golf";
+  if ((letter == 'h') || (letter == 'H')) return "hotel";
+  if ((letter == 'i') || (letter == 'I')) return "india";
+  if ((letter == 'j') || (letter == 'J')) return "juliet";
+  if ((letter == 'k') || (letter == 'K')) return "kilo";
+  if ((letter == 'l') || (letter == 'L')) return "lima";
+  if ((letter == 'm') || (letter == 'M')) return "mike";
+  if ((letter == 'n') || (letter == 'N')) return "november";
+  if ((letter == 'o') || (letter == 'O')) return "oscar";
+  if ((letter == 'p') || (letter == 'P')) return "papa";
+  if ((letter == 'q') || (letter == 'Q')) return "quebec";
+  if ((letter == 'r') || (letter == 'R')) return "romeo";
+  if ((letter == 's') || (letter == 'S')) return "sierra";
+  if ((letter == 't') || (letter == 'T')) return "tango";
+  if ((letter == 'u') || (letter == 'U')) return "uniform";
+  if ((letter == 'v') || (letter == 'V')) return "victor";
+  if ((letter == 'w') || (letter == 'W')) return "whiskey";
+  if ((letter == 'x') || (letter == 'X')) return "x-ray";
+  if ((letter == 'y') || (letter == 'Y')) return "yankee";
+  if ((letter == 'z') || (letter == 'Z')) return "zulu"; 
   return "";
 }
-
-
 
 void dothis() {
   char letter = 'a';
@@ -744,7 +707,7 @@ void dothis() {
   while (letter < '{') {
     /*printf("%c", letter);*/
     for (j = 5 - 1; j >= 0; j--) {
-      putchar(i & (1u << j) ? '1' : '0');
+  putchar(i & (1u << j) ? '1' : '0');
     }
     printf(" ");
     sprintf(filename, "/home/demo/src/lush/doc/1a2b3c/vscii_%c_5x5.png",
@@ -753,14 +716,115 @@ void dothis() {
      printf(" %s\n", nato(letter));
     letter++;
     i++;
-  }  
-  
-  exit(0);
+  }
+}
+
+/*
+00001  aaa    a  aaa  a a  aaa  alpha
+00010  b    b    bbb  b b  bbb  bravo
+00011     cc   c    cc  charlie
+00100    d    d  ddd  d d  ddd  delta
+00101  eee  e e  eee  e    eee  echo
+00110  fff  f    ff   f    f    foxtrot
+00111 gggg g    g gg g  g gggg  golf
+01000  h    h    hhh  h h  h h  hotel
+01001   i    i    i    i    i   india
+01010    j    j    j  j j  jjj  juliet
+01011  k    k    k k  kk   k k  kilo
+01100  l    l    l    l    lll  lima
+01101       mmmmmm m mm m m mike
+01110    nnn  n n  n n  november
+01111  oo  o  o o  o  oo    oscar
+10000  ppp  p p  ppp  p    p    papa
+10001 qqq  q q  qqq    q    qq  quebec
+10010   rrr  r    r    r    romeo
+10011   ss  s    sss    s  ss   sierra
+10100   t  ttttt  t    t    t   tango
+10101    u u  u u  uuu  uniform
+10110       v   v v v   v   victor
+10111        w w ww w w whiskey
+11000 x   x x x   x   x x x   x x-ray
+11001 y   y y y   y   y   y     yankee
+11010  zzz    z   z   z    zzz  zulu
+*/
+
+#define 🔺 continue;
+#define byte unsigned char
+
+void bfun() {
+  /* based named */
+  int n;
+  for (n = 0; n < 256; n++) {
+  printf("\n%*d ", 3, n);
+  if (n == 0) { printf("bin zero"); 🔺 }
+  if (n == SP) { printf("ascii space"); 🔺 }
+  if (n == LF) { printf("ascii line"); 🔺 }
+  if (n == HT) { printf("ascii tab"); 🔺 }
+  if (n == VT) { printf("ascii virtual %s", "VT"); 🔺 }
+  if (n == FF) { printf("ascii fuck %s", "FF"); 🔺 }
+  if (n == CR) { printf("ascii return %s", "CR"); 🔺 }
+  if (n < 33) { printf("ascii %s", ascii_cc_str[n]); 🔺 }
+  if (n == 127) { printf("ascii DEL"); 🔺 }
+  if (n < 33) { printf("ascii ctl %s", ascii_cc_str[n]); 🔺 }
+  if (n == ' ') { printf("space"); 🔺 }
+  if (n == '!') { printf("fuck"); 🔺 }
+  if (n == '"') { printf("quote"); 🔺 }  
+  if (n == '#') { printf("hash"); 🔺 }
+  if (n == '$') { printf("dollar"); 🔺 }
+  if (n == '%') { printf("percent"); 🔺 }
+  if (n == '&') { printf("and"); 🔺 }
+  if (n == '\'') { printf("mark"); 🔺 }
+  if (n == '(') { printf("open"); 🔺 }
+  if (n == ')') { printf("close"); 🔺 }
+  if (n == '*') { printf("star"); 🔺 }
+  if (n == '+') { printf("plus"); 🔺 }
+  if (n == ',') { printf("comma"); 🔺 }
+  if (n == '-') { printf("dash"); 🔺 }
+  if (n == '.') { printf("dot"); 🔺 }
+  if (n == '/') { printf("slash"); 🔺 }
+  if (n == ':') { printf("with"); 🔺 }
+  if (n == ';') { printf("end"); 🔺 }
+  if (n == '<') { printf("less"); 🔺 }
+  if (n == '=') { printf("same"); 🔺 }
+  if (n == '>') { printf("more"); 🔺 }
+  if (n == '?') { printf("what"); 🔺 }
+  if (n == '@') { printf("at"); 🔺 }
+  if (n == '[') { printf("in"); 🔺 }
+  if (n == '\\') { printf("back"); 🔺 }
+  if (n == ']') { printf("out"); 🔺 }
+  if (n == '^') { printf("raise"); 🔺 }
+  if (n == '_') { printf("under"); 🔺 }
+  if (n == '`') { printf("tic"); 🔺 }
+  if (n == '{') { printf("do"); 🔺 }
+  if (n == '|') { printf("or"); 🔺 }
+  if (n == '}') { printf("done"); 🔺 }
+  if (n == '~') { printf("like"); 🔺 }
+  if (n == '0') { printf("zero"); 🔺 }
+  if (n == '1') { printf("one"); 🔺 }
+  if (n == '2') { printf("two"); 🔺 }
+  if (n == '3') { printf("three"); 🔺 }
+  if (n == '4') { printf("four"); 🔺 }
+  if (n == '5') { printf("five"); 🔺 }
+  if (n == '6') { printf("six"); 🔺 }
+  if (n == '7') { printf("seven"); 🔺 }
+  if (n == '8') { printf("eight"); 🔺 }
+  if (n == '9') { printf("nine"); 🔺 }
+  if (n < 127) { printf("%s", nato(n)); 🔺 }
+  if  ((n >= 128) && (n <= 191)) { printf("unico follower"); 🔺 }
+  if  ((n >= 192) && (n <= 223)) { printf("unico one of two"); 🔺 }
+  if  ((n >= 224) && (n <= 239)) { printf("unico first of three"); 🔺 }
+  if ((n >= 240) && (n <= 247)) { printf("unico first of four"); 🔺 }
+  if (n >= 248) { printf("bin high"); }
+  }
+  printf("\n");
+}
+
+void superfun(int argc, char *argv[]) {
+  bfun();
 }
 
 int main(int argc, char *argv[]) {
-  tryman(argc, argv);
-  dothis();
+  superfun(argc, argv);
   superuser();
   if (argc == 1) return find_files();
   return process(argc, argv);
