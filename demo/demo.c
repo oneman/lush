@@ -1,8 +1,9 @@
-/* the goal of the present file is to encode a multi-modal capability to 
+/*
+the goal of the present file is to encode a multi-modal capability to
 rebase the expression string response function by expressing its data type
 specimines in certain prefered forms. All symbologies are dependent on the
 arrow line diagram, that is a bunch of arrows drawn on a plane sheet, or a 2d
-vector. 
+vector.
 
 We want to connect the following data types: binarray, vscii, ascii, unicode,
 int, and rasterized vector pixel buffer.
@@ -10,15 +11,16 @@ int, and rasterized vector pixel buffer.
 "pointers to small pixmaps are regions of a larger pixmap"
 
 One always has from any sequence point, a system carrat pointer. That is
-a pointer from an outside system to the inner systems kernelspace and userspace.
+a pointer from an outside system to the inner systems kernelspace and
+userspace.
 
-the unicode pointer to pixmap is an embodiement of the alien ring structure from
-iut thery. 
+the unicode pointer to pixmap is an embodiement of the alien ring structure
+from iut thery.
 
 A unicode string with a newline character in it...
 
-The ascii character set includes two arrows pointing next > or < previous in its
-sequence < and >.
+The ascii character set includes two arrows pointing next > or < previous in
+its sequence < and >.
 
 It can be seen that every subsequence of graphical characters seperated by
 more rather than less space implies a certain set of arrows for certain common
@@ -35,7 +37,7 @@ to its sitationship status.
 vscii characters are global timeline operators.
 
 Decoding Measurement of Authoritarian Alignment Results in Monty
-Python Triality 
+Python Triality
 
 */
 
@@ -76,6 +78,9 @@ Python Triality
 /* a more useful include */
 #include <sys/uio.h>
 
+#define HIGH 248
+
+
 /*
 
 char *png = 0x89504E470D0A1A0A;
@@ -91,12 +96,12 @@ AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME,
 MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA,
 RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY
 
-11111111111111111111111111111111111111111111111111111111111111111111111111111
-1        26                78
+111111111111111111111111111111111111111111111111111111111111111111111111111111
+1                       26                                            72  7678
 
 an as at be by do go he id if in is it me my no of on or so to up us we yo
 
-us standard marginal quantum code page 8.5" x 11" 
+us standard marginal quantum code page 8.5" x 11"
 
 local library virginia terminization
 
@@ -127,6 +132,23 @@ typedef struct str {
   size_t sz;
 }
 */
+
+typedef enum {
+  CONTROL,
+  CHARACTER
+} ascii_mode;
+
+typedef enum {
+  DOD,
+  NUMBER,
+  LETTER
+} text_mode;
+
+typedef enum {
+ BINARY,
+ TEXT,
+ PIXEL
+} pointer_mode;
 
 char ascii_cc_str[32][4] = {
   "NUL",
@@ -174,7 +196,7 @@ typedef enum {
 #define ASCII_MARK_MAX (DEL - 1)
 #define ASCII_MARKS = ASCII_MARKS_MAX - ASCII_MARK_MIN
 
-static const char *alphabet = "abcdefghijklmnopqrstuvwxyz";
+//static const char *alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 uint8_t is_ascii_control(uint8_t byte) {
   if (byte == DEL) return 1;
@@ -182,21 +204,24 @@ uint8_t is_ascii_control(uint8_t byte) {
   return 0;
 }
 
-uint8_t isascii_text(uint8_t byte) {
+uint8_t is_ascii_text(uint8_t byte) {
   if ((byte >= SP) && (byte < DEL)) {
     return 1;
   }
   return 0;
 }
 
-uint8_t isascii_splf(uint8_t byte) {
+uint8_t is_ascii_white(uint8_t byte) {
   if (byte == SP) return 1;
   if (byte == LF) return 1;
+  if (byte == CR) return 1;
+  if (byte == VT) return 1;
+  if (byte == HT) return 1;
+  if (byte == FF) return 1;
   return 0;
 }
 
 char *ascii_dodads = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-
 
 #define ASCII_LETTERS 26
 #define ASCII_LETTERS_BIG 26
@@ -231,6 +256,11 @@ int is_ascii_number(uint8_t c) {
 
 int is_ascii(unsigned char byte) {
   if ((byte > 0) && (byte < 128)) return 1;
+  return 0;
+}
+
+int is_unicode(unsigned char byte) {
+  if ((byte > 128) && (byte < HIGH)) return 1;
   return 0;
 }
 
@@ -313,8 +343,9 @@ int is_ascii_letter(uint8_t c) {
   byte b;
   ℤ n = 0;
   for (n = 0; n < sz; n++) { b = dat[n];
-    if (!is_ascii(b)) return n;
+    if (!is_ascii(b)) break;
   }
+  return n;
 }
 
 /* 26 sporatic groups vscii contains tits group? */
@@ -407,6 +438,193 @@ int is_ascii_letter(uint8_t c) {
 /* margin nonoverlapping ratio: 93312/67392 = 1.384615 */
 /* dollar size: 6.2 * 2.6 */
 
+#define N_PXR 8192 * 8192
+static int pxr[N_PXR];
+static int n_pxr = 0;
+
+typedef struct {
+  int x;
+  int y;
+} point;
+
+typedef struct {
+  point pt[8];
+  int n;
+} points;
+
+void get_adj(points *adj, point *pt, int w, int h) {
+  if (pt->x < 1) pt->x = 1;
+  if (pt->y < 1) pt->y = 1;
+  if (pt->x > (w - 1)) pt->x = w - 1;
+  if (pt->y > (h - 1)) pt->x = h - 1;
+
+  adj->pt[adj->n].x = pt->x - 1;
+  adj->pt[adj->n++].y = pt->y - 1;
+
+  adj->pt[adj->n].x = pt->x;
+  adj->pt[adj->n++].y = pt->y - 1;
+
+  adj->pt[adj->n].x = pt->x + 1;
+  adj->pt[adj->n++].y = pt->y - 1;
+
+  adj->pt[adj->n].x = pt->x - 1;
+  adj->pt[adj->n++].y = pt->y;
+
+  adj->pt[adj->n].x = pt->x + 1;
+  adj->pt[adj->n++].y = pt->y;
+
+  adj->pt[adj->n].x = pt->x - 1;
+  adj->pt[adj->n++].y = pt->y + 1;
+
+  adj->pt[adj->n].x = pt->x;
+  adj->pt[adj->n++].y = pt->y + 1;
+
+  adj->pt[adj->n].x = pt->x + 1;
+  adj->pt[adj->n++].y = pt->y + 1;
+
+  printf("From point %d,%d %d adjacent pixels\n", pt->x, pt->y, adj->n);
+  int i;
+  for (i = 0; i < adj->n; i++) {
+    printf(" adj point: %d,%d\n", adj->pt[i].x, adj->pt[i].y);
+  }
+}
+/* screen: control panel, screen */
+/* base2 is 1bit */
+/* base4 is 2bit */
+/* base8 is 3bit */
+/* base10 is 4bit */
+/* base16 is 4bit */
+/* base26 is 5bit */
+/* base32 is 5bit */
+/* base36 is 6bit */
+/* base64 is 6bit */
+/* base128 is 7bit */
+/* base256 is 8bit */
+/* base1k is 9bit */
+/* base64k is 16bit */
+/* base24m is 24bit */
+/* base4b is 32bit */
+/* base9qq is 64bit */
+/* base1hq is 64bit */
+/* binary is base2 */
+/* byte is base256 */
+/* letter is base26 */
+/* ascii is base128 */
+/* dpad is base4 */
+/* dpad2 is base8 */
+/* number is base10 */
+/* hex is base16 */
+/* a pointer points to a byte series */
+/*
+
+0x2020 can be considered as a 0x0a
+two space can be considered a newline
+
+type 0x/1x seperation byte: line
+type 2x seperation byte: space/dodad
+
+type x28 and x29: target encirculation device
+type x5B and x5D: target bracketing device
+type x7B and x7D: target bracing block signals
+
+type 5C: backward newline
+type 2F: path component seperation device
+
+
+
+*/
+/*
+
+base64 in ascii
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+
+0 0110000
+1 0110001
+2 0110010
+3 0110011
+4 0110100
+5 0110101
+6 0110110
+7 0110111
+8 0111000
+9 0111001
+
+0x3 0 0110000
+0x3 1 0110001
+0x3 2 0110010
+0x3 3 0110011
+0x3 4 0110100
+0x3 5 0110101
+0x3 6 0110110
+0x3 7 0110111
+0x3 8 0111000
+0x3 9 0111001
+
+0x30 0110000
+0x31 0110001
+0x32 0110010
+0x33 0110011
+0x34 0110100
+0x35 0110101
+0x36 0110110
+0x37 0110111
+0x38 0111000
+0x39 0111001
+
+
+
+00 NUL    10 DLE    20 SP   30 0    40 @    50 P    60 `    70 p
+01 SOH    11 DC1    21 !    31 1    41 A    51 Q    61 a    71 q
+02 STX    12 DC2    22 "    32 2    42 B    52 R    62 b    72 r
+03 ETX    13 DC3    23 #    33 3    43 C    53 S    63 c    73 s
+04 EOT    14 DC4    24 $    34 4    44 D    54 T    64 d    74 t
+05 ENQ    15 NAK    25 %    35 5    45 E    55 U    65 e    75 u
+06 ACK    16 SYN    26 &    36 6    46 F    56 V    66 f    76 v
+07 BEL    17 ETB    27 '    37 7    47 G    57 W    67 g    77 w
+08 BS     18 CAN    28 (    38 8    48 H    58 X    68 h    78 x
+09 HT     19 EM     29 )    39 9    49 I    59 Y    69 i    79 y
+0A LF     1A SUB    2A *    3A :    4A J    5A Z    6A j    7A z
+0B VT     1B ESC    2B +    3B ;    4B K    5B [    6B k    7B {
+0C FF     1C FS     2C ,    3C <    4C L    5C \    6C l    7C |
+0D CR     1D GS     2D -    3D =    4D M    5D ]    6D m    7D }
+0E SO     1E RS     2E .    3E >    4E N    5E ^    6E n    7E ~
+0F SI     1F US     2F /    3F ?    4F O    5F _    6F o    7F DEL
+
+*/
+
+
+typedef struct {
+  uint8_t a;
+  uint8_t r;
+  uint8_t g;
+  uint8_t b;
+} pixel;
+
+typedef struct {
+  int w;
+  int h;
+} area;
+
+void px_map(uint8_t *px, int w, int h) {
+  points adj;
+  point pt;
+  area area;
+  area.w = w;
+  area.h = h;
+  pt.x = 26;
+  pt.y = 26;
+  memset(&adj, 0, sizeof(points));
+  get_adj(&adj, &pt, w, h);
+  pixel pxl;
+  //getapixel(&pxl, &px, &pt, &area);
+  //setapixel(&pxl, px, pt);
+
+  /*int i;
+  for (i = 0; i < adj.n; i++) {
+    uint8_t a,r,g,b;
+  }*/
+}
+
 int tryman(int argc, char *argv[]) {
   cairo_surface_t *surface;
   cairo_t *cr;
@@ -417,7 +635,9 @@ int tryman(int argc, char *argv[]) {
   char filename[128];
   snprintf(filename, sizeof(filename), "%s/lush_%ld.png", getenv("HOME"),
     seconds);
-  surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, 4096 * 2, 4096 * 2);
+  int w = 4096*2;
+  int h = w;
+  surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, w, h);
   cr = cairo_create(surface);
   unsigned char *px;
   px = cairo_image_surface_get_data(surface);
@@ -469,7 +689,7 @@ int tryman(int argc, char *argv[]) {
   cairo_rectangle(cr, (4 * 18) + (13 * 18), (4 * 18),
           (13 * 18), (5 * 18));
   cairo_fill(cr);
-  
+
   /*
   cairo_new_path(cr);
   cairo_set_line_width (cr, 2.6);
@@ -485,7 +705,7 @@ int tryman(int argc, char *argv[]) {
   cairo_arc (cr, gs_center, gs_center, gs_rad, (3.1415926 / 180.0) * 90, (3.1415926 / 180.0) * 150.0);
   double x, y = 0;
   cairo_get_current_point(cr, &x, &y);
-  printf("x,y: %f,%f\n", x, y); 
+  printf("x,y: %f,%f\n", x, y);
   cairo_stroke (cr);
   cairo_fill(cr);
 
@@ -512,7 +732,7 @@ int tryman(int argc, char *argv[]) {
   cairo_line_to(cr, letterpaper_width_ptx/2, letterpaper_gov_margin + (26 * 18));
   cairo_line_to(cr, letterpaper_width_ptx -x, y);
 
-    
+
   cairo_close_path(cr);
   cairo_stroke (cr);
 
@@ -536,12 +756,15 @@ int tryman(int argc, char *argv[]) {
   */
 
   cairo_surface_write_to_png(surface, filename);
+
+  px_map(px, w, h);
+
   cairo_destroy(cr);
   cairo_surface_destroy(surface);
   return 0;
 }
 
-uint8_t isvsciiword(char *string, size_t len) {
+uint8_t is_vscii_word(char *string, size_t len) {
   int i;
   if ((len < VWORD_LEN_MIN) || (len > VWORD_LEN_MAX)) {
     if (len < VWORD_LEN_MIN) {
@@ -692,7 +915,6 @@ int process(int argc, char *argv[]) {
   return kr_file_set_destroy(fs);
 }
 
-
 /*
 char *has(char *bs, int len, char *a, int sz) {
 }
@@ -707,7 +929,6 @@ void print_pixmap(char *filename, char c) {
   int height;
   int x;
   int y;
-  
   width = 5;
   height = 5;
 
@@ -715,12 +936,11 @@ void print_pixmap(char *filename, char c) {
   cr = cairo_create(surface);
 
   int i;
-  int stride;
-  stride = cairo_format_stride_for_width(CAIRO_FORMAT_ARGB32, 5);
-    
+  //int stride;
+  //stride = cairo_format_stride_for_width(CAIRO_FORMAT_ARGB32, 5);
   unsigned char *pixmap;
   pixmap = cairo_image_surface_get_data(surface);
-  
+
   for (y = 0; y < height; y++) {
     for (x = 0; x < width; x++) {
   int v;
@@ -728,7 +948,7 @@ void print_pixmap(char *filename, char c) {
   if (v > 0) v = 1;
   if (!v) { printf("%c", c); } else { printf(" "); }
     }
-  } 
+  }
   cairo_destroy(cr);
   cairo_surface_destroy(surface);
 }
@@ -757,9 +977,9 @@ char *nato(char letter) {
   if ((letter == 'u') || (letter == 'U')) return "uniform";
   if ((letter == 'v') || (letter == 'V')) return "victor";
   if ((letter == 'w') || (letter == 'W')) return "whiskey";
-  if ((letter == 'x') || (letter == 'X')) return "x-ray";
+  if ((letter == 'x') || (letter == 'X')) return "xray";
   if ((letter == 'y') || (letter == 'Y')) return "yankee";
-  if ((letter == 'z') || (letter == 'Z')) return "zulu"; 
+  if ((letter == 'z') || (letter == 'Z')) return "zulu";
   return "";
 }
 
@@ -815,23 +1035,22 @@ void dothis() {
 */
 
 #define 🔺 continue;
-#define byte unsigned char
 
 void bfun() {
   /* based named */
   int n;
   for (n = 0; n < 256; n++) {
   printf("\n%*d ", 3, n);
-  if (n == 0) { printf("bin zero"); 🔺 }
+  if (n == 0) { printf("null"); 🔺 }
   if (n == SP) { printf("space"); 🔺 }
   if (n == LF) { printf("newline"); 🔺 }
   if (n == HT) { printf("tab"); 🔺 }
   if (n == CR) { printf("return"); 🔺 }
-  if (n < 33) { printf("ascii %s", ascii_cc_str[n]); 🔺 }
-  if (n == 127) { printf("ascii DEL"); 🔺 }
+  if (n < 33) { printf("%s", ascii_cc_str[n]); 🔺 }
+  if (n == 127) { printf("del"); 🔺 }
   if (n == ' ') { printf("space"); 🔺 }
   if (n == '!') { printf("fuck"); 🔺 }
-  if (n == '"') { printf("quote"); 🔺 }  
+  if (n == '"') { printf("quote"); 🔺 }
   if (n == '#') { printf("hash"); 🔺 }
   if (n == '$') { printf("dollar"); 🔺 }
   if (n == '%') { printf("percent"); 🔺 }
@@ -873,17 +1092,19 @@ void bfun() {
   if (n == '8') { printf("eight"); 🔺 }
   if (n == '9') { printf("nine"); 🔺 }
   if (n < 127) { printf("%s", nato(n)); 🔺 }
-  if  ((n >= 128) && (n <= 191)) { printf("unico follower"); 🔺 }
-  if  ((n >= 192) && (n <= 223)) { printf("unico one of two"); 🔺 }
-  if  ((n >= 224) && (n <= 239)) { printf("unico first of three"); 🔺 }
-  if ((n >= 240) && (n <= 247)) { printf("unico first of four"); 🔺 }
-  if (n >= 248) { printf("bin high"); }
+  if  ((n >= 128) && (n <= 191)) { printf("utf-8 6bit follower"); 🔺 }
+  if  ((n >= 192) && (n <= 223)) { printf("utf-8 one of two"); 🔺 }
+  if  ((n >= 224) && (n <= 239)) { printf("utf-8 first of three"); 🔺 }
+  if ((n >= 240) && (n <= 247)) { printf("utf-8: one of four"); 🔺 }
+  if (n >= HIGH) { printf("high"); }
   }
   printf("\n");
 }
 
 void superfun(int argc, char *argv[]) {
   bfun();
+  tryman(argc, argv);
+  exit(0);
 }
 
 int main(int argc, char *argv[]) {
