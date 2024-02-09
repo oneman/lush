@@ -144,6 +144,7 @@ typedef enum {
 } ascii_mode;
 
 typedef enum {
+  BLANK,
   DOD,
   NUMBER,
   LETTER
@@ -249,7 +250,22 @@ uint8_t is_ascii_blank(uint8_t byte) {
   return 0;
 }
 
-char *ascii_dodads = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+uint8_t is_blank(uint8_t byte) {
+  return is_ascii_blank(byte);
+}
+
+size_t blank_len(uint8_t *buf, size_t sz) {
+  size_t i;
+  uint8_t byte;
+  for (i = 0; i < sz; i++) {
+    byte = buf[i];
+    if (is_blank(byte)) continue;
+    break;
+  }
+  return i;
+}
+
+char *ascii_dods = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
 #define ASCII_LETTERS 26
 #define ASCII_LETTERS_BIG 26
@@ -258,14 +274,29 @@ char *ascii_dodads = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 #define ASCII_CTLS 33
 #define NUM_LETTERSORNUMBERS (NUM_LETTERS * NUM_CASES) + NUM_DIGITS
 
-int is_ascii_dodad(uint8_t c) {
+int is_ascii_dod(uint8_t c) {
   int n;
   char dod;
   for (n = 0; n < ASCII_DODS; n++) {
-    dod = ascii_dodads[n];
+    dod = ascii_dods[n];
     if (c == dod) return 1;
   }
   return 0;
+}
+
+int is_dod(uint8_t c) {
+  return is_ascii_dod(c);
+}
+
+size_t dod_len(uint8_t *buf, size_t sz) {
+  size_t i;
+  uint8_t byte;
+  for (i = 0; i < sz; i++) {
+    byte = buf[i];
+    if (is_dod(byte)) continue;
+    break;
+  }
+  return i;
 }
 
 int is_ascii_number(uint8_t c) {
@@ -284,6 +315,17 @@ int is_ascii_number(uint8_t c) {
 
 int is_number(uint8_t c) {
   return is_ascii_number(c);
+}
+
+int number_len(uint8_t *buf, size_t sz) {
+  size_t i;
+  uint8_t byte;
+  for (i = 0; i < sz; i++) {
+    byte = buf[i];
+    if (is_number(byte)) continue;
+    break;
+  }
+  return i;
 }
 
 int is_ascii(unsigned char byte) {
@@ -384,7 +426,7 @@ int is_ascii_line(uint8_t c) {
   return 0;
 }
 
-int is_alphanumeric_series(uint8_t *buf, size_t sz) {
+int alphanumeric_len(uint8_t *buf, size_t sz) {
   size_t i;
   int have_alpha = 0;
   uint8_t byte;
@@ -586,7 +628,7 @@ void get_adj(points *adj, point *pt, int w, int h) {
 two space can be considered a newline
 
 type 0x/1x seperation byte: line
-type 2x seperation byte: space/dodad
+type 2x seperation byte: space/dod
 
 type x28 and x29: target encirculation device
 type x5B and x5D: target bracketing device
@@ -698,6 +740,7 @@ int is_unicode_header(uint8_t byte) {
     if (byte <= 247) return 3;
   }
   if (byte >= 248) return 0;
+  return 0;
 }
 
 int is_unicode_body(uint8_t byte) {
@@ -705,7 +748,7 @@ int is_unicode_body(uint8_t byte) {
   return 0;
 }
 
-size_t plain_text_len(uint8_t *buf, size_t sz) {
+size_t text_len(uint8_t *buf, size_t sz) {
   size_t i;
   uint8_t byte;
   int hs = 0;
@@ -740,7 +783,6 @@ size_t plain_text_len(uint8_t *buf, size_t sz) {
   }
   return i;
 }
-
 
 typedef struct {
   uint8_t a;
@@ -915,7 +957,7 @@ int tryman(int argc, char *argv[]) {
 
 #define BUG 1
 
-uint8_t is_a_word(char *string, size_t len) {
+uint8_t word_len(char *string, size_t len) {
   int i;
   if ((len < VWORD_LEN_MIN) || (len > VWORD_LEN_MAX)) {
     if (len < VWORD_LEN_MIN) {
