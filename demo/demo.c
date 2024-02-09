@@ -115,7 +115,7 @@ leads1 = 0x80 128
 10101010 = 170
 
 
-11111111111111111111111111111111111111111111111111111111111111111111111111111
+111111111111111111111111111111111111111111111111111111111111111111111111111111
 
 if (b & 0xF0 == 0xF0) { }
 leads4 = 0xF0 240
@@ -134,8 +134,13 @@ typedef struct str {
 */
 
 typedef enum {
+  NONALPHANUMERIC,
+  ALPHANUMERIC
+} byte_mode;
+
+typedef enum {
   CONTROL,
-  CHARACTER
+  TEXT
 } ascii_mode;
 
 typedef enum {
@@ -146,7 +151,7 @@ typedef enum {
 
 typedef enum {
  BINARY,
- TEXT,
+ UNICODE,
  PIXEL
 } pointer_mode;
 
@@ -399,8 +404,8 @@ int is_ascii_letter(uint8_t c) {
  * 5: styrene [length 7]
  *
  */
- 
- #include <stdio.h>
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <cairo/cairo.h>
@@ -530,8 +535,42 @@ type x7B and x7D: target bracing block signals
 type 5C: backward newline
 type 2F: path component seperation device
 
+code terminal:
+  w  85 char
+        5 chars status
+        80 chars code
+  h  28 line
+        26 lines code
+        1 line status
+        1 line command
 
+code document:
+  w  78 char
+  h  9999 lines
 
+us letter pixel document:
+  w 468
+  h 648
+
+desktop terminal screen video:
+  s 1
+  w 1024
+  h 768
+  z 85
+
+*/
+/*
+DODIS:
+ HT
+ LF
+ SP
+ FS { }
+ GS ( )
+    < >
+ RS [  ]
+ US "  "
+  SUS ',./:;|
+   OP !#$%&*+-=?@\^_`~
 */
 /*
 
