@@ -1089,102 +1089,27 @@ uint8_t word_len(char *string, size_t len) {
   return len;
 }
 
-#endif
-
-void comcut(uint8_t *bs, size_t sz) {
-  size_t i;
-  i = 0;
-  printf("  comp len %lu: ", sz);
-  for (i = 0; i < sz; i++) {
-    printf("%c", bs[i]);
-  }
-  printf("\n");
-}
-
-void crosscut(uint8_t *bs, size_t sz) {
-  size_t i;
-  size_t start;
-  size_t len;
-  i = 0;
-  start = 0;
-  len = 0;
-  printf(" line len %lu\n", sz);
-  for (i = 0; i < sz; i++) {
-    len = i - start;
-    if (bs[i] == '/') {
-  if (i == 0) {
-    start = i + 1;
+size_t data_scan(uint8_t *buf, size_t sz) {
+  size_t n;
+  size_t x;
+  uint8_t b;
+  for (n = 0; n < sz;) {
+    b = buf[n];
+    x = text_len(buf + n, sz - n);
+    if (x == 0) { printf("[%u %x]", b, b); n++; continue; }
+    printf("[%lu bytes if text]", x);\
+    n += x;
     continue;
   }
-  if (!len) {
-    /*printf("nothing!\n");*/
-    start = i + 1;
-    continue;
-  }
-  comcut(bs + start, len);
-  start = i + 1;
-  continue;
-    }
-  }
-  len = i - start;
-  if (len) comcut(bs + start, len);
-  printf("\n");
 }
 
-void deepcut(uint8_t *bs, size_t sz) {
-  size_t i;
-  size_t start;
-  size_t len;
-  i = 0;
-  start = 0;
-  len = 0;
-  printf("len %lu\n", sz);
-  for (i = 0; i < sz; i++) {
-    if (bs[i] == LF) {
-  len = i - start;
-  if (len) crosscut(bs + start, len);
-  start = i + 1;
-    }
-  }
-}
-
-int find_files() {
-  int ret;
-  int opt;
-  FTS *fs;
-  FTSENT *n;
-  opt = FTS_PHYSICAL;
-  char * const paths[] = {"/home", NULL};
-  fs = fts_open(paths, opt, NULL);
-  if (!fs) exit(1);
-  for (;;) {
-    n = fts_read(fs);
-    if (!n) break;
-    if (n->fts_info == FTS_F) {
-  /*n->fts_name*/
-  printf("%s\n", n->fts_path);
-    }
-  }
-  ret = fts_close(fs);
-  return ret;
-}
-
-void superuser() {
-  if (setreuid(0, 0) + setregid(0, 0)) {
-    fprintf(stderr, "FAIL: need be superuser\n");
-    exit(1);
-  }
-}
-
-int process(int argc, char *argv[]) {
-  char *path;
+int file_scan(char *path) {
   size_t sz;
   uint8_t *data;
   kr_file2 *file;
   kr_file2_info info;
   kr_fs_setup setup;
   kr_file_set *fs;
-  path = argv[1];
   sz = strlen(path);
   if (!kr_file2_exists(path, sz)) {
     printf("Doesn't exist %s\n", path);
@@ -1206,10 +1131,44 @@ int process(int argc, char *argv[]) {
   data = kr_file2_get_data(file);
   if (data && !kr_file2_get_info(file, &info)) {
     printf("Process: %s\n", path);
-    ft_test(data, info.sz);
+    data_scan(data, info.sz);
   }
   return kr_file_set_destroy(fs);
 }
+
+int find_files() {
+  int ret;
+  int opt;
+  FTS *fs;
+  FTSENT *n;
+  opt = FTS_PHYSICAL;
+  char * const paths[] = {
+    /* "/home", */
+    "/run/media",
+    NULL
+  };
+  fs = fts_open(paths, opt, NULL);
+  if (!fs) exit(1);
+  for (;;) {
+    n = fts_read(fs);
+    if (!n) break;
+    if (n->fts_info == FTS_F) {
+      /* n->fts_name */
+      printf("%s\n", n->fts_path);
+      file_scan(n->fts_path);
+    }
+  }
+  ret = fts_close(fs);
+  return ret;
+}
+
+void superuser() {
+  if (setreuid(0, 0) + setregid(0, 0)) {
+    fprintf(stderr, "FAIL: need be superuser\n");
+    exit(1);
+  }
+}
+
 
 /*
 char *has(char *bs, int len, char *a, int sz) {
@@ -1425,18 +1384,14 @@ void bfun() {
   printf("\n");
 }
 
-void superfun(int argc, char *argv[]) {
-  bfun();
-  tryman(argc, argv);
-  exit(0);
+int main(int argc, char *argv[]) {
+  int ret;
+  //bfun();
+  //tryman(argc, argv);
+  //superfun(argc, argv);
+  //superuser();
+  ret = find_files();
+  return ret;
 }
 
-int main(int argc, char *argv[]) {
-  if (argc == 2) {
-    return process(argc, argv);
-  }
-  superfun(argc, argv);
-  superuser();
-  if (argc == 1) return find_files();
-  return 0;
-}
+#endif
