@@ -5,8 +5,8 @@ specimines in certain prefered forms. All symbologies are dependent on the
 arrow line diagram, that is a bunch of arrows drawn on a plane sheet, or a 2d
 vector.
 
-We want to connect the following data types: binarray, vscii, ascii, unicode,
-int, and rasterized vector pixel buffer.
+We want to connect the following data types: binarray, english alphabet,
+ascii, unicode, int, and rasterized vector pixel buffer.
 
 "pointers to small pixmaps are regions of a larger pixmap"
 
@@ -30,11 +30,11 @@ These words all go together.
 > <These><words><all><go><together> <
 
 It is most notable that the above string is only a mutation on the graphical
-characters that do not have single character vscii reconstructable
+characters that do not have single character english alphabet reconstructable
 representations. A line requires two points. A line implies arrows in regards
 to its sitationship status.
 
-vscii characters are global timeline operators.
+english alphabet characters are global timeline operators.
 
 Decoding Measurement of Authoritarian Alignment Results in Monty
 Python Triality
@@ -136,7 +136,7 @@ typedef struct str {
 typedef enum {
   NONALPHANUMERIC,
   ALPHANUMERIC
-} byte_mode;
+} char_mode;
 
 typedef enum {
   CONTROL,
@@ -154,6 +154,29 @@ typedef enum {
  UNICODE,
  PIXEL
 } pointer_mode;
+
+typedef enum {
+  FLOAT,
+  ARGB
+} pixel_mode;
+
+#define TO_LOW 0
+#define TO_HIGH 248
+
+typedef enum {
+  LOW1 = TO_LOW
+} bytes_to_low;
+
+typedef enum {
+  HIGH1 = TO_HIGH, /* 248 0xF8 */
+  HIGH2,           /* 249 0xF9 */
+  HIGH3,           /* 250 0xFA */
+  HIGH4,           /* 251 0xFB */
+  HIGH5,           /* 252 0xFC */
+  HIGH6,           /* 253 0xFD */
+  HIGH7,           /* 254 0xFE */
+  HIGH8            /* 255 0xFF */
+} bytes_to_high;
 
 char ascii_cc_str[32][4] = {
   "NUL",
@@ -209,14 +232,14 @@ uint8_t is_ascii_control(uint8_t byte) {
   return 0;
 }
 
-uint8_t is_ascii_text(uint8_t byte) {
-  if ((byte >= SP) && (byte < DEL)) {
+uint8_t is_ascii_char(uint8_t byte) {
+  if ((byte > SP) && (byte < DEL)) {
     return 1;
   }
   return 0;
 }
 
-uint8_t is_ascii_white(uint8_t byte) {
+uint8_t is_ascii_blank(uint8_t byte) {
   if (byte == SP) return 1;
   if (byte == LF) return 1;
   if (byte == CR) return 1;
@@ -259,6 +282,10 @@ int is_ascii_number(uint8_t c) {
   return 0;
 }
 
+int is_number(uint8_t c) {
+  return is_ascii_number(c);
+}
+
 int is_ascii(unsigned char byte) {
   if ((byte > 0) && (byte < 128)) return 1;
   return 0;
@@ -269,7 +296,7 @@ int is_unicode(unsigned char byte) {
   return 0;
 }
 
-uint8_t is_vscii(uint8_t c) {
+uint8_t is_english_alphabet_letter(uint8_t c) {
   if (c == 'A') return 1;
   if (c == 'B') return 1;
   if (c == 'C') return 1;
@@ -325,6 +352,28 @@ uint8_t is_vscii(uint8_t c) {
   return 0;
 }
 
+int is_ascii_letter(uint8_t c) {
+  return is_english_alphabet_letter(c);
+}
+
+int is_a_letter(uint8_t c) {
+  return is_ascii_letter(c);
+}
+
+int is_letter(uint8_t c) {
+  return is_a_letter(c);
+}
+
+int is_letter_or_number(uint8_t c) {
+  if (is_letter(c)) return 1;
+  if (is_number(c)) return 1;
+  return 0;
+}
+
+int is_alphanumeric(uint8_t c) {
+  return is_letter_or_number(c);
+}
+
 int is_ascii_space(uint8_t c) {
   if (c == SP) return 1;
   return 0;
@@ -335,8 +384,21 @@ int is_ascii_line(uint8_t c) {
   return 0;
 }
 
-int is_ascii_letter(uint8_t c) {
-  return is_vscii(c);
+int is_alphanumeric_series(uint8_t *buf, size_t sz) {
+  size_t i;
+  int have_alpha = 0;
+  uint8_t byte;
+  for (i = 0; i < sz; i++) {
+    byte = buf[i];
+    if (is_letter(byte)) {
+      have_alpha++;
+      continue;
+    }
+    if (is_number(byte)) continue;
+    return 0;
+  }
+  if (have_alpha) return 1;
+  return 0;
 }
 
 #define ℤ int
@@ -353,16 +415,14 @@ int is_ascii_letter(uint8_t c) {
   return n;
 }
 
-/* 26 sporatic groups vscii contains tits group? */
-#define VSCII_REBUG 27
-
-/* A vscii character is 5 bits exactly */
+/* An english alphabet letter is 5 bits exactly */
 #define VSCII_CHAR_BITS 5
 #define VSCII_ASCII_CHAR_BITS 7
 #define VSCII_ANSI_CHAR_BITS 5
 
-/* There is 26 vscii characters and they are the lowercase NATO alphabet,
- * otherwise known as the american or latin alphabet or western alphabet. */
+/* There is 26 english alphabet letters and they are the lowercase NATO
+ * alphabet, * otherwise known as the american or latin alphabet or
+ * western alphabet. */
 
 #define VSCII_CHARACTER_COUNT 26
 #define VSCII_CHARS_NUM VSCII_CHARACTER_COUNT
@@ -370,7 +430,7 @@ int is_ascii_letter(uint8_t c) {
 #define VSCII_LETTER_NUM VSCII_CHARS_NUM
 #define VSCII_ALPHABET_SZ VSCII_LETTER_NUM
 
-/* A vscii "vword" or "word" or "a single standard normal a.f. word no cap */
+/* An american "word" or "word" or "a single standard normal a.f. no cap */
 
 #define VWORD_LEN_MIN 1
 #define VWORD_MOST_LEN_LESSTHAN (26 - 10)
@@ -382,20 +442,20 @@ int is_ascii_letter(uint8_t c) {
 
 #define VSCII_WORD_TYPE "morphonym"
 
-/* ALL vscii words are no longer than (26 * 3) 78 characters in length, because
- * we use 80 column terminals here in Virginia */
+/* ALL american words are no longer than (26 * 3) 78 letters in length,
+ * because we use 80 column terminals here in Virginia */
 
 #define VLINE VWORD_LEN_MAX
 
-/* Most vscii words that are longer than ceil((phi * 26)) (16) or rather most
- * other vscii words, are actually caticombinations of vscii words */
+/* Most US words that are longer than ceil((phi * 26)) (16) or rather most
+ * other US words, are actually caticombinations of US words */
 
 #define VWORD_26_CHARACTER_EXAMPLE "radioimmunoelectrophoresis"
 
-/* "acrylonitrile-butadiene-styrene" is not a vscii word for example, it is
+/* "acrylonitrile-butadiene-styrene" is not a US word for example, it is
  * however a dictionary word that is 31 characters long, two of the characters
  * are dashes which is ascii, thus "acrylonitrile-butadiene-styrene" is a 5
- * word vscii sequence/vector in the vscii-ascii "context sense" "combomode"
+ * word US sequence/vector in the US-ascii "context sense" "combomode"
  *
  * 1: acrylonitrile [length 13]
  * 2: dash [length 4]
@@ -611,7 +671,6 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 0x39 0111001
 
 
-
 00 NUL    10 DLE    20 SP   30 0    40 @    50 P    60 `    70 p
 01 SOH    11 DC1    21 !    31 1    41 A    51 Q    61 a    71 q
 02 STX    12 DC2    22 "    32 2    42 B    52 R    62 b    72 r
@@ -630,6 +689,57 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 0F SI     1F US     2F /    3F ?    4F O    5F _    6F o    7F DEL
 
 */
+
+int is_unicode_header(uint8_t byte) {
+  if (byte <= 191) return 0;
+  if (byte >= 192) {
+    if (byte <= 223) return 1;
+    if (byte <= 239) return 2;
+    if (byte <= 247) return 3;
+  }
+  if (byte >= 248) return 0;
+}
+
+int is_unicode_body(uint8_t byte) {
+  if ((byte >= 128) && (byte <= 191)) return 1;
+  return 0;
+}
+
+size_t plain_text_len(uint8_t *buf, size_t sz) {
+  size_t i;
+  uint8_t byte;
+  int hs = 0;
+  int ns = 0;
+  for (i = 0; i < sz; i++) {
+    byte = buf[i];
+    if (byte == 0) break;
+    if (byte >= 248) break;
+    if (hs) {
+      if (hs == ns) {
+        ns = 0;
+        hs = 0;
+      }
+    }
+    if (ns) {
+      if (is_unicode_body(byte)) {
+        hs++;
+        continue;
+      }
+      break;
+    }
+    if (is_ascii_char(byte)) continue;
+    if (is_ascii_blank(byte)) continue;
+    ns = is_unicode_header(byte);
+    if (ns == 0) break;
+    if ((ns + i) > sz) break;
+  }
+  if (ns) {
+    if (i >= (ns + 1)) {
+      i = i - (ns + 1);
+    }
+  }
+  return i;
+}
 
 
 typedef struct {
@@ -681,7 +791,7 @@ int tryman(int argc, char *argv[]) {
   unsigned char *px;
   px = cairo_image_surface_get_data(surface);
 
-  /* white paper */
+  /* paper */
   cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
   cairo_paint(cr);
 
@@ -803,27 +913,29 @@ int tryman(int argc, char *argv[]) {
   return 0;
 }
 
-uint8_t is_vscii_word(char *string, size_t len) {
+#define BUG 1
+
+uint8_t is_a_word(char *string, size_t len) {
   int i;
   if ((len < VWORD_LEN_MIN) || (len > VWORD_LEN_MAX)) {
     if (len < VWORD_LEN_MIN) {
-  if (VSCII_REBUG) {
-    fprintf(stderr, "A vscii word is at the least 1 vscii character.\n");
+  if (BUG) {
+    fprintf(stderr, "A word is at the least 1 letter.\n");
   }
   return 0;
     } else {
   if (len > VWORD_LEN_MAX) {
-    if (VSCII_REBUG) {
-      fprintf(stderr, "A vscii word is not more than 78 vscii chars.\n");
+    if (BUG) {
+      fprintf(stderr, "A word is not more than 78 letters.\n");
     }
     return 0;
   }
     }
   }
   for (i = 0; i < len; i++) {
-    if (!(is_vscii(string[i]))) {
-  if (VSCII_REBUG) {
-    fprintf(stderr, "Character %d, %c is not a vscii character.\n", i,
+    if (!(is_letter(string[i]))) {
+  if (BUG) {
+    fprintf(stderr, "Character %d, %c is not a letter.\n", i,
       string[i]);
     return 0;
   }
