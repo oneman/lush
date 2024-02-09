@@ -133,6 +133,109 @@ typedef struct str {
 }
 */
 
+#include <ft2build.h>
+#include <freetype/freetype.h>
+#include <freetype/ftmodapi.h>
+
+  void ft_fail(int ft_errno) {
+    printf("Freetype Error: %s\n", FT_Error_String(ft_errno));
+    exit(1);
+  }
+
+  void *ft_alloc(FT_Memory ft_mem, long sz) {
+    void *buf;
+    static size_t tb = 0;
+    tb += sz;
+    printf("Freetype: alloc %ld bytes. [Total %ld]\n", sz, tb);
+    buf = malloc(sz);
+    memset(buf, 0, sz);
+    return buf;
+  }
+
+  void ft_free(FT_Memory ft_mem, void *buf) {
+    printf("Freetype: free\n");
+    free(buf);
+  }
+
+  void *ft_realloc(FT_Memory ft_mem, long old_sz, long new_sz, void *buf) {
+    void *newbuf;
+    printf("Freetype: realloc %ld -> %ld bytes\n", old_sz, new_sz);
+    newbuf = malloc(new_sz);
+    memset(newbuf, 0, new_sz);
+    memcpy(newbuf, buf, old_sz);
+    free(buf);
+    return newbuf;
+  }
+
+void ft_test(uint8_t *buf, size_t sz) {
+  int ft_errno = 0;
+  FT_Open_Args ft_args;
+  FT_Library ft_lib = NULL;
+  FT_Face f = NULL;
+  struct FT_MemoryRec_ ft_mem;
+
+  memset(&ft_args, 0, sizeof(ft_args));
+  memset(&ft_lib, 0, sizeof(ft_lib));
+  memset(&f, 0, sizeof(f));
+
+  ft_mem.user = "demo";
+  ft_mem.alloc = ft_alloc;
+  ft_mem.free = ft_free;
+  ft_mem.realloc = ft_realloc;
+
+  ft_errno = FT_New_Library(&ft_mem, &ft_lib);
+  if (ft_errno) ft_fail(ft_errno);
+  printf("ft new lib\n");
+
+  FT_Add_Default_Modules(ft_lib);
+  printf("ft add def mod\n");
+  FT_Set_Default_Properties(ft_lib);
+  printf("ft set def prop\n");
+  ft_args.flags = FT_OPEN_MEMORY;
+  ft_args.memory_base = buf;
+  ft_args.memory_size = sz;
+  printf("ft pre open face: %p \n", ft_lib);
+  ft_errno = FT_Open_Face(ft_lib, &ft_args, 0, &f);
+  if (ft_errno) ft_fail(ft_errno);
+  printf("ft open face\n");
+
+  int pxl_w = 12 * 10;
+  int pxl_h = pxl_w;
+  int w = pxl_w * 64;
+  int h = pxl_h * 64;
+  int dpi = 720;
+
+  ft_errno = FT_Set_Char_Size(f, w, h, dpi, dpi);
+  if (ft_errno) ft_fail(ft_errno);
+  printf("ft set char size\n");
+
+  ft_errno = FT_Set_Pixel_Sizes(f, pxl_w, pxl_h);
+  if (ft_errno) ft_fail(ft_errno);
+  printf("ft set px size\n");
+
+  uint32_t char_code = 'a';
+  ft_errno = FT_Load_Char(f, char_code, FT_LOAD_DEFAULT);
+  if (ft_errno) ft_fail(ft_errno);
+  printf("ft load char\n");
+
+  ft_errno = FT_Render_Glyph(f->glyph, FT_RENDER_MODE_NORMAL);
+  if (ft_errno) ft_fail(ft_errno);
+  printf("ft render glyph\n");
+
+  FT_Bitmap pxmap;
+  pxmap = f->glyph->bitmap;
+  printf("ft bitmap: %u x %u stride: %d grays: %u mode:  %u\n", pxmap.width,
+    pxmap.rows, pxmap.pitch, pxmap.num_grays, pxmap.pixel_mode);
+
+  ft_errno = FT_Done_Face(f);
+  if (ft_errno) ft_fail(ft_errno);
+  printf("ft done face\n");
+
+  ft_errno = FT_Done_Library(ft_lib);
+  if (ft_errno) ft_fail(ft_errno);
+  printf("ft done lib\n");
+}
+
 typedef enum {
   NONALPHANUMERIC,
   ALPHANUMERIC
@@ -1102,8 +1205,8 @@ int process(int argc, char *argv[]) {
   }
   data = kr_file2_get_data(file);
   if (data && !kr_file2_get_info(file, &info)) {
-    printf("teardown %s\n", path);
-    deepcut(data, info.sz);
+    printf("Process: %s\n", path);
+    ft_test(data, info.sz);
   }
   return kr_file_set_destroy(fs);
 }
@@ -1186,13 +1289,13 @@ void dothis() {
   while (letter < '{') {
     /*printf("%c", letter);*/
     for (j = 5 - 1; j >= 0; j--) {
-  putchar(i & (1u << j) ? '1' : '0');
+      putchar(i & (1u << j) ? '1' : '0');
     }
     printf(" ");
     sprintf(filename, "/home/demo/src/lush/doc/1a2b3c/vscii_%c_5x5.png",
      letter);
-     print_pixmap(filename, letter);
-     printf(" %s\n", nato(letter));
+    print_pixmap(filename, letter);
+    printf(" %s\n", nato(letter));
     letter++;
     i++;
   }
@@ -1235,9 +1338,37 @@ void bfun() {
   for (n = 0; n < 256; n++) {
   printf("\n%*d ", 3, n);
   if (n == 0) { printf("null"); 🔺 }
+  if (n == SOH) { printf("incoming"); 🔺 }
+  if (n == STX) { printf("transmitting"); 🔺 }
+  if (n == ETX) { printf("over"); 🔺 }
+  if (n == EOT) { printf("out"); 🔺 }
+  if (n == ENQ) { printf("request"); 🔺 }
+  if (n == ACK) { printf("response"); 🔺 }
+  if (n == BEL) { printf("bullshit"); 🔺 }
+  if (n == BS) { printf("backstep"); 🔺 }
+  if (n == SO) { printf("alien"); 🔺 }
+  if (n == SI) { printf("ascii"); 🔺 }
+  if (n == DLE) { printf("secret"); 🔺 }
+  if (n == DC1) { printf("aux1"); 🔺 }
+  if (n == DC2) { printf("aux2"); 🔺 }
+  if (n == DC3) { printf("aux3"); 🔺 }
+  if (n == DC4) { printf("aux4"); 🔺 }
+  if (n == NAK) { printf("no"); 🔺 }
+  if (n == SYN) { printf("signal"); 🔺 }
+  if (n == ETB) { printf("nocap"); 🔺 }
+  if (n == CAN) { printf("cancel"); 🔺 }
+  if (n == EM) { printf("aether"); 🔺 }
+  if (n == SUB) { printf("whatever"); 🔺 }
+  if (n == ESC) { printf("escape"); 🔺 }
+  if (n == FS) { printf("filefile"); 🔺 }
+  if (n == GS) { printf("groupgroup"); 🔺 }
+  if (n == RS) { printf("recordrecord"); 🔺 }
+  if (n == US) { printf("unitunit"); 🔺 }
+  if (n == VT) { printf("next"); 🔺 }
   if (n == SP) { printf("space"); 🔺 }
   if (n == LF) { printf("newline"); 🔺 }
   if (n == HT) { printf("tab"); 🔺 }
+  if (n == FF) { printf("newpage"); 🔺 }
   if (n == CR) { printf("return"); 🔺 }
   if (n < 33) { printf("%s", ascii_cc_str[n]); 🔺 }
   if (n == 127) { printf("del"); 🔺 }
@@ -1301,8 +1432,11 @@ void superfun(int argc, char *argv[]) {
 }
 
 int main(int argc, char *argv[]) {
+  if (argc == 2) {
+    return process(argc, argv);
+  }
   superfun(argc, argv);
   superuser();
   if (argc == 1) return find_files();
-  return process(argc, argv);
+  return 0;
 }
