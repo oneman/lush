@@ -58,7 +58,6 @@ Python Triality
 #include <time.h>
 #include <krad/io/file2.h>
 
-#ifndef _STDIOV_H
 #define _STDIOV_H 26
 
 #ifndef _XOPEN_SOURCE
@@ -663,10 +662,11 @@ typedef struct {
 } points;
 
 void get_adj(points *adj, point *pt, int w, int h) {
-  if (pt->x < 1) pt->x = 1;
-  if (pt->y < 1) pt->y = 1;
-  if (pt->x > (w - 1)) pt->x = w - 1;
-  if (pt->y > (h - 1)) pt->x = h - 1;
+  adj->n = 0;
+  if (pt->x < 1) return;
+  if (pt->y < 1) return;
+  if (pt->x > (w - 1)) return;
+  if (pt->y > (h - 1)) return;
 
   adj->pt[adj->n].x = pt->x - 1;
   adj->pt[adj->n++].y = pt->y - 1;
@@ -887,36 +887,69 @@ size_t text_len(uint8_t *buf, size_t sz) {
   return i;
 }
 
+static int region[3840 * 2160];
+static int nr = 0;
+
 typedef struct {
   uint8_t a;
   uint8_t r;
   uint8_t g;
   uint8_t b;
-} pixel;
+} pixel_t;
 
 typedef struct {
   int w;
   int h;
-} area;
+} area_t;
 
-void px_map(uint8_t *px, int w, int h) {
+void pixel_probe(uint8_t *px, point *pt, pixel_t *p, int w, int pxl_sz) {
+  int i;
+  i = (pt->x * pxl_sz) + (pt->y * w * pxl_sz);
+  p->a = px[i];
+  p->r = px[i + 1];
+  p->g = px[i + 2];
+  p->b = px[i + 3];
+}
+
+int pixcmp(pixel_t *a, pixel_t *b) {
+  if ((a->a == b->a) &&
+     (a->r == b->r) &&
+     (a->g == b->g) &&
+     (a->b == b->b)) {
+    return 1;
+  }
+  return 0;
+}
+
+void pixel_trace(uint8_t *px, int x, int y, int w, int h, int pixel_size) {
   points adj;
   point pt;
-  area area;
-  area.w = w;
-  area.h = h;
-  pt.x = 26;
-  pt.y = 26;
-  memset(&adj, 0, sizeof(points));
+  pixel_t this_p;
+  pixel_t near_p;
+  printf(" pixel trace from: %d, %d - %d bytes per pixel\n", x, y, pixel_size);
+  pt.x = x;
+  pt.y = y;
+  pixel_probe(px, &pt, &this_p, w, pixel_size);
   get_adj(&adj, &pt, w, h);
-  pixel pxl;
-  //getapixel(&pxl, &px, &pt, &area);
-  //setapixel(&pxl, px, pt);
-
-  /*int i;
+  int i;
   for (i = 0; i < adj.n; i++) {
-    uint8_t a,r,g,b;
-  }*/
+    pixel_probe(px, &adj.pt[i], &near_p, w, pixel_size);
+    if ((pixcmp(&near_p, &this_p)) >= 1) {
+      printf("matching values at %d, %d -> %d, %d\n", x, y,
+       adj.pt[i].x, adj.pt[i].y);
+    }
+  }
+}
+
+void pixel_scan(uint8_t *px, int w, int h, int pxl_sz) {
+  int x;
+  int y;
+  printf("pixel scan: %d x %d - %d bytes per pixel\n", w, h, pxl_sz);
+  for (y = 0; y < (h - 1); y++) {
+    for (x = 0; x < (w - 1); x++) {
+      pixel_trace(px, x, y, w, h, pxl_sz);
+    }
+  }
 }
 
 int tryman(int argc, char *argv[]) {
@@ -929,8 +962,8 @@ int tryman(int argc, char *argv[]) {
   char filename[128];
   snprintf(filename, sizeof(filename), "%s/lush_%ld.png", getenv("HOME"),
     seconds);
-  int w = 4096*2;
-  int h = w;
+  int w = 3840;
+  int h = 2160;
   surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, w, h);
   cr = cairo_create(surface);
   unsigned char *px;
@@ -1051,8 +1084,8 @@ int tryman(int argc, char *argv[]) {
 
   cairo_surface_write_to_png(surface, filename);
 
-  px_map(px, w, h);
-
+  pixel_scan(px, w, h, 4);
+  /*printf("ok woo hoo we got %d regions\n", nr);*/
   cairo_destroy(cr);
   cairo_surface_destroy(surface);
   return 0;
@@ -1387,11 +1420,10 @@ void bfun() {
 int main(int argc, char *argv[]) {
   int ret;
   //bfun();
-  //tryman(argc, argv);
+  tryman(argc, argv);
+  exit(0);
   //superfun(argc, argv);
   //superuser();
   ret = find_files();
   return ret;
 }
-
-#endif
