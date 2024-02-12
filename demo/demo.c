@@ -1,45 +1,6 @@
 /*
-the goal of the present file is to encode a multi-modal capability to
-rebase the expression string response function by expressing its data type
-specimines in certain prefered forms. All symbologies are dependent on the
-arrow line diagram, that is a bunch of arrows drawn on a plane sheet, or a 2d
-vector.
-
-We want to connect the following data types: binarray, english alphabet,
-ascii, unicode, int, and rasterized vector pixel buffer.
-
-"pointers to small pixmaps are regions of a larger pixmap"
-
-One always has from any sequence point, a system carrat pointer. That is
-a pointer from an outside system to the inner systems kernelspace and
-userspace.
-
-the unicode pointer to pixmap is an embodiement of the alien ring structure
-from iut thery.
-
-A unicode string with a newline character in it...
-
-The ascii character set includes two arrows pointing next > or < previous in
-its sequence < and >.
-
-It can be seen that every subsequence of graphical characters seperated by
-more rather than less space implies a certain set of arrows for certain common
-interpretation of there graphomorphic processing.
-
-These words all go together.
-> <These><words><all><go><together> <
-
-It is most notable that the above string is only a mutation on the graphical
-characters that do not have single character english alphabet reconstructable
-representations. A line requires two points. A line implies arrows in regards
-to its sitationship status.
-
-english alphabet characters are global timeline operators.
-
-Decoding Measurement of Authoritarian Alignment Results in Monty
-Python Triality
-
-*/
+ * C
+ */
 
 #define _GNU_SOURCE
 #include <stdio.h>
@@ -941,13 +902,13 @@ void pixel_trace(uint8_t *px, int x, int y, int w, int h, int pixel_size) {
   }
 }
 
-void pixel_scan(uint8_t *px, int w, int h, int pxl_sz) {
+void pixel_scan(uint32_t *px, int w, int h) {
   int x;
   int y;
-  printf("pixel scan: %d x %d - %d bytes per pixel\n", w, h, pxl_sz);
-  for (y = 0; y < (h - 1); y++) {
-    for (x = 0; x < (w - 1); x++) {
-      pixel_trace(px, x, y, w, h, pxl_sz);
+  printf("pixel scan: %d x %d - %d bytes per pixel\n", w, h, 4);
+  for (y = 0; y < h; y++) {
+    for (x = 0; x < w; x++) {
+      pixel_trace(px, x, y, w, h, 4);
     }
   }
 }
@@ -1084,8 +1045,6 @@ int tryman(int argc, char *argv[]) {
 
   cairo_surface_write_to_png(surface, filename);
 
-  pixel_scan(px, w, h, 4);
-  /*printf("ok woo hoo we got %d regions\n", nr);*/
   cairo_destroy(cr);
   cairo_surface_destroy(surface);
   return 0;
@@ -1417,10 +1376,27 @@ void bfun() {
   printf("\n");
 }
 
+void pixel_file_scan(char *filename) {
+  cairo_surface_t *surface;
+  cairo_t *cr;
+  int w;
+  int h;
+  uint32_t *argb_px;
+  printf("pixel file scan:\n%s\n\n", filename);
+  surface = cairo_image_surface_create_from_png(filename);
+  w = cairo_image_surface_get_width(surface);
+  h = cairo_image_surface_get_height(surface);
+  cr = cairo_create(surface);
+  argb_px = cairo_image_surface_get_data(surface);
+  pixel_scan(argb_px, w, h);
+  cairo_destroy(cr);
+  cairo_surface_destroy(surface);
+}
 int main(int argc, char *argv[]) {
   int ret;
+  if (argc == 2) pixel_file_scan(argv[1]);
   //bfun();
-  tryman(argc, argv);
+  //tryman(argc, argv);
   exit(0);
   //superfun(argc, argv);
   //superuser();
