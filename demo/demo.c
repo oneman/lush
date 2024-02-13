@@ -2,13 +2,12 @@
  * C
  */
 
+#define _STDIOV_H 26
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-/* there is no string.h, except for this superstring.h */
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fts.h>
 #include <sys/syscall.h>
 #include <sys/utsname.h>
 #include <unistd.h>
@@ -17,14 +16,11 @@
 #include <err.h>
 #include <errno.h>
 #include <time.h>
+#include <fts.h>
 #include <krad/io/file2.h>
-
-#define _STDIOV_H 26
-
 #ifndef _XOPEN_SOURCE
 #define _XOPEN_SOURCE ((26 * 26) + 26)
 #endif
-
 #include <ctype.h>
 #include <limits.h>
 #include <stdio.h>
@@ -34,12 +30,23 @@
 /* !danger includes string.h and locale.h bewares! */
 #include <string.h>
 #include <locale.h>
-
-/* a more useful include */
 #include <sys/uio.h>
-
 #define HIGH 248
 
+#define ASSERT(_e, ...) if (!(_e)) { fprintf(stderr, __VA_ARGS__); exit(1); }
+
+typedef float    f32;
+typedef double   f64;
+typedef uint8_t  u8;
+typedef uint16_t u16;
+typedef uint32_t u32;
+typedef uint64_t u64;
+typedef int8_t   i8;
+typedef int16_t  i16;
+typedef int32_t  i32;
+typedef int64_t  i64;
+typedef size_t   usize;
+typedef ssize_t  isize;
 
 /*
 
@@ -56,36 +63,10 @@ AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME,
 MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA,
 RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY
 
-111111111111111111111111111111111111111111111111111111111111111111111111111111
-1                       26                                            72  7678
-
-an as at be by do go he id if in is it me my no of on or so to up us we yo
-
-us standard marginal quantum code page 8.5" x 11"
-
-local library virginia terminization
-
-
-if (b & 0xF0 == 0xF0) { }
-leads4 = 0xF0 240
-leads3 = 0xE0 224
-leads2 = 0xC0 192
-leads1 = 0x80 128
-01010101 = 85
-10101010 = 170
-
-
-111111111111111111111111111111111111111111111111111111111111111111111111111111
-
-if (b & 0xF0 == 0xF0) { }
-leads4 = 0xF0 240
-leads3 = 0xE0 224
-leads2 = 0xC0 192
-follow1 = 0x80 128
-01010101 = 85
-10101010 = 170
-
-! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+0123456789
 
 typedef struct str {
   char *p;
@@ -218,11 +199,6 @@ typedef enum {
  UNICODE,
  PIXEL
 } pointer_mode;
-
-typedef enum {
-  FLOAT,
-  ARGB
-} pixel_mode;
 
 #define TO_LOW 0
 #define TO_HIGH 248
@@ -848,7 +824,7 @@ size_t text_len(uint8_t *buf, size_t sz) {
   return i;
 }
 
-static int region[3840 * 2160];
+static int pr[4096 * 8];
 static int nr = 0;
 
 typedef struct {
@@ -903,14 +879,43 @@ void pixel_trace(uint8_t *px, int x, int y, int w, int h, int pixel_size) {
 }
 
 void pixel_scan(uint32_t *px, int w, int h) {
+  printf("pixel scan: %d x %d - %d bytes per pixel\n", w, h, 4);
   int x;
   int y;
-  printf("pixel scan: %d x %d - %d bytes per pixel\n", w, h, 4);
   for (y = 0; y < h; y++) {
     for (x = 0; x < w; x++) {
-      pixel_trace(px, x, y, w, h, 4);
+      pixel_t *upleft = NULL;
+      pixel_t *up = NULL;
+      pixel_t *left = NULL;
+      pixel_t *upright = NULL;
+      pixel_t *cur = &px[(y * w) + x];
+      printf("@ %dx%d: #%02X%02X%02X",
+                 x, y, cur->r, cur->g, cur->b);
+      if ((y == 0) && (x == 0)) {
+        pr[0] = ++nr;
+      }
+      if (y > 0) {
+        up = &px[((y - 1) * w) + x];
+        if (x > 0) upleft = &px[((y - 1) * w) + (x - 1)];
+        if (x < (w - 1)) upright = &px[((y - 1) * w) + (x + 1)];
+      }
+      if (x > 0) left = &px[(y * w) + (x - 1)];
+      if (upleft) {
+        printf("we have upleft\n");
+      }
+      if (up) {
+        printf("we have up\n");
+      }
+      if (left) {
+        printf("we have left\n");
+      }
+      if (upright) {
+        printf("we have upright\n");
+      }
     }
+    printf("\n");
   }
+  printf("\n");
 }
 
 int tryman(int argc, char *argv[]) {
@@ -1128,7 +1133,7 @@ int file_scan(char *path) {
   return kr_file_set_destroy(fs);
 }
 
-int find_files() {
+int path_scan() {
   int ret;
   int opt;
   FTS *fs;
@@ -1392,14 +1397,25 @@ void pixel_file_scan(char *filename) {
   cairo_destroy(cr);
   cairo_surface_destroy(surface);
 }
+
+/*
+! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+*/
+
 int main(int argc, char *argv[]) {
-  int ret;
-  if (argc == 2) pixel_file_scan(argv[1]);
-  //bfun();
-  //tryman(argc, argv);
-  exit(0);
-  //superfun(argc, argv);
+  int err;
+  struct stat s;
+  if (argc > 1) {
+    err = stat(argv[1], &s);
+    if (!err) {
+      /*if (S_ISDIR(s.st_mode)) {*/
+      if (S_ISREG(s.st_mode)) {
+        pixel_file_scan(argv[1]);
+        return 0;
+      }
+    }
+  }
   //superuser();
-  ret = find_files();
-  return ret;
+  err = path_scan();
+  return err;
 }
