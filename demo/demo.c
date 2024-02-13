@@ -848,14 +848,38 @@ void pixel_probe(uint8_t *px, point *pt, pixel_t *p, int w, int pxl_sz) {
   p->b = px[i + 3];
 }
 
+int rgbcmp(pixel_t *p1, pixel_t *p2) {
+  if ((p1->r == p2->r) &&
+      (p1->g == p2->g) &&
+      (p1->b == p2->b)) {
+    return 0;
+  }
+  return 1;
+}
+
+int samergb(pixel_t *p1, pixel_t *p2) {
+  if (rgbcmp(p1, p2) == 0) return 1;
+  return 0;
+}
+
+int argbcmp(pixel_t *a, pixel_t *b) {
+  if ((a->a == b->a) &&
+      (a->r == b->r) &&
+      (a->g == b->g) &&
+      (a->b == b->b)) {
+    return 0;
+  }
+  return 1;
+}
+
 int pixcmp(pixel_t *a, pixel_t *b) {
   if ((a->a == b->a) &&
-     (a->r == b->r) &&
-     (a->g == b->g) &&
-     (a->b == b->b)) {
-    return 1;
+      (a->r == b->r) &&
+      (a->g == b->g) &&
+      (a->b == b->b)) {
+    return 0;
   }
-  return 0;
+  return 1;
 }
 
 void pixel_trace(uint8_t *px, int x, int y, int w, int h, int pixel_size) {
@@ -871,7 +895,7 @@ void pixel_trace(uint8_t *px, int x, int y, int w, int h, int pixel_size) {
   int i;
   for (i = 0; i < adj.n; i++) {
     pixel_probe(px, &adj.pt[i], &near_p, w, pixel_size);
-    if ((pixcmp(&near_p, &this_p)) >= 1) {
+    if (samergb(&near_p, &this_p)) {
       printf("matching values at %d, %d -> %d, %d\n", x, y,
        adj.pt[i].x, adj.pt[i].y);
     }
@@ -902,6 +926,9 @@ void pixel_scan(uint32_t *px, int w, int h) {
       if (x > 0) left = &px[(y * w) + (x - 1)];
       if (upleft) {
         printf("we have upleft\n");
+        if (samergb(cur, upleft)) {
+          printf("we have samergb upleft\n");
+        }
       }
       if (up) {
         printf("we have up\n");
