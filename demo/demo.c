@@ -572,6 +572,8 @@ int alphanumeric_len(uint8_t *buf, size_t sz) {
 #define gs_rad 13 * 18
 #define gs_center lpm + gs_rad
 
+#define crossword_sz "4 and 7/16in wide"
+
 /* content area: 6.5 * 9 = 58.5 in 484704 */
 /* letterpaper area: 58.5 + 35 = 93.5 in */
 /* letterpaper total quanta = 93.5 * 5184 */
