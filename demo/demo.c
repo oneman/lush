@@ -826,12 +826,52 @@ size_t text_len(uint8_t *buf, size_t sz) {
 
 static int pr[4096 * 8];
 static int nr = 0;
+static int nrj = 0;
+
+int active_regions() {
+  return nr - nrj;
+}
+
+int pixel_region(int x, int y, int w) {
+  int n = (y * w) + x;
+  int r = pr[n];
+  //printf("n=%d\n", n);
+  //printf("get region: %d,%d: %d\n", x, y, r);
+  return r;
+}
+
+int pixel_region_new(int x, int y, int w) {
+  int n = (y * w) + x;
+  int r = ++nr;
+  pr[n] = r;
+  //printf("n=%d\n", n);
+  //printf("new region: %d,%d: %d\n", x, y, r);
+  return r;
+}
+
+int pixel_region_join(int r, int x, int y, int w) {
+  int n = (y * w) + x;
+  int old_r = pr[n];
+  pr[n] = r;
+  //printf("n=%d\n", n);
+  //printf(" join region: %d,%d: %d -> %d\n", x, y, old_r, r);
+  if ((old_r) && (old_r != r)) {
+    nrj++;
+    for (int i = 0; i < n; i++) {
+      if (pr[i] == old_r) {
+        pr[i] = r;
+      //  printf(" %d moved to: %d\n", i, r);
+      }
+    }
+  }
+  return r;
+}
 
 typedef struct {
-  uint8_t a;
   uint8_t r;
   uint8_t g;
   uint8_t b;
+  uint8_t a;
 } pixel_t;
 
 typedef struct {
@@ -902,10 +942,23 @@ void pixel_trace(uint8_t *px, int x, int y, int w, int h, int pixel_size) {
   }
 }
 
+void print_pixel_regions(uint32_t *px, int w, int h) {
+  int x;
+  int y;
+  for (y = 0; y < h; y++) {
+    for (x = 0; x < w; x++) {
+      printf("%4d ", pixel_region(x, y, w));
+    }
+    printf("\n");
+  }
+  printf("\n");
+}
+
 void pixel_scan(uint32_t *px, int w, int h) {
   printf("pixel scan: %d x %d - %d bytes per pixel\n", w, h, 4);
   int x;
   int y;
+  int r;
   for (y = 0; y < h; y++) {
     for (x = 0; x < w; x++) {
       pixel_t *upleft = NULL;
@@ -913,11 +966,8 @@ void pixel_scan(uint32_t *px, int w, int h) {
       pixel_t *left = NULL;
       pixel_t *upright = NULL;
       pixel_t *cur = &px[(y * w) + x];
-      printf("@ %dx%d: #%02X%02X%02X",
-                 x, y, cur->r, cur->g, cur->b);
-      if ((y == 0) && (x == 0)) {
-        pr[0] = ++nr;
-      }
+      if (x == 0) printf("%d", y);
+      printf(" #%02X%02X%02X", cur->r, cur->g, cur->b);
       if (y > 0) {
         up = &px[((y - 1) * w) + x];
         if (x > 0) upleft = &px[((y - 1) * w) + (x - 1)];
@@ -925,24 +975,39 @@ void pixel_scan(uint32_t *px, int w, int h) {
       }
       if (x > 0) left = &px[(y * w) + (x - 1)];
       if (upleft) {
-        printf("we have upleft\n");
         if (samergb(cur, upleft)) {
-          printf("we have samergb upleft\n");
+          r = pixel_region(x - 1, y - 1, w);
+          pixel_region_join(r, x, y, w);
         }
       }
       if (up) {
-        printf("we have up\n");
+        if (samergb(cur, up)) {
+          r = pixel_region(x, y - 1, w);
+          pixel_region_join(r, x, y, w);
+        }
       }
       if (left) {
-        printf("we have left\n");
+        if (samergb(cur, left)) {
+          r = pixel_region(x - 1, y, w);
+          pixel_region_join(r, x, y, w);
+        }
       }
       if (upright) {
-        printf("we have upright\n");
+        if (samergb(cur, upright)) {
+          r = pixel_region(x + 1, y - 1, w);
+          pixel_region_join(r, x, y, w);
+        }
+      }
+      if (!pixel_region(x, y, w)) {
+        pixel_region_new(x, y, w);
       }
     }
     printf("\n");
   }
   printf("\n");
+  printf("%d active regions %d created, %d joined\n",
+          active_regions(), nr, nrj);
+  print_pixel_regions(px, w, h);
 }
 
 int tryman(int argc, char *argv[]) {
