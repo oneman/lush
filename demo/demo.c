@@ -1146,11 +1146,20 @@ uint8_t word_len(char *string, size_t len) {
 }
 
 typedef enum {
+  NO,
   BLANK,
   DOD,
   NUMBER,
   LETTER
 } text_mode;
+
+text_mode get_text_mode(u8 c) {
+  if (is_letter(c)) return LETTER;
+  else if (is_number(c)) return NUMBER;
+  else if (is_blank(c)) return BLANK;
+  else if (is_dod(c)) return DOD;
+  return NO;
+}
 
 size_t text_scan(uint8_t *buf, size_t sz) {
   text_mode last = BLANK;
@@ -1158,10 +1167,7 @@ size_t text_scan(uint8_t *buf, size_t sz) {
   int ret;
   for (size_t i = 0; i < sz; i++) {
     u8 c = buf[i];
-    if (is_letter(c)) mode = LETTER;
-    else if (is_number(c)) mode = NUMBER;
-    else if (is_blank(c)) mode = BLANK;
-    else if (is_dod(c)) mode = DOD;
+    mode = get_text_mode(c);
     switch (mode) {
       case BLANK:
         printf("BLANK\n");
@@ -1189,6 +1195,9 @@ size_t text_scan(uint8_t *buf, size_t sz) {
       case LETTER:
         printf("LETTER\n");
         break;
+      default:
+        printf("NOTEXT\n");
+        exit(1);
     }
     last = mode;
   }
