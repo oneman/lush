@@ -177,29 +177,6 @@ void ft_test(uint8_t *buf, size_t sz) {
   printf("ft done lib\n");
 }
 
-typedef enum {
-  NONALPHANUMERIC,
-  ALPHANUMERIC
-} char_mode;
-
-typedef enum {
-  CONTROL,
-  TEXT
-} ascii_mode;
-
-typedef enum {
-  BLANK,
-  DOD,
-  NUMBER,
-  LETTER
-} text_mode;
-
-typedef enum {
- BINARY,
- UNICODE,
- PIXEL
-} pointer_mode;
-
 #define TO_LOW 0
 #define TO_HIGH 248
 
@@ -279,6 +256,34 @@ uint8_t is_ascii_char(uint8_t byte) {
   return 0;
 }
 
+int is_ascii(unsigned char byte) {
+  if ((byte > 0) && (byte < 128)) return 1;
+  return 0;
+}
+
+int is_unicode_header(uint8_t byte) {
+  if (byte <= 191) return 0;
+  if (byte >= 192) {
+    if (byte <= 223) return 2;
+    if (byte <= 239) return 3;
+    if (byte <= 247) return 4;
+  }
+  if (byte >= 248) return 0;
+  return 0;
+}
+
+int is_unicode_body(uint8_t byte) {
+  if ((byte >= 128) && (byte <= 191)) return 1;
+  return 0;
+}
+
+int is_unicode(unsigned char byte) {
+  int ret;
+  ret = is_unicode_header(byte);
+  if (ret) return ret;
+  return is_unicode_body(byte);
+}
+
 uint8_t is_ascii_blank(uint8_t byte) {
   if (byte == SP) return 1;
   if (byte == LF) return 1;
@@ -324,18 +329,8 @@ int is_ascii_dod(uint8_t c) {
 }
 
 int is_dod(uint8_t c) {
-  return is_ascii_dod(c);
-}
-
-size_t dod_len(uint8_t *buf, size_t sz) {
-  size_t i;
-  uint8_t byte;
-  for (i = 0; i < sz; i++) {
-    byte = buf[i];
-    if (is_dod(byte)) continue;
-    break;
-  }
-  return i;
+  if (is_ascii_dod(c)) return 1;
+  return is_unicode(c);
 }
 
 int is_ascii_number(uint8_t c) {
@@ -365,16 +360,6 @@ int number_len(uint8_t *buf, size_t sz) {
     break;
   }
   return i;
-}
-
-int is_ascii(unsigned char byte) {
-  if ((byte > 0) && (byte < 128)) return 1;
-  return 0;
-}
-
-int is_unicode(unsigned char byte) {
-  if ((byte > 128) && (byte < HIGH)) return 1;
-  return 0;
 }
 
 uint8_t is_english_alphabet_letter(uint8_t c) {
@@ -482,6 +467,42 @@ int alphanumeric_len(uint8_t *buf, size_t sz) {
   return 0;
 }
 
+size_t text_len(uint8_t *buf, size_t sz) {
+  uint8_t byte;
+  size_t i;
+  for (i = 0; i < sz; i++) {
+    byte = buf[i];
+    if (is_ascii_char(byte)) continue;
+    if (is_ascii_blank(byte)) continue;
+    int u = is_unicode(byte);
+    if (u < 2) break;
+    if ((i + u) > sz) break;
+    if (u == 2) {
+      if (is_unicode_body(buf[i + 1])) {
+        i += 1;
+        continue;
+      }
+      break;
+    } else if (u == 3) {
+      if ((is_unicode_body(buf[i + 1]))
+       && (is_unicode_body(buf[i + 2]))) {
+        i += 2;
+        continue;
+      }
+      break;
+    } else if (u == 4) {
+      if ((is_unicode_body(buf[i + 1]))
+       && (is_unicode_body(buf[i + 2]))
+       && (is_unicode_body(buf[i + 3]))) {
+        i += 3;
+        continue;
+      }
+      break;
+    }
+  }
+  return i;
+}
+
 #define ℤ int
 #define cunt size_t
 #define csz size_t
@@ -585,10 +606,6 @@ int alphanumeric_len(uint8_t *buf, size_t sz) {
 /* margin nonoverlapping tall quanta: 93312 */
 /* margin nonoverlapping ratio: 93312/67392 = 1.384615 */
 /* dollar size: 6.2 * 2.6 */
-
-#define N_PXR 8192 * 8192
-static int pxr[N_PXR];
-static int n_pxr = 0;
 
 typedef struct {
   int x;
@@ -773,58 +790,6 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 0F SI     1F US     2F /    3F ?    4F O    5F _    6F o    7F DEL
 
 */
-
-int is_unicode_header(uint8_t byte) {
-  if (byte <= 191) return 0;
-  if (byte >= 192) {
-    if (byte <= 223) return 1;
-    if (byte <= 239) return 2;
-    if (byte <= 247) return 3;
-  }
-  if (byte >= 248) return 0;
-  return 0;
-}
-
-int is_unicode_body(uint8_t byte) {
-  if ((byte >= 128) && (byte <= 191)) return 1;
-  return 0;
-}
-
-size_t text_len(uint8_t *buf, size_t sz) {
-  size_t i;
-  uint8_t byte;
-  int hs = 0;
-  int ns = 0;
-  for (i = 0; i < sz; i++) {
-    byte = buf[i];
-    if (byte == 0) break;
-    if (byte >= 248) break;
-    if (hs) {
-      if (hs == ns) {
-        ns = 0;
-        hs = 0;
-      }
-    }
-    if (ns) {
-      if (is_unicode_body(byte)) {
-        hs++;
-        continue;
-      }
-      break;
-    }
-    if (is_ascii_char(byte)) continue;
-    if (is_ascii_blank(byte)) continue;
-    ns = is_unicode_header(byte);
-    if (ns == 0) break;
-    if ((ns + i) > sz) break;
-  }
-  if (ns) {
-    if (i >= (ns + 1)) {
-      i = i - (ns + 1);
-    }
-  }
-  return i;
-}
 
 static int pr[4096 * 8];
 static int nr = 0;
@@ -1180,18 +1145,76 @@ uint8_t word_len(char *string, size_t len) {
   return len;
 }
 
-size_t data_scan(uint8_t *buf, size_t sz) {
+typedef enum {
+  BLANK,
+  DOD,
+  NUMBER,
+  LETTER
+} text_mode;
+
+size_t text_scan(uint8_t *buf, size_t sz) {
+  text_mode last = BLANK;
+  text_mode mode = last;
+  int ret;
+  for (size_t i = 0; i < sz; i++) {
+    u8 c = buf[i];
+    if (is_letter(c)) mode = LETTER;
+    else if (is_number(c)) mode = NUMBER;
+    else if (is_blank(c)) mode = BLANK;
+    else if (is_dod(c)) mode = DOD;
+    switch (mode) {
+      case BLANK:
+        printf("BLANK\n");
+        if (c == SP) {
+          printf("space");
+        }
+        if (c == LF) {
+          printf("newline");
+        }
+        if (c == HT) {
+          printf("tab");
+        }
+        break;
+      case DOD:
+        printf("DOD\n");
+        ret = is_unicode(c);
+        if (ret > 1) {
+          i += (ret - 1);
+          continue;
+        }
+        break;
+      case NUMBER:
+        printf("NUMBER\n");
+        break;
+      case LETTER:
+        printf("LETTER\n");
+        break;
+    }
+    last = mode;
+  }
+  return sz;
+}
+
+size_t binary_scan(uint8_t *buf, size_t sz) {
   size_t n;
-  size_t x;
-  uint8_t b;
+  size_t z;
   for (n = 0; n < sz;) {
-    b = buf[n];
-    x = text_len(buf + n, sz - n);
-    if (x == 0) { printf("[%u %x]", b, b); n++; continue; }
-    printf("[%lu bytes if text]", x);\
-    n += x;
+    //usleep(10000);
+    //printf("n %u sz %u\n", n, sz);
+    u8 b = buf[n];
+    z = text_len(buf + n, sz - n);
+    if (z == 0) { printf("%02X", b); n++; continue; }
+    for (int i = 0; z > i; i++) putchar(buf[n] + i);
+    n += z;
     continue;
   }
+  return sz;
+}
+
+size_t data_scan(uint8_t *buf, size_t sz) {
+  int n = text_len(buf, sz);
+  if (n == sz) return text_scan(buf, sz);
+  return binary_scan(buf, sz);
 }
 
 int file_scan(char *path) {
@@ -1425,36 +1448,36 @@ void bfun() {
   if (n == ' ') { printf("space"); 🔺 }
   if (n == '!') { printf("fuck"); 🔺 }
   if (n == '"') { printf("quote"); 🔺 }
-  if (n == '#') { printf("hash"); 🔺 }
-  if (n == '$') { printf("dollar"); 🔺 }
+  if (n == '#') { printf("hashtag"); 🔺 }
+  if (n == '$') { printf("dollarsign"); 🔺 }
   if (n == '%') { printf("percent"); 🔺 }
   if (n == '&') { printf("and"); 🔺 }
-  if (n == '\'') { printf("mark"); 🔺 }
-  if (n == '(') { printf("open"); 🔺 }
-  if (n == ')') { printf("close"); 🔺 }
+  if (n == '\'') { printf("singlequote"); 🔺 }
+  if (n == '(') { printf("openparen"); 🔺 }
+  if (n == ')') { printf("closeparen"); 🔺 }
   if (n == '*') { printf("star"); 🔺 }
   if (n == '+') { printf("plus"); 🔺 }
   if (n == ',') { printf("comma"); 🔺 }
   if (n == '-') { printf("dash"); 🔺 }
   if (n == '.') { printf("dot"); 🔺 }
   if (n == '/') { printf("slash"); 🔺 }
-  if (n == ':') { printf("with"); 🔺 }
-  if (n == ';') { printf("end"); 🔺 }
-  if (n == '<') { printf("less"); 🔺 }
-  if (n == '=') { printf("same"); 🔺 }
-  if (n == '>') { printf("more"); 🔺 }
-  if (n == '?') { printf("what"); 🔺 }
+  if (n == ':') { printf("colon"); 🔺 }
+  if (n == ';') { printf("semicolon"); 🔺 }
+  if (n == '<') { printf("lesserthan"); 🔺 }
+  if (n == '=') { printf("equalsign"); 🔺 }
+  if (n == '>') { printf("greaterthan"); 🔺 }
+  if (n == '?') { printf("questionmark"); 🔺 }
   if (n == '@') { printf("at"); 🔺 }
-  if (n == '[') { printf("in"); 🔺 }
-  if (n == '\\') { printf("back"); 🔺 }
-  if (n == ']') { printf("out"); 🔺 }
-  if (n == '^') { printf("raise"); 🔺 }
-  if (n == '_') { printf("under"); 🔺 }
-  if (n == '`') { printf("tic"); 🔺 }
-  if (n == '{') { printf("do"); 🔺 }
-  if (n == '|') { printf("or"); 🔺 }
-  if (n == '}') { printf("done"); 🔺 }
-  if (n == '~') { printf("like"); 🔺 }
+  if (n == '[') { printf("openbracket"); 🔺 }
+  if (n == '\\') { printf("backslash"); 🔺 }
+  if (n == ']') { printf("closebracket"); 🔺 }
+  if (n == '^') { printf("uparrow"); 🔺 }
+  if (n == '_') { printf("underline"); 🔺 }
+  if (n == '`') { printf("backtick"); 🔺 }
+  if (n == '{') { printf("openbrace"); 🔺 }
+  if (n == '|') { printf("pipe"); 🔺 }
+  if (n == '}') { printf("closebrace"); 🔺 }
+  if (n == '~') { printf("tilde"); 🔺 }
   if (n == '0') { printf("zero"); 🔺 }
   if (n == '1') { printf("one"); 🔺 }
   if (n == '2') { printf("two"); 🔺 }
@@ -1494,6 +1517,8 @@ void pixel_file_scan(char *filename) {
 
 /*
 ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
+! " #   % & ' ( ) * + , - . / : ; < = > ?   [ \ ] ^ _   { | } ~
+      X                                   X           X
 */
 
 int main(int argc, char *argv[]) {
@@ -1504,7 +1529,7 @@ int main(int argc, char *argv[]) {
     if (!err) {
       /*if (S_ISDIR(s.st_mode)) {*/
       if (S_ISREG(s.st_mode)) {
-        pixel_file_scan(argv[1]);
+        file_scan(argv[1]);
         return 0;
       }
     }
