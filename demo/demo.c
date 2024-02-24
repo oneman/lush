@@ -1,6 +1,51 @@
-/*
- * C
- */
+/*C
+
+ letters  (2 rep letters max)
+ a = any
+ e
+ i = 1
+ o
+ u = 2
+ syllables
+  words
+  labels
+
+ checkdef cont-ext context
+
+ h = ?
+ went ~ to the partition
+ gone: left from the partition
+ did -3-
+ go -Z-
+ going -=-
+
+
+ well if the least we can know about the universe is 1 bit,
+ then the most we can know is a whole bunch of bitches
+
+ /word/seen
+ #occurances filenym
+
+ /word/heard
+ #occurances filenym
+
+ /word/read
+ #occurances filenym
+
+
+ whiches, whitespace seperated
+
+ 'reccurrences with prev/next page'
+
+
+ filenymsys
+
+ register names:
+   sha256 contents
+   subject: math, source = mathwords
+   "collections"
+   datasheet/paper/webpage/photo/level "media presentate type"
+*/
 
 #define _STDIOV_H 26
 #define _GNU_SOURCE
@@ -73,6 +118,17 @@ typedef struct str {
   size_t sz;
 }
 */
+
+#define yeap return 1;
+#define nope return 0;
+#define otherwise
+
+int is_leap_year(uint64_t year) {
+  if ((year % 400) == 0) yeap
+  if ((year % 100) == 0) nope
+  if ((year % 4) == 0) yeap
+  otherwise nope
+}
 
 #include <ft2build.h>
 #include <freetype/freetype.h>
@@ -177,6 +233,124 @@ void ft_test(uint8_t *buf, size_t sz) {
   printf("ft done lib\n");
 }
 
+#include <mupdf/fitz.h>
+
+int doc(int argc, char **argv)
+{
+	char *input;
+	float zoom, rotate;
+	int page_number, page_count;
+	fz_context *ctx;
+	fz_document *doc;
+	fz_pixmap *pix;
+	fz_matrix ctm;
+	int x, y;
+
+	if (argc < 3)
+	{
+		fprintf(stderr, "usage: example input-file page-number [ zoom [ rotate ] ]\n");
+		fprintf(stderr, "\tinput-file: path of PDF, XPS, CBZ or EPUB document to open\n");
+		fprintf(stderr, "\tPage numbering starts from one.\n");
+		fprintf(stderr, "\tZoom level is in percent (100 percent is 72 dpi).\n");
+		fprintf(stderr, "\tRotation is in degrees clockwise.\n");
+		return EXIT_FAILURE;
+	}
+
+	input = argv[1];
+	page_number = atoi(argv[2]) - 1;
+	zoom = argc > 3 ? atof(argv[3]) : 100;
+	rotate = argc > 4 ? atof(argv[4]) : 0;
+
+	/* Create a context to hold the exception stack and various caches. */
+	ctx = fz_new_context(NULL, NULL, FZ_STORE_UNLIMITED);
+	if (!ctx)
+	{
+		fprintf(stderr, "cannot create mupdf context\n");
+		return EXIT_FAILURE;
+	}
+
+	/* Register the default file types to handle. */
+	fz_try(ctx)
+		fz_register_document_handlers(ctx);
+	fz_catch(ctx)
+	{
+		//fz_report_error(ctx);
+		fprintf(stderr, "cannot register document handlers\n");
+		fz_drop_context(ctx);
+		return EXIT_FAILURE;
+	}
+
+	/* Open the document. */
+	fz_try(ctx)
+		doc = fz_open_document(ctx, input);
+	fz_catch(ctx)
+	{
+		//fz_report_error(ctx);
+		fprintf(stderr, "cannot open document\n");
+		fz_drop_context(ctx);
+		return EXIT_FAILURE;
+	}
+
+	/* Count the number of pages. */
+	fz_try(ctx)
+		page_count = fz_count_pages(ctx, doc);
+	fz_catch(ctx)
+	{
+		//fz_report_error(ctx);
+		fprintf(stderr, "cannot count number of pages\n");
+		fz_drop_document(ctx, doc);
+		fz_drop_context(ctx);
+		return EXIT_FAILURE;
+	}
+
+	if (page_number < 0 || page_number >= page_count)
+	{
+		fprintf(stderr, "page number out of range: %d (page count %d)\n", page_number + 1, page_count);
+		fz_drop_document(ctx, doc);
+		fz_drop_context(ctx);
+		return EXIT_FAILURE;
+	}
+
+	/* Compute a transformation matrix for the zoom and rotation desired. */
+	/* The default resolution without scaling is 72 dpi. */
+	ctm = fz_scale(zoom / 100, zoom / 100);
+	ctm = fz_pre_rotate(ctm, rotate);
+
+	/* Render page to an RGB pixmap. */
+	fz_try(ctx)
+		pix = fz_new_pixmap_from_page_number(ctx, doc, page_number, ctm, fz_device_rgb(ctx), 0);
+	fz_catch(ctx)
+	{
+		//fz_report_error(ctx);
+		fprintf(stderr, "cannot render page\n");
+		fz_drop_document(ctx, doc);
+		fz_drop_context(ctx);
+		return EXIT_FAILURE;
+	}
+
+	/* Print image data in ascii PPM format. */
+	printf("P3\n");
+	printf("%d %d\n", pix->w, pix->h);
+	printf("255\n");
+	for (y = 0; y < pix->h; ++y)
+	{
+		unsigned char *p = &pix->samples[y * pix->stride];
+		for (x = 0; x < pix->w; ++x)
+		{
+			if (x > 0)
+				printf("  ");
+			printf("%3d %3d %3d", p[0], p[1], p[2]);
+			p += pix->n;
+		}
+		printf("\n");
+	}
+
+	/* Clean up. */
+	fz_drop_pixmap(ctx, pix);
+	fz_drop_document(ctx, doc);
+	fz_drop_context(ctx);
+	return EXIT_SUCCESS;
+}
 #define TO_LOW 0
 #define TO_HIGH 248
 
@@ -1382,35 +1556,6 @@ void dothis() {
     i++;
   }
 }
-
-/*
-00001  aaa    a  aaa  a a  aaa  alpha
-00010  b    b    bbb  b b  bbb  bravo
-00011     cc   c    cc  charlie
-00100    d    d  ddd  d d  ddd  delta
-00101  eee  e e  eee  e    eee  echo
-00110  fff  f    ff   f    f    foxtrot
-00111 gggg g    g gg g  g gggg  golf
-01000  h    h    hhh  h h  h h  hotel
-01001   i    i    i    i    i   india
-01010    j    j    j  j j  jjj  juliet
-01011  k    k    k k  kk   k k  kilo
-01100  l    l    l    l    lll  lima
-01101       mmmmmm m mm m m mike
-01110    nnn  n n  n n  november
-01111  oo  o  o o  o  oo    oscar
-10000  ppp  p p  ppp  p    p    papa
-10001 qqq  q q  qqq    q    qq  quebec
-10010   rrr  r    r    r    romeo
-10011   ss  s    sss    s  ss   sierra
-10100   t  ttttt  t    t    t   tango
-10101    u u  u u  uuu  uniform
-10110       v   v v v   v   victor
-10111        w w ww w w whiskey
-11000 x   x x x   x   x x x   x x-ray
-11001 y   y y y   y   y   y     yankee
-11010  zzz    z   z   z    zzz  zulu
-*/
 
 #define 🔺 continue;
 

@@ -66,7 +66,6 @@ typedef struct {
   kr_patchset *patchset;
 } kr_radio_event;
 
-typedef int (kr_radio_unlock_cb)(char *callsign, char *key, size_t sz);
 typedef int (kr_radio_event_cb)(kr_radio_event *);
 typedef int (kr_dispatcher)(void *user, kr_crate *crate);
 
@@ -108,7 +107,6 @@ struct kr_radio {
   kr_radio_info info;
   kr_radio_event_cb *event_cb;
   kr_api api;
-  kr_radio_unlock_cb *unlock;
   struct {
     kr_xfer_path *uploader;
     kr_xfer_path *receiver;
@@ -180,7 +178,6 @@ static int radio_create(kr_app_server *app, void *user);
 #include "reply.c"
 #include "event.c"
 #include "dispatch.c"
-#include "soundctl_unlock.c"
 
 static int radio_client_fds_get(void *ptr, int *fds, int nfds) {
   kr_radio *radio;
@@ -917,7 +914,6 @@ void krad_radio(char *callsign) {
   strncpy(radio.info.callsign, callsign, sizeof(radio.info.callsign) - 1);
   strncpy(radio.info.name, callsign, sizeof(radio.info.name) - 1);
   radio.info.started_on = time(NULL);
-  if (getenv("KR_RADIO_SOUNDCTL_AUTH")) radio.unlock = soundctl_unlock;
   mode = getenv("KR_RADIO_MODE");
   if (mode && str_to_kr_radio_mode(mode) == KR_RADIO_MODE_AUDIO) {
     radio.info.mode = KR_RADIO_MODE_AUDIO;

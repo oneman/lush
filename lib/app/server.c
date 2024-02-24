@@ -461,7 +461,7 @@ static kr_app_server *create_app_server(kr_app_server_setup *setup) {
     server->cmdr = kr_cmdr_create(&cmdr_setup);
     if (!server->cmdr) {
       printk("frook");
-    } 
+    }
   }
   setup_system(server);
   printk("App Server: Created");
@@ -470,7 +470,7 @@ static kr_app_server *create_app_server(kr_app_server_setup *setup) {
 
 kr_cmdr *kr_app_server_get_cmdr(kr_app_server *s) {
   if (!s) return NULL;
-  return s->cmdr;  
+  return s->cmdr;
 }
 
 void *kr_app_client_get_user(kr_app_server_client *c) {
