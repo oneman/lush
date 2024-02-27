@@ -437,27 +437,56 @@ int is_ascii(unsigned char byte) {
   return 0;
 }
 
-int is_unicode_header(uint8_t byte) {
-  if (byte <= 191) return 0;
-  if (byte >= 192) {
-    if (byte <= 223) return 2;
-    if (byte <= 239) return 3;
-    if (byte <= 247) return 4;
-  }
-  if (byte >= 248) return 0;
-  return 0;
-}
+/*
 
-int is_unicode_body(uint8_t byte) {
+E0     A0..BF
+ED     80..9F
+F0     90..BF
+F4     80..8F
+
+224 160-191
+237 128-159
+240 144-191
+244 128-143
+
+*/
+
+int is_unicode_tail(uint8_t byte) {
   if ((byte >= 128) && (byte <= 191)) return 1;
   return 0;
 }
 
-int is_unicode(unsigned char byte) {
-  int ret;
-  ret = is_unicode_header(byte);
-  if (ret) return ret;
-  return is_unicode_body(byte);
+int is_unicode_neckbeard(uint8_t head, uint8_t neck) {
+  if (head == 224) {
+    if ((neck >= 160) && (neck <= 191)) return 1;
+    printk("unicode neckbeard error!");
+    return 0;
+  }
+  if (head == 237) {
+    if ((neck >= 128) && (neck <= 159)) return 1;
+    printk("unicode neckbeard error!");
+    return 0;
+  }
+  if (head == 240) {
+    if ((neck >= 144) && (neck <= 191)) return 1;
+    printk("unicode neckbeard error!");
+    return 0;
+  }
+  if (head == 244) {
+    if ((neck >= 128) && (neck <= 143)) return 1;
+    printk("unicode neckbeard error!");
+    return 0;
+  }
+  return is_unicode_tail(neck);
+}
+
+int is_unicode_head(uint8_t byte) {
+  if (byte <= 191) return 0;
+  if (byte >= 248) return 0;
+  if (byte <= 223) return 2;
+  if (byte <= 239) return 3;
+  if (byte <= 247) return 4;
+  return 0;
 }
 
 uint8_t is_ascii_blank(uint8_t byte) {
@@ -506,7 +535,7 @@ int is_ascii_dod(uint8_t c) {
 
 int is_dod(uint8_t c) {
   if (is_ascii_dod(c)) return 1;
-  return is_unicode(c);
+  return is_unicode_head(c);
 }
 
 int is_ascii_number(uint8_t c) {
@@ -650,26 +679,26 @@ size_t text_len(uint8_t *buf, size_t sz) {
     byte = buf[i];
     if (is_ascii_char(byte)) continue;
     if (is_ascii_blank(byte)) continue;
-    int u = is_unicode(byte);
+    int u = is_unicode_head(byte);
     if (u < 2) break;
     if ((i + u) > sz) break;
     if (u == 2) {
-      if (is_unicode_body(buf[i + 1])) {
+      if (is_unicode_tail(buf[i + 1])) {
         i += 1;
         continue;
       }
       break;
     } else if (u == 3) {
-      if ((is_unicode_body(buf[i + 1]))
-       && (is_unicode_body(buf[i + 2]))) {
+      if ((is_unicode_neckbeard(byte, buf[i + 1]))
+       && (is_unicode_tail(buf[i + 2]))) {
         i += 2;
         continue;
       }
       break;
     } else if (u == 4) {
-      if ((is_unicode_body(buf[i + 1]))
-       && (is_unicode_body(buf[i + 2]))
-       && (is_unicode_body(buf[i + 3]))) {
+      if ((is_unicode_neckbeard(byte, buf[i + 1]))
+       && (is_unicode_tail(buf[i + 2]))
+       && (is_unicode_tail(buf[i + 3]))) {
         i += 3;
         continue;
       }
@@ -1359,7 +1388,7 @@ size_t text_scan(uint8_t *buf, size_t sz) {
         break;
       case DOD:
         printf("DOD\n");
-        ret = is_unicode(c);
+        ret = is_unicode_head(c);
         if (ret > 1) {
           i += (ret - 1);
           continue;
