@@ -420,6 +420,7 @@ static int yay_for_that(kr_file2 *file, void *user) {
   info.type = KR_XMMS;
   ret = kr_file2_get_info(file, &file_info);
   if (ret) return ret;
+  /*
   snprintf(info.xmms.filename, sizeof(info.xmms.filename), "%.*s",
    file_info.len, file_info.path);
   snprintf(info.xmms.env, sizeof(info.xmms.env),
@@ -432,6 +433,7 @@ static int yay_for_that(kr_file2 *file, void *user) {
   setup.info = &info;
   task = kr_task_create(radio->tasks, &setup);
   kr_task_start(task);
+  */
   return 0;
 }
 
@@ -514,8 +516,10 @@ static int setup_serving(kr_radio *radio) {
     }
   }
   if (!fail) {
+    /*
     init_xmms_deck(radio, 4500);
     init_xmms_deck(radio, 4600);
+    */
   }
   return fail;
 }
@@ -877,6 +881,7 @@ static int radio_create(kr_app_server *app, void *user) {
     radio->media = kr_media_pool_create(&mpool_setup);
     if (radio->media == NULL) fail = 1;
   }
+  /*
   if (!fail) {
     memset(&tasks_setup, 0, sizeof(kr_task_pool_setup));
     tasks_setup.ntasks = KR_RADIO_CLIENTS_MAX;
@@ -889,6 +894,7 @@ static int radio_create(kr_app_server *app, void *user) {
     }
     if (!radio->tasks) fail = 1;
   }
+  */
   if (!fail) {
     fail = setup_serving(radio);
   }
@@ -924,7 +930,7 @@ void krad_radio(char *callsign) {
   strncpy(radio.info.commit, KR_GIT_VERSION, sizeof(radio.info.commit) - 1);
   strncpy(setup.appname, "krad_radio", sizeof(setup.appname) - 1);
   strncpy(setup.sysname, callsign, sizeof(setup.sysname) - 1);
-  setup.cmdr = 1;
+  setup.cmdr = 0;
   setup.user = &radio;
   setup.client_handler = local_client_event;
   setup.signal_handler = signal_event;
