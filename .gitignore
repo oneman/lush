@@ -1,3 +1,6 @@
+tests/krad/kr_sysinfo
+tests/krad/kr_terminfo
+web/rack/funstuff
 demo/demo
 Inter-universal Teichmuller Theory I.ps
 doc/cairo_sandbox

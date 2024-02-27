@@ -192,7 +192,6 @@ void kr_adapter_monitor_wait(kr_adapter_monitor *monitor, int ms) {
 int kr_adapter_monitor_destroy(kr_adapter_monitor *monitor) {
   if (monitor == NULL) return -1;
   if (monitor->fd > -1) {
-    close(monitor->fd);
     monitor->fd = -1;
     udev_monitor_unref(monitor->mon);
   }

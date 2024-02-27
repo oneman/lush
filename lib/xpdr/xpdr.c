@@ -133,7 +133,10 @@ static int link_create(kr_xpdr_path *path, void *peer_user) {
   kr_compositor_port_setup cp_setup;
   ret = 0;
   path->link.adapter_path.info = &path->info;
-  printk("XPDR: link create");
+  char text[4096];
+  memset(text, 0, sizeof(text));
+  ret = kr_xpdr_path_info_to_text(text, &path->info, sizeof(text) - 1);
+  printk("XPDR: link create:\n\n%s\n", text);
   if (path->mode == KR_AUDIO_IN || path->mode == KR_AUDIO_OUT) {
     kr_mixer_port_setup_init(&mp_setup);
     if (path->mode == KR_AUDIO_IN) {
@@ -191,7 +194,7 @@ static int path_create(kr_xpdr *xpdr, kr_xpdr_path *ap,
   /*Start debug*/
   char string[8192];
   kr_xpdr_path_info_to_text(string, info, sizeof(string));
-  printk("XPDR: path_create:\n%s", string);
+  printk("XPDR: path_create:\n%s\n", string);
   /*End debug*/
   int ret;
   kr_xpdr_path *path;

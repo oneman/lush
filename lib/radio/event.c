@@ -560,7 +560,10 @@ static int task_event(kr_task_event *event) {
   return 0;
 }
 
+#include <sys/ioctl.h>
+
 static int signal_event(kr_event *event) {
+  static struct winsize sz;
   ssize_t s;
   kr_radio *radio;
   struct signalfd_siginfo fdsi;
@@ -574,15 +577,21 @@ static int signal_event(kr_event *event) {
       exit(1);
     }
     switch (fdsi.ssi_signo) {
+      case SIGWINCH:
+        printf("%s window resize: ", name);
+        printf("%ix%i to ", sz.ws_col, sz.ws_row);
+        ioctl(STDIN_FILENO, TIOCGWINSZ, &sz);
+        printf("%ix%i\n", sz.ws_col, sz.ws_row);
+        break;
       case SIGHUP:
-        printk("%s signal: Got HANGUP Signal!", name);
+        printk("%s signal: Got HANGUP signal!", name);
         break;
       case SIGINT:
-        printk("\n%s: Got INT Signal!", name);
+        printk("\n%s: Got INT signal!", name);
         printk("%s: Shutting down", name);
         return -1;
       case SIGTERM:
-        printk("%s: Got TERM Signal!", name);
+        printk("%s: Got TERM signal!", name);
         printk("%s: Shutting down", name);
         return -1;
       default:

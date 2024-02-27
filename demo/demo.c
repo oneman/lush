@@ -93,6 +93,8 @@ typedef int64_t  i64;
 typedef size_t   usize;
 typedef ssize_t  isize;
 
+#include <krad/radio/client.h>
+
 /*
 
 char *png = 0x89504E470D0A1A0A;
@@ -1675,7 +1677,7 @@ void pixel_file_scan(char *filename) {
       X                                   X           X
 */
 
-int main(int argc, char *argv[]) {
+int oldmain(int argc, char *argv[]) {
   int err;
   struct stat s;
   if (argc > 1) {
@@ -1691,4 +1693,52 @@ int main(int argc, char *argv[]) {
   //superuser();
   err = path_scan();
   return err;
+}
+
+int wayland_con(kr_client *client) {
+  int ret;
+  kr_xpdr_path_info wl_info;
+
+  wl_info.type = KR_WAYLAND;
+  sprintf(wl_info.wl.display_name, "wayland-1");
+  wl_info.wl.state = KR_WL_CONNECTED;
+  ret = kr_xpdr_make(client, "oneway", &wl_info);
+
+  return ret;
+}
+
+int wayland_win(kr_client *client) {
+  int ret;
+  kr_xpdr_path_info wl_win_info;
+
+  wl_win_info.type = KR_WAYLAND_OUT;
+  wl_win_info.wl_out.width = 1280;
+  wl_win_info.wl_out.height = 720;
+  wl_win_info.wl_out.fullscreen = 0;
+  ret = kr_xpdr_make(client, "oneway/onewin", &wl_win_info);
+
+  return ret;
+}
+
+int main(int argc, char *argv[]) {
+  int ret;
+  kr_client *client;
+  char *sysname = "demo";
+  client = kr_client_create("demo cmdr");
+  if(client == NULL) {
+    fprintf(stderr, "Could create client\n");
+    return 1;
+  }
+  if (!kr_connect(client, sysname)) {
+    fprintf(stderr, "Could not connect to %s krad radio daemon\n", sysname);
+    kr_client_destroy(&client);
+    return 1;
+  }
+  if (argc > 1) {
+    ret = wayland_win(client);
+  } else {
+    ret = wayland_con(client);
+  }
+  kr_client_destroy(&client);
+  return ret;
 }
