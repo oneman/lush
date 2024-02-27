@@ -27,11 +27,11 @@
 typedef struct kr_wayland kr_wayland;
 typedef struct kr_wayland_path kr_wayland_path;
 
-enum kr_wayland_event_type {
+typedef enum {
   KR_WL_FRAME,
   KR_WL_POINTER,
   KR_WL_KEY
-};
+} kr_wayland_event_type;
 
 typedef struct {
   int x;
@@ -51,7 +51,7 @@ typedef struct {
 } kr_wayland_frame_event;
 
 typedef struct {
-  int type;
+  kr_wayland_event_type type;
   kr_wayland_pointer_event pointer_event;
   kr_wayland_key_event key_event;
   kr_wayland_frame_event frame_event;
@@ -365,30 +365,30 @@ static int user_event(kr_event *event) {
 
 static int handle_out(kr_wayland *kw) {
   int ret;
-  printk("Wayland: handle out");
+  //printk("Wayland: handle out");
   while (wl_display_prepare_read(kw->display) != 0) {
-    printk("Wayland: dispatch pending");
+    //printk("Wayland: dispatch pending");
     ret = wl_display_dispatch_pending(kw->display);
     if (ret == -1) {
       printke("Wayland: Error on dispatch pending");
     }
   }
-  printk("Wayland: pre flush");
+  //printk("Wayland: pre flush");
   ret = wl_display_flush(kw->display);
-  printk("Wayland: post flush");
+  //printk("Wayland: post flush");
   if ((ret == -1) && (errno != EAGAIN)) {
     ret = errno;
     printke("Wayland: Error on display flush: %s", strerror(ret));
     return -1;
   }
   /* Can poll now */
-  printk("Wayland: done handle out");
+  //printk("Wayland: done handle out");
   return 0;
 }
 
 static int handle_in(kr_wayland *kw) {
   int ret;
-  printk("Wayland: handle_in");
+  //printk("Wayland: handle_in");
   ret = wl_display_read_events(kw->display);
   if (ret == -1) {
     ret = errno;
@@ -406,7 +406,7 @@ static int handle_in(kr_wayland *kw) {
 static int handle_event(kr_event *fd_event) {
   if (fd_event == NULL) return -1;
   kr_wayland *kw;
-  printk("Wayland: handle_event");
+  //printk("Wayland: handle_event");
   int ret;
   ret = 0;
   kw = (kr_wayland *)fd_event->user;
@@ -573,6 +573,21 @@ int kr_wl_unlink(kr_adapter_path *path) {
   return 0;
 }
 
+int window_input(void *u, kr_wayland_event *e) {
+  kr_wayland_path *win = u;
+  switch (e->type) {
+    case KR_WL_KEY:
+      printk("Got key %d", e->key_event.key);
+      break;
+    case KR_WL_POINTER:
+      break;
+    default:
+      printk("Got unhandled window input event");
+      break;
+  }
+  return 0;
+}
+
 int kr_wl_link(kr_adapter *adapter, kr_adapter_path *path) {
   printk("Wayland: new link");
   kr_wayland *kw;
@@ -606,6 +621,7 @@ int kr_wl_link(kr_adapter *adapter, kr_adapter_path *path) {
   window = &kw->window[i];
   window->wayland = kw;
   window->info = &path->info->wl_out;
+  window->user_callback = window_input;
   window->user = path->user;
   window->nframes = 0;
   memset(&frame, 0, sizeof(frame));

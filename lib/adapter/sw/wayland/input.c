@@ -221,7 +221,7 @@ static void keyboard_handle_key(void *data, struct wl_keyboard *keyboard,
     wayland_event.type = KR_WL_KEY;
     wayland_event.key_event.key = sym;
     ret =
-     wayland->key_window->user_callback(wayland->key_window->user,
+     wayland->key_window->user_callback(wayland->key_window,
      &wayland_event);
     if (ret < 0) {
     }
@@ -264,7 +264,7 @@ static void pointer_handle_enter(void *data, struct wl_pointer *pointer,
     wayland_event.pointer_event.pointer_in = wayland->pointer_window->pointer_in;
     wayland_event.pointer_event.pointer_out = wayland->pointer_window->pointer_out;
     ret =
-     wayland->pointer_window->user_callback(wayland->pointer_window->user,
+     wayland->pointer_window->user_callback(wayland->pointer_window,
       &wayland_event);
     if (ret < 0) {
     }
@@ -306,7 +306,7 @@ static void pointer_handle_leave(void *data, struct wl_pointer *pointer,
     wayland_event.pointer_event.pointer_in = wayland->pointer_window->pointer_in;
     wayland_event.pointer_event.pointer_out = wayland->pointer_window->pointer_out;
     ret =
-     wayland->pointer_window->user_callback(wayland->pointer_window->user,
+     wayland->pointer_window->user_callback(wayland->pointer_window,
      &wayland_event);
     if (ret < 0) {
     }
@@ -333,7 +333,7 @@ static void pointer_handle_motion(void *data, struct wl_pointer *pointer,
     wayland_event.pointer_event.pointer_in = 0;
     wayland_event.pointer_event.pointer_out = 0;
     ret =
-     wayland->pointer_window->user_callback(wayland->pointer_window->user,
+     wayland->pointer_window->user_callback(wayland->pointer_window,
      &wayland_event);
     if (ret < 0) {
     }
@@ -362,7 +362,7 @@ static void pointer_handle_button(void *data, struct wl_pointer *pointer,
     wayland_event.pointer_event.pointer_out = 0;
     if (wayland->pointer_window->user_callback != NULL) {
       ret =
-       wayland->pointer_window->user_callback(wayland->pointer_window->user,
+       wayland->pointer_window->user_callback(wayland->pointer_window,
        &wayland_event);
       if (ret < 0) {
       }
