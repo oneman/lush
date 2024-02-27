@@ -649,9 +649,10 @@ int kr_wl_link(kr_adapter *adapter, kr_adapter_path *path) {
     image->px[0] = kr_pool_slice(window->pool);
     image->owner = window;
     image->ready = handle_frame;
-    window->buffer[i] = wl_shm_pool_create_buffer(pool,
-     kr_pool_offsetof(window->pool, image->px[0]), image->info.w, image->info.h,image->ps[0],
-     WL_SHM_FORMAT_XRGB8888);
+    int offset = kr_pool_offsetof(window->pool, image->px[0]);
+    //printk("offset is %d", offset);
+    window->buffer[i] = wl_shm_pool_create_buffer(pool, offset, image->info.w,
+      image->info.h, image->ps[0], WL_SHM_FORMAT_XRGB8888);
     window->frames[i] = frame;
     if (window->buffer[i] == NULL) {
       printke("Wayland: error creating wl buffer from wl shm pool");
@@ -692,7 +693,7 @@ int kr_wl_link(kr_adapter *adapter, kr_adapter_path *path) {
   kr_loop_add(adapter->loop, &harness);
   printk("Wayland: loop adding timeout");
   kr_loop_add_timeout(adapter->loop, KR_WL_FIRST_FRAME_TIMEOUT_MS,
-   first_frame_timeout, window);
+    first_frame_timeout, window);
   request_frame(window);
   printk("Wayland: Window created");
   return 0;
