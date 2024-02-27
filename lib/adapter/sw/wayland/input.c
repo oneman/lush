@@ -165,10 +165,10 @@ static void keyboard_handle_key(void *data, struct wl_keyboard *keyboard,
     && (state == WL_KEYBOARD_KEY_STATE_PRESSED)) {
     if (window->fullscreen == 1) {
       window->fullscreen = 0;
-      wl_shell_surface_set_toplevel(window->shell_surface);
+      //wl_shell_surface_set_toplevel(window->shell_surface);
     } else {
       window->fullscreen = 1;
-      wl_shell_surface_set_fullscreen(window->shell_surface, 1, 0, NULL);
+      //wl_shell_surface_set_fullscreen(window->shell_surface, 1, 0, NULL);
     }
   }
 /*
