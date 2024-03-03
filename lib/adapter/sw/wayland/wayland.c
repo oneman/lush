@@ -19,7 +19,7 @@
 
 #define KR_WL_MAX_WINDOWS 4
 #define KR_WL_NFRAMES 2
-#define KR_WL_FIRST_FRAME_TIMEOUT_MS 10
+#define KR_WL_FIRST_FRAME_TIMEOUT_MS 2601
 
 #include "xdg-shell-client-protocol.h"
 #include "xdg-shell-protocol.c"

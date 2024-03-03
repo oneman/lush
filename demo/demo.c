@@ -1182,6 +1182,46 @@ void pixel_scan(uint32_t *px, int w, int h) {
   print_pixel_regions(px, w, h);
 }
 
+
+
+
+int mom(int argc, char *argv[]) {
+  cairo_surface_t *surface;
+  cairo_t *cr;
+  time_t seconds;
+  seconds = time(NULL);
+  surface = NULL;
+  cr = NULL;
+  char filename[128];
+  snprintf(filename, sizeof(filename), "%s/mom_%ld.png", getenv("HOME"),
+    seconds);
+  int w = 320;
+  int h = 320;
+  surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, w, h);
+  cr = cairo_create(surface);
+  //unsigned char *px;
+  //px = cairo_image_surface_get_data(surface);
+  /* paper */
+  cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
+  cairo_paint(cr);
+  /* crossword grid */
+  cairo_set_line_width(cr, 1);
+  cairo_set_source_rgb(cr, 0, 0, 0);
+  int i;
+  for (i = 0; i < 16; i++) {
+    cairo_move_to(cr, i * 20, 0);
+    cairo_line_to(cr, i * 20, 320);
+    cairo_stroke(cr);
+    cairo_move_to(cr, 0, i * 20);
+    cairo_line_to(cr, 320, i * 20);
+    cairo_stroke(cr);
+  }
+  cairo_surface_write_to_png(surface, filename);
+  cairo_destroy(cr);
+  cairo_surface_destroy(surface);
+  return 0;
+}
+
 int tryman(int argc, char *argv[]) {
   cairo_surface_t *surface;
   cairo_t *cr;
@@ -1204,10 +1244,19 @@ int tryman(int argc, char *argv[]) {
   cairo_paint(cr);
 
   cairo_set_line_width(cr, 0.5);
-  cairo_set_source_rgba(cr, 0.26, 0.26, 0.99, 1);
+  cairo_set_source_rgb(cr, 0, 0, 0);
+  int i;
+  for (i = 0; i < 16; i++) {
+    cairo_move_to(cr, i * 20, 0);
+    cairo_line_to(cr, i * 20, 320);
+    cairo_stroke(cr);
+    cairo_move_to(cr, 0, i * 20);
+    cairo_line_to(cr, 320, i * 20);
+    cairo_stroke(cr);
+  }
 
   // quad rule
-
+  cairo_set_source_rgba(cr, 0.26, 0.26, 0.99, 1);
   int c = 1;
   int r = 1;
   for (c = 1; c < 34; c++) {
@@ -1750,6 +1799,7 @@ int wayland_win(kr_client *client) {
 }
 
 int main(int argc, char *argv[]) {
+  return mom(argc, argv);
   int ret;
   kr_client *client;
   char *sysname = "demo";
