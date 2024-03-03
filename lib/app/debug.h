@@ -48,4 +48,5 @@ void failfast(char* format, ...);
 #define printke failfast
 #endif
 
+#include <krad/cnake/header.h>
 #endif

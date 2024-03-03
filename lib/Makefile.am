@@ -18,6 +18,7 @@ radio_libkradradio_la_LDFLAGS = -shared -no-undefined \
  -version-info @KR_LT_CURRENT@:@KR_LT_REVISION@:@KR_LT_AGE@
 radio_libkradradio_la_LDFLAGS +=
 radio_libkradradio_la_SOURCES = \
+cnake/code.c\
 adapter/sw/aux/aux.c \
 app/server.c \
 app/queue.c \
