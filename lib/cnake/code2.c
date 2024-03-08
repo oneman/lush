@@ -1773,33 +1773,84 @@ int oldmain(int argc, char *argv[]) {
   return err;
 }
 
-int wayland_con(kr_client *client) {
-  int ret;
-  kr_xpdr_path_info wl_info;
+void insert_coin_to_continue() {
+  char c;
+  printf("Insert Coin To Continue!$# ");
+  scanf("%c", &c);
+  printf("\nOK %c\n", c);
+}
 
-  wl_info.type = KR_WAYLAND;
-  sprintf(wl_info.wl.display_name, "wayland-1");
-  wl_info.wl.state = KR_WL_CONNECTED;
-  ret = kr_xpdr_make(client, "oneway", &wl_info);
+int wayland_dis(kr_client *client) {
+  int ret;
+  kr_xpdr_path_info nfo;
+
+  insert_coin_to_continue();
+  kr_xpdr_path_info_init(&nfo);
+  nfo.type = KR_WAYLAND;
+  sprintf(nfo.wl.display_name, "wayland-1");
+  nfo.wl.state = KR_WL_CONNECTED;
+  ret = kr_xpdr_make(client, "oneway", &nfo);
+
+  insert_coin_to_continue();
+  kr_xpdr_path_info_init(&nfo);
+  nfo.type = KR_WAYLAND_OUT;
+  nfo.wl_out.width = 1920;
+  nfo.wl_out.height = 1080;
+  nfo.wl_out.fullscreen = 0;
+  ret = kr_xpdr_make(client, "oneway/onewin", &nfo);
 
   return ret;
 }
 
-int wayland_win(kr_client *client) {
+int jack_cap(kr_client *client) {
   int ret;
-  kr_xpdr_path_info wl_win_info;
+  kr_xpdr_path_info nfo;
 
-  wl_win_info.type = KR_WAYLAND_OUT;
-  wl_win_info.wl_out.width = 1280;
-  wl_win_info.wl_out.height = 720;
-  wl_win_info.wl_out.fullscreen = 0;
-  ret = kr_xpdr_make(client, "oneway/onewin", &wl_win_info);
+  insert_coin_to_continue();
+  kr_xpdr_path_info_init(&nfo);
+  nfo.type = KR_JACK;
+  sprintf(nfo.jack.client_name, "demo");
+  sprintf(nfo.jack.server_name, "");
+  nfo.jack.sample_rate = 48000;
+  nfo.jack.period_size = 1024;
+  ret = kr_xpdr_make(client, "jackpipe", &nfo);
+
+  insert_coin_to_continue();
+  kr_xpdr_path_info_init(&nfo);
+  nfo.type = KR_JACK_IN;
+  sprintf(nfo.jack_in.name, "master");
+  nfo.jack_in.channels = 2;
+  nfo.jack_in.direction = KR_JACK_INPUT;
+  ret = kr_xpdr_make(client, "jackpipe/master", &nfo);
 
   return ret;
 }
 
-int man(int argc, char *argv[]) {
-  return mom(argc, argv);
+int v4l2_cap(kr_client *client) {
+  int ret;
+  kr_xpdr_path_info nfo;
+
+  insert_coin_to_continue();
+  kr_xpdr_path_info_init(&nfo);
+  nfo.type = KR_V4L2;
+  nfo.v4l2.dev = 0;
+  nfo.v4l2.priority = 0;
+  ret = kr_xpdr_make(client, "v4l2", &nfo);
+
+  insert_coin_to_continue();
+  kr_xpdr_path_info_init(&nfo);
+  nfo.type = KR_V4L2_IN ;
+  nfo.v4l2_in.width = 1920;
+  nfo.v4l2_in.height = 1080;
+  nfo.v4l2_in.num = 60;
+  nfo.v4l2_in.den = 1;
+  ret = kr_xpdr_make(client, "v4l2/cam", &nfo);
+
+  return ret;
+
+}
+
+int rig(int argc, char *argv[]) {
   int ret;
   kr_client *client;
   char *sysname = "demo";
@@ -1813,17 +1864,9 @@ int man(int argc, char *argv[]) {
     kr_client_destroy(&client);
     return 1;
   }
-  if (argc > 1) {
-    ret = wayland_win(client);
-  } else {
-    ret = wayland_con(client);
-  }
+  ret = jack_cap(client);
+  ret = v4l2_cap(client);
+ // ret = wayland_dis(client);
   kr_client_destroy(&client);
   return ret;
 }
-
-int main(int argc, char *argv[]) {
-  🐍
-  return 0;
-}
-
