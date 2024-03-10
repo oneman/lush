@@ -1838,7 +1838,7 @@ int jack_cap(kr_client *client) {
   insert_coin_to_continue();
   kr_xpdr_path_info_init(&nfo);
   nfo.type = KR_JACK_OUT;
-  sprintf(nfo.jack_in.name, "out");
+  sprintf(nfo.jack_out.name, "out");
   nfo.jack_out.channels = 2;
   nfo.jack_out.direction = KR_JACK_OUTPUT;
   ret = kr_xpdr_make(client, "jackpipe/out", &nfo);
