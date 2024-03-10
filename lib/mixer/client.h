@@ -1,7 +1,10 @@
-#ifndef KRAD_MIXER_CLIENT_H
-#define KRAD_MIXER_CLIENT_H
+#if !defined(_mixer_client_H)
+# define _mixer_client_H (1)
 
-#include "krad_sfx_common.h"
-#include "kr_mixer_common.h"
+#include <krad/radio/client.h>
+#include <krad/app/debug.h>
+#include "types.h"
+
+int kr_mixer_make(kr_client *client, char *name, kr_mixer_path_info *info);
 
 #endif

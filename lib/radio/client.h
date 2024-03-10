@@ -6,6 +6,8 @@ typedef struct kr_radio_client kr_client;
 
 #include <krad/radio/types.h>
 #include <krad/xpdr/client.h>
+#include <krad/compositor/client.h>
+#include <krad/mixer/client.h>
 #include "control.h"
 
 kr_client *kr_client_create(char *client_name);

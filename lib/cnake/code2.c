@@ -1802,6 +1802,18 @@ int wayland_dis(kr_client *client) {
   return ret;
 }
 
+int mixer_link(kr_client *client) {
+  int ret;
+  kr_mixer_path_info nfo;
+
+  insert_coin_to_continue();
+  kr_mixer_path_info_init(&nfo);
+  nfo.type = KR_MXR_INPUT;
+  nfo.channels = 2;
+  ret = kr_mixer_make(client, "out/in", &nfo);
+  return ret;
+}
+
 int jack_cap(kr_client *client) {
   int ret;
   kr_xpdr_path_info nfo;
@@ -1818,10 +1830,18 @@ int jack_cap(kr_client *client) {
   insert_coin_to_continue();
   kr_xpdr_path_info_init(&nfo);
   nfo.type = KR_JACK_IN;
-  sprintf(nfo.jack_in.name, "master");
+  sprintf(nfo.jack_in.name, "in");
   nfo.jack_in.channels = 2;
   nfo.jack_in.direction = KR_JACK_INPUT;
-  ret = kr_xpdr_make(client, "jackpipe/master", &nfo);
+  ret = kr_xpdr_make(client, "jackpipe/in", &nfo);
+
+  insert_coin_to_continue();
+  kr_xpdr_path_info_init(&nfo);
+  nfo.type = KR_JACK_OUT;
+  sprintf(nfo.jack_in.name, "out");
+  nfo.jack_out.channels = 2;
+  nfo.jack_out.direction = KR_JACK_OUTPUT;
+  ret = kr_xpdr_make(client, "jackpipe/out", &nfo);
 
   return ret;
 }
@@ -1847,7 +1867,6 @@ int v4l2_cap(kr_client *client) {
   ret = kr_xpdr_make(client, "v4l2/cam", &nfo);
 
   return ret;
-
 }
 
 int rig(int argc, char *argv[]) {
@@ -1865,8 +1884,9 @@ int rig(int argc, char *argv[]) {
     return 1;
   }
   ret = jack_cap(client);
-  ret = v4l2_cap(client);
- // ret = wayland_dis(client);
+  ret = mixer_link(client);
+  //ret = v4l2_cap(client);
+  //ret = wayland_dis(client);
   kr_client_destroy(&client);
   return ret;
 }

@@ -171,6 +171,7 @@ static int process_bus(kr_mixer_path *path) {
 }
 
 static int process_output(kr_mixer_path *output) {
+  printk("CC mixer process output");
   process_mix(output);
   return 0;
 }
@@ -206,14 +207,18 @@ static int process_buses(kr_mixer *m) {
   return 0;
 }
 
-static void run_callback_outputs(kr_mixer *mixer) {
+static void process_outputs(kr_mixer *mixer) {
   int i;
   kr_mixer_path *path;
   i = 0;
   while ((path = kr_pool_iterate_active(mixer->path_pool, &i))) {
-    /* callbacking on capture ports which then call kr_mixer_read() */
-    if (path->port == PORT_CALLBACK && path->info.type == KR_MXR_OUTPUT) {
-      path->process(mixer->period_frames, path->audio_user);
+    if (path->info.type == KR_MXR_OUTPUT) {
+      if (path->port == PORT_CALLBACK) {
+        path->process(mixer->period_frames, path->audio_user);
+      }
+      if (path->port == PORT_DRIVER) {
+        //process_output(path);
+      }
     }
   }
 }
@@ -275,11 +280,12 @@ static void update_timecode(kr_mixer *m) {
 static int mixer_process(kr_mixer *m) {
   if (!m) return -1;
   update_timecode(m);
+  //printk("BB mixer process %lu", m->info.nframes);
   update_state(m, KR_MXP_READY);
   process_mark(m);
   process_sources(m);
   process_buses(m);
-  run_callback_outputs(m);
+  process_outputs(m);
   run_notify_sources(m);
   return 0;
 }
@@ -306,10 +312,11 @@ static int mixer_activate(kr_event *ev) {
 static void mixer_clock_set(kr_mixer *m, int src) {
   kr_spin_lock(&m->clock_lock);
   m->driver.clock = src;
+  printk("AA clock set");
   if (m->driver.clock == KR_MXR_CLOCK_INTERNAL
     && KR_MXR_PERIOD_DEF != m->period_frames) {
     m->period_frames = KR_MXR_PERIOD_DEF;
-    printk("Set mixer period size to: %d", m->period_frames);
+    printk("1Set mixer period size to: %d", m->period_frames);
   }
   kr_spin_unlock(&m->clock_lock);
 }
@@ -318,15 +325,24 @@ static void driver_port_run(kr_mixer_path *p) {
   kr_mixer *m;
   if (!p) return;
   m = p->mixer;
-  m->driver.ports_run++;
+
+  if (p->type == KR_MXR_SOURCE) {
+    m->driver.ports_run++;
+  }
   if (p->nframes != m->period_frames) {
     m->period_frames = p->nframes;
-    printk("Set mixer period size to: %d", m->period_frames);
+    printk("2Set mixer period size to: %d", m->period_frames);
   }
-  if (m->driver.ports_run == m->driver.ports) {
+  if (m->driver.ports_run == m->driver.sources) {
     mixer_process(m);
     m->driver.ports_run = 0;
   }
+  printk("sources: %d outputs: %d ports: %d portsrun: %d clk: %d",
+          m->driver.sources,
+          m->driver.outputs,
+          m->driver.ports,
+          m->driver.ports_run,
+          m->driver.clock);
 }
 
 static void driver_port_del(kr_mixer_path *p) {

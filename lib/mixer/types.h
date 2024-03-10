@@ -9,7 +9,7 @@
 #define KR_MXR_PERIOD_MAX 1920
 
 #define KR_MXR_SRATE_DEF 48000
-#define KR_MXR_PERIOD_DEF 960
+#define KR_MXR_PERIOD_DEF 1024
 
 #include <krad/audio/audio.h>
 #include <krad/audio/types.h>

@@ -80,20 +80,20 @@ static void path_state_set(kr_mixer_path *path, mixer_path_state state) {
 
 static void port_io(kr_mixer_path *path) {
   switch (path->port) {
-  case NON_PORT:
-    printke("Mixer: non-port run???");
-    return;
-  case PORT_NOTIFY:
-    //if (path->fd > -1) kr_give_notice(path->fd);
-    return;
-  case PORT_DRIVER:
-    driver_port_run(path);
-    return;
-  case PORT_CALLBACK:
-    return;
-  default:
-    printke("Mixer: port run major WTF");
-    return;
+    case NON_PORT:
+      printke("Mixer: non-port run???");
+      return;
+    case PORT_NOTIFY:
+      //if (path->fd > -1) kr_give_notice(path->fd);
+      return;
+    case PORT_DRIVER:
+      driver_port_run(path);
+      return;
+    case PORT_CALLBACK:
+      return;
+    default:
+      printke("Mixer: port run major WTF");
+      return;
   }
 }
 
@@ -250,10 +250,10 @@ int kr_mixer_read(kr_mixer_path *path, kr_audio *audio) {
   path->channels = audio->channels;
   path->nframes = audio->count;
   path->sample_rate = audio->rate;
-  process_output(path);
-  copy_samples(audio->samples, path->samples, path->channels, path->nframes);
+  //process_output(path);
+  //copy_samples(audio->samples, path->samples, path->channels, path->nframes);
   audio->stc = path->mixer->info.nframes;
-  port_io(path);
+  //port_io(path);
   return 0;
 }
 

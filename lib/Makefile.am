@@ -6,6 +6,8 @@ radio_libkradradio_la_CXXFLAGS =
 radio_libkradradio_la_CFLAGS = $(XKBCOMMON_CFLAGS) $(X11_CFLAGS)\
  $(CAIRO_CFLAGS) $(XMMS2_CFLAGS) $(OPUS_CFLAGS) -DKR_GIT_VERSION=\"$(KR_GIT_VERSION)\"
 radio_libkradradio_la_CFLAGS += -D_GNU_SOURCE=1
+radio_libkradradio_la_CFLAGS += -D_GNU_SOURCE=1
+radio_libkradradio_la_CFLAGS += -I/usr/include/mupdf/fitz
 radio_libkradradio_la_LIBADD = radio/libkradradioclient.la
 
 radio_libkradradio_la_LIBADD += $(CAIRO_LIBS) $(FLAC_LIBS) $(JACK_LIBS)\
@@ -16,7 +18,7 @@ radio_libkradradio_la_LIBADD += $(CAIRO_LIBS) $(FLAC_LIBS) $(JACK_LIBS)\
 
 radio_libkradradio_la_LDFLAGS = -shared -no-undefined \
  -version-info @KR_LT_CURRENT@:@KR_LT_REVISION@:@KR_LT_AGE@
-radio_libkradradio_la_LDFLAGS +=
+radio_libkradradio_la_LDFLAGS += -lmupdf
 radio_libkradradio_la_SOURCES = \
 cnake/code.c\
 adapter/sw/aux/aux.c \

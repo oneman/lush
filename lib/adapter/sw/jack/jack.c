@@ -17,6 +17,8 @@
 
 typedef struct {
   int ready;
+  int in;
+  int out;
   kr_adapter *adapter;
   kr_adapter_path *adapter_path;
   jack_port_t *ports[KR_JACK_CHANNELS_MAX];
@@ -138,15 +140,20 @@ static int jack_process(kr_adapter *adapter) {
   jack = (kr_jack *)adapter->handle;
   i = 0;
   while ((path = kr_pool_iterate_active(jack->path_pool, &i))) {
-    if (path->ready == 1 && path->adapter_path->info->type == KR_JACK_IN) {
+    //if (path->ready == 1 && path->adapter_path->info->type == KR_JACK_IN) {
+    if (path->ready == 1 && path->in == 1) {
       path_process(path->adapter_path);
     }
   }
   i = 0;
   while ((path = kr_pool_iterate_active(jack->path_pool, &i))) {
-    if (path->ready == 1 && path->adapter_path->info->type == KR_JACK_OUT) {
+    //if (path->ready == 1 && path->adapter_path->info->type == KR_JACK_OUT) {
+    if (path->ready == 1 && path->out == 1) {
       path_process(path->adapter_path);
     }
+  }
+  while ((path = kr_pool_iterate_active(jack->path_pool, &i))) {
+    printk("active path %p rdy: %d type: %d in: %d out: %d", path, path->ready, path->adapter_path->info->type, path->in, path->out);
   }
   return 0;
 }
@@ -166,7 +173,7 @@ static void *process_thread(void *arg) {
     if (frames != info->period_size) {
       printke("Jack: unexpected period size!");
       info->period_size = frames;
-    } 
+    }
     jack_process(adapter);
     info->frames += frames;
     jack_cycle_signal(jack->client, 0);
@@ -220,10 +227,16 @@ static int path_register(kr_adapter_path *path) {
     info = &path->info->jack_in;
     flags = JackPortIsInput;
     suffix = "audio_in";
+
+    jack_path->in = 1;
+
   } else {
     info = &path->info->jack_out;
     flags = JackPortIsOutput;
     suffix = "audio_out";
+
+    jack_path->out = 1;
+
   }
   len = jack_client_name_size();
   if (sizeof(name) < len) len = sizeof(name);
