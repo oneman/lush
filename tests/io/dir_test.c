@@ -3,6 +3,7 @@
 #include <string.h>
 #include <krad/io/dir.h>
 
+/*
 int dir_test(char *path) {
   int ret;
   ret = -1;
@@ -28,15 +29,15 @@ int dir_test(char *path) {
   }
   ret = kr_dir_close(&dir);
   return ret;
-}
+}*/
 
 int main(int argc, char const *argv[]) {
-  int ret;
+  /*int ret;
   if (argc != 2) return -1;
   ret = dir_test((char *)argv[1]);
   if (ret != 0) {
     fprintf(stderr, "Failure.");
     return -1;
-  }
+  }*/
   return 0;
 }

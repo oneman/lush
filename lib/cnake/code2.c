@@ -1368,6 +1368,114 @@ int tryman(int argc, char *argv[]) {
   return 0;
 }
 
+int color_block(int argc, char *argv[]) {
+  cairo_surface_t *surface;
+  cairo_t *cr;
+  time_t seconds;
+  seconds = time(NULL);
+  surface = NULL;
+  cr = NULL;
+  char filename[128];
+  snprintf(filename, sizeof(filename), "%s/lush_%ld.png", getenv("HOME"),
+    seconds);
+  int w = 4096;
+  int h = 4096;
+  surface = cairo_image_surface_create(CAIRO_FORMAT_RGB24, w, h);
+  cr = cairo_create(surface);
+  unsigned char *px;
+  px = cairo_image_surface_get_data(surface);
+
+  cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
+  cairo_paint(cr);
+
+  cairo_new_path(cr);
+  cairo_set_source_rgb(cr, 1, 0, 0);
+  cairo_rectangle(cr, 26, 26, 100, 100);
+  cairo_fill(cr);
+
+  cairo_surface_flush(surface);
+  u8 a = 0;
+  u8 b = 0;
+  u8 c = 0;
+  for (int i = 0; i < (w * h); i++) {
+    int n = i;
+    char *aa = (char *)&n;
+    px[0] = aa[0];
+    px[1] = aa[1];
+    px[2] = aa[2];
+    /*a++;
+    if (a == 255) {
+      b++;
+      a = 0;
+    }
+    if (b == 255) {
+      c++;
+      b = 0;
+    }*/
+    px = px + 4;
+  }
+  cairo_surface_mark_dirty(surface);
+  cairo_new_path(cr);
+  cairo_set_source_rgb(cr, 0.53, 0.66, 0.4);
+  cairo_rectangle(cr, (14 * 18) + (26 * 18), (4 * 18),
+      (18 * 18), (15 * 18));
+  cairo_fill(cr);
+
+  cairo_new_path(cr);
+  cairo_set_source_rgb(cr, 0, 1, 0);
+  cairo_rectangle(cr, 260, 260, 100, 100);
+  cairo_fill(cr);
+
+  cairo_surface_flush(surface);
+  px = cairo_image_surface_get_data(surface);
+  for (int i = 0; i < (w * h); i++) {
+    //px[(i * 4) + 2] = 128;
+    int n = i;
+    //px[1] = n >> 8;
+    //px[0] = 55;
+    //px[3] = n >> 8;
+    px += 4;
+  }
+  cairo_surface_mark_dirty(surface);
+
+  cairo_surface_write_to_png(surface, filename);
+  cairo_destroy(cr);
+  cairo_surface_destroy(surface);
+  return 0;
+}
+
+int paper(int argc, char *argv[]) {
+  return color_block(argc, argv);
+  cairo_surface_t *surface;
+  cairo_t *cr;
+  time_t seconds;
+  seconds = time(NULL);
+  surface = NULL;
+  cr = NULL;
+  char filename[128];
+  snprintf(filename, sizeof(filename), "%s/lush_%ld.png", getenv("HOME"),
+    seconds);
+  int w = 612;
+  int h = 792;
+  surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, w, h);
+  cr = cairo_create(surface);
+  cairo_set_line_width(cr, 0.5);
+  unsigned char *px;
+  px = cairo_image_surface_get_data(surface);
+  cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
+  cairo_paint(cr);
+
+  /* has paper */
+
+
+
+
+  cairo_surface_write_to_png(surface, filename);
+  cairo_destroy(cr);
+  cairo_surface_destroy(surface);
+  return 0;
+}
+
 #define BUG 1
 
 uint8_t word_len(char *string, size_t len) {
@@ -1836,6 +1944,15 @@ int jack_cap(kr_client *client) {
   ret = kr_xpdr_make(client, "jackpipe/in", &nfo);
 
   insert_coin_to_continue();
+  insert_coin_to_continue();
+  kr_xpdr_path_info_init(&nfo);
+  nfo.type = KR_JACK_IN;
+  sprintf(nfo.jack_in.name, "in2");
+  nfo.jack_in.channels = 2;
+  nfo.jack_in.direction = KR_JACK_INPUT;
+  ret = kr_xpdr_make(client, "jackpipe/in2", &nfo);
+
+  insert_coin_to_continue();
   kr_xpdr_path_info_init(&nfo);
   nfo.type = KR_JACK_OUT;
   sprintf(nfo.jack_out.name, "out");
@@ -1870,6 +1987,7 @@ int v4l2_cap(kr_client *client) {
 }
 
 int rig(int argc, char *argv[]) {
+  return paper(argc, argv);
   int ret;
   kr_client *client;
   char *sysname = "demo";

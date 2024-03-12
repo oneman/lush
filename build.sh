@@ -2,7 +2,7 @@
 
 scripts/codegen.sh
 ./autogen.sh
-./configure --enable-tools --enable-dev --prefix=/usr
+./configure --enable-tools --enable-dev --prefix=/usr CC=clang
 make -j8
 make -j4
 make -j2
