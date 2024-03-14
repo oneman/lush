@@ -31,6 +31,7 @@ tests/scan_test
 *.o
 *.krado*
 *~
+*.~lock*
 *.webm*
 *.mkv*
 *.deps
