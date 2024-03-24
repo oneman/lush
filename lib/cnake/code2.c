@@ -48,7 +48,9 @@
 */
 
 #define _STDIOV_H 26
+#ifndef _GNU_SOURCE
 #define _GNU_SOURCE
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -95,6 +97,13 @@ typedef ssize_t  isize;
 
 #include <krad/radio/client.h>
 
+#include "font.c"
+#include "doc.c"
+#include <cairo/cairo.h>
+#include "pix.c"
+#include "text.c"
+
+
 /*
 
 char *png = 0x89504E470D0A1A0A;
@@ -132,227 +141,6 @@ int is_leap_year(uint64_t year) {
   otherwise nope
 }
 
-#include <ft2build.h>
-#include <freetype/freetype.h>
-#include <freetype/ftmodapi.h>
-
-  void ft_fail(int ft_errno) {
-    printf("Freetype Error: %s\n", FT_Error_String(ft_errno));
-    exit(1);
-  }
-
-  void *ft_alloc(FT_Memory ft_mem, long sz) {
-    void *buf;
-    static size_t tb = 0;
-    tb += sz;
-    printf("Freetype: alloc %ld bytes. [Total %ld]\n", sz, tb);
-    buf = malloc(sz);
-    memset(buf, 0, sz);
-    return buf;
-  }
-
-  void ft_free(FT_Memory ft_mem, void *buf) {
-    printf("Freetype: free\n");
-    free(buf);
-  }
-
-  void *ft_realloc(FT_Memory ft_mem, long old_sz, long new_sz, void *buf) {
-    void *newbuf;
-    printf("Freetype: realloc %ld -> %ld bytes\n", old_sz, new_sz);
-    newbuf = malloc(new_sz);
-    memset(newbuf, 0, new_sz);
-    memcpy(newbuf, buf, old_sz);
-    free(buf);
-    return newbuf;
-  }
-
-void ft_test(uint8_t *buf, size_t sz) {
-  int ft_errno = 0;
-  FT_Open_Args ft_args;
-  FT_Library ft_lib = NULL;
-  FT_Face f = NULL;
-  struct FT_MemoryRec_ ft_mem;
-
-  memset(&ft_args, 0, sizeof(ft_args));
-  memset(&ft_lib, 0, sizeof(ft_lib));
-  memset(&f, 0, sizeof(f));
-
-  ft_mem.user = "demo";
-  ft_mem.alloc = ft_alloc;
-  ft_mem.free = ft_free;
-  ft_mem.realloc = ft_realloc;
-
-  ft_errno = FT_New_Library(&ft_mem, &ft_lib);
-  if (ft_errno) ft_fail(ft_errno);
-  printf("ft new lib\n");
-
-  FT_Add_Default_Modules(ft_lib);
-  printf("ft add def mod\n");
-  FT_Set_Default_Properties(ft_lib);
-  printf("ft set def prop\n");
-  ft_args.flags = FT_OPEN_MEMORY;
-  ft_args.memory_base = buf;
-  ft_args.memory_size = sz;
-  printf("ft pre open face: %p \n", ft_lib);
-  ft_errno = FT_Open_Face(ft_lib, &ft_args, 0, &f);
-  if (ft_errno) ft_fail(ft_errno);
-  printf("ft open face\n");
-
-  int pxl_w = 12 * 10;
-  int pxl_h = pxl_w;
-  int w = pxl_w * 64;
-  int h = pxl_h * 64;
-  int dpi = 720;
-
-  ft_errno = FT_Set_Char_Size(f, w, h, dpi, dpi);
-  if (ft_errno) ft_fail(ft_errno);
-  printf("ft set char size\n");
-
-  ft_errno = FT_Set_Pixel_Sizes(f, pxl_w, pxl_h);
-  if (ft_errno) ft_fail(ft_errno);
-  printf("ft set px size\n");
-
-  uint32_t char_code = 'a';
-  ft_errno = FT_Load_Char(f, char_code, FT_LOAD_DEFAULT);
-  if (ft_errno) ft_fail(ft_errno);
-  printf("ft load char\n");
-
-  ft_errno = FT_Render_Glyph(f->glyph, FT_RENDER_MODE_NORMAL);
-  if (ft_errno) ft_fail(ft_errno);
-  printf("ft render glyph\n");
-
-  FT_Bitmap pxmap;
-  pxmap = f->glyph->bitmap;
-  printf("ft bitmap: %u x %u stride: %d grays: %u mode:  %u\n", pxmap.width,
-    pxmap.rows, pxmap.pitch, pxmap.num_grays, pxmap.pixel_mode);
-
-  ft_errno = FT_Done_Face(f);
-  if (ft_errno) ft_fail(ft_errno);
-  printf("ft done face\n");
-
-  ft_errno = FT_Done_Library(ft_lib);
-  if (ft_errno) ft_fail(ft_errno);
-  printf("ft done lib\n");
-}
-
-#include <mupdf/fitz.h>
-
-int doc(int argc, char **argv)
-{
-	char *input;
-	float zoom, rotate;
-	int page_number, page_count;
-	fz_context *ctx;
-	fz_document *doc;
-	fz_pixmap *pix;
-	fz_matrix ctm;
-	int x, y;
-
-	if (argc < 3)
-	{
-		fprintf(stderr, "usage: example input-file page-number [ zoom [ rotate ] ]\n");
-		fprintf(stderr, "\tinput-file: path of PDF, XPS, CBZ or EPUB document to open\n");
-		fprintf(stderr, "\tPage numbering starts from one.\n");
-		fprintf(stderr, "\tZoom level is in percent (100 percent is 72 dpi).\n");
-		fprintf(stderr, "\tRotation is in degrees clockwise.\n");
-		return EXIT_FAILURE;
-	}
-
-	input = argv[1];
-	page_number = atoi(argv[2]) - 1;
-	zoom = argc > 3 ? atof(argv[3]) : 100;
-	rotate = argc > 4 ? atof(argv[4]) : 0;
-
-	/* Create a context to hold the exception stack and various caches. */
-	ctx = fz_new_context(NULL, NULL, FZ_STORE_UNLIMITED);
-	if (!ctx)
-	{
-		fprintf(stderr, "cannot create mupdf context\n");
-		return EXIT_FAILURE;
-	}
-
-	/* Register the default file types to handle. */
-	fz_try(ctx)
-		fz_register_document_handlers(ctx);
-	fz_catch(ctx)
-	{
-		//fz_report_error(ctx);
-		fprintf(stderr, "cannot register document handlers\n");
-		fz_drop_context(ctx);
-		return EXIT_FAILURE;
-	}
-
-	/* Open the document. */
-	fz_try(ctx)
-		doc = fz_open_document(ctx, input);
-	fz_catch(ctx)
-	{
-		//fz_report_error(ctx);
-		fprintf(stderr, "cannot open document\n");
-		fz_drop_context(ctx);
-		return EXIT_FAILURE;
-	}
-
-	/* Count the number of pages. */
-	fz_try(ctx)
-		page_count = fz_count_pages(ctx, doc);
-	fz_catch(ctx)
-	{
-		//fz_report_error(ctx);
-		fprintf(stderr, "cannot count number of pages\n");
-		fz_drop_document(ctx, doc);
-		fz_drop_context(ctx);
-		return EXIT_FAILURE;
-	}
-
-	if (page_number < 0 || page_number >= page_count)
-	{
-		fprintf(stderr, "page number out of range: %d (page count %d)\n", page_number + 1, page_count);
-		fz_drop_document(ctx, doc);
-		fz_drop_context(ctx);
-		return EXIT_FAILURE;
-	}
-
-	/* Compute a transformation matrix for the zoom and rotation desired. */
-	/* The default resolution without scaling is 72 dpi. */
-	ctm = fz_scale(zoom / 100, zoom / 100);
-	ctm = fz_pre_rotate(ctm, rotate);
-
-	/* Render page to an RGB pixmap. */
-	fz_try(ctx)
-		pix = fz_new_pixmap_from_page_number(ctx, doc, page_number, ctm, fz_device_rgb(ctx), 0);
-	fz_catch(ctx)
-	{
-		//fz_report_error(ctx);
-		fprintf(stderr, "cannot render page\n");
-		fz_drop_document(ctx, doc);
-		fz_drop_context(ctx);
-		return EXIT_FAILURE;
-	}
-
-	/* Print image data in ascii PPM format. */
-	printf("P3\n");
-	printf("%d %d\n", pix->w, pix->h);
-	printf("255\n");
-	for (y = 0; y < pix->h; ++y)
-	{
-		unsigned char *p = &pix->samples[y * pix->stride];
-		for (x = 0; x < pix->w; ++x)
-		{
-			if (x > 0)
-				printf("  ");
-			printf("%3d %3d %3d", p[0], p[1], p[2]);
-			p += pix->n;
-		}
-		printf("\n");
-	}
-
-	/* Clean up. */
-	fz_drop_pixmap(ctx, pix);
-	fz_drop_document(ctx, doc);
-	fz_drop_context(ctx);
-	return EXIT_SUCCESS;
-}
 #define TO_LOW 0
 #define TO_HIGH 248
 
@@ -387,30 +175,7 @@ char ascii_cc_str[32][4] = {
   "SUB","ESC",
   "FS","GS","RS","US"};
 
-typedef enum {
-  NUL = 0,
-  SOH,STX,
-  ETX,EOT,
-  ENQ,ACK,
-  BEL,BS,
-  HT,LF,VT,FF,CR,
-  SO,SI,
-  DLE,
-  DC1,DC2,DC3,DC4,
-  NAK,SYN,
-  ETB,CAN,
-  EM,
-  SUB,ESC,
-  FS,GS,RS,US
-} CC;
-
-#define CC_START 0
-#define CC_LAST US
-
-#define SP (US + 1)
 #define SP_STR "SP"
-
-#define DEL 127
 #define DEL_STR "DEL"
 
 #define ASCII_MARK_MIN (SP + 1)
@@ -425,77 +190,8 @@ uint8_t is_ascii_control(uint8_t byte) {
   return 0;
 }
 
-uint8_t is_ascii_char(uint8_t byte) {
-  if ((byte > SP) && (byte < DEL)) {
-    return 1;
-  }
-  return 0;
-}
-
 int is_ascii(unsigned char byte) {
   if ((byte > 0) && (byte < 128)) return 1;
-  return 0;
-}
-
-/*
-
-E0     A0..BF
-ED     80..9F
-F0     90..BF
-F4     80..8F
-
-224 160-191
-237 128-159
-240 144-191
-244 128-143
-
-*/
-
-int is_unicode_tail(uint8_t byte) {
-  if ((byte >= 128) && (byte <= 191)) return 1;
-  return 0;
-}
-
-int is_unicode_neckbeard(uint8_t head, uint8_t neck) {
-  if (head == 224) {
-    if ((neck >= 160) && (neck <= 191)) return 1;
-    printk("unicode neckbeard error!");
-    return 0;
-  }
-  if (head == 237) {
-    if ((neck >= 128) && (neck <= 159)) return 1;
-    printk("unicode neckbeard error!");
-    return 0;
-  }
-  if (head == 240) {
-    if ((neck >= 144) && (neck <= 191)) return 1;
-    printk("unicode neckbeard error!");
-    return 0;
-  }
-  if (head == 244) {
-    if ((neck >= 128) && (neck <= 143)) return 1;
-    printk("unicode neckbeard error!");
-    return 0;
-  }
-  return is_unicode_tail(neck);
-}
-
-int is_unicode_head(uint8_t byte) {
-  if (byte <= 191) return 0;
-  if (byte >= 248) return 0;
-  if (byte <= 223) return 2;
-  if (byte <= 239) return 3;
-  if (byte <= 247) return 4;
-  return 0;
-}
-
-uint8_t is_ascii_blank(uint8_t byte) {
-  if (byte == SP) return 1;
-  if (byte == LF) return 1;
-  if (byte == CR) return 1;
-  if (byte == VT) return 1;
-  if (byte == HT) return 1;
-  if (byte == FF) return 1;
   return 0;
 }
 
@@ -672,42 +368,6 @@ int alphanumeric_len(uint8_t *buf, size_t sz) {
   return 0;
 }
 
-size_t text_len(uint8_t *buf, size_t sz) {
-  uint8_t byte;
-  size_t i;
-  for (i = 0; i < sz; i++) {
-    byte = buf[i];
-    if (is_ascii_char(byte)) continue;
-    if (is_ascii_blank(byte)) continue;
-    int u = is_unicode_head(byte);
-    if (u < 2) break;
-    if ((i + u) > sz) break;
-    if (u == 2) {
-      if (is_unicode_tail(buf[i + 1])) {
-        i += 1;
-        continue;
-      }
-      break;
-    } else if (u == 3) {
-      if ((is_unicode_neckbeard(byte, buf[i + 1]))
-       && (is_unicode_tail(buf[i + 2]))) {
-        i += 2;
-        continue;
-      }
-      break;
-    } else if (u == 4) {
-      if ((is_unicode_neckbeard(byte, buf[i + 1]))
-       && (is_unicode_tail(buf[i + 2]))
-       && (is_unicode_tail(buf[i + 3]))) {
-        i += 3;
-        continue;
-      }
-      break;
-    }
-  }
-  return i;
-}
-
 #define ℤ int
 #define cunt size_t
 #define csz size_t
@@ -775,7 +435,6 @@ size_t text_len(uint8_t *buf, size_t sz) {
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <cairo/cairo.h>
 
 /*
 *  gcc cairo_sandbox.c -o cairo_sandbox `pkg-config --libs --cflags cairo`
@@ -822,43 +481,6 @@ typedef struct {
   int n;
 } points;
 
-void get_adj(points *adj, point *pt, int w, int h) {
-  adj->n = 0;
-  if (pt->x < 1) return;
-  if (pt->y < 1) return;
-  if (pt->x > (w - 1)) return;
-  if (pt->y > (h - 1)) return;
-
-  adj->pt[adj->n].x = pt->x - 1;
-  adj->pt[adj->n++].y = pt->y - 1;
-
-  adj->pt[adj->n].x = pt->x;
-  adj->pt[adj->n++].y = pt->y - 1;
-
-  adj->pt[adj->n].x = pt->x + 1;
-  adj->pt[adj->n++].y = pt->y - 1;
-
-  adj->pt[adj->n].x = pt->x - 1;
-  adj->pt[adj->n++].y = pt->y;
-
-  adj->pt[adj->n].x = pt->x + 1;
-  adj->pt[adj->n++].y = pt->y;
-
-  adj->pt[adj->n].x = pt->x - 1;
-  adj->pt[adj->n++].y = pt->y + 1;
-
-  adj->pt[adj->n].x = pt->x;
-  adj->pt[adj->n++].y = pt->y + 1;
-
-  adj->pt[adj->n].x = pt->x + 1;
-  adj->pt[adj->n++].y = pt->y + 1;
-
-  printf("From point %d,%d %d adjacent pixels\n", pt->x, pt->y, adj->n);
-  int i;
-  for (i = 0; i < adj->n; i++) {
-    printf(" adj point: %d,%d\n", adj->pt[i].x, adj->pt[i].y);
-  }
-}
 /* screen: control panel, screen */
 /* base2 is 1bit */
 /* base4 is 2bit */
@@ -995,195 +617,6 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 0F SI     1F US     2F /    3F ?    4F O    5F _    6F o    7F DEL
 
 */
-
-static int pr[4096 * 8];
-static int nr = 0;
-static int nrj = 0;
-
-int active_regions() {
-  return nr - nrj;
-}
-
-int pixel_region(int x, int y, int w) {
-  int n = (y * w) + x;
-  int r = pr[n];
-  //printf("n=%d\n", n);
-  //printf("get region: %d,%d: %d\n", x, y, r);
-  return r;
-}
-
-int pixel_region_new(int x, int y, int w) {
-  int n = (y * w) + x;
-  int r = ++nr;
-  pr[n] = r;
-  //printf("n=%d\n", n);
-  //printf("new region: %d,%d: %d\n", x, y, r);
-  return r;
-}
-
-int pixel_region_join(int r, int x, int y, int w) {
-  int n = (y * w) + x;
-  int old_r = pr[n];
-  pr[n] = r;
-  //printf("n=%d\n", n);
-  //printf(" join region: %d,%d: %d -> %d\n", x, y, old_r, r);
-  if ((old_r) && (old_r != r)) {
-    nrj++;
-    for (int i = 0; i < n; i++) {
-      if (pr[i] == old_r) {
-        pr[i] = r;
-      //  printf(" %d moved to: %d\n", i, r);
-      }
-    }
-  }
-  return r;
-}
-
-typedef struct {
-  uint8_t r;
-  uint8_t g;
-  uint8_t b;
-  uint8_t a;
-} pixel_t;
-
-typedef struct {
-  int w;
-  int h;
-} area_t;
-
-void pixel_probe(uint8_t *px, point *pt, pixel_t *p, int w, int pxl_sz) {
-  int i;
-  i = (pt->x * pxl_sz) + (pt->y * w * pxl_sz);
-  p->a = px[i];
-  p->r = px[i + 1];
-  p->g = px[i + 2];
-  p->b = px[i + 3];
-}
-
-int rgbcmp(pixel_t *p1, pixel_t *p2) {
-  if ((p1->r == p2->r) &&
-      (p1->g == p2->g) &&
-      (p1->b == p2->b)) {
-    return 0;
-  }
-  return 1;
-}
-
-int samergb(pixel_t *p1, pixel_t *p2) {
-  if (rgbcmp(p1, p2) == 0) return 1;
-  return 0;
-}
-
-int argbcmp(pixel_t *a, pixel_t *b) {
-  if ((a->a == b->a) &&
-      (a->r == b->r) &&
-      (a->g == b->g) &&
-      (a->b == b->b)) {
-    return 0;
-  }
-  return 1;
-}
-
-int pixcmp(pixel_t *a, pixel_t *b) {
-  if ((a->a == b->a) &&
-      (a->r == b->r) &&
-      (a->g == b->g) &&
-      (a->b == b->b)) {
-    return 0;
-  }
-  return 1;
-}
-
-void pixel_trace(uint8_t *px, int x, int y, int w, int h, int pixel_size) {
-  points adj;
-  point pt;
-  pixel_t this_p;
-  pixel_t near_p;
-  printf(" pixel trace from: %d, %d - %d bytes per pixel\n", x, y, pixel_size);
-  pt.x = x;
-  pt.y = y;
-  pixel_probe(px, &pt, &this_p, w, pixel_size);
-  get_adj(&adj, &pt, w, h);
-  int i;
-  for (i = 0; i < adj.n; i++) {
-    pixel_probe(px, &adj.pt[i], &near_p, w, pixel_size);
-    if (samergb(&near_p, &this_p)) {
-      printf("matching values at %d, %d -> %d, %d\n", x, y,
-       adj.pt[i].x, adj.pt[i].y);
-    }
-  }
-}
-
-void print_pixel_regions(uint32_t *px, int w, int h) {
-  int x;
-  int y;
-  for (y = 0; y < h; y++) {
-    for (x = 0; x < w; x++) {
-      printf("%4d ", pixel_region(x, y, w));
-    }
-    printf("\n");
-  }
-  printf("\n");
-}
-
-void pixel_scan(uint32_t *px, int w, int h) {
-  printf("pixel scan: %d x %d - %d bytes per pixel\n", w, h, 4);
-  int x;
-  int y;
-  int r;
-  for (y = 0; y < h; y++) {
-    for (x = 0; x < w; x++) {
-      pixel_t *upleft = NULL;
-      pixel_t *up = NULL;
-      pixel_t *left = NULL;
-      pixel_t *upright = NULL;
-      pixel_t *cur = &px[(y * w) + x];
-      if (x == 0) printf("%d", y);
-      printf(" #%02X%02X%02X", cur->r, cur->g, cur->b);
-      if (y > 0) {
-        up = &px[((y - 1) * w) + x];
-        if (x > 0) upleft = &px[((y - 1) * w) + (x - 1)];
-        if (x < (w - 1)) upright = &px[((y - 1) * w) + (x + 1)];
-      }
-      if (x > 0) left = &px[(y * w) + (x - 1)];
-      if (upleft) {
-        if (samergb(cur, upleft)) {
-          r = pixel_region(x - 1, y - 1, w);
-          pixel_region_join(r, x, y, w);
-        }
-      }
-      if (up) {
-        if (samergb(cur, up)) {
-          r = pixel_region(x, y - 1, w);
-          pixel_region_join(r, x, y, w);
-        }
-      }
-      if (left) {
-        if (samergb(cur, left)) {
-          r = pixel_region(x - 1, y, w);
-          pixel_region_join(r, x, y, w);
-        }
-      }
-      if (upright) {
-        if (samergb(cur, upright)) {
-          r = pixel_region(x + 1, y - 1, w);
-          pixel_region_join(r, x, y, w);
-        }
-      }
-      if (!pixel_region(x, y, w)) {
-        pixel_region_new(x, y, w);
-      }
-    }
-    printf("\n");
-  }
-  printf("\n");
-  printf("%d active regions %d created, %d joined\n",
-          active_regions(), nr, nrj);
-  print_pixel_regions(px, w, h);
-}
-
-
-
 
 int mom(int argc, char *argv[]) {
   cairo_surface_t *surface;
@@ -1939,23 +1372,6 @@ void bfun() {
   if (n >= HIGH) { printf("high"); }
   }
   printf("\n");
-}
-
-void pixel_file_scan(char *filename) {
-  cairo_surface_t *surface;
-  cairo_t *cr;
-  int w;
-  int h;
-  uint32_t *argb_px;
-  printf("pixel file scan:\n%s\n\n", filename);
-  surface = cairo_image_surface_create_from_png(filename);
-  w = cairo_image_surface_get_width(surface);
-  h = cairo_image_surface_get_height(surface);
-  cr = cairo_create(surface);
-  argb_px = cairo_image_surface_get_data(surface);
-  pixel_scan(argb_px, w, h);
-  cairo_destroy(cr);
-  cairo_surface_destroy(surface);
 }
 
 /*
