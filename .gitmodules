@@ -7,3 +7,6 @@
 [submodule "doc/ym-938"]
 	path = doc/ym-938
 	url = git@github.com:oneman/ym-938.git
+[submodule "doc/sat_code"]
+	path = doc/sat_code
+	url = https://github.com/Bill-Gray/sat_code
