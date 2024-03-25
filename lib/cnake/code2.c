@@ -1,56 +1,3 @@
-/*C
-
- letters  (2 rep letters max)
- a = any
- e
- i = 1
- o
- u = 2
- syllables
-  words
-  labels
-
- checkdef cont-ext context
-
- h = ?
- went ~ to the partition
- gone: left from the partition
- did -3-
- go -Z-
- going -=-
-
-
- well if the least we can know about the universe is 1 bit,
- then the most we can know is a whole bunch of bitches
-
- /word/seen
- #occurances filenym
-
- /word/heard
- #occurances filenym
-
- /word/read
- #occurances filenym
-
-
- whiches, whitespace seperated
-
- 'reccurrences with prev/next page'
-
-
- filenymsys
-
- register names:
-   sha256 contents
-   subject: math, source = mathwords
-   "collections"
-   datasheet/paper/webpage/photo/level "media presentate type"
-*/
-
-#define _STDIOV_H 26
-#ifndef _GNU_SOURCE
-#define _GNU_SOURCE
-#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -73,27 +20,13 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <unistd.h>
-
-/* !danger includes string.h and locale.h bewares! */
 #include <string.h>
 #include <locale.h>
 #include <sys/uio.h>
+
 #define HIGH 248
 
 #define ASSERT(_e, ...) if (!(_e)) { fprintf(stderr, __VA_ARGS__); exit(1); }
-
-typedef float    f32;
-typedef double   f64;
-typedef uint8_t  u8;
-typedef uint16_t u16;
-typedef uint32_t u32;
-typedef uint64_t u64;
-typedef int8_t   i8;
-typedef int16_t  i16;
-typedef int32_t  i32;
-typedef int64_t  i64;
-typedef size_t   usize;
-typedef ssize_t  isize;
 
 #include <krad/radio/client.h>
 
@@ -102,33 +35,6 @@ typedef ssize_t  isize;
 #include <cairo/cairo.h>
 #include "pix.c"
 #include "text.c"
-
-
-/*
-
-char *png = 0x89504E470D0A1A0A;
-
-unsigned char *np = "H, He, Li, Be, B, C, N, O, F, Ne, Na, Mg, Al, Si, P, S,
-Cl, Ar, K, Ca, Sc, Ti, V, Cr, Mn, Fe, Ni, Co, Cu, Zn, Ga, Ge, As, Se, Br, Kr,
-Rb, Sr, Y, Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te, I, Xe, Cs, Ba,
-La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta, W, Re, Os,
-Ir, Pt, Au, Hg, Tl, Pb, Bi, Th, Pa, U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No,
-Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og.";
-
-AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME,
-MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA,
-RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY
-
-!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-abcdefghijklmnopqrstuvwxyz
-0123456789
-
-typedef struct str {
-  char *p;
-  size_t sz;
-}
-*/
 
 #define yeap return 1;
 #define nope return 0;
@@ -618,297 +524,6 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 
 */
 
-int mom(int argc, char *argv[]) {
-  cairo_surface_t *surface;
-  cairo_t *cr;
-  time_t seconds;
-  seconds = time(NULL);
-  surface = NULL;
-  cr = NULL;
-  char filename[128];
-  snprintf(filename, sizeof(filename), "%s/mom_%ld.png", getenv("HOME"),
-    seconds);
-  int w = 320;
-  int h = 320;
-  surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, w, h);
-  cr = cairo_create(surface);
-  //unsigned char *px;
-  //px = cairo_image_surface_get_data(surface);
-  /* paper */
-  cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
-  cairo_paint(cr);
-  /* crossword grid */
-  cairo_set_line_width(cr, 1);
-  cairo_set_source_rgb(cr, 0, 0, 0);
-  int i;
-  for (i = 0; i < 16; i++) {
-    cairo_move_to(cr, i * 20, 0);
-    cairo_line_to(cr, i * 20, 320);
-    cairo_stroke(cr);
-    cairo_move_to(cr, 0, i * 20);
-    cairo_line_to(cr, 320, i * 20);
-    cairo_stroke(cr);
-  }
-  cairo_surface_write_to_png(surface, filename);
-  cairo_destroy(cr);
-  cairo_surface_destroy(surface);
-  return 0;
-}
-
-int tryman(int argc, char *argv[]) {
-  cairo_surface_t *surface;
-  cairo_t *cr;
-  time_t seconds;
-  seconds = time(NULL);
-  surface = NULL;
-  cr = NULL;
-  char filename[128];
-  snprintf(filename, sizeof(filename), "%s/lush_%ld.png", getenv("HOME"),
-    seconds);
-  int w = 3840;
-  int h = 2160;
-  surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, w, h);
-  cr = cairo_create(surface);
-  unsigned char *px;
-  px = cairo_image_surface_get_data(surface);
-
-  /* paper */
-  cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
-  cairo_paint(cr);
-
-  cairo_set_line_width(cr, 0.5);
-  cairo_set_source_rgb(cr, 0, 0, 0);
-  int i;
-  for (i = 0; i < 16; i++) {
-    cairo_move_to(cr, i * 20, 0);
-    cairo_line_to(cr, i * 20, 320);
-    cairo_stroke(cr);
-    cairo_move_to(cr, 0, i * 20);
-    cairo_line_to(cr, 320, i * 20);
-    cairo_stroke(cr);
-  }
-
-  // quad rule
-  cairo_set_source_rgba(cr, 0.26, 0.26, 0.99, 1);
-  int c = 1;
-  int r = 1;
-  for (c = 1; c < 34; c++) {
-    cairo_move_to(cr, c * 18, 0);
-    cairo_line_to(cr, c * 18, 792);
-    cairo_stroke(cr);
-  }
-  for (r = 1; r < 44; r++) {
-    cairo_move_to(cr, 0, r * 18);
-    cairo_line_to(cr, 612, r * 18);
-    cairo_stroke(cr);
-  }
-
-  /* golden margin */
-  cairo_set_line_width(cr, 2);
-  cairo_set_source_rgba(cr, 1.0, 0.83, 0, 1);
-  cairo_move_to(cr, 72, 72);
-  cairo_line_to(cr, 540, 72);
-  cairo_line_to(cr, 540, 720);
-  cairo_line_to(cr, 72, 720);
-  cairo_close_path(cr);
-  cairo_stroke(cr);
-
-  cairo_new_path(cr);
-  cairo_set_source_rgba(cr, 1.0, 0.84, 0.13, 0.71);
-  cairo_rectangle(cr, 72, 72, 18 * 26, 18 * 26);
-  cairo_fill(cr);
-
-  cairo_new_path(cr);
-  cairo_set_source_rgba(cr, 1.0, 0.13, 0.66, 0.2);
-  cairo_rectangle(cr, 72, 18 * 30, 18 * 16, 18 * 10);
-  cairo_fill(cr);
-
-  cairo_new_path(cr);
-  cairo_set_source_rgba(cr, 1.0, 0.53, 0.66, 0.4);
-  cairo_rectangle(cr, (4 * 18) + (13 * 18), (4 * 18),
-          (13 * 18), (5 * 18));
-  cairo_fill(cr);
-
-  /*
-  cairo_new_path(cr);
-  cairo_set_line_width (cr, 2.6);
-  cairo_set_source_rgba(cr, 0.1, 0.3, 0.2, 1);
-  cairo_arc (cr, gs_center, gs_center, gs_rad, 0, (3.1 / 180.0) * 360.0);
-  cairo_stroke (cr);
-  cairo_fill(cr);
-
-
-  cairo_new_path(cr);
-  cairo_set_line_width (cr, 2.6);
-  cairo_set_source_rgba(cr, 1, 0.3, 0.2, 1);
-  cairo_arc (cr, gs_center, gs_center, gs_rad, (3.1415926 / 180.0) * 90, (3.1415926 / 180.0) * 150.0);
-  double x, y = 0;
-  cairo_get_current_point(cr, &x, &y);
-  printf("x,y: %f,%f\n", x, y);
-  cairo_stroke (cr);
-  cairo_fill(cr);
-
-  cairo_new_path(cr);
-  cairo_set_source_rgba(cr, 1, 0.1, 0.1, 1);
-  cairo_arc(cr, x, y, 9, 0, 3.1415926 / 180.0 * 360);
-  cairo_fill(cr);
-
-
-  cairo_new_path(cr);
-  cairo_set_line_width (cr, 1.6);
-  cairo_set_source_rgba(cr, 0.3, 0.2, 0.1, 1);
-  cairo_move_to(cr, x, y);
-  cairo_line_to(cr, letterpaper_width_ptx - x, y);
-  cairo_line_to(cr, letterpaper_width_ptx/2, letterpaper_gov_margin);
-  cairo_close_path(cr);
-  cairo_stroke (cr);
-
-
-  cairo_new_path(cr);
-  cairo_set_line_width (cr, 1.6);
-  cairo_set_source_rgba(cr, 0.3, 0.6, 0.6, 1);
-  cairo_move_to(cr, x, y);
-  cairo_line_to(cr, letterpaper_width_ptx/2, letterpaper_gov_margin + (26 * 18));
-  cairo_line_to(cr, letterpaper_width_ptx -x, y);
-
-
-  cairo_close_path(cr);
-  cairo_stroke (cr);
-
-
-  cairo_new_path(cr);
-  cairo_set_line_width (cr, 2.6);
-  cairo_set_source_rgba(cr, 0.3, 0.5, 0.4, 1);
-  cairo_arc (cr, gs_center, gs_center + gs_rad, gs_rad,
-   0,
-   (3.1415926 / 180.0) * 270.0);
-  cairo_stroke (cr);
-  cairo_fill(cr);
-
-  cairo_new_path(cr);
-  cairo_set_line_width (cr, 2.6);
-  cairo_set_source_rgba(cr, 0.7, 0.2, 0.6, 1);
-  cairo_arc (cr, gs_center, gs_center + gs_rad, gs_rad,
-   (3.1415926 / 30.0) * 70.0, 0);
-  cairo_stroke (cr);
-  cairo_fill(cr);
-  */
-
-  cairo_surface_write_to_png(surface, filename);
-
-  cairo_destroy(cr);
-  cairo_surface_destroy(surface);
-  return 0;
-}
-
-int color_block(int argc, char *argv[]) {
-  cairo_surface_t *surface;
-  cairo_t *cr;
-  time_t seconds;
-  seconds = time(NULL);
-  surface = NULL;
-  cr = NULL;
-  char filename[128];
-  snprintf(filename, sizeof(filename), "%s/lush_%ld.png", getenv("HOME"),
-    seconds);
-  int w = 4096;
-  int h = 4096;
-  surface = cairo_image_surface_create(CAIRO_FORMAT_RGB24, w, h);
-  cr = cairo_create(surface);
-  unsigned char *px;
-  px = cairo_image_surface_get_data(surface);
-
-  cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
-  cairo_paint(cr);
-
-  cairo_new_path(cr);
-  cairo_set_source_rgb(cr, 1, 0, 0);
-  cairo_rectangle(cr, 26, 26, 100, 100);
-  cairo_fill(cr);
-
-  cairo_surface_flush(surface);
-  u8 a = 0;
-  u8 b = 0;
-  u8 c = 0;
-  for (int i = 0; i < (w * h); i++) {
-    int n = i;
-    char *aa = (char *)&n;
-    px[0] = aa[0];
-    px[1] = aa[1];
-    px[2] = aa[2];
-    /*a++;
-    if (a == 255) {
-      b++;
-      a = 0;
-    }
-    if (b == 255) {
-      c++;
-      b = 0;
-    }*/
-    px = px + 4;
-  }
-  cairo_surface_mark_dirty(surface);
-  cairo_new_path(cr);
-  cairo_set_source_rgb(cr, 0.53, 0.66, 0.4);
-  cairo_rectangle(cr, (14 * 18) + (26 * 18), (4 * 18),
-      (18 * 18), (15 * 18));
-  cairo_fill(cr);
-
-  cairo_new_path(cr);
-  cairo_set_source_rgb(cr, 0, 1, 0);
-  cairo_rectangle(cr, 260, 260, 100, 100);
-  cairo_fill(cr);
-
-  cairo_surface_flush(surface);
-  px = cairo_image_surface_get_data(surface);
-  for (int i = 0; i < (w * h); i++) {
-    //px[(i * 4) + 2] = 128;
-    int n = i;
-    //px[1] = n >> 8;
-    //px[0] = 55;
-    //px[3] = n >> 8;
-    px += 4;
-  }
-  cairo_surface_mark_dirty(surface);
-
-  cairo_surface_write_to_png(surface, filename);
-  cairo_destroy(cr);
-  cairo_surface_destroy(surface);
-  return 0;
-}
-
-int paper(int argc, char *argv[]) {
-  return color_block(argc, argv);
-  cairo_surface_t *surface;
-  cairo_t *cr;
-  time_t seconds;
-  seconds = time(NULL);
-  surface = NULL;
-  cr = NULL;
-  char filename[128];
-  snprintf(filename, sizeof(filename), "%s/lush_%ld.png", getenv("HOME"),
-    seconds);
-  int w = 612;
-  int h = 792;
-  surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, w, h);
-  cr = cairo_create(surface);
-  cairo_set_line_width(cr, 0.5);
-  unsigned char *px;
-  px = cairo_image_surface_get_data(surface);
-  cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
-  cairo_paint(cr);
-
-  /* has paper */
-
-
-
-
-  cairo_surface_write_to_png(surface, filename);
-  cairo_destroy(cr);
-  cairo_surface_destroy(surface);
-  return 0;
-}
-
 #define BUG 1
 
 uint8_t word_len(char *string, size_t len) {
@@ -1087,44 +702,18 @@ void superuser() {
   }
 }
 
-
 /*
 char *has(char *bs, int len, char *a, int sz) {
 }
 */
 
-#include <cairo/cairo.h>
-void print_pixmap(char *filename, char c) {
-
-  cairo_surface_t *surface;
-  cairo_t *cr;
-  int width;
-  int height;
-  int x;
-  int y;
-  width = 5;
-  height = 5;
-
-  surface = cairo_image_surface_create_from_png(filename);
-  cr = cairo_create(surface);
-
-  int i;
-  //int stride;
-  //stride = cairo_format_stride_for_width(CAIRO_FORMAT_ARGB32, 5);
-  unsigned char *pixmap;
-  pixmap = cairo_image_surface_get_data(surface);
-
-  for (y = 0; y < height; y++) {
-    for (x = 0; x < width; x++) {
-  int v;
-  v = pixmap[y * 20 + (x * 4)];
-  if (v > 0) v = 1;
-  if (!v) { printf("%c", c); } else { printf(" "); }
-    }
+void letter_loop() {
+  for (char letter = 'a'; letter < '{'; letter++) {
+    printf("Letter %c\n", letter);
   }
-  cairo_destroy(cr);
-  cairo_surface_destroy(surface);
 }
+
+#include <cairo/cairo.h>
 
 char otan(char *buf, size_t sz) {
   if (buf == NULL) exit(1);
@@ -1257,28 +846,6 @@ char *nato(char letter) {
   return "";
 }
 
-void dothis() {
-  char letter = 'a';
-  char filename[256];
-  memset(filename, 0, sizeof(filename));
-  letter = 'a';
-  int i = 1;
-  int j;
-  while (letter < '{') {
-    /*printf("%c", letter);*/
-    for (j = 5 - 1; j >= 0; j--) {
-      putchar(i & (1u << j) ? '1' : '0');
-    }
-    printf(" ");
-    sprintf(filename, "/home/demo/src/lush/doc/1a2b3c/vscii_%c_5x5.png",
-     letter);
-    print_pixmap(filename, letter);
-    printf(" %s\n", nato(letter));
-    letter++;
-    i++;
-  }
-}
-
 #define 🔺 continue;
 
 void bfun() {
@@ -1374,154 +941,34 @@ void bfun() {
   printf("\n");
 }
 
-/*
-! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~
-! " #   % & ' ( ) * + , - . / : ; < = > ?   [ \ ] ^ _   { | } ~
-      X                                   X           X
-*/
-
-int oldmain(int argc, char *argv[]) {
+int is_regular_file(char *path) {
   int err;
   struct stat s;
-  if (argc > 1) {
-    err = stat(argv[1], &s);
-    if (!err) {
-      /*if (S_ISDIR(s.st_mode)) {*/
-      if (S_ISREG(s.st_mode)) {
-        file_scan(argv[1]);
-        return 0;
-      }
-    }
-  }
-  //superuser();
-  err = path_scan();
-  return err;
-}
-
-void insert_coin_to_continue() {
-  char c;
-  printf("Insert Coin To Continue!$# ");
-  scanf("%c", &c);
-  printf("\nOK %c\n", c);
-}
-
-int wayland_dis(kr_client *client) {
-  int ret;
-  kr_xpdr_path_info nfo;
-
-  insert_coin_to_continue();
-  kr_xpdr_path_info_init(&nfo);
-  nfo.type = KR_WAYLAND;
-  sprintf(nfo.wl.display_name, "wayland-1");
-  nfo.wl.state = KR_WL_CONNECTED;
-  ret = kr_xpdr_make(client, "oneway", &nfo);
-
-  insert_coin_to_continue();
-  kr_xpdr_path_info_init(&nfo);
-  nfo.type = KR_WAYLAND_OUT;
-  nfo.wl_out.width = 1920;
-  nfo.wl_out.height = 1080;
-  nfo.wl_out.fullscreen = 0;
-  ret = kr_xpdr_make(client, "oneway/onewin", &nfo);
-
-  return ret;
-}
-
-int mixer_link(kr_client *client) {
-  int ret;
-  kr_mixer_path_info nfo;
-
-  insert_coin_to_continue();
-  kr_mixer_path_info_init(&nfo);
-  nfo.type = KR_MXR_INPUT;
-  nfo.channels = 2;
-  ret = kr_mixer_make(client, "out/in", &nfo);
-  return ret;
-}
-
-int jack_cap(kr_client *client) {
-  int ret;
-  kr_xpdr_path_info nfo;
-
-  insert_coin_to_continue();
-  kr_xpdr_path_info_init(&nfo);
-  nfo.type = KR_JACK;
-  sprintf(nfo.jack.client_name, "demo");
-  sprintf(nfo.jack.server_name, "");
-  nfo.jack.sample_rate = 48000;
-  nfo.jack.period_size = 1024;
-  ret = kr_xpdr_make(client, "jackpipe", &nfo);
-
-  insert_coin_to_continue();
-  kr_xpdr_path_info_init(&nfo);
-  nfo.type = KR_JACK_IN;
-  sprintf(nfo.jack_in.name, "in");
-  nfo.jack_in.channels = 2;
-  nfo.jack_in.direction = KR_JACK_INPUT;
-  ret = kr_xpdr_make(client, "jackpipe/in", &nfo);
-
-  insert_coin_to_continue();
-  insert_coin_to_continue();
-  kr_xpdr_path_info_init(&nfo);
-  nfo.type = KR_JACK_IN;
-  sprintf(nfo.jack_in.name, "in2");
-  nfo.jack_in.channels = 2;
-  nfo.jack_in.direction = KR_JACK_INPUT;
-  ret = kr_xpdr_make(client, "jackpipe/in2", &nfo);
-
-  insert_coin_to_continue();
-  kr_xpdr_path_info_init(&nfo);
-  nfo.type = KR_JACK_OUT;
-  sprintf(nfo.jack_out.name, "out");
-  nfo.jack_out.channels = 2;
-  nfo.jack_out.direction = KR_JACK_OUTPUT;
-  ret = kr_xpdr_make(client, "jackpipe/out", &nfo);
-
-  return ret;
-}
-
-int v4l2_cap(kr_client *client) {
-  int ret;
-  kr_xpdr_path_info nfo;
-
-  insert_coin_to_continue();
-  kr_xpdr_path_info_init(&nfo);
-  nfo.type = KR_V4L2;
-  nfo.v4l2.dev = 0;
-  nfo.v4l2.priority = 0;
-  ret = kr_xpdr_make(client, "v4l2", &nfo);
-
-  insert_coin_to_continue();
-  kr_xpdr_path_info_init(&nfo);
-  nfo.type = KR_V4L2_IN ;
-  nfo.v4l2_in.width = 1920;
-  nfo.v4l2_in.height = 1080;
-  nfo.v4l2_in.num = 60;
-  nfo.v4l2_in.den = 1;
-  ret = kr_xpdr_make(client, "v4l2/cam", &nfo);
-
-  return ret;
-}
-
-int rig(int argc, char *argv[]) {
-  return paper(argc, argv);
-  int ret;
-  kr_client *client;
-  char *sysname = "demo";
-  client = kr_client_create("demo cmdr");
-  if(client == NULL) {
-    fprintf(stderr, "Could create client\n");
+  err = stat(path, &s);
+  if (err) return 0;
+  if (S_ISREG(s.st_mode)) {
     return 1;
   }
-  if (!kr_connect(client, sysname)) {
-    fprintf(stderr, "Could not connect to %s krad radio daemon\n", sysname);
-    kr_client_destroy(&client);
-    return 1;
-  }
-  ret = jack_cap(client);
-  ret = mixer_link(client);
-  //ret = v4l2_cap(client);
-  //ret = wayland_dis(client);
-  kr_client_destroy(&client);
-  return ret;
 }
+
+/*
+
+char *png = 0x89504E470D0A1A0A;
+
+unsigned char *np = "H, He, Li, Be, B, C, N, O, F, Ne, Na, Mg, Al, Si, P, S,
+Cl, Ar, K, Ca, Sc, Ti, V, Cr, Mn, Fe, Ni, Co, Cu, Zn, Ga, Ge, As, Se, Br, Kr,
+Rb, Sr, Y, Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te, I, Xe, Cs, Ba,
+La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta, W, Re, Os,
+Ir, Pt, Au, Hg, Tl, Pb, Bi, Th, Pa, U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No,
+Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og.";
+
+AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN, IA, KS, KY, LA, ME,
+MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND, OH, OK, OR, PA,
+RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY
+
+!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+0123456789
+
+*/
