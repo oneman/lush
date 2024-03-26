@@ -22,4 +22,28 @@ void cnake(void);
 
 #include <krad/app/debug.h>
 
+#include "stdheaders.h"
+
+typedef enum {
+  NUL = 0,
+  SOH,STX,
+  ETX,EOT,
+  ENQ,ACK,
+  BEL,BS,
+  HT,LF,VT,FF,CR,
+  SO,SI,
+  DLE,
+  DC1,DC2,DC3,DC4,
+  NAK,SYN,
+  ETB,CAN,
+  EM,
+  SUB,ESC,
+  FS,GS,RS,US
+} CC;
+
+#define SP (US + 1)
+#define DEL 127
+
+size_t text_len(u8 *buf, size_t sz);
+
 #endif

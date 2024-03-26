@@ -1,24 +1,7 @@
-typedef enum {
-  NUL = 0,
-  SOH,STX,
-  ETX,EOT,
-  ENQ,ACK,
-  BEL,BS,
-  HT,LF,VT,FF,CR,
-  SO,SI,
-  DLE,
-  DC1,DC2,DC3,DC4,
-  NAK,SYN,
-  ETB,CAN,
-  EM,
-  SUB,ESC,
-  FS,GS,RS,US
-} CC;
+#ifndef C_TEXT
+#define C_TEXT
 
-#define SP (US + 1)
-#define DEL 127
-
-uint8_t is_ascii_blank(uint8_t byte) {
+u8 is_ascii_blank(u8 byte) {
   if (byte == SP) return 1;
   if (byte == LF) return 1;
   if (byte == CR) return 1;
@@ -28,14 +11,14 @@ uint8_t is_ascii_blank(uint8_t byte) {
   return 0;
 }
 
-uint8_t is_ascii_char(uint8_t byte) {
+u8 is_ascii_char(u8 byte) {
   if ((byte > SP) && (byte < DEL)) {
     return 1;
   }
   return 0;
 }
 
-int is_unicode_head(uint8_t byte) {
+int is_unicode_head(u8 byte) {
   if (byte <= 191) return 0;
   if (byte >= 248) return 0;
   if (byte <= 223) return 2;
@@ -44,12 +27,12 @@ int is_unicode_head(uint8_t byte) {
   return 0;
 }
 
-int is_unicode_tail(uint8_t byte) {
+int is_unicode_tail(u8 byte) {
   if ((byte >= 128) && (byte <= 191)) return 1;
   return 0;
 }
 
-int is_unicode_neckbeard(uint8_t head, uint8_t neck) {
+int is_unicode_neckbeard(u8 head, u8 neck) {
   if (head == 224) {
     if ((neck >= 160) && (neck <= 191)) return 1;
     printk("unicode neckbeard error!");
@@ -73,8 +56,8 @@ int is_unicode_neckbeard(uint8_t head, uint8_t neck) {
   return is_unicode_tail(neck);
 }
 
-size_t text_len(uint8_t *buf, size_t sz) {
-  uint8_t byte;
+size_t text_len(u8 *buf, size_t sz) {
+  u8 byte;
   size_t i;
   for (i = 0; i < sz; i++) {
     byte = buf[i];
@@ -108,3 +91,4 @@ size_t text_len(uint8_t *buf, size_t sz) {
   }
   return i;
 }
+#endif
