@@ -575,7 +575,7 @@ size_t text_scan(uint8_t *buf, size_t sz) {
   text_mode last = BLANK;
   text_mode mode = last;
   int ret;
-  printf("Got text len: %lu.\n", sz);
+  /*printf("Got text len: %lu.\n", sz);*/
   return sz;
   for (size_t i = 0; i < sz; i++) {
     u8 c = buf[i];

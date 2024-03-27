@@ -183,7 +183,7 @@ ssize_t kr_file2_read(kr_file2 *file, uint8_t *data, size_t sz) {
   return read(file->fd, data, sz);
 }
 
-static int file_stat_to_text(kr_file2 *file) {
+static int file_stat_to_info(kr_file2 *file) {
   int ret;
   ret = 0;
   if (S_ISSOCK(file->st.st_mode)) {
@@ -212,16 +212,8 @@ static int file_stat_to_text(kr_file2 *file) {
     ret = 1;
     return ret;
   }
-  printf("\nThis type of file is %s\n", file->info.type);
   file->info.lastmod = file->st.st_mtim.tv_sec;
   file->info.sz = file->st.st_size;
-  printf("path: %s\n", file->info.path);
-  printf("lastmod: %ld\n", file->info.lastmod);
-  printf("sz: %lu\n", file->info.sz);
-  printf("type: %s\n", file->info.type);
-  /*if (!(file->st.st_mode && S_IFREG)) {
-    printf("Can we even MMAP %s files?\n", file->info.type);
-  }*/
   return ret;
 }
 
@@ -248,9 +240,7 @@ kr_file2 *kr_file2_open(kr_file_set *fs, char *path, size_t len) {
   file->info.path[len] = '\0';
   memcpy(file->info.path, path, len);
   ret = stat(file->info.path, &file->st);
-  if (ret == 0) {
-    file_stat_to_text(file);
-  }
+  if (ret == 0) file_stat_to_info(file);
   if (ret == -1) {
     err = errno;
     if (err == ENOENT) {
@@ -289,7 +279,6 @@ kr_file2 *kr_file2_open(kr_file_set *fs, char *path, size_t len) {
   file->info.remote_fs = 0;
   fs_info(file);
   if ((file->info.sz > 0) && ((file->st.st_mode & S_IFREG) == S_IFREG)) {
-    printf("We have a regular type file with size, we attempt to mmap\n");
     file->pages = file->info.sz / KRPGSZ;
     if (!file->pages || file->pages % KRPGSZ) file->pages++;
     file->data = mmap(NULL, file->pages * KRPGSZ, prot, mflags, file->fd, 0);
@@ -300,7 +289,7 @@ kr_file2 *kr_file2_open(kr_file_set *fs, char *path, size_t len) {
       kr_pool_release(fs->pool, file);
       return NULL;
     }
-    printf("MMAP'ed %s\n", file->info.path);
+    /*printf("MMAP'ed %s\n", file->info.path);*/
   }
   run_event(file, KR_FILE_OPEN);
   return file;

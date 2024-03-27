@@ -8,7 +8,7 @@ size_t binary_scan(u8 *buf, size_t sz) {
   size_t z;
   z = png_data_scan(buf, sz);
   if (sz == z) return z;
-  printf("Binary data: %lu\n", sz);
+  /*printf("Binary data: %lu\n\n", sz);*/
   return 0;
   for (n = 0; n < sz;) {
     //usleep(10000);

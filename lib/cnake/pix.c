@@ -106,7 +106,6 @@ int pixcmp(rgba32 *a, rgba32 *b) {
 
 int px_scan(pxcop *pc, rgba32 *px, int w, int h) {
   if ((w < 1) || (h < 1) || !pc || !px) return 1;
-  printf("Image: %d x %d\n", w, h);
   int x;
   int y;
   int r;
@@ -156,8 +155,9 @@ int px_scan(pxcop *pc, rgba32 *px, int w, int h) {
     /*printf("\n");*/
   }
   /*printf("\n");*/
-  /*printf("%d active regions %d created, %d joined\n",
-          active_regions(pc), pc->nr, pc->nrj);*/
+  u32 np = w * h;
+  u64 nr = active_regions(pc);
+  printf("Image: %d x %d, %lu / %lu = %lu\n", w, h, nr, nr, np / nr);
   return active_regions(pc);
 }
 
@@ -192,7 +192,7 @@ size_t png_data_scan(u8 *buf, size_t sz) {
       cairo_image_surface_get_width(cs),
       cairo_image_surface_get_height(cs));
   if (ret) {
-    printf("Got %lu regions\n", ret);
+    /*printf("Got %lu regions\n", ret);*/
   }
   free(pc);
   cairo_surface_destroy(cs);

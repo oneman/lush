@@ -24,10 +24,11 @@ int file_scan(char *path, size_t sz) {
   }
   data = kr_file2_get_data(file);
   if (data && !kr_file2_get_info(file, &info)) {
-    printf("File: %s\n", path);
-    printf("sz: %lu\n\n", info.sz);
+    printf("%s\n", path);
+    printf("Length: %lu\n", info.sz);
     data_scan(data, info.sz);
   }
+  printf("\n\n");
   return kr_file_set_destroy(fs);
 }
 
