@@ -25,11 +25,26 @@ static const rgba32 colors26[26] = {
   {249,0,134}
 };
 
+#define CACHE_SZ 64
+#define PAGE_SZ 4096
+#define NUF_REGIONS 2048
+#define MAX_REGIONS 4096 * 4096
+
+u64 min(u64 a, u64 b) {
+  if (a < b) return a;
+  return b;
+}
+
+u64 max(u64 a, u64 b) {
+  if (a > b) return a;
+  return b;
+}
+
 typedef struct {
   rgba32 *src;
   int w;
   int h;
-  int pr[4096 * 4096 * 4 * 13];
+  int pr[MAX_REGIONS];
   int nr;
   int nrj;
 } pxcop;
@@ -61,7 +76,9 @@ int pixel_region_join(pxcop *pc, int r, int x, int y, int w) {
   pc->pr[n] = r;
   if ((old_r) && (old_r != r)) {
     pc->nrj++;
-    for (int i = 0; i < n; i++) {
+    int start = 0;
+    int last = min(n, MAX_REGIONS);
+    for (int i = start; i < last; i++) {
       if (pc->pr[i] == old_r) {
         pc->pr[i] = r;
       }
@@ -109,6 +126,18 @@ int px_scan(pxcop *pc, rgba32 *px, int w, int h) {
   int x;
   int y;
   int r;
+  u64 np = w * h;
+  printf("    Area: %dx%d\n", w, h);
+  printf("  Pixels: %lu\n",  np);
+  if (np > MAX_REGIONS) {
+    printf("So Many pixels!\n");
+    return 0;
+  }
+  printf(" 4x Cell: %lu\n",  np / (4 * 4));
+  printf(" 8x Cell: %lu\n",  np / (8 * 8));
+  printf("16x Cell: %lu\n",  np / (16 * 16));
+  printf("64x Cell: %lu\n",  np / (64 * 64));
+  printf("78x Cell: %lu\n",  np / (78 * 78));
   for (y = 0; y < h; y++) {
     for (x = 0; x < w; x++) {
       rgba32 *upleft = NULL;
@@ -151,13 +180,13 @@ int px_scan(pxcop *pc, rgba32 *px, int w, int h) {
       if (!pixel_region(pc, x, y, w)) {
         pixel_region_new(pc, x, y, w);
       }
+      if (pc->nr >= NUF_REGIONS) break;
     }
     /*printf("\n");*/
   }
   /*printf("\n");*/
-  u64 np = w * h;
   u64 nr = active_regions(pc);
-  printf("Image: %d x %d, %lu / %lu = %lu\n", w, h, nr, np, np / nr);
+  printf(" Regions: [%lu]\n",  nr);
   return active_regions(pc);
 }
 

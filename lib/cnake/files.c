@@ -25,7 +25,6 @@ int file_scan(char *path, size_t sz) {
   data = kr_file2_get_data(file);
   if (data && !kr_file2_get_info(file, &info)) {
     printf("%s\n", path);
-    printf("Length: %lu\n", info.sz);
     data_scan(data, info.sz);
   }
   printf("\n\n");

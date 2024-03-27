@@ -40,7 +40,7 @@
 #define nope return 0;
 #define otherwise
 
-int is_leap_year(uint64_t year) {
+int is_leap_year(u64 year) {
   if ((year % 400) == 0) yeap
   if ((year % 100) == 0) nope
   if ((year % 4) == 0) yeap
@@ -90,22 +90,22 @@ char ascii_cc_str[32][4] = {
 
 //static const char *alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-uint8_t is_ascii_control(uint8_t byte) {
+u8 is_ascii_control(u8 byte) {
   if (byte == DEL) return 1;
   if ((byte > NUL) && (byte < SP)) return 1;
   return 0;
 }
 
-int is_ascii(unsigned char byte) {
+int is_ascii(u8 byte) {
   if ((byte > 0) && (byte < 128)) return 1;
   return 0;
 }
 
-uint8_t is_blank(uint8_t byte) {
+u8 is_blank(u8 byte) {
   return is_ascii_blank(byte);
 }
 
-size_t blank_len(uint8_t *buf, size_t sz) {
+size_t blank_len(u8 *buf, size_t sz) {
   size_t i;
   uint8_t byte;
   for (i = 0; i < sz; i++) {
@@ -571,7 +571,7 @@ text_mode get_text_mode(u8 c) {
   return NO;
 }
 
-size_t text_scan(uint8_t *buf, size_t sz) {
+size_t text_scan(u8 *buf, size_t sz) {
   text_mode last = BLANK;
   text_mode mode = last;
   int ret;
