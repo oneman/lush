@@ -155,7 +155,7 @@ int px_scan(pxcop *pc, rgba32 *px, int w, int h) {
     /*printf("\n");*/
   }
   /*printf("\n");*/
-  u32 np = w * h;
+  u64 np = w * h;
   u64 nr = active_regions(pc);
   printf("Image: %d x %d, %lu / %lu = %lu\n", w, h, nr, np, np / nr);
   return active_regions(pc);
