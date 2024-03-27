@@ -28,6 +28,10 @@ static const rgba32 colors26[26] = {
 #define CACHE_SZ 64
 #define PAGE_SZ 4096
 #define MAX_REGIONS 4096 * 4096
+#define MONSTER_SCREEN_WIDTH 3440
+#define MONSTER_SCREEN_HEIGHT 1440
+#define MONSTER_SCREEN_STRIDE MONSTER_SCREEN_WIDTH * 4
+#define MONSTER_SCREEN_PIXELS MONSTER_SCREEN_WIDTH * MONSTER_SCREEN_HEIGHT
 
 u64 min(u64 a, u64 b) {
   if (a < b) return a;
@@ -46,6 +50,7 @@ typedef struct {
   int pr[MAX_REGIONS];
   int nr;
   int nrj;
+  rgba32 ds[MONSTER_SCREEN_WIDTH * MONSTER_SCREEN_HEIGHT];
 } pxcop;
 
 void pxcop_reboot(pxcop *pc) {
@@ -156,9 +161,32 @@ void anal_dump(pxcop *pc) {
     }
   }
   cairo_surface_mark_dirty(cs);
-  cairo_surface_write_to_png(cs, path);
+  int scale = MONSTER_SCREEN_HEIGHT/pc->h;
+  while ((scale * pc->w) > MONSTER_SCREEN_WIDTH) scale--;
+  printf("Scale: %d %dx%d\n", scale, scale * pc->w, scale * pc->h);
+  cairo_surface_t *cs2 = cairo_image_surface_create_for_data((u8 *)&pc->ds,
+    CAIRO_FORMAT_RGB24,
+    MONSTER_SCREEN_WIDTH,
+    MONSTER_SCREEN_HEIGHT,
+    MONSTER_SCREEN_STRIDE);
+  cairo_t *cr2 = cairo_create(cs2);
+  cairo_surface_mark_dirty(cs);
+  for (int y = 0; y < pc->h; y++) {
+    for (int x = 0; x < pc->w; x++) {
+      rgba32 opixel = px[(y * pc->w) + x];
+      for (int ys = 0; ys < scale; ys++) {
+        for (int xs = 0; xs < scale; xs++) {
+          pc->ds[(y * scale * MONSTER_SCREEN_WIDTH) + (ys * MONSTER_SCREEN_WIDTH) + (x * scale) + xs] = opixel;
+        }
+      }
+    }
+  }
+  cairo_surface_mark_dirty(cs2);
+  cairo_surface_write_to_png(cs2, path);
   cairo_destroy(cr);
+  cairo_destroy(cr2);
   cairo_surface_destroy(cs);
+  cairo_surface_destroy(cs2);
 }
 
 int px_scan(pxcop *pc, rgba32 *px, int w, int h) {
@@ -170,17 +198,17 @@ int px_scan(pxcop *pc, rgba32 *px, int w, int h) {
   pc->w = w;
   pc->h = h;
   pc->src = px;
-  printf("    Area: %dx%d\n", w, h);
-  printf("  Pixels: %lu\n",  np);
-  if (np > MAX_REGIONS) {
+  printf("Area: %dx%d\n", w, h);
+  printf("Pixels: %lu\n",  np);
+  if (np > MONSTER_SCREEN_PIXELS) {
     printf("So Many pixels!\n");
     return 0;
   }
-  printf(" 4x Cell: %lu\n",  np / (4 * 4));
-  printf(" 8x Cell: %lu\n",  np / (8 * 8));
+  printf("4x Cell: %lu\n",  np / (4 * 4));
+  printf("8x Cell: %lu\n",  np / (8 * 8));
   printf("16x Cell: %lu\n",  np / (16 * 16));
+  printf("32x Cell: %lu\n",  np / (32 * 32));
   printf("64x Cell: %lu\n",  np / (64 * 64));
-  printf("78x Cell: %lu\n",  np / (78 * 78));
   for (y = 0; y < h; y++) {
     for (x = 0; x < w; x++) {
       rgba32 *upleft = NULL;

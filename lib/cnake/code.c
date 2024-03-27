@@ -26,6 +26,7 @@ typedef struct {
 void cnake(void) {
   for (;;) {
     home_scan();
-    usleep(26000);
+    printf("scan done\n");
+    exit(0);
   }
 }
