@@ -29,7 +29,7 @@ typedef struct {
   rgba32 *src;
   int w;
   int h;
-  int pr[4096 * 26];
+  int pr[4096 * 4096 * 4 * 13];
   int nr;
   int nrj;
 } pxcop;
@@ -45,8 +45,6 @@ int active_regions(pxcop *pc) {
 int pixel_region(pxcop *pc, int x, int y, int w) {
   int n = (y * w) + x;
   int r = pc->pr[n];
-  //printf("n=%d\n", n);
-  //printf("get region: %d,%d: %d\n", x, y, r);
   return r;
 }
 
@@ -54,8 +52,6 @@ int pixel_region_new(pxcop *pc, int x, int y, int w) {
   int n = (y * w) + x;
   int r = ++pc->nr;
   pc->pr[n] = r;
-  //printf("n=%d\n", n);
-  //printf("new region: %d,%d: %d\n", x, y, r);
   return r;
 }
 
@@ -63,14 +59,11 @@ int pixel_region_join(pxcop *pc, int r, int x, int y, int w) {
   int n = (y * w) + x;
   int old_r = pc->pr[n];
   pc->pr[n] = r;
-  //printf("n=%d\n", n);
-  //printf(" join region: %d,%d: %d -> %d\n", x, y, old_r, r);
   if ((old_r) && (old_r != r)) {
     pc->nrj++;
     for (int i = 0; i < n; i++) {
       if (pc->pr[i] == old_r) {
         pc->pr[i] = r;
-      //  printf(" %d moved to: %d\n", i, r);
       }
     }
   }
@@ -111,20 +104,9 @@ int pixcmp(rgba32 *a, rgba32 *b) {
   return 1;
 }
 
-void print_pixel_regions(pxcop *pc, uint32_t *px, int w, int h) {
-  int x;
-  int y;
-  for (y = 0; y < h; y++) {
-    for (x = 0; x < w; x++) {
-      printf("%4d ", pixel_region(pc, x, y, w));
-    }
-    printf("\n");
-  }
-  printf("\n");
-}
-
-void px_scan(pxcop *pc, uint32_t *px, int w, int h) {
-  printf("pixel scan: %d x %d - %d bytes per pixel\n", w, h, 4);
+int px_scan(pxcop *pc, rgba32 *px, int w, int h) {
+  if ((w < 1) || (h < 1) || !pc || !px) return 1;
+  printf("Image: %d x %d\n", w, h);
   int x;
   int y;
   int r;
@@ -135,8 +117,8 @@ void px_scan(pxcop *pc, uint32_t *px, int w, int h) {
       rgba32 *left = NULL;
       rgba32 *upright = NULL;
       rgba32 *cur = &px[(y * w) + x];
-      if (x == 0) printf("%d", y);
-      printf(" #%02X%02X%02X", cur->r, cur->g, cur->b);
+      /*if (x == 0) printf("%d", y);*/
+      /*printf(" #%02X%02X%02X", cur->r, cur->g, cur->b);*/
       if (y > 0) {
         up = &px[((y - 1) * w) + x];
         if (x > 0) upleft = &px[((y - 1) * w) + (x - 1)];
@@ -171,35 +153,48 @@ void px_scan(pxcop *pc, uint32_t *px, int w, int h) {
         pixel_region_new(pc, x, y, w);
       }
     }
-    printf("\n");
+    /*printf("\n");*/
   }
-  printf("\n");
-  printf("%d active regions %d created, %d joined\n",
-          active_regions(pc), pc->nr, pc->nrj);
-  print_pixel_regions(pc, px, w, h);
+  /*printf("\n");*/
+  /*printf("%d active regions %d created, %d joined\n",
+          active_regions(pc), pc->nr, pc->nrj);*/
+  return active_regions(pc);
 }
 
-void pixel_file_scan(char *filename) {
-  cairo_surface_t *surface;
-  cairo_t *cr;
-  int w;
-  int h;
-  uint32_t *argb_px;
-  printf("pixel file scan:\n%s\n\n", filename);
-  surface = cairo_image_surface_create_from_png(filename);
-  w = cairo_image_surface_get_width(surface);
-  h = cairo_image_surface_get_height(surface);
-  cr = cairo_create(surface);
-  argb_px = cairo_image_surface_get_data(surface);
+typedef struct {
+  u8 *dat;
+  size_t sz;
+  size_t pos;
+} bufnfo;
+
+static cairo_status_t read_cb(void *user, u8 *data, u32 length) {
+  bufnfo *n;
+  n = (bufnfo *)user;
+  if (n->pos + length > n->sz) return CAIRO_STATUS_READ_ERROR;
+  memcpy(data, n->dat + n->pos, length);
+  n->pos += length;
+  return CAIRO_STATUS_SUCCESS;
+}
+
+size_t png_data_scan(u8 *buf, size_t sz) {
+  size_t ret;
+  cairo_surface_t *cs;
+  bufnfo nfo;
+  nfo.dat = buf;
+  nfo.sz = sz;
+  nfo.pos = 0;
+  cs = cairo_image_surface_create_from_png_stream(read_cb, &nfo);
+  if (cairo_surface_status(cs)) return 1;
   pxcop *pc = malloc(sizeof(*pc));
   pxcop_reboot(pc);
-  px_scan(pc, argb_px, w, h);
+  ret = px_scan(pc,
+      (rgba32 *)cairo_image_surface_get_data(cs),
+      cairo_image_surface_get_width(cs),
+      cairo_image_surface_get_height(cs));
+  if (ret) {
+    printf("Got %lu regions\n", ret);
+  }
   free(pc);
-  cairo_destroy(cr);
-  cairo_surface_destroy(surface);
-}
-
-void cpixel() {
-  pixel_file_scan("/home/demo/src/lush/doc/png/26mhz_osc_xtal.png");
-  exit(0);
+  cairo_surface_destroy(cs);
+  return ret;
 }
