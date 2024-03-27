@@ -42,7 +42,7 @@ int kr_dir_create(char *dirname) {
   mode_t mode;
   if (dirname == NULL) return -1;
   if (kr_dir_exists(dirname)) return -2;
-  mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
+  mode = S_IRWXU | S_IRWXG | S_IROTH;
   return mkdir(dirname, mode);
 }
 

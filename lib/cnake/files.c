@@ -1,3 +1,5 @@
+#include <krad/io/dir.h>
+
 int file_scan(char *path, size_t sz) {
   uint8_t *data;
   kr_file2 *file;
@@ -48,6 +50,8 @@ int path_scan(char *path, size_t sz) {
 }
 
 int home_scan() {
-  char *h = "/home";
+  kr_dir_create("/home/demo/new");
+  //char *h = "/home/demo/src/lush/doc";
+  char *h = "/home/demo";
   return path_scan(h, strlen(h));
 }

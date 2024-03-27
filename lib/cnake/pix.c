@@ -27,7 +27,6 @@ static const rgba32 colors26[26] = {
 
 #define CACHE_SZ 64
 #define PAGE_SZ 4096
-#define NUF_REGIONS 2048
 #define MAX_REGIONS 4096 * 4096
 
 u64 min(u64 a, u64 b) {
@@ -77,8 +76,8 @@ int pixel_region_join(pxcop *pc, int r, int x, int y, int w) {
   if ((old_r) && (old_r != r)) {
     pc->nrj++;
     int start = 0;
-    int last = min(n, MAX_REGIONS);
-    for (int i = start; i < last; i++) {
+    if (y > 1) start = (y - 1) * w;
+    for (int i = start; i < n; i++) {
       if (pc->pr[i] == old_r) {
         pc->pr[i] = r;
       }
@@ -121,12 +120,56 @@ int pixcmp(rgba32 *a, rgba32 *b) {
   return 1;
 }
 
+void set_px_color(rgba32 *px, int x, int y, int w, rgba32 c) {
+  rgba32 *pxl = &px[(y * w) + x];
+  pxl->r = c.r;
+  pxl->g = c.g;
+  pxl->b = c.b;
+}
+
+
+void anal_dump(pxcop *pc) {
+  static u64 N = 0;
+  //static kr_file_set *fs = NULL;
+  if (N == 0) {
+    //static kr_fs_setup setup;
+    //setup.nfiles++;
+    //fs = kr_file_set_create(&setup);
+  }
+  N++;
+  char path[64];
+  snprintf(path, sizeof(path) - 1, "%s/%lu.png", "/home/demo/new", N);
+  printf("Analysis file: %s\n", path);
+  cairo_surface_t *cs;
+  cairo_t *cr;
+  cs = cairo_image_surface_create(CAIRO_FORMAT_RGB24, pc->w, pc->h);
+  cr = cairo_create(cs);
+  rgba32 *px = (rgba32 *)cairo_image_surface_get_data(cs);
+  cairo_set_source_rgb(cr, 1.0, 1.0, 1.0);
+  cairo_paint(cr);
+  cairo_surface_flush(cs);
+  for (int y = 0; y < pc->h; y++) {
+    for (int x = 0; x < pc->w; x++) {
+      int r = pixel_region(pc, x, y, pc->w);
+      rgba32 c = colors26[r % 25];
+      set_px_color(px, x, y, pc->w, c);
+    }
+  }
+  cairo_surface_mark_dirty(cs);
+  cairo_surface_write_to_png(cs, path);
+  cairo_destroy(cr);
+  cairo_surface_destroy(cs);
+}
+
 int px_scan(pxcop *pc, rgba32 *px, int w, int h) {
   if ((w < 1) || (h < 1) || !pc || !px) return 1;
   int x;
   int y;
   int r;
   u64 np = w * h;
+  pc->w = w;
+  pc->h = h;
+  pc->src = px;
   printf("    Area: %dx%d\n", w, h);
   printf("  Pixels: %lu\n",  np);
   if (np > MAX_REGIONS) {
@@ -145,48 +188,36 @@ int px_scan(pxcop *pc, rgba32 *px, int w, int h) {
       rgba32 *left = NULL;
       rgba32 *upright = NULL;
       rgba32 *cur = &px[(y * w) + x];
-      /*if (x == 0) printf("%d", y);*/
-      /*printf(" #%02X%02X%02X", cur->r, cur->g, cur->b);*/
+      if (x > 0) left = &px[(y * w) + (x - 1)];
       if (y > 0) {
         up = &px[((y - 1) * w) + x];
         if (x > 0) upleft = &px[((y - 1) * w) + (x - 1)];
         if (x < (w - 1)) upright = &px[((y - 1) * w) + (x + 1)];
       }
-      if (x > 0) left = &px[(y * w) + (x - 1)];
-      if (upleft) {
-        if (samergb(cur, upleft)) {
-          r = pixel_region(pc, x - 1, y - 1, w);
-          pixel_region_join(pc, r, x, y, w);
-        }
+      if ((upleft) && (samergb(cur, upleft))) {
+        r = pixel_region(pc, x - 1, y - 1, w);
+        pixel_region_join(pc, r, x, y, w);
       }
-      if (up) {
-        if (samergb(cur, up)) {
-          r = pixel_region(pc, x, y - 1, w);
-          pixel_region_join(pc, r, x, y, w);
-        }
+      if ((up) && (samergb(cur, up))) {
+        r = pixel_region(pc, x, y - 1, w);
+        pixel_region_join(pc, r, x, y, w);
       }
-      if (left) {
-        if (samergb(cur, left)) {
-          r = pixel_region(pc, x - 1, y, w);
-          pixel_region_join(pc, r, x, y, w);
-        }
+      if ((left) && (samergb(cur, left))) {
+        r = pixel_region(pc, x - 1, y, w);
+        pixel_region_join(pc, r, x, y, w);
       }
-      if (upright) {
-        if (samergb(cur, upright)) {
-          r = pixel_region(pc, x + 1, y - 1, w);
-          pixel_region_join(pc, r, x, y, w);
-        }
+      if ((upright) && (samergb(cur, upright))) {
+        r = pixel_region(pc, x + 1, y - 1, w);
+        pixel_region_join(pc, r, x, y, w);
       }
       if (!pixel_region(pc, x, y, w)) {
         pixel_region_new(pc, x, y, w);
       }
-      if (pc->nr >= NUF_REGIONS) break;
     }
-    /*printf("\n");*/
   }
-  /*printf("\n");*/
   u64 nr = active_regions(pc);
   printf(" Regions: [%lu]\n",  nr);
+  anal_dump(pc);
   return active_regions(pc);
 }
 
