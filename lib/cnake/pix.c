@@ -5,24 +5,31 @@ typedef struct {
   uint8_t a;
 } rgba32;
 
-static char *letter_color[26] = {"amethyst", "blue", "caramel", "damson",
-  "ebony", "forest", "green", "honey", "iron", "jade", "kingcrab", "lavender",
-  "magenta", "navy", "orange", "pink", "quagmire", "red", "sea", "turquoise",
-  "ultraviolet", "violet", "wine", "xanthin", "yellow", "zinnia"
+static char *letter_color[26] = {
+  "amethyst", "blue", "caramel", "damnson", "ebony",
+  "forest", "green", "honey", "iron", "jade",
+  "khaki", "lime", "mellow", "navy", "orly",
+  "pink", "quagmire", "red", "sky", "turquoise",
+  "uranium", "version", "wine", "xanthin", "yellow",
+  "zorange"
 };
 
-typedef enum { amethyst, blue, caramel, damson, ebony, forest, green, honey,
-  iron, jade, kingcrab, lavender, magenta, navy, orange, pink, quagmire, red,
-  sea, turquoise, ultraviolet, violet, wine, xanthin, yellow, zinnia
+typedef enum {
+  amethyst, blue, caramel, damnson, ebony,
+  forest, green, honey, iron, jade,
+  khaki, lime, mellow, navy, orly,
+  pink, quagmire, red, sky, turquoise,
+  uranium, version, wine, xanthin, yellow,
+  zorange
 } ncolor;
 
 static const rgba32 colors26[26] = {
-  {170,11,254,0}, {50,131,255}, {133,102,12}, {119,40,182}, {86,86,86},
-  {28,131,86}, {22,254,50}, {247,225,160}, {226,226,226}, {28,191,78},
-  {197,68,28}, {222,160,253}, {252,0,249}, {50,90,156}, {255,175,22},
-  {247,160,158}, {144,172,27}, {245,33,45}, {28,255,207}, {46,217,255},
-  {177,12,161}, {191,115,165}, {251,27,189}, {176,0,103},{250,227,38},
-  {249,0,134}
+  {241,163,255}, {0,116,255}, {155,64,0}, {76,0,92}, {26,26,26},
+  {0,92,48}, {42,207,72}, {255,205,153}, {126,126,126}, {149,255,181},
+  {143,124,0}, {157,205,0}, {195,0,137}, {50,129,255}, {165,4,255},
+  {255,169,187}, {66,102,0}, {255,0,0}, {94,241,243}, {0,153,143},
+  {225,255,102}, {16,10,255}, {153,0,0}, {255,255,129},{255,225,0},
+  {255,80,0}
 };
 
 #define CACHE_SZ 64
@@ -81,7 +88,7 @@ int pixel_region_join(pxcop *pc, int r, int x, int y, int w) {
   if ((old_r) && (old_r != r)) {
     pc->nrj++;
     int start = 0;
-    if (y > 1) start = (y - 1) * w;
+    //if (y > 1) start = (y - 1) * w;
     for (int i = start; i < n; i++) {
       if (pc->pr[i] == old_r) {
         pc->pr[i] = r;
