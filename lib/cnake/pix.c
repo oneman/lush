@@ -32,7 +32,7 @@ static const rgba32 colors26[26] = {
   {255,80,0}
 };
 
-#define CACHE_SZ 64
+#define CACHELINE_SZ 64
 #define PAGE_SZ 4096
 #define MAX_REGIONS 4096 * 4096
 #define MONSTER_SCREEN_WIDTH 3440
@@ -150,7 +150,7 @@ void anal_dump(pxcop *pc) {
   }
   N++;
   char path[64];
-  snprintf(path, sizeof(path) - 1, "%s/%lu.png", "/home/demo/new", N);
+  snprintf(path, sizeof(path) - 1, "%s/%lu.png", "/home/demo/1", N);
   printf("Analysis file: %s\n", path);
   cairo_surface_t *cs;
   cairo_t *cr;

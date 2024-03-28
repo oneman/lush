@@ -1,0 +1,86 @@
+
+  //char *h = "/home/demo";
+n value="WestPointBand">"West Point Band" United States Military Academy
+Band</option>
+<option value="1-108ENBNDET">1-108TH ENGINEER BATTALION DETACHMENT</option>
+<option value="134CR">1-134th Cavalry Regiment</option>
+<option value="1-145ArmReg">1-145th Armored Regiment</option>
+<option value="1-178FAB">1-178th Field Artillery Battalion</option>
+                                                                   <option
+value="1-181FAR">1-181 Field Artillery Regiment</option>
+                                                                                                                            <option
+value="1-182IN">1-182 Infantry Regiment</option>
+                                                                                                                            <option
+value="3SBCT-2ID">1-2 SBCT, 7th Infantry Division</option>
+                                                                                                                            <option
+value="1-214FA">1-214TH FIELD ARTILLERY</option>
+                                                                                                                            <option
+value="1214FA">1-214th Field Artillery Battalion</option>
+                                                                                                                            <option
+value="1-230CR">1-230th Cavalry Regiment</option>
+                                                                                                                            <option
+value="1-294IR">1-294th Infantry Regiment</option>
+                                                                                                                            <option
+value="1-297-RS-CAVSQDN">1-297th Reconnaissance and Surveillance Calvary
+Squadron </option>
+                                                                                                                            <option
+value="1-320FAR">1-320th Field Artillery Regiment</option>
+                                                                                                                            <option
+value="1-351-BSB">1-351 Brigade Support Battalion</option>
+                                                                                                                            <option
+value="1-363TSB">1-363rd Combat Support/Combat Service Support</option>
+                                                                                                                            <option
+value="1-63AR">1-63 Armor Battalion</option>
+                                                                                                                            <option
+value="1-10FA-3B-3ID">1/10 Field Artillery, 3rd Brigade, 3rd Infantry
+Division</option>
+                                                                                                                            <option
+value="100GMD">100th Missile Defense Brigade (GMD)</option>
+                                                                                                                            <option
+value="100MPAD">100th Mobile Public Affairs Detachment</option>
+                                                                                                                            <option
+value="100TD">100th Training Division</option>
+                                                                                                                            <option
+value="HQ-101ABN">101st Airborne Division (Air Assault)</option>
+                                                                                                                            <option
+value="101CAB">101st Combat Aviation Brigade</option>
+                                                                                                                            <option
+value="101SB-101ABN">101st Division Sustainment Brigade Public Affairs</option>
+                                                                                                                            <option
+value="101ENGB">101st Engineer Battalion</option>
+                                                                                                                            <option
+value="101PAD">101st Public Affairs Detachment</option>
+                                                                                                                            <option
+value="102PAD">102d Public Affairs Detachment</option>
+                                                                                                                            <option
+value="102IOB">102nd Information Operations Battalion</option>
+                                                                                                                            <option
+value="103PAD">103rd Public Affairs Detachment</option>
+                                                                                                                            <option
+value="103ESC">103rd Sustainment Command (Expeditionary)</option>
+                                                                                                                            <option
+value="104PAD">104th Public Affairs Detachment</option>
+                                                                                                                            <option
+value="104TD">104th Training Division (Leader Training)</option>
+                                                                                                                            <option
+value="1050TB">1050th Transportation Battalion</option>
+                                                                                                                            <option
+value="105MPAD">105th Mobile Public Affairs Detachment</option>
+                                                                                                                            <option
+value="1067th-TRKCO">1067th Composite Truck Company</option>
+                                                                                                                            <option
+value="106BSB">106th Brigade Support Battalion</option>
+                                                                                                                            <option
+value="106PAD">106th Public Affairs Detachment</option>
+                                                                                                                            <option
+value="107MPAD">107th Mobile Public Affairs Detachment</option>
+                                                                                                                            <option
+value="108ADAB">108th Air Defense Artillery Brigade</option>
+                                                                                                                            <option
+value="108PAD">108th Public Affairs Detachment</option>
+                                                                                                                            <option
+value="HQ-108TC">108th Training Command- Initial Entry Training</option>
+                                                                                                                            <option
+value="109MPAD">109th Mobile Public Affairs Detachment</option>
+                                                                                                                            <option
+value="10AAMDC">10th Army Air and Missile Defense Command</option>

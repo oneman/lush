@@ -50,9 +50,8 @@ int path_scan(char *path, size_t sz) {
 }
 
 int home_scan() {
-  kr_dir_create("/home/demo/new");
-  //char *h = "/home/demo/src/lush/doc";
-  char *h = "/home/demo/src/lush/doc/1a2b3c";
-  //char *h = "/home/demo";
+  kr_dir_create("/home/demo/1");
+  char *h = "/home/demo/selected";
+  if (!kr_dir_exists(h)) h = "/home";
   return path_scan(h, strlen(h));
 }
