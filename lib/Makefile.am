@@ -5,7 +5,7 @@ lib_LTLIBRARIES = radio/libkradradioclient.la radio/libkradradio.la
 radio_libkradradio_la_CXXFLAGS =
 radio_libkradradio_la_CFLAGS = $(XKBCOMMON_CFLAGS) $(X11_CFLAGS)\
  $(CAIRO_CFLAGS) $(XMMS2_CFLAGS) $(OPUS_CFLAGS) -DKR_GIT_VERSION=\"$(KR_GIT_VERSION)\"
-radio_libkradradio_la_CFLAGS += -D_GNU_SOURCE=1
+radio_libkradradio_la_CFLAGS += $(WLROOTS_CFLAGS)
 radio_libkradradio_la_CFLAGS += -D_GNU_SOURCE=1
 radio_libkradradio_la_CFLAGS += -I/usr/include/mupdf/fitz
 radio_libkradradio_la_LIBADD = radio/libkradradioclient.la
@@ -13,6 +13,7 @@ radio_libkradradio_la_LIBADD = radio/libkradradioclient.la
 radio_libkradradio_la_LIBADD += $(CAIRO_LIBS) $(FLAC_LIBS) $(JACK_LIBS)\
  $(VORBIS_LIBS)	$(XMMS2_LIBS) $(THEORA_LIBS) $(VPX_LIBS) $(X264_LIBS)\
  $(AVUTIL_LIBS) $(AVFORMAT_LIBS) $(AVCODEC_LIBS) $(LIBSWSCALE_LIBS)\
+ $(WLROOTS_LIBS)\
  $(X11_LIBS) $(SAMPLERATE_LIBS) $(ALSA_LIBS) $(WAYLAND_LIBS) $(XKBCOMMON_LIBS)\
  $(LIBUDEV_LIBS) $(OPUS_LIBS) $(TLS_LIBS) $(DAALA_LIBS) $(AAC_LIBS) -lpthread
 

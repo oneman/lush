@@ -10,7 +10,7 @@
  *
  * document chain?
  *
- * /
+ */
 
 #define UNICODES 1112064
 #define PHY_C 299792458
@@ -37,7 +37,6 @@ typedef struct {
   u64 sylables;
   u64 words;
   u64 n[128];
-  //int apostrophe_s;
 } text_nfo;
 
 void anal_text(u8 *buf, size_t sz) {
@@ -72,7 +71,6 @@ Let's do that thing with, as an inline example, this silly sentence, the one\
 your reading right here starting with Let's and ending soon after here with\
 some immediate regrets.";
   anal_text(customer_statement, strlen(customer_statement));
-  return 26;
 }
 
 /*
