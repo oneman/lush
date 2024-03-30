@@ -22,12 +22,11 @@ typedef struct {
 
 #include "key.c"
 #include "code2.c"
-#include "tit.c"
+#include "win.c"
 
 void cnake(void) {
-  tit();
-  printf("wtf!\n");
-  usleep(10000000);
+  win();
+  exit(0);
   for (;;) {
     home_scan();
     printf("scan done\n");

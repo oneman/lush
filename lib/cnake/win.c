@@ -223,7 +223,9 @@ static void keyboard_handle_key(
 			handled = handle_keybinding(server, syms[i]);
 		}
 	}
-
+	if (modifiers & WLR_MODIFIER_CAPS) {
+    printf("Caps ON!\n");
+  }
 	if (!handled) {
 		/* Otherwise, we pass it along to the client. */
 		wlr_seat_set_keyboard(seat, keyboard->wlr_keyboard);
@@ -879,7 +881,7 @@ static void server_new_xdg_popup(struct wl_listener *listener, void *data) {
 	wl_signal_add(&xdg_popup->events.destroy, &popup->destroy);
 }
 
-int caps(int argc, char *argv[]) {
+int uwin(int argc, char *argv[]) {
 	wlr_log_init(WLR_DEBUG, NULL);
 	char *startup_cmd = NULL;
 
@@ -1081,4 +1083,4 @@ int caps(int argc, char *argv[]) {
 	return 0;
 }
 
-void tit(void) { caps(1, "caps"); exit(0);}
+void win(void) { uwin(1, "win"); exit(0); }
