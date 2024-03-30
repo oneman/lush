@@ -1,6 +1,17 @@
 #ifndef C_TEXT
 #define C_TEXT
 
+/* A proper normal sentence is a sequence of alphabetic words no
+ * longer than 78, most often less than 26. The final word must
+ * be a period, and maybe decorated with exclimation or question
+ * marking. All non-alphabetic marks such as emoji, emoticons,
+ * dashes, arrows unicode characters or doodles must be translated
+ * into alphabetic representations in exploded view.
+ *
+ * document chain?
+ *
+ * /
+
 #define UNICODES 1112064
 #define PHY_C 299792458
 
