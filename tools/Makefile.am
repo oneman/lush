@@ -2,7 +2,7 @@ include $(top_srcdir)/common.mk
 
 bin_PROGRAMS = kr_quvi kr_jschema kr_json kr_sizeof kr_js_proto
 bin_PROGRAMS += kr_features kr_rust_structs
-bin_PROGRAMS += nukecr
+#bin_PROGRAMS += nukecr
 #bin_PROGRAMS += kr_avprobe
 #bin_PROGRAMS = kr_gif2vid
 #bin_PROGRAMS = kr_dl_stream kr_v4l2_stream kr_x11_stream

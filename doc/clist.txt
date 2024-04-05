@@ -1,0 +1,29 @@
+Polygon
+Arbitrum
+Optimism
+BNB Chain
+Base
+Avalanche
+zkSync Era
+Fantom
+Celo
+Aptos
+Klaytn
+Linea
+Gnosis
+CoreDAO
+Moonbeam
+Scroll
+Arbitrum Nova
+Moonriver
+DFK
+Harmony
+Zora
+Etherum
+Orderly
+Kava
+opBNB
+Mantle
+Metis
+Manta
+Fuse

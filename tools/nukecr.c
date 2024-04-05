@@ -1,4 +1,7 @@
+#include <krad/app/debug.h>
 #include <krad/cnake/header.h>
+
+#include <krad/cnake/text.c>
 
 int main(int argc, char *argv[]) {
   unsigned char byte[1];
