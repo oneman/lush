@@ -45,6 +45,10 @@ int is_uadod(u8 c);
 int is_adodad(u8 c);
 int is_udohead(u8 c);
 
+int is_avowel(u8 c);
+int is_aglide(u8 c);
+int is_aconsonant(u8 c);
+
 /*
  * A proper normal sentence is a sequence of alphabetic words no
  * longer than 78, most often less than 26. The final word must
@@ -595,6 +599,26 @@ int is_aletter(u8 c) {
   if (c == 'x') return 1;
   if (c == 'y') return 1;
   if (c == 'z') return 1;
+  return 0;
+}
+
+int is_avowel(u8 c) {
+  if ((c == 'a') || (c == 'A')) return 1;
+  if ((c == 'e') || (c == 'E')) return 1;
+  if ((c == 'i') || (c == 'I')) return 1;
+  if ((c == 'o') || (c == 'O')) return 1;
+  if ((c == 'u') || (c == 'U')) return 1;
+  return 0;
+}
+
+int is_aglide(u8 c) {
+  if ((c == 'w') || (c == 'W')) return 1;
+  if ((c == 'y') || (c == 'Y')) return 1;
+  return 0;
+}
+
+int is_aconsonant(u8 c) {
+  if ((is_aletter(c)) && (!is_avowel(c))) return 1;
   return 0;
 }
 
