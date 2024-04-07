@@ -40,16 +40,6 @@ static const rgba32 colors26[26] = {
 #define MONSTER_SCREEN_STRIDE MONSTER_SCREEN_WIDTH * 4
 #define MONSTER_SCREEN_PIXELS MONSTER_SCREEN_WIDTH * MONSTER_SCREEN_HEIGHT
 
-u64 min(u64 a, u64 b) {
-  if (a < b) return a;
-  return b;
-}
-
-u64 max(u64 a, u64 b) {
-  if (a > b) return a;
-  return b;
-}
-
 typedef struct {
   rgba32 *src;
   int w;

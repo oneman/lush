@@ -16,11 +16,6 @@ typedef unsigned int u32;
 typedef unsigned char u8;
 #endif
 
-/* If the return value == the sz passed in, this buffer is valid utf8 */
-/* to be specific the sz passed in and the value returned are the number
- * of bytes not the number of utf8 encoded unicode characters */
-u64 text_len(u8 *buf, u64 sz);
-
 /* if return nonzero, the length of the valid word */
 /* this wil never be > 78, a word is atleast and no more than a sequence of
  * letters with no more than 2 vowels or 3 consonants in a row and y/w are
@@ -32,22 +27,26 @@ abcdefghijklmnopqrstuvwxyz
 0123456789
 * */
 
-#define WORD_LEN_MIN 1
 #define WORD_LEN_MAX 78
 
+/* If the return value == the sz passed in, this buffer is valid utf8 */
+/* to be specific the sz passed in and the value returned are the number
+ * of bytes not the number of utf8 encoded unicode characters */
+u64 text_len(u8 *buf, u64 sz);
+u64 line_len(u8 *buf, u64 sz);
 u64 word_len(u8 *buf, u64 sz);
 
-int is_aline(u8 c);
-int is_aspace(u8 c);
-int is_aletter(u8 c);
-int is_adigit(u8 c);
+int a_line(u8 c);
+int a_space(u8 c);
+int a_letter(u8 c);
+int a_digit(u8 c);
 int is_uadod(u8 c);
-int is_adodad(u8 c);
+int a_dodad(u8 c);
 int is_udohead(u8 c);
 
-int is_avowel(u8 c);
-int is_aglide(u8 c);
-int is_aconsonant(u8 c);
+int a_vowel(u8 c);
+int a_glide(u8 c);
+int a_consonant(u8 c);
 
 /*
  * A proper normal sentence is a sequence of alphabetic words no
@@ -303,14 +302,15 @@ typedef struct {
   size_t sz;
   u64 spaces;
   u64 letters;
+  u64 ncaps;
   u64 numbers;
+  u64 digits;
   u64 dodads;
-  u64 uppercase_letters;
   u64 vowels;
   u64 consonants;
-  u64 sylables;
   u64 words;
-  u64 n[128];
+  u64 substrings;
+  u64 nchar[256];
 } text_nfo;
 
 void anal_text(u8 *buf, size_t sz) {
@@ -318,17 +318,19 @@ void anal_text(u8 *buf, size_t sz) {
   if (sz < 1) fubar;
   /* Assumptions: We have one line of valid ascii text */
   text_nfo nfo;
+  memset(&nfo, 0, sizeof(nfo));
   nfo.sz = sz;
   int n = 0;
   for (n = 0; n < sz; n++) {
     char c = buf[n];
+    nfo.nchar[c]++;
     if (c == ' ') {
       nfo.spaces++;
       continue;
     }
     if (isalpha(c)) {
       nfo.letters++;
-    } else if (is_adigit(c)) {
+    } else if (a_digit(c)) {
       nfo.numbers++;
     }
   }
@@ -358,7 +360,7 @@ some immediate regrets.";
 983040 - 1048573 Private Use
 1048576 - 1114109 Private Use*/
 
-u8 is_ablank(u8 byte) {
+u8 a_blank(u8 byte) {
   if (byte == SP) return 1;
   if (byte == LF) return 1;
   if (byte == CR) return 1;
@@ -368,7 +370,7 @@ u8 is_ablank(u8 byte) {
   return 0;
 }
 
-u8 is_ascii_char(u8 byte) {
+u8 a_achar(u8 byte) {
   if ((byte > SP) && (byte < DEL)) {
     return 1;
   }
@@ -418,10 +420,10 @@ u64 text_len(u8 *buf, u64 sz) {
   size_t i;
   for (i = 0; i < sz; i++) {
     byte = buf[i];
-    if (is_aletter(byte)) continue;
-    if (is_adigit(byte)) continue;
-    if (is_adodad(byte)) continue;
-    if (is_ablank(byte)) continue;
+    if (a_letter(byte)) continue;
+    if (a_digit(byte)) continue;
+    if (a_dodad(byte)) continue;
+    if (a_blank(byte)) continue;
     int u = is_udohead(byte);
     if (u < 2) break;
     if ((i + u) > sz) break;
@@ -475,13 +477,13 @@ typedef enum {
 
 //static const char *alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-u8 is_actl(u8 byte) {
+u8 a_ctlcode(u8 byte) {
   if (byte == DEL) return 1;
   if ((byte > NUL) && (byte < SP)) return 1;
   return 0;
 }
 
-int is_ascii(u8 byte) {
+int a_ascii(u8 byte) {
   if ((byte > 0) && (byte < 128)) return 1;
   return 0;
 }
@@ -491,7 +493,7 @@ u64 blank_len(u8 *buf, u64 sz) {
   u8 byte;
   for (i = 0; i < sz; i++) {
     byte = buf[i];
-    if (is_ablank(byte)) continue;
+    if (a_blank(byte)) continue;
     break;
   }
   return i;
@@ -506,7 +508,7 @@ char *ascii_dodads = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 #define ASCII_CTLS 33
 #define NUM_LETTERSORNUMBERS (NUM_LETTERS * NUM_CASES) + NUM_DIGITS
 
-int is_adodad(u8 c) {
+int a_dodad(u8 c) {
   int n;
   char dod;
   for (n = 0; n < ASCII_DODS; n++) {
@@ -517,11 +519,37 @@ int is_adodad(u8 c) {
 }
 
 int is_uadod(u8 c) {
-  if (is_adodad(c)) return 1;
+  if (a_dodad(c)) return 1;
   return is_udohead(c);
 }
 
-int is_adigit(u8 c) {
+int is_haxdigit(u8 c) {
+  if (c == 'A') return 1;
+  if (c == 'B') return 1;
+  if (c == 'C') return 1;
+  if (c == 'D') return 1;
+  if (c == 'E') return 1;
+  if (c == 'F') return 1;
+  if (c == 'a') return 1;
+  if (c == 'b') return 1;
+  if (c == 'c') return 1;
+  if (c == 'd') return 1;
+  if (c == 'e') return 1;
+  if (c == 'f') return 1;
+  if (c == '0') return 1;
+  if (c == '1') return 1;
+  if (c == '2') return 1;
+  if (c == '3') return 1;
+  if (c == '4') return 1;
+  if (c == '5') return 1;
+  if (c == '6') return 1;
+  if (c == '7') return 1;
+  if (c == '8') return 1;
+  if (c == '9') return 1;
+  return 0;
+}
+
+int a_digit(u8 c) {
   if (c == '0') return 1;
   if (c == '1') return 1;
   if (c == '2') return 1;
@@ -540,13 +568,13 @@ int number_len(u8 *buf, u64 sz) {
   u8 byte;
   for (i = 0; i < sz; i++) {
     byte = buf[i];
-    if (is_adigit(byte)) continue;
+    if (a_digit(byte)) continue;
     break;
   }
   return i;
 }
 
-int is_aletter(u8 c) {
+int a_letter(u8 c) {
   if (c == 'A') return 1;
   if (c == 'B') return 1;
   if (c == 'C') return 1;
@@ -602,7 +630,7 @@ int is_aletter(u8 c) {
   return 0;
 }
 
-int is_avowel(u8 c) {
+int a_vowel(u8 c) {
   if ((c == 'a') || (c == 'A')) return 1;
   if ((c == 'e') || (c == 'E')) return 1;
   if ((c == 'i') || (c == 'I')) return 1;
@@ -611,33 +639,33 @@ int is_avowel(u8 c) {
   return 0;
 }
 
-int is_aglide(u8 c) {
+int a_glide(u8 c) {
   if ((c == 'w') || (c == 'W')) return 1;
   if ((c == 'y') || (c == 'Y')) return 1;
   return 0;
 }
 
-int is_aconsonant(u8 c) {
-  if ((is_aletter(c)) && (!is_avowel(c))) return 1;
+int a_consonant(u8 c) {
+  if ((a_letter(c)) && (!a_vowel(c))) return 1;
   return 0;
 }
 
-int is_aletter_or_anumber(u8 c) {
-  if (is_aletter(c)) return 1;
-  if (is_adigit(c)) return 1;
+int a_letter_or_anumber(u8 c) {
+  if (a_letter(c)) return 1;
+  if (a_digit(c)) return 1;
   return 0;
 }
 
-int is_aalphanumeric(u8 c) {
-  return is_aletter_or_anumber(c);
+int a_alphanumeric(u8 c) {
+  return a_letter_or_anumber(c);
 }
 
-int is_aspace(u8 c) {
+int a_space(u8 c) {
   if (c == SP) return 1;
   return 0;
 }
 
-int is_aline(u8 c) {
+int a_line(u8 c) {
   if (c == LF) return 1;
   return 0;
 }
@@ -648,11 +676,11 @@ int aalphanumeric_len(u8 *buf, u64 sz) {
   u8 byte;
   for (i = 0; i < sz; i++) {
     byte = buf[i];
-    if (is_aletter(byte)) {
+    if (a_letter(byte)) {
       have_alpha++;
       continue;
     }
-    if (is_adigit(byte)) continue;
+    if (a_digit(byte)) continue;
     return 0;
   }
   if (have_alpha) return 1;
@@ -669,7 +697,7 @@ int ascii_len(u8 *dat, u64 sz) {
   u8 b;
   u64 n = 0;
   for (n = 0; n < sz; n++) { b = dat[n];
-    if (!is_ascii(b)) break;
+    if (!a_ascii(b)) break;
   }
   return n;
 }
@@ -695,33 +723,20 @@ int ascii_len(u8 *dat, u64 sz) {
 
 #define BUG 1
 
-u64 word_len(u8 *string, u64 len) {
+u64 word_len(u8 *buf, u64 sz) {
+  if (!buf || (sz < 1) || (sz > WORD_LEN_MAX)) return 0;
   int i;
-  if ((len < WORD_LEN_MIN) || (len > WORD_LEN_MAX)) {
-    if (len < WORD_LEN_MIN) {
-  if (BUG) {
-    fprintf(stderr, "A word is at the least 1 letter.\n");
+  char letter;
+  int sillyness = 0;
+  int srsly = 0;
+  for (i = 0; i < sz; i++) {
+    if (!a_letter(buf[i])) break;
+    letter = buf[i];
+    if ((a_vowel(letter)) || (a_glide(letter))) { sillyness++; srsly = 0; }
+    if (a_consonant(letter)) { srsly++; sillyness = 0; }
+    if ((sillyness > 4) || (srsly > 4)) { return i - 4; }
   }
-  return 0;
-    } else {
-  if (len > WORD_LEN_MAX) {
-    if (BUG) {
-      fprintf(stderr, "A word is not more than 78 letters.\n");
-    }
-    return 0;
-  }
-    }
-  }
-  for (i = 0; i < len; i++) {
-    if (!(is_aletter(string[i]))) {
-  if (BUG) {
-    fprintf(stderr, "Character %d, %c is not a letter.\n", i,
-      string[i]);
-    return 0;
-  }
-    }
-  }
-  return len;
+  return i;
 }
 
 typedef enum {
@@ -733,10 +748,10 @@ typedef enum {
 } text_mode;
 
 text_mode get_text_mode(u8 c) {
-  if (is_aletter(c)) return LETTER;
-  else if (is_adigit(c)) return NUMBER;
-  else if (is_ablank(c)) return BLANK;
-  else if (is_adodad(c)) return DOD;
+  if (a_letter(c)) return LETTER;
+  else if (a_digit(c)) return NUMBER;
+  else if (a_blank(c)) return BLANK;
+  else if (a_dodad(c)) return DOD;
   else if (is_udohead(c)) return DOD;
   return NO;
 }
@@ -814,3 +829,13 @@ we call the program.
  * *F{*[]} == u64 *(u8 *buf, u64 sz);
  *
  * */
+
+u64 line_len(u8 *buf, u64 sz) {
+  int n;
+  if (sz > 4096) sz = 4096;
+  for (n = 0; n < sz; n++) {
+    if (buf[n] == LF) break;
+    if (buf[n] == NUL) break;
+  }
+  return n;
+}

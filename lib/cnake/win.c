@@ -667,6 +667,8 @@ static void xdg_toplevel_map(struct wl_listener *listener, void *data) {
 	wl_list_insert(&toplevel->server->toplevels, &toplevel->link);
 
 	focus_toplevel(toplevel, toplevel->xdg_toplevel->base->surface);
+
+  printf("something is xdg_toplevel_map! %p\n", data);
 }
 
 static void xdg_toplevel_unmap(struct wl_listener *listener, void *data) {
@@ -678,6 +680,7 @@ static void xdg_toplevel_unmap(struct wl_listener *listener, void *data) {
 		reset_cursor_mode(toplevel->server);
 	}
 
+  printf("something is xdg_toplevel_unmap! %p\n", data);
 	wl_list_remove(&toplevel->link);
 }
 
@@ -692,12 +695,14 @@ static void xdg_toplevel_commit(struct wl_listener *listener, void *data) {
 		 * dimensions itself. */
 		wlr_xdg_toplevel_set_size(toplevel->xdg_toplevel, 0, 0);
 	}
+  printf("something is xdg_toplevel_commit! %p\n", data);
 }
 
 static void xdg_toplevel_destroy(struct wl_listener *listener, void *data) {
 	/* Called when the xdg_toplevel is destroyed. */
 	struct tinywl_toplevel *toplevel = wl_container_of(listener, toplevel, destroy);
 
+  printf("something is xdg_toplevel_destroy! %p\n", data);
 	wl_list_remove(&toplevel->map.link);
 	wl_list_remove(&toplevel->unmap.link);
 	wl_list_remove(&toplevel->commit.link);
@@ -802,6 +807,7 @@ static void server_new_xdg_toplevel(struct wl_listener *listener, void *data) {
 	struct tinywl_server *server = wl_container_of(listener, server, new_xdg_toplevel);
 	struct wlr_xdg_toplevel *xdg_toplevel = data;
 
+  printf("something is new_xdg_toplevel! %p\n", data);
 	/* Allocate a tinywl_toplevel for this surface */
 	struct tinywl_toplevel *toplevel = calloc(1, sizeof(*toplevel));
 	toplevel->server = server;

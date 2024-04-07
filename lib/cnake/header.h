@@ -1,5 +1,5 @@
 #if !defined(_cnake_H)
-# define _cnake_H (1)
+#define _cnake_H (1)
 
 #include <sys/types.h>
 
