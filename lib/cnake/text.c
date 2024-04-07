@@ -42,7 +42,7 @@ int a_letter(u8 c);
 int a_digit(u8 c);
 int is_uadod(u8 c);
 int a_dodad(u8 c);
-int is_udohead(u8 c);
+int u_dohead(u8 c);
 
 int a_vowel(u8 c);
 int a_glide(u8 c);
@@ -167,7 +167,7 @@ int is_leap_year(u64 year) {
 #include <ctype.h>
 #define fubar exit(1);
 
-char otan(char *buf, size_t sz) {
+char otan(char *buf, u64 sz) {
   if (buf == NULL) exit(1);
   if (sz < 4) exit(1);
   if (sz > 8) exit(1);
@@ -230,7 +230,7 @@ void vscii_say_bits() {
   }
 }
 
-u8 word_digit(char *buf, size_t sz) {
+u8 word_digit(char *buf, u64 sz) {
   if (buf == NULL) exit(1);
   if (sz < 3) exit(1);
   if (sz > 5) exit(1);
@@ -298,68 +298,6 @@ char *nato(char letter) {
   return "";
 }
 
-typedef struct {
-  size_t sz;
-  u64 spaces;
-  u64 letters;
-  u64 ncaps;
-  u64 numbers;
-  u64 digits;
-  u64 dodads;
-  u64 vowels;
-  u64 consonants;
-  u64 words;
-  u64 substrings;
-  u64 nchar[256];
-} text_nfo;
-
-void anal_text(u8 *buf, size_t sz) {
-  if (!buf) fubar;
-  if (sz < 1) fubar;
-  /* Assumptions: We have one line of valid ascii text */
-  text_nfo nfo;
-  memset(&nfo, 0, sizeof(nfo));
-  nfo.sz = sz;
-  int n = 0;
-  for (n = 0; n < sz; n++) {
-    char c = buf[n];
-    nfo.nchar[c]++;
-    if (c == ' ') {
-      nfo.spaces++;
-      continue;
-    }
-    if (isalpha(c)) {
-      nfo.letters++;
-    } else if (a_digit(c)) {
-      nfo.numbers++;
-    }
-  }
-  printf("Length: %lu\n", nfo.sz);
-  printf("Numbers: %lu\n", nfo.numbers);
-  printf("Letters: %lu\n", nfo.letters);
-  printf("Spaces: %lu\n", nfo.spaces);
-  printf("Length: %lu characters\n", nfo.sz);
-}
-
-void anal_test() {
-  u8 *customer_statement = "\
-Let's do that thing with, as an inline example, this silly sentence, the one\
-your reading right here starting with Let's and ending soon after here with\
-some immediate regrets.";
-  anal_text(customer_statement, strlen(customer_statement));
-}
-
-/*
-13312 - 19893 CJK Ideographs Extension A
-19968 - 40869 CJK Ideographs
-44032 - 55203 Hangul Syllables
-55296 - 56191 Non-Private Use High Surrogates
-56192 - 56319 Private Use High Surrogates
-56320 - 57343 Low Surrogates
-57344 - 63743 The Private Use Area
-983040 - 1048573 Private Use
-1048576 - 1114109 Private Use*/
-
 u8 a_blank(u8 byte) {
   if (byte == SP) return 1;
   if (byte == LF) return 1;
@@ -377,7 +315,7 @@ u8 a_achar(u8 byte) {
   return 0;
 }
 
-int is_udohead(u8 byte) {
+int u_dohead(u8 byte) {
   if (byte <= 191) return 0;
   if (byte >= 248) return 0;
   if (byte <= 223) return 2;
@@ -415,68 +353,6 @@ int is_unicode_neckbeard(u8 head, u8 neck) {
   return is_unicode_tail(neck);
 }
 
-u64 text_len(u8 *buf, u64 sz) {
-  u8 byte;
-  size_t i;
-  for (i = 0; i < sz; i++) {
-    byte = buf[i];
-    if (a_letter(byte)) continue;
-    if (a_digit(byte)) continue;
-    if (a_dodad(byte)) continue;
-    if (a_blank(byte)) continue;
-    int u = is_udohead(byte);
-    if (u < 2) break;
-    if ((i + u) > sz) break;
-    if (u == 2) {
-      if (is_unicode_tail(buf[i + 1])) {
-        i += 1;
-        continue;
-      }
-      break;
-    } else if (u == 3) {
-      if ((is_unicode_neckbeard(byte, buf[i + 1]))
-       && (is_unicode_tail(buf[i + 2]))) {
-        i += 2;
-        continue;
-      }
-      break;
-    } else if (u == 4) {
-      if ((is_unicode_neckbeard(byte, buf[i + 1]))
-       && (is_unicode_tail(buf[i + 2]))
-       && (is_unicode_tail(buf[i + 3]))) {
-        i += 3;
-        continue;
-      }
-      break;
-    }
-  }
-  return i;
-}
-
-#define TO_LOW 0
-#define TO_HIGH 248
-
-typedef enum {
-  LOW1 = TO_LOW
-} bytes_to_low;
-
-typedef enum {
-  HIGH1 = TO_HIGH, /* 248 0xF8 */
-  HIGH2,           /* 249 0xF9 */
-  HIGH3,           /* 250 0xFA */
-  HIGH4,           /* 251 0xFB */
-  HIGH5,           /* 252 0xFC */
-  HIGH6,           /* 253 0xFD */
-  HIGH7,           /* 254 0xFE */
-  HIGH8            /* 255 0xFF */
-} bytes_to_high;
-
-#define ASCII_MARK_MIN (SP + 1)
-#define ASCII_MARK_MAX (DEL - 1)
-#define ASCII_MARKS = ASCII_MARKS_MAX - ASCII_MARK_MIN
-
-//static const char *alphabet = "abcdefghijklmnopqrstuvwxyz";
-
 u8 a_ctlcode(u8 byte) {
   if (byte == DEL) return 1;
   if ((byte > NUL) && (byte < SP)) return 1;
@@ -499,19 +375,13 @@ u64 blank_len(u8 *buf, u64 sz) {
   return i;
 }
 
-char *ascii_dodads = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
-
-#define ASCII_LETTERS 26
-#define ASCII_LETTERS_BIG 26
-#define ASCII_DIGITS 10
-#define ASCII_DODS 32
-#define ASCII_CTLS 33
-#define NUM_LETTERSORNUMBERS (NUM_LETTERS * NUM_CASES) + NUM_DIGITS
+static char *ascii_dodads = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+#define ASCII_NDODADS 32
 
 int a_dodad(u8 c) {
   int n;
   char dod;
-  for (n = 0; n < ASCII_DODS; n++) {
+  for (n = 0; n < ASCII_NDODADS; n++) {
     dod = ascii_dodads[n];
     if (c == dod) return 1;
   }
@@ -520,10 +390,10 @@ int a_dodad(u8 c) {
 
 int is_uadod(u8 c) {
   if (a_dodad(c)) return 1;
-  return is_udohead(c);
+  return u_dohead(c);
 }
 
-int is_haxdigit(u8 c) {
+int is_hexdigit(u8 c) {
   if (c == 'A') return 1;
   if (c == 'B') return 1;
   if (c == 'C') return 1;
@@ -650,14 +520,14 @@ int a_consonant(u8 c) {
   return 0;
 }
 
-int a_letter_or_anumber(u8 c) {
+int a_letter_or_a_number(u8 c) {
   if (a_letter(c)) return 1;
   if (a_digit(c)) return 1;
   return 0;
 }
 
 int a_alphanumeric(u8 c) {
-  return a_letter_or_anumber(c);
+  return a_letter_or_a_number(c);
 }
 
 int a_space(u8 c) {
@@ -702,27 +572,6 @@ int ascii_len(u8 *dat, u64 sz) {
   return n;
 }
 
-/*
-00 NUL    10 DLE    20 SP   30 0    40 @    50 P    60 `    70 p
-01 SOH    11 DC1    21 !    31 1    41 A    51 Q    61 a    71 q
-02 STX    12 DC2    22 "    32 2    42 B    52 R    62 b    72 r
-03 ETX    13 DC3    23 #    33 3    43 C    53 S    63 c    73 s
-04 EOT    14 DC4    24 $    34 4    44 D    54 T    64 d    74 t
-05 ENQ    15 NAK    25 %    35 5    45 E    55 U    65 e    75 u
-06 ACK    16 SYN    26 &    36 6    46 F    56 V    66 f    76 v
-07 BEL    17 ETB    27 '    37 7    47 G    57 W    67 g    77 w
-08 BS     18 CAN    28 (    38 8    48 H    58 X    68 h    78 x
-09 HT     19 EM     29 )    39 9    49 I    59 Y    69 i    79 y
-0A LF     1A SUB    2A *    3A :    4A J    5A Z    6A j    7A z
-0B VT     1B ESC    2B +    3B ;    4B K    5B [    6B k    7B {
-0C FF     1C FS     2C ,    3C <    4C L    5C \    6C l    7C |
-0D CR     1D GS     2D -    3D =    4D M    5D ]    6D m    7D }
-0E SO     1E RS     2E .    3E >    4E N    5E ^    6E n    7E ~
-0F SI     1F US     2F /    3F ?    4F O    5F _    6F o    7F DEL
-*/
-
-#define BUG 1
-
 u64 word_len(u8 *buf, u64 sz) {
   if (!buf || (sz < 1) || (sz > WORD_LEN_MAX)) return 0;
   int i;
@@ -739,97 +588,6 @@ u64 word_len(u8 *buf, u64 sz) {
   return i;
 }
 
-typedef enum {
-  NO,
-  BLANK,
-  DOD,
-  NUMBER,
-  LETTER
-} text_mode;
-
-text_mode get_text_mode(u8 c) {
-  if (a_letter(c)) return LETTER;
-  else if (a_digit(c)) return NUMBER;
-  else if (a_blank(c)) return BLANK;
-  else if (a_dodad(c)) return DOD;
-  else if (is_udohead(c)) return DOD;
-  return NO;
-}
-
-size_t text_scan(u8 *buf, size_t sz) {
-  text_mode last = BLANK;
-  text_mode mode = last;
-  int ret;
-  /*printf("Got text len: %lu.\n", sz);*/
-  return sz;
-  for (size_t i = 0; i < sz; i++) {
-    u8 c = buf[i];
-    mode = get_text_mode(c);
-    switch (mode) {
-      case BLANK:
-        printf("BLANK\n");
-        if (c == SP) {
-          printf("space");
-        }
-        if (c == LF) {
-          printf("newline");
-        }
-        if (c == HT) {
-          printf("tab");
-        }
-        break;
-      case DOD:
-        printf("DOD\n");
-        ret = is_udohead(c);
-        if (ret > 1) {
-          i += (ret - 1);
-          continue;
-        }
-        break;
-      case NUMBER:
-        printf("NUMBER\n");
-        break;
-      case LETTER:
-        printf("LETTER\n");
-        break;
-      default:
-        printf("NOTEXT\n");
-        exit(1);
-    }
-    last = mode;
-  }
-  return sz;
-}
-
-/*
-
-Here we define an explicit hyper-meta-standard that is first and obstesively
-described in a finite length of bytes that are a linear sequence of valid
-unicode code points that are encoded per the utf8 system. Those unicode code
-points correspond exactly to certain glyphs that are essentially identically
-quantized at a certain resolution and thus we attempt to close the loop
-by describing a system of drawing the characters of any kind of font via
-describing how to decode the binart sfnt format and draw the encoded beizer
-curves using a number of methods such as gcode, canvas, mouse movements,
-hand movements, etc. Essentially a Rewriter. We further embelish this
-mental contrivance train with a virtual memory space that is essentially
-linear in addrressing however a portion of this space correlates precicely
-to the positions on the surface of a large sphere or torus, (A sphere and
-a spindle torus at the limit are almost the same thing so this doesn't matter
-for the purposes of this standard which is reconstructive and essentially
-hyper-cyclic as it is a hypergraph with hypercycles in conceptual sense.
-However in-silico computationally, we are always going to be breaking things
-up into well described data types in a tracable sequence of transformations
-we call the program.
-*/
-
-/*
- *
- *
- * *F{*[]} == u64 *(u8 *buf, u64 sz);
- *
- * */
-
 u64 line_len(u8 *buf, u64 sz) {
   int n;
   if (sz > 4096) sz = 4096;
@@ -839,3 +597,91 @@ u64 line_len(u8 *buf, u64 sz) {
   }
   return n;
 }
+
+u64 text_len(u8 *buf, u64 sz) {
+  u8 byte;
+  u64 i;
+  for (i = 0; i < sz; i++) {
+    byte = buf[i];
+    if (a_letter(byte)) continue;
+    if (a_digit(byte)) continue;
+    if (a_dodad(byte)) continue;
+    if (a_blank(byte)) continue;
+    int u = u_dohead(byte);
+    if (u < 2) break;
+    if ((i + u) > sz) break;
+    if (u == 2) {
+      if (is_unicode_tail(buf[i + 1])) {
+        i += 1;
+        continue;
+      }
+      break;
+    } else if (u == 3) {
+      if ((is_unicode_neckbeard(byte, buf[i + 1]))
+       && (is_unicode_tail(buf[i + 2]))) {
+        i += 2;
+        continue;
+      }
+      break;
+    } else if (u == 4) {
+      if ((is_unicode_neckbeard(byte, buf[i + 1]))
+       && (is_unicode_tail(buf[i + 2]))
+       && (is_unicode_tail(buf[i + 3]))) {
+        i += 3;
+        continue;
+      }
+      break;
+    }
+  }
+  return i;
+}
+
+typedef struct {
+  u64 sz;
+  u64 dodads;
+  u64 udodads;
+  u64 digits;
+  u64 letters;
+  u64 words;
+  u64 substrings;
+  u64 nchar[256];
+} text_nfo;
+
+u64 text_scan(u8 *buf, u64 sz) {
+  if (!buf) fubar;
+  if (sz < 1) fubar;
+  text_nfo nfo;
+  memset(&nfo, 0, sizeof(nfo));
+  nfo.sz = sz;
+  int n = 0;
+  char prev = 0;
+  for (n = 0; n < sz; n++) {
+    char c = buf[n];
+    nfo.nchar[c]++;
+    if (a_letter(c)) nfo.letters++;
+    if (a_digit(c)) nfo.digits++;
+    if (a_dodad(c)) nfo.dodads++;
+    if ((a_blank(prev)) && (!a_blank(c))) nfo.substrings++;
+    prev = c;
+  }
+  printf("Text, %lu bytes\n", nfo.sz);
+}
+
+void testext() {
+  u8 *customer_statement = "\
+Let's do that thing with, as an inline example, this silly sentence, the one\
+your reading right here starting with Let's and ending soon after here with\
+some immediate regrets.";
+  text_scan(customer_statement, strlen(customer_statement));
+}
+
+/*
+13312 - 19893 CJK Ideographs Extension A
+19968 - 40869 CJK Ideographs
+44032 - 55203 Hangul Syllables
+55296 - 56191 Non-Private Use High Surrogates
+56192 - 56319 Private Use High Surrogates
+56320 - 57343 Low Surrogates
+57344 - 63743 The Private Use Area
+983040 - 1048573 Private Use
+1048576 - 1114109 Private Use*/
