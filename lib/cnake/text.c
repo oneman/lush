@@ -1,33 +1,5 @@
 #ifndef C_TEXT
 #define C_TEXT
-#endif
-
-/* 8 byte size/offset/length */
-#ifndef u64
-typedef unsigned long int u64;
-#endif
-/* 4 byte thing probably a pixel like argb */
-#ifndef u32
-typedef unsigned int u32;
-#endif
-
-/* 1 byte size/offset/length */
-#ifndef u8
-typedef unsigned char u8;
-#endif
-
-/* if return nonzero, the length of the valid word */
-/* this wil never be > 78, a word is atleast and no more than a sequence of
- * letters with no more than 2 vowels or 3 consonants in a row and y/w are
- * wildcards (glides)
-for reference ASCII:
-!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-abcdefghijklmnopqrstuvwxyz
-0123456789
-* */
-
-#define WORD_LEN_MAX 78
 
 /* If the return value == the sz passed in, this buffer is valid utf8 */
 /* to be specific the sz passed in and the value returned are the number
@@ -71,37 +43,6 @@ Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og.";
 const u8 *states = "AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN,\
 IA, KS, KY, LA, ME,MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND,\
 OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY";
-
-#define letterpaper_quarter_inch_ptx 18
-#define letterpaper_half_inch_ptx 36
-#define letterpaper_inch_ptx 72
-#define letterpaper_height_ptx 792
-#define letterpaper_width_ptx 612
-#define letterpaper_gov_margin 72
-#define letterpaper_nonmarginal_width 468 /* perm sym */
-#define letterpaper_nonmarginal_height 648 /* perm sym */
-/* 648 / 468 = 1.384615 */
-#define letterpaper_nonmarginal_quad_ruled_columns 26
-#define letterpaper_nonmarginal_quad_ruled_rows 36
-/* 36 / 26 = 1.384615 */
-#define lpm letterpaper_gov_margin
-#define gs_diam 26 * 18
-#define gs_rad 13 * 18
-#define gs_center lpm + gs_rad
-
-#define crossword_sz "4 and 7/16in wide"
-
-/* content area: 6.5 * 9 = 58.5 in 484704 */
-/* letterpaper area: 58.5 + 35 = 93.5 in */
-/* letterpaper total quanta = 93.5 * 5184 */
-/* margin area: (11 * 2) + (13 * 1) = 35in */
-/* margin quanta: 5184 * 35 = 181440 */
-/* margin overlapping quanta: 5184 * 4 = 20736 */
-/* margin nonoverlapping quanta: 160704 */
-/* margin nonoverlapping wide quanta: 67392 */
-/* margin nonoverlapping tall quanta: 93312 */
-/* margin nonoverlapping ratio: 93312/67392 = 1.384615 */
-/* dollar size: 6.2 * 2.6 */
 
 typedef enum {
   NUL = 0,
@@ -572,6 +513,8 @@ int ascii_len(u8 *dat, u64 sz) {
   return n;
 }
 
+#define WORD_LEN_MAX 78
+
 u64 word_len(u8 *buf, u64 sz) {
   if (!buf || (sz < 1) || (sz > WORD_LEN_MAX)) return 0;
   int i;
@@ -685,3 +628,4 @@ some immediate regrets.";
 57344 - 63743 The Private Use Area
 983040 - 1048573 Private Use
 1048576 - 1114109 Private Use*/
+#endif

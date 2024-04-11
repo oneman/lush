@@ -1,3 +1,34 @@
+#define letterpaper_quarter_inch_ptx 18
+#define letterpaper_half_inch_ptx 36
+#define letterpaper_inch_ptx 72
+#define letterpaper_height_ptx 792
+#define letterpaper_width_ptx 612
+#define letterpaper_gov_margin 72
+#define letterpaper_nonmarginal_width 468 /* perm sym */
+#define letterpaper_nonmarginal_height 648 /* perm sym */
+/* 648 / 468 = 1.384615 */
+#define letterpaper_nonmarginal_quad_ruled_columns 26
+#define letterpaper_nonmarginal_quad_ruled_rows 36
+/* 36 / 26 = 1.384615 */
+#define lpm letterpaper_gov_margin
+#define gs_diam 26 * 18
+#define gs_rad 13 * 18
+#define gs_center lpm + gs_rad
+
+#define crossword_sz "4 and 7/16in wide"
+
+/* content area: 6.5 * 9 = 58.5 in 484704 */
+/* letterpaper area: 58.5 + 35 = 93.5 in */
+/* letterpaper total quanta = 93.5 * 5184 */
+/* margin area: (11 * 2) + (13 * 1) = 35in */
+/* margin quanta: 5184 * 35 = 181440 */
+/* margin overlapping quanta: 5184 * 4 = 20736 */
+/* margin nonoverlapping quanta: 160704 */
+/* margin nonoverlapping wide quanta: 67392 */
+/* margin nonoverlapping tall quanta: 93312 */
+/* margin nonoverlapping ratio: 93312/67392 = 1.384615 */
+/* dollar size: 6.2 * 2.6 */
+
 int mom(int argc, char *argv[]) {
   cairo_surface_t *surface;
   cairo_t *cr;
