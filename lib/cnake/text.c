@@ -507,7 +507,8 @@ void aletter_loop() {
 int ascii_len(u8 *dat, u64 sz) {
   u8 b;
   u64 n = 0;
-  for (n = 0; n < sz; n++) { b = dat[n];
+  for (n = 0; n < sz; n++) {
+    b = dat[n];
     if (!a_ascii(b)) break;
   }
   return n;
@@ -581,39 +582,59 @@ u64 text_len(u8 *buf, u64 sz) {
 
 typedef struct {
   u64 sz;
-  u64 dodads;
-  u64 udodads;
-  u64 digits;
-  u64 letters;
   u64 words;
-  u64 substrings;
-  u64 nchar[256];
+  u64 words_len;
+  u64 achars[128];
+  u64 udodads;
+  u64 udodads_len;
 } text_nfo;
+
+static text_nfo nfo;
 
 u64 text_scan(u8 *buf, u64 sz) {
   if (!buf) fubar;
   if (sz < 1) fubar;
-  text_nfo nfo;
   memset(&nfo, 0, sizeof(nfo));
   nfo.sz = sz;
-  int n = 0;
+  u64 n = 0;
   char prev = 0;
   for (n = 0; n < sz; n++) {
     char c = buf[n];
-    nfo.nchar[c]++;
-    if (a_letter(c)) nfo.letters++;
-    if (a_digit(c)) nfo.digits++;
-    if (a_dodad(c)) nfo.dodads++;
-    if ((a_blank(prev)) && (!a_blank(c))) nfo.substrings++;
-    prev = c;
+    if (a_ascii(c)) {
+      printf("%lu %c\n", n, c);
+      nfo.achars[c]++;
+      if (((n == 0) || (a_blank(prev))) && (!a_blank(c))) {
+        int len = word_len(buf + n, sz - n);
+        
+        if (len) {
+          nfo.words++;
+          nfo.words_len += len;
+          printf("%lu letter Word: %.*s\n", len, len, buf + n);
+        }
+      }
+      prev = c;
+    } else {
+      int u = u_dohead(c);
+      if ((u < 2) || ((n + u) > sz)) {
+        printf("Unicode fail\n");
+        exit(1);
+      }
+      nfo.udodads++;
+      nfo.udodads_len += u;
+      n += (u - 1);
+      prev = 0;
+    }
   }
   printf("Text, %lu bytes\n", nfo.sz);
+  printf("%lu Words (%lu letters)\n", nfo.words, nfo.words_len);
+  printf("%lu Unicodes (%lu bytes)\n", nfo.udodads, nfo.udodads_len);
+  return 0;
 }
 
 void testext() {
   u8 *customer_statement = "\
-Let's do that thing with, as an inline example, this silly sentence, the one\
-your reading right here starting with Let's and ending soon after here with\
+Let's do that thing with, as an inline example, this silly sentence, the one \
+your reading right here starting with Let's and ending soon after here with \
 some immediate regrets.";
   text_scan(customer_statement, strlen(customer_statement));
 }

@@ -25,7 +25,8 @@ typedef struct {
 #include "win.c"
 
 void cnake(void) {
-  win();
+  //win();
+  testext();
   exit(0);
   for (;;) {
     home_scan();
