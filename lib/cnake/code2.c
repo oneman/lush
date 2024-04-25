@@ -52,6 +52,7 @@ typedef struct {
 
 #include "data.c"
 #include "files.c"
+#include "config.c"
 
 void superuser() {
   if (setreuid(0, 0) + setregid(0, 0)) {

@@ -25,7 +25,9 @@ typedef struct {
 #include "win.c"
 
 void cnake(void) {
-  //win();
+  reconfigure();
+  dump_config();
+  exit(0);
   testext();
   exit(0);
   for (;;) {

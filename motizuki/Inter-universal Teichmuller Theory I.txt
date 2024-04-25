@@ -4,14 +4,13 @@ CONSTRUCTION OF HODGE THEATERS
 Shinichi Mochizuki
 May 2020
 Abstract.
-The present paper is the ﬁrst in a series of four papers, the
-goal of which is to establish an arithmetic version of Teichmüller theory for number
-ﬁelds equipped with an elliptic curve — which we refer to as “inter-universal
-Teichmüller theory” — by applying the theory of semi-graphs of anabelioids,
-Frobenioids, the étale theta function, and log-shells developed in earlier papers by
-the author. We begin by ﬁxing what we call “initial Θ-data”, which consists of
-an elliptic curve EF over a number ﬁeld F , and a prime number l ≥ 5, as well as
-some other technical data satisfying certain technical properties. This data determines various hyperbolic orbicurves that are related via ﬁnite étale coverings to the
+
+The present paper is the ﬁrst in a series of four papers, the goal of which is to establish an arithmetic version of Teichmüller theory for number ﬁelds equipped with an elliptic curve — which we refer to as “inter-universal Teichmüller theory” — by applying the theory of semi-graphs of anabelioids, Frobenioids, the étale theta function, and log-shells developed in earlier papers by the author.
+
+We begin by ﬁxing what we call “initial Θ-data”, which consists of an elliptic curve EF over a number ﬁeld F, and a prime number l ≥ 5, as well as some other technical data satisfying certain technical properties.
+
+
+This data determines various hyperbolic orbicurves that are related via ﬁnite étale coverings to the
 once-punctured elliptic curve XF determined by EF . These ﬁnite étale coverings
 admit various symmetry properties arising from the additive and multiplicative
 structures on the ring Fl = Z/lZ acting on the l-torsion points of the elliptic curve.

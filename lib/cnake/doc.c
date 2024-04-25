@@ -116,4 +116,3 @@ int doc(int argc, char **argv)
 	fz_drop_context(ctx);
 	return EXIT_SUCCESS;
 }
-
