@@ -23,6 +23,7 @@ typedef struct {
 #include "key.c"
 #include "code2.c"
 #include "win.c"
+#include "nato.c"
 
 void cnake(void) {
   reconfigure();
