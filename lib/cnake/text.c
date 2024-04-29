@@ -13,7 +13,7 @@ u64 word_len(u8 *buf, u64 sz); /* A sequence of 26 or fewer letters */
  * . inform
  */
 
-/* 2 - 26 or fewer words followed by a ? . ! */
+/* 3 to 26 or fewer words followed by a ? . ! */
 u64 sentence_len(u8 *buf, u64 sz);
 u64 non_sentence_len(u8 *buf, u64 sz);
 
@@ -28,30 +28,6 @@ int u_dohead(u8 c);
 int a_vowel(u8 c);
 int a_glide(u8 c);
 int a_consonant(u8 c);
-
-/*
- * A proper normal sentence is a sequence of alphabetic words no
- * longer than 78, most often less than 26. The final word must
- * be a period, and maybe decorated with exclimation or question
- * marking. All non-alphabetic marks such as emoji, emoticons,
- * dashes, arrows unicode characters or doodles must be translated
- * into alphabetic representations in exploded view.
- *
- * document chain?
-
- *
- */
-
-const u8 *elements = "H, He, Li, Be, B, C, N, O, F, Ne, Na, Mg, Al, Si, P, S,\
-Cl, Ar, K, Ca, Sc, Ti, V, Cr, Mn, Fe, Ni, Co, Cu, Zn, Ga, Ge, As, Se, Br, Kr,\
-Rb, Sr, Y, Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te, I, Xe, Cs, Ba,\
-La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Hf, Ta, W, Re, Os,\
-Ir, Pt, Au, Hg, Tl, Pb, Bi, Th, Pa, U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No,\
-Lr, Rf, Db, Sg, Bh, Hs, Mt, Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og.";
-
-const u8 *states = "AL, AK, AZ, AR, CA, CO, CT, DE, FL, GA, HI, ID, IL, IN,\
-IA, KS, KY, LA, ME,MD, MA, MI, MN, MS, MO, MT, NE, NV, NH, NJ, NM, NY, NC, ND,\
-OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VT, VA, WA, WV, WI, WY";
 
 typedef enum {
   NUL = 0,
@@ -89,22 +65,7 @@ char ascii_cc_str[32][4] = {
   "SUB","ESC",
   "FS","GS","RS","US"};
 
-#define SP_STR "SP"
-#define DEL_STR "DEL"
-
 #define UNICODES 1112064
-#define PHY_C 299792458
-
-#define yeap return 1;
-#define nope return 0;
-#define otherwise
-
-int is_leap_year(u64 year) {
-  if ((year % 400) == 0) yeap
-  if ((year % 100) == 0) nope
-  if ((year % 4) == 0) yeap
-  otherwise nope
-}
 
 #include <stdio.h>
 #include <stdlib.h>
