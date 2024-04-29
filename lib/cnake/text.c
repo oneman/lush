@@ -6,7 +6,7 @@
  * of bytes not the number of utf8 encoded unicode characters */
 u64 text_len(u8 *buf, u64 sz);
 u64 line_len(u8 *buf, u64 sz);
-u64 word_len(u8 *buf, u64 sz);
+u64 word_len(u8 *buf, u64 sz); /* A sequence of 26 or fewer letters */
 
 u64 sentence_len(u8 *buf, u64 sz);
 u64 non_sentence_len(u8 *buf, u64 sz);
@@ -412,7 +412,9 @@ int ascii_len(u8 *dat, u64 sz) {
   return n;
 }
 
-#define WORD_LEN_MAX 78
+#define WORD_LEN_MAX 26
+#define WORD_MOST_VOWEL "euouae"
+#define WORD_MOST_CONSONANT "tsktsk"
 
 u64 word_len(u8 *buf, u64 sz) {
   if (!buf || (sz < 1) || (sz > WORD_LEN_MAX)) return 0;
@@ -425,7 +427,7 @@ u64 word_len(u8 *buf, u64 sz) {
     letter = buf[i];
     if ((a_vowel(letter)) || (a_glide(letter))) { sillyness++; srsly = 0; }
     if (a_consonant(letter)) { srsly++; sillyness = 0; }
-    if ((sillyness > 4) || (srsly > 4)) { return i - 4; }
+    if ((sillyness > 6) || (srsly > 6)) { return i - 4; }
   }
   return i;
 }
