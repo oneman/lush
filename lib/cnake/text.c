@@ -8,6 +8,12 @@ u64 text_len(u8 *buf, u64 sz);
 u64 line_len(u8 *buf, u64 sz);
 u64 word_len(u8 *buf, u64 sz); /* A sequence of 26 or fewer letters */
 
+/* ? inquire
+ * ! instruct
+ * . inform
+ */
+
+/* 2 - 26 or fewer words followed by a ? . ! */
 u64 sentence_len(u8 *buf, u64 sz);
 u64 non_sentence_len(u8 *buf, u64 sz);
 
