@@ -26,14 +26,9 @@ typedef struct {
 #include "nato.c"
 
 void cnake(void) {
-  reconfigure();
-  dump_config();
-  exit(0);
-  testext();
-  exit(0);
   for (;;) {
-    home_scan();
-    printf("scan done\n");
+    cwd_scan();
     exit(0);
   }
+  exit(0);
 }

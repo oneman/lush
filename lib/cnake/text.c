@@ -5,6 +5,7 @@
 /* to be specific the sz passed in and the value returned are the number
  * of bytes not the number of utf8 encoded unicode characters */
 u64 text_len(u8 *buf, u64 sz);
+u64 term_len(u8 *buf, u64 sz); /* A sequence of 78 or fewer non-blank chars */
 u64 line_len(u8 *buf, u64 sz);
 u64 word_len(u8 *buf, u64 sz); /* A sequence of 26 or fewer letters */
 
@@ -66,6 +67,16 @@ char ascii_cc_str[32][4] = {
   "FS","GS","RS","US"};
 
 #define UNICODES 1112064
+/*
+13312 - 19893 CJK Ideographs Extension A
+19968 - 40869 CJK Ideographs
+44032 - 55203 Hangul Syllables
+55296 - 56191 Non-Private Use High Surrogates
+56192 - 56319 Private Use High Surrogates
+56320 - 57343 Low Surrogates
+57344 - 63743 The Private Use Area
+983040 - 1048573 Private Use
+1048576 - 1114109 Private Use*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -76,7 +87,6 @@ char ascii_cc_str[32][4] = {
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#define fubar exit(1);
 
 u8 a_blank(u8 byte) {
   if (byte == SP) return 1;
@@ -155,28 +165,39 @@ u64 blank_len(u8 *buf, u64 sz) {
   return i;
 }
 
-/* { word | number | "', || BLANK ?.! */
+#define TERM_MAX 78
 
-u64 sentence_len(u8 *buf, u64 sz) {
+u64 term_len(u8 *buf, u64 sz) {
   u64 n;
   char c;
   for (n = 0; n < sz; n++) {
     c = buf[n];
-    if ((a_blank(c)) || (a_letter(c)) || (a_digit(c))) { continue; }
-    if ((c == '\'') || (c == '"')) { continue; }
-    if (c == ',') { continue; }
-    if ((c == '?') || (c == '.') || (c == '!')) { return ++n; }
-    break;
+    if (a_blank(c)) return n;
+    if (n == TERM_MAX) break;
   }
+  return n;
+}
+
+u8 endpunch(u8 c) {
+  if ((c == '?') || (c == '!') || (c == '.')) return c;
   return 0;
 }
 
-u64 non_sentence_len(u8 *buf, u64 sz) {
-  u64 n;
-  u64 len;
-  for (n = 0; n < sz; n++) {
-    len = sentence_len(buf + n, sz - n);
-    if (len) break;
+u64 sentence_len(u8 *buf, u64 sz) {
+  u64 n = blank_len(buf, sz);
+  for (; n < sz;) {
+    u64 len;
+    if (n > 0) {
+      if (endpunch(buf[n - 1])) return n;
+    }
+    len = term_len(buf + n, sz - n);
+    if (len == 0) exit(1);
+    if (len == TERM_MAX) exit(1);
+    printf("%.*s ", len, buf + n);
+    n += len;
+    len = blank_len(buf + n, sz - n);
+    if (len == 0) return n;
+    n += len;
   }
   return n;
 }
@@ -447,73 +468,18 @@ u64 text_len(u8 *buf, u64 sz) {
   return i;
 }
 
-typedef struct {
-  u64 sz;
-  u64 words;
-  u64 words_len;
-  u64 achars[128];
-  u64 udodads;
-  u64 udodads_len;
-} text_nfo;
-
-static text_nfo nfo;
-
 u64 text_scan(u8 *buf, u64 sz) {
-  if (!buf) fubar;
-  if (sz < 1) fubar;
-  memset(&nfo, 0, sizeof(nfo));
-  nfo.sz = sz;
-  u64 n = 0;
-  char prev = 0;
-  for (n = 0; n < sz; n++) {
-    char c = buf[n];
-    if (a_ascii(c)) {
-      printf("%lu %c\n", n, c);
-      nfo.achars[c]++;
-      if (((n == 0) || (a_blank(prev))) && (!a_blank(c))) {
-        int len = word_len(buf + n, sz - n);
-        
-        if (len) {
-          nfo.words++;
-          nfo.words_len += len;
-          printf("%lu letter Word: %.*s\n", len, len, buf + n);
-        }
-      }
-      prev = c;
-    } else {
-      int u = u_dohead(c);
-      if ((u < 2) || ((n + u) > sz)) {
-        printf("Unicode fail\n");
-        exit(1);
-      }
-      nfo.udodads++;
-      nfo.udodads_len += u;
-      n += (u - 1);
-      prev = 0;
-    }
+  if ((!buf) || (sz < 4)) exit(1);
+  if (sz == 4) {
+    printf("FourCC: %.*s\n", sz, buf);
+    return 0;
   }
-  printf("Text, %lu bytes\n", nfo.sz);
-  printf("%lu Words (%lu letters)\n", nfo.words, nfo.words_len);
-  printf("%lu Unicodes (%lu bytes)\n", nfo.udodads, nfo.udodads_len);
+  printf("Text, %lu bytes\n", sz);
+  for (u64 n = 0; n < sz;) {
+    n += sentence_len(buf + n, sz - n);
+    printf("\n");
+  }
   return 0;
 }
 
-void testext() {
-  u8 *customer_statement = "\
-Let's do that thing with, as an inline example, this silly sentence, the one \
-your reading right here starting with Let's and ending soon after here with \
-some immediate regrets.";
-  text_scan(customer_statement, strlen(customer_statement));
-}
-
-/*
-13312 - 19893 CJK Ideographs Extension A
-19968 - 40869 CJK Ideographs
-44032 - 55203 Hangul Syllables
-55296 - 56191 Non-Private Use High Surrogates
-56192 - 56319 Private Use High Surrogates
-56320 - 57343 Low Surrogates
-57344 - 63743 The Private Use Area
-983040 - 1048573 Private Use
-1048576 - 1114109 Private Use*/
 #endif

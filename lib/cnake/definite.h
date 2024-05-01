@@ -1,5 +1,10 @@
 #define PHY_C 299792458
 
+u8 *customer_statement = "\
+Let's do that thing with, as an inline example, this silly sentence, the one \
+your reading right here starting with Let's and ending soon after here with \
+some immediate regrets.";
+
 const u8 *elements = "H, He, Li, Be, B, C, N, O, F, Ne, Na, Mg, Al, Si, P, S,\
 Cl, Ar, K, Ca, Sc, Ti, V, Cr, Mn, Fe, Ni, Co, Cu, Zn, Ga, Ge, As, Se, Br, Kr,\
 Rb, Sr, Y, Zr, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Cd, In, Sn, Sb, Te, I, Xe, Cs, Ba,\

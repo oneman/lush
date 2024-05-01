@@ -55,3 +55,10 @@ int home_scan() {
   if (!kr_dir_exists(h)) h = "/home";
   return path_scan(h, strlen(h));
 }
+
+int cwd_scan() {
+  static char cwd_path[4096];
+  char *cwd = getcwd(cwd_path, sizeof(cwd_path));
+  if (!cwd) exit(1);
+  return path_scan(cwd, strlen(cwd));
+}
